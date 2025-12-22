@@ -1,0 +1,13 @@
+#pragma once
+#include <GlobalData/Include.h>
+#include <CS2/Math/Vector.h>
+#include <CS2/SDK/CBaseHandle.h>
+namespace CS2 {
+	namespace client {
+		class C_BasePlayerPawn;
+		class CCSPlayerController {
+		public:
+			PROPERTY(m_hPawn, Source2::CBaseHandle<client::C_BasePlayerPawn>, 0x6b4);
+		};
+	}
+}
