@@ -26,7 +26,7 @@ The project demonstrates:
 🔧 **Real-time Entity Tracking** - Background thread continuously monitors all player entities  
 📊 **Dynamic Pattern Scanning** - Automatic function discovery via IDA-style signatures  
 🎯 **External CGameEntitySystem** - Resolve Entities easily  
-
+🎯 **Generated SDK** - Fully generated SDK    
 
 ---
 
