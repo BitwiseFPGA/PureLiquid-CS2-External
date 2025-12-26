@@ -17,6 +17,7 @@ The project demonstrates:
 
 ---
 
+
 ## Features
 
 ✨ **Authentic Visibility Checking** - Uses CS2's own TraceShape function for accurate line-of-sight detection  
@@ -24,6 +25,8 @@ The project demonstrates:
 🎯 **External Operation** - No DLL injection required, operates entirely from external process  
 🔧 **Real-time Entity Tracking** - Background thread continuously monitors all player entities  
 📊 **Dynamic Pattern Scanning** - Automatic function discovery via IDA-style signatures  
+🎯 **External CGameEntitySystem** - Resolve Entities easily  
+
 
 ---
 
