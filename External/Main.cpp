@@ -60,7 +60,14 @@ int main() {
 	
 	I::Initialize();
 
-
+	/*
+	while (true) {
+		if (GetAsyncKeyState(VK_LSHIFT)) {
+			auto v = I::pCsGoInput->vViewAngles;
+			printf("View: %.2f %.2f %.2f\n", v.x, v.y, v.z);
+		}
+	}
+	*/
 	std::thread([]() {ReadEntititesThread();}).detach();
 
 	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
