@@ -73,12 +73,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(SolutionDIr)GlobalData\Include;$(ProjectDir)Include;$(SolutionDIr)Memory\Include;$(SolutionDIr)Source2\Include;$(SolutionDIr)Math\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDIr)GlobalData\Include;$(ProjectDir)Include;$(SolutionDIr)Memory\Include;$(SolutionDIr)Source2\Include;$(SolutionDIr)Math\Include;$(ProjectDir)Include\CS2\SDK;$(ProjectDir)Include\CS2;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(SolutionDIr)GlobalData\Include;$(ProjectDir)Include;$(SolutionDIr)Memory\Include;$(SolutionDIr)Source2\Include;$(SolutionDIr)Math\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDIr)GlobalData\Include;$(ProjectDir)Include;$(SolutionDIr)Memory\Include;$(SolutionDIr)Source2\Include;$(SolutionDIr)Math\Include;$(ProjectDir)Include\CS2\SDK;$(ProjectDir)Include\CS2;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -112,7 +112,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);CUSTOM_GLOBAL_TYPES</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdclatest</LanguageStandard_C>
@@ -128,7 +128,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);CUSTOM_GLOBAL_TYPES</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdclatest</LanguageStandard_C>
@@ -163,6 +163,7 @@
     <ClInclude Include="Include\CS2\Patterns.h" />
     <ClInclude Include="Include\CS2\SDK\CCSPlayerController.h" />
     <ClInclude Include="Include\CS2\SDK\C_CSPlayerPawn.h" />
+    <ClInclude Include="Include\Custom\GlobalTypes.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CS2\Interfaces\CCSGOInput.cpp" />

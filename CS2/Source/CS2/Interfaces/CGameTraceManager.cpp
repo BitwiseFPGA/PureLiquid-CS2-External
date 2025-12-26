@@ -1,5 +1,5 @@
 #include <CS2/Interfaces/CGameTraceManager.h>
-#include <CS2/SDK/C_CSPlayerPawn.h>
+#include <CS2/SDK/client/C_CSPlayerPawn.hpp>
 #include <CS2/Interfaces/Manager.h>
 #include <CS2/Enums/TraceMasks.h>
 #include <GlobalData/Include.h>

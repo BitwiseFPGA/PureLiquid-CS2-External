@@ -73,12 +73,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(ProjectDir)Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Include;$(SolutionDir)GlobalData\Include;$(SolutionDir)Memory\Include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(ProjectDir)Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Include;$(SolutionDir)GlobalData\Include;$(SolutionDir)Memory\Include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -140,9 +140,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Include\Source2\CBaseHandle.h" />
+    <ClInclude Include="Include\Source2\CUtlString.h" />
+    <ClInclude Include="Include\Source2\CUtlSymbolLarge.h" />
+    <ClInclude Include="Include\Source2\CUtlVector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source2.cpp" />
+    <ClCompile Include="Source\CUtlString.cpp" />
+    <ClCompile Include="Source\Source2\CUtlSymbolLarge.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GlobalData\GlobalData.vcxproj">
+      <Project>{67c0b8c6-8308-41d3-9540-2d33fc61bc34}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Memory\Memory.vcxproj">
+      <Project>{a211709a-5578-4c34-9d70-69516f31770f}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

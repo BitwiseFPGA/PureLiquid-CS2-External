@@ -1,7 +1,7 @@
 #include <External/Include.h>
 #include <Source2/CBaseHandle.h>
-#include <CS2/SDK/CCSPlayerController.h>
-#include <CS2/SDK/C_CSPlayerPawn.h>
+#include <CS2/SDK/client/CCSPlayerController.hpp>
+#include <CS2/SDK/client/C_CSPlayerPawn.hpp>
 #include <CS2/Interfaces/Include.h>
 
 namespace Globals {

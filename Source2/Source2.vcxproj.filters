@@ -18,9 +18,24 @@
     <ClInclude Include="Include\Source2\CBaseHandle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Source2\CUtlString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Source2\CUtlSymbolLarge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Source2\CUtlVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CUtlString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Source2\CUtlSymbolLarge.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
