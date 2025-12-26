@@ -9,6 +9,7 @@ namespace CS2 {
 
 	namespace client {
 		class C_CSPlayerPawn;
+		class C_CSPlayerPawnExtended;
 	}
 
 	class CGameTraceManager;
@@ -138,5 +139,6 @@ namespace CS2 {
 		inline static Ray_t* pLastUsedRay = nullptr;
 	public:
 		bool IsPlayerVisible(client::C_CSPlayerPawn* pLocal, client::C_CSPlayerPawn* pEnemy, bool bDebug = true);
+		bool IsPlayerVisible(client::C_CSPlayerPawnExtended* pLocal, client::C_CSPlayerPawnExtended* pEnemy, bool bDebug = true);
 	};
 }

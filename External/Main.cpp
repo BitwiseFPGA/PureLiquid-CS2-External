@@ -1,9 +1,9 @@
 #include <External/Include.h>
 #include <Source2/CBaseHandle.h>
 #include <CS2/SDK/client/CCSPlayerController.hpp>
-#include <CS2/SDK/client/C_CSPlayerPawn.hpp>
+#include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
 #include <CS2/Interfaces/Include.h>
-
+#include <Features/Aimbot.h>
 namespace Globals {
 	Process proc{ "cs2.exe" };
 }
@@ -34,7 +34,7 @@ void ReadEntititesThread() {
 				continue;
 			}
 
-			auto pPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawn>(pController->m_hPawn.GetEntryIndex());
+			auto pPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(pController->m_hPawn.GetEntryIndex());
 
 			if (!pPawn) {
 				entity->m_bIsValid = false;
@@ -60,20 +60,13 @@ int main() {
 	
 	I::Initialize();
 
-	/*
-	while (true) {
-		if (GetAsyncKeyState(VK_LSHIFT)) {
-			auto v = I::pCsGoInput->vViewAngles;
-			printf("View: %.2f %.2f %.2f\n", v.x, v.y, v.z);
-		}
-	}
-	*/
 	std::thread([]() {ReadEntititesThread();}).detach();
+	std::thread([]() {Aimbot::AimbotThread();}).detach();
 
 	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
 
 	auto lpController = pGameEntitySystem->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
-	auto lpPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawn>(lpController->m_hPawn.GetEntryIndex());
+	auto lpPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpController->m_hPawn.GetEntryIndex());
 	
 	while (!GetAsyncKeyState(VK_DELETE)) {
 

@@ -161,6 +161,11 @@ namespace CS2 {
 
 	}
 
+	bool CGameTraceManager::IsPlayerVisible(client::C_CSPlayerPawnExtended* pLocal, client::C_CSPlayerPawnExtended* pEnemy, bool bDebug)
+	{
+		return IsPlayerVisible(reinterpret_cast<client::C_CSPlayerPawn*>(pLocal), reinterpret_cast<client::C_CSPlayerPawn*>(pEnemy), bDebug);
+	}
+
 #pragma code_seg(".initTraceFilterSeg")
 #pragma optimize("", off)
 #pragma runtime_checks("", off)

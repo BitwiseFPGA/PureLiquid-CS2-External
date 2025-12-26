@@ -7,7 +7,7 @@
 namespace CS2 {
 
     namespace client {
-        class C_CSPlayerPawn;
+        class C_CSPlayerPawnExtended;
         class CCSPlayerController;
     }
 
@@ -15,7 +15,7 @@ namespace CS2 {
     public:
         bool m_bIsValid{};
         bool m_bIsAlive{};
-        CS2::client::C_CSPlayerPawn* m_pPawn{};
+        CS2::client::C_CSPlayerPawnExtended* m_pPawn{};
         CS2::client::CCSPlayerController* m_pController{};
         bool m_bIsLocalPlayer{};
         bool m_bIsVisible{};

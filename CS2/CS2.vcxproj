@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\CS2\Enums\TraceMasks.h" />
+    <ClInclude Include="Include\CS2\ExtendedSDK\client\C_CSPlayerPawn.h" />
     <ClInclude Include="Include\CS2\Interfaces\CCSGOInput.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameEntitySystem.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameResourceService.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Include\Custom\GlobalTypes.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\CS2\ExtendedSDK\client\C_CSPlayerPawn.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CCSGOInput.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameEntitySystem.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameResourceService.cpp" />
