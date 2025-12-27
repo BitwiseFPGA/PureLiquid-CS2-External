@@ -27,6 +27,12 @@
     <ClInclude Include="Include\Source2\CUtlVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Source2\CStrongHandle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Source2\CKeyValues3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source2.cpp">

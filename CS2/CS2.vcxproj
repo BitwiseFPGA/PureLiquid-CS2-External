@@ -155,10 +155,13 @@
   <ItemGroup>
     <ClInclude Include="Include\CS2\Enums\TraceMasks.h" />
     <ClInclude Include="Include\CS2\ExtendedSDK\client\C_CSPlayerPawn.h" />
+    <ClInclude Include="Include\CS2\ExtendedSDK\scenesystem\CAnimatableSceneObjectDesc.h" />
+    <ClInclude Include="Include\CS2\ExtendedSDK\scenesystem\CBaseSceneData.h" />
     <ClInclude Include="Include\CS2\Interfaces\CCSGOInput.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameEntitySystem.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameResourceService.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameTraceManager.h" />
+    <ClInclude Include="Include\CS2\Interfaces\CMaterialSystem2.h" />
     <ClInclude Include="Include\CS2\Interfaces\Include.h" />
     <ClInclude Include="Include\CS2\Interfaces\Manager.h" />
     <ClInclude Include="Include\CS2\Patterns.h" />
@@ -168,10 +171,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CS2\ExtendedSDK\client\C_CSPlayerPawn.cpp" />
+    <ClCompile Include="Source\CS2\ExtendedSDK\scenesystem\CAnimatableSceneObjectDesc.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CCSGOInput.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameEntitySystem.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameResourceService.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameTraceManager.cpp" />
+    <ClCompile Include="Source\CS2\Interfaces\CMaterialSystem2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,7 +8,9 @@ namespace CS2 {
 
 	class CGameTraceManager;
 	class CGameResourceService;
+	class CMaterialSystem2;
 	class CCSGOInput;
+
 	class CInterfaceManager {
 	private:
 		template <typename T>
@@ -19,6 +21,8 @@ namespace CS2 {
 
 		inline static CGameTraceManager* pGameTraceManager = nullptr;
 		inline static CCSGOInput* pCsGoInput = nullptr;
+
+		inline static CMaterialSystem2* pMaterialSystem = nullptr;
 
 		template <typename T>
 		inline static T* CreateInterface(std::string module, std::string interfaceName) {
@@ -44,7 +48,7 @@ namespace CS2 {
 				);
 
 			pGameResourceService = CreateInterface<CGameResourceService>("engine2.dll", "GameResourceServiceClientV001");
-
+			pMaterialSystem = CreateInterface<CMaterialSystem2>("materialsystem2.dll", "VMaterialSystem2_001");
 
 
 			LogAll();
@@ -52,9 +56,10 @@ namespace CS2 {
 
 		inline static void LogAll() {
 			printf("[+] Interfaces\n");
+			printf("[+] CGameResourceService: 0x%p\n", pGameResourceService);
 			printf("[+] CGameTraceManager: 0x%p\n", pGameTraceManager);
-			printf("[+] CCSGOInput: 0x%p\n", pCsGoInput);
-			printf("[+] CGameResourceService: 0x%p\n\n", pGameResourceService);
+			printf("[+] CMaterialSystem2: 0x%p\n", pMaterialSystem);
+			printf("[+] CCSGOInput: 0x%p\n\n", pCsGoInput);
 		}
 	};
 

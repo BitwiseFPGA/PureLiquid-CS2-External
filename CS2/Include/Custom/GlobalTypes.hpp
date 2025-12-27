@@ -12,6 +12,7 @@
 #include <Source2/CBaseHandle.h>
 #include <Source2/CUtlVector.h>
 #include <Source2/CUtlString.h>
+#include <Source2/CStrongHandle.h>
 #include <Source2/CUtlSymbolLarge.h>
 #include <Math/Vector.h>
 #include <Math/Matrix.h>
@@ -86,9 +87,8 @@ namespace GlobalTypes {
 	};
 
 
-	template <typename T>
-	struct CStrongHandle : public T {
-	};
+	template <typename T1>
+	using CStrongHandle = ::Source2::CStrongHandle<T1>;
 	// template <typename T>
 	// using CStrongHandle /*CStrongHandle< InfoForResourceTypeIMaterial2 >*/ = char[0x8]; //  Schema_Atomic
 

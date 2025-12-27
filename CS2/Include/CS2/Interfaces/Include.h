@@ -4,3 +4,4 @@
 #include <CS2/Interfaces/CGameEntitySystem.h>
 #include <CS2/Interfaces/CGameTraceManager.h>
 #include <CS2/Interfaces/CCSGOInput.h>
+#include <CS2/Interfaces/CMaterialSystem2.h>

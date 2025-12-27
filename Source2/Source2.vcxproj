@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Include\Source2\CBaseHandle.h" />
+    <ClInclude Include="Include\Source2\CKeyValues3.h" />
+    <ClInclude Include="Include\Source2\CStrongHandle.h" />
     <ClInclude Include="Include\Source2\CUtlString.h" />
     <ClInclude Include="Include\Source2\CUtlSymbolLarge.h" />
     <ClInclude Include="Include\Source2\CUtlVector.h" />

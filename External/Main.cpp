@@ -1,9 +1,11 @@
 #include <External/Include.h>
 #include <Source2/CBaseHandle.h>
 #include <CS2/SDK/client/CCSPlayerController.hpp>
+#include <CS2/ExtendedSDK/scenesystem/CAnimatableSceneObjectDesc.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
+
 namespace Globals {
 	Process proc{ "cs2.exe" };
 }
@@ -59,6 +61,24 @@ int main() {
 	SetConsoleTitle("PureLiquid CS2 External");
 	
 	I::Initialize();
+	
+
+	auto hLatexChamsMaterial = I::pMaterialSystem->CreateMaterial(CMaterialSystem2::GetLatexChams(), "LatexChamsMaterial");
+
+	if (!hLatexChamsMaterial) {
+		printf("Couldn't create Material!!\n");
+		return 0;
+	}
+
+	if (!CAnimatableSceneObjectDesc::InstallRendererHook(nullptr)) {
+		printf("Error Installing CAnimatableSceneObjectDesc hook!!\n");
+		return 0;
+	}
+
+	CAnimatableSceneObjectDesc::SetChamsColor(0, 35, 255, 255);
+	CAnimatableSceneObjectDesc::SetChamsMaterial(hLatexChamsMaterial);
+	CAnimatableSceneObjectDesc::SetChamsEnabled(true);
+
 	I::pCsGoInput->HookCreateMove();
 
 	std::thread([]() {ReadEntititesThread();}).detach();
@@ -74,7 +94,7 @@ int main() {
 	}
 
 	I::pCsGoInput->UnhookCreateMove();
-
+	CAnimatableSceneObjectDesc::UninstallRendererHook();
 
 	return 1;
 	std::thread([]() {ReadEntititesThread();}).detach();
