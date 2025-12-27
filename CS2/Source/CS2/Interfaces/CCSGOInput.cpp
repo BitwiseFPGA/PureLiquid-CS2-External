@@ -27,6 +27,8 @@ namespace CS2 {
 
         if (data->bForceSubtickViewAngle) {
             data->bForceSubtickViewAngle = false;
+            data->cmd = (uint64_t)cmd;
+
             /*auto pHistoryBase = *reinterpret_cast<uintptr_t*>(reinterpret_cast<uintptr_t>(cmd) + 0x38);
             if (pHistoryBase) {
                 auto pHistoryCountBase = *reinterpret_cast<uintptr_t*>(pHistoryBase);
@@ -38,7 +40,6 @@ namespace CS2 {
                             CSGOInputHistoryEntryPB* pHistoryEntry = *reinterpret_cast<CSGOInputHistoryEntryPB**>(pHistoryBase + (0x8 * i));
                             if (pHistoryEntry) {
                                 if (pHistoryEntry->pViewCmd) {
-                                    data->cmd = (uint64_t)cmd;
 
                                     pHistoryEntry->pViewCmd->angValue.x = data->vViewAnglesToSet.x;
                                     pHistoryEntry->pViewCmd->angValue.y = data->vViewAnglesToSet.y;
