@@ -1,9 +1,9 @@
 # Pure Liquid CS2
 
-## *Advanced External Base For Counter Strike 2 Including TraceShape visibility check*  
+## *Advanced External Base For Counter Strike 2 Including TraceShape visibility check, CreateMove Hook for autofire/ Silentaim and Chams*  
 
 ---
-![CS2 Chams Demo](https://img.youtube.com/vi/lRgEfxrMk-8/maxres2.jpg)
+![CS2 Chams Demo](https://raw.githubusercontent.com/xsip/PureLiquid-CS2-External/refs/heads/main/chams-preview.png)
 ---
 
 ## Overview
@@ -29,6 +29,7 @@ The project demonstrates:
 🎯 **Generated SDK** - Fully generated SDK    
 🎯 **External Aimbot** - with TraceShape Visibility Check     
 🎯 **External CreateMove Hook** - for AImbot Autoshoot and in the feature silent aim  
+🎯 **External CAnimatableSceneObjectDesc Hook** - for External Chams  
 
 ---
 
