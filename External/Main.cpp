@@ -6,6 +6,9 @@
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
 
+
+
+
 namespace Globals {
 	Process proc{ "cs2.exe" };
 }
@@ -89,9 +92,12 @@ int main() {
 		if (!GetAsyncKeyState(VK_LSHIFT)) {
 			Sleep(500);
 			continue;
+			
 		}
+
+		Sleep(100);
 		// I::pPanoramaUIEngine->GetCUIEngineSource2()->RunScript("$.Msg(\"Hello, world123!\");"); // Execute Script
-		printf("CMD: 0x%p\n", I::pCsGoInput->GetExecutionData().cmd);
+		// printf("CMD: 0x%p\n", I::pCsGoInput->GetExecutionData().cmd);
 
 	}
 

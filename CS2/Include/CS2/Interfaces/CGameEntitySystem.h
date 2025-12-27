@@ -32,7 +32,7 @@ namespace CS2 {
         inline static Entity vEntityList[65]{};
 
         template< typename T = void>
-        T* GetEntityByIndex(int entityIdx)
+        T* GetEntityByIndex(int entityIdx, bool bRead = true)
         {
             if (entityIdx < 0 || entityIdx > 0x7FFE)
                 return nullptr;
@@ -56,7 +56,7 @@ namespace CS2 {
             if ((storedIndex & 0x7FFF) != entityIdx)
                 return nullptr;
 
-            uintptr_t entityPtr = ::Globals::proc.ReadDirect<uintptr_t>(entry);
+            uintptr_t entityPtr = bRead ? ::Globals::proc.ReadDirect<uintptr_t>(entry) : entry;
             return reinterpret_cast<T*>(entityPtr);
         }
 

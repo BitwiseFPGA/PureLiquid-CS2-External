@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 // used: std::is_integral_v
 #include <type_traits>

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifdef MATH_DEFINITION
 #define MATH_API __declspec(dllexport)

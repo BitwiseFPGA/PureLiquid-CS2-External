@@ -34,6 +34,7 @@ Aimbot::FOVResult Aimbot::GetTargetFOVAndDistance(
 void Aimbot::Run() {
 
 
+    auto pLocalController = CS2::CGameEntitySystem::vEntityList[1].m_pController;
     auto pLocalPawn = CS2::CGameEntitySystem::vEntityList[1].m_pPawn;
     
     Vector vecView = pLocalPawn->m_vecViewOffset;
@@ -119,11 +120,13 @@ void Aimbot::Run() {
 
             if (!CS2::I::pGameTraceManager->IsPlayerVisible(pLocalPawn, bestTarget.entity->m_pPawn))
                 return;
-       
+
             auto aimAngle = (boneMatrix.at(targetBoneIdx).GetOrigin() - vLocalPos).RelativeAngle();
             aimAngle.ClampAngle();
+            CS2::I::pCsGoInput->SetSubTickAngle({ aimAngle.x,aimAngle.y,aimAngle.z });
+
+
             // CS2::I::pCsGoInput->vViewAngles = aimAngle;
-            CS2::I::pCsGoInput->SetSubTickAngle({ aimAngle.x,aimAngle.y,aimAngle.z});
             if (bAuthoShoot)
                 CS2::I::pCsGoInput->Attack();
 
