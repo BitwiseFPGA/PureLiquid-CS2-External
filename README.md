@@ -34,6 +34,7 @@ The project demonstrates:
 🎯 **External Aimbot** - with TraceShape Visibility Check     
 🎯 **External CreateMove Hook** - for AImbot Autoshoot and in the feature silent aim  
 🎯 **External CAnimatableSceneObjectDesc Hook** - for External Chams  
+🎯 **External CUIEngineSource2** - Run script in Context of a panel or just standalone  
 
 ---
 
@@ -182,6 +183,22 @@ int main() {
 		// CAnimatableSceneObjectDesc::SetChamsEnabled(true); // Enable/ Disable Materials
 	}
 	CAnimatableSceneObjectDesc::UninstallRendererHook(); // Uninstall hook at exit!
+}
+
+```
+
+## External RunScript Usage:
+
+```c++
+
+int main() {
+	
+	I::Initialize();
+	while (!GetAsyncKeyState(VK_DELETE)) {
+		if (GetAsyncKeyState(VK_LSHIFT)) {
+			I::pPanoramaUIEngine->GetCUIEngineSource2()->RunScript("$.Msg(\"Hello, world123!\");"); // Will output "Hello, World123" in the console.
+		}
+	}
 }
 
 ```
