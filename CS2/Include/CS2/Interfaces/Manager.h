@@ -10,6 +10,7 @@ namespace CS2 {
 	class CGameResourceService;
 	class CMaterialSystem2;
 	class CCSGOInput;
+	class CPanoramaUIEngine;
 
 	class CInterfaceManager {
 	private:
@@ -18,6 +19,7 @@ namespace CS2 {
 
 	public:
 		inline static CGameResourceService* pGameResourceService = nullptr;
+		inline static CPanoramaUIEngine* pPanoramaUIEngine = nullptr;
 
 		inline static CGameTraceManager* pGameTraceManager = nullptr;
 		inline static CCSGOInput* pCsGoInput = nullptr;
@@ -49,6 +51,7 @@ namespace CS2 {
 
 			pGameResourceService = CreateInterface<CGameResourceService>("engine2.dll", "GameResourceServiceClientV001");
 			pMaterialSystem = CreateInterface<CMaterialSystem2>("materialsystem2.dll", "VMaterialSystem2_001");
+			pPanoramaUIEngine = CreateInterface<CPanoramaUIEngine>("panorama.dll", "PanoramaUIEngine001");
 
 
 			LogAll();
@@ -57,6 +60,7 @@ namespace CS2 {
 		inline static void LogAll() {
 			printf("[+] Interfaces\n");
 			printf("[+] CGameResourceService: 0x%p\n", pGameResourceService);
+			printf("[+] CPanoramaUIEngine: 0x%p\n", pPanoramaUIEngine);
 			printf("[+] CGameTraceManager: 0x%p\n", pGameTraceManager);
 			printf("[+] CMaterialSystem2: 0x%p\n", pMaterialSystem);
 			printf("[+] CCSGOInput: 0x%p\n\n", pCsGoInput);

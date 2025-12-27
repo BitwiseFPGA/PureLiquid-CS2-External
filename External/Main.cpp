@@ -90,6 +90,7 @@ int main() {
 			Sleep(500);
 			continue;
 		}
+		// I::pPanoramaUIEngine->GetCUIEngineSource2()->RunScript("$.Msg(\"Hello, world123!\");"); // Execute Script
 		printf("CMD: 0x%p\n", I::pCsGoInput->GetExecutionData().cmd);
 
 	}

@@ -5,3 +5,5 @@
 #include <CS2/Interfaces/CGameTraceManager.h>
 #include <CS2/Interfaces/CCSGOInput.h>
 #include <CS2/Interfaces/CMaterialSystem2.h>
+#include <CS2/Interfaces/CPanoramaUIEngine.h>
+#include <CS2/Interfaces/CUIEngineSource2.h>

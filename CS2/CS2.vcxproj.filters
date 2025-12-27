@@ -60,6 +60,12 @@
     <ClInclude Include="Include\CS2\ExtendedSDK\scenesystem\CBaseSceneData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CS2\Interfaces\CUIEngineSource2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CS2\Interfaces\CPanoramaUIEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CS2\Interfaces\CGameTraceManager.cpp">
@@ -81,6 +87,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\CS2\ExtendedSDK\scenesystem\CAnimatableSceneObjectDesc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CS2\Interfaces\CUIEngineSource2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CS2\Interfaces\CPanoramaUIEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
