@@ -123,6 +123,66 @@ int main() {
 }
 
 ```
+
+---
+
+## External CreateMove hook Usage:
+
+```c++
+
+int main() {
+	
+	I::Initialize();
+	I::pCsGoInput->HookCreateMove();
+	while (!GetAsyncKeyState(VK_DELETE)) {
+		if (GetAsyncKeyState(VK_LSHIFT)) {
+			I::pCsGoInput->Attack(); // Writes Attack in CreateMove
+		}
+	}
+	I::pCsGoInput->UnhookCreateMove(); // Unhook on shutdown
+}
+
+```
+
+---
+
+## External Chams Usage:
+
+```c++
+
+int main() {
+	
+	I::Initialize();
+	// have a look at GetLatexChams and create your own if you wish to
+	auto hLatexChamsMaterial = I::pMaterialSystem->CreateMaterial(CMaterialSystem2::GetLatexChams(), "LatexChamsMaterial");
+
+	if (!hLatexChamsMaterial) {
+		printf("Couldn't create Material!!\n");
+		return 0;
+	}
+
+	if (!CAnimatableSceneObjectDesc::InstallRendererHook(nullptr)) { // nullptr could be replaced by hLatexChamsMaterial to set it directly
+		printf("Error Installing CAnimatableSceneObjectDesc hook!!\n");
+		return 0;
+	}
+
+
+	CAnimatableSceneObjectDesc::SetChamsColor(0, 35, 255, 255);
+	CAnimatableSceneObjectDesc::SetChamsMaterial(hLatexChamsMaterial);
+	CAnimatableSceneObjectDesc::SetChamsEnabled(true);
+
+	while (!GetAsyncKeyState(VK_DELETE)) {
+		
+		// CAnimatableSceneObjectDesc::SetChamsColor(0, 35, 255, 255); Change color
+		// CAnimatableSceneObjectDesc::SetChamsMaterial(hLatexChamsMaterial); // Change Material ( you need to call CreateMaterial first )
+		// CAnimatableSceneObjectDesc::SetChamsEnabled(true); // Enable/ Disable Materials
+	}
+	CAnimatableSceneObjectDesc::UninstallRendererHook(); // Uninstall hook at exit!
+}
+
+```
+
+
 ---
 
 ## Building
