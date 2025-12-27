@@ -1,6 +1,23 @@
 # Pure Liquid CS2 [Watch Preview on YouTube](https://www.youtube.com/watch?v=S9A8UnHnU7Y)
 
 ## *Advanced External Base For Counter Strike 2 Including TraceShape visibility check, CreateMove Hook for autofire/ Silentaim and Chams*  
+---
+
+## Features
+
+✨ **Authentic Visibility Checking** - Uses CS2's own TraceShape function for accurate line-of-sight detection  
+✨ **External Interface Usage** - Feels like an internal!  
+🎯 **External Operation** - No DLL injection required, operates entirely from external process  
+🔧 **Real-time Entity Tracking** - Background thread continuously monitors all player entities  
+📊 **Dynamic Pattern Scanning** - Automatic function discovery via IDA-style signatures  
+🎯 **External CGameEntitySystem** - Resolve Entities easily  
+🎯 **Generated SDK** - Fully generated SDK    
+🎯 **External Aimbot** - with TraceShape Visibility Check     
+🎯 **External CreateMove Hook** - for AImbot Autoshoot and in the feature silent aim  
+🎯 **External CAnimatableSceneObjectDesc Hook** - for External Chams  
+🎯 **External CUIEngineSource2** - Run script in Context of a panel or just standalone  
+
+---
 
 ---
 ![CS2 Chams Demo](https://raw.githubusercontent.com/xsip/PureLiquid-CS2-External/refs/heads/main/chams-preview.png)
@@ -21,22 +38,6 @@ The project demonstrates:
 
 ---
 
-
-## Features
-
-✨ **Authentic Visibility Checking** - Uses CS2's own TraceShape function for accurate line-of-sight detection  
-✨ **External Interface Usage** - Feels like an internal!  
-🎯 **External Operation** - No DLL injection required, operates entirely from external process  
-🔧 **Real-time Entity Tracking** - Background thread continuously monitors all player entities  
-📊 **Dynamic Pattern Scanning** - Automatic function discovery via IDA-style signatures  
-🎯 **External CGameEntitySystem** - Resolve Entities easily  
-🎯 **Generated SDK** - Fully generated SDK    
-🎯 **External Aimbot** - with TraceShape Visibility Check     
-🎯 **External CreateMove Hook** - for AImbot Autoshoot and in the feature silent aim  
-🎯 **External CAnimatableSceneObjectDesc Hook** - for External Chams  
-🎯 **External CUIEngineSource2** - Run script in Context of a panel or just standalone  
-
----
 
 ## How It Works
 
