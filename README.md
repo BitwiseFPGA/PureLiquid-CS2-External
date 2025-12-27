@@ -143,6 +143,7 @@ int main() {
 	while (!GetAsyncKeyState(VK_DELETE)) {
 		if (GetAsyncKeyState(VK_LSHIFT)) {
 			I::pCsGoInput->Attack(); // Writes Attack in CreateMove
+   			I::pCsGoInput->SetSubTickAngle({ aimAngle.x,aimAngle.y,aimAngle.z}); // writes angle in createmove cmd
 		}
 	}
 	I::pCsGoInput->UnhookCreateMove(); // Unhook on shutdown
