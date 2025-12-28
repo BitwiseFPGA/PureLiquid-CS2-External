@@ -4,7 +4,7 @@
 #include <Source2/CStrongHandle.h>
 #include <GlobalData/Include.h>
 #include <string>
-
+#include <array>
 using namespace Globals;
 
 
@@ -48,16 +48,33 @@ namespace CS2 {
         }
 
 
+
+
         if (data->bChamsEnabled) {
 
+            bool isVisible = false;
+
+            
+            uint32_t handleValue = *reinterpret_cast<uint32_t*>(&a3->sceneObject->m_hOwner);
+            if (handleValue) {
+                uint32_t entityIndex = handleValue & 0x7FFF;
+                for (size_t i = 0; i < MAX_VISIBLE_PLAYERS; i++) {
+                    uint32_t idx = data->mVisiblePawnIndexes[i];
+                    if (idx == 0) break;
+                    if (idx == entityIndex) {
+                        isVisible = true;
+                        break;
+                    }
+                }
+            }
             for (int i = 0; i < a4; ++i)
             {
                 auto scene = &a3[i];
                 if (scene) {
-                    scene->r = data->r;
-                    scene->g = data->g;
-                    scene->b = data->b;
-                    scene->a = data->a;
+                    scene->r = isVisible ? data->r_visible : data->r;
+                    scene->g = isVisible ? data->g_visible : data->g;
+                    scene->b = isVisible ? data->b_visible : data->b;
+                    scene->a = isVisible ? data->a_visible : data->a;
                     if (data->hMaterialToUse) {
                         scene->material = data->hMaterialToUse->pData;
                         scene->material2 = data->hMaterialToUse->pData;
@@ -142,6 +159,13 @@ namespace CS2 {
         data.g = 255;
         data.b = 255;
         data.a = 25;
+
+        data.r_visible = 0;
+        data.g_visible = 255;
+        data.b_visible = 0;
+        data.a_visible = 255;
+
+        memset(data.mVisiblePawnIndexes, 0, sizeof(data.mVisiblePawnIndexes));
 
         data.pStrstr = reinterpret_cast<uintptr_t>(GetProcAddress(GetModuleHandleA("ucrtbase.dll"), "strstr"));
 
@@ -359,5 +383,51 @@ namespace CS2 {
 
     }
 
+    void CAnimatableSceneObjectDesc::SetVisibleChamsColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a, bool bLog)
+    {
+        if (!m_pDataRemote) return;
+
+        proc.Write<uint8_t>(
+            reinterpret_cast<uintptr_t>(m_pDataRemote) +
+            offsetof(CAnimatableSceneObjectDescRenderHookData, r_visible),
+            r
+        );
+
+        proc.Write<uint8_t>(
+            reinterpret_cast<uintptr_t>(m_pDataRemote) +
+            offsetof(CAnimatableSceneObjectDescRenderHookData, g_visible),
+            g
+        );
+
+        proc.Write<uint8_t>(
+            reinterpret_cast<uintptr_t>(m_pDataRemote) +
+            offsetof(CAnimatableSceneObjectDescRenderHookData, b_visible),
+            b
+        );
+
+        proc.Write<uint8_t>(
+            reinterpret_cast<uintptr_t>(m_pDataRemote) +
+            offsetof(CAnimatableSceneObjectDescRenderHookData, a_visible),
+            a
+        );
+
+        if (bLog)
+            printf("[+] Visible Chams Color: %i %i %i %i\n", r, g, b, a);
+    }
+
+    void CAnimatableSceneObjectDesc::UpdateVisiblePawnIndexes(const uint32_t* indexes, size_t count)
+    {
+        if (!m_pDataRemote) return;
+
+        std::vector<uint32_t> indexVec(indexes, indexes + count);
+
+        proc.WriteArray(
+            reinterpret_cast<uintptr_t>(m_pDataRemote) +
+            offsetof(CAnimatableSceneObjectDescRenderHookData, mVisiblePawnIndexes),
+            indexVec
+        );
+
+       // printf("[+] Updated %zu visible pawn indexes\n", count);
+    }
 
 }

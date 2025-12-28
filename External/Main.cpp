@@ -8,8 +8,8 @@
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
 
-
-
+#define USE_CHAMS
+#define USE_CREATE_MOVE
 namespace Globals {
 	Process proc{ "cs2.exe" };
 }
@@ -22,7 +22,12 @@ void ReadEntititesThread() {
 	int bone = 0;
 	auto pGameEntitySystem = CS2::I::pGameResourceService->GetGameEntitySystem();
 
+	auto lpEntity = &CS2::CGameEntitySystem::vEntityList[1];
 	while (true) {
+#ifdef USE_CHAMS_VISIBILITY_BASED 
+		std::array<uint32_t, MAX_VISIBLE_PLAYERS> visibleIndexes{};
+		size_t visibleCount = 0;
+#endif
 		for (int i = 1; i < 65; i++) {
 
 			bool isLocalPlayer = i == 1;
@@ -49,13 +54,37 @@ void ReadEntititesThread() {
 
 			auto health = pPawn->m_iHealth;
 			entity->m_bIsAlive = health > 0 && health <= pPawn->m_iMaxHealth;
+			entity->m_iPawnIndex = pController->m_hPawn.GetEntryIndex();
 			entity->m_bIsValid = true;
 			entity->m_bIsLocalPlayer = isLocalPlayer;
-			entity->m_iPawnIndex = pController->m_hPawn.GetEntryIndex();
 			entity->m_pController = pController;
 			entity->m_pPawn = pPawn;
+			
+			if (!lpEntity || isLocalPlayer)
+				continue;
+
+#ifdef USE_CHAMS_VISIBILITY_BASED 
+			bool bIsVisible = false;
+			if (entity->m_bIsAlive) {
+				bIsVisible = I::pGameTraceManager->IsPlayerVisible(lpEntity->m_pPawn, entity->m_pPawn);
+			}
+
+
+			entity->m_bIsVisible = bIsVisible;
+
+
+			if (entity->m_bIsVisible) {
+				visibleIndexes[visibleCount++] = entity->m_iPawnIndex;
+			}
+#else
+			entity->m_bIsVisible = false;
+#endif
+
 
 		}
+#ifdef USE_CHAMS_VISIBILITY_BASED 
+		CAnimatableSceneObjectDesc::UpdateVisiblePawnIndexes(visibleIndexes.data(), visibleCount);
+#endif
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 	}
 }
@@ -83,11 +112,14 @@ int main() {
 	CAnimatableSceneObjectDesc::SetChamsMaterial(hLatexChamsMaterial);
 	CAnimatableSceneObjectDesc::SetChamsEnabled(true);
 #endif
+
+	std::thread([]() {ReadEntititesThread();}).detach();
+
+#ifdef USE_CREATE_MOVE
 	I::pCsGoInput->HookCreateMove();
 	
-	std::thread([]() {ReadEntititesThread();}).detach();
 	std::thread([]() {Aimbot::AimbotThread();}).detach();
-
+#endif
 	while (!GetAsyncKeyState(VK_DELETE)) {
 
 		if (!GetAsyncKeyState(VK_LSHIFT)) {
@@ -102,7 +134,9 @@ int main() {
 
 	}
 
+#ifdef USE_CREATE_MOVE
 	I::pCsGoInput->UnhookCreateMove();
+#endif
 #ifdef USE_CHAMS
 	CAnimatableSceneObjectDesc::UninstallRendererHook();
 #endif
