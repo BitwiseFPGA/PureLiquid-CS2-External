@@ -10,6 +10,7 @@
 
 #define USE_CHAMS
 #define USE_CREATE_MOVE
+
 namespace Globals {
 	Process proc{ "cs2.exe" };
 }

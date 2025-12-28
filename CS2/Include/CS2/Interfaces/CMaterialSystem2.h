@@ -50,6 +50,32 @@ namespace CS2 {
                 g_tMetalness = resource:"materials/default/default_metal_tga_8fbc2820.vtex"
 			})";
         }
+        static std::string GetXrayInvisibleChams() {
+            return  R"(<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+		{
+			shader = "csgo_effects.vfx"
+			F_ADDITIVE_BLEND = 1
+			F_BLEND_MODE = 1               
+			F_TRANSLUCENT = 1
+			F_DISABLE_Z_BUFFERING = 1
+
+			g_flOpacityScale = 0.45
+			g_flFresnelExponent = 0.75
+			g_flFresnelFalloff = 1.0
+			g_flFresnelMax = 0.0
+			g_flFresnelMin = 1.0
+			g_flToolsVisCubemapReflectionRoughness = 1.0
+			g_flBeginMixingRoughness = 1.0
+
+			g_tColor = resource:"materials/default/default_mask_tga_fde710a5.vtex"
+			g_tMask1 = resource:"materials/default/default_mask_tga_fde710a5.vtex"
+			g_tMask2 = resource:"materials/default/default_mask_tga_fde710a5.vtex"
+			g_tMask3 = resource:"materials/default/default_mask_tga_fde710a5.vtex"
+			g_tSceneDepth = resource:"materials/default/default_mask_tga_fde710a5.vtex"
+
+			g_vColorTint = [ 1.000000, 1.000000, 1.000000, 0 ]
+		})";
+        };
 
         ::Source2::CStrongHandle<CMaterial2>* CreateMaterial(std::string szMaterial, std::string szMatName);
     };

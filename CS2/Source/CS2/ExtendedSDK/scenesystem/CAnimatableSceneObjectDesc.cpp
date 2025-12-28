@@ -60,7 +60,7 @@ namespace CS2 {
                 uint32_t entityIndex = handleValue & 0x7FFF;
                 for (size_t i = 0; i < MAX_VISIBLE_PLAYERS; i++) {
                     uint32_t idx = data->mVisiblePawnIndexes[i];
-                    if (idx == 0) break;
+                    // if (idx == 0) break;
                     if (idx == entityIndex) {
                         isVisible = true;
                         break;
