@@ -18,7 +18,7 @@
 #include <SDK/client/CSWeaponSilencerType.hpp>
 #include <SDK/client/CFiringModeFloat.hpp>
 #include <SDK/client/CFiringModeInt.hpp>
-
+#include <SDK/resourcesystem/InfoForResourceTypeCNmSkeleton.hpp>
 
 
 

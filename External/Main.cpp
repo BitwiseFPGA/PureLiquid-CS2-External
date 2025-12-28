@@ -1,3 +1,5 @@
+
+#undef USE_CHAMS
 #include <External/Include.h>
 #include <Source2/CBaseHandle.h>
 #include <CS2/SDK/client/CCSPlayerController.hpp>
@@ -5,7 +7,6 @@
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
-
 
 
 

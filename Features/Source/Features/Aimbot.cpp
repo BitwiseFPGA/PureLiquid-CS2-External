@@ -3,6 +3,12 @@
 #include <CS2/Interfaces/Include.h>
 #include <CS2/Interfaces/CGameTraceManager.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
+#include <CS2/SDK/client/CCSPlayerController.hpp>
+#include <CS2/SDK/client/C_BasePlayerWeapon.hpp>
+#include <CS2/SDK/client/CPlayer_WeaponServices.hpp>
+#include <CS2/Offsets/client/C_BaseEntity.hpp>
+#include <CS2/Offsets/client/CCSWeaponBaseVData.hpp>
+#include <CS2/SDK/client/CCSWeaponBaseVData.hpp>
 #include <Math/Vector.h>
 #include <Math/QAngle.h>
 #include <Math/Matrix.h>
@@ -11,8 +17,8 @@
 
 #include <Source2/CUtlVector.h>
 #include <algorithm>
+using namespace Globals;
 
-QAngle oldPunch{};
 
 Aimbot::FOVResult Aimbot::GetTargetFOVAndDistance(
     const Vector3& eyePos,
@@ -37,6 +43,10 @@ void Aimbot::Run() {
     auto pLocalController = CS2::CGameEntitySystem::vEntityList[1].m_pController;
     auto pLocalPawn = CS2::CGameEntitySystem::vEntityList[1].m_pPawn;
     
+    auto pLocalWeapon = CS2::I::pGameResourceService->GetGameEntitySystem()->GetEntityByIndex<CS2::client::C_BasePlayerWeapon>(pLocalPawn->m_pWeaponServices->m_hActiveWeapon.GetEntryIndex());
+    auto pWeaponVData = proc.ReadDirect<CS2::client::CCSWeaponBaseVData*>(reinterpret_cast<uintptr_t>(pLocalWeapon) + CS2::SchemaOffsets::client::C_BaseEntity::m_nSubclassID + 0x8);
+    auto weaponType = pWeaponVData->m_WeaponType;
+
     Vector vecView = pLocalPawn->m_vecViewOffset;
     Vector vLocalPos = pLocalPawn->m_vOldOrigin + vecView;
     
@@ -124,15 +134,28 @@ void Aimbot::Run() {
             auto aimAngle = (boneMatrix.at(targetBoneIdx).GetOrigin() - vLocalPos).RelativeAngle();
             aimAngle.ClampAngle();
             CS2::I::pCsGoInput->SetSubTickAngle({ aimAngle.x,aimAngle.y,aimAngle.z });
-
+            // printf("Weapon: 0x%p | %i\n", pLocalWeapon);
 
             // CS2::I::pCsGoInput->vViewAngles = aimAngle;
-            if (bAuthoShoot)
-                CS2::I::pCsGoInput->Attack();
+            if (bAuthoShoot) {
 
-            if (!bestTarget.entity->m_bIsAlive)
+                if (weaponType == CS2::client::WEAPONTYPE_PISTOL) {
+                    if (pLocalWeapon->m_nNextPrimaryAttackTick <= pLocalController->m_nTickBase) {
+                        CS2::I::pCsGoInput->Attack();
+
+                    }
+
+                } else {
+                    CS2::I::pCsGoInput->Attack();
+                }
+            }
+
+            if (!bestTarget.entity->m_bIsAlive) {
                 ResetTarget();
+            }
         }
+    }
+    else {
     }
 }
 

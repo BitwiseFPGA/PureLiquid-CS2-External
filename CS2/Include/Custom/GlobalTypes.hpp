@@ -53,6 +53,24 @@ namespace Client {
 }
 
 namespace GlobalTypes {
+
+
+	template <typename T1, typename T2>
+	struct CUtlOrderedMap{
+		char pad[0x28];
+	};
+	
+	template <typename T>
+	struct CWeakHandle {
+		char pad[0x18];
+	};
+
+	template <typename T>
+	struct CResourceNameTyped {
+		char pad[0xe0];
+	};/*CResourceNameTyped< CWeakHandle< InfoForResourceTypeCCompositeMaterialKit > >*/ // = char[0xe0]; //  Schema_Atomic
+
+
 	using Vector2D /*Vector2D*/ = char[0x8]; //  Schema_Atomic
 	using CUtlString /*CUtlString*/ = ::Source2::CUtlString; // char[0x8]; //  Schema_Atomic
 	using CGlobalSymbol = uintptr_t;
@@ -147,7 +165,9 @@ namespace GlobalTypes {
 
 	// using CNetworkedQuantizedFloat /*CNetworkedQuantizedFloat*/ = char[0x18]; //  Schema_Atomic
 	// using CSplitScreenSlot /*CSplitScreenSlot*/ = char[0x4]; //  Schema_Atomic
-	using CAttachmentNameSymbolWithStorage /*CAttachmentNameSymbolWithStorage*/ = char[0x20]; //  Schema_Atomic
+	struct CAttachmentNameSymbolWithStorage{
+		char pad[0x20];
+	};/*CAttachmentNameSymbolWithStorage*/ // = char[0x20]; //  Schema_Atomic
 	// using CEntityHandle /*CEntityHandle*/ = char[0x4]; //  Schema_Atomic
 	using CEntityHandle /*CEntityHandle*/ = uint32_t; //  Schema_Atomic
 	// using CTransformWS /*CTransformWS*/ = char[0x20]; //  Schema_Atomic
