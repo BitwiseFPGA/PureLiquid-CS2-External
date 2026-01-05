@@ -5,6 +5,7 @@
 #include <CS2/SDK/client/CCSPlayerController.hpp>
 #include <CS2/ExtendedSDK/scenesystem/CAnimatableSceneObjectDesc.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
+#include <CS2/ExtendedSDK/resourcesystem/CModel_Imp.h>
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
 #include <Features/CModelChanger.h>
@@ -96,6 +97,23 @@ int main() {
 	SetConsoleTitle("PureLiquid CS2 External");
 	
 	I::Initialize();
+	/*auto pGes = I::pGameResourceService->GetGameEntitySystem();
+
+	auto lpC = pGes->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
+	auto lpP = pGes->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpC->m_hPawn.GetEntryIndex());
+	while (true) {
+
+		if (GetAsyncKeyState(VK_LSHIFT)) {
+			auto pModel = lpP->GetCModel_Imp();
+			printf("Model: 0x%p\n", pModel);
+			printf("ModelName: %s\n", pModel->GetModelName().c_str());
+			printf("Bones: %i\n", pModel->m_iBoneCount);
+			printf("RenderMesh(1): 0x%p\n", pModel->GetRenderMesh(1));
+			Sleep(1000);
+		}
+		// models/inventory_items/dogtags.vmdl
+	}
+	return 1;*/
 
 #ifdef USE_CHAMS
 	auto hLatexChamsMaterial = I::pMaterialSystem->CreateMaterial(CMaterialSystem2::GetLatexChams(), "LatexChamsMaterial");
