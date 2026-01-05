@@ -9,6 +9,7 @@
 #include <CS2/ExtendedSDK/resourcesystem/CModel_Imp.h>
 #include <CS2/SDK/modellib/CRenderMesh.hpp>
 #include <CS2/SDK/modellib/CRenderSkeleton.hpp>
+#include <CS2/SDK/modellib/RenderSkeletonBone_t.hpp>
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
 #include <Features/CModelChanger.h>
@@ -109,13 +110,23 @@ int main() {
 		if (GetAsyncKeyState(VK_LSHIFT)) {
 			auto pModel = lpP->GetCModel_Imp();
 			auto pRenderMesh0 = pModel->GetRenderMesh(0);
-
+			auto pSkeleton = pRenderMesh0->m_skeleton;
+			auto pBonesUtlList = pSkeleton->m_bones;
 			printf("Model: 0x%p\n", pModel);
 			printf("\tModelName: %s\n", pModel->GetModelName().c_str());
 			printf("\tBones: %i\n\n", pModel->m_iBoneCount);
 			printf("RenderMesh(0): 0x%p\n", pRenderMesh0);
-			printf("\tm_skeleton address: 0x%p\n", pRenderMesh0->m_skeleton);
-			printf("\tm_Skeleton size: %i\n", pRenderMesh0->m_skeleton->m_bones->GetSize());
+			printf("\tm_skeleton: 0x%p\n", pRenderMesh0->m_skeleton);
+			printf("\tm_bones: 0x%p\n", pBonesUtlList);
+			printf("\tm_bones size: %i\n", pBonesUtlList->GetSize());
+
+			auto ptrList = pBonesUtlList->GetPtrList();
+			std::vector<CS2::modellib::RenderSkeletonBone_t*> pVec{};
+			for (int i = 0; i < ptrList.size(); i++) {
+				auto entry = reinterpret_cast<CS2::modellib::RenderSkeletonBone_t*>(ptrList[i]);
+				pVec.push_back(entry);
+				printf("\t\tBone: %s\n", entry->m_boneName->Get().c_str());
+			}
 			Sleep(1000);
 		}
 		// models/inventory_items/dogtags.vmdl
