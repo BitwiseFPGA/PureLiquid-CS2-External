@@ -12,12 +12,11 @@
 
 #include <SDK/modellib/CRenderSkeleton.hpp>
 #include <SDK/modellib/DynamicMeshDeformParams_t.hpp>
-
+#include <SDK/modellib/CSceneObjectData.hpp>
 
 
 namespace CS2 {
 	namespace modellib {
-		class CSceneObjectData;
 		class CBaseConstraint;
 		class CRenderGroom;
 	}

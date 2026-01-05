@@ -3,6 +3,7 @@
 #include <External/Include.h>
 #include <Source2/CBaseHandle.h>
 #include <CS2/SDK/client/CCSPlayerController.hpp>
+#include <CS2/SDK/modellib/CRenderMesh.hpp>
 #include <CS2/ExtendedSDK/scenesystem/CAnimatableSceneObjectDesc.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
 #include <CS2/ExtendedSDK/resourcesystem/CModel_Imp.h>

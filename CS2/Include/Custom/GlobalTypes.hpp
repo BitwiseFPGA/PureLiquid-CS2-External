@@ -161,6 +161,11 @@ namespace GlobalTypes {
 		char pad[0x10];
 	};
 
+	template <typename>
+	struct CUtlLeanVector {
+		char pad[0x10];
+	};
+
 	using QuaternionStorage /*QuaternionStorage*/ = char[0x10]; //  Schema_FixedArray
 	using FourVectors /*FourVectors*/ = char[0x30]; //  Schema_FixedArray
 	template <typename T>
