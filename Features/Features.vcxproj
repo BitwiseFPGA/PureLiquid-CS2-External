@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -140,9 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Include\Features\Aimbot.h" />
+    <ClInclude Include="Include\Features\CModelChanger.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Features\Aimbot.cpp" />
+    <ClCompile Include="Source\Features\CModelChanger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CS2\CS2.vcxproj">

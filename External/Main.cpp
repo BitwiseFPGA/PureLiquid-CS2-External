@@ -7,10 +7,11 @@
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
+#include <Features/CModelChanger.h>
 
 #define USE_CHAMS
 #define USE_CREATE_MOVE
-
+#define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
 	Process proc{ "cs2.exe" };
 }
@@ -95,7 +96,7 @@ int main() {
 	SetConsoleTitle("PureLiquid CS2 External");
 	
 	I::Initialize();
-	
+
 #ifdef USE_CHAMS
 	auto hLatexChamsMaterial = I::pMaterialSystem->CreateMaterial(CMaterialSystem2::GetLatexChams(), "LatexChamsMaterial");
 
