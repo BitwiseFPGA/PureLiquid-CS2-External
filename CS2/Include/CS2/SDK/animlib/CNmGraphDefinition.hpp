@@ -14,6 +14,9 @@
 
 
 namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCNmSkeleton;
+	}
 	namespace animlib {
 		class ReferencedGraphSlot_t;
 		class ExternalGraphSlot_t;

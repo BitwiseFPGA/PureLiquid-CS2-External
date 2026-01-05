@@ -19,6 +19,15 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeIMaterial2;
+	}
+	namespace particles {
+		class FloatInputMaterialVariable_t;
+		class VecInputMaterialVariable_t;
+	}
+}
 
 
 using namespace GlobalTypes;

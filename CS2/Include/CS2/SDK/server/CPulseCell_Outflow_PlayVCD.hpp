@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCChoreoSceneResource;
+	}
+}
 
 
 using namespace GlobalTypes;

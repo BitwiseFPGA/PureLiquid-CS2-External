@@ -12,7 +12,6 @@
 
 #include <SDK/client/C_BaseFlex.hpp>
 #include <SDK/client/C_AttributeContainer.hpp>
-#include <SDK/client/AttachedModelData_t.hpp>
 
 
 
@@ -20,6 +19,7 @@ namespace CS2 {
 	namespace client {
 		class CBaseAnimGraph;
 		class C_BaseEntity;
+		class AttachedModelData_t;
 	}
 }
 

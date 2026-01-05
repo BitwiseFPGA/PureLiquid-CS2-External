@@ -15,6 +15,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeIParticleSystemDefinition;
+	}
+}
 
 
 using namespace GlobalTypes;

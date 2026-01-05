@@ -13,6 +13,15 @@
 
 
 
+namespace CS2 {
+	namespace modellib {
+		class CMaterialDrawDescriptor;
+		class CMeshletDescriptor;
+	}
+	namespace mathlib_extended {
+		class AABB_t;
+	}
+}
 
 
 using namespace GlobalTypes;

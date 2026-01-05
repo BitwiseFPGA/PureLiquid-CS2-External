@@ -16,6 +16,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCSequenceGroupData;
+	}
+}
 
 
 using namespace GlobalTypes;

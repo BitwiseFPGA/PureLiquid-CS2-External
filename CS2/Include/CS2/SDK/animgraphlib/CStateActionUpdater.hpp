@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace animgraphlib {
+		class CAnimActionUpdater;
+	}
+}
 
 
 using namespace GlobalTypes;

@@ -16,10 +16,14 @@
 namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulse_Chunk;
+		class CPulseCell_Base;
 		class CPulse_Variable;
 		class CPulse_PublicOutput;
+		class CPulse_InvokeBinding;
+		class CPulse_CallInfo;
 		class CPulse_Constant;
 		class CPulse_DomainValue;
+		class CPulse_BlackboardReference;
 		class CPulse_OutputConnection;
 	}
 }

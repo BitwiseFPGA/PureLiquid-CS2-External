@@ -11,10 +11,14 @@
 
 
 #include <SDK/client/C_BaseModelEntity.hpp>
-#include <SDK/resourcesystem/InfoForResourceTypeIMaterial2.hpp>
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeIMaterial2;
+	}
+}
 
 
 using namespace GlobalTypes;
@@ -22,8 +26,8 @@ namespace CS2 {
 	namespace client {
 		class C_EnvSky : public CS2::client::C_BaseModelEntity {
 		public:
-			PROPERTY(m_hSkyMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>*, 0xeb0);
-			PROPERTY(m_hSkyMaterialLightingOnly,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>*, 0xeb8);
+			PROPERTY(m_hSkyMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0xeb0);
+			PROPERTY(m_hSkyMaterialLightingOnly,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0xeb8);
 			PROPERTY(m_bStartDisabled,bool , 0xec0);
 			PROPERTY(m_vTintColor,GlobalTypes::Color , 0xec1);
 			PROPERTY(m_vTintColorLightingOnly,GlobalTypes::Color , 0xec5);

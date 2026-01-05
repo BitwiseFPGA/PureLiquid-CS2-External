@@ -13,6 +13,11 @@
 
 
 
+namespace CS2 {
+	namespace animlib {
+		class Event_t;
+	}
+}
 
 
 using namespace GlobalTypes;

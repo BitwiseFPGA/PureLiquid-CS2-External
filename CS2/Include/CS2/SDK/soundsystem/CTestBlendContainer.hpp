@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCVoiceContainerBase;
+	}
+}
 
 
 using namespace GlobalTypes;

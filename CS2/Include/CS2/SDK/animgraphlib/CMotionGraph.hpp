@@ -17,6 +17,7 @@
 namespace CS2 {
 	namespace animgraphlib {
 		class TagSpan_t;
+		class CMotionNode;
 	}
 }
 

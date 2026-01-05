@@ -16,6 +16,7 @@
 
 namespace CS2 {
 	namespace modellib {
+		class CConstraintSlave;
 		class CConstraintTarget;
 	}
 }

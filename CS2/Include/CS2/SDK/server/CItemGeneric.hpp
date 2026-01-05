@@ -17,6 +17,9 @@
 
 
 namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeIParticleSystemDefinition;
+	}
 	namespace server {
 		class CBaseFilter;
 		class CItemGenericTriggerHelper;

@@ -14,7 +14,7 @@
 
 
 namespace CS2 {
-	namespace �p��� {
+	namespace �pz� {
 		class char;
 	}
 }
@@ -35,13 +35,13 @@ namespace CS2 {
 			PROPERTY(m_szElementNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector<char*>>, 0x98);
 			PROPERTY(m_nElementUniqueID,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector<int32_t>>, 0xb0);
 			PROPERTY(m_nElementMask,GlobalTypes::CUtlVector< uint32 >, 0xc8);
-			PROPERTY(m_vectorCompressor,GlobalTypes::CUtlVector<�p���::CCompressor*>, 0xf8);
-			PROPERTY(m_quaternionCompressor,GlobalTypes::CUtlVector<�p���::CCompressor*>, 0x110);
-			PROPERTY(m_intCompressor,GlobalTypes::CUtlVector<�p���::CCompressor*>, 0x128);
-			PROPERTY(m_boolCompressor,GlobalTypes::CUtlVector<�p���::CCompressor*>, 0x140);
-			PROPERTY(m_colorCompressor,GlobalTypes::CUtlVector<�p���::CCompressor*>, 0x158);
-			PROPERTY(m_vector2DCompressor,GlobalTypes::CUtlVector<�p���::CCompressor*>, 0x170);
-			PROPERTY(m_vector4DCompressor,GlobalTypes::CUtlVector<�p���::CCompressor*>, 0x188);
+			PROPERTY(m_vectorCompressor,GlobalTypes::CUtlVector<�pz�::CCompressor*>, 0xf8);
+			PROPERTY(m_quaternionCompressor,GlobalTypes::CUtlVector<�pz�::CCompressor*>, 0x110);
+			PROPERTY(m_intCompressor,GlobalTypes::CUtlVector<�pz�::CCompressor*>, 0x128);
+			PROPERTY(m_boolCompressor,GlobalTypes::CUtlVector<�pz�::CCompressor*>, 0x140);
+			PROPERTY(m_colorCompressor,GlobalTypes::CUtlVector<�pz�::CCompressor*>, 0x158);
+			PROPERTY(m_vector2DCompressor,GlobalTypes::CUtlVector<�pz�::CCompressor*>, 0x170);
+			PROPERTY(m_vector4DCompressor,GlobalTypes::CUtlVector<�pz�::CCompressor*>, 0x188);
 			S2_PAD(0x1A0);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CCompressorGroup) == 0x1A0, "CCompressorGroup size should be 0x1A0");

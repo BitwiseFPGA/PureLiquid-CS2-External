@@ -29,6 +29,7 @@ namespace CS2 {
 		class CCSPlayer_RadioServices;
 		class CCSPlayer_DamageReactServices;
 		class CCSBot;
+		class PredictedDamageTag_t;
 	}
 }
 

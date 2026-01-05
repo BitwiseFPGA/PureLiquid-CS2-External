@@ -13,6 +13,12 @@
 
 
 
+namespace CS2 {
+	namespace animlib {
+		class NmBoneMaskSetDefinition_t;
+		class SecondarySkeleton_t;
+	}
+}
 
 
 using namespace GlobalTypes;

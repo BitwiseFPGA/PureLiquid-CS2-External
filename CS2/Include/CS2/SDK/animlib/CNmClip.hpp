@@ -16,6 +16,9 @@
 
 
 namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCNmSkeleton;
+	}
 	namespace animlib {
 		class NmCompressionSettings_t;
 		class NmFloatCurveCompressionSettings_t;

@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace client {
+		class SoundeventPathCornerPairNetworked_t;
+	}
+}
 
 
 using namespace GlobalTypes;

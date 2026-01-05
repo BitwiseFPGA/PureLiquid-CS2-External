@@ -13,7 +13,6 @@
 #include <SDK/client/C_BaseFlex.hpp>
 #include <SDK/modellib/AttachmentHandle_t.hpp>
 #include <SDK/client/WaterWakeMode_t.hpp>
-#include <SDK/client/C_EconWearable.hpp>
 
 
 
@@ -21,6 +20,7 @@
 using namespace GlobalTypes;
 namespace CS2 {
 	namespace client {
+		class C_EconWearable;
 		class C_BaseCombatCharacter : public CS2::client::C_BaseFlex {
 		public:
 			PROPERTY(m_hMyWearables,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_EconWearable>>, 0x1368);

@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace entity2 {
+		class CVariantDefaultAllocator;
+	}
+}
 
 
 using namespace GlobalTypes;

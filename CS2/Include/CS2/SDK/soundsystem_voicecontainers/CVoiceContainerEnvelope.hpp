@@ -15,6 +15,9 @@
 
 
 namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCVoiceContainerBase;
+	}
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerAnalysisBase;
 	}

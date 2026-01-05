@@ -20,6 +20,9 @@ namespace CS2 {
 		class CFlexController;
 		class CFlexRule;
 	}
+	namespace resourcesystem {
+		class InfoForResourceTypeCTextureBase;
+	}
 }
 
 

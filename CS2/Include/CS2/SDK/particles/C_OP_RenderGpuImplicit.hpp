@@ -15,6 +15,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeIMaterial2;
+	}
+}
 
 
 using namespace GlobalTypes;

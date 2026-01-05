@@ -19,6 +19,9 @@ namespace CS2 {
 		class AggregateMeshInfo_t;
 		class AggregateLODSetup_t;
 	}
+	namespace resourcesystem {
+		class InfoForResourceTypeCModel;
+	}
 }
 
 

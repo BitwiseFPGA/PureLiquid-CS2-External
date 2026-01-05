@@ -15,6 +15,11 @@
 
 
 
+namespace CS2 {
+	namespace server {
+		class CSPerRoundStats_t;
+	}
+}
 
 
 using namespace GlobalTypes;

@@ -17,6 +17,17 @@
 
 
 
+namespace CS2 {
+	namespace animgraphlib {
+		class CAnimParameterManagerUpdater;
+		class CAnimTagManagerUpdater;
+		class CAnimScriptManager;
+		class CStaticPoseCacheBuilder;
+	}
+	namespace modellib {
+		class CAnimSkeleton;
+	}
+}
 
 
 using namespace GlobalTypes;

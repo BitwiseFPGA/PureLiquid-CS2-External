@@ -11,7 +11,6 @@
 
 
 #include <SDK/client/CPlayerPawnComponent.hpp>
-#include <SDK/client/C_BasePlayerWeapon.hpp>
 
 
 

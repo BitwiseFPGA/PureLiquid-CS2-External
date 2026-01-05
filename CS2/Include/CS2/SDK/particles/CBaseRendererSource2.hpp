@@ -28,6 +28,11 @@
 
 
 
+namespace CS2 {
+	namespace particles {
+		class TextureGroup_t;
+	}
+}
 
 
 using namespace GlobalTypes;

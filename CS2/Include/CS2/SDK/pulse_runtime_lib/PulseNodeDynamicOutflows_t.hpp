@@ -13,6 +13,11 @@
 
 
 
+namespace CS2 {
+	namespace pulse_runtime_lib {
+		class DynamicOutflow_t;
+	}
+}
 
 
 using namespace GlobalTypes;

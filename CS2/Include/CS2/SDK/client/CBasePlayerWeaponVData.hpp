@@ -14,17 +14,19 @@
 #include <SDK/client/ItemFlagTypes_t.hpp>
 #include <SDK/client/AmmoIndex_t.hpp>
 #include <SDK/client/RumbleEffect_t.hpp>
-#include <SDK/client/WeaponSound_t.hpp>
-#include <SDK/resourcesystem/InfoForResourceTypeCModel.hpp>
-#include <SDK/resourcesystem/InfoForResourceTypeIParticleSystemDefinition.hpp>
-
 
 
 
 
 using namespace GlobalTypes;
 namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCModel;
+		class InfoForResourceTypeIParticleSystemDefinition;
+	}
+
 	namespace client {
+		enum WeaponSound_t : std::uint32_t;
 		class CBasePlayerWeaponVData : public CS2::client::CEntitySubclassVDataBase {
 		public:
 			PROPERTY(m_szWorldModel,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCModel>>, 0x28);
@@ -56,7 +58,7 @@ namespace CS2 {
 			PROPERTY(m_flDropSpeed,float32 , 0x408);
 			PROPERTY(m_iSlot,int32_t , 0x40c);
 			PROPERTY(m_iPosition,int32_t , 0x410);
-			// PROPERTY(m_aShootSounds,GlobalTypes::CUtlOrderedMap< WeaponSound_t, CSoundEventName >, 0x418);
+			// PROPERTY(m_aShootSounds,GlobalTypes::CUtlOrderedMap<client::WeaponSound_t,GlobalTypes::CSoundEventName>, 0x418);
 			S2_PAD(0x418);
 		};
 		//static_assert(sizeof(CS2::client::CBasePlayerWeaponVData) == 0x440, "CBasePlayerWeaponVData size should be 0x440");

@@ -15,6 +15,14 @@
 
 
 
+namespace CS2 {
+	namespace modellib {
+		class RigidMeshPart_t;
+	}
+	namespace resourcesystem {
+		class InfoForResourceTypeIMaterial2;
+	}
+}
 
 
 using namespace GlobalTypes;

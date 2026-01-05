@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace server {
+		class SellbackPurchaseEntry_t;
+	}
+}
 
 
 using namespace GlobalTypes;

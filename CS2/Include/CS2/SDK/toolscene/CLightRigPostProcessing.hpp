@@ -13,6 +13,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCPostProcessingResource;
+	}
+}
 
 
 using namespace GlobalTypes;

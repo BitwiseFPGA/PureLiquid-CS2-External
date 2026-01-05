@@ -13,6 +13,13 @@
 
 
 
+namespace CS2 {
+	namespace pulse_runtime_lib {
+		class PGDInstruction_t;
+		class CPulse_RegisterInfo;
+		class PulseDocNodeID_t;
+	}
+}
 
 
 using namespace GlobalTypes;

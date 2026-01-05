@@ -8,11 +8,16 @@
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
-#include <SDK/resourcesystem/InfoForResourceTypeCModel.hpp>
 
 
 
 
+
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCModel;
+	}
+}
 
 
 using namespace GlobalTypes;

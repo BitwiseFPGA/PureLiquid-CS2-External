@@ -15,6 +15,7 @@
 
 namespace CS2 {
 	namespace server {
+		class CEconItemAttribute;
 		class CAttributeManager;
 	}
 }

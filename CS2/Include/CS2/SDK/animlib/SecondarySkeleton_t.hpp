@@ -13,6 +13,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCNmSkeleton;
+	}
+}
 
 
 using namespace GlobalTypes;

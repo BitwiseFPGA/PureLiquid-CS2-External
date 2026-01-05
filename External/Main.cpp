@@ -97,7 +97,7 @@ int main() {
 	SetConsoleTitle("PureLiquid CS2 External");
 	
 	I::Initialize();
-	/*auto pGes = I::pGameResourceService->GetGameEntitySystem();
+	auto pGes = I::pGameResourceService->GetGameEntitySystem();
 
 	auto lpC = pGes->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
 	auto lpP = pGes->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpC->m_hPawn.GetEntryIndex());
@@ -113,7 +113,7 @@ int main() {
 		}
 		// models/inventory_items/dogtags.vmdl
 	}
-	return 1;*/
+	return 1;
 
 #ifdef USE_CHAMS
 	auto hLatexChamsMaterial = I::pMaterialSystem->CreateMaterial(CMaterialSystem2::GetLatexChams(), "LatexChamsMaterial");

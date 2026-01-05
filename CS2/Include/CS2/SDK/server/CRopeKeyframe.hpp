@@ -16,6 +16,9 @@
 
 
 namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeIMaterial2;
+	}
 	namespace server {
 		class CBaseEntity;
 	}

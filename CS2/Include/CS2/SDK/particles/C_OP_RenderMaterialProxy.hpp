@@ -23,6 +23,9 @@ namespace CS2 {
 	namespace particles {
 		class MaterialVariable_t;
 	}
+	namespace resourcesystem {
+		class InfoForResourceTypeIMaterial2;
+	}
 }
 
 

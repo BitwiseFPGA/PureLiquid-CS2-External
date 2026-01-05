@@ -13,6 +13,11 @@
 
 
 
+namespace CS2 {
+	namespace animlib {
+		class BlendRange_t;
+	}
+}
 
 
 using namespace GlobalTypes;

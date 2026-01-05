@@ -12,12 +12,12 @@
 
 #include <SDK/client/C_BaseEntity.hpp>
 #include <SDK/client/attributeprovidertypes_t.hpp>
-#include <SDK/client/cached_attribute_float_t.hpp>
 
 
 
 namespace CS2 {
 	namespace client {
+		class cached_attribute_float_t;
 	}
 }
 

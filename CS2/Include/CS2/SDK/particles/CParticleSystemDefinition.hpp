@@ -30,6 +30,10 @@ namespace CS2 {
 	namespace particleslib {
 		class ParticleNamedValueSource_t;
 	}
+	namespace resourcesystem {
+		class InfoForResourceTypeIParticleSnapshot;
+		class InfoForResourceTypeIParticleSystemDefinition;
+	}
 }
 
 

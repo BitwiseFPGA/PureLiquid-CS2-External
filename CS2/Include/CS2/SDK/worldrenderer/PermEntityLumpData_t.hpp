@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace worldrenderer {
+		class EntityKeyValueData_t;
+	}
+}
 
 
 using namespace GlobalTypes;

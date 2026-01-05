@@ -17,6 +17,9 @@
 
 
 namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeIMaterial2;
+	}
 	namespace client {
 		class C_BaseEntity;
 	}

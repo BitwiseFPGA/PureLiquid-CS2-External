@@ -19,6 +19,9 @@ namespace CS2 {
 	namespace worldrenderer {
 		class ClutterTile_t;
 	}
+	namespace resourcesystem {
+		class InfoForResourceTypeCModel;
+	}
 }
 
 

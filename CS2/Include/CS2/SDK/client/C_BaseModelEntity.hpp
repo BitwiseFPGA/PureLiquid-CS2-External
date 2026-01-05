@@ -69,7 +69,7 @@ namespace CS2 {
 			PROPERTY(m_nDecalMode,client::DecalMode_t , 0xd3c);
 			PROPERTY(m_nRequiredDecalMode,client::DecalMode_t , 0xd3d);
 			PROPERTY(m_ConfigEntitiesToPropagateMaterialDecalsTo,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_BaseModelEntity>>, 0xd40);
-			PROPERTY(m_vecViewOffset,Vector , 0xd80);
+			PROPERTY(m_vecViewOffset,GlobalTypes::Vector, 0xd80);
 			PROPERTY(m_pClientAlphaProperty,client::CClientAlphaProperty* , 0xe60);
 			PROPERTY(m_ClientOverrideTint,GlobalTypes::Color , 0xe68);
 			PROPERTY(m_bUseClientOverrideTint,bool , 0xe6c);

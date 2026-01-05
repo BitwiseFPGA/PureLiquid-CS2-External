@@ -19,6 +19,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCTextureBase;
+	}
+}
 
 
 using namespace GlobalTypes;

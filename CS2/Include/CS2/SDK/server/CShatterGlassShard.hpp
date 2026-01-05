@@ -17,6 +17,9 @@
 
 
 namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCModel;
+	}
 	namespace server {
 		class CShatterGlassShardPhysics;
 		class CFuncShatterglass;

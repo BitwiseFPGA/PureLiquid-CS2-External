@@ -14,6 +14,12 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCModel;
+		class InfoForResourceTypeCRenderMesh;
+	}
+}
 
 
 using namespace GlobalTypes;

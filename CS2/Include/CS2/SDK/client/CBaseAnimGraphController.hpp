@@ -19,6 +19,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeCNmGraphDefinition;
+	}
+}
 
 
 using namespace GlobalTypes;

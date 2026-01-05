@@ -18,13 +18,19 @@
 #include <SDK/client/CSWeaponSilencerType.hpp>
 #include <SDK/client/CFiringModeFloat.hpp>
 #include <SDK/client/CFiringModeInt.hpp>
-#include <SDK/resourcesystem/InfoForResourceTypeCNmSkeleton.hpp>
+
 
 
 
 
 using namespace GlobalTypes;
 namespace CS2 {
+
+	namespace resourcesystem {
+		class InfoForResourceTypeCNmSkeleton;
+		class InfoForResourceTypeCModel;
+	}
+
 	namespace client {
 		class CCSWeaponBaseVData : public CS2::client::CBasePlayerWeaponVData {
 		public:

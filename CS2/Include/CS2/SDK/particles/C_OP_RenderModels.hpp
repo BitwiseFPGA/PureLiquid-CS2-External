@@ -27,6 +27,9 @@ namespace CS2 {
 		class ModelReference_t;
 		class MaterialVariable_t;
 	}
+	namespace resourcesystem {
+		class InfoForResourceTypeIMaterial2;
+	}
 }
 
 

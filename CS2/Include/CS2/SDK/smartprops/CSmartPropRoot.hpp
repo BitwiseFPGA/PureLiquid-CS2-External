@@ -20,6 +20,9 @@ namespace CS2 {
 		class CSmartPropElement;
 		class CSmartPropModifier;
 	}
+	namespace resourcesystem {
+		class InfoForResourceTypeIPulseGraphDef;
+	}
 }
 
 

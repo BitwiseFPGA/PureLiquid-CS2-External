@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace animgraphlib {
+		class CMotionGraph;
+	}
+}
 
 
 using namespace GlobalTypes;

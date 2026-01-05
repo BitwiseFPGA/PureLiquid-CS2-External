@@ -143,8 +143,10 @@ namespace GlobalTypes {
 	using CKV3MemberNameWithStorage /*CKV3MemberNameWithStorage*/ = char[0x38]; //  Schema_Atomic
 	using CGlobalSymbolCaseSensitive /*CGlobalSymbolCaseSensitive*/ = char[0x8]; //  Schema_Atomic
 	using CKV3MemberNameSet /*CKV3MemberNameSet*/ = char[0x10]; //  Schema_Atomic
-	using HSCRIPT /*HSCRIPT*/ = char[0x8]; //  Schema_Atomic
-
+	// using HSCRIPT /*HSCRIPT*/ = char[0x8]; //  Schema_Atomic
+	struct HSCRIPT {
+		char pad[0x8];
+	};
 	struct CUtlStringToken {
 		char data[0x4];
 	};
@@ -153,6 +155,12 @@ namespace GlobalTypes {
 	using CUtlSymbolLarge /*CUtlSymbolLarge*/ = ::Source2::CUtlSymbolLarge; // char[0x8]; //  Schema_Atomic
 	template <typename T1>
 	using CUtlVector /*CUtlVector*/ = ::Source2::CUtlVector<T1>; //  char[0x18]; //  Schema_Atomic
+
+
+	struct CSoundEventName {
+		char pad[0x10];
+	};
+
 	using QuaternionStorage /*QuaternionStorage*/ = char[0x10]; //  Schema_FixedArray
 	using FourVectors /*FourVectors*/ = char[0x30]; //  Schema_FixedArray
 	template <typename T>

@@ -17,6 +17,9 @@ namespace CS2 {
 	namespace modellib {
 		class RenderHairStrandInfo_t;
 	}
+	namespace resourcesystem {
+		class InfoForResourceTypeIMaterial2;
+	}
 }
 
 

@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace server {
+		class CDamageRecord;
+	}
+}
 
 
 using namespace GlobalTypes;

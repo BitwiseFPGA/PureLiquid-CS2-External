@@ -28,6 +28,7 @@ namespace CS2 {
 	namespace server {
 		class CRenderComponent;
 		class CDestructiblePartsComponent;
+		class EntityRenderAttribute_t;
 	}
 }
 

@@ -27,6 +27,7 @@ namespace CS2 {
 		class CPlayer_FlashlightServices;
 		class CPlayer_CameraServices;
 		class CPlayer_MovementServices;
+		class ViewAngleServerChange_t;
 		class CAI_Expresser;
 		class CBasePlayerController;
 	}

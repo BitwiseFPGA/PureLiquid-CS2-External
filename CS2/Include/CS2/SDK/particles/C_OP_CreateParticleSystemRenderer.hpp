@@ -16,6 +16,14 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeIParticleSystemDefinition;
+	}
+	namespace particles {
+		class CPAssignment_t;
+	}
+}
 
 
 using namespace GlobalTypes;

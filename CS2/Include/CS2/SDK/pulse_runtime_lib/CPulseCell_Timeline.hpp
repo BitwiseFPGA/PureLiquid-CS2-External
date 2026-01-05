@@ -15,6 +15,11 @@
 
 
 
+namespace CS2 {
+	namespace pulse_runtime_lib {
+		class TimelineEvent_t;
+	}
+}
 
 
 using namespace GlobalTypes;

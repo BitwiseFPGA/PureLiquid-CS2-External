@@ -13,6 +13,11 @@
 
 
 
+namespace CS2 {
+	namespace animgraphlib {
+		class CAnimUpdateSharedData;
+	}
+}
 
 
 using namespace GlobalTypes;

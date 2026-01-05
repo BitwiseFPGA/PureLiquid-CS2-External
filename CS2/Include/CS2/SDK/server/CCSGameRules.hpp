@@ -18,6 +18,7 @@
 
 namespace CS2 {
 	namespace server {
+		class SpawnPoint;
 		class CCSGameModeRules;
 		class CBaseEntity;
 	}

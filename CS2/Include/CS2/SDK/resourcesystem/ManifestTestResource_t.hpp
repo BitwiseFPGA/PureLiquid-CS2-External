@@ -13,6 +13,11 @@
 
 
 
+namespace CS2 {
+	namespace resourcesystem {
+		class InfoForResourceTypeManifestTestResource_t;
+	}
+}
 
 
 using namespace GlobalTypes;
