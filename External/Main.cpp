@@ -109,11 +109,13 @@ int main() {
 		if (GetAsyncKeyState(VK_LSHIFT)) {
 			auto pModel = lpP->GetCModel_Imp();
 			auto pRenderMesh0 = pModel->GetRenderMesh(0);
+
 			printf("Model: 0x%p\n", pModel);
 			printf("\tModelName: %s\n", pModel->GetModelName().c_str());
 			printf("\tBones: %i\n\n", pModel->m_iBoneCount);
 			printf("RenderMesh(0): 0x%p\n", pRenderMesh0);
-			printf("\tm_Skeleton: 0x%p\n", pRenderMesh0->m_skeleton);
+			printf("\tm_skeleton address: 0x%p\n", pRenderMesh0->m_skeleton);
+			printf("\t\tBones: %i\n", pRenderMesh0->m_skeleton->m_bones->GetSize());
 			Sleep(1000);
 		}
 		// models/inventory_items/dogtags.vmdl

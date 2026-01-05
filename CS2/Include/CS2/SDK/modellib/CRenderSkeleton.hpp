@@ -25,7 +25,7 @@ namespace CS2 {
 	namespace modellib {
 		class CRenderSkeleton  {
 		public:
-			PROPERTY(m_bones,GlobalTypes::CUtlVector<modellib::RenderSkeletonBone_t>, 0x0);
+			NESTED_PROPERTY(m_bones,GlobalTypes::CUtlVector<modellib::RenderSkeletonBone_t>, 0x0);
 			PROPERTY(m_boneParents,GlobalTypes::CUtlVector< int32 >, 0x30);
 			PROPERTY(m_nBoneWeightCount,int32_t , 0x48);
 			S2_PAD(0x50);
