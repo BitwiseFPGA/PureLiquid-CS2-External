@@ -7,7 +7,7 @@
 #include <CS2/ExtendedSDK/scenesystem/CAnimatableSceneObjectDesc.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
 #include <CS2/ExtendedSDK/resourcesystem/CModel_Imp.h>
-#include <CS2/ExtendedSDK/modellib/CRenderMesh.h>
+#include <CS2/SDK/modellib/CRenderMesh.hpp>
 #include <CS2/SDK/modellib/CRenderSkeleton.hpp>
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
@@ -115,7 +115,7 @@ int main() {
 			printf("\tBones: %i\n\n", pModel->m_iBoneCount);
 			printf("RenderMesh(0): 0x%p\n", pRenderMesh0);
 			printf("\tm_skeleton address: 0x%p\n", pRenderMesh0->m_skeleton);
-			printf("\t\tBones: %i\n", pRenderMesh0->m_skeleton->m_bones->GetSize());
+			printf("\tm_Skeleton size: %i\n", pRenderMesh0->m_skeleton->m_bones->GetSize());
 			Sleep(1000);
 		}
 		// models/inventory_items/dogtags.vmdl

@@ -6,13 +6,13 @@ using namespace Globals;
 namespace CS2 {
 	namespace resourcesystem {
 
-		::CS2::modellib::CRenderMeshExtended* CModel_Imp::GetRenderMesh(int idx)
+		::CS2::modellib::CRenderMesh* CModel_Imp::GetRenderMesh(int idx)
 		{
 			uintptr_t pRenderMeshBase = proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + SchemaOffsets::modellib::PermModelData_t::m_refMeshes);
 			if (!pRenderMeshBase)
 				return nullptr;
 
-			return proc.ReadDirect<uintptr_t, ::CS2::modellib::CRenderMeshExtended*>(pRenderMeshBase + (0x8 * idx));
+			return proc.ReadDirect<uintptr_t, ::CS2::modellib::CRenderMesh*>(pRenderMeshBase + (0x8 * idx));
 		}
 		::CS2::modellib::PermModelInfo_t* CModel_Imp::GetPermModelInfo()
 		{

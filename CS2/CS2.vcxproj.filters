@@ -69,9 +69,6 @@
     <ClInclude Include="Include\CS2\ExtendedSDK\resourcesystem\CModel_Imp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CS2\ExtendedSDK\modellib\CRenderMesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CS2\Interfaces\CGameTraceManager.cpp">
@@ -102,9 +99,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\CS2\ExtendedSDK\resourcesystem\CModel_Imp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CS2\ExtendedSDK\modellib\CRenderMesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
