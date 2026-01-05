@@ -7,7 +7,7 @@
 #include <CS2/ExtendedSDK/scenesystem/CAnimatableSceneObjectDesc.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
 #include <CS2/ExtendedSDK/resourcesystem/CModel_Imp.h>
-#include <CS2/SDK/modellib/CRenderMesh.hpp>
+#include <CS2/ExtendedSDK/modellib/CRenderMesh.h>
 #include <CS2/SDK/modellib/CRenderSkeleton.hpp>
 #include <CS2/SDK/modellib/RenderSkeletonBone_t.hpp>
 #include <CS2/Interfaces/Include.h>
@@ -16,7 +16,7 @@
 
 #define USE_CHAMS
 #define USE_CREATE_MOVE
-#define USE_CHAMS_VISIBILITY_BASED
+// #define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
 	Process proc{ "cs2.exe" };
 }
@@ -143,6 +143,13 @@ int main() {
 				printf("\t\tBone[%i]: %s\n", boneIdxMap[boneName], boneName.c_str());
 			}
 
+			auto pHitboxes = pRenderMesh0->GetHitboxes();
+			
+			printf("\tHitboxes: %i\n", pHitboxes.size());
+
+			for (const auto& hb : pHitboxes) {
+				printf("\t\tHitbox: %s\n", hb->m_name->Get().c_str());
+			}
 			Sleep(1000);
 		
 		}
