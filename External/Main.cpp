@@ -7,6 +7,8 @@
 #include <CS2/ExtendedSDK/scenesystem/CAnimatableSceneObjectDesc.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
 #include <CS2/ExtendedSDK/resourcesystem/CModel_Imp.h>
+#include <CS2/ExtendedSDK/modellib/CRenderMesh.h>
+#include <CS2/SDK/modellib/CRenderSkeleton.hpp>
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
 #include <Features/CModelChanger.h>
@@ -106,10 +108,12 @@ int main() {
 
 		if (GetAsyncKeyState(VK_LSHIFT)) {
 			auto pModel = lpP->GetCModel_Imp();
+			auto pRenderMesh0 = pModel->GetRenderMesh(0);
 			printf("Model: 0x%p\n", pModel);
-			printf("ModelName: %s\n", pModel->GetModelName().c_str());
-			printf("Bones: %i\n", pModel->m_iBoneCount);
-			printf("RenderMesh(1): 0x%p\n", pModel->GetRenderMesh(1));
+			printf("\tModelName: %s\n", pModel->GetModelName().c_str());
+			printf("\tBones: %i\n\n", pModel->m_iBoneCount);
+			printf("RenderMesh(0): 0x%p\n", pRenderMesh0);
+			printf("\tm_Skeleton: 0x%p\n", pRenderMesh0->m_skeleton);
 			Sleep(1000);
 		}
 		// models/inventory_items/dogtags.vmdl

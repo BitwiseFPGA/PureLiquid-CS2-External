@@ -42,3 +42,31 @@ public:                                                             \
             reinterpret_cast<uintptr_t>(this) + offset, val);       \
     }                                                               \
     __declspec(property(get = _internal_Get##NAME, put = _internal_Set##NAME)) TYPE NAME;
+
+#define NESTED_PROPERTY(NAME, TYPE, OFFSET) \
+public: \
+    class NAME##_Wrapper { \
+    private: \
+        uintptr_t m_base; \
+    public: \
+        NAME##_Wrapper(uintptr_t base) : m_base(base) {} \
+        \
+        TYPE* operator->() { \
+            static TYPE instance; \
+            *reinterpret_cast<uintptr_t*>(&instance) = m_base; \
+            return &instance; \
+        } \
+        \
+        operator uintptr_t() const { \
+            return m_base; \
+        } \
+        \
+        operator void*() const { \
+            return reinterpret_cast<void*>(m_base); \
+        } \
+    }; \
+    \
+    __forceinline NAME##_Wrapper _internal_Get##NAME() { \
+        return NAME##_Wrapper(thisptr + OFFSET); \
+    } \
+    __declspec(property(get = _internal_Get##NAME)) NAME##_Wrapper NAME;

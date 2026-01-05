@@ -19,6 +19,7 @@ namespace Source2 {
 		}
 
 		std::uint32_t GetSize() {
+			printf("Getting Size From : 0x%p\n", (uintptr_t)(this));
 			return ::Globals::proc.ReadDirect<std::uint32_t>(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_iSize));
 		}
 

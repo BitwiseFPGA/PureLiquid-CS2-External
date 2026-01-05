@@ -30,7 +30,7 @@ namespace CS2 {
 		public:
 			PROPERTY(m_sceneObjects,GlobalTypes::CUtlLeanVectorFixedGrowable<modellib::CSceneObjectData>, 0x10);
 			PROPERTY(m_constraints,GlobalTypes::CUtlLeanVector<modellib::CBaseConstraint*>, 0xa8);
-			PROPERTY(m_skeleton,modellib::CRenderSkeleton , 0xb8);
+			NESTED_PROPERTY(m_skeleton,modellib::CRenderSkeleton , 0xb8);
 			PROPERTY(m_bUseUV2ForCharting,bool , 0x1b4);
 			PROPERTY(m_bEmbeddedMapMesh,bool , 0x1b5);
 			PROPERTY(m_meshDeformParams,modellib::DynamicMeshDeformParams_t , 0x1d8);
