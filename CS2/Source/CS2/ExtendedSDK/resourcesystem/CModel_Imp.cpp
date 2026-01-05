@@ -36,5 +36,6 @@ namespace CS2 {
 			const uint64_t bone_name_address = proc.ReadDirect<uint64_t>((uint64_t)names + boneIdx * 8);
 			return proc.ReadString(bone_name_address);
 		}
+
 	}
 }

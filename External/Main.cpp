@@ -112,20 +112,28 @@ int main() {
 			auto pRenderMesh0 = pModel->GetRenderMesh(0);
 			auto pSkeleton = pRenderMesh0->m_skeleton;
 			auto pBonesUtlList = pSkeleton->m_bones;
+			auto iBoneListSize = pBonesUtlList->GetSize();
 			printf("Model: 0x%p\n", pModel);
 			printf("\tModelName: %s\n", pModel->GetModelName().c_str());
 			printf("\tBones: %i\n\n", pModel->m_iBoneCount);
 			printf("RenderMesh(0): 0x%p\n", pRenderMesh0);
 			printf("\tm_skeleton: 0x%p\n", pRenderMesh0->m_skeleton);
 			printf("\tm_bones: 0x%p\n", pBonesUtlList);
-			printf("\tm_bones size: %i\n", pBonesUtlList->GetSize());
+			printf("\tm_bones size: %i\n", iBoneListSize);
+			int i = 0;
+			std::map<std::string, int> boneIdxMap{};
+			for (int tempBoneIdx = 0; tempBoneIdx < iBoneListSize; tempBoneIdx++) {
+				auto boneNameByIndex = pModel->GetBoneName(tempBoneIdx);
+				boneIdxMap[boneNameByIndex] = tempBoneIdx;
 
+			}
 			auto ptrList = pBonesUtlList->GetPtrList();
 			std::vector<CS2::modellib::RenderSkeletonBone_t*> pVec{};
 			for (int i = 0; i < ptrList.size(); i++) {
 				auto entry = reinterpret_cast<CS2::modellib::RenderSkeletonBone_t*>(ptrList[i]);
 				pVec.push_back(entry);
-				printf("\t\tBone: %s\n", entry->m_boneName->Get().c_str());
+				auto boneName = entry->m_boneName->Get();
+				printf("\t\tBone[%i]: %s\n", boneIdxMap[boneName], boneName.c_str());
 			}
 			Sleep(1000);
 		}
