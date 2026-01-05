@@ -104,6 +104,11 @@ namespace GlobalTypes {
 		char pad[0x4];
 	};
 
+	template <typename Ty>
+	struct CUtlLeanVectorFixedGrowable {
+		char pad[0x10 + ((sizeof(Ty) < 4) ? 4 : sizeof(Ty))];
+	};
+
 
 	template <typename T1>
 	using CStrongHandle = ::Source2::CStrongHandle<T1>;

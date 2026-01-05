@@ -12,6 +12,7 @@
 
 #include <SDK/modellib/CRenderSkeleton.hpp>
 #include <SDK/modellib/DynamicMeshDeformParams_t.hpp>
+#include <SDK/modellib/CSceneObjectData.hpp>
 
 
 
