@@ -16,6 +16,8 @@
 🎯 **External CreateMove Hook** - for AImbot Autoshoot and in the feature silent aim  
 🎯 **External CAnimatableSceneObjectDesc Hook** - for External Chams  
 🎯 **External CUIEngineSource2** - Run script in Context of a panel or just standalone  
+🎯 **External Model Change** - Change models of entities externally  
+
 
 ---
 
@@ -127,6 +129,29 @@ int main() {
 		}
 	}
 }
+
+```
+---
+
+## External Model Changer Usage:
+
+```c++
+
+int main() {
+	I::Initialize();
+	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
+
+	auto lpController = pGameEntitySystem->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
+	auto lpPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpController->m_hPawn.GetEntryIndex());
+	while (true) {
+		if (GetAsyncKeyState(VK_LSHIFT)) {
+			CModelChanger::ChangeModel(lpPawn, "models/inventory_items/dogtags.vmdl"); // you need to be sure that the model is loaded.
+			// Loading models will be implemented in the future..
+			printf("Model Changed!\n");
+			Sleep(1000);
+		}
+	}
+	return 1;
 
 ```
 
