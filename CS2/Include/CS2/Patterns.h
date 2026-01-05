@@ -6,6 +6,10 @@
 #define C_CSGO_INPUT_VIEW_ANGLES_PATTERN "F2 0F 11 86 ?? ?? ?? ?? 89 86 ?? ?? ?? ?? C7 86"
 
 
+// @xref => models/inventory_items/dogtags.vmdl @ client.dll
+#define CHANGE_MODEL_PATTERN "40 53 48 83 EC ?? 48 8B D9 4C 8B C2 48 8B 0D ?? ?? ?? ?? 48 8D 54 24"
+
+
 // @xref => Physics/TraceShape - client.dll
 #define TRACESHAPE_PATTERN "48 89 5C 24 ?? 48 89 4C 24 ?? 55 57"
 

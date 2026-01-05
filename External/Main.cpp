@@ -147,7 +147,6 @@ int main() {
 		
 		}
 
-		// models/inventory_items/dogtags.vmdl
 	}
 	return 1;
 

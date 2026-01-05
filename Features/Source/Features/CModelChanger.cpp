@@ -35,7 +35,7 @@ namespace CS2 {
 				return;
 			}
 
-			pChangeModelFn = reinterpret_cast<ChangeModelFn>(pPanorama->ScanMemory("40 53 48 83 EC ?? 48 8B D9 4C 8B C2 48 8B 0D ?? ?? ?? ?? 48 8D 54 24"));
+			pChangeModelFn = reinterpret_cast<ChangeModelFn>(pPanorama->ScanMemory(CHANGE_MODEL_PATTERN));
 			if (!pChangeModelFn) {
 				printf("Error Finding ChangeModel Function!!\n");
 				return;
