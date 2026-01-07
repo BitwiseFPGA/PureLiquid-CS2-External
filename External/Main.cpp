@@ -101,30 +101,6 @@ int main() {
 	SetConsoleTitle("PureLiquid CS2 External");
 	
 	I::Initialize();
-	auto pGes = I::pGameResourceService->GetGameEntitySystem();
-
-	auto lpC = pGes->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
-	auto lpP = pGes->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpC->m_hPawn.GetEntryIndex());
-
-	while (true) {
-
-		if (GetAsyncKeyState(VK_LSHIFT)) {
-			auto pModel = lpP->GetCModel_Imp();
-			auto pHeadData = pModelManager->GetHitboxAndBoneData(pModel, 6);
-
-			printf("Bone: %s\n", pHeadData.hitbox.m_szBoneName.c_str());
-			printf("\tIndex: %i\n", pHeadData.hitbox.m_iBoneIdx);
-			printf("Hitbox: %s\n", pHeadData.hitbox.m_szName.c_str());
-			printf("\tIndex: %i\n", pHeadData.hitbox.m_nHitBoxIndex);
-
-			printf("\tHitbox vMin: %.2f %.2f %.2f\n", pHeadData.hitbox.m_vMinBounds.x, pHeadData.hitbox.m_vMinBounds.y, pHeadData.hitbox.m_vMinBounds.z);
-			printf("\tHitbox vMax: %.2f %.2f %.2f\n", pHeadData.hitbox.m_vMaxBounds.x, pHeadData.hitbox.m_vMaxBounds.y, pHeadData.hitbox.m_vMaxBounds.z);
-			printf("\tHitbox FlShapeRadius: %.2f\n", pHeadData.hitbox.m_flShapreRadius);
-		}
-
-	}
-	return 1;
-
 #ifdef USE_CHAMS
 	auto hLatexChamsMaterial = I::pMaterialSystem->CreateMaterial(CMaterialSystem2::GetLatexChams(), "LatexChamsMaterial");
 
