@@ -1,6 +1,7 @@
 #pragma once 
 #include <Windows.h>
 #include <Memory/Process.h>
+#include <GlobalData/xorstr.h>
 namespace Globals {
 	extern Process proc;
 }

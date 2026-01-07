@@ -6,7 +6,9 @@
 
 namespace CS2 {
 	namespace modellib {
-	
+
+		class RenderSkeletonBone_t;
+
 		class CRenderMeshExtended : public CRenderMesh {
 		private:
 
@@ -21,6 +23,7 @@ namespace CS2 {
 			NESTED_PROPERTY(m_HitboxData, GlobalTypes::CUtlVector<CRenderMeshHitboxUtlVector>, 0x138);
 		public:
 			std::vector<CHitBox*> GetHitboxes();
+			std::vector<CS2::modellib::RenderSkeletonBone_t*> GetBoneData();
 		};
 	}
 }

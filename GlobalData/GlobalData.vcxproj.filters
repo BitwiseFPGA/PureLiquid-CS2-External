@@ -23,5 +23,8 @@
     <ClInclude Include="Include\GlobalData\Include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\GlobalData\xorstr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

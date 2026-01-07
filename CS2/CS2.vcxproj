@@ -168,6 +168,7 @@
     <ClInclude Include="Include\CS2\Interfaces\CUIEngineSource2.h" />
     <ClInclude Include="Include\CS2\Interfaces\Include.h" />
     <ClInclude Include="Include\CS2\Interfaces\Manager.h" />
+    <ClInclude Include="Include\CS2\Managers\CModelManager.h" />
     <ClInclude Include="Include\CS2\Patterns.h" />
     <ClInclude Include="Include\CS2\SDK\CCSPlayerController.h" />
     <ClInclude Include="Include\CS2\SDK\C_CSPlayerPawn.h" />
@@ -185,6 +186,7 @@
     <ClCompile Include="Source\CS2\Interfaces\CMaterialSystem2.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CPanoramaUIEngine.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CUIEngineSource2.cpp" />
+    <ClCompile Include="Source\CS2\Managers\CModelManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

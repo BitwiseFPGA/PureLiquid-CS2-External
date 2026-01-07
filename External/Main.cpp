@@ -13,7 +13,7 @@
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
 #include <Features/CModelChanger.h>
-
+#include <CS2/Managers/CModelManager.h>
 #define USE_CHAMS
 #define USE_CREATE_MOVE
 // #define USE_CHAMS_VISIBILITY_BASED
@@ -109,49 +109,17 @@ int main() {
 	while (true) {
 
 		if (GetAsyncKeyState(VK_LSHIFT)) {
-			
 			auto pModel = lpP->GetCModel_Imp();
-			auto pRenderMesh0 = pModel->GetRenderMesh(0);
-			auto pSkeleton = pRenderMesh0->m_skeleton;
-			auto pBonesUtlList = pSkeleton->m_bones;
-			auto iBoneListSize = pBonesUtlList->GetSize();
+			auto pHeadData = pModelManager->GetHitboxAndBoneData(pModel, 6);
 
-			printf("Model: 0x%p\n", pModel);
-			printf("\tModelName: %s\n", pModel->GetModelName().c_str());
-			printf("\tBones: %i\n\n", pModel->m_iBoneCount);
-			printf("RenderMesh(0): 0x%p\n", pRenderMesh0);
-			printf("\tm_skeleton: 0x%p\n", pRenderMesh0->m_skeleton);
-			printf("\tm_bones: 0x%p\n", pBonesUtlList);
-			printf("\tm_bones size: %i\n", iBoneListSize);
+			printf("Bone: %s\n", pHeadData.hitbox.m_szBoneName.c_str());
+			printf("\tIndex: %i\n", pHeadData.hitbox.m_iBoneIdx);
+			printf("Hitbox: %s\n", pHeadData.hitbox.m_szName.c_str());
+			printf("\tIndex: %i\n", pHeadData.hitbox.m_nHitBoxIndex);
 
-			std::map<std::string, int> boneIdxMap{};
-			
-			for (int tempBoneIdx = 0; tempBoneIdx < iBoneListSize; tempBoneIdx++) {
-				auto boneNameByIndex = pModel->GetBoneName(tempBoneIdx);
-				boneIdxMap[boneNameByIndex] = tempBoneIdx;
-
-			}
-			
-			auto ptrList = pBonesUtlList->GetPtrList();
-			
-			std::vector<CS2::modellib::RenderSkeletonBone_t*> pVec{};
-			
-			for (int i = 0; i < ptrList.size(); i++) {
-				auto entry = reinterpret_cast<CS2::modellib::RenderSkeletonBone_t*>(ptrList[i]);
-				pVec.push_back(entry);
-				auto boneName = entry->m_boneName->Get();
-				printf("\t\tBone[%i]: %s\n", boneIdxMap[boneName], boneName.c_str());
-			}
-
-			auto pHitboxes = pRenderMesh0->GetHitboxes();
-			
-			printf("\tHitboxes: %i\n", pHitboxes.size());
-
-			for (const auto& hb : pHitboxes) {
-				printf("\t\tHitbox: %s\n", hb->m_name->Get().c_str());
-			}
-			Sleep(1000);
-		
+			printf("\tHitbox vMin: %.2f %.2f %.2f\n", pHeadData.hitbox.m_vMinBounds.x, pHeadData.hitbox.m_vMinBounds.y, pHeadData.hitbox.m_vMinBounds.z);
+			printf("\tHitbox vMax: %.2f %.2f %.2f\n", pHeadData.hitbox.m_vMaxBounds.x, pHeadData.hitbox.m_vMaxBounds.y, pHeadData.hitbox.m_vMaxBounds.z);
+			printf("\tHitbox FlShapeRadius: %.2f\n", pHeadData.hitbox.m_flShapreRadius);
 		}
 
 	}
