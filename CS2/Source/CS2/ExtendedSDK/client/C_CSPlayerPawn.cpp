@@ -24,5 +24,9 @@ namespace CS2 {
 			auto ptr = proc.ReadDirect<uintptr_t>(pGameSceneNodePtr + SchemaOffsets::client::CSkeletonInstance::m_modelState + SchemaOffsets::client::CModelState::m_hModel);
 			return proc.ReadDirect<resourcesystem::CModel_Imp*>(ptr);
 		}
+		client::CGameSceneNodeExtended* C_CSPlayerPawnExtended::GetGameSceneNodeExtended()
+		{
+			return reinterpret_cast<client::CGameSceneNodeExtended*>(m_pGameSceneNode);
+		}
 	}
 }

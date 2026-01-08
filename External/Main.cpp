@@ -6,6 +6,7 @@
 #include <CS2/SDK/modellib/CRenderMesh.hpp>
 #include <CS2/ExtendedSDK/scenesystem/CAnimatableSceneObjectDesc.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
+#include <CS2/ExtendedSDK/client/CGameSceneNode.h>
 #include <CS2/ExtendedSDK/resourcesystem/CModel_Imp.h>
 #include <CS2/ExtendedSDK/modellib/CRenderMesh.h>
 #include <CS2/SDK/modellib/CRenderSkeleton.hpp>
@@ -14,7 +15,7 @@
 #include <Features/Aimbot.h>
 #include <Features/CModelChanger.h>
 #include <CS2/Managers/CModelManager.h>
-#define USE_CHAMS
+// #define USE_CHAMS
 #define USE_CREATE_MOVE
 // #define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
@@ -126,6 +127,10 @@ int main() {
 	
 	std::thread([]() {Aimbot::AimbotThread();}).detach();
 #endif
+
+	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
+
+
 	while (!GetAsyncKeyState(VK_DELETE)) {
 
 		if (!GetAsyncKeyState(VK_LSHIFT)) {
@@ -133,6 +138,12 @@ int main() {
 			continue;
 			
 		}
+		auto lpController = pGameEntitySystem->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
+		auto lpPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpController->m_hPawn.GetEntryIndex());
+		auto pBones = lpPawn->GetGameSceneNodeExtended()->pGameSceneNodeBonePtr->m_Bones;
+		printf("Bones: %i\n", pBones.size());
+		auto vHeadOrigin = pBones[6].GetOrigin();
+		printf("%.2f %.2f %.2f\n", vHeadOrigin.x, vHeadOrigin.y, vHeadOrigin.z);
 
 		Sleep(100);
 		// I::pPanoramaUIEngine->GetCUIEngineSource2()->RunScript("$.Msg(\"Hello, world123!\");"); // Execute Script
@@ -147,39 +158,4 @@ int main() {
 	CAnimatableSceneObjectDesc::UninstallRendererHook();
 #endif
 	return 1;
-	std::thread([]() {ReadEntititesThread();}).detach();
-	std::thread([]() {Aimbot::AimbotThread();}).detach();
-
-	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
-
-	auto lpController = pGameEntitySystem->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
-	auto lpPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpController->m_hPawn.GetEntryIndex());
-	
-	while (!GetAsyncKeyState(VK_DELETE)) {
-
-		if (!GetAsyncKeyState(VK_LSHIFT)) {
-			Sleep(500);
-			continue;
-		}
-
-		system("cls");
-		for (int i = 1; i < 65; i++) {
-			auto entity = &CGameEntitySystem::vEntityList[i];
-
-			if (!entity->m_bIsValid || !entity->m_bIsAlive)
-				continue;
-
-			if (!entity->m_pPawn)
-				continue;
-
-
-			if (entity->m_bIsLocalPlayer)
-				continue;
-
-
-			printf("Entity %i: %s\n", i, I::pGameTraceManager->IsPlayerVisible(lpPawn, entity->m_pPawn) ? "Visible" : "Invisible");
-
-		}
-	}
-	return 0;
 }
