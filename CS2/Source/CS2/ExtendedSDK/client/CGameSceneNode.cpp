@@ -1,6 +1,7 @@
 #include <CS2/ExtendedSDK/client/CGameSceneNode.h>
 #include <CS2/SDK/client/CGameSceneNode.hpp>
 #include <GlobalData/Include.h>
+#include <CS2/Patterns.h>
 using namespace Globals;
 namespace CS2 {
 	namespace client {
@@ -12,7 +13,7 @@ namespace CS2 {
 				if (!hClient || hClient && !hClient->GetAddr()) {
 					return NULL;
 				}
-				auto bonesDisp = hClient->ScanMemory("48 8B 8B ?? ?? ?? ?? 48 85 C9 75 ?? 90 38 8B");
+				auto bonesDisp = hClient->ScanMemory(BONES_PTR_OFFSET_PATTERN);
 				dwBonesOffset = hClient->ResolveDisp32(bonesDisp, 2);
 				if (!dwBonesOffset)
 					return NULL;

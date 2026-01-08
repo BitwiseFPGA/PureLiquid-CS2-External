@@ -3,6 +3,7 @@
 #include <CS2/Interfaces/Include.h>
 #include <CS2/Interfaces/CGameTraceManager.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
+#include <CS2/ExtendedSDK/client/CGameSceneNode.h>
 #include <CS2/SDK/client/CCSPlayerController.hpp>
 #include <CS2/SDK/client/C_BasePlayerWeapon.hpp>
 #include <CS2/SDK/client/CPlayer_WeaponServices.hpp>
@@ -65,7 +66,7 @@ void Aimbot::Run() {
         if (!entityPawn || entityPawn == pLocalPawn)
             continue;
 
-        auto boneMatrix = entityPawn->GetBoneMatrices(iTargetBone + 1);
+        auto boneMatrix = entityPawn->GetGameSceneNodeExtended()->pGameSceneNodeBonePtr->m_Bones;
 
         if (boneMatrix.empty()) {
             if (bestTarget.entity == entity)
@@ -106,7 +107,7 @@ void Aimbot::Run() {
         }
 
         if (bestTarget.entity) {
-            auto bestBoneMatrix = bestTarget.entity->m_pPawn->GetBoneMatrices(targetBoneIdx + 1);
+            auto bestBoneMatrix = bestTarget.entity->m_pPawn->GetGameSceneNodeExtended()->pGameSceneNodeBonePtr->m_Bones;
             if (bestBoneMatrix.empty()) {
                 ResetTarget();
                 continue;
@@ -124,7 +125,7 @@ void Aimbot::Run() {
 
         if (bestTarget.entity) {
 
-            auto boneMatrix = bestTarget.entity->m_pPawn->GetBoneMatrices(targetBoneIdx + 1);
+            auto boneMatrix = bestTarget.entity->m_pPawn->GetGameSceneNodeExtended()->pGameSceneNodeBonePtr->m_Bones;
             if (boneMatrix.empty())
                 return;
 

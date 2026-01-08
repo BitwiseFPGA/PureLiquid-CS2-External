@@ -1,6 +1,9 @@
 ﻿#pragma once
 
 
+
+#define BONES_PTR_OFFSET_PATTERN "48 8B 8B ?? ?? ?? ?? 48 85 C9 75 ?? 90 38 8B"
+
 // client.dll => CClientInput @ Index 7
 // text:0000000000821DB4 89 86 B8 06 00 00                       mov     [rsi+6B8h], eax
 #define C_CSGO_INPUT_VIEW_ANGLES_PATTERN "F2 0F 11 86 ?? ?? ?? ?? 89 86 ?? ?? ?? ?? C7 86"
