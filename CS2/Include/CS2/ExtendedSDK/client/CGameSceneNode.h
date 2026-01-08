@@ -11,8 +11,12 @@ namespace CS2 {
 
 		};
 		class CGameSceneNodeExtended : public CGameSceneNode {
+		private:
+			inline static uint32_t dwBonesOffset = 0x0;
+			static uint32_t GetBonesOffset();
+
 		public:
-			PROPERTY(pGameSceneNodeBonePtr, CGameSceneNodeBonePtr*, SchemaOffsets::client::CSkeletonInstance::m_modelState + 0x80);
+			RUNTIME_OFFSET_PROPERTY(pGameSceneNodeBonePtr, CGameSceneNodeBonePtr*, GetBonesOffset);
 		};
 	}
 }
