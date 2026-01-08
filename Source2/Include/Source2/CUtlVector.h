@@ -61,6 +61,28 @@ namespace Source2 {
 			return vecPtrList;
 		}
 
+		template <typename T2 = T>
+		std::vector<T2> ReinterpretPtrEntries() {
+			auto size = GetSize();
+			auto pAddr = ::Globals::proc.ReadDirect<uintptr_t>(
+				reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData));
+
+			std::vector<T2> vecPtrList;
+			vecPtrList.reserve(size);
+
+			for (int i = 0; i < size; i++) {
+				vecPtrList.push_back(reinterpret_cast<T2>(pAddr + (sizeof(T) * i)));
+			}
+			return vecPtrList;
+		}
+
+		template <typename T2 = T>
+		T2 ReinterpretPtrEntry(int idx) {
+			return reinterpret_cast<T2>(::Globals::proc.ReadDirect<uintptr_t>(
+				reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData)) + (sizeof(T) * idx));
+			
+		}
+
 	};
 
 	static_assert(sizeof(CUtlVector<>) == 0x18);

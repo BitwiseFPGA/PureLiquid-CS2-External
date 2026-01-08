@@ -15,8 +15,8 @@
 #include <Features/Aimbot.h>
 #include <Features/CModelChanger.h>
 #include <CS2/Managers/CModelManager.h>
-#define USE_CHAMS
-#define USE_CREATE_MOVE
+// #define USE_CHAMS
+// #define USE_CREATE_MOVE
 // #define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
 	Process proc{ "cs2.exe" };
@@ -141,13 +141,8 @@ int main() {
 		}
 		auto lpController = pGameEntitySystem->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
 		auto lpPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpController->m_hPawn.GetEntryIndex());
-		auto pGameSceneNode = lpPawn->GetGameSceneNodeExtended();
-		auto pBonePtr = pGameSceneNode->pGameSceneNodeBonePtr;
-		auto pBones = pBonePtr->m_Bones;
-		printf("pGameSceneNode: 0x%p\n", pGameSceneNode);
-		printf("Bones: %i\n", pBones.size());
-		auto vHeadOrigin = pBones[6].GetOrigin();
-		printf("%.2f %.2f %.2f\n", vHeadOrigin.x, vHeadOrigin.y, vHeadOrigin.z);
+		auto pRenderMesh0 = lpPawn->GetCModel_Imp()->GetRenderMesh(0);
+		printf("Hitbox0: %s\n", pRenderMesh0->GetBoneData()[0]->m_boneName->Get().c_str());
 
 		Sleep(100);
 		// I::pPanoramaUIEngine->GetCUIEngineSource2()->RunScript("$.Msg(\"Hello, world123!\");"); // Execute Script
