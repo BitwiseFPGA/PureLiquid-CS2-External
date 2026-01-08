@@ -1,8 +1,43 @@
 ﻿#pragma once
 
 
-
-#define BONES_PTR_OFFSET_PATTERN "48 8B 8B ?? ?? ?? ?? 48 85 C9 75 ?? 90 38 8B"
+// client.dll => @xref "Attempting to get hit box list and transforms for an uninitialized model"
+/*
+text:0000000000763044 48 8D 15 35 8F EF 00                    lea     rdx, aAttemptingToGe ; "Attempting to get hit box list and tran"...
+.text:000000000076304B 48 8D 0D D6 8E EF 00                    lea     rcx, off_165BF28 ; "C:\\buildworker\\csgo_rel_win64\\build"...
+.text:0000000000763052 89 05 B4 3C 6C 01                       mov     cs:dword_1E26D0C, eax
+.text:0000000000763058 FF 15 1A D9 D7 00                       call    cs:?Assert_ConditionFailed@@YA_NAEBU_AssertCompileTimeConstantStruct_t@@PEBDZZ ; Assert_ConditionFailed(_AssertCompileTimeConstantStruct_t const &,char const *,...)
+.text:000000000076305E 84 C0                                   test    al, al
+.text:0000000000763060 74 01                                   jz      short loc_763063
+.text:0000000000763062 CC                                      int     3               ; Trap to Debugger
+.text:0000000000763063
+.text:0000000000763063                         loc_763063:                             ; CODE XREF: sub_762FF0+21↑j
+.text:0000000000763063                                                                 ; sub_762FF0+50↑j ...
+.text:0000000000763063 32 C0                                   xor     al, al
+.text:0000000000763065
+.text:0000000000763065                         loc_763065:                             ; CODE XREF: sub_762FF0+B7↓j
+.text:0000000000763065                                                                 ; sub_762FF0+238↓j
+.text:0000000000763065 48 8B 9C 24 C0 00 00 00                 mov     rbx, [rsp+0A8h+arg_10]
+.text:000000000076306D 48 81 C4 80 00 00 00                    add     rsp, 80h
+.text:0000000000763074 41 5F                                   pop     r15
+.text:0000000000763076 41 5D                                   pop     r13
+.text:0000000000763078 5F                                      pop     rdi
+.text:0000000000763079 5E                                      pop     rsi
+.text:000000000076307A 5D                                      pop     rbp
+.text:000000000076307B C3                                      retn
+.text:000000000076307C                         ; ---------------------------------------------------------------------------
+.text:000000000076307C
+.text:000000000076307C                         loc_76307C:                             ; CODE XREF: sub_762FF0+45↑j
+.text:000000000076307C BA 00 01 00 00                          mov     edx, 100h
+.text:0000000000763081
+.text:0000000000763081                         loc_763081:                             ; DATA XREF: .rdata:00000000019ECB84↓o
+.text:0000000000763081                                                                 ; .rdata:00000000019ECB94↓o ...
+.text:0000000000763081 4C 89 A4 24 B0 00 00 00                 mov     [rsp+0A8h+arg_0], r12
+.text:0000000000763089 48 8B CB                                mov     rcx, rbx
+.text:000000000076308C E8 DF 08 FF FF                          call    sub_753970
+.text:0000000000763091 4C 8B A3 10 02 00 00                    mov     r12, [rbx+210h] ; bone matrix Pointer
+*/
+#define BONES_PTR_OFFSET_PATTERN "4C 8B A3 ?? ?? ?? ?? 4D 85 E4"
 
 // client.dll => CClientInput @ Index 7
 // text:0000000000821DB4 89 86 B8 06 00 00                       mov     [rsi+6B8h], eax

@@ -17,8 +17,8 @@ namespace CS2 {
 				dwBonesOffset = hClient->ResolveDisp32(bonesDisp, 2);
 				if (!dwBonesOffset)
 					return NULL;
+				printf("dwBonesOffset: 0x%p\n", dwBonesOffset);
 			}
-
 			return dwBonesOffset;
 		}
 	}

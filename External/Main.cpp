@@ -141,8 +141,10 @@ int main() {
 		}
 		auto lpController = pGameEntitySystem->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
 		auto lpPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpController->m_hPawn.GetEntryIndex());
-
-		auto pBones = lpPawn->GetGameSceneNodeExtended()->pGameSceneNodeBonePtr->m_Bones;
+		auto pGameSceneNode = lpPawn->GetGameSceneNodeExtended();
+		auto pBonePtr = pGameSceneNode->pGameSceneNodeBonePtr;
+		auto pBones = pBonePtr->m_Bones;
+		printf("pGameSceneNode: 0x%p\n", pGameSceneNode);
 		printf("Bones: %i\n", pBones.size());
 		auto vHeadOrigin = pBones[6].GetOrigin();
 		printf("%.2f %.2f %.2f\n", vHeadOrigin.x, vHeadOrigin.y, vHeadOrigin.z);
