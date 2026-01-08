@@ -29,7 +29,14 @@ namespace CS2 {
     class CGameEntitySystem
     {
     public:
+        inline static int lpIndex = -1;
         inline static Entity vEntityList[65]{};
+
+        inline static Entity* GetLocalPlayer() {
+            if (lpIndex < 0)
+                return nullptr;
+            return &vEntityList[lpIndex];
+        }
 
         template< typename T = void>
         T* GetEntityByIndex(int entityIdx, bool bRead = true)

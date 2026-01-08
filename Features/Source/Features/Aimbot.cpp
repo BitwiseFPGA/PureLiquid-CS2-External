@@ -40,9 +40,13 @@ Aimbot::FOVResult Aimbot::GetTargetFOVAndDistance(
 }
 void Aimbot::Run() {
 
+    auto pLocalEntity = CS2::CGameEntitySystem::GetLocalPlayer();
 
-    auto pLocalController = CS2::CGameEntitySystem::vEntityList[1].m_pController;
-    auto pLocalPawn = CS2::CGameEntitySystem::vEntityList[1].m_pPawn;
+    if (!pLocalEntity)
+        return;
+
+    auto pLocalController = pLocalEntity->m_pController;
+    auto pLocalPawn = pLocalEntity->m_pPawn;
     
     auto pLocalWeapon = CS2::I::pGameResourceService->GetGameEntitySystem()->GetEntityByIndex<CS2::client::C_BasePlayerWeapon>(pLocalPawn->m_pWeaponServices->m_hActiveWeapon.GetEntryIndex());
     auto pWeaponVData = proc.ReadDirect<CS2::client::CCSWeaponBaseVData*>(reinterpret_cast<uintptr_t>(pLocalWeapon) + CS2::SchemaOffsets::client::C_BaseEntity::m_nSubclassID + 0x8);

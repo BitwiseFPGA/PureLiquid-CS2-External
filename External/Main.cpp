@@ -15,8 +15,8 @@
 #include <Features/Aimbot.h>
 #include <Features/CModelChanger.h>
 #include <CS2/Managers/CModelManager.h>
-// #define USE_CHAMS
-// #define USE_CREATE_MOVE
+#define USE_CHAMS
+#define USE_CREATE_MOVE
 // #define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
 	Process proc{ "cs2.exe" };
@@ -30,15 +30,15 @@ void ReadEntititesThread() {
 	int bone = 0;
 	auto pGameEntitySystem = CS2::I::pGameResourceService->GetGameEntitySystem();
 
-	auto lpEntity = &CS2::CGameEntitySystem::vEntityList[1];
 	while (true) {
 #ifdef USE_CHAMS_VISIBILITY_BASED 
 		std::array<uint32_t, MAX_VISIBLE_PLAYERS> visibleIndexes{};
 		size_t visibleCount = 0;
 #endif
-		for (int i = 1; i < 65; i++) {
 
-			bool isLocalPlayer = i == 1;
+		auto pLocalEntity = CGameEntitySystem::GetLocalPlayer();
+
+		for (int i = 1; i < 65; i++) {
 			
 			auto entity = &CS2::CGameEntitySystem::vEntityList[i];
 			auto pController = pGameEntitySystem->GetEntityByIndex<CS2::client::CCSPlayerController>(i);
@@ -47,6 +47,11 @@ void ReadEntititesThread() {
 				entity->m_bIsValid = false;
 				continue;
 			}
+
+			auto bIsLocalPlayer = pController->m_bIsLocalPlayerController;
+
+			if (bIsLocalPlayer)
+				CGameEntitySystem::lpIndex = i;
 
 			if (!pController->m_hPawn.IsValid()) {
 				entity->m_bIsValid = false;
@@ -64,14 +69,17 @@ void ReadEntititesThread() {
 			entity->m_bIsAlive = health > 0 && health <= pPawn->m_iMaxHealth;
 			entity->m_iPawnIndex = pController->m_hPawn.GetEntryIndex();
 			entity->m_bIsValid = true;
-			entity->m_bIsLocalPlayer = isLocalPlayer;
+			entity->m_bIsLocalPlayer = bIsLocalPlayer;
 			entity->m_pController = pController;
 			entity->m_pPawn = pPawn;
 			
-			if (!lpEntity || isLocalPlayer)
-				continue;
 
 #ifdef USE_CHAMS_VISIBILITY_BASED 
+			
+
+			if (entity->m_bIsLocalPlayer || !pLocalEntity)
+				continue;
+			
 			bool bIsVisible = false;
 			if (entity->m_bIsAlive) {
 				bIsVisible = I::pGameTraceManager->IsPlayerVisible(lpEntity->m_pPawn, entity->m_pPawn);
@@ -139,9 +147,13 @@ int main() {
 			continue;
 			
 		}
-		auto lpController = pGameEntitySystem->GetEntityByIndex<CS2::client::CCSPlayerController>(1);
-		auto lpPawn = pGameEntitySystem->GetEntityByIndex<CS2::client::C_CSPlayerPawnExtended>(lpController->m_hPawn.GetEntryIndex());
-		auto pRenderMesh0 = lpPawn->GetCModel_Imp()->GetRenderMesh(0);
+
+		auto pLocalEntity = CGameEntitySystem::GetLocalPlayer();
+		
+		if (!pLocalEntity)
+			continue;
+
+		auto pRenderMesh0 = pLocalEntity->m_pPawn->GetCModel_Imp()->GetRenderMesh(0);
 		printf("Hitbox0: %s\n", pRenderMesh0->GetBoneData()[0]->m_boneName->Get().c_str());
 
 		Sleep(100);
