@@ -12,6 +12,7 @@
 📊 **Dynamic Pattern Scanning** - Automatic function discovery via IDA-style signatures  
 🎯 **External CGameEntitySystem** - Resolve Entities easily  
 🎯 **Generated SDK** - Fully generated SDK    
+🎯 **External CSchemaSystem** - Schema Offset manager      
 🎯 **External Aimbot** - with TraceShape Visibility Check     
 🎯 **External CreateMove Hook** - for AImbot Autoshoot and in the feature silent aim  
 🎯 **External CAnimatableSceneObjectDesc Hook** - for External Chams  
@@ -156,6 +157,33 @@ int main() {
 ```
 
 ---
+
+
+---
+
+## External CSchemaSystem Offset Manager Usage:  
+
+```c++
+int main() {
+	
+	SetConsoleTitle("PureLiquid CS2 External");
+	
+	I::Initialize();
+
+
+	while (true) {
+		if (GetAsyncKeyState(VK_LSHIFT)) {
+			printf("m_hPawn: 0x%x\n", I::pSchemaSystem->GetOffset("client.dll->CBasePlayerController->m_hPawn")); // Get offset by key
+			printf("m_hPawn: 0x%x\n", I::pSchemaSystem->GetOffset("client.dll", "CBasePlayerController", "m_hPawn")); // Get offset by module, class and field name
+			continue;
+		}
+		Sleep(1000);
+	}
+
+	return 1;
+
+}
+```
 
 ## External Model Manager Usage:
 
