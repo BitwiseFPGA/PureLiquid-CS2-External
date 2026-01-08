@@ -15,7 +15,7 @@
 #include <Features/Aimbot.h>
 #include <Features/CModelChanger.h>
 #include <CS2/Managers/CModelManager.h>
-// #define USE_CHAMS
+#define USE_CHAMS
 #define USE_CREATE_MOVE
 // #define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
@@ -102,6 +102,7 @@ int main() {
 	SetConsoleTitle("PureLiquid CS2 External");
 	
 	I::Initialize();
+
 #ifdef USE_CHAMS
 	auto hLatexChamsMaterial = I::pMaterialSystem->CreateMaterial(CMaterialSystem2::GetLatexChams(), "LatexChamsMaterial");
 

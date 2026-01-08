@@ -78,6 +78,9 @@
     <ClInclude Include="Include\CS2\ExtendedSDK\client\CGameSceneNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CS2\Interfaces\CSchemaSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CS2\Interfaces\CGameTraceManager.cpp">
