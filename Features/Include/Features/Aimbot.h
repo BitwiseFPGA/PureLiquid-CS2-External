@@ -30,9 +30,10 @@ private:
 
 public:
 	inline static TargetInfo bestTarget{};
+	inline static bool m_bUseSilentAim = false;
 	inline static int bestTargetIdx = -1;
 	inline static int targetBoneIdx = -1;
-	inline static float flMaxFov = 10.0f;
+	inline static float flMaxFov = 20.0f;
 	inline static float flMaxDist = 1000.0f;
 	inline static bool m_bIgnoreTeamMembers = false;
 	static void Run();

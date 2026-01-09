@@ -53,6 +53,25 @@ public:
 	uint32_t ResolveDisp32(uint8_t* instruction, uint32_t dwSkipBytes = 0);
 	uintptr_t ResolveRIP(uint8_t* pAddr, DWORD dwRip = 0x3, DWORD dwSize = 0x7);
 	uintptr_t ResolveRIP(uintptr_t pAddr, DWORD dwRip = 0x3, DWORD dwSize = 0x7);
+
+	inline static uintptr_t ResolveInstruction(uintptr_t addr, int byteOffset, bool isRelativeCall = false) {
+		BYTE* bytes = (BYTE*)addr;
+
+		if (isRelativeCall) {
+			// For E8 call instructions
+			if (bytes[0] == 0xE8) {
+				int32_t relativeOffset = *(int32_t*)(bytes + 1);
+				return addr + 5 + relativeOffset; // 5 = size of call instruction
+			}
+		}
+		else {
+			// For regular displacement extraction
+			return *(int32_t*)(bytes + byteOffset);
+		}
+
+		return 0;
+	}
+
 	uintptr_t GetProcAddress(std::string szFnName);
 };
 

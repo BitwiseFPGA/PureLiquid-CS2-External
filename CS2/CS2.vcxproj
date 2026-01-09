@@ -160,6 +160,7 @@
     <ClInclude Include="Include\CS2\ExtendedSDK\resourcesystem\CModel_Imp.h" />
     <ClInclude Include="Include\CS2\ExtendedSDK\scenesystem\CAnimatableSceneObjectDesc.h" />
     <ClInclude Include="Include\CS2\ExtendedSDK\scenesystem\CBaseSceneData.h" />
+    <ClInclude Include="Include\CS2\Hooks\Client\CMsgQAngleCpyHook.h" />
     <ClInclude Include="Include\CS2\Interfaces\CCSGOInput.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameEntitySystem.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameResourceService.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="Source\CS2\ExtendedSDK\modellib\CRenderMesh.cpp" />
     <ClCompile Include="Source\CS2\ExtendedSDK\resourcesystem\CModel_Imp.cpp" />
     <ClCompile Include="Source\CS2\ExtendedSDK\scenesystem\CAnimatableSceneObjectDesc.cpp" />
+    <ClCompile Include="Source\CS2\Hooks\Client\CMsgQAngleCpyHook.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CCSGOInput.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameEntitySystem.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameResourceService.cpp" />

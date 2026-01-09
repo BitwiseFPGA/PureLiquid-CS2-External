@@ -194,6 +194,7 @@ namespace CS2 {
 		bool bForcedBtn;
 	};
 
+
     class CCSGOInput {
     private:
 		// CreateMove Hook

@@ -17,8 +17,6 @@ namespace CS2 {
         int64_t a1, unsigned int a2, CUserCmd* cmd)
     {
         CreateMoveHookData* data = g_pHookData;
-        static bool AutoPistoleando = false;
-
         if (!data) {
             typedef double(__fastcall* CreateMoveFn)(int64_t, unsigned int, CUserCmd*);
             CreateMoveFn original = (CreateMoveFn)g_pOriginalCreateMove;
@@ -117,7 +115,7 @@ namespace CS2 {
         auto client = proc.GetRemoteModule("client.dll");
         if (!client || !client->IsValid()) {
             printf("[!] Failed to get client.dll\n");
-            return -1;
+            return false;
         }
 
         uintptr_t instanceAddr = reinterpret_cast<uintptr_t>(this);
@@ -415,4 +413,5 @@ namespace CS2 {
 
         return pViewAnglesOffset;
     }
+
 }

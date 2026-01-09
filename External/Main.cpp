@@ -15,13 +15,15 @@
 #include <Features/Aimbot.h>
 #include <Features/CModelChanger.h>
 #include <CS2/Managers/CModelManager.h>
-#define USE_CHAMS
+#include <CS2/Hooks/Client/CMsgQAngleCpyHook.h>
+// #define USE_CHAMS
 #define USE_CREATE_MOVE
+#define USE_SILENT_AIM
 // #define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
 	Process proc{ "cs2.exe" };
 }
-
+// cpy QMsgAngle fn => client @ E8 ?? ?? ?? ?? 40 F6 C5 ?? 74 ?? 8B 46 ?? 89 47 ?? 09 2B
 using namespace Globals;
 using namespace CS2;
 
@@ -105,6 +107,14 @@ void ReadEntititesThread() {
 	}
 }
 
+
+float RandomFloat(float a, float b) {
+	float random = ((float)rand()) / (float)RAND_MAX;
+	float diff = b - a;
+	float r = random * diff;
+	return a + r;
+}
+
 int main() {
 	
 	SetConsoleTitle("PureLiquid CS2 External");
@@ -136,23 +146,27 @@ int main() {
 	
 	std::thread([]() {Aimbot::AimbotThread();}).detach();
 #endif
-
+#ifdef USE_SILENT_AIM
+	CMsgQAngleCpy::Hook();
+	Aimbot::m_bUseSilentAim = true;
+#endif
 	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
-
+	bool bAntiAimOn = false;
 
 	while (!GetAsyncKeyState(VK_DELETE)) {
 
-		if (!GetAsyncKeyState(VK_LSHIFT)) {
-			Sleep(500);
+		if (!GetAsyncKeyState(VK_LSHIFT) && !GetAsyncKeyState(VK_RSHIFT)) {
+			Sleep(100);
 			continue;
 			
 		}
 
+		continue;
+
 		auto pLocalEntity = CGameEntitySystem::GetLocalPlayer();
-		
+
 		if (!pLocalEntity)
 			continue;
-
 		auto pRenderMesh0 = pLocalEntity->m_pPawn->GetCModel_Imp()->GetRenderMesh(0);
 		printf("Hitbox0: %s\n", pRenderMesh0->GetBoneData()[0]->m_boneName->Get().c_str());
 
@@ -161,7 +175,9 @@ int main() {
 		// printf("CMD: 0x%p\n", I::pCsGoInput->GetExecutionData().cmd);
 
 	}
-
+#ifdef USE_SILENT_AIM
+	CMsgQAngleCpy::Unhook();
+#endif
 #ifdef USE_CREATE_MOVE
 	I::pCsGoInput->UnhookCreateMove();
 #endif

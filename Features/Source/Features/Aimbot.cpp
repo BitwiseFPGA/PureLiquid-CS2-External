@@ -10,6 +10,7 @@
 #include <CS2/Offsets/client/C_BaseEntity.hpp>
 #include <CS2/Offsets/client/CCSWeaponBaseVData.hpp>
 #include <CS2/SDK/client/CCSWeaponBaseVData.hpp>
+#include <CS2/Hooks/Client/CMsgQAngleCpyHook.h>
 #include <Math/Vector.h>
 #include <Math/QAngle.h>
 #include <Math/Matrix.h>
@@ -138,7 +139,15 @@ void Aimbot::Run() {
 
             auto aimAngle = (boneMatrix.at(targetBoneIdx).GetOrigin() - vLocalPos).RelativeAngle();
             aimAngle.ClampAngle();
-            CS2::I::pCsGoInput->SetSubTickAngle({ aimAngle.x,aimAngle.y,aimAngle.z });
+
+            if (m_bUseSilentAim) {
+                CS2::CMsgQAngleCpy::SetAngleChange(true);
+                CS2::CMsgQAngleCpy::SetAngle({ aimAngle.x,aimAngle.y,aimAngle.z });
+            }
+            else {
+                CS2::I::pCsGoInput->SetSubTickAngle({ aimAngle.x,aimAngle.y,aimAngle.z });
+            }
+            // 
             // printf("Weapon: 0x%p | %i\n", pLocalWeapon);
 
             // CS2::I::pCsGoInput->vViewAngles = aimAngle;
@@ -157,6 +166,7 @@ void Aimbot::Run() {
 
             if (!bestTarget.entity->m_bIsAlive) {
                 ResetTarget();
+
             }
         }
     }
@@ -171,6 +181,9 @@ void Aimbot::ResetTarget() {
     bestTarget.entity = nullptr;
     bestTargetIdx = -1;
     targetBoneIdx = -1;
+    if(m_bUseSilentAim)
+        CS2::CMsgQAngleCpy::SetAngleChange(false);
+
 }
 
 void Aimbot::AimbotThread() {
