@@ -341,7 +341,7 @@ data:00000000015AE520                         ; const CUserMessage_Diagnostic_Re
         m_pPatchedMostCommonCallAddr = pCallSite;
         printf("[+] Successfully patched call site!\n\n");
 
-
+        m_bIsHooked = true;
         return true;
     }
 
@@ -448,7 +448,7 @@ data:00000000015AE520                         ; const CUserMessage_Diagnostic_Re
         else {
             printf("[!] CMsgQAngleCpy unhook completed with errors\n\n");
         }
-
+        
         return success;
     }
 
