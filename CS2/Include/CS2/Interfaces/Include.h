@@ -10,3 +10,4 @@
 #include <CS2/Interfaces/CSchemaSystem.h>
 #include <CS2/Interfaces/CLegacyGameUI.h>
 #include <CS2/Interfaces/CSource2Client.h>
+#include <CS2/Interfaces/CSceneViewDebugOverlays.h>
