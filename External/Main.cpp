@@ -16,7 +16,7 @@
 #include <Features/CModelChanger.h>
 #include <CS2/Managers/CModelManager.h>
 #include <CS2/Hooks/Client/CMsgQAngleCpyHook.h>
-// #define USE_CHAMS
+#define USE_CHAMS
 #define USE_CREATE_MOVE
 #define USE_SILENT_AIM
 // #define USE_CHAMS_VISIBILITY_BASED
