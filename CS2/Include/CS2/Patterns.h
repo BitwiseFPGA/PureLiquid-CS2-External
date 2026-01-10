@@ -39,6 +39,65 @@ text:0000000000763044 48 8D 15 35 8F EF 00                    lea     rdx, aAtte
 */
 #define BONES_PTR_OFFSET_PATTERN "4C 8B A3 ?? ?? ?? ?? 4D 85 E4"
 
+
+
+// @client.dll - i also posted about this on UC: https://www.unknowncheats.me/forum/counter-strike-2-a/733064-easy-silent-aim.html
+/*
+
+        .rdata:00000000015E4990                         ; const CSGOInterpolationInfoPB_CL::`vftable'
+.rdata:00000000015E4990 F0 17 54 00 00 00 00 00 ??_7CSGOInterpolationInfoPB_CL@@6B@ dq offset sub_5417F0
+.rdata:00000000015E4990                                                                 ; DATA XREF: sub_5417F0+F↑o
+.rdata:00000000015E4990                                                                 ; sub_543CC0+15↑o ...
+.rdata:00000000015E4998 A0 00 E1 00 00 00 00 00                 dq offset sub_E100A0
+.rdata:00000000015E49A0 40 15 54 00 00 00 00 00                 dq offset sub_541540
+.rdata:00000000015E49A8 80 15 54 00 00 00 00 00                 dq offset sub_541580
+.rdata:00000000015E49B0 A0 15 54 00 00 00 00 00                 dq offset sub_5415A0
+.rdata:00000000015E49B8 D0 00 E1 00 00 00 00 00                 dq offset sub_E100D0
+.rdata:00000000015E49C0 00 F5 E0 00 00 00 00 00                 dq offset sub_E0F500
+.rdata:00000000015E49C8 B0 15 54 00 00 00 00 00                 dq offset sub_5415B0
+.rdata:00000000015E49D0 80 17 54 00 00 00 00 00                 dq offset sub_541780
+.rdata:00000000015E49D8 D0 15 54 00 00 00 00 00                 dq offset sub_5415D0
+.rdata:00000000015E49E0 50 B4 13 00 00 00 00 00                 dq offset nullsub_1385
+.rdata:00000000015E49E8 10 17 54 00 00 00 00 00                 dq offset sub_541710
+.rdata:00000000015E49F0 F0 05 E1 00 00 00 00 00                 dq offset sub_E105F0
+.rdata:00000000015E49F8 10 0D E1 00 00 00 00 00                 dq offset sub_E10D10
+.rdata:00000000015E4A00 90 17 54 00 00 00 00 00                 dq offset sub_541790
+.rdata:00000000015E4A08 B0 17 54 00 00 00 00 00                 dq offset sub_5417B0
+.rdata:00000000015E4A10 A0 17 54 00 00 00 00 00                 dq offset sub_5417A0
+.rdata:00000000015E4A18 C0 F8 E0 00 00 00 00 00 off_15E4A18     dq offset sub_E0F8C0    ; DATA XREF: sub_542CE0↑o
+.rdata:00000000015E4A20 90 18 54 00 00 00 00 00                 dq offset SetServerAngle_Interpolation_sub_541890 <= This function
+
+SetServerAngle_Interpolation_sub_541890 + 0x7E
+.text:000000000054190E E8 FD 44 F3 FF                          call    SetServerAngle_sub_475E10 <= Patch This call!!
+
+
+
+Also found in VTable:
+data:00000000015AE520                         ; const CUserMessage_Diagnostic_Response_Diagnostic::`vftable'
+.rdata:00000000015AE520 60 61 47 00 00 00 00 00 ??_7CUserMessage_Diagnostic_Response_Diagnostic@@6B@ dq offset sub_476160
+.rdata:00000000015AE520                                                                 ; DATA XREF: sub_476160+F↑o
+.rdata:00000000015AE520                                                                 ; sub_4CAD60+51↑o ...
+.rdata:00000000015AE528 A0 00 E1 00 00 00 00 00                 dq offset sub_E100A0
+.rdata:00000000015AE530 10 21 47 00 00 00 00 00                 dq offset sub_472110
+.rdata:00000000015AE538 F0 22 47 00 00 00 00 00                 dq offset sub_4722F0
+.rdata:00000000015AE540 B0 23 47 00 00 00 00 00                 dq offset sub_4723B0
+.rdata:00000000015AE548 D0 00 E1 00 00 00 00 00                 dq offset sub_E100D0
+.rdata:00000000015AE550 00 F5 E0 00 00 00 00 00                 dq offset sub_E0F500
+.rdata:00000000015AE558 D0 25 47 00 00 00 00 00                 dq offset sub_4725D0
+.rdata:00000000015AE560 B0 3B 47 00 00 00 00 00                 dq offset sub_473BB0
+.rdata:00000000015AE568 60 2C 47 00 00 00 00 00                 dq offset sub_472C60
+.rdata:00000000015AE570 50 B4 13 00 00 00 00 00                 dq offset nullsub_1385
+.rdata:00000000015AE578 60 36 47 00 00 00 00 00                 dq offset sub_473660
+.rdata:00000000015AE580 F0 05 E1 00 00 00 00 00                 dq offset sub_E105F0
+.rdata:00000000015AE588 10 0D E1 00 00 00 00 00                 dq offset sub_E10D10
+.rdata:00000000015AE590 90 3D 47 00 00 00 00 00                 dq offset sub_473D90
+.rdata:00000000015AE598 00 3F 47 00 00 00 00 00                 dq offset sub_473F00
+.rdata:00000000015AE5A0 F0 3E 47 00 00 00 00 00                 dq offset sub_473EF0
+.rdata:00000000015AE5A8 C0 F8 E0 00 00 00 00 00 off_15AE5A8     dq offset sub_E0F8C0    ; DATA XREF: sub_476220↑o
+.rdata:00000000015AE5B0 10 5E 47 00 00 00 00 00                 dq offset SetServerAngle_sub_475E10 <= This
+        */
+#define SET_SERVER_ANGLE_CALLSITE_PATTERN "E8 ?? ?? ?? ?? 40 F6 C6 ?? 74 ?? 83 0F ?? 48 8B 43"
+
 // client.dll => CClientInput @ Index 7
 // text:0000000000821DB4 89 86 B8 06 00 00                       mov     [rsi+6B8h], eax
 #define C_CSGO_INPUT_VIEW_ANGLES_PATTERN "F2 0F 11 86 ?? ?? ?? ?? 89 86 ?? ?? ?? ?? C7 86"
