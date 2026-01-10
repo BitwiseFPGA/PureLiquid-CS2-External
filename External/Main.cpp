@@ -16,6 +16,7 @@
 #include <Features/CModelChanger.h>
 #include <CS2/Managers/CModelManager.h>
 #include <CS2/Hooks/Client/CMsgQAngleCpyHook.h>
+#include <CS2/Panorama/CUI.h>
 #define USE_CHAMS
 #define USE_CREATE_MOVE
 #define USE_SILENT_AIM
@@ -153,6 +154,8 @@ int main() {
 	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
 	bool bAntiAimOn = false;
 
+	panorama::CUI::ShowWelcomeMsg();
+
 	while (!GetAsyncKeyState(VK_DELETE)) {
 
 		if (!GetAsyncKeyState(VK_LSHIFT) && !GetAsyncKeyState(VK_RSHIFT)) {
@@ -184,5 +187,7 @@ int main() {
 #ifdef USE_CHAMS
 	CAnimatableSceneObjectDesc::UninstallRendererHook();
 #endif
+
+	panorama::CUI::ShowShutdownMsg();
 	return 1;
 }
