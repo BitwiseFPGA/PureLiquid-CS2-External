@@ -8,3 +8,4 @@
 #include <CS2/Interfaces/CPanoramaUIEngine.h>
 #include <CS2/Interfaces/CUIEngineSource2.h>
 #include <CS2/Interfaces/CSchemaSystem.h>
+#include <CS2/Interfaces/CLegacyGameUI.h>

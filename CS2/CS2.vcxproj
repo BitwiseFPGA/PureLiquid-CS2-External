@@ -165,6 +165,7 @@
     <ClInclude Include="Include\CS2\Interfaces\CGameEntitySystem.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameResourceService.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameTraceManager.h" />
+    <ClInclude Include="Include\CS2\Interfaces\CLegacyGameUI.h" />
     <ClInclude Include="Include\CS2\Interfaces\CMaterialSystem2.h" />
     <ClInclude Include="Include\CS2\Interfaces\CPanoramaUIEngine.h" />
     <ClInclude Include="Include\CS2\Interfaces\CSchemaSystem.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="Source\CS2\Interfaces\CGameEntitySystem.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameResourceService.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameTraceManager.cpp" />
+    <ClCompile Include="Source\CS2\Interfaces\CLegacyGameUI.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CMaterialSystem2.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CPanoramaUIEngine.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CUIEngineSource2.cpp" />

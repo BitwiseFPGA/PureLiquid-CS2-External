@@ -17,9 +17,12 @@
 #include <CS2/Managers/CModelManager.h>
 #include <CS2/Hooks/Client/CMsgQAngleCpyHook.h>
 #include <CS2/Panorama/CUI.h>
+#define DEMO_MODE
+#ifdef DEMO_MODE
 #define USE_CHAMS
 #define USE_CREATE_MOVE
 #define USE_SILENT_AIM
+#endif
 // #define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
 	Process proc{ "cs2.exe" };
@@ -155,7 +158,7 @@ int main() {
 	bool bAntiAimOn = false;
 
 	panorama::CUI::ShowWelcomeMsg();
-
+	I::pLegacyGameUI->ShowPopup("PureLiquid v0.1", "Pure Liquid Loaded!");
 	while (!GetAsyncKeyState(VK_DELETE)) {
 
 		if (!GetAsyncKeyState(VK_LSHIFT) && !GetAsyncKeyState(VK_RSHIFT)) {
@@ -163,7 +166,7 @@ int main() {
 			continue;
 			
 		}
-
+		
 		continue;
 
 		auto pLocalEntity = CGameEntitySystem::GetLocalPlayer();
@@ -189,5 +192,7 @@ int main() {
 #endif
 
 	panorama::CUI::ShowShutdownMsg();
+	I::pLegacyGameUI->ShowPopup("PureLiquid v0.1", "Pure Liquid Unloaded!");
+
 	return 1;
 }
