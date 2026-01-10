@@ -24,7 +24,7 @@
 ---
 
 ---
-![CS2 Chams Demo](https://raw.githubusercontent.com/xsip/PureLiquid-CS2-External/refs/heads/main/chams-preview.png)
+![CS2 Chams Demo](https://raw.githubusercontent.com/xsip/PureLiquid-CS2-External/refs/heads/main/loaded-msg.png)
 ---
 
 ---
