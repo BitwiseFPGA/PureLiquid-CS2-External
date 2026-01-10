@@ -81,7 +81,7 @@ namespace CS2 {
 		DWORD waitResult = WaitForSingleObject(hThread, 10000);
 
 		if (waitResult != WAIT_OBJECT_0) {
-			printf("RunScript Thread wait failed or timed out! Result: %d\n", waitResult);
+			printf("CreatePopup Thread wait failed or timed out! Result: %d\n", waitResult);
 			CloseHandle(hThread);
 			proc.FreeRemote(pCreatePopupRemoteShellcode);
 			proc.FreeRemote(pCreatePopupRemoteCtx);
