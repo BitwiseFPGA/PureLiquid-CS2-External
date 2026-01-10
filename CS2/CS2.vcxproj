@@ -198,6 +198,7 @@
     <ClCompile Include="Source\CS2\Interfaces\CSceneViewDebugOverlays.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CSource2Client.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CUIEngineSource2.cpp" />
+    <ClCompile Include="Source\CS2\Interfaces\Manager.cpp" />
     <ClCompile Include="Source\CS2\Managers\CModelManager.cpp" />
     <ClCompile Include="Source\CS2\Panorama\CUI.cpp" />
   </ItemGroup>
