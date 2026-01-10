@@ -319,6 +319,7 @@ int main() {
 - Windows process internals and memory manipulation
 - Game engine reverse engineering
 - Direct syscall invocation
+- Detected!
 
 Compile in **Release mode** for optimal performance and correct shellcode generation.
 
