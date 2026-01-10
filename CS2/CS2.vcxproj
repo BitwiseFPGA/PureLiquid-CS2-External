@@ -169,6 +169,7 @@
     <ClInclude Include="Include\CS2\Interfaces\CMaterialSystem2.h" />
     <ClInclude Include="Include\CS2\Interfaces\CPanoramaUIEngine.h" />
     <ClInclude Include="Include\CS2\Interfaces\CSchemaSystem.h" />
+    <ClInclude Include="Include\CS2\Interfaces\CSource2Client.h" />
     <ClInclude Include="Include\CS2\Interfaces\CUIEngineSource2.h" />
     <ClInclude Include="Include\CS2\Interfaces\Include.h" />
     <ClInclude Include="Include\CS2\Interfaces\Manager.h" />
@@ -193,6 +194,7 @@
     <ClCompile Include="Source\CS2\Interfaces\CLegacyGameUI.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CMaterialSystem2.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CPanoramaUIEngine.cpp" />
+    <ClCompile Include="Source\CS2\Interfaces\CSource2Client.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CUIEngineSource2.cpp" />
     <ClCompile Include="Source\CS2\Managers\CModelManager.cpp" />
     <ClCompile Include="Source\CS2\Panorama\CUI.cpp" />

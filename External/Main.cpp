@@ -155,8 +155,6 @@ int main() {
 	Aimbot::m_bUseSilentAim = true;
 #endif
 	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
-	bool bAntiAimOn = false;
-
 	panorama::CUI::ShowWelcomeMsg();
 	I::pLegacyGameUI->ShowPopup("PureLiquid v0.1", "Pure Liquid Loaded!");
 	while (!GetAsyncKeyState(VK_DELETE)) {
@@ -167,7 +165,7 @@ int main() {
 			
 		}
 		
-		continue;
+		continue;	
 
 		auto pLocalEntity = CGameEntitySystem::GetLocalPlayer();
 

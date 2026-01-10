@@ -9,3 +9,4 @@
 #include <CS2/Interfaces/CUIEngineSource2.h>
 #include <CS2/Interfaces/CSchemaSystem.h>
 #include <CS2/Interfaces/CLegacyGameUI.h>
+#include <CS2/Interfaces/CSource2Client.h>

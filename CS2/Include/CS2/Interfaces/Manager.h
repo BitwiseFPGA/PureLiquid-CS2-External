@@ -13,6 +13,7 @@ namespace CS2 {
 	class CPanoramaUIEngine;
 	class CSchemaSystem;
 	class CLegacyGameUI;
+	class CSource2Client;
 	class CInterfaceManager {
 	private:
 		template <typename T>
@@ -28,6 +29,7 @@ namespace CS2 {
 		inline static CMaterialSystem2* pMaterialSystem = nullptr;
 		inline static CSchemaSystem* pSchemaSystem = nullptr;
 		inline static CLegacyGameUI* pLegacyGameUI = nullptr;
+		inline static CSource2Client* pSource2Client = nullptr;
 
 		template <typename T>
 		inline static T* CreateInterface(std::string module, std::string interfaceName) {
@@ -57,6 +59,7 @@ namespace CS2 {
 			pPanoramaUIEngine = CreateInterface<CPanoramaUIEngine>("panorama.dll", "PanoramaUIEngine001");
 			pSchemaSystem = CreateInterface<CSchemaSystem>("schemasystem.dll", "SchemaSystem_001");
 			pLegacyGameUI = CreateInterface<CLegacyGameUI>("client.dll", "LegacyGameUI001");
+			pSource2Client = CreateInterface<CSource2Client>("client.dll", "Source2Client002");
 
 
 			LogAll();
@@ -68,6 +71,7 @@ namespace CS2 {
 			printf("[+] CPanoramaUIEngine: 0x%p\n", pPanoramaUIEngine);
 			printf("[+] CGameTraceManager: 0x%p\n", pGameTraceManager);
 			printf("[+] CMaterialSystem2: 0x%p\n", pMaterialSystem);
+			printf("[+] CSource2Client: 0x%p\n", pSource2Client);
 			printf("[+] CLegacyGameUI: 0x%p\n", pLegacyGameUI);
 			printf("[+] CCSGOInput: 0x%p\n", pCsGoInput);
 			printf("[+] CSchemaSystem: 0x%p\n\n", pSchemaSystem);
