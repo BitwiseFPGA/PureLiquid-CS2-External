@@ -11,7 +11,7 @@ namespace CS2 {
 			RunScriptFn pFn;
 			void* panel;
 			CUIEngineSource2* pUiEngineSource2;
-			char szScript[255];
+			char *szScript;
 		};
 		
 		static DWORD WINAPI RunScriptThread(LPVOID lpParam);

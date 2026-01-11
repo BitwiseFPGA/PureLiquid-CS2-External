@@ -125,6 +125,9 @@ int main() {
 	
 	I::Initialize();
 
+
+
+
 #ifdef USE_CHAMS
 	auto hLatexChamsMaterial = I::pMaterialSystem->CreateMaterial(CMaterialSystem2::GetLatexChams(), "LatexChamsMaterial");
 

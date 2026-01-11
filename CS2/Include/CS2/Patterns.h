@@ -112,6 +112,10 @@ data:00000000015AE520                         ; const CUserMessage_Diagnostic_Re
 
 
 
+
+// client @xref =>  [%d] Could not find Hud Element: %s\n
+#define CCSGO_HUD_PATTERN "48 8B 05 ?? ?? ?? ?? 48 8B D9 48 85 C0 0F 84 ?? ?? ?? ?? 49 89 5B"
+
 // client.dll =>
 // .text:0000000000200C59 C6 44 24 20 0F								mov[rsp + 38h + var_18], 0Fh
 // .text : 0000000000200C5E E8 3D 0C 00 00								call    TraceInitEntitiesOnly_sub_2018A0

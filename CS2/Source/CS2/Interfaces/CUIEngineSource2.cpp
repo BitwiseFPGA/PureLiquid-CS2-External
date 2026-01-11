@@ -60,7 +60,9 @@ namespace CS2 {
 		ctx.pFn = pRunScriptFn;
 		ctx.panel = panel ? reinterpret_cast<void*>(panel) : 0x0;
 		ctx.pUiEngineSource2 = this;
-		strcpy_s(ctx.szScript, sizeof(ctx.szScript), szScript);
+		auto remoteScriptBuffer = proc.AllocateAndWriteString(szScript);
+		ctx.szScript = reinterpret_cast<char*>(remoteScriptBuffer);
+		// strcpy_s(ctx.szScript, sizeof(ctx.szScript), szScript);
 		
 		if (!proc.Write<RunScriptContext>(reinterpret_cast<uintptr_t>(pRunScriptCtx), ctx)) {
 			printf("Failed to write Run Script context!\n");
@@ -71,6 +73,8 @@ namespace CS2 {
 			if (!pRunScriptShellCodeRemote) {
 				printf("Failed to allocate RunScript shellcode!\n");
 				proc.FreeRemote(pRunScriptCtx);
+				proc.FreeRemote(remoteScriptBuffer);
+
 				pRunScriptCtx = nullptr;
 				return;
 			}
@@ -86,6 +90,8 @@ namespace CS2 {
 			printf("Failed to create RunScript thread!\n");
 			proc.FreeRemote(pRunScriptShellCodeRemote);
 			proc.FreeRemote(pRunScriptCtx);
+			proc.FreeRemote(remoteScriptBuffer);
+
 			pRunScriptCtx = nullptr;
 			pRunScriptShellCodeRemote = nullptr;
 			return;
@@ -98,6 +104,8 @@ namespace CS2 {
 			CloseHandle(hThread);
 			proc.FreeRemote(pRunScriptShellCodeRemote);
 			proc.FreeRemote(pRunScriptCtx);
+			proc.FreeRemote(remoteScriptBuffer);
+
 			pRunScriptCtx = nullptr;
 			pRunScriptShellCodeRemote = nullptr;
 			return;
@@ -106,7 +114,7 @@ namespace CS2 {
 		DWORD exitCode = 0;
 		GetExitCodeThread(hThread, &exitCode);
 		CloseHandle(hThread);
-
+		proc.FreeRemote(remoteScriptBuffer);
 		/* Simple Fire and cleanup execution. - the previous logic is just for re - using the same RemoteCtx& Shellcode!!
 		DWORD result = proc.ExecuteRemoteWrapper(
 			RunScriptThread,

@@ -12,6 +12,7 @@ namespace CS2 {
 		printf("[+] CSource2Client->GetSceneDebugOverlay(): 0x%p\n", pSource2Client->GetSceneDebugOverlay());
 		printf("[+] CLegacyGameUI: 0x%p\n", pLegacyGameUI);
 		printf("[+] CCSGOInput: 0x%p\n", pCsGoInput);
+		printf("[+] CCSGO_Hud: 0x%p\n", pCsGoHud);
 		printf("[+] CSchemaSystem: 0x%p\n\n", pSchemaSystem);
 	}
 }

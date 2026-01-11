@@ -162,6 +162,7 @@
     <ClInclude Include="Include\CS2\ExtendedSDK\scenesystem\CBaseSceneData.h" />
     <ClInclude Include="Include\CS2\Hooks\Client\CMsgQAngleCpyHook.h" />
     <ClInclude Include="Include\CS2\Interfaces\CCSGOInput.h" />
+    <ClInclude Include="Include\CS2\Interfaces\CCSGO_Hud.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameEntitySystem.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameResourceService.h" />
     <ClInclude Include="Include\CS2\Interfaces\CGameTraceManager.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="Source\CS2\ExtendedSDK\scenesystem\CAnimatableSceneObjectDesc.cpp" />
     <ClCompile Include="Source\CS2\Hooks\Client\CMsgQAngleCpyHook.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CCSGOInput.cpp" />
+    <ClCompile Include="Source\CS2\Interfaces\CCSGO_Hud.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameEntitySystem.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameResourceService.cpp" />
     <ClCompile Include="Source\CS2\Interfaces\CGameTraceManager.cpp" />

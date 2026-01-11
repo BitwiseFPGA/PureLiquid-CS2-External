@@ -14,6 +14,7 @@ namespace CS2 {
 	class CSchemaSystem;
 	class CLegacyGameUI;
 	class CSource2Client;
+	class CCSGO_Hud;
 	class CInterfaceManager {
 	private:
 		template <typename T>
@@ -30,6 +31,8 @@ namespace CS2 {
 		inline static CSchemaSystem* pSchemaSystem = nullptr;
 		inline static CLegacyGameUI* pLegacyGameUI = nullptr;
 		inline static CSource2Client* pSource2Client = nullptr;
+
+		inline static CCSGO_Hud* pCsGoHud = nullptr;
 
 		template <typename T>
 		inline static T* CreateInterface(std::string module, std::string interfaceName) {
@@ -53,6 +56,12 @@ namespace CS2 {
 						pClient->ScanMemory(C_CSGO_INPUT_PATTERN), 0x3, 0x7)
 				)
 				);
+
+			pCsGoHud = ::Globals::proc.ReadDirect<CCSGO_Hud*>(
+				pClient->ResolveRIP(
+					pClient->ScanMemory(CCSGO_HUD_PATTERN)
+					, 3, 7)
+			);
 
 			pGameResourceService = CreateInterface<CGameResourceService>("engine2.dll", "GameResourceServiceClientV001");
 			pMaterialSystem = CreateInterface<CMaterialSystem2>("materialsystem2.dll", "VMaterialSystem2_001");
