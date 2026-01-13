@@ -295,6 +295,12 @@ int main() {
 
 ```
 
+## Overlay  
+CURRENTLY LAGGY!! - Can be disabled by undefining "INCLUDE_OVERLAY" in "External/Include.h"!  
+Preview:
+![CS2 Overlay Demo](https://raw.githubusercontent.com/xsip/PureLiquid-CS2-External/refs/heads/main/overlay-preview.png)
+
+
 
 ---
 
@@ -339,3 +345,4 @@ This project is provided for **educational and research purposes only**. Using t
 
 ## Other Projects
 [CS2-External-Chams](https://github.com/xsip/CS2-External-Chams)
+
