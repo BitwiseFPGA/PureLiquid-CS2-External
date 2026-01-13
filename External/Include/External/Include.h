@@ -12,7 +12,7 @@
 #endif
 
 #define IMGUI_API __declspec(dllimport)
-#define INCLUDE_OVERLAY
+// #define INCLUDE_OVERLAY
 #ifdef INCLUDE_OVERLAY
 #include <Overlay/Definitions.h>
 #include <Overlay/Overlay.h>

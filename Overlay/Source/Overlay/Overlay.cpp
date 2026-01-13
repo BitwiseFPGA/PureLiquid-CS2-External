@@ -255,6 +255,7 @@ bool buttonThreeActive = false;
 
 
 void Overlay::MessageThread() {
+
     ShowWindow(Overlay::hwnd, TRUE);
     UpdateWindow(Overlay::hwnd);
     ::ShowWindow(hwnd, SW_SHOWDEFAULT);
@@ -499,6 +500,12 @@ bool Overlay::CreateDeviceD3D()
         res = D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_WARP, nullptr, createDeviceFlags, featureLevelArray, 2, D3D11_SDK_VERSION, &sd, &g_pSwapChain, &g_pd3dDevice, &featureLevel, &g_pd3dDeviceContext);
     if (res != S_OK)
         return false;
+
+    IDXGIDevice1* pDXGIDevice = nullptr;
+    if (SUCCEEDED(g_pd3dDevice->QueryInterface(__uuidof(IDXGIDevice1), (void**)&pDXGIDevice))) {
+        pDXGIDevice->SetGPUThreadPriority(7); // Max priority
+        pDXGIDevice->Release();
+    }
 
     CreateRenderTarget();
 

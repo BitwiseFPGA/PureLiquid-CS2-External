@@ -130,11 +130,10 @@ namespace RenderObjects {
 			Vector3 boxCenter = { vCenter.x, vCenter.y, vCenter.z + 2.0f };
 			Vector3 boxSize = { 30.0f, 30.0f, height + 12.0f };
 
-			view3D->DrawBox(boxCenter, boxSize, { 0.35f, 0.35f, 0.35f, 0.2f });
-			view3D->DrawWireBox(boxCenter, boxSize, borderColor);
+			// view3D->DrawBox(boxCenter, boxSize, { 0.35f, 0.35f, 0.35f, 0.2f });
+			// view3D->DrawWireBox(boxCenter, boxSize, borderColor);
 
-			// DrawHealthBarScreenAligned(view3D, {vHeadPos.x, vHeadPos.y, vHeadPos.z}, 
-			//                           entity->m_iMaxHealth, entity->m_iHealth, {5.0f, 5.0f, height});
+			// DrawHealthBarScreenAligned(view3D, {vHeadPos.x, vHeadPos.y, vHeadPos.z}, entity->m_pPawn->m_iMaxHealth, entity->m_pPawn->m_iHealth, {5.0f, 5.0f, height});
 		}
 	}
 

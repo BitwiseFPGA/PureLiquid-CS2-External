@@ -278,12 +278,24 @@ void View3D::DrawCapsuleOutline(
 void View3D::BeginFrame() {
     boxVertices.clear();
     lineVertices.clear();
+
+    boxVertices.reserve(MaxBoxes * 8);      // 8 vertices per box
+    lineVertices.reserve(MaxLines);          // Conservative estimate
 }
 
 void View3D::EndFrame()
 {
-    // --- Draw boxes ---
-    UINT numBoxes = (UINT)(boxVertices.size() / 8); // 8 vertices per box
+    ctx->VSSetShader(vs, nullptr, 0);
+    ctx->PSSetShader(ps, nullptr, 0);
+    ctx->IASetInputLayout(layout);
+
+    CBObject obj;
+    obj.world = XMMatrixTranspose(XMMatrixIdentity());
+    ctx->UpdateSubresource(cbObject, 0, nullptr, &obj, 0, 0);
+    ctx->VSSetConstantBuffers(0, 1, &cbObject);
+    ctx->VSSetConstantBuffers(1, 1, &cbFrame);
+
+    UINT numBoxes = (UINT)(boxVertices.size() / 8);
     if (numBoxes > 0)
     {
         D3D11_MAPPED_SUBRESOURCE mapped = {};
@@ -296,20 +308,10 @@ void View3D::EndFrame()
         ctx->IASetVertexBuffers(0, 1, &vbBox, &stride, &offset);
         ctx->IASetIndexBuffer(ibBox, DXGI_FORMAT_R16_UINT, 0);
         ctx->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-        ctx->VSSetShader(vs, nullptr, 0);
-        ctx->PSSetShader(ps, nullptr, 0);
-        ctx->IASetInputLayout(layout);
 
-        CBObject obj;
-        obj.world = XMMatrixTranspose(XMMatrixIdentity());
-        ctx->UpdateSubresource(cbObject, 0, nullptr, &obj, 0, 0);
-        ctx->VSSetConstantBuffers(0, 1, &cbObject);
-        ctx->VSSetConstantBuffers(1, 1, &cbFrame);
-
-        ctx->DrawIndexed(numBoxes * 36, 0, 0); // 36 indices per box
+        ctx->DrawIndexed(numBoxes * 36, 0, 0);
     }
 
-    // --- Draw lines ---
     UINT numLines = (UINT)lineVertices.size();
     if (numLines > 0)
     {
@@ -322,19 +324,11 @@ void View3D::EndFrame()
         UINT offset = 0;
         ctx->IASetVertexBuffers(0, 1, &vbLine, &stride, &offset);
         ctx->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_LINELIST);
-        ctx->VSSetShader(vs, nullptr, 0);
-        ctx->PSSetShader(ps, nullptr, 0);
-        ctx->IASetInputLayout(layout);
-
-        CBObject obj;
-        obj.world = XMMatrixTranspose(XMMatrixIdentity());
-        ctx->UpdateSubresource(cbObject, 0, nullptr, &obj, 0, 0);
-        ctx->VSSetConstantBuffers(0, 1, &cbObject);
-        ctx->VSSetConstantBuffers(1, 1, &cbFrame);
 
         ctx->Draw(numLines, 0);
     }
 }
+
 
 
 bool View3D::IsLookingAtCapsule(const XMFLOAT3& capsuleCenter, const XMFLOAT3& vMin, const XMFLOAT3& vMax, float radius) const
@@ -449,18 +443,23 @@ void View3D::DrawBox(Vector3 pos, Vector3 size, XMFLOAT4 color) {
 
 void View3D::DrawWireBox(Vector3 pos, Vector3 size, XMFLOAT4 color)
 {
+    if (lineVertices.size() + 24 >= MaxLines) return;
+
     // Calculate 8 corners of the box
+    XMMATRIX world = XMMatrixTranslation(pos.x, pos.y, pos.z);
     XMFLOAT3 corners[8];
+
     for (int i = 0; i < 8; i++)
     {
-        XMFLOAT3 v = { (i & 1 ? -0.5f : 0.5f), (i & 2 ? -0.5f : 0.5f), (i & 4 ? -0.5f : 0.5f) };
-        v.x *= size.x; v.y *= size.y; v.z *= size.z;
-
-        XMVECTOR vec = XMVector3Transform(XMLoadFloat3(&v), XMMatrixTranslation(pos.x, pos.y, pos.z));
+        XMFLOAT3 v = {
+            (i & 1 ? -0.5f : 0.5f) * size.x,
+            (i & 2 ? -0.5f : 0.5f) * size.y,
+            (i & 4 ? -0.5f : 0.5f) * size.z
+        };
+        XMVECTOR vec = XMVector3Transform(XMLoadFloat3(&v), world);
         XMStoreFloat3(&corners[i], vec);
     }
 
-    // Define edges of the box (pairs of corner indices)
     const int edges[12][2] = {
         {0,1}, {1,3}, {3,2}, {2,0}, // bottom face
         {4,5}, {5,7}, {7,6}, {6,4}, // top face
@@ -469,11 +468,10 @@ void View3D::DrawWireBox(Vector3 pos, Vector3 size, XMFLOAT4 color)
 
     for (int i = 0; i < 12; i++)
     {
-        DrawLine3D(corners[edges[i][0]], corners[edges[i][1]], 1.25f, color);
+        lineVertices.push_back({ corners[edges[i][0]], color });
+        lineVertices.push_back({ corners[edges[i][1]], color });
     }
 }
-
-
 
 
 
