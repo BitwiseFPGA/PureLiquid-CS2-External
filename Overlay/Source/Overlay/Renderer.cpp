@@ -6,7 +6,7 @@
 
 void Renderer::RenderWatermark(ImVec2 displaySize) {
 	auto pDrawList = ImGui::GetForegroundDrawList();
-	pDrawList->AddText(ImVec2(5, 5), ImColor(255, 0, 255, 230), "xsip's pureLiquid v0.1");
+	pDrawList->AddText(ImVec2(5, 5), ImColor(255, 0, 255, 230), "xsip's PureLiquid v0.1");
 }
 
 void Renderer::Render(ImVec2 displaySize, ImVec2 cursorPos, bool bMouseReleased, View3D* view3D) {
