@@ -129,7 +129,7 @@ int main() {
 #ifdef INCLUDE_OVERLAY
 	OverlayAPI::InitImGuiContext();
 	Overlay::Show(proc.GetHwnd(), &renderer);
-	// renderer.AddRenderObject(new CS2::EspRenderObject());
+	renderer.AddRenderObject(new RenderObjects::Esp());
 #endif
 
 

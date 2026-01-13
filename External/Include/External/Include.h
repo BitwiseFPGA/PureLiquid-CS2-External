@@ -17,6 +17,7 @@
 #include <Overlay/Overlay.h>
 #include <Overlay/Renderer.h>
 #include <RenderObjects/Include.h>
+#include <RenderObjects/Esp.h>
 #endif
 
 #include <GlobalData/Include.h>

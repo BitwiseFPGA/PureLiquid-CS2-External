@@ -73,12 +73,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(ProjectDir)\Include;$(SolutionDir)\Math\Include;$(SolutionDir)\Overlay\Include;$(SolutionDir)\Source2\Include;$(SolutionDir)\GlobalData\Include;$(SolutionDir)Overlay\Libraries\imgui;$(SolutionDir)Overlay\Libraries;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\Include;$(SolutionDir)\Math\Include;$(SolutionDir)\Overlay\Include;$(SolutionDir)\Source2\Include;$(SolutionDir)\GlobalData\Include;$(SolutionDir)Overlay\Libraries\imgui;$(SolutionDir)Overlay\Libraries;$(SolutionDir)\CS2\Include;$(SolutionDir)\Memory\Include;$(SolutionDir)\CS2\Include\CS2;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(ProjectDir)\Include;$(SolutionDir)\Math\Include;$(SolutionDir)\Overlay\Include;$(SolutionDir)\Source2\Include;$(SolutionDir)\GlobalData\Include;$(SolutionDir)Overlay\Libraries\imgui;$(SolutionDir)Overlay\Libraries;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\Include;$(SolutionDir)\Math\Include;$(SolutionDir)\Overlay\Include;$(SolutionDir)\Source2\Include;$(SolutionDir)\GlobalData\Include;$(SolutionDir)Overlay\Libraries\imgui;$(SolutionDir)Overlay\Libraries;$(SolutionDir)\CS2\Include;$(SolutionDir)\Memory\Include;$(SolutionDir)\CS2\Include\CS2;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -112,7 +112,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);CUSTOM_GLOBAL_TYPES</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdclatest</LanguageStandard_C>
@@ -128,7 +128,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);CUSTOM_GLOBAL_TYPES</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdclatest</LanguageStandard_C>
@@ -139,10 +139,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\RenderObjects\Esp.h" />
     <ClInclude Include="Include\RenderObjects\Include.h" />
+    <ClInclude Include="Include\RenderObjects\ViewMatrixResolver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\RenderObjects\Esp.cpp" />
     <ClCompile Include="Source\RenderObjects\Include.cpp" />
+    <ClCompile Include="Source\RenderObjects\ViewMatrixResolver.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CS2\CS2.vcxproj">
+      <Project>{54589bb2-7b3a-4a66-97a7-2628f9e792d4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalData\GlobalData.vcxproj">
+      <Project>{67c0b8c6-8308-41d3-9540-2d33fc61bc34}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Math\Math.vcxproj">
+      <Project>{94096955-e595-4626-a42a-48722d7983cd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Memory\Memory.vcxproj">
+      <Project>{a211709a-5578-4c34-9d70-69516f31770f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Overlay\Overlay.vcxproj">
+      <Project>{68dfd4e9-e27c-489f-a6a9-fc7f1519c65f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Source2\Source2.vcxproj">
+      <Project>{05502e0d-e6ab-40b0-9d8a-274fb372452b}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
