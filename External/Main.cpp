@@ -163,8 +163,10 @@ int main() {
 	Aimbot::m_bUseSilentAim = true;
 #endif
 	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
-	panorama::CUI::ShowWelcomeMsg();
+#ifdef USE_POPUP_MSGS
 	I::pLegacyGameUI->ShowPopup("PureLiquid v0.1", "Pure Liquid Loaded!");
+#endif
+	panorama::CUI::ShowWelcomeMsg();
 	while (!GetAsyncKeyState(VK_DELETE)) {
 
 		if (!GetAsyncKeyState(VK_LSHIFT) && !GetAsyncKeyState(VK_RSHIFT)) {
@@ -196,9 +198,9 @@ int main() {
 #ifdef USE_CHAMS
 	CAnimatableSceneObjectDesc::UninstallRendererHook();
 #endif
-
 	panorama::CUI::ShowShutdownMsg();
+#ifdef USE_POPUP_MSGS
 	I::pLegacyGameUI->ShowPopup("PureLiquid v0.1", "Pure Liquid Unloaded!");
-
+#endif
 	return 1;
 }

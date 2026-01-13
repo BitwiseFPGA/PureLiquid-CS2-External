@@ -8,6 +8,7 @@
 #define USE_CHAMS
 #define USE_CREATE_MOVE
 #define USE_SILENT_AIM
+#define USE_POPUP_MSGS
 #endif
 
 #define IMGUI_API __declspec(dllimport)
