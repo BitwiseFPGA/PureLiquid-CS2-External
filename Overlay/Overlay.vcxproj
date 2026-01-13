@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Include\Overlay\Definitions.h" />
     <ClInclude Include="Include\Overlay\Overlay.h" />
+    <ClInclude Include="Include\Overlay\PerformanceProfiler.h" />
     <ClInclude Include="Include\Overlay\Renderer.h" />
     <ClInclude Include="Include\Overlay\RenderObject.h" />
     <ClInclude Include="Include\Overlay\View3D.h" />

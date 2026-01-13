@@ -48,8 +48,6 @@ namespace CS2 {
 				int parentBoneId = boneIndexMap[szParentBoneName];
 				RenderSkeletonBoneStatic_t boneData{ szBoneName, bone->m_parentName->Get(),boneId,parentBoneId };
 				modellib::RenderSkeletonBoneWithIndex_t ext{ boneData ,boneId,parentBoneId };
-
-				printf("\t\tBone[%i]: %s\n", boneIndexMap[szBoneName], szBoneName.c_str());
 				boneMap[szBoneName] = ext;
 				i++;
 			}
@@ -80,8 +78,6 @@ namespace CS2 {
 					continue;
 
 				HitboxStatic hitboxData{ hitbox->m_name->Get(),szBoneName,hitbox->m_vMinBounds, hitbox->m_vMaxBounds, hitbox->m_flShapeRadius, hitbox->m_nHitBoxIndex, m_ModelBoneIndexMap[szModelName][szBoneName] };
-
-				printf("Hitbox: %s ( %s )\n", hitboxData.m_szBoneName.c_str(), hitboxData.m_szName.c_str());
 				hitboxMap[szBoneName] = hitboxData;
 
 				m_ModelHitboxCache[szModelName] = hitboxMap;

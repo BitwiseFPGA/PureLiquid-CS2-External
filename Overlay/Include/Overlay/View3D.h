@@ -30,12 +30,12 @@ public:
     void SetProjection(float width, float height);
 
     XMFLOAT2 ToScreen(const XMFLOAT3& worldPos);
-    void DrawBox(XMFLOAT3 pos, XMFLOAT3 size, XMFLOAT4 color);
+    void DrawBox(Vector3 pos, Vector3 size, XMFLOAT4 color);
     bool IsLookingAtCapsule(const XMFLOAT3& capsuleCenter, const XMFLOAT3& vMin, const XMFLOAT3& vMax, float radius) const;
     void DrawLine3D(XMFLOAT3 start, XMFLOAT3 end, float thickness, XMFLOAT4 color);
     void DrawThickLine3D(const XMFLOAT3& start, const XMFLOAT3& end, float thickness, const XMFLOAT4& color);
     void DrawLine3DBold(Vector3 start, Vector3 end, XMFLOAT4 color, int repeats = 3);
-    void DrawWireBox(XMFLOAT3 pos, XMFLOAT3 size, XMFLOAT4 color);
+    void DrawWireBox(Vector3 pos, Vector3 size, XMFLOAT4 color);
     void Render(ID3D11RenderTargetView* rtv);
     void DrawCapsuleMesh(
         Vector vMin, Vector vMax,

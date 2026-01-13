@@ -1,4 +1,4 @@
-
+﻿
 #include <Overlay/Definitions.h>
 #include <Overlay/Overlay.h>
 #include <Overlay/Renderer.h>
@@ -8,7 +8,7 @@
 #include <Overlay/View3D.h>
 #include <imgui/backends/imgui_impl_win32.h>
 #include <imgui/backends/imgui_impl_dx11.h>
-
+#include <Overlay/PerformanceProfiler.h>
 #include <DirectXMath.h>
 using namespace DirectX;
 
@@ -17,7 +17,8 @@ using namespace DirectX;
 
 #include <vector>
 
-
+static LONG rawMouseX = 0;
+static LONG rawMouseY = 0;
 
 namespace DX11 {
     Renderer* pRenderer = nullptr;
@@ -91,6 +92,27 @@ bool Overlay::Initialize() {
         data.left, data.top, data.width, data.height,
         NULL, NULL, wc.hInstance, NULL
     );
+
+    DWM_BLURBEHIND bb = { 0 };
+    bb.dwFlags = DWM_BB_ENABLE;
+    bb.fEnable = FALSE;
+    DwmEnableBlurBehindWindow(hwnd, &bb);
+
+    BOOL disableNCRendering = TRUE;
+    DwmSetWindowAttribute(hwnd, DWMWA_NCRENDERING_ENABLED, &disableNCRendering, sizeof(disableNCRendering));
+
+    BOOL result;
+    SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)10, 0);
+    SystemParametersInfo(SPI_SETMOUSE, 0, NULL, SPIF_SENDCHANGE);
+
+    // Raw input for lowest latency
+    RAWINPUTDEVICE rid;
+    rid.usUsagePage = 0x01;  // Generic desktop
+    rid.usUsage = 0x02;      // Mouse
+    rid.dwFlags = RIDEV_INPUTSINK;
+    rid.hwndTarget = hwnd;
+    RegisterRawInputDevices(&rid, 1, sizeof(rid));
+
     // SetLayeredWindowAttributes(hwnd, RGB(0, 0, 0), 255, LWA_COLORKEY | LWA_ALPHA);
     MARGINS margins = { -1 };
     DwmExtendFrameIntoClientArea(hwnd, &margins);
@@ -176,7 +198,7 @@ void Overlay::KeepOverlayed() {
         GetWindowRect(hwnd, &out);
         if (out.left != data.left || out.top != data.top || (out.right - out.left) != data.width || (out.bottom - out.top) != data.height)
             SetWindowPos(hwnd, NULL, data.left, data.top, data.width, data.height, NULL);
-        Sleep(10);
+        Sleep(1);  // Reduced from 10ms for more responsive positioning
     }
 }
 void Overlay::Show(HWND _hWnd, Renderer* _pRenderer) {
@@ -231,6 +253,7 @@ bool buttonOneActive = false;
 bool buttonTwoActive = false;
 bool buttonThreeActive = false;
 
+
 void Overlay::MessageThread() {
     ShowWindow(Overlay::hwnd, TRUE);
     UpdateWindow(Overlay::hwnd);
@@ -246,7 +269,11 @@ void Overlay::MessageThread() {
     ImGui_ImplWin32_Init(hwnd);
     ImGui_ImplWin32_EnableAlphaCompositing(hwnd);
     ImGui_ImplDX11_Init(g_pd3dDevice, g_pd3dDeviceContext);
-
+#ifdef USE_PROFILER
+    PerformanceProfiler profiler;
+    auto lastProfilePrint = std::chrono::high_resolution_clock::now();
+    int frameCounter = 0;
+#endif
     bool done = false;
 
     // Setup 3D world
@@ -254,22 +281,36 @@ void Overlay::MessageThread() {
     auto data = GetProcData();
     view3D.Init(g_pd3dDevice, g_pd3dDeviceContext, (float)data.width, (float)data.height);
     DX11::pRenderer->SetView3D(&view3D);
+
+    printf("\n🔍 PROFILING ENABLED - Collecting performance data...\n\n");
+
     while (!done) {
+#ifdef USE_PROFILER
+        profiler.BeginSection("1_MessagePump");
+#endif
         MSG msg;
         while (::PeekMessage(&msg, nullptr, 0U, 0U, PM_REMOVE)) {
             ::TranslateMessage(&msg);
             ::DispatchMessage(&msg);
             if (msg.message == WM_QUIT) done = true;
         }
+#ifdef USE_PROFILER
+        profiler.EndSection("1_MessagePump");
+#endif
         if (done) break;
-
+#ifdef USE_PROFILER
+        profiler.BeginSection("2_OcclusionCheck");
+#endif
         // Swap chain occlusion
         if (g_SwapChainOccluded && g_pSwapChain->Present(0, DXGI_PRESENT_TEST) == DXGI_STATUS_OCCLUDED) {
-            ::Sleep(10);
+            ::Sleep(1);
             continue;
         }
         g_SwapChainOccluded = false;
-
+#ifdef USE_PROFILER
+        profiler.EndSection("2_OcclusionCheck");
+        profiler.BeginSection("3_ResizeHandling");
+#endif
         // Handle resize
         if (g_ResizeWidth != 0 && g_ResizeHeight != 0) {
             CleanupRenderTarget();
@@ -277,64 +318,100 @@ void Overlay::MessageThread() {
             g_ResizeWidth = g_ResizeHeight = 0;
             CreateRenderTarget();
         }
-
+#ifdef USE_PROFILER
+        profiler.EndSection("3_ResizeHandling");
+        profiler.BeginSection("4_ImGuiNewFrame");
+#endif
         // Start ImGui frame
         ImGui_ImplDX11_NewFrame();
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame();
-
+#ifdef USE_PROFILER
+        profiler.EndSection("4_ImGuiNewFrame");
+#endif
         auto forGroundWindow = GetForegroundWindow();
         auto DisplaySize = ImVec2(data.width, data.height);
 
         if ((forGroundWindow == targetHwnd || forGroundWindow == hwnd)) {
+#ifdef USE_PROFILER
+            profiler.BeginSection("5_Clickability");
+#endif
             if (menuOpen) {
                 if (windowState != 1) ChangeClickability(true, hwnd);
             }
             else if (!menuOpen) {
                 if (windowState != 0) ChangeClickability(false, hwnd);
             }
-
+#ifdef USE_PROFILER
+            profiler.EndSection("5_Clickability");
+            profiler.BeginSection("6_CursorPosition");
+#endif
             ImGui::SetCurrentContext(OverlayAPI::GetImGuiContext());
             POINT p;
             GetCursorPos(&p);
             ScreenToClient(hwnd, &p);
+#ifdef USE_PROFILER
+            profiler.EndSection("6_CursorPosition");
 
-            // --- Begin 3D Rendering ---
+            profiler.BeginSection("7_D3DClear");
+#endif
+
             const float clear_color_with_alpha[4] = { 0,0,0,0 };
             g_pd3dDeviceContext->OMSetRenderTargets(1, &g_mainRenderTargetView, nullptr);
             g_pd3dDeviceContext->ClearRenderTargetView(g_mainRenderTargetView, clear_color_with_alpha);
+            
+#ifdef USE_PROFILER
+            profiler.EndSection("7_D3DClear");
 
-            /*D3D11_VIEWPORT vp = {};
-            vp.Width = (FLOAT)data.width;
-            vp.Height = (FLOAT)data.height;
-            vp.MinDepth = 0.0f;
-            vp.MaxDepth = 1.0f;
-            vp.TopLeftX = 0;
-            vp.TopLeftY = 0;
-            g_pd3dDeviceContext->RSSetViewports(1, &vp);*/
+            profiler.BeginSection("8_View3DSetup");      
+#endif
+
             view3D.Render(g_mainRenderTargetView);
-            // Start batching
             view3D.BeginFrame();
+#ifdef USE_PROFILER
+            profiler.EndSection("8_View3DSetup");
 
-            // Set camera
-            // view3D.SetViewMatrix(ToXMMATRIX(ViewMatrixResolver::GetViewMatrix()));
-
-            // Render your ESP
+            profiler.BeginSection("9_ESPRender");
+#endif
             DX11::pRenderer->Render(DisplaySize, { (float)p.x, (float)p.y }, menuOpen, &view3D);
+#ifdef USE_PROFILER
+            profiler.EndSection("9_ESPRender");
 
-            // Flush all batched lines and boxes
+            profiler.BeginSection("10_View3DFlush");
+#endif
             view3D.EndFrame();
-
+#ifdef USE_PROFILER
+            profiler.EndSection("10_View3DFlush");
+#endif
         }
-
+#ifdef USE_PROFILER
+        profiler.BeginSection("11_ImGuiRender");
+#endif
         // ImGui rendering
         ImGui::Render();
-        RedrawWindow(hwnd, nullptr, nullptr, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ALLCHILDREN);
         ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+#ifdef USE_PROFILER
+        profiler.EndSection("11_ImGuiRender");
 
-        // Present
-        HRESULT hr = g_pSwapChain->Present(1, 0);
+        profiler.BeginSection("12_Present");
+#endif
+        HRESULT hr = g_pSwapChain->Present(0, 0);
         g_SwapChainOccluded = (hr == DXGI_STATUS_OCCLUDED);
+#ifdef USE_PROFILER
+        profiler.EndSection("12_Present");
+
+        frameCounter++;
+
+        // Print profile every 3 seconds
+        auto now = std::chrono::high_resolution_clock::now();
+        if (std::chrono::duration_cast<std::chrono::seconds>(now - lastProfilePrint).count() >= 3) {
+            printf("\n📊 Profile Report (Frames: %d):\n", frameCounter);
+            profiler.PrintStats();
+            profiler.Reset();
+            frameCounter = 0;
+            lastProfilePrint = now;
+        }
+#endif
     }
 
     // Cleanup
@@ -347,7 +424,6 @@ void Overlay::MessageThread() {
 }
 
 
-
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 LRESULT CALLBACK Overlay::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
@@ -357,6 +433,27 @@ LRESULT CALLBACK Overlay::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 
     switch (msg)
     {
+    case WM_INPUT:
+    {
+        UINT size;
+        GetRawInputData((HRAWINPUT)lParam, RID_INPUT, NULL, &size, sizeof(RAWINPUTHEADER));
+
+        LPBYTE buffer = new BYTE[size];
+        if (GetRawInputData((HRAWINPUT)lParam, RID_INPUT, buffer, &size, sizeof(RAWINPUTHEADER)) == size) {
+            RAWINPUT* raw = (RAWINPUT*)buffer;
+            if (raw->header.dwType == RIM_TYPEMOUSE) {
+                // Store raw mouse delta
+                static LONG rawMouseX = 0;
+                static LONG rawMouseY = 0;
+                rawMouseX += raw->data.mouse.lLastX;
+                rawMouseY += raw->data.mouse.lLastY;
+
+                // You can use rawMouseX/rawMouseY for smoother tracking
+            }
+        }
+        delete[] buffer;
+        break;
+    }
     case WM_SIZE:
         if (wParam == SIZE_MINIMIZED)
             return 0;
@@ -377,37 +474,36 @@ LRESULT CALLBACK Overlay::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 
 
 
-
 bool Overlay::CreateDeviceD3D()
 {
-    // Setup swap chain
     DXGI_SWAP_CHAIN_DESC sd;
     ZeroMemory(&sd, sizeof(sd));
     sd.BufferCount = 2;
     sd.BufferDesc.Width = 0;
     sd.BufferDesc.Height = 0;
     sd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-    sd.BufferDesc.RefreshRate.Numerator = 60;
-    sd.BufferDesc.RefreshRate.Denominator = 1;
-    sd.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
+    sd.BufferDesc.RefreshRate.Numerator = 0;
+    sd.BufferDesc.RefreshRate.Denominator = 0;
+    sd.Flags = 0;
     sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
     sd.OutputWindow = hwnd;
     sd.SampleDesc.Count = 1;
     sd.SampleDesc.Quality = 0;
     sd.Windowed = TRUE;
-    sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
-
+    sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD; 
     UINT createDeviceFlags = 0;
-    //createDeviceFlags |= D3D11_CREATE_DEVICE_DEBUG;
     D3D_FEATURE_LEVEL featureLevel;
     const D3D_FEATURE_LEVEL featureLevelArray[2] = { D3D_FEATURE_LEVEL_11_0, D3D_FEATURE_LEVEL_10_0, };
     HRESULT res = D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr, createDeviceFlags, featureLevelArray, 2, D3D11_SDK_VERSION, &sd, &g_pSwapChain, &g_pd3dDevice, &featureLevel, &g_pd3dDeviceContext);
-    if (res == DXGI_ERROR_UNSUPPORTED) // Try high-performance WARP software driver if hardware is not available.
+    if (res == DXGI_ERROR_UNSUPPORTED)
         res = D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_WARP, nullptr, createDeviceFlags, featureLevelArray, 2, D3D11_SDK_VERSION, &sd, &g_pSwapChain, &g_pd3dDevice, &featureLevel, &g_pd3dDeviceContext);
     if (res != S_OK)
         return false;
 
     CreateRenderTarget();
+
+
+
     return true;
 }
 

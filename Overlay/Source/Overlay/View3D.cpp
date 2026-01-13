@@ -10,7 +10,7 @@
 #undef max
 
 bool View3D::Init(ID3D11Device* _device, ID3D11DeviceContext* _ctx, float width, float height) {
-    
+
     ctx = _ctx;
     Width = width;
     Height = height;
@@ -153,8 +153,8 @@ void View3D::DrawCapsuleMesh(
     Vector origin,
     XMFLOAT4 color,
     int segments,
-    int stacks ,
-    float thickness )
+    int stacks,
+    float thickness)
 {
     // Convert quaternion to rotation matrix
     Matrix3x4_t rotMat = QuatToMatrix3x4(rotation);
@@ -230,8 +230,8 @@ void View3D::DrawCapsuleOutline(
     Vector origin,
     XMFLOAT4 color,
     int segments,
-    int stacks ,
-    float thickness )
+    int stacks,
+    float thickness)
 {
     // Convert rotation quaternion to matrix
     Matrix3x4_t rotMat = QuatToMatrix3x4(rotation);
@@ -432,11 +432,11 @@ XMFLOAT2 View3D::ToScreen(const XMFLOAT3& worldPos)
 }
 
 
-void View3D::DrawBox(XMFLOAT3 pos, XMFLOAT3 size, XMFLOAT4 color) {
+void View3D::DrawBox(Vector3 pos, Vector3 size, XMFLOAT4 color) {
     if (boxVertices.size() / 8 >= MaxBoxes) return; // prevent overflow
 
     XMMATRIX world = XMMatrixTranslation(pos.x, pos.y, pos.z);
-    for (int i = 0;i < 8;i++) {
+    for (int i = 0; i < 8; i++) {
         XMFLOAT3 v = { (i & 1 ? -0.5f : 0.5f),(i & 2 ? -0.5f : 0.5f),(i & 4 ? -0.5f : 0.5f) };
         v.x *= size.x; v.y *= size.y; v.z *= size.z;
 
@@ -447,7 +447,7 @@ void View3D::DrawBox(XMFLOAT3 pos, XMFLOAT3 size, XMFLOAT4 color) {
     }
 }
 
-void View3D::DrawWireBox(XMFLOAT3 pos, XMFLOAT3 size, XMFLOAT4 color)
+void View3D::DrawWireBox(Vector3 pos, Vector3 size, XMFLOAT4 color)
 {
     // Calculate 8 corners of the box
     XMFLOAT3 corners[8];
