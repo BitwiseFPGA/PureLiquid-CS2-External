@@ -73,12 +73,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(SolutionDir)Memory\Include;$(ProjectDir)Include;$(SolutionDir)GlobalData\Include;$(SolutionDir)CS2\Include;$(SolutionDIr)Source2\Include;$(SolutionDir)Math\Include;$(SolutionDir)CS2\Include\CS2;$(SolutionDir)Features\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Memory\Include;$(ProjectDir)Include;$(SolutionDir)GlobalData\Include;$(SolutionDir)CS2\Include;$(SolutionDIr)Source2\Include;$(SolutionDir)Math\Include;$(SolutionDir)CS2\Include\CS2;$(SolutionDir)Features\Include;$(IncludePath);$(SolutionDir)\RenderObjects\Include;$(SolutionDir)Overlay\Libraries\imgui;$(SolutionDir)Overlay\Libraries</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(SolutionDir)Memory\Include;$(ProjectDir)Include;$(SolutionDir)GlobalData\Include;$(SolutionDir)CS2\Include;$(SolutionDIr)Source2\Include;$(SolutionDir)Math\Include;$(SolutionDir)CS2\Include\CS2;$(SolutionDir)Features\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Memory\Include;$(ProjectDir)Include;$(SolutionDir)GlobalData\Include;$(SolutionDir)CS2\Include;$(SolutionDIr)Source2\Include;$(SolutionDir)Math\Include;$(SolutionDir)CS2\Include\CS2;$(SolutionDir)Features\Include;$(SolutionDir)Overlay\Include;$(IncludePath);$(SolutionDir)\RenderObjects\Include;$(SolutionDir)Overlay\Libraries\imgui;$(SolutionDir)Overlay\Libraries</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -159,6 +159,12 @@
     </ProjectReference>
     <ProjectReference Include="..\Memory\Memory.vcxproj">
       <Project>{a211709a-5578-4c34-9d70-69516f31770f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Overlay\Overlay.vcxproj">
+      <Project>{68dfd4e9-e27c-489f-a6a9-fc7f1519c65f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\RenderObjects\RenderObjects.vcxproj">
+      <Project>{4b16b8ec-88eb-4d78-ad34-d50e6b829571}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Source2\Source2.vcxproj">
       <Project>{05502e0d-e6ab-40b0-9d8a-274fb372452b}</Project>

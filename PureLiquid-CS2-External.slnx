@@ -9,5 +9,7 @@
   <Project Path="GlobalData/GlobalData.vcxproj" Id="67c0b8c6-8308-41d3-9540-2d33fc61bc34" />
   <Project Path="Math/Math.vcxproj" Id="94096955-e595-4626-a42a-48722d7983cd" />
   <Project Path="Memory/Memory.vcxproj" Id="a211709a-5578-4c34-9d70-69516f31770f" />
+  <Project Path="Overlay/Overlay.vcxproj" Id="68dfd4e9-e27c-489f-a6a9-fc7f1519c65f" />
+  <Project Path="RenderObjects/RenderObjects.vcxproj" Id="4b16b8ec-88eb-4d78-ad34-d50e6b829571" />
   <Project Path="Source2/Source2.vcxproj" Id="05502e0d-e6ab-40b0-9d8a-274fb372452b" />
 </Solution>

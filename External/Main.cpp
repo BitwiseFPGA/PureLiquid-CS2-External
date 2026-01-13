@@ -17,12 +17,13 @@
 #include <CS2/Managers/CModelManager.h>
 #include <CS2/Hooks/Client/CMsgQAngleCpyHook.h>
 #include <CS2/Panorama/CUI.h>
-#define DEMO_MODE
-#ifdef DEMO_MODE
-#define USE_CHAMS
-#define USE_CREATE_MOVE
-#define USE_SILENT_AIM
+
+
+
+#ifdef INCLUDE_OVERLAY
+Renderer renderer{ {} };
 #endif
+
 // #define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
 	Process proc{ "cs2.exe" };
@@ -125,7 +126,11 @@ int main() {
 	
 	I::Initialize();
 
-
+#ifdef INCLUDE_OVERLAY
+	OverlayAPI::InitImGuiContext();
+	Overlay::Show(proc.GetHwnd(), &renderer);
+	// renderer.AddRenderObject(new CS2::EspRenderObject());
+#endif
 
 
 #ifdef USE_CHAMS
