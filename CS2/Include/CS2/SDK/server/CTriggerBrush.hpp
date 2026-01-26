@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace server {
 		class CTriggerBrush : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_OnStartTouch,entity2::CEntityIOOutput , 0x7d8);
-			PROPERTY(m_OnEndTouch,entity2::CEntityIOOutput , 0x800);
-			PROPERTY(m_OnUse,entity2::CEntityIOOutput , 0x828);
-			PROPERTY(m_iInputFilter,int32_t , 0x850);
-			PROPERTY(m_iDontMessageParent,int32_t , 0x854);
-			S2_PAD(0x80);
+			PROPERTY(m_OnStartTouch,entity2::CEntityIOOutput , 0x730);
+			PROPERTY(m_OnEndTouch,entity2::CEntityIOOutput , 0x748);
+			PROPERTY(m_OnUse,entity2::CEntityIOOutput , 0x760);
+			PROPERTY(m_iInputFilter,int32_t , 0x778);
+			PROPERTY(m_iDontMessageParent,int32_t , 0x77c);
+			S2_PAD(0x50);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerBrush) == 0x858, "CTriggerBrush size should be 0x858");
+		//static_assert(sizeof(CS2::server::CTriggerBrush) == 0x780, "CTriggerBrush size should be 0x780");
 	}
 }

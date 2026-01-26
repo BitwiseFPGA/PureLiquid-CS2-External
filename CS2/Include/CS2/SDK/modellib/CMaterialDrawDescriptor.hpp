@@ -11,6 +11,7 @@
 
 
 #include <SDK/modellib/RenderPrimitiveType_t.hpp>
+#include <SDK/modellib/RigidMeshPart_t.hpp>
 #include <SDK/modellib/CRenderBufferBinding.hpp>
 
 
@@ -38,7 +39,7 @@ namespace CS2 {
 			PROPERTY(m_nAppliedIndexOffset,uint32_t , 0x20);
 			PROPERTY(m_nDepthVertexBufferIndex,uint8_t , 0x24);
 			PROPERTY(m_nMeshletPackedIVBIndex,uint8_t , 0x25);
-			PROPERTY(m_rigidMeshParts,GlobalTypes::CUtlLeanVector<modellib::CMaterialDrawDescriptor::RigidMeshPart_t>, 0x28);
+			PROPERTY(m_rigidMeshParts,GlobalTypes::CUtlLeanVector<modellib::RigidMeshPart_t>, 0x28);
 			PROPERTY(m_nPrimitiveType,modellib::RenderPrimitiveType_t , 0x38);
 			PROPERTY(m_nBaseVertex,int32_t , 0x3c);
 			PROPERTY(m_nVertexCount,int32_t , 0x40);

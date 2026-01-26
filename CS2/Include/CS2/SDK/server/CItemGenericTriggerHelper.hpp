@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace server {
 		class CItemGenericTriggerHelper : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_hParentItem,GlobalTypes::CHandle<server::CItemGeneric>, 0x7d8);
+			PROPERTY(m_hParentItem,GlobalTypes::CHandle<server::CItemGeneric>, 0x730);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CItemGenericTriggerHelper) == 0x7E0, "CItemGenericTriggerHelper size should be 0x7E0");
+		//static_assert(sizeof(CS2::server::CItemGenericTriggerHelper) == 0x738, "CItemGenericTriggerHelper size should be 0x738");
 	}
 }

@@ -12,6 +12,9 @@
 
 #include <SDK/server/CPlayer_MovementServices_Humanoid.hpp>
 #include <SDK/entity2/GameTime_t.hpp>
+#include <SDK/server/CCSPlayerLegacyJump.hpp>
+#include <SDK/server/CCSPlayerModernJump.hpp>
+#include <SDK/entity2/GameTick_t.hpp>
 
 
 
@@ -22,17 +25,19 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayer_MovementServices : public CS2::server::CPlayer_MovementServices_Humanoid {
 		public:
-			PROPERTY(m_vecLadderNormal,GlobalTypes::Vector , 0x280);
-			PROPERTY(m_nLadderSurfacePropIndex,int32_t , 0x28c);
-			PROPERTY(m_flDuckAmount,float32 , 0x290);
-			PROPERTY(m_flDuckSpeed,float32 , 0x294);
-			PROPERTY(m_bDuckOverride,bool , 0x298);
-			PROPERTY(m_bDesiresDuck,bool , 0x299);
-			PROPERTY(m_flDuckOffset,float32 , 0x29c);
-			PROPERTY(m_nDuckTimeMsecs,uint32_t , 0x2a0);
-			PROPERTY(m_nDuckJumpTimeMsecs,uint32_t , 0x2a4);
-			PROPERTY(m_nJumpTimeMsecs,uint32_t , 0x2a8);
-			PROPERTY(m_flLastDuckTime,float32 , 0x2ac);
+			PROPERTY(m_vecLadderNormal,GlobalTypes::Vector , 0x278);
+			PROPERTY(m_nLadderSurfacePropIndex,int32_t , 0x284);
+			PROPERTY(m_bDucked,bool , 0x288);
+			PROPERTY(m_flDuckAmount,float32 , 0x28c);
+			PROPERTY(m_flDuckSpeed,float32 , 0x290);
+			PROPERTY(m_bDuckOverride,bool , 0x294);
+			PROPERTY(m_bDesiresDuck,bool , 0x295);
+			PROPERTY(m_bDucking,bool , 0x296);
+			PROPERTY(m_flDuckOffset,float32 , 0x298);
+			PROPERTY(m_nDuckTimeMsecs,uint32_t , 0x29c);
+			PROPERTY(m_nDuckJumpTimeMsecs,uint32_t , 0x2a0);
+			PROPERTY(m_nJumpTimeMsecs,uint32_t , 0x2a4);
+			PROPERTY(m_flLastDuckTime,float32 , 0x2a8);
 			PROPERTY(m_vecLastPositionAtFullCrouchSpeed,GlobalTypes::Vector2D , 0x2b8);
 			PROPERTY(m_duckUntilOnGround,bool , 0x2c0);
 			PROPERTY(m_bHasWalkMovedSinceLastJump,bool , 0x2c1);
@@ -48,24 +53,28 @@ namespace CS2 {
 			PROPERTY(m_nGameCodeHasMovedPlayerAfterCommand,int32_t , 0x508);
 			PROPERTY(m_bMadeFootstepNoise,bool , 0x50c);
 			PROPERTY(m_iFootsteps,int32_t , 0x510);
-			PROPERTY(m_bOldJumpPressed,bool , 0x514);
-			PROPERTY(m_flJumpPressedTime,float32 , 0x518);
-			PROPERTY(m_fStashGrenadeParameterWhen,entity2::GameTime_t , 0x51c);
-			PROPERTY(m_nButtonDownMaskPrev,uint64_t , 0x520);
-			PROPERTY(m_flOffsetTickCompleteTime,float32 , 0x528);
-			PROPERTY(m_flOffsetTickStashedSpeed,float32 , 0x52c);
-			PROPERTY(m_flStamina,float32 , 0x530);
-			PROPERTY(m_flHeightAtJumpStart,float32 , 0x534);
-			PROPERTY(m_flMaxJumpHeightThisJump,float32 , 0x538);
-			PROPERTY(m_flMaxJumpHeightLastJump,float32 , 0x53c);
-			PROPERTY(m_flStaminaAtJumpStart,float32 , 0x540);
-			PROPERTY(m_flAccumulatedJumpError,float32 , 0x544);
-			PROPERTY(m_flTicksSinceLastSurfingDetected,float32 , 0x548);
-			PROPERTY(m_bWasSurfing,bool , 0x54c);
-			PROPERTY(m_vecInputRotated,GlobalTypes::Vector , 0x5dc);
-			PROPERTY(m_bJumpApexPending,bool , 0xe08);
-			S2_PAD(0xB90);
+			PROPERTY(m_fStashGrenadeParameterWhen,entity2::GameTime_t , 0x514);
+			PROPERTY(m_nButtonDownMaskPrev,uint64_t , 0x518);
+			PROPERTY(m_flOffsetTickCompleteTime,float32 , 0x520);
+			PROPERTY(m_flOffsetTickStashedSpeed,float32 , 0x524);
+			PROPERTY(m_flStamina,float32 , 0x528);
+			PROPERTY(m_flHeightAtJumpStart,float32 , 0x52c);
+			PROPERTY(m_flMaxJumpHeightThisJump,float32 , 0x530);
+			PROPERTY(m_flMaxJumpHeightLastJump,float32 , 0x534);
+			PROPERTY(m_flStaminaAtJumpStart,float32 , 0x538);
+			PROPERTY(m_flVelMulAtJumpStart,float32 , 0x53c);
+			PROPERTY(m_flAccumulatedJumpError,float32 , 0x540);
+			PROPERTY(m_LegacyJump,server::CCSPlayerLegacyJump , 0x548);
+			PROPERTY(m_ModernJump,server::CCSPlayerModernJump , 0x560);
+			PROPERTY(m_nLastJumpTick,entity2::GameTick_t , 0x598);
+			PROPERTY(m_flLastJumpFrac,float32 , 0x59c);
+			PROPERTY(m_flLastJumpVelocityZ,float32 , 0x5a0);
+			PROPERTY(m_bJumpApexPending,bool , 0x5a4);
+			PROPERTY(m_flTicksSinceLastSurfingDetected,float32 , 0x5a8);
+			PROPERTY(m_bWasSurfing,bool , 0x5ac);
+			PROPERTY(m_vecInputRotated,GlobalTypes::Vector , 0x63c);
+			S2_PAD(0xBF0);
 		};
-		//static_assert(sizeof(CS2::server::CCSPlayer_MovementServices) == 0xE10, "CCSPlayer_MovementServices size should be 0xE10");
+		//static_assert(sizeof(CS2::server::CCSPlayer_MovementServices) == 0xE68, "CCSPlayer_MovementServices size should be 0xE68");
 	}
 }

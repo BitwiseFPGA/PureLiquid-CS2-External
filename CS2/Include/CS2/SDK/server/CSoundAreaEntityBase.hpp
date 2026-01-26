@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class CSoundAreaEntityBase : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x4f0);
-			PROPERTY(m_iszSoundAreaType,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_vPos,GlobalTypes::Vector , 0x500);
+			PROPERTY(m_bDisabled,bool , 0x4a8);
+			PROPERTY(m_iszSoundAreaType,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_vPos,GlobalTypes::Vector , 0x4b8);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CSoundAreaEntityBase) == 0x510, "CSoundAreaEntityBase size should be 0x510");
+		//static_assert(sizeof(CS2::server::CSoundAreaEntityBase) == 0x4C8, "CSoundAreaEntityBase size should be 0x4C8");
 	}
 }

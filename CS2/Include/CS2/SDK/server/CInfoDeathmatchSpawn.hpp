@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CInfoDeathmatchSpawn) == 0x500, "CInfoDeathmatchSpawn size should be 0x500");
+		//static_assert(sizeof(CS2::server::CInfoDeathmatchSpawn) == 0x4B8, "CInfoDeathmatchSpawn size should be 0x4B8");
 	}
 }

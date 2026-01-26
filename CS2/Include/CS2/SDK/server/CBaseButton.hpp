@@ -29,33 +29,33 @@ namespace CS2 {
 	namespace server {
 		class CBaseButton : public CS2::server::CBaseToggle {
 		public:
-			PROPERTY(m_angMoveEntitySpace,GlobalTypes::QAngle , 0x858);
-			PROPERTY(m_fStayPushed,bool , 0x864);
-			PROPERTY(m_fRotating,bool , 0x865);
-			PROPERTY(m_ls,server::locksound_t , 0x868);
-			PROPERTY(m_sUseSound,GlobalTypes::CUtlSymbolLarge* , 0x888);
-			PROPERTY(m_sLockedSound,GlobalTypes::CUtlSymbolLarge* , 0x890);
-			PROPERTY(m_sUnlockedSound,GlobalTypes::CUtlSymbolLarge* , 0x898);
-			PROPERTY(m_sOverrideAnticipationName,GlobalTypes::CUtlSymbolLarge* , 0x8a0);
-			PROPERTY(m_bLocked,bool , 0x8a8);
-			PROPERTY(m_bDisabled,bool , 0x8a9);
-			PROPERTY(m_flUseLockedTime,entity2::GameTime_t , 0x8ac);
-			PROPERTY(m_bSolidBsp,bool , 0x8b0);
-			PROPERTY(m_OnDamaged,entity2::CEntityIOOutput , 0x8b8);
-			PROPERTY(m_OnPressed,entity2::CEntityIOOutput , 0x8e0);
-			PROPERTY(m_OnUseLocked,entity2::CEntityIOOutput , 0x908);
-			PROPERTY(m_OnIn,entity2::CEntityIOOutput , 0x930);
-			PROPERTY(m_OnOut,entity2::CEntityIOOutput , 0x958);
-			PROPERTY(m_nState,int32_t , 0x980);
-			PROPERTY(m_hConstraint,GlobalTypes::CEntityHandle , 0x984);
-			PROPERTY(m_hConstraintParent,GlobalTypes::CEntityHandle , 0x988);
-			PROPERTY(m_bForceNpcExclude,bool , 0x98c);
-			PROPERTY(m_sGlowEntity,GlobalTypes::CUtlSymbolLarge* , 0x990);
-			PROPERTY(m_glowEntity,GlobalTypes::CHandle<server::CBaseModelEntity>, 0x998);
-			PROPERTY(m_usable,bool , 0x99c);
-			PROPERTY(m_szDisplayText,GlobalTypes::CUtlSymbolLarge* , 0x9a0);
-			S2_PAD(0x150);
+			PROPERTY(m_angMoveEntitySpace,GlobalTypes::QAngle , 0x7b0);
+			PROPERTY(m_fStayPushed,bool , 0x7bc);
+			PROPERTY(m_fRotating,bool , 0x7bd);
+			PROPERTY(m_ls,server::locksound_t , 0x7c0);
+			PROPERTY(m_sUseSound,GlobalTypes::CUtlSymbolLarge* , 0x7e0);
+			PROPERTY(m_sLockedSound,GlobalTypes::CUtlSymbolLarge* , 0x7e8);
+			PROPERTY(m_sUnlockedSound,GlobalTypes::CUtlSymbolLarge* , 0x7f0);
+			PROPERTY(m_sOverrideAnticipationName,GlobalTypes::CUtlSymbolLarge* , 0x7f8);
+			PROPERTY(m_bLocked,bool , 0x800);
+			PROPERTY(m_bDisabled,bool , 0x801);
+			PROPERTY(m_flUseLockedTime,entity2::GameTime_t , 0x804);
+			PROPERTY(m_bSolidBsp,bool , 0x808);
+			PROPERTY(m_OnDamaged,entity2::CEntityIOOutput , 0x810);
+			PROPERTY(m_OnPressed,entity2::CEntityIOOutput , 0x828);
+			PROPERTY(m_OnUseLocked,entity2::CEntityIOOutput , 0x840);
+			PROPERTY(m_OnIn,entity2::CEntityIOOutput , 0x858);
+			PROPERTY(m_OnOut,entity2::CEntityIOOutput , 0x870);
+			PROPERTY(m_nState,int32_t , 0x888);
+			PROPERTY(m_hConstraint,GlobalTypes::CEntityHandle , 0x88c);
+			PROPERTY(m_hConstraintParent,GlobalTypes::CEntityHandle , 0x890);
+			PROPERTY(m_bForceNpcExclude,bool , 0x894);
+			PROPERTY(m_sGlowEntity,GlobalTypes::CUtlSymbolLarge* , 0x898);
+			PROPERTY(m_glowEntity,GlobalTypes::CHandle<server::CBaseModelEntity>, 0x8a0);
+			PROPERTY(m_usable,bool , 0x8a4);
+			PROPERTY(m_szDisplayText,GlobalTypes::CUtlSymbolLarge* , 0x8a8);
+			S2_PAD(0x100);
 		};
-		//static_assert(sizeof(CS2::server::CBaseButton) == 0x9A8, "CBaseButton size should be 0x9A8");
+		//static_assert(sizeof(CS2::server::CBaseButton) == 0x8B0, "CBaseButton size should be 0x8B0");
 	}
 }

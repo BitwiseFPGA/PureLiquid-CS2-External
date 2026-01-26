@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class CCSPlayer_CameraServices : public CS2::client::CCSPlayerBase_CameraServices {
 		public:
-			PROPERTY(m_flDeathCamTilt,float32 , 0x2a0);
-			PROPERTY(m_vClientScopeInaccuracy,GlobalTypes::Vector , 0x2a8);
+			PROPERTY(m_flDeathCamTilt,float32 , 0x2a8);
+			PROPERTY(m_vClientScopeInaccuracy,GlobalTypes::Vector , 0x2b0);
 			S2_PAD(0x98);
 		};
-		//static_assert(sizeof(CS2::client::CCSPlayer_CameraServices) == 0x338, "CCSPlayer_CameraServices size should be 0x338");
+		//static_assert(sizeof(CS2::client::CCSPlayer_CameraServices) == 0x340, "CCSPlayer_CameraServices size should be 0x340");
 	}
 }

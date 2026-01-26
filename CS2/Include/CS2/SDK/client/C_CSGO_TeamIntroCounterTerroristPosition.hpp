@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_CSGO_TeamIntroCounterTerroristPosition) == 0x13B0, "C_CSGO_TeamIntroCounterTerroristPosition size should be 0x13B0");
+		//static_assert(sizeof(CS2::client::C_CSGO_TeamIntroCounterTerroristPosition) == 0x13A8, "C_CSGO_TeamIntroCounterTerroristPosition size should be 0x13A8");
 	}
 }

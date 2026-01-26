@@ -10,22 +10,27 @@
 #endif
 
 
-#include <SDK/server/CPathSimple.hpp>
+#include <SDK/server/CPathWithDynamicNodes.hpp>
 
 
 
+namespace CS2 {
+	namespace server {
+		class CPathMoverEntitySpawner;
+	}
+}
 
 
 using namespace GlobalTypes;
 namespace CS2 {
 	namespace server {
-		class CPathMover : public CS2::server::CPathSimple {
+		class CPathMover : public CS2::server::CPathWithDynamicNodes {
 		public:
-			PROPERTY(m_vecPathNodes,server::CUtlVector<GlobalTypes::CHandle<server::CMoverPathNode>>, 0x600);
-			PROPERTY(m_vecMovers,server::CUtlVector<GlobalTypes::CHandle<server::CFuncMover>>, 0x618);
-			PROPERTY(m_xInitialPathWorldToLocal,GlobalTypes::CTransform , 0x630);
-			S2_PAD(0x50);
+			PROPERTY(m_vecMovers,server::CUtlVector<GlobalTypes::CHandle<server::CFuncMover>>, 0x5f0);
+			PROPERTY(m_hMoverSpawner,GlobalTypes::CHandle<server::CPathMoverEntitySpawner>, 0x608);
+			PROPERTY(m_iszMoverSpawnerName,GlobalTypes::CUtlSymbolLarge* , 0x610);
+			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CPathMover) == 0x650, "CPathMover size should be 0x650");
+		//static_assert(sizeof(CS2::server::CPathMover) == 0x620, "CPathMover size should be 0x620");
 	}
 }

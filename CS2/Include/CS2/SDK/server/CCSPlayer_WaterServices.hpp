@@ -22,14 +22,14 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayer_WaterServices : public CS2::server::CPlayer_WaterServices {
 		public:
-			PROPERTY(m_NextDrownDamageTime,entity2::GameTime_t , 0x40);
-			PROPERTY(m_nDrownDmgRate,int32_t , 0x44);
-			PROPERTY(m_AirFinishedTime,entity2::GameTime_t , 0x48);
-			PROPERTY(m_flWaterJumpTime,float32 , 0x4c);
-			PROPERTY(m_vecWaterJumpVel,GlobalTypes::Vector , 0x50);
-			PROPERTY(m_flSwimSoundTime,float32 , 0x5c);
+			PROPERTY(m_NextDrownDamageTime,entity2::GameTime_t , 0x48);
+			PROPERTY(m_nDrownDmgRate,int32_t , 0x4c);
+			PROPERTY(m_AirFinishedTime,entity2::GameTime_t , 0x50);
+			PROPERTY(m_flWaterJumpTime,float32 , 0x54);
+			PROPERTY(m_vecWaterJumpVel,GlobalTypes::Vector , 0x58);
+			PROPERTY(m_flSwimSoundTime,float32 , 0x64);
 			S2_PAD(0x38);
 		};
-		//static_assert(sizeof(CS2::server::CCSPlayer_WaterServices) == 0x78, "CCSPlayer_WaterServices size should be 0x78");
+		//static_assert(sizeof(CS2::server::CCSPlayer_WaterServices) == 0x80, "CCSPlayer_WaterServices size should be 0x80");
 	}
 }

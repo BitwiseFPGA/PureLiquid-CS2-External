@@ -21,16 +21,16 @@ namespace CS2 {
 	namespace server {
 		class CSoundOpvarSetOBBWindEntity : public CS2::server::CSoundOpvarSetPointBase {
 		public:
-			PROPERTY(m_vMins,GlobalTypes::Vector , 0x598);
-			PROPERTY(m_vMaxs,GlobalTypes::Vector , 0x5a4);
-			PROPERTY(m_vDistanceMins,GlobalTypes::Vector , 0x5b0);
-			PROPERTY(m_vDistanceMaxs,GlobalTypes::Vector , 0x5bc);
-			PROPERTY(m_flWindMin,float32 , 0x5c8);
-			PROPERTY(m_flWindMax,float32 , 0x5cc);
-			PROPERTY(m_flWindMapMin,float32 , 0x5d0);
-			PROPERTY(m_flWindMapMax,float32 , 0x5d4);
+			PROPERTY(m_vMins,GlobalTypes::Vector , 0x550);
+			PROPERTY(m_vMaxs,GlobalTypes::Vector , 0x55c);
+			PROPERTY(m_vDistanceMins,GlobalTypes::Vector , 0x568);
+			PROPERTY(m_vDistanceMaxs,GlobalTypes::Vector , 0x574);
+			PROPERTY(m_flWindMin,float32 , 0x580);
+			PROPERTY(m_flWindMax,float32 , 0x584);
+			PROPERTY(m_flWindMapMin,float32 , 0x588);
+			PROPERTY(m_flWindMapMax,float32 , 0x58c);
 			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CSoundOpvarSetOBBWindEntity) == 0x5D8, "CSoundOpvarSetOBBWindEntity size should be 0x5D8");
+		//static_assert(sizeof(CS2::server::CSoundOpvarSetOBBWindEntity) == 0x590, "CSoundOpvarSetOBBWindEntity size should be 0x590");
 	}
 }

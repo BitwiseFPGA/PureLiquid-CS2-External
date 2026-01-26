@@ -27,20 +27,20 @@ namespace CS2 {
 	namespace server {
 		class CBaseTrigger : public CS2::server::CBaseToggle {
 		public:
-			PROPERTY(m_OnStartTouch,entity2::CEntityIOOutput , 0x858);
-			PROPERTY(m_OnStartTouchAll,entity2::CEntityIOOutput , 0x880);
-			PROPERTY(m_OnEndTouch,entity2::CEntityIOOutput , 0x8a8);
-			PROPERTY(m_OnEndTouchAll,entity2::CEntityIOOutput , 0x8d0);
-			PROPERTY(m_OnTouching,entity2::CEntityIOOutput , 0x8f8);
-			PROPERTY(m_OnTouchingEachEntity,entity2::CEntityIOOutput , 0x920);
-			PROPERTY(m_OnNotTouching,entity2::CEntityIOOutput , 0x948);
-			PROPERTY(m_hTouchingEntities,server::CUtlVector<GlobalTypes::CHandle<server::CBaseEntity>>, 0x970);
-			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 0x988);
-			PROPERTY(m_hFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x990);
-			PROPERTY(m_bDisabled,bool , 0x994);
-			PROPERTY(m_bUseAsyncQueries,bool , 0x9a0);
-			S2_PAD(0x150);
+			PROPERTY(m_OnStartTouch,entity2::CEntityIOOutput , 0x7b0);
+			PROPERTY(m_OnStartTouchAll,entity2::CEntityIOOutput , 0x7c8);
+			PROPERTY(m_OnEndTouch,entity2::CEntityIOOutput , 0x7e0);
+			PROPERTY(m_OnEndTouchAll,entity2::CEntityIOOutput , 0x7f8);
+			PROPERTY(m_OnTouching,entity2::CEntityIOOutput , 0x810);
+			PROPERTY(m_OnTouchingEachEntity,entity2::CEntityIOOutput , 0x828);
+			PROPERTY(m_OnNotTouching,entity2::CEntityIOOutput , 0x840);
+			PROPERTY(m_hTouchingEntities,server::CUtlVector<GlobalTypes::CHandle<server::CBaseEntity>>, 0x858);
+			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 0x870);
+			PROPERTY(m_hFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x878);
+			PROPERTY(m_bDisabled,bool , 0x87c);
+			PROPERTY(m_bUseAsyncQueries,bool , 0x888);
+			S2_PAD(0xE0);
 		};
-		//static_assert(sizeof(CS2::server::CBaseTrigger) == 0x9A8, "CBaseTrigger size should be 0x9A8");
+		//static_assert(sizeof(CS2::server::CBaseTrigger) == 0x890, "CBaseTrigger size should be 0x890");
 	}
 }

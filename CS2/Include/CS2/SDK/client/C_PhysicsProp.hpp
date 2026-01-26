@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace client {
 		class C_PhysicsProp : public CS2::client::C_BreakableProp {
 		public:
-			PROPERTY(m_bAwake,bool , 0x1300);
+			PROPERTY(m_bAwake,bool , 0x12d0);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::client::C_PhysicsProp) == 0x1310, "C_PhysicsProp size should be 0x1310");
+		//static_assert(sizeof(CS2::client::C_PhysicsProp) == 0x12E0, "C_PhysicsProp size should be 0x12E0");
 	}
 }

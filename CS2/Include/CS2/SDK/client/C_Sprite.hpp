@@ -31,31 +31,31 @@ namespace CS2 {
 	namespace client {
 		class C_Sprite : public CS2::client::C_BaseModelEntity {
 		public:
-			PROPERTY(m_hSpriteMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0xeb0);
-			PROPERTY(m_hAttachedToEntity,GlobalTypes::CHandle<client::C_BaseEntity>, 0xeb8);
-			PROPERTY(m_nAttachment,modellib::AttachmentHandle_t , 0xebc);
-			PROPERTY(m_flSpriteFramerate,float32 , 0xec0);
-			PROPERTY(m_flFrame,float32 , 0xec4);
-			PROPERTY(m_flDieTime,entity2::GameTime_t , 0xec8);
-			PROPERTY(m_nBrightness,uint32_t , 0xed8);
-			PROPERTY(m_flBrightnessDuration,float32 , 0xedc);
-			PROPERTY(m_flSpriteScale,float32 , 0xee0);
-			PROPERTY(m_flScaleDuration,float32 , 0xee4);
-			PROPERTY(m_bWorldSpaceScale,bool , 0xee8);
-			PROPERTY(m_flGlowProxySize,float32 , 0xeec);
-			PROPERTY(m_flHDRColorScale,float32 , 0xef0);
-			PROPERTY(m_flLastTime,entity2::GameTime_t , 0xef4);
-			PROPERTY(m_flMaxFrame,float32 , 0xef8);
-			PROPERTY(m_flStartScale,float32 , 0xefc);
-			PROPERTY(m_flDestScale,float32 , 0xf00);
-			PROPERTY(m_flScaleTimeStart,entity2::GameTime_t , 0xf04);
-			PROPERTY(m_nStartBrightness,int32_t , 0xf08);
-			PROPERTY(m_nDestBrightness,int32_t , 0xf0c);
-			PROPERTY(m_flBrightnessTimeStart,entity2::GameTime_t , 0xf10);
-			PROPERTY(m_nSpriteWidth,int32_t , 0xf20);
-			PROPERTY(m_nSpriteHeight,int32_t , 0xf24);
+			PROPERTY(m_hSpriteMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0xe88);
+			PROPERTY(m_hAttachedToEntity,GlobalTypes::CHandle<client::C_BaseEntity>, 0xe90);
+			PROPERTY(m_nAttachment,modellib::AttachmentHandle_t , 0xe94);
+			PROPERTY(m_flSpriteFramerate,float32 , 0xe98);
+			PROPERTY(m_flFrame,float32 , 0xe9c);
+			PROPERTY(m_flDieTime,entity2::GameTime_t , 0xea0);
+			PROPERTY(m_nBrightness,uint32_t , 0xeb0);
+			PROPERTY(m_flBrightnessDuration,float32 , 0xeb4);
+			PROPERTY(m_flSpriteScale,float32 , 0xeb8);
+			PROPERTY(m_flScaleDuration,float32 , 0xebc);
+			PROPERTY(m_bWorldSpaceScale,bool , 0xec0);
+			PROPERTY(m_flGlowProxySize,float32 , 0xec4);
+			PROPERTY(m_flHDRColorScale,float32 , 0xec8);
+			PROPERTY(m_flLastTime,entity2::GameTime_t , 0xecc);
+			PROPERTY(m_flMaxFrame,float32 , 0xed0);
+			PROPERTY(m_flStartScale,float32 , 0xed4);
+			PROPERTY(m_flDestScale,float32 , 0xed8);
+			PROPERTY(m_flScaleTimeStart,entity2::GameTime_t , 0xedc);
+			PROPERTY(m_nStartBrightness,int32_t , 0xee0);
+			PROPERTY(m_nDestBrightness,int32_t , 0xee4);
+			PROPERTY(m_flBrightnessTimeStart,entity2::GameTime_t , 0xee8);
+			PROPERTY(m_nSpriteWidth,int32_t , 0xef8);
+			PROPERTY(m_nSpriteHeight,int32_t , 0xefc);
 			S2_PAD(0x78);
 		};
-		//static_assert(sizeof(CS2::client::C_Sprite) == 0xF28, "C_Sprite size should be 0xF28");
+		//static_assert(sizeof(CS2::client::C_Sprite) == 0xF00, "C_Sprite size should be 0xF00");
 	}
 }

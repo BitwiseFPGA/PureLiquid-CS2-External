@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CSimpleMarkupVolumeTagged) == 0x818, "CSimpleMarkupVolumeTagged size should be 0x818");
+		//static_assert(sizeof(CS2::server::CSimpleMarkupVolumeTagged) == 0x770, "CSimpleMarkupVolumeTagged size should be 0x770");
 	}
 }

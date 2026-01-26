@@ -28,20 +28,20 @@ namespace CS2 {
 	namespace server {
 		class CPointAngleSensor : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x4f0);
-			PROPERTY(m_nLookAtName,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_hTargetEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x500);
-			PROPERTY(m_hLookAtEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x504);
-			PROPERTY(m_flDuration,float32 , 0x508);
-			PROPERTY(m_flDotTolerance,float32 , 0x50c);
-			PROPERTY(m_flFacingTime,entity2::GameTime_t , 0x510);
-			PROPERTY(m_bFired,bool , 0x514);
-			PROPERTY(m_OnFacingLookat,entity2::CEntityIOOutput , 0x518);
-			PROPERTY(m_OnNotFacingLookat,entity2::CEntityIOOutput , 0x540);
-			PROPERTY(m_TargetDir,GlobalTypes::CEntityOutputTemplate<GlobalTypes::Vector>, 0x568);
-			PROPERTY(m_FacingPercentage,GlobalTypes::CEntityOutputTemplate< float32 >, 0x590);
-			S2_PAD(0xC8);
+			PROPERTY(m_bDisabled,bool , 0x4a8);
+			PROPERTY(m_nLookAtName,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_hTargetEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4b8);
+			PROPERTY(m_hLookAtEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4bc);
+			PROPERTY(m_flDuration,float32 , 0x4c0);
+			PROPERTY(m_flDotTolerance,float32 , 0x4c4);
+			PROPERTY(m_flFacingTime,entity2::GameTime_t , 0x4c8);
+			PROPERTY(m_bFired,bool , 0x4cc);
+			PROPERTY(m_OnFacingLookat,entity2::CEntityIOOutput , 0x4d0);
+			PROPERTY(m_OnNotFacingLookat,entity2::CEntityIOOutput , 0x4e8);
+			PROPERTY(m_TargetDir,GlobalTypes::CEntityOutputTemplate< Vector, Vector >, 0x500);
+			PROPERTY(m_FacingPercentage,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x528);
+			S2_PAD(0xA0);
 		};
-		//static_assert(sizeof(CS2::server::CPointAngleSensor) == 0x5B8, "CPointAngleSensor size should be 0x5B8");
+		//static_assert(sizeof(CS2::server::CPointAngleSensor) == 0x548, "CPointAngleSensor size should be 0x548");
 	}
 }

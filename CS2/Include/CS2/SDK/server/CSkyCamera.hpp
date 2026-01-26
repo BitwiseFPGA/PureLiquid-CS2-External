@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace server {
 		class CSkyCamera : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_skyboxData,server::sky3dparams_t , 0x4f0);
-			PROPERTY(m_skyboxSlotToken,GlobalTypes::CUtlStringToken* , 0x580);
-			PROPERTY(m_bUseAngles,bool , 0x584);
-			PROPERTY(m_pNext,server::CSkyCamera* , 0x588);
+			PROPERTY(m_skyboxData,server::sky3dparams_t , 0x4a8);
+			PROPERTY(m_skyboxSlotToken,GlobalTypes::CUtlStringToken* , 0x538);
+			PROPERTY(m_bUseAngles,bool , 0x53c);
+			PROPERTY(m_pNext,server::CSkyCamera* , 0x540);
 			S2_PAD(0xA0);
 		};
-		//static_assert(sizeof(CS2::server::CSkyCamera) == 0x590, "CSkyCamera size should be 0x590");
+		//static_assert(sizeof(CS2::server::CSkyCamera) == 0x548, "CSkyCamera size should be 0x548");
 	}
 }

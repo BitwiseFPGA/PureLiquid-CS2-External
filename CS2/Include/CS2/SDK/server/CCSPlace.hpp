@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CCSPlace : public CS2::server::CServerOnlyModelEntity {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlSymbolLarge* , 0x7f0);
+			PROPERTY(m_name,GlobalTypes::CUtlSymbolLarge* , 0x748);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CCSPlace) == 0x7F8, "CCSPlace size should be 0x7F8");
+		//static_assert(sizeof(CS2::server::CCSPlace) == 0x750, "CCSPlace size should be 0x750");
 	}
 }

@@ -28,19 +28,19 @@ namespace CS2 {
 	namespace client {
 		class C_BaseTrigger : public CS2::client::C_BaseToggle {
 		public:
-			PROPERTY(m_OnStartTouch,entity2::CEntityIOOutput , 0xeb0);
-			PROPERTY(m_OnStartTouchAll,entity2::CEntityIOOutput , 0xed8);
-			PROPERTY(m_OnEndTouch,entity2::CEntityIOOutput , 0xf00);
-			PROPERTY(m_OnEndTouchAll,entity2::CEntityIOOutput , 0xf28);
-			PROPERTY(m_OnTouching,entity2::CEntityIOOutput , 0xf50);
-			PROPERTY(m_OnTouchingEachEntity,entity2::CEntityIOOutput , 0xf78);
-			PROPERTY(m_OnNotTouching,entity2::CEntityIOOutput , 0xfa0);
-			PROPERTY(m_hTouchingEntities,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::C_BaseEntity>>, 0xfc8);
-			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 0xfe0);
-			PROPERTY(m_hFilter,GlobalTypes::CHandle<client::CBaseFilter>, 0xfe8);
-			PROPERTY(m_bDisabled,bool , 0xfec);
-			S2_PAD(0x140);
+			PROPERTY(m_OnStartTouch,entity2::CEntityIOOutput , 0xe88);
+			PROPERTY(m_OnStartTouchAll,entity2::CEntityIOOutput , 0xea0);
+			PROPERTY(m_OnEndTouch,entity2::CEntityIOOutput , 0xeb8);
+			PROPERTY(m_OnEndTouchAll,entity2::CEntityIOOutput , 0xed0);
+			PROPERTY(m_OnTouching,entity2::CEntityIOOutput , 0xee8);
+			PROPERTY(m_OnTouchingEachEntity,entity2::CEntityIOOutput , 0xf00);
+			PROPERTY(m_OnNotTouching,entity2::CEntityIOOutput , 0xf18);
+			PROPERTY(m_hTouchingEntities,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::C_BaseEntity>>, 0xf30);
+			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 0xf48);
+			PROPERTY(m_hFilter,GlobalTypes::CHandle<client::CBaseFilter>, 0xf50);
+			PROPERTY(m_bDisabled,bool , 0xf54);
+			S2_PAD(0xD0);
 		};
-		//static_assert(sizeof(CS2::client::C_BaseTrigger) == 0xFF0, "C_BaseTrigger size should be 0xFF0");
+		//static_assert(sizeof(CS2::client::C_BaseTrigger) == 0xF58, "C_BaseTrigger size should be 0xF58");
 	}
 }

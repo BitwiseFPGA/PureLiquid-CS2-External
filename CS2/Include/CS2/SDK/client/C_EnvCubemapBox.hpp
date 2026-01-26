@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_EnvCubemapBox) == 0x6E0, "C_EnvCubemapBox size should be 0x6E0");
+		//static_assert(sizeof(CS2::client::C_EnvCubemapBox) == 0x6F0, "C_EnvCubemapBox size should be 0x6F0");
 	}
 }

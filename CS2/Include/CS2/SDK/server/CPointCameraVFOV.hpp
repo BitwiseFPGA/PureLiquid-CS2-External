@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CPointCameraVFOV : public CS2::server::CPointCamera {
 		public:
-			PROPERTY(m_flVerticalFOV,float32 , 0x550);
+			PROPERTY(m_flVerticalFOV,float32 , 0x508);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CPointCameraVFOV) == 0x558, "CPointCameraVFOV size should be 0x558");
+		//static_assert(sizeof(CS2::server::CPointCameraVFOV) == 0x510, "CPointCameraVFOV size should be 0x510");
 	}
 }

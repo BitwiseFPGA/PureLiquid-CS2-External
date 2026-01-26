@@ -23,21 +23,21 @@ namespace CS2 {
 	namespace server {
 		class CBaseCSGrenade : public CS2::server::CCSWeaponBase {
 		public:
-			PROPERTY(m_bRedraw,bool , 0x11d0);
-			PROPERTY(m_bIsHeldByPlayer,bool , 0x11d1);
-			PROPERTY(m_bPinPulled,bool , 0x11d2);
-			PROPERTY(m_bJumpThrow,bool , 0x11d3);
-			PROPERTY(m_bThrowAnimating,bool , 0x11d4);
-			PROPERTY(m_fThrowTime,entity2::GameTime_t , 0x11d8);
-			PROPERTY(m_flThrowStrength,float32 , 0x11dc);
-			PROPERTY(m_fDropTime,entity2::GameTime_t , 0x11e0);
-			PROPERTY(m_fPinPullTime,entity2::GameTime_t , 0x11e4);
-			PROPERTY(m_bJustPulledPin,bool , 0x11e8);
-			PROPERTY(m_nNextHoldTick,entity2::GameTick_t , 0x11ec);
-			PROPERTY(m_flNextHoldFrac,float32 , 0x11f0);
-			PROPERTY(m_hSwitchToWeaponAfterThrow,GlobalTypes::CHandle<server::CCSWeaponBase>, 0x11f4);
+			PROPERTY(m_bRedraw,bool , 0x1130);
+			PROPERTY(m_bIsHeldByPlayer,bool , 0x1131);
+			PROPERTY(m_bPinPulled,bool , 0x1132);
+			PROPERTY(m_bJumpThrow,bool , 0x1133);
+			PROPERTY(m_bThrowAnimating,bool , 0x1134);
+			PROPERTY(m_fThrowTime,entity2::GameTime_t , 0x1138);
+			PROPERTY(m_flThrowStrength,float32 , 0x113c);
+			PROPERTY(m_fDropTime,entity2::GameTime_t , 0x1140);
+			PROPERTY(m_fPinPullTime,entity2::GameTime_t , 0x1144);
+			PROPERTY(m_bJustPulledPin,bool , 0x1148);
+			PROPERTY(m_nNextHoldTick,entity2::GameTick_t , 0x114c);
+			PROPERTY(m_flNextHoldFrac,float32 , 0x1150);
+			PROPERTY(m_hSwitchToWeaponAfterThrow,GlobalTypes::CHandle<server::CCSWeaponBase>, 0x1154);
 			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CBaseCSGrenade) == 0x1210, "CBaseCSGrenade size should be 0x1210");
+		//static_assert(sizeof(CS2::server::CBaseCSGrenade) == 0x1170, "CBaseCSGrenade size should be 0x1170");
 	}
 }

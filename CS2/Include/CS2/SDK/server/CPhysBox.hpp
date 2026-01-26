@@ -28,23 +28,23 @@ namespace CS2 {
 	namespace server {
 		class CPhysBox : public CS2::server::CBreakable {
 		public:
-			PROPERTY(m_damageType,int32_t , 0x8b0);
-			PROPERTY(m_damageToEnableMotion,int32_t , 0x8b4);
-			PROPERTY(m_flForceToEnableMotion,float32 , 0x8b8);
-			PROPERTY(m_vHoverPosePosition,GlobalTypes::Vector , 0x8bc);
-			PROPERTY(m_angHoverPoseAngles,GlobalTypes::QAngle , 0x8c8);
-			PROPERTY(m_bNotSolidToWorld,bool , 0x8d4);
-			PROPERTY(m_bEnableUseOutput,bool , 0x8d5);
-			PROPERTY(m_nHoverPoseFlags,server::HoverPoseFlags_t , 0x8d6);
-			PROPERTY(m_flTouchOutputPerEntityDelay,float32 , 0x8d8);
-			PROPERTY(m_OnDamaged,entity2::CEntityIOOutput , 0x8e0);
-			PROPERTY(m_OnAwakened,entity2::CEntityIOOutput , 0x908);
-			PROPERTY(m_OnMotionEnabled,entity2::CEntityIOOutput , 0x930);
-			PROPERTY(m_OnPlayerUse,entity2::CEntityIOOutput , 0x958);
-			PROPERTY(m_OnStartTouch,entity2::CEntityIOOutput , 0x980);
-			PROPERTY(m_hCarryingPlayer,GlobalTypes::CHandle<server::CBasePlayerPawn>, 0x9a8);
-			S2_PAD(0x118);
+			PROPERTY(m_damageType,int32_t , 0x808);
+			PROPERTY(m_damageToEnableMotion,int32_t , 0x80c);
+			PROPERTY(m_flForceToEnableMotion,float32 , 0x810);
+			PROPERTY(m_vHoverPosePosition,GlobalTypes::Vector , 0x814);
+			PROPERTY(m_angHoverPoseAngles,GlobalTypes::QAngle , 0x820);
+			PROPERTY(m_bNotSolidToWorld,bool , 0x82c);
+			PROPERTY(m_bEnableUseOutput,bool , 0x82d);
+			PROPERTY(m_nHoverPoseFlags,server::HoverPoseFlags_t , 0x82e);
+			PROPERTY(m_flTouchOutputPerEntityDelay,float32 , 0x830);
+			PROPERTY(m_OnDamaged,entity2::CEntityIOOutput , 0x838);
+			PROPERTY(m_OnAwakened,entity2::CEntityIOOutput , 0x850);
+			PROPERTY(m_OnMotionEnabled,entity2::CEntityIOOutput , 0x868);
+			PROPERTY(m_OnPlayerUse,entity2::CEntityIOOutput , 0x880);
+			PROPERTY(m_OnStartTouch,entity2::CEntityIOOutput , 0x898);
+			PROPERTY(m_hCarryingPlayer,GlobalTypes::CHandle<server::CBasePlayerPawn>, 0x8b0);
+			S2_PAD(0xC8);
 		};
-		//static_assert(sizeof(CS2::server::CPhysBox) == 0x9C8, "CPhysBox size should be 0x9C8");
+		//static_assert(sizeof(CS2::server::CPhysBox) == 0x8D0, "CPhysBox size should be 0x8D0");
 	}
 }

@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CLogicGameEvent : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_iszEventName,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
+			PROPERTY(m_iszEventName,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CLogicGameEvent) == 0x4F8, "CLogicGameEvent size should be 0x4F8");
+		//static_assert(sizeof(CS2::server::CLogicGameEvent) == 0x4B0, "CLogicGameEvent size should be 0x4B0");
 	}
 }

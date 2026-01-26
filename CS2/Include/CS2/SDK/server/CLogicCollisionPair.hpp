@@ -21,14 +21,14 @@ namespace CS2 {
 	namespace server {
 		class CLogicCollisionPair : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_nameAttach1,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
-			PROPERTY(m_nameAttach2,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_includeHierarchy,bool , 0x500);
-			PROPERTY(m_supportMultipleEntitiesWithSameName,bool , 0x501);
-			PROPERTY(m_disabled,bool , 0x502);
-			PROPERTY(m_succeeded,bool , 0x503);
+			PROPERTY(m_nameAttach1,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
+			PROPERTY(m_nameAttach2,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_includeHierarchy,bool , 0x4b8);
+			PROPERTY(m_supportMultipleEntitiesWithSameName,bool , 0x4b9);
+			PROPERTY(m_disabled,bool , 0x4ba);
+			PROPERTY(m_succeeded,bool , 0x4bb);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CLogicCollisionPair) == 0x508, "CLogicCollisionPair size should be 0x508");
+		//static_assert(sizeof(CS2::server::CLogicCollisionPair) == 0x4C0, "CLogicCollisionPair size should be 0x4C0");
 	}
 }

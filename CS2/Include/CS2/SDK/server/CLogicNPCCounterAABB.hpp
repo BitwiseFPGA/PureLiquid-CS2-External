@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CLogicNPCCounterAABB : public CS2::server::CLogicNPCCounter {
 		public:
-			PROPERTY(m_vDistanceOuterMins,GlobalTypes::Vector , 0x830);
-			PROPERTY(m_vDistanceOuterMaxs,GlobalTypes::Vector , 0x83c);
-			PROPERTY(m_vOuterMins,GlobalTypes::Vector , 0x848);
-			PROPERTY(m_vOuterMaxs,GlobalTypes::Vector , 0x854);
+			PROPERTY(m_vDistanceOuterMins,GlobalTypes::Vector , 0x728);
+			PROPERTY(m_vDistanceOuterMaxs,GlobalTypes::Vector , 0x734);
+			PROPERTY(m_vOuterMins,GlobalTypes::Vector , 0x740);
+			PROPERTY(m_vOuterMaxs,GlobalTypes::Vector , 0x74c);
 			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CLogicNPCCounterAABB) == 0x860, "CLogicNPCCounterAABB size should be 0x860");
+		//static_assert(sizeof(CS2::server::CLogicNPCCounterAABB) == 0x758, "CLogicNPCCounterAABB size should be 0x758");
 	}
 }

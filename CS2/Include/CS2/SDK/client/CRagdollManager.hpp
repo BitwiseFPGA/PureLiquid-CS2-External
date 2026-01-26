@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace client {
 		class CRagdollManager : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_iCurrentMaxRagdollCount,int8_t , 0x5f8);
+			PROPERTY(m_iCurrentMaxRagdollCount,int8_t , 0x608);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::CRagdollManager) == 0x600, "CRagdollManager size should be 0x600");
+		//static_assert(sizeof(CS2::client::CRagdollManager) == 0x610, "CRagdollManager size should be 0x610");
 	}
 }

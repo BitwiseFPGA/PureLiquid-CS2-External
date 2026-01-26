@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace server {
 		class CLogicRelay : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x4f0);
-			PROPERTY(m_bWaitForRefire,bool , 0x4f1);
-			PROPERTY(m_bTriggerOnce,bool , 0x4f2);
-			PROPERTY(m_bFastRetrigger,bool , 0x4f3);
-			PROPERTY(m_bPassthoughCaller,bool , 0x4f4);
+			PROPERTY(m_bDisabled,bool , 0x4a8);
+			PROPERTY(m_bWaitForRefire,bool , 0x4a9);
+			PROPERTY(m_bTriggerOnce,bool , 0x4aa);
+			PROPERTY(m_bFastRetrigger,bool , 0x4ab);
+			PROPERTY(m_bPassthoughCaller,bool , 0x4ac);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CLogicRelay) == 0x4F8, "CLogicRelay size should be 0x4F8");
+		//static_assert(sizeof(CS2::server::CLogicRelay) == 0x4B0, "CLogicRelay size should be 0x4B0");
 	}
 }

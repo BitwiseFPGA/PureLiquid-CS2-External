@@ -29,9 +29,8 @@ namespace CS2 {
 			PROPERTY(__m_pChainEntity,entity2::CNetworkVarChainer , 0x0);
 			PROPERTY(m_vecDamageTakenByHitGroup,GlobalTypes::CUtlVector< uint16 >, 0x48);
 			PROPERTY(m_hOwner,GlobalTypes::CHandle<client::C_BaseModelEntity>, 0x60);
-			PROPERTY(m_nLastHitDamageLevel,int32_t , 0x64);
-			S2_PAD(0x68);
+			S2_PAD(0x70);
 		};
-		//static_assert(sizeof(CS2::client::CDestructiblePartsComponent) == 0x68, "CDestructiblePartsComponent size should be 0x68");
+		//static_assert(sizeof(CS2::client::CDestructiblePartsComponent) == 0x70, "CDestructiblePartsComponent size should be 0x70");
 	}
 }

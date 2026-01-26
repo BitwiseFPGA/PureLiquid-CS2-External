@@ -27,17 +27,17 @@ namespace CS2 {
 	namespace client {
 		class C_RagdollProp : public CS2::client::CBaseAnimGraph {
 		public:
-			PROPERTY(m_ragEnabled,GlobalTypes::C_NetworkUtlVectorBase< bool >, 0x1160);
-			PROPERTY(m_ragPos,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::Vector>, 0x1178);
-			PROPERTY(m_ragAngles,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::QAngle>, 0x1190);
-			PROPERTY(m_flBlendWeight,float32 , 0x11a8);
-			PROPERTY(m_hRagdollSource,GlobalTypes::CHandle<client::C_BaseEntity>, 0x11ac);
-			PROPERTY(m_iEyeAttachment,modellib::AttachmentHandle_t , 0x11b0);
-			PROPERTY(m_flBlendWeightCurrent,float32 , 0x11b4);
-			PROPERTY(m_parentPhysicsBoneIndices,GlobalTypes::CUtlVector< int32 >, 0x11b8);
-			PROPERTY(m_worldSpaceBoneComputationOrder,GlobalTypes::CUtlVector< int32 >, 0x11d0);
+			PROPERTY(m_ragEnabled,GlobalTypes::C_NetworkUtlVectorBase< bool >, 0x1170);
+			PROPERTY(m_ragPos,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::Vector>, 0x1188);
+			PROPERTY(m_ragAngles,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::QAngle>, 0x11a0);
+			PROPERTY(m_flBlendWeight,float32 , 0x11b8);
+			PROPERTY(m_hRagdollSource,GlobalTypes::CHandle<client::C_BaseEntity>, 0x11bc);
+			PROPERTY(m_iEyeAttachment,modellib::AttachmentHandle_t , 0x11c0);
+			PROPERTY(m_flBlendWeightCurrent,float32 , 0x11c4);
+			PROPERTY(m_parentPhysicsBoneIndices,GlobalTypes::CUtlVector< int32 >, 0x11c8);
+			PROPERTY(m_worldSpaceBoneComputationOrder,GlobalTypes::CUtlVector< int32 >, 0x11e0);
 			S2_PAD(0x90);
 		};
-		//static_assert(sizeof(CS2::client::C_RagdollProp) == 0x11E8, "C_RagdollProp size should be 0x11E8");
+		//static_assert(sizeof(CS2::client::C_RagdollProp) == 0x11F8, "C_RagdollProp size should be 0x11F8");
 	}
 }

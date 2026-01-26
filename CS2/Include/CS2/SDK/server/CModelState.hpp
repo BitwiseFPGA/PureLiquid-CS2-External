@@ -25,16 +25,16 @@ namespace CS2 {
 	namespace server {
 		class CModelState  {
 		public:
-			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0xd0);
-			PROPERTY(m_ModelName,GlobalTypes::CUtlSymbolLarge* , 0xd8);
-			PROPERTY(m_bClientClothCreationSuppressed,bool , 0x125);
-			PROPERTY(m_MeshGroupMask,uint64_t , 0x1d0);
-			PROPERTY(m_nBodyGroupChoices,GlobalTypes::CNetworkUtlVectorBase< int32 >, 0x220);
-			PROPERTY(m_nIdealMotionType,int8_t , 0x26a);
-			PROPERTY(m_nForceLOD,int8_t , 0x26b);
-			PROPERTY(m_nClothUpdateFlags,int8_t , 0x26c);
-			S2_PAD(0x280);
+			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0xa0);
+			PROPERTY(m_ModelName,GlobalTypes::CUtlSymbolLarge* , 0xa8);
+			PROPERTY(m_bClientClothCreationSuppressed,bool , 0xf5);
+			PROPERTY(m_MeshGroupMask,uint64_t , 0x1a0);
+			PROPERTY(m_nBodyGroupChoices,GlobalTypes::CNetworkUtlVectorBase< int32 >, 0x1f0);
+			PROPERTY(m_nIdealMotionType,int8_t , 0x23a);
+			PROPERTY(m_nForceLOD,int8_t , 0x23b);
+			PROPERTY(m_nClothUpdateFlags,int8_t , 0x23c);
+			S2_PAD(0x250);
 		};
-		//static_assert(sizeof(CS2::server::CModelState) == 0x280, "CModelState size should be 0x280");
+		//static_assert(sizeof(CS2::server::CModelState) == 0x250, "CModelState size should be 0x250");
 	}
 }

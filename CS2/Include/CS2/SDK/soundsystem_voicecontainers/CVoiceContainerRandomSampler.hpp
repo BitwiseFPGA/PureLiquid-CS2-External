@@ -10,7 +10,7 @@
 #endif
 
 
-#include <SDK/soundsystem_voicecontainers/CVoiceContainerBase.hpp>
+#include <SDK/soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.hpp>
 #include <SDK/resourcesystem/InfoForResourceTypeCVoiceContainerBase.hpp>
 
 
@@ -20,7 +20,7 @@
 using namespace GlobalTypes;
 namespace CS2 {
 	namespace soundsystem_voicecontainers {
-		class CVoiceContainerRandomSampler : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
+		class CVoiceContainerRandomSampler : public CS2::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator {
 		public:
 			PROPERTY(m_flAmplitude,float32 , 0xb8);
 			PROPERTY(m_flAmplitudeJitter,float32 , 0xbc);

@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace client {
 		class CFuncWater : public CS2::client::C_BaseModelEntity {
 		public:
-			PROPERTY(m_BuoyancyHelper,client::CBuoyancyHelper , 0xeb0);
+			PROPERTY(m_BuoyancyHelper,client::CBuoyancyHelper , 0xe88);
 			S2_PAD(0x118);
 		};
-		//static_assert(sizeof(CS2::client::CFuncWater) == 0xFC8, "CFuncWater size should be 0xFC8");
+		//static_assert(sizeof(CS2::client::CFuncWater) == 0xFA0, "CFuncWater size should be 0xFA0");
 	}
 }

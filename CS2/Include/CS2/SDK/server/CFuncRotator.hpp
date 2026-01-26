@@ -15,6 +15,7 @@
 #include <SDK/entity2/CEntityIOOutput.hpp>
 #include <SDK/server/Rotate_t.hpp>
 #include <SDK/server/RotatorTargetSpace_t.hpp>
+#include <SDK/client/SolidType_t.hpp>
 
 
 
@@ -23,6 +24,7 @@ namespace CS2 {
 		class CBaseEntity;
 		class RotatorHistoryEntry_t;
 		class RotatorQueueEntry_t;
+		class CFuncMover;
 	}
 }
 
@@ -32,43 +34,49 @@ namespace CS2 {
 	namespace server {
 		class CFuncRotator : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_hRotatorTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x7d8);
-			PROPERTY(m_bIsRotating,bool , 0x7dc);
-			PROPERTY(m_bIsReversing,bool , 0x7dd);
-			PROPERTY(m_flTimeToReachMaxSpeed,float32 , 0x7e0);
-			PROPERTY(m_flTimeToReachZeroSpeed,float32 , 0x7e4);
-			PROPERTY(m_flDistanceAlongArcTraveled,float32 , 0x7e8);
-			PROPERTY(m_flTimeToWaitOscillate,float32 , 0x7ec);
-			PROPERTY(m_flTimeRotationStart,entity2::GameTime_t , 0x7f0);
-			PROPERTY(m_qLSPrevChange,GlobalTypes::Quaternion , 0x800);
-			PROPERTY(m_qWSPrev,GlobalTypes::Quaternion , 0x810);
-			PROPERTY(m_qWSInit,GlobalTypes::Quaternion , 0x820);
-			PROPERTY(m_qLSInit,GlobalTypes::Quaternion , 0x830);
-			PROPERTY(m_qLSOrientation,GlobalTypes::Quaternion , 0x840);
-			PROPERTY(m_OnRotationStarted,entity2::CEntityIOOutput , 0x850);
-			PROPERTY(m_OnRotationCompleted,entity2::CEntityIOOutput , 0x878);
-			PROPERTY(m_OnOscillate,entity2::CEntityIOOutput , 0x8a0);
-			PROPERTY(m_OnOscillateStartArrive,entity2::CEntityIOOutput , 0x8c8);
-			PROPERTY(m_OnOscillateStartDepart,entity2::CEntityIOOutput , 0x8f0);
-			PROPERTY(m_OnOscillateEndArrive,entity2::CEntityIOOutput , 0x918);
-			PROPERTY(m_OnOscillateEndDepart,entity2::CEntityIOOutput , 0x940);
-			PROPERTY(m_bOscillateDepart,bool , 0x968);
-			PROPERTY(m_nOscillateCount,int32_t , 0x96c);
-			PROPERTY(m_eRotateType,server::Rotate_t , 0x970);
-			PROPERTY(m_ePrevRotateType,server::Rotate_t , 0x974);
-			PROPERTY(m_bHasTargetOverride,bool , 0x978);
-			PROPERTY(m_qOrientationOverride,GlobalTypes::Quaternion , 0x980);
-			PROPERTY(m_eSpaceOverride,server::RotatorTargetSpace_t , 0x990);
-			PROPERTY(m_qAngularVelocity,GlobalTypes::QAngle , 0x994);
-			PROPERTY(m_vLookAtForcedUp,GlobalTypes::Vector , 0x9a0);
-			PROPERTY(m_strRotatorTarget,GlobalTypes::CUtlSymbolLarge* , 0x9b0);
-			PROPERTY(m_bRecordHistory,bool , 0x9b8);
-			PROPERTY(m_vecRotatorHistory,GlobalTypes::CUtlVector<server::RotatorHistoryEntry_t>, 0x9c0);
-			PROPERTY(m_bReturningToPreviousOrientation,bool , 0x9d8);
-			PROPERTY(m_vecRotatorQueue,GlobalTypes::CUtlVector<server::RotatorQueueEntry_t>, 0x9e0);
-			PROPERTY(m_vecRotatorQueueHistory,GlobalTypes::CUtlVector<server::RotatorHistoryEntry_t>, 0x9f8);
-			S2_PAD(0x238);
+			PROPERTY(m_hRotatorTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x730);
+			PROPERTY(m_bIsRotating,bool , 0x734);
+			PROPERTY(m_bIsReversing,bool , 0x735);
+			PROPERTY(m_flTimeToReachMaxSpeed,float32 , 0x738);
+			PROPERTY(m_flTimeToReachZeroSpeed,float32 , 0x73c);
+			PROPERTY(m_flDistanceAlongArcTraveled,float32 , 0x740);
+			PROPERTY(m_flTimeToWaitOscillate,float32 , 0x744);
+			PROPERTY(m_flTimeRotationStart,entity2::GameTime_t , 0x748);
+			PROPERTY(m_qLSPrevChange,GlobalTypes::Quaternion , 0x750);
+			PROPERTY(m_qWSPrev,GlobalTypes::Quaternion , 0x760);
+			PROPERTY(m_qWSInit,GlobalTypes::Quaternion , 0x770);
+			PROPERTY(m_qLSInit,GlobalTypes::Quaternion , 0x780);
+			PROPERTY(m_qLSOrientation,GlobalTypes::Quaternion , 0x790);
+			PROPERTY(m_OnRotationStarted,entity2::CEntityIOOutput , 0x7a0);
+			PROPERTY(m_OnRotationCompleted,entity2::CEntityIOOutput , 0x7b8);
+			PROPERTY(m_OnOscillate,entity2::CEntityIOOutput , 0x7d0);
+			PROPERTY(m_OnOscillateStartArrive,entity2::CEntityIOOutput , 0x7e8);
+			PROPERTY(m_OnOscillateStartDepart,entity2::CEntityIOOutput , 0x800);
+			PROPERTY(m_OnOscillateEndArrive,entity2::CEntityIOOutput , 0x818);
+			PROPERTY(m_OnOscillateEndDepart,entity2::CEntityIOOutput , 0x830);
+			PROPERTY(m_bOscillateDepart,bool , 0x848);
+			PROPERTY(m_nOscillateCount,int32_t , 0x84c);
+			PROPERTY(m_eRotateType,server::Rotate_t , 0x850);
+			PROPERTY(m_ePrevRotateType,server::Rotate_t , 0x854);
+			PROPERTY(m_bHasTargetOverride,bool , 0x858);
+			PROPERTY(m_qOrientationOverride,GlobalTypes::Quaternion , 0x860);
+			PROPERTY(m_eSpaceOverride,server::RotatorTargetSpace_t , 0x870);
+			PROPERTY(m_qAngularVelocity,GlobalTypes::QAngle , 0x874);
+			PROPERTY(m_vLookAtForcedUp,GlobalTypes::Vector , 0x880);
+			PROPERTY(m_strRotatorTarget,GlobalTypes::CUtlSymbolLarge* , 0x890);
+			PROPERTY(m_bRecordHistory,bool , 0x898);
+			PROPERTY(m_vecRotatorHistory,GlobalTypes::CUtlVector<server::RotatorHistoryEntry_t>, 0x8a0);
+			PROPERTY(m_bReturningToPreviousOrientation,bool , 0x8b8);
+			PROPERTY(m_vecRotatorQueue,GlobalTypes::CUtlVector<server::RotatorQueueEntry_t>, 0x8c0);
+			PROPERTY(m_vecRotatorQueueHistory,GlobalTypes::CUtlVector<server::RotatorHistoryEntry_t>, 0x8d8);
+			PROPERTY(m_eSolidType,client::SolidType_t , 0x8f0);
+			PROPERTY(m_hSpeedFromMover,GlobalTypes::CHandle<server::CFuncMover>, 0x8f4);
+			PROPERTY(m_iszSpeedFromMover,GlobalTypes::CUtlSymbolLarge* , 0x8f8);
+			PROPERTY(m_flSpeedScale,float32 , 0x900);
+			PROPERTY(m_flMinYawRotation,float32 , 0x904);
+			PROPERTY(m_flMaxYawRotation,float32 , 0x908);
+			S2_PAD(0x1E0);
 		};
-		//static_assert(sizeof(CS2::server::CFuncRotator) == 0xA10, "CFuncRotator size should be 0xA10");
+		//static_assert(sizeof(CS2::server::CFuncRotator) == 0x910, "CFuncRotator size should be 0x910");
 	}
 }

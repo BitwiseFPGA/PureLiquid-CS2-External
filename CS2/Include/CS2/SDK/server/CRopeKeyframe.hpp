@@ -30,29 +30,29 @@ namespace CS2 {
 	namespace server {
 		class CRopeKeyframe : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_RopeFlags,uint16_t , 0x7e0);
-			PROPERTY(m_iNextLinkName,GlobalTypes::CUtlSymbolLarge* , 0x7e8);
-			PROPERTY(m_Slack,int16_t , 0x7f0);
-			PROPERTY(m_Width,float32 , 0x7f4);
-			PROPERTY(m_TextureScale,float32 , 0x7f8);
-			PROPERTY(m_nSegments,uint8_t , 0x7fc);
-			PROPERTY(m_bConstrainBetweenEndpoints,bool , 0x7fd);
-			PROPERTY(m_strRopeMaterialModel,GlobalTypes::CUtlSymbolLarge* , 0x800);
-			PROPERTY(m_iRopeMaterialModelIndex,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x808);
-			PROPERTY(m_Subdiv,uint8_t , 0x810);
-			PROPERTY(m_nChangeCount,uint8_t , 0x811);
-			PROPERTY(m_RopeLength,int16_t , 0x812);
-			PROPERTY(m_fLockedPoints,uint8_t , 0x814);
-			PROPERTY(m_bCreatedFromMapFile,bool , 0x815);
-			PROPERTY(m_flScrollSpeed,float32 , 0x818);
-			PROPERTY(m_bStartPointValid,bool , 0x81c);
-			PROPERTY(m_bEndPointValid,bool , 0x81d);
-			PROPERTY(m_hStartPoint,GlobalTypes::CHandle<server::CBaseEntity>, 0x820);
-			PROPERTY(m_hEndPoint,GlobalTypes::CHandle<server::CBaseEntity>, 0x824);
-			PROPERTY(m_iStartAttachment,modellib::AttachmentHandle_t , 0x828);
-			PROPERTY(m_iEndAttachment,modellib::AttachmentHandle_t , 0x829);
+			PROPERTY(m_RopeFlags,uint16_t , 0x738);
+			PROPERTY(m_iNextLinkName,GlobalTypes::CUtlSymbolLarge* , 0x740);
+			PROPERTY(m_Slack,int16_t , 0x748);
+			PROPERTY(m_Width,float32 , 0x74c);
+			PROPERTY(m_TextureScale,float32 , 0x750);
+			PROPERTY(m_nSegments,uint8_t , 0x754);
+			PROPERTY(m_bConstrainBetweenEndpoints,bool , 0x755);
+			PROPERTY(m_strRopeMaterialModel,GlobalTypes::CUtlSymbolLarge* , 0x758);
+			PROPERTY(m_iRopeMaterialModelIndex,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x760);
+			PROPERTY(m_Subdiv,uint8_t , 0x768);
+			PROPERTY(m_nChangeCount,uint8_t , 0x769);
+			PROPERTY(m_RopeLength,int16_t , 0x76a);
+			PROPERTY(m_fLockedPoints,uint8_t , 0x76c);
+			PROPERTY(m_bCreatedFromMapFile,bool , 0x76d);
+			PROPERTY(m_flScrollSpeed,float32 , 0x770);
+			PROPERTY(m_bStartPointValid,bool , 0x774);
+			PROPERTY(m_bEndPointValid,bool , 0x775);
+			PROPERTY(m_hStartPoint,GlobalTypes::CHandle<server::CBaseEntity>, 0x778);
+			PROPERTY(m_hEndPoint,GlobalTypes::CHandle<server::CBaseEntity>, 0x77c);
+			PROPERTY(m_iStartAttachment,modellib::AttachmentHandle_t , 0x780);
+			PROPERTY(m_iEndAttachment,modellib::AttachmentHandle_t , 0x781);
 			S2_PAD(0x58);
 		};
-		//static_assert(sizeof(CS2::server::CRopeKeyframe) == 0x830, "CRopeKeyframe size should be 0x830");
+		//static_assert(sizeof(CS2::server::CRopeKeyframe) == 0x788, "CRopeKeyframe size should be 0x788");
 	}
 }

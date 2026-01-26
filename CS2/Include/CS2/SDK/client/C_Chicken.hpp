@@ -29,15 +29,15 @@ namespace CS2 {
 	namespace client {
 		class C_Chicken : public CS2::client::C_DynamicProp {
 		public:
-			PROPERTY(m_hHolidayHatAddon,GlobalTypes::CHandle<client::CBaseAnimGraph>, 0x1428);
-			PROPERTY(m_jumpedThisFrame,bool , 0x142c);
-			PROPERTY(m_leader,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x1430);
-			PROPERTY(m_AttributeManager,client::C_AttributeContainer , 0x1438);
-			PROPERTY(m_bAttributesInitialized,bool , 0x1910);
-			PROPERTY(m_hWaterWakeParticles,client::ParticleIndex_t , 0x1914);
-			PROPERTY(m_bIsPreviewModel,bool , 0x1918);
-			S2_PAD(0x510);
+			PROPERTY(m_hHolidayHatAddon,GlobalTypes::CHandle<client::CBaseAnimGraph>, 0x13a8);
+			PROPERTY(m_jumpedThisFrame,bool , 0x13ac);
+			PROPERTY(m_leader,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x13b0);
+			PROPERTY(m_AttributeManager,client::C_AttributeContainer , 0x13b8);
+			PROPERTY(m_bAttributesInitialized,bool , 0x1888);
+			PROPERTY(m_hWaterWakeParticles,client::ParticleIndex_t , 0x188c);
+			PROPERTY(m_bIsPreviewModel,bool , 0x1890);
+			S2_PAD(0x500);
 		};
-		//static_assert(sizeof(CS2::client::C_Chicken) == 0x1930, "C_Chicken size should be 0x1930");
+		//static_assert(sizeof(CS2::client::C_Chicken) == 0x18A0, "C_Chicken size should be 0x18A0");
 	}
 }

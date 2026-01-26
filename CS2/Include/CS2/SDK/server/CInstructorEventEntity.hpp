@@ -26,11 +26,11 @@ namespace CS2 {
 	namespace server {
 		class CInstructorEventEntity : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_iszName,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
-			PROPERTY(m_iszHintTargetEntity,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_hTargetPlayer,GlobalTypes::CHandle<server::CBasePlayerPawn>, 0x500);
+			PROPERTY(m_iszName,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
+			PROPERTY(m_iszHintTargetEntity,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_hTargetPlayer,GlobalTypes::CHandle<server::CBasePlayerPawn>, 0x4b8);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CInstructorEventEntity) == 0x508, "CInstructorEventEntity size should be 0x508");
+		//static_assert(sizeof(CS2::server::CInstructorEventEntity) == 0x4C0, "CInstructorEventEntity size should be 0x4C0");
 	}
 }

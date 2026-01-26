@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CSceneEntityAlias_logic_choreographed_scene) == 0xA50, "CSceneEntityAlias_logic_choreographed_scene size should be 0xA50");
+		//static_assert(sizeof(CS2::server::CSceneEntityAlias_logic_choreographed_scene) == 0x730, "CSceneEntityAlias_logic_choreographed_scene size should be 0x730");
 	}
 }

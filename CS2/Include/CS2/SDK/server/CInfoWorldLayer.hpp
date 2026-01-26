@@ -22,15 +22,15 @@ namespace CS2 {
 	namespace server {
 		class CInfoWorldLayer : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_pOutputOnEntitiesSpawned,entity2::CEntityIOOutput , 0x4f0);
-			PROPERTY(m_worldName,GlobalTypes::CUtlSymbolLarge* , 0x518);
-			PROPERTY(m_layerName,GlobalTypes::CUtlSymbolLarge* , 0x520);
-			PROPERTY(m_bWorldLayerVisible,bool , 0x528);
-			PROPERTY(m_bEntitiesSpawned,bool , 0x529);
-			PROPERTY(m_bCreateAsChildSpawnGroup,bool , 0x52a);
-			PROPERTY(m_hLayerSpawnGroup,uint32_t , 0x52c);
-			S2_PAD(0x40);
+			PROPERTY(m_pOutputOnEntitiesSpawned,entity2::CEntityIOOutput , 0x4a8);
+			PROPERTY(m_worldName,GlobalTypes::CUtlSymbolLarge* , 0x4c0);
+			PROPERTY(m_layerName,GlobalTypes::CUtlSymbolLarge* , 0x4c8);
+			PROPERTY(m_bWorldLayerVisible,bool , 0x4d0);
+			PROPERTY(m_bEntitiesSpawned,bool , 0x4d1);
+			PROPERTY(m_bCreateAsChildSpawnGroup,bool , 0x4d2);
+			PROPERTY(m_hLayerSpawnGroup,uint32_t , 0x4d4);
+			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CInfoWorldLayer) == 0x530, "CInfoWorldLayer size should be 0x530");
+		//static_assert(sizeof(CS2::server::CInfoWorldLayer) == 0x4D8, "CInfoWorldLayer size should be 0x4D8");
 	}
 }

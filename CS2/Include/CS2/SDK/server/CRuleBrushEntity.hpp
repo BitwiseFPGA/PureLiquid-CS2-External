@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CRuleBrushEntity) == 0x7E0, "CRuleBrushEntity size should be 0x7E0");
+		//static_assert(sizeof(CS2::server::CRuleBrushEntity) == 0x738, "CRuleBrushEntity size should be 0x738");
 	}
 }

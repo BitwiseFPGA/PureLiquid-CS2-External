@@ -26,20 +26,20 @@ namespace CS2 {
 	namespace client {
 		class C_PostProcessingVolume : public CS2::client::C_BaseTrigger {
 		public:
-			PROPERTY(m_hPostSettings,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCPostProcessingResource>, 0x1000);
-			PROPERTY(m_flFadeDuration,float32 , 0x1008);
-			PROPERTY(m_flMinLogExposure,float32 , 0x100c);
-			PROPERTY(m_flMaxLogExposure,float32 , 0x1010);
-			PROPERTY(m_flMinExposure,float32 , 0x1014);
-			PROPERTY(m_flMaxExposure,float32 , 0x1018);
-			PROPERTY(m_flExposureCompensation,float32 , 0x101c);
-			PROPERTY(m_flExposureFadeSpeedUp,float32 , 0x1020);
-			PROPERTY(m_flExposureFadeSpeedDown,float32 , 0x1024);
-			PROPERTY(m_flTonemapEVSmoothingRange,float32 , 0x1028);
-			PROPERTY(m_bMaster,bool , 0x102c);
-			PROPERTY(m_bExposureControl,bool , 0x102d);
+			PROPERTY(m_hPostSettings,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCPostProcessingResource>, 0xf68);
+			PROPERTY(m_flFadeDuration,float32 , 0xf70);
+			PROPERTY(m_flMinLogExposure,float32 , 0xf74);
+			PROPERTY(m_flMaxLogExposure,float32 , 0xf78);
+			PROPERTY(m_flMinExposure,float32 , 0xf7c);
+			PROPERTY(m_flMaxExposure,float32 , 0xf80);
+			PROPERTY(m_flExposureCompensation,float32 , 0xf84);
+			PROPERTY(m_flExposureFadeSpeedUp,float32 , 0xf88);
+			PROPERTY(m_flExposureFadeSpeedDown,float32 , 0xf8c);
+			PROPERTY(m_flTonemapEVSmoothingRange,float32 , 0xf90);
+			PROPERTY(m_bMaster,bool , 0xf94);
+			PROPERTY(m_bExposureControl,bool , 0xf95);
 			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::client::C_PostProcessingVolume) == 0x1030, "C_PostProcessingVolume size should be 0x1030");
+		//static_assert(sizeof(CS2::client::C_PostProcessingVolume) == 0xF98, "C_PostProcessingVolume size should be 0xF98");
 	}
 }

@@ -24,24 +24,24 @@ namespace CS2 {
 	namespace server {
 		class CPointWorldText : public CS2::server::CModelPointEntity {
 		public:
-			PROPERTY_ARRAY(m_messageText,char , 512 , 0x7d8);
-			PROPERTY_ARRAY(m_FontName,char , 64 , 0x9d8);
-			PROPERTY_ARRAY(m_BackgroundMaterialName,char , 64 , 0xa18);
-			PROPERTY(m_bEnabled,bool , 0xa58);
-			PROPERTY(m_bFullbright,bool , 0xa59);
-			PROPERTY(m_flWorldUnitsPerPx,float32 , 0xa5c);
-			PROPERTY(m_flFontSize,float32 , 0xa60);
-			PROPERTY(m_flDepthOffset,float32 , 0xa64);
-			PROPERTY(m_bDrawBackground,bool , 0xa68);
-			PROPERTY(m_flBackgroundBorderWidth,float32 , 0xa6c);
-			PROPERTY(m_flBackgroundBorderHeight,float32 , 0xa70);
-			PROPERTY(m_flBackgroundWorldToUV,float32 , 0xa74);
-			PROPERTY(m_Color,GlobalTypes::Color , 0xa78);
-			PROPERTY(m_nJustifyHorizontal,client::PointWorldTextJustifyHorizontal_t , 0xa7c);
-			PROPERTY(m_nJustifyVertical,client::PointWorldTextJustifyVertical_t , 0xa80);
-			PROPERTY(m_nReorientMode,client::PointWorldTextReorientMode_t , 0xa84);
+			PROPERTY_ARRAY(m_messageText,char , 512 , 0x730);
+			PROPERTY_ARRAY(m_FontName,char , 64 , 0x930);
+			PROPERTY_ARRAY(m_BackgroundMaterialName,char , 64 , 0x970);
+			PROPERTY(m_bEnabled,bool , 0x9b0);
+			PROPERTY(m_bFullbright,bool , 0x9b1);
+			PROPERTY(m_flWorldUnitsPerPx,float32 , 0x9b4);
+			PROPERTY(m_flFontSize,float32 , 0x9b8);
+			PROPERTY(m_flDepthOffset,float32 , 0x9bc);
+			PROPERTY(m_bDrawBackground,bool , 0x9c0);
+			PROPERTY(m_flBackgroundBorderWidth,float32 , 0x9c4);
+			PROPERTY(m_flBackgroundBorderHeight,float32 , 0x9c8);
+			PROPERTY(m_flBackgroundWorldToUV,float32 , 0x9cc);
+			PROPERTY(m_Color,GlobalTypes::Color , 0x9d0);
+			PROPERTY(m_nJustifyHorizontal,client::PointWorldTextJustifyHorizontal_t , 0x9d4);
+			PROPERTY(m_nJustifyVertical,client::PointWorldTextJustifyVertical_t , 0x9d8);
+			PROPERTY(m_nReorientMode,client::PointWorldTextReorientMode_t , 0x9dc);
 			S2_PAD(0x2B0);
 		};
-		//static_assert(sizeof(CS2::server::CPointWorldText) == 0xA88, "CPointWorldText size should be 0xA88");
+		//static_assert(sizeof(CS2::server::CPointWorldText) == 0x9E0, "CPointWorldText size should be 0x9E0");
 	}
 }

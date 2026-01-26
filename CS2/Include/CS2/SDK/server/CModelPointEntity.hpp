@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CModelPointEntity) == 0x7D8, "CModelPointEntity size should be 0x7D8");
+		//static_assert(sizeof(CS2::server::CModelPointEntity) == 0x730, "CModelPointEntity size should be 0x730");
 	}
 }

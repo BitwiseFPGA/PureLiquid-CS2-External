@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace client {
 		class CPlayer_WeaponServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY(m_hMyWeapons,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_BasePlayerWeapon>>, 0x40);
-			PROPERTY(m_hActiveWeapon,GlobalTypes::CHandle<client::C_BasePlayerWeapon>, 0x58);
-			PROPERTY(m_hLastWeapon,GlobalTypes::CHandle<client::C_BasePlayerWeapon>, 0x5c);
-			PROPERTY_ARRAY(m_iAmmo,uint16_t , 32 , 0x60);
+			PROPERTY(m_hMyWeapons,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_BasePlayerWeapon>>, 0x48);
+			PROPERTY(m_hActiveWeapon,GlobalTypes::CHandle<client::C_BasePlayerWeapon>, 0x60);
+			PROPERTY(m_hLastWeapon,GlobalTypes::CHandle<client::C_BasePlayerWeapon>, 0x64);
+			PROPERTY_ARRAY(m_iAmmo,uint16_t , 32 , 0x68);
 			S2_PAD(0x60);
 		};
-		//static_assert(sizeof(CS2::client::CPlayer_WeaponServices) == 0xA0, "CPlayer_WeaponServices size should be 0xA0");
+		//static_assert(sizeof(CS2::client::CPlayer_WeaponServices) == 0xA8, "CPlayer_WeaponServices size should be 0xA8");
 	}
 }

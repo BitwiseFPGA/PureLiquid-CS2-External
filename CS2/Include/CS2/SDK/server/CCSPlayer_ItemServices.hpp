@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayer_ItemServices : public CS2::server::CPlayer_ItemServices {
 		public:
-			PROPERTY(m_bHasDefuser,bool , 0x40);
-			PROPERTY(m_bHasHelmet,bool , 0x41);
+			PROPERTY(m_bHasDefuser,bool , 0x48);
+			PROPERTY(m_bHasHelmet,bool , 0x49);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CCSPlayer_ItemServices) == 0x48, "CCSPlayer_ItemServices size should be 0x48");
+		//static_assert(sizeof(CS2::server::CCSPlayer_ItemServices) == 0x50, "CCSPlayer_ItemServices size should be 0x50");
 	}
 }

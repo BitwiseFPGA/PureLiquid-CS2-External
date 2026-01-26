@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace server {
 		class CWeaponTaser : public CS2::server::CCSWeaponBaseGun {
 		public:
-			PROPERTY(m_fFireTime,entity2::GameTime_t , 0x11f0);
-			PROPERTY(m_nLastAttackTick,int32_t , 0x11f4);
+			PROPERTY(m_fFireTime,entity2::GameTime_t , 0x1150);
+			PROPERTY(m_nLastAttackTick,int32_t , 0x1154);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CWeaponTaser) == 0x1200, "CWeaponTaser size should be 0x1200");
+		//static_assert(sizeof(CS2::server::CWeaponTaser) == 0x1160, "CWeaponTaser size should be 0x1160");
 	}
 }

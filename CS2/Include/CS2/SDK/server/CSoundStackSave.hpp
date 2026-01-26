@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CSoundStackSave : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_iszStackName,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
+			PROPERTY(m_iszStackName,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CSoundStackSave) == 0x4F8, "CSoundStackSave size should be 0x4F8");
+		//static_assert(sizeof(CS2::server::CSoundStackSave) == 0x4B0, "CSoundStackSave size should be 0x4B0");
 	}
 }

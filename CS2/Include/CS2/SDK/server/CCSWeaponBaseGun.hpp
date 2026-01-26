@@ -21,18 +21,18 @@ namespace CS2 {
 	namespace server {
 		class CCSWeaponBaseGun : public CS2::server::CCSWeaponBase {
 		public:
-			PROPERTY(m_zoomLevel,int32_t , 0x11d0);
-			PROPERTY(m_iBurstShotsRemaining,int32_t , 0x11d4);
-			PROPERTY(m_silencedModelIndex,int32_t , 0x11e0);
-			PROPERTY(m_inPrecache,bool , 0x11e4);
-			PROPERTY(m_bNeedsBoltAction,bool , 0x11e5);
-			PROPERTY(m_nRevolverCylinderIdx,int32_t , 0x11e8);
-			PROPERTY(m_bSkillReloadAvailable,bool , 0x11ec);
-			PROPERTY(m_bSkillReloadLiftedReloadKey,bool , 0x11ed);
-			PROPERTY(m_bSkillBoltInterruptAvailable,bool , 0x11ee);
-			PROPERTY(m_bSkillBoltLiftedFireKey,bool , 0x11ef);
+			PROPERTY(m_zoomLevel,int32_t , 0x1130);
+			PROPERTY(m_iBurstShotsRemaining,int32_t , 0x1134);
+			PROPERTY(m_silencedModelIndex,int32_t , 0x1140);
+			PROPERTY(m_inPrecache,bool , 0x1144);
+			PROPERTY(m_bNeedsBoltAction,bool , 0x1145);
+			PROPERTY(m_nRevolverCylinderIdx,int32_t , 0x1148);
+			PROPERTY(m_bSkillReloadAvailable,bool , 0x114c);
+			PROPERTY(m_bSkillReloadLiftedReloadKey,bool , 0x114d);
+			PROPERTY(m_bSkillBoltInterruptAvailable,bool , 0x114e);
+			PROPERTY(m_bSkillBoltLiftedFireKey,bool , 0x114f);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CCSWeaponBaseGun) == 0x11F0, "CCSWeaponBaseGun size should be 0x11F0");
+		//static_assert(sizeof(CS2::server::CCSWeaponBaseGun) == 0x1150, "CCSWeaponBaseGun size should be 0x1150");
 	}
 }

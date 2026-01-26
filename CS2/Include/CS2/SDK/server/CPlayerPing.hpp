@@ -26,13 +26,13 @@ namespace CS2 {
 	namespace server {
 		class CPlayerPing : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_hPlayer,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0x4f8);
-			PROPERTY(m_hPingedEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4fc);
-			PROPERTY(m_iType,int32_t , 0x500);
-			PROPERTY(m_bUrgent,bool , 0x504);
-			PROPERTY_ARRAY(m_szPlaceName,char , 18 , 0x505);
+			PROPERTY(m_hPlayer,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0x4b0);
+			PROPERTY(m_hPingedEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4b4);
+			PROPERTY(m_iType,int32_t , 0x4b8);
+			PROPERTY(m_bUrgent,bool , 0x4bc);
+			PROPERTY_ARRAY(m_szPlaceName,char , 18 , 0x4bd);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::server::CPlayerPing) == 0x518, "CPlayerPing size should be 0x518");
+		//static_assert(sizeof(CS2::server::CPlayerPing) == 0x4D0, "CPlayerPing size should be 0x4D0");
 	}
 }

@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CFilterLOS) == 0x650, "CFilterLOS size should be 0x650");
+		//static_assert(sizeof(CS2::client::CFilterLOS) == 0x640, "CFilterLOS size should be 0x640");
 	}
 }

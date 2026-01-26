@@ -27,26 +27,26 @@ namespace CS2 {
 	namespace client {
 		class C_EnvCubemapFog : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_flEndDistance,float32 , 0x5f8);
-			PROPERTY(m_flStartDistance,float32 , 0x5fc);
-			PROPERTY(m_flFogFalloffExponent,float32 , 0x600);
-			PROPERTY(m_bHeightFogEnabled,bool , 0x604);
-			PROPERTY(m_flFogHeightWidth,float32 , 0x608);
-			PROPERTY(m_flFogHeightEnd,float32 , 0x60c);
-			PROPERTY(m_flFogHeightStart,float32 , 0x610);
-			PROPERTY(m_flFogHeightExponent,float32 , 0x614);
-			PROPERTY(m_flLODBias,float32 , 0x618);
-			PROPERTY(m_bActive,bool , 0x61c);
-			PROPERTY(m_bStartDisabled,bool , 0x61d);
-			PROPERTY(m_flFogMaxOpacity,float32 , 0x620);
-			PROPERTY(m_nCubemapSourceType,int32_t , 0x624);
-			PROPERTY(m_hSkyMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x628);
-			PROPERTY(m_iszSkyEntity,GlobalTypes::CUtlSymbolLarge* , 0x630);
-			PROPERTY(m_hFogCubemapTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x638);
-			PROPERTY(m_bHasHeightFogEnd,bool , 0x640);
-			PROPERTY(m_bFirstTime,bool , 0x641);
+			PROPERTY(m_flEndDistance,float32 , 0x608);
+			PROPERTY(m_flStartDistance,float32 , 0x60c);
+			PROPERTY(m_flFogFalloffExponent,float32 , 0x610);
+			PROPERTY(m_bHeightFogEnabled,bool , 0x614);
+			PROPERTY(m_flFogHeightWidth,float32 , 0x618);
+			PROPERTY(m_flFogHeightEnd,float32 , 0x61c);
+			PROPERTY(m_flFogHeightStart,float32 , 0x620);
+			PROPERTY(m_flFogHeightExponent,float32 , 0x624);
+			PROPERTY(m_flLODBias,float32 , 0x628);
+			PROPERTY(m_bActive,bool , 0x62c);
+			PROPERTY(m_bStartDisabled,bool , 0x62d);
+			PROPERTY(m_flFogMaxOpacity,float32 , 0x630);
+			PROPERTY(m_nCubemapSourceType,int32_t , 0x634);
+			PROPERTY(m_hSkyMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x638);
+			PROPERTY(m_iszSkyEntity,GlobalTypes::CUtlSymbolLarge* , 0x640);
+			PROPERTY(m_hFogCubemapTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x648);
+			PROPERTY(m_bHasHeightFogEnd,bool , 0x650);
+			PROPERTY(m_bFirstTime,bool , 0x651);
 			S2_PAD(0x50);
 		};
-		//static_assert(sizeof(CS2::client::C_EnvCubemapFog) == 0x648, "C_EnvCubemapFog size should be 0x648");
+		//static_assert(sizeof(CS2::client::C_EnvCubemapFog) == 0x658, "C_EnvCubemapFog size should be 0x658");
 	}
 }

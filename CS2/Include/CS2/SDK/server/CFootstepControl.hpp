@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CFootstepControl : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_source,GlobalTypes::CUtlSymbolLarge* , 0x9a8);
-			PROPERTY(m_destination,GlobalTypes::CUtlSymbolLarge* , 0x9b0);
+			PROPERTY(m_source,GlobalTypes::CUtlSymbolLarge* , 0x890);
+			PROPERTY(m_destination,GlobalTypes::CUtlSymbolLarge* , 0x898);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CFootstepControl) == 0x9B8, "CFootstepControl size should be 0x9B8");
+		//static_assert(sizeof(CS2::server::CFootstepControl) == 0x8A0, "CFootstepControl size should be 0x8A0");
 	}
 }

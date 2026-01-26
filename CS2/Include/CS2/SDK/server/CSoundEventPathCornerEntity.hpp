@@ -26,15 +26,15 @@ namespace CS2 {
 	namespace server {
 		class CSoundEventPathCornerEntity : public CS2::server::CSoundEventEntity {
 		public:
-			PROPERTY(m_iszPathCorner,GlobalTypes::CUtlSymbolLarge* , 0x5b8);
-			PROPERTY(m_iCountMax,int32_t , 0x5c0);
-			PROPERTY(m_flDistanceMax,float32 , 0x5c4);
-			PROPERTY(m_flDistMaxSqr,float32 , 0x5c8);
-			PROPERTY(m_flDotProductMax,float32 , 0x5cc);
-			PROPERTY(m_bPlaying,bool , 0x5d0);
-			PROPERTY(m_vecCornerPairsNetworked,GlobalTypes::CNetworkUtlVectorBase<client::SoundeventPathCornerPairNetworked_t>, 0x5f8);
+			PROPERTY(m_iszPathCorner,GlobalTypes::CUtlSymbolLarge* , 0x558);
+			PROPERTY(m_iCountMax,int32_t , 0x560);
+			PROPERTY(m_flDistanceMax,float32 , 0x564);
+			PROPERTY(m_flDistMaxSqr,float32 , 0x568);
+			PROPERTY(m_flDotProductMax,float32 , 0x56c);
+			PROPERTY(m_bPlaying,bool , 0x570);
+			PROPERTY(m_vecCornerPairsNetworked,GlobalTypes::CNetworkUtlVectorBase<client::SoundeventPathCornerPairNetworked_t>, 0x598);
 			S2_PAD(0xA0);
 		};
-		//static_assert(sizeof(CS2::server::CSoundEventPathCornerEntity) == 0x658, "CSoundEventPathCornerEntity size should be 0x658");
+		//static_assert(sizeof(CS2::server::CSoundEventPathCornerEntity) == 0x5F8, "CSoundEventPathCornerEntity size should be 0x5F8");
 	}
 }

@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace client {
 		class CCSPlayer_WaterServices : public CS2::client::CPlayer_WaterServices {
 		public:
-			PROPERTY(m_flWaterJumpTime,float32 , 0x40);
-			PROPERTY(m_vecWaterJumpVel,GlobalTypes::Vector , 0x44);
-			PROPERTY(m_flSwimSoundTime,float32 , 0x50);
+			PROPERTY(m_flWaterJumpTime,float32 , 0x48);
+			PROPERTY(m_vecWaterJumpVel,GlobalTypes::Vector , 0x4c);
+			PROPERTY(m_flSwimSoundTime,float32 , 0x58);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::client::CCSPlayer_WaterServices) == 0x68, "CCSPlayer_WaterServices size should be 0x68");
+		//static_assert(sizeof(CS2::client::CCSPlayer_WaterServices) == 0x70, "CCSPlayer_WaterServices size should be 0x70");
 	}
 }

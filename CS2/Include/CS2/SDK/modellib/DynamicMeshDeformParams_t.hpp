@@ -25,6 +25,7 @@ namespace CS2 {
 			PROPERTY(m_bRecomputeSmoothNormalsAfterAnimation,bool , 0x8);
 			PROPERTY(m_bComputeDynamicMeshTensionAfterAnimation,bool , 0x9);
 			PROPERTY(m_bSmoothNormalsAcrossUvSeams,bool , 0xa);
+			PROPERTY(m_bEnableEyeBulgeDeformation,bool , 0xb);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::modellib::DynamicMeshDeformParams_t) == 0xC, "DynamicMeshDeformParams_t size should be 0xC");

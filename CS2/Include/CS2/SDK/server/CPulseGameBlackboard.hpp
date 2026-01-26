@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CPulseGameBlackboard : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_strGraphName,GlobalTypes::CUtlString* , 0x4f8);
-			PROPERTY(m_strStateBlob,GlobalTypes::CUtlString* , 0x500);
+			PROPERTY(m_strGraphName,GlobalTypes::CUtlString* , 0x4b0);
+			PROPERTY(m_strStateBlob,GlobalTypes::CUtlString* , 0x4b8);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CPulseGameBlackboard) == 0x508, "CPulseGameBlackboard size should be 0x508");
+		//static_assert(sizeof(CS2::server::CPulseGameBlackboard) == 0x4C0, "CPulseGameBlackboard size should be 0x4C0");
 	}
 }

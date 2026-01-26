@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CNavWalkable) == 0x4F0, "CNavWalkable size should be 0x4F0");
+		//static_assert(sizeof(CS2::server::CNavWalkable) == 0x4A8, "CNavWalkable size should be 0x4A8");
 	}
 }

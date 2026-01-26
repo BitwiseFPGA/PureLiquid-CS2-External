@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_FlashbangProjectile) == 0x1450, "C_FlashbangProjectile size should be 0x1450");
+		//static_assert(sizeof(CS2::client::C_FlashbangProjectile) == 0x1438, "C_FlashbangProjectile size should be 0x1438");
 	}
 }

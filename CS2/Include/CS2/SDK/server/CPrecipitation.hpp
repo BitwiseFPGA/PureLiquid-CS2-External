@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CPrecipitation) == 0x9A8, "CPrecipitation size should be 0x9A8");
+		//static_assert(sizeof(CS2::server::CPrecipitation) == 0x890, "CPrecipitation size should be 0x890");
 	}
 }

@@ -26,13 +26,13 @@ namespace CS2 {
 	namespace server {
 		class CEnvLaser : public CS2::server::CBeam {
 		public:
-			PROPERTY(m_iszLaserTarget,GlobalTypes::CUtlSymbolLarge* , 0x878);
-			PROPERTY(m_pSprite,server::CSprite* , 0x880);
-			PROPERTY(m_iszSpriteName,GlobalTypes::CUtlSymbolLarge* , 0x888);
-			PROPERTY(m_firePosition,GlobalTypes::Vector , 0x890);
-			PROPERTY(m_flStartFrame,float32 , 0x89c);
+			PROPERTY(m_iszLaserTarget,GlobalTypes::CUtlSymbolLarge* , 0x7d0);
+			PROPERTY(m_pSprite,server::CSprite* , 0x7d8);
+			PROPERTY(m_iszSpriteName,GlobalTypes::CUtlSymbolLarge* , 0x7e0);
+			PROPERTY(m_firePosition,GlobalTypes::Vector , 0x7e8);
+			PROPERTY(m_flStartFrame,float32 , 0x7f4);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::server::CEnvLaser) == 0x8A0, "CEnvLaser size should be 0x8A0");
+		//static_assert(sizeof(CS2::server::CEnvLaser) == 0x7F8, "CEnvLaser size should be 0x7F8");
 	}
 }

@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CPathParticleRopeAlias_path_particle_rope_clientside) == 0x5D8, "CPathParticleRopeAlias_path_particle_rope_clientside size should be 0x5D8");
+		//static_assert(sizeof(CS2::server::CPathParticleRopeAlias_path_particle_rope_clientside) == 0x590, "CPathParticleRopeAlias_path_particle_rope_clientside size should be 0x590");
 	}
 }

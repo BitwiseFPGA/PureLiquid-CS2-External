@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class CTriggerGameEvent : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_strStartTouchEventName,GlobalTypes::CUtlString* , 0x9a8);
-			PROPERTY(m_strEndTouchEventName,GlobalTypes::CUtlString* , 0x9b0);
-			PROPERTY(m_strTriggerID,GlobalTypes::CUtlString* , 0x9b8);
+			PROPERTY(m_strStartTouchEventName,GlobalTypes::CUtlString* , 0x890);
+			PROPERTY(m_strEndTouchEventName,GlobalTypes::CUtlString* , 0x898);
+			PROPERTY(m_strTriggerID,GlobalTypes::CUtlString* , 0x8a0);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerGameEvent) == 0x9C0, "CTriggerGameEvent size should be 0x9C0");
+		//static_assert(sizeof(CS2::server::CTriggerGameEvent) == 0x8A8, "CTriggerGameEvent size should be 0x8A8");
 	}
 }

@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace server {
 		class CEnvSpark : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_flDelay,float32 , 0x4f0);
-			PROPERTY(m_nMagnitude,int32_t , 0x4f4);
-			PROPERTY(m_nTrailLength,int32_t , 0x4f8);
-			PROPERTY(m_nType,int32_t , 0x4fc);
-			PROPERTY(m_OnSpark,entity2::CEntityIOOutput , 0x500);
-			S2_PAD(0x38);
+			PROPERTY(m_flDelay,float32 , 0x4a8);
+			PROPERTY(m_nMagnitude,int32_t , 0x4ac);
+			PROPERTY(m_nTrailLength,int32_t , 0x4b0);
+			PROPERTY(m_nType,int32_t , 0x4b4);
+			PROPERTY(m_OnSpark,entity2::CEntityIOOutput , 0x4b8);
+			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::server::CEnvSpark) == 0x528, "CEnvSpark size should be 0x528");
+		//static_assert(sizeof(CS2::server::CEnvSpark) == 0x4D0, "CEnvSpark size should be 0x4D0");
 	}
 }

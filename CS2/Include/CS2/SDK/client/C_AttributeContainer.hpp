@@ -23,10 +23,10 @@ namespace CS2 {
 		class C_AttributeContainer : public CS2::client::CAttributeManager {
 		public:
 			PROPERTY(m_Item,client::C_EconItemView , 0x50);
-			PROPERTY(m_iExternalItemProviderRegisteredToken,int32_t , 0x4c8);
-			PROPERTY(m_ullRegisteredAsItemID,uint64_t , 0x4d0);
-			S2_PAD(0x488);
+			PROPERTY(m_iExternalItemProviderRegisteredToken,int32_t , 0x4c0);
+			PROPERTY(m_ullRegisteredAsItemID,uint64_t , 0x4c8);
+			S2_PAD(0x480);
 		};
-		//static_assert(sizeof(CS2::client::C_AttributeContainer) == 0x4D8, "C_AttributeContainer size should be 0x4D8");
+		//static_assert(sizeof(CS2::client::C_AttributeContainer) == 0x4D0, "C_AttributeContainer size should be 0x4D0");
 	}
 }

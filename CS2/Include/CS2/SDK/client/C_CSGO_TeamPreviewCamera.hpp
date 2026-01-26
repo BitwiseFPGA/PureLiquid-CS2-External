@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace client {
 		class C_CSGO_TeamPreviewCamera : public CS2::client::C_CSGO_MapPreviewCameraPath {
 		public:
-			PROPERTY(m_nVariant,int32_t , 0x680);
+			PROPERTY(m_nVariant,int32_t , 0x690);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::C_CSGO_TeamPreviewCamera) == 0x688, "C_CSGO_TeamPreviewCamera size should be 0x688");
+		//static_assert(sizeof(CS2::client::C_CSGO_TeamPreviewCamera) == 0x698, "C_CSGO_TeamPreviewCamera size should be 0x698");
 	}
 }

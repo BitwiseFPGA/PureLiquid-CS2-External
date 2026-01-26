@@ -22,19 +22,19 @@ namespace CS2 {
 	namespace server {
 		class CEnvWindController : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_EnvWindShared,server::CEnvWindShared , 0x4f0);
-			PROPERTY(m_fDirectionVariation,float32 , 0x640);
-			PROPERTY(m_fSpeedVariation,float32 , 0x644);
-			PROPERTY(m_fTurbulence,float32 , 0x648);
-			PROPERTY(m_fVolumeHalfExtentXY,float32 , 0x64c);
-			PROPERTY(m_fVolumeHalfExtentZ,float32 , 0x650);
-			PROPERTY(m_nVolumeResolutionXY,int32_t , 0x654);
-			PROPERTY(m_nVolumeResolutionZ,int32_t , 0x658);
-			PROPERTY(m_nClipmapLevels,int32_t , 0x65c);
-			PROPERTY(m_bIsMaster,bool , 0x660);
-			PROPERTY(m_bFirstTime,bool , 0x661);
-			S2_PAD(0x178);
+			PROPERTY(m_EnvWindShared,server::CEnvWindShared , 0x4a8);
+			PROPERTY(m_fDirectionVariation,float32 , 0x5d8);
+			PROPERTY(m_fSpeedVariation,float32 , 0x5dc);
+			PROPERTY(m_fTurbulence,float32 , 0x5e0);
+			PROPERTY(m_fVolumeHalfExtentXY,float32 , 0x5e4);
+			PROPERTY(m_fVolumeHalfExtentZ,float32 , 0x5e8);
+			PROPERTY(m_nVolumeResolutionXY,int32_t , 0x5ec);
+			PROPERTY(m_nVolumeResolutionZ,int32_t , 0x5f0);
+			PROPERTY(m_nClipmapLevels,int32_t , 0x5f4);
+			PROPERTY(m_bIsMaster,bool , 0x5f8);
+			PROPERTY(m_bFirstTime,bool , 0x5f9);
+			S2_PAD(0x158);
 		};
-		//static_assert(sizeof(CS2::server::CEnvWindController) == 0x668, "CEnvWindController size should be 0x668");
+		//static_assert(sizeof(CS2::server::CEnvWindController) == 0x600, "CEnvWindController size should be 0x600");
 	}
 }

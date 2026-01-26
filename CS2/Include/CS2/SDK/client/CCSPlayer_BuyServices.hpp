@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace client {
 		class CCSPlayer_BuyServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY(m_vecSellbackPurchaseEntries,GlobalTypes::C_UtlVectorEmbeddedNetworkVar<client::SellbackPurchaseEntry_t>, 0x40);
+			PROPERTY(m_vecSellbackPurchaseEntries,GlobalTypes::C_UtlVectorEmbeddedNetworkVar<client::SellbackPurchaseEntry_t>, 0x48);
 			S2_PAD(0x68);
 		};
-		//static_assert(sizeof(CS2::client::CCSPlayer_BuyServices) == 0xA8, "CCSPlayer_BuyServices size should be 0xA8");
+		//static_assert(sizeof(CS2::client::CCSPlayer_BuyServices) == 0xB0, "CCSPlayer_BuyServices size should be 0xB0");
 	}
 }

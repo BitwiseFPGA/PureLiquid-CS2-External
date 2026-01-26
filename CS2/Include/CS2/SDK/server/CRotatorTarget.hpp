@@ -23,10 +23,10 @@ namespace CS2 {
 	namespace server {
 		class CRotatorTarget : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_OnArrivedAt,entity2::CEntityIOOutput , 0x4f0);
-			PROPERTY(m_eSpace,server::RotatorTargetSpace_t , 0x518);
-			S2_PAD(0x30);
+			PROPERTY(m_OnArrivedAt,entity2::CEntityIOOutput , 0x4a8);
+			PROPERTY(m_eSpace,server::RotatorTargetSpace_t , 0x4c0);
+			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CRotatorTarget) == 0x520, "CRotatorTarget size should be 0x520");
+		//static_assert(sizeof(CS2::server::CRotatorTarget) == 0x4C8, "CRotatorTarget size should be 0x4C8");
 	}
 }

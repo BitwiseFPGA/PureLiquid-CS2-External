@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class C_HandleTest : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_Handle,GlobalTypes::CHandle<client::C_BaseEntity>, 0x5f8);
-			PROPERTY(m_bSendHandle,bool , 0x5fc);
+			PROPERTY(m_Handle,GlobalTypes::CHandle<client::C_BaseEntity>, 0x608);
+			PROPERTY(m_bSendHandle,bool , 0x60c);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::C_HandleTest) == 0x600, "C_HandleTest size should be 0x600");
+		//static_assert(sizeof(CS2::client::C_HandleTest) == 0x610, "C_HandleTest size should be 0x610");
 	}
 }

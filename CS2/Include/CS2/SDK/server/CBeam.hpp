@@ -33,32 +33,32 @@ namespace CS2 {
 	namespace server {
 		class CBeam : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_flFrameRate,float32 , 0x7d8);
-			PROPERTY(m_flHDRColorScale,float32 , 0x7dc);
-			PROPERTY(m_flFireTime,entity2::GameTime_t , 0x7e0);
-			PROPERTY(m_flDamage,float32 , 0x7e4);
-			PROPERTY(m_nNumBeamEnts,uint8_t , 0x7e8);
-			PROPERTY(m_hBaseMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x7f0);
-			PROPERTY(m_nHaloIndex,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x7f8);
-			PROPERTY(m_nBeamType,client::BeamType_t , 0x800);
-			PROPERTY(m_nBeamFlags,uint32_t , 0x804);
-			PROPERTY_ARRAY(m_hAttachEntity,server::CHandle< CBaseEntity >, 10 , 0x808);
-			PROPERTY_ARRAY(m_nAttachIndex,modellib::AttachmentHandle_t , 10 , 0x830);
-			PROPERTY(m_fWidth,float32 , 0x83c);
-			PROPERTY(m_fEndWidth,float32 , 0x840);
-			PROPERTY(m_fFadeLength,float32 , 0x844);
-			PROPERTY(m_fHaloScale,float32 , 0x848);
-			PROPERTY(m_fAmplitude,float32 , 0x84c);
-			PROPERTY(m_fStartFrame,float32 , 0x850);
-			PROPERTY(m_fSpeed,float32 , 0x854);
-			PROPERTY(m_flFrame,float32 , 0x858);
-			PROPERTY(m_nClipStyle,client::BeamClipStyle_t , 0x85c);
-			PROPERTY(m_bTurnedOff,bool , 0x860);
-			PROPERTY(m_vecEndPos,GlobalTypes::VectorWS , 0x864);
-			PROPERTY(m_hEndEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x870);
-			PROPERTY(m_nDissolveType,int32_t , 0x874);
+			PROPERTY(m_flFrameRate,float32 , 0x730);
+			PROPERTY(m_flHDRColorScale,float32 , 0x734);
+			PROPERTY(m_flFireTime,entity2::GameTime_t , 0x738);
+			PROPERTY(m_flDamage,float32 , 0x73c);
+			PROPERTY(m_nNumBeamEnts,uint8_t , 0x740);
+			PROPERTY(m_hBaseMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x748);
+			PROPERTY(m_nHaloIndex,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x750);
+			PROPERTY(m_nBeamType,client::BeamType_t , 0x758);
+			PROPERTY(m_nBeamFlags,uint32_t , 0x75c);
+			PROPERTY_ARRAY(m_hAttachEntity,server::CHandle< CBaseEntity >, 10 , 0x760);
+			PROPERTY_ARRAY(m_nAttachIndex,modellib::AttachmentHandle_t , 10 , 0x788);
+			PROPERTY(m_fWidth,float32 , 0x794);
+			PROPERTY(m_fEndWidth,float32 , 0x798);
+			PROPERTY(m_fFadeLength,float32 , 0x79c);
+			PROPERTY(m_fHaloScale,float32 , 0x7a0);
+			PROPERTY(m_fAmplitude,float32 , 0x7a4);
+			PROPERTY(m_fStartFrame,float32 , 0x7a8);
+			PROPERTY(m_fSpeed,float32 , 0x7ac);
+			PROPERTY(m_flFrame,float32 , 0x7b0);
+			PROPERTY(m_nClipStyle,client::BeamClipStyle_t , 0x7b4);
+			PROPERTY(m_bTurnedOff,bool , 0x7b8);
+			PROPERTY(m_vecEndPos,GlobalTypes::VectorWS , 0x7bc);
+			PROPERTY(m_hEndEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x7c8);
+			PROPERTY(m_nDissolveType,int32_t , 0x7cc);
 			S2_PAD(0xA0);
 		};
-		//static_assert(sizeof(CS2::server::CBeam) == 0x878, "CBeam size should be 0x878");
+		//static_assert(sizeof(CS2::server::CBeam) == 0x7D0, "CBeam size should be 0x7D0");
 	}
 }

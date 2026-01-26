@@ -27,22 +27,22 @@ namespace CS2 {
 	namespace server {
 		class CSplineConstraint : public CS2::server::CPhysConstraint {
 		public:
-			PROPERTY(m_vAnchorOffsetRestore,GlobalTypes::Vector , 0x5b0);
-			PROPERTY(m_hSplineEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x5bc);
-			PROPERTY(m_bEnableLateralConstraint,bool , 0x5c8);
-			PROPERTY(m_bEnableVerticalConstraint,bool , 0x5c9);
-			PROPERTY(m_bEnableAngularConstraint,bool , 0x5ca);
-			PROPERTY(m_bEnableLimit,bool , 0x5cb);
-			PROPERTY(m_bFireEventsOnPath,bool , 0x5cc);
-			PROPERTY(m_flLinearFrequency,float32 , 0x5d0);
-			PROPERTY(m_flLinarDampingRatio,float32 , 0x5d4);
-			PROPERTY(m_flJointFriction,float32 , 0x5d8);
-			PROPERTY(m_flTransitionTime,float32 , 0x5dc);
-			PROPERTY(m_vPreSolveAnchorPos,GlobalTypes::VectorWS , 0x600);
-			PROPERTY(m_StartTransitionTime,entity2::GameTime_t , 0x60c);
-			PROPERTY(m_vTangentSpaceAnchorAtTransitionStart,GlobalTypes::Vector , 0x610);
-			S2_PAD(0xC0);
+			PROPERTY(m_vAnchorOffsetRestore,GlobalTypes::Vector , 0x558);
+			PROPERTY(m_hSplineEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x564);
+			PROPERTY(m_bEnableLateralConstraint,bool , 0x570);
+			PROPERTY(m_bEnableVerticalConstraint,bool , 0x571);
+			PROPERTY(m_bEnableAngularConstraint,bool , 0x572);
+			PROPERTY(m_bEnableLimit,bool , 0x573);
+			PROPERTY(m_bFireEventsOnPath,bool , 0x574);
+			PROPERTY(m_flLinearFrequency,float32 , 0x578);
+			PROPERTY(m_flLinarDampingRatio,float32 , 0x57c);
+			PROPERTY(m_flJointFriction,float32 , 0x580);
+			PROPERTY(m_flTransitionTime,float32 , 0x584);
+			PROPERTY(m_vPreSolveAnchorPos,GlobalTypes::VectorWS , 0x598);
+			PROPERTY(m_StartTransitionTime,entity2::GameTime_t , 0x5a4);
+			PROPERTY(m_vTangentSpaceAnchorAtTransitionStart,GlobalTypes::Vector , 0x5a8);
+			S2_PAD(0xB0);
 		};
-		//static_assert(sizeof(CS2::server::CSplineConstraint) == 0x620, "CSplineConstraint size should be 0x620");
+		//static_assert(sizeof(CS2::server::CSplineConstraint) == 0x5B8, "CSplineConstraint size should be 0x5B8");
 	}
 }

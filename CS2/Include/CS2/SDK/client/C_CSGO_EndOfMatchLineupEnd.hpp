@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_CSGO_EndOfMatchLineupEnd) == 0x5F8, "C_CSGO_EndOfMatchLineupEnd size should be 0x5F8");
+		//static_assert(sizeof(CS2::client::C_CSGO_EndOfMatchLineupEnd) == 0x608, "C_CSGO_EndOfMatchLineupEnd size should be 0x608");
 	}
 }

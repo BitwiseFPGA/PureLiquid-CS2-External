@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace client {
 		class C_OmniLight : public CS2::client::C_BarnLight {
 		public:
-			PROPERTY(m_flInnerAngle,float32 , 0x1200);
-			PROPERTY(m_flOuterAngle,float32 , 0x1204);
-			PROPERTY(m_bShowLight,bool , 0x1208);
+			PROPERTY(m_flInnerAngle,float32 , 0x1198);
+			PROPERTY(m_flOuterAngle,float32 , 0x119c);
+			PROPERTY(m_bShowLight,bool , 0x11a0);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::client::C_OmniLight) == 0x1210, "C_OmniLight size should be 0x1210");
+		//static_assert(sizeof(CS2::client::C_OmniLight) == 0x11A8, "C_OmniLight size should be 0x11A8");
 	}
 }

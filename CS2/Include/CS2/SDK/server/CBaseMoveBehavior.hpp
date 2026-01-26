@@ -21,19 +21,19 @@ namespace CS2 {
 	namespace server {
 		class CBaseMoveBehavior : public CS2::server::CPathKeyFrame {
 		public:
-			PROPERTY(m_iPositionInterpolator,int32_t , 0x550);
-			PROPERTY(m_iRotationInterpolator,int32_t , 0x554);
-			PROPERTY(m_flAnimStartTime,float32 , 0x558);
-			PROPERTY(m_flAnimEndTime,float32 , 0x55c);
-			PROPERTY(m_flAverageSpeedAcrossFrame,float32 , 0x560);
-			PROPERTY(m_pCurrentKeyFrame,server::CPathKeyFrame* , 0x568);
-			PROPERTY(m_pTargetKeyFrame,server::CPathKeyFrame* , 0x570);
-			PROPERTY(m_pPreKeyFrame,server::CPathKeyFrame* , 0x578);
-			PROPERTY(m_pPostKeyFrame,server::CPathKeyFrame* , 0x580);
-			PROPERTY(m_flTimeIntoFrame,float32 , 0x588);
-			PROPERTY(m_iDirection,int32_t , 0x58c);
+			PROPERTY(m_iPositionInterpolator,int32_t , 0x500);
+			PROPERTY(m_iRotationInterpolator,int32_t , 0x504);
+			PROPERTY(m_flAnimStartTime,float32 , 0x508);
+			PROPERTY(m_flAnimEndTime,float32 , 0x50c);
+			PROPERTY(m_flAverageSpeedAcrossFrame,float32 , 0x510);
+			PROPERTY(m_pCurrentKeyFrame,server::CPathKeyFrame* , 0x518);
+			PROPERTY(m_pTargetKeyFrame,server::CPathKeyFrame* , 0x520);
+			PROPERTY(m_pPreKeyFrame,server::CPathKeyFrame* , 0x528);
+			PROPERTY(m_pPostKeyFrame,server::CPathKeyFrame* , 0x530);
+			PROPERTY(m_flTimeIntoFrame,float32 , 0x538);
+			PROPERTY(m_iDirection,int32_t , 0x53c);
 			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CBaseMoveBehavior) == 0x590, "CBaseMoveBehavior size should be 0x590");
+		//static_assert(sizeof(CS2::server::CBaseMoveBehavior) == 0x540, "CBaseMoveBehavior size should be 0x540");
 	}
 }

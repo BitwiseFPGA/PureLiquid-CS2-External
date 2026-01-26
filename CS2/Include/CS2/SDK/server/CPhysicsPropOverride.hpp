@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CPhysicsPropOverride) == 0xE00, "CPhysicsPropOverride size should be 0xE00");
+		//static_assert(sizeof(CS2::server::CPhysicsPropOverride) == 0xCE0, "CPhysicsPropOverride size should be 0xCE0");
 	}
 }

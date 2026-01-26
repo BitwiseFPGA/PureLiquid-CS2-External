@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CInfoDynamicShadowHintBox : public CS2::server::CInfoDynamicShadowHint {
 		public:
-			PROPERTY(m_vBoxMins,GlobalTypes::Vector , 0x508);
-			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector , 0x514);
+			PROPERTY(m_vBoxMins,GlobalTypes::Vector , 0x4c0);
+			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector , 0x4cc);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CInfoDynamicShadowHintBox) == 0x520, "CInfoDynamicShadowHintBox size should be 0x520");
+		//static_assert(sizeof(CS2::server::CInfoDynamicShadowHintBox) == 0x4D8, "CInfoDynamicShadowHintBox size should be 0x4D8");
 	}
 }

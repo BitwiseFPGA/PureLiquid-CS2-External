@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class C_SpotlightEnd : public CS2::client::C_BaseModelEntity {
 		public:
-			PROPERTY(m_flLightScale,float32 , 0xeb0);
-			PROPERTY(m_Radius,float32 , 0xeb4);
+			PROPERTY(m_flLightScale,float32 , 0xe88);
+			PROPERTY(m_Radius,float32 , 0xe8c);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::client::C_SpotlightEnd) == 0xEC0, "C_SpotlightEnd size should be 0xEC0");
+		//static_assert(sizeof(CS2::client::C_SpotlightEnd) == 0xE98, "C_SpotlightEnd size should be 0xE98");
 	}
 }

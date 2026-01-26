@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace server {
 		class CGamePlayerZone : public CS2::server::CRuleBrushEntity {
 		public:
-			PROPERTY(m_OnPlayerInZone,entity2::CEntityIOOutput , 0x7e0);
-			PROPERTY(m_OnPlayerOutZone,entity2::CEntityIOOutput , 0x808);
-			PROPERTY(m_PlayersInCount,GlobalTypes::CEntityOutputTemplate< int32 >, 0x830);
-			PROPERTY(m_PlayersOutCount,GlobalTypes::CEntityOutputTemplate< int32 >, 0x858);
-			S2_PAD(0xA0);
+			PROPERTY(m_OnPlayerInZone,entity2::CEntityIOOutput , 0x738);
+			PROPERTY(m_OnPlayerOutZone,entity2::CEntityIOOutput , 0x750);
+			PROPERTY(m_PlayersInCount,GlobalTypes::CEntityOutputTemplate< int32, int32 >, 0x768);
+			PROPERTY(m_PlayersOutCount,GlobalTypes::CEntityOutputTemplate< int32, int32 >, 0x788);
+			S2_PAD(0x70);
 		};
-		//static_assert(sizeof(CS2::server::CGamePlayerZone) == 0x880, "CGamePlayerZone size should be 0x880");
+		//static_assert(sizeof(CS2::server::CGamePlayerZone) == 0x7A8, "CGamePlayerZone size should be 0x7A8");
 	}
 }

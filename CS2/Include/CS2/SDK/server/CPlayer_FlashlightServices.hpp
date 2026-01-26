@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CPlayer_FlashlightServices) == 0x40, "CPlayer_FlashlightServices size should be 0x40");
+		//static_assert(sizeof(CS2::server::CPlayer_FlashlightServices) == 0x48, "CPlayer_FlashlightServices size should be 0x48");
 	}
 }

@@ -27,12 +27,12 @@ namespace CS2 {
 	namespace server {
 		class CPlayer_ObserverServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY(m_iObserverMode,uint8_t , 0x40);
-			PROPERTY(m_hObserverTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x44);
-			PROPERTY(m_iObserverLastMode,client::ObserverMode_t , 0x48);
-			PROPERTY(m_bForcedObserverMode,bool , 0x4c);
+			PROPERTY(m_iObserverMode,uint8_t , 0x48);
+			PROPERTY(m_hObserverTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c);
+			PROPERTY(m_iObserverLastMode,client::ObserverMode_t , 0x50);
+			PROPERTY(m_bForcedObserverMode,bool , 0x54);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CPlayer_ObserverServices) == 0x50, "CPlayer_ObserverServices size should be 0x50");
+		//static_assert(sizeof(CS2::server::CPlayer_ObserverServices) == 0x58, "CPlayer_ObserverServices size should be 0x58");
 	}
 }

@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CMapSharedEnvironment : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_targetMapName,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
+			PROPERTY(m_targetMapName,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CMapSharedEnvironment) == 0x500, "CMapSharedEnvironment size should be 0x500");
+		//static_assert(sizeof(CS2::server::CMapSharedEnvironment) == 0x4B8, "CMapSharedEnvironment size should be 0x4B8");
 	}
 }

@@ -11,7 +11,6 @@
 
 
 #include <SDK/client/CPlayer_MovementServices.hpp>
-#include <SDK/entity2/GameTime_t.hpp>
 
 
 
@@ -22,20 +21,14 @@ namespace CS2 {
 	namespace client {
 		class CPlayer_MovementServices_Humanoid : public CS2::client::CPlayer_MovementServices {
 		public:
-			PROPERTY(m_flStepSoundTime,float32 , 0x238);
-			PROPERTY(m_flFallVelocity,float32 , 0x23c);
-			PROPERTY(m_bInCrouch,bool , 0x240);
-			PROPERTY(m_nCrouchState,uint32_t , 0x244);
-			PROPERTY(m_flCrouchTransitionStartTime,entity2::GameTime_t , 0x248);
-			PROPERTY(m_bDucked,bool , 0x24c);
-			PROPERTY(m_bDucking,bool , 0x24d);
-			PROPERTY(m_bInDuckJump,bool , 0x24e);
-			PROPERTY(m_groundNormal,GlobalTypes::Vector , 0x250);
-			PROPERTY(m_flSurfaceFriction,float32 , 0x25c);
-			PROPERTY(m_surfaceProps,GlobalTypes::CUtlStringToken* , 0x260);
-			PROPERTY(m_nStepside,int32_t , 0x270);
-			S2_PAD(0x40);
+			PROPERTY(m_flStepSoundTime,float32 , 0x240);
+			PROPERTY(m_flFallVelocity,float32 , 0x244);
+			PROPERTY(m_groundNormal,GlobalTypes::Vector , 0x248);
+			PROPERTY(m_flSurfaceFriction,float32 , 0x254);
+			PROPERTY(m_surfaceProps,GlobalTypes::CUtlStringToken* , 0x258);
+			PROPERTY(m_nStepside,int32_t , 0x268);
+			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::client::CPlayer_MovementServices_Humanoid) == 0x278, "CPlayer_MovementServices_Humanoid size should be 0x278");
+		//static_assert(sizeof(CS2::client::CPlayer_MovementServices_Humanoid) == 0x270, "CPlayer_MovementServices_Humanoid size should be 0x270");
 	}
 }

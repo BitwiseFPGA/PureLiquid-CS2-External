@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace client {
 		class C_Multimeter : public CS2::client::CBaseAnimGraph {
 		public:
-			PROPERTY(m_hTargetC4,GlobalTypes::CHandle<client::C_PlantedC4>, 0x1160);
+			PROPERTY(m_hTargetC4,GlobalTypes::CHandle<client::C_PlantedC4>, 0x1170);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::client::C_Multimeter) == 0x1168, "C_Multimeter size should be 0x1168");
+		//static_assert(sizeof(CS2::client::C_Multimeter) == 0x1178, "C_Multimeter size should be 0x1178");
 	}
 }

@@ -31,36 +31,36 @@ namespace CS2 {
 	namespace server {
 		class CChicken : public CS2::server::CDynamicProp {
 		public:
-			PROPERTY(m_AttributeManager,server::CAttributeContainer , 0xd70);
-			PROPERTY(m_updateTimer,server::CountdownTimer , 0x1068);
-			PROPERTY(m_stuckAnchor,GlobalTypes::Vector , 0x1080);
-			PROPERTY(m_stuckTimer,server::CountdownTimer , 0x1090);
-			PROPERTY(m_collisionStuckTimer,server::CountdownTimer , 0x10a8);
-			PROPERTY(m_isOnGround,bool , 0x10c0);
-			PROPERTY(m_vFallVelocity,GlobalTypes::Vector , 0x10c4);
-			PROPERTY(m_desiredActivity,server::ChickenActivity , 0x10d0);
-			PROPERTY(m_currentActivity,server::ChickenActivity , 0x10d4);
-			PROPERTY(m_activityTimer,server::CountdownTimer , 0x10d8);
-			PROPERTY(m_turnRate,float32 , 0x10f0);
-			PROPERTY(m_fleeFrom,GlobalTypes::CHandle<server::CBaseEntity>, 0x10f4);
-			PROPERTY(m_moveRateThrottleTimer,server::CountdownTimer , 0x10f8);
-			PROPERTY(m_startleTimer,server::CountdownTimer , 0x1110);
-			PROPERTY(m_vocalizeTimer,server::CountdownTimer , 0x1128);
-			PROPERTY(m_flWhenZombified,entity2::GameTime_t , 0x1140);
-			PROPERTY(m_jumpedThisFrame,bool , 0x1144);
-			PROPERTY(m_leader,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0x1148);
-			PROPERTY(m_reuseTimer,server::CountdownTimer , 0x1160);
-			PROPERTY(m_hasBeenUsed,bool , 0x1178);
-			PROPERTY(m_jumpTimer,server::CountdownTimer , 0x1180);
-			PROPERTY(m_flLastJumpTime,float32 , 0x1198);
-			PROPERTY(m_bInJump,bool , 0x119c);
-			PROPERTY(m_repathTimer,server::CountdownTimer , 0x31a8);
-			PROPERTY(m_vecPathGoal,GlobalTypes::Vector , 0x3240);
-			PROPERTY(m_flActiveFollowStartTime,entity2::GameTime_t , 0x324c);
-			PROPERTY(m_followMinuteTimer,server::CountdownTimer , 0x3250);
-			PROPERTY(m_BlockDirectionTimer,server::CountdownTimer , 0x3270);
-			S2_PAD(0x2550);
+			PROPERTY(m_AttributeManager,server::CAttributeContainer , 0xc70);
+			PROPERTY(m_updateTimer,server::CountdownTimer , 0xf68);
+			PROPERTY(m_stuckAnchor,GlobalTypes::Vector , 0xf80);
+			PROPERTY(m_stuckTimer,server::CountdownTimer , 0xf90);
+			PROPERTY(m_collisionStuckTimer,server::CountdownTimer , 0xfa8);
+			PROPERTY(m_isOnGround,bool , 0xfc0);
+			PROPERTY(m_vFallVelocity,GlobalTypes::Vector , 0xfc4);
+			PROPERTY(m_desiredActivity,server::ChickenActivity , 0xfd0);
+			PROPERTY(m_currentActivity,server::ChickenActivity , 0xfd4);
+			PROPERTY(m_activityTimer,server::CountdownTimer , 0xfd8);
+			PROPERTY(m_turnRate,float32 , 0xff0);
+			PROPERTY(m_fleeFrom,GlobalTypes::CHandle<server::CBaseEntity>, 0xff4);
+			PROPERTY(m_moveRateThrottleTimer,server::CountdownTimer , 0xff8);
+			PROPERTY(m_startleTimer,server::CountdownTimer , 0x1010);
+			PROPERTY(m_vocalizeTimer,server::CountdownTimer , 0x1028);
+			PROPERTY(m_flWhenZombified,entity2::GameTime_t , 0x1040);
+			PROPERTY(m_jumpedThisFrame,bool , 0x1044);
+			PROPERTY(m_leader,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0x1048);
+			PROPERTY(m_reuseTimer,server::CountdownTimer , 0x1060);
+			PROPERTY(m_hasBeenUsed,bool , 0x1078);
+			PROPERTY(m_jumpTimer,server::CountdownTimer , 0x1080);
+			PROPERTY(m_flLastJumpTime,float32 , 0x1098);
+			PROPERTY(m_bInJump,bool , 0x109c);
+			PROPERTY(m_repathTimer,server::CountdownTimer , 0x30a8);
+			PROPERTY(m_vecPathGoal,GlobalTypes::Vector , 0x3140);
+			PROPERTY(m_flActiveFollowStartTime,entity2::GameTime_t , 0x314c);
+			PROPERTY(m_followMinuteTimer,server::CountdownTimer , 0x3150);
+			PROPERTY(m_BlockDirectionTimer,server::CountdownTimer , 0x3170);
+			S2_PAD(0x2540);
 		};
-		//static_assert(sizeof(CS2::server::CChicken) == 0x32A0, "CChicken size should be 0x32A0");
+		//static_assert(sizeof(CS2::server::CChicken) == 0x3190, "CChicken size should be 0x3190");
 	}
 }

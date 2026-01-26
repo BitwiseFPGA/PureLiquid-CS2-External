@@ -27,17 +27,17 @@ namespace CS2 {
 	namespace server {
 		class CBombTarget : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_OnBombExplode,entity2::CEntityIOOutput , 0x9a8);
-			PROPERTY(m_OnBombPlanted,entity2::CEntityIOOutput , 0x9d0);
-			PROPERTY(m_OnBombDefused,entity2::CEntityIOOutput , 0x9f8);
-			PROPERTY(m_bIsBombSiteB,bool , 0xa20);
-			PROPERTY(m_bIsHeistBombTarget,bool , 0xa21);
-			PROPERTY(m_bBombPlantedHere,bool , 0xa22);
-			PROPERTY(m_szMountTarget,GlobalTypes::CUtlSymbolLarge* , 0xa28);
-			PROPERTY(m_hInstructorHint,GlobalTypes::CHandle<server::CBaseEntity>, 0xa30);
-			PROPERTY(m_nBombSiteDesignation,int32_t , 0xa34);
-			S2_PAD(0x90);
+			PROPERTY(m_OnBombExplode,entity2::CEntityIOOutput , 0x890);
+			PROPERTY(m_OnBombPlanted,entity2::CEntityIOOutput , 0x8a8);
+			PROPERTY(m_OnBombDefused,entity2::CEntityIOOutput , 0x8c0);
+			PROPERTY(m_bIsBombSiteB,bool , 0x8d8);
+			PROPERTY(m_bIsHeistBombTarget,bool , 0x8d9);
+			PROPERTY(m_bBombPlantedHere,bool , 0x8da);
+			PROPERTY(m_szMountTarget,GlobalTypes::CUtlSymbolLarge* , 0x8e0);
+			PROPERTY(m_hInstructorHint,GlobalTypes::CHandle<server::CBaseEntity>, 0x8e8);
+			PROPERTY(m_nBombSiteDesignation,int32_t , 0x8ec);
+			S2_PAD(0x60);
 		};
-		//static_assert(sizeof(CS2::server::CBombTarget) == 0xA38, "CBombTarget size should be 0xA38");
+		//static_assert(sizeof(CS2::server::CBombTarget) == 0x8F0, "CBombTarget size should be 0x8F0");
 	}
 }

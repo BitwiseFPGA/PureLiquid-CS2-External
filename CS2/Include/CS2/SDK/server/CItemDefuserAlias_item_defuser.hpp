@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CItemDefuserAlias_item_defuser) == 0xB90, "CItemDefuserAlias_item_defuser size should be 0xB90");
+		//static_assert(sizeof(CS2::server::CItemDefuserAlias_item_defuser) == 0xAE0, "CItemDefuserAlias_item_defuser size should be 0xAE0");
 	}
 }

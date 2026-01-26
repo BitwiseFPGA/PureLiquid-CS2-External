@@ -26,20 +26,20 @@ namespace CS2 {
 	namespace server {
 		class CEnvSky : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_hSkyMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x7d8);
-			PROPERTY(m_hSkyMaterialLightingOnly,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x7e0);
-			PROPERTY(m_bStartDisabled,bool , 0x7e8);
-			PROPERTY(m_vTintColor,GlobalTypes::Color , 0x7e9);
-			PROPERTY(m_vTintColorLightingOnly,GlobalTypes::Color , 0x7ed);
-			PROPERTY(m_flBrightnessScale,float32 , 0x7f4);
-			PROPERTY(m_nFogType,int32_t , 0x7f8);
-			PROPERTY(m_flFogMinStart,float32 , 0x7fc);
-			PROPERTY(m_flFogMinEnd,float32 , 0x800);
-			PROPERTY(m_flFogMaxStart,float32 , 0x804);
-			PROPERTY(m_flFogMaxEnd,float32 , 0x808);
-			PROPERTY(m_bEnabled,bool , 0x80c);
+			PROPERTY(m_hSkyMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x730);
+			PROPERTY(m_hSkyMaterialLightingOnly,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x738);
+			PROPERTY(m_bStartDisabled,bool , 0x740);
+			PROPERTY(m_vTintColor,GlobalTypes::Color , 0x741);
+			PROPERTY(m_vTintColorLightingOnly,GlobalTypes::Color , 0x745);
+			PROPERTY(m_flBrightnessScale,float32 , 0x74c);
+			PROPERTY(m_nFogType,int32_t , 0x750);
+			PROPERTY(m_flFogMinStart,float32 , 0x754);
+			PROPERTY(m_flFogMinEnd,float32 , 0x758);
+			PROPERTY(m_flFogMaxStart,float32 , 0x75c);
+			PROPERTY(m_flFogMaxEnd,float32 , 0x760);
+			PROPERTY(m_bEnabled,bool , 0x764);
 			S2_PAD(0x60);
 		};
-		//static_assert(sizeof(CS2::server::CEnvSky) == 0x838, "CEnvSky size should be 0x838");
+		//static_assert(sizeof(CS2::server::CEnvSky) == 0x790, "CEnvSky size should be 0x790");
 	}
 }

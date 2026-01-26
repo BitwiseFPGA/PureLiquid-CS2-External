@@ -26,10 +26,10 @@ namespace CS2 {
 	namespace client {
 		class CCSPlayer_HostageServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY(m_hCarriedHostage,GlobalTypes::CHandle<client::C_BaseEntity>, 0x40);
-			PROPERTY(m_hCarriedHostageProp,GlobalTypes::CHandle<client::C_BaseEntity>, 0x44);
+			PROPERTY(m_hCarriedHostage,GlobalTypes::CHandle<client::C_BaseEntity>, 0x48);
+			PROPERTY(m_hCarriedHostageProp,GlobalTypes::CHandle<client::C_BaseEntity>, 0x4c);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::CCSPlayer_HostageServices) == 0x48, "CCSPlayer_HostageServices size should be 0x48");
+		//static_assert(sizeof(CS2::client::CCSPlayer_HostageServices) == 0x50, "CCSPlayer_HostageServices size should be 0x50");
 	}
 }

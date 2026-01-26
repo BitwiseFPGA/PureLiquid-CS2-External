@@ -9,7 +9,7 @@ namespace CS2 {
 	namespace SchemaOffsets {
 		namespace soundsystem_voicecontainers {
 			// Class size: 0xE8
-			namespace CVoiceContainerStaticAdditiveSynth /*: public CS2::soundsystem_voicecontainers::CVoiceContainerBase*/ {
+			namespace CVoiceContainerStaticAdditiveSynth /*: public CS2::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator*/ {
 				constexpr std::ptrdiff_t m_tones = 0xb8; // GlobalTypes::CUtlVector<soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth::CTone>  | Schema_Atomic | Size: 0x18
 			}
 		}

@@ -24,32 +24,32 @@ namespace CS2 {
 	namespace server {
 		class CInferno : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY_ARRAY(m_firePositions,GlobalTypes::Vector , 64 , 0x7d8);
-			PROPERTY_ARRAY(m_fireParentPositions,GlobalTypes::Vector , 64 , 0xad8);
-			PROPERTY_ARRAY(m_bFireIsBurning,bool , 64 , 0xdd8);
-			PROPERTY_ARRAY(m_BurnNormal,GlobalTypes::Vector , 64 , 0xe18);
-			PROPERTY(m_fireCount,int32_t , 0x1118);
-			PROPERTY(m_nInfernoType,int32_t , 0x111c);
-			PROPERTY(m_nFireEffectTickBegin,int32_t , 0x1120);
-			PROPERTY(m_nFireLifetime,float32 , 0x1124);
-			PROPERTY(m_bInPostEffectTime,bool , 0x1128);
-			PROPERTY(m_bWasCreatedInSmoke,bool , 0x1129);
-			PROPERTY(m_extent,navlib::Extent , 0x1330);
-			PROPERTY(m_damageTimer,server::CountdownTimer , 0x1348);
-			PROPERTY(m_damageRampTimer,server::CountdownTimer , 0x1360);
-			PROPERTY(m_splashVelocity,GlobalTypes::Vector , 0x1378);
-			PROPERTY(m_InitialSplashVelocity,GlobalTypes::Vector , 0x1384);
-			PROPERTY(m_startPos,GlobalTypes::Vector , 0x1390);
-			PROPERTY(m_vecOriginalSpawnLocation,GlobalTypes::Vector , 0x139c);
-			PROPERTY(m_activeTimer,server::IntervalTimer , 0x13a8);
-			PROPERTY(m_fireSpawnOffset,int32_t , 0x13b8);
-			PROPERTY(m_nMaxFlames,int32_t , 0x13bc);
-			PROPERTY(m_nSpreadCount,int32_t , 0x13c0);
-			PROPERTY(m_BookkeepingTimer,server::CountdownTimer , 0x13c8);
-			PROPERTY(m_NextSpreadTimer,server::CountdownTimer , 0x13e0);
-			PROPERTY(m_nSourceItemDefIndex,uint16_t , 0x13f8);
+			PROPERTY_ARRAY(m_firePositions,GlobalTypes::Vector , 64 , 0x730);
+			PROPERTY_ARRAY(m_fireParentPositions,GlobalTypes::Vector , 64 , 0xa30);
+			PROPERTY_ARRAY(m_bFireIsBurning,bool , 64 , 0xd30);
+			PROPERTY_ARRAY(m_BurnNormal,GlobalTypes::Vector , 64 , 0xd70);
+			PROPERTY(m_fireCount,int32_t , 0x1070);
+			PROPERTY(m_nInfernoType,int32_t , 0x1074);
+			PROPERTY(m_nFireEffectTickBegin,int32_t , 0x1078);
+			PROPERTY(m_nFireLifetime,float32 , 0x107c);
+			PROPERTY(m_bInPostEffectTime,bool , 0x1080);
+			PROPERTY(m_bWasCreatedInSmoke,bool , 0x1081);
+			PROPERTY(m_extent,navlib::Extent , 0x1288);
+			PROPERTY(m_damageTimer,server::CountdownTimer , 0x12a0);
+			PROPERTY(m_damageRampTimer,server::CountdownTimer , 0x12b8);
+			PROPERTY(m_splashVelocity,GlobalTypes::Vector , 0x12d0);
+			PROPERTY(m_InitialSplashVelocity,GlobalTypes::Vector , 0x12dc);
+			PROPERTY(m_startPos,GlobalTypes::Vector , 0x12e8);
+			PROPERTY(m_vecOriginalSpawnLocation,GlobalTypes::Vector , 0x12f4);
+			PROPERTY(m_activeTimer,server::IntervalTimer , 0x1300);
+			PROPERTY(m_fireSpawnOffset,int32_t , 0x1310);
+			PROPERTY(m_nMaxFlames,int32_t , 0x1314);
+			PROPERTY(m_nSpreadCount,int32_t , 0x1318);
+			PROPERTY(m_BookkeepingTimer,server::CountdownTimer , 0x1320);
+			PROPERTY(m_NextSpreadTimer,server::CountdownTimer , 0x1338);
+			PROPERTY(m_nSourceItemDefIndex,uint16_t , 0x1350);
 			S2_PAD(0xC88);
 		};
-		//static_assert(sizeof(CS2::server::CInferno) == 0x1460, "CInferno size should be 0x1460");
+		//static_assert(sizeof(CS2::server::CInferno) == 0x13B8, "CInferno size should be 0x13B8");
 	}
 }

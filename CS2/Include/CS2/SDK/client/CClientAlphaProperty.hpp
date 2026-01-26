@@ -22,16 +22,12 @@ namespace CS2 {
 	namespace client {
 		class CClientAlphaProperty : public CS2::client::IClientAlphaProperty {
 		public:
-			PROPERTY(m_nRenderFX,uint8_t , 0x10);
-			PROPERTY(m_nRenderMode,uint8_t , 0x11);
-			PROPERTY(m_nAlpha,uint8_t , 0x13);
-			PROPERTY(m_nDesyncOffset,uint16_t , 0x14);
-			PROPERTY(m_nReserved2,uint16_t , 0x16);
-			PROPERTY(m_nDistFadeStart,uint16_t , 0x18);
-			PROPERTY(m_nDistFadeEnd,uint16_t , 0x1a);
-			PROPERTY(m_flFadeScale,float32 , 0x1c);
-			PROPERTY(m_flRenderFxStartTime,entity2::GameTime_t , 0x20);
-			PROPERTY(m_flRenderFxDuration,float32 , 0x24);
+			PROPERTY(m_nDistFadeStart,uint16_t , 0x10);
+			PROPERTY(m_nDistFadeEnd,uint16_t , 0x12);
+			PROPERTY(m_nAlpha,uint8_t , 0x17);
+			PROPERTY(m_flFadeScale,float32 , 0x18);
+			PROPERTY(m_flRenderFxStartTime,entity2::GameTime_t , 0x1c);
+			PROPERTY(m_flRenderFxDuration,float32 , 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::client::CClientAlphaProperty) == 0x30, "CClientAlphaProperty size should be 0x30");

@@ -5,7 +5,7 @@
 
 namespace CS2 {
 	namespace client {
-		enum CSWeaponType : uint32_t {
+		enum CSWeaponType : std::uint32_t {
 			WEAPONTYPE_C4 = 0x7,
 			WEAPONTYPE_EQUIPMENT = 0xa,
 			WEAPONTYPE_GRENADE = 0x9,

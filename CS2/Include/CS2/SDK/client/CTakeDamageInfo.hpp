@@ -46,14 +46,14 @@ namespace CS2 {
 			PROPERTY(m_bShouldBleed,bool , 0x64);
 			PROPERTY(m_bShouldSpark,bool , 0x65);
 			PROPERTY(m_nDamageFlags,client::TakeDamageFlags_t , 0x70);
-			PROPERTY(m_sDamageSourceName,GlobalTypes::CGlobalSymbol , 0x78);
-			PROPERTY(m_iHitGroupId,client::HitGroup_t , 0x80);
-			PROPERTY(m_nNumObjectsPenetrated,int32_t , 0x84);
-			PROPERTY(m_flFriendlyFireDamageReductionRatio,float32 , 0x88);
-			PROPERTY(m_nDestructibleHitGroupsToForceDestroy,GlobalTypes::CUtlVector<client::DestructibleHitGroupToDestroy_t>, 0x108);
-			PROPERTY(m_bInTakeDamageFlow,bool , 0x120);
-			S2_PAD(0x128);
+			PROPERTY(m_iHitGroupId,client::HitGroup_t , 0x78);
+			PROPERTY(m_nNumObjectsPenetrated,int32_t , 0x7c);
+			PROPERTY(m_flFriendlyFireDamageReductionRatio,float32 , 0x80);
+			PROPERTY(m_bStoppedBullet,bool , 0x84);
+			PROPERTY(m_nDestructibleHitGroupsToForceDestroy,GlobalTypes::CUtlVector<client::DestructibleHitGroupToDestroy_t>, 0x100);
+			PROPERTY(m_bInTakeDamageFlow,bool , 0x118);
+			S2_PAD(0x120);
 		};
-		//static_assert(sizeof(CS2::client::CTakeDamageInfo) == 0x128, "CTakeDamageInfo size should be 0x128");
+		//static_assert(sizeof(CS2::client::CTakeDamageInfo) == 0x120, "CTakeDamageInfo size should be 0x120");
 	}
 }

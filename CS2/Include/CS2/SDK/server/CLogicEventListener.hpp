@@ -11,7 +11,6 @@
 
 
 #include <SDK/server/CLogicalEntity.hpp>
-#include <SDK/entity2/CEntityIOOutput.hpp>
 
 
 
@@ -22,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CLogicEventListener : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_strEventName,GlobalTypes::CUtlString* , 0x500);
-			PROPERTY(m_bIsEnabled,bool , 0x508);
-			PROPERTY(m_nTeam,int32_t , 0x50c);
-			PROPERTY(m_OnEventFired,entity2::CEntityIOOutput , 0x510);
-			S2_PAD(0x48);
+			PROPERTY(m_strEventName,GlobalTypes::CUtlString* , 0x4b8);
+			PROPERTY(m_bIsEnabled,bool , 0x4c0);
+			PROPERTY(m_nTeam,int32_t , 0x4c4);
+			PROPERTY(m_OnEventFired,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x4c8);
+			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CLogicEventListener) == 0x538, "CLogicEventListener size should be 0x538");
+		//static_assert(sizeof(CS2::server::CLogicEventListener) == 0x4E8, "CLogicEventListener size should be 0x4E8");
 	}
 }

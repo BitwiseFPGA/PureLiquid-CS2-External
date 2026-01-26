@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerLoopTrigger : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
 		public:
-			PROPERTY(m_sound,soundsystem_voicecontainers::CSoundContainerReference , 0xb8);
-			PROPERTY(m_flRetriggerTimeMin,float32 , 0xd0);
-			PROPERTY(m_flRetriggerTimeMax,float32 , 0xd4);
-			PROPERTY(m_flFadeTime,float32 , 0xd8);
-			PROPERTY(m_bCrossFade,bool , 0xdc);
+			PROPERTY(m_sound,soundsystem_voicecontainers::CSoundContainerReference , 0xa8);
+			PROPERTY(m_flRetriggerTimeMin,float32 , 0xc0);
+			PROPERTY(m_flRetriggerTimeMax,float32 , 0xc4);
+			PROPERTY(m_flFadeTime,float32 , 0xc8);
+			PROPERTY(m_bCrossFade,bool , 0xcc);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerLoopTrigger) == 0xE0, "CVoiceContainerLoopTrigger size should be 0xE0");
+		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerLoopTrigger) == 0xD0, "CVoiceContainerLoopTrigger size should be 0xD0");
 	}
 }

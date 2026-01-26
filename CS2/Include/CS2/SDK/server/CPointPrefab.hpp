@@ -21,14 +21,14 @@ namespace CS2 {
 	namespace server {
 		class CPointPrefab : public CS2::server::CServerOnlyPointEntity {
 		public:
-			PROPERTY(m_targetMapName,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
-			PROPERTY(m_forceWorldGroupID,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_associatedRelayTargetName,GlobalTypes::CUtlSymbolLarge* , 0x500);
-			PROPERTY(m_fixupNames,bool , 0x508);
-			PROPERTY(m_bLoadDynamic,bool , 0x509);
-			PROPERTY(m_associatedRelayEntity,GlobalTypes::CHandle<server::CPointPrefab>, 0x50c);
+			PROPERTY(m_targetMapName,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
+			PROPERTY(m_forceWorldGroupID,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_associatedRelayTargetName,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
+			PROPERTY(m_fixupNames,bool , 0x4c0);
+			PROPERTY(m_bLoadDynamic,bool , 0x4c1);
+			PROPERTY(m_associatedRelayEntity,GlobalTypes::CHandle<server::CPointPrefab>, 0x4c4);
 			S2_PAD(0x68);
 		};
-		//static_assert(sizeof(CS2::server::CPointPrefab) == 0x558, "CPointPrefab size should be 0x558");
+		//static_assert(sizeof(CS2::server::CPointPrefab) == 0x510, "CPointPrefab size should be 0x510");
 	}
 }

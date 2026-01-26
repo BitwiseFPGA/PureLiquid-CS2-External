@@ -22,14 +22,14 @@ namespace CS2 {
 	namespace server {
 		class CLogicCase : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY_ARRAY(m_nCase,GlobalTypes::CUtlSymbolLarge* , 32 , 0x4f0);
-			PROPERTY(m_nShuffleCases,int32_t , 0x5f0);
-			PROPERTY(m_nLastShuffleCase,int32_t , 0x5f4);
-			PROPERTY_ARRAY(m_uchShuffleCaseMap,uint8_t , 32 , 0x5f8);
-			PROPERTY_ARRAY(m_OnCase,entity2::CEntityIOOutput , 32 , 0x618);
-			PROPERTY(m_OnDefault,GlobalTypes::CEntityOutputTemplate<GlobalTypes::CVariantBase<entity2::CVariantDefaultAllocator>>, 0xb18);
-			S2_PAD(0x650);
+			PROPERTY_ARRAY(m_nCase,GlobalTypes::CUtlSymbolLarge* , 32 , 0x4a8);
+			PROPERTY(m_nShuffleCases,int32_t , 0x5a8);
+			PROPERTY(m_nLastShuffleCase,int32_t , 0x5ac);
+			PROPERTY_ARRAY(m_uchShuffleCaseMap,uint8_t , 32 , 0x5b0);
+			PROPERTY_ARRAY(m_OnCase,entity2::CEntityIOOutput , 32 , 0x5d0);
+			PROPERTY(m_OnDefault,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x8d0);
+			S2_PAD(0x448);
 		};
-		//static_assert(sizeof(CS2::server::CLogicCase) == 0xB40, "CLogicCase size should be 0xB40");
+		//static_assert(sizeof(CS2::server::CLogicCase) == 0x8F0, "CLogicCase size should be 0x8F0");
 	}
 }

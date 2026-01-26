@@ -21,17 +21,17 @@ namespace CS2 {
 	namespace server {
 		class CEnvWindVolume : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_bActive,bool , 0x4f0);
-			PROPERTY(m_vBoxMins,GlobalTypes::Vector , 0x4f4);
-			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector , 0x500);
-			PROPERTY(m_bStartDisabled,bool , 0x50c);
-			PROPERTY(m_nShape,int32_t , 0x510);
-			PROPERTY(m_fWindSpeedMultiplier,float32 , 0x514);
-			PROPERTY(m_fWindTurbulenceMultiplier,float32 , 0x518);
-			PROPERTY(m_fWindSpeedVariationMultiplier,float32 , 0x51c);
-			PROPERTY(m_fWindDirectionVariationMultiplier,float32 , 0x520);
+			PROPERTY(m_bActive,bool , 0x4a8);
+			PROPERTY(m_vBoxMins,GlobalTypes::Vector , 0x4ac);
+			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector , 0x4b8);
+			PROPERTY(m_bStartDisabled,bool , 0x4c4);
+			PROPERTY(m_nShape,int32_t , 0x4c8);
+			PROPERTY(m_fWindSpeedMultiplier,float32 , 0x4cc);
+			PROPERTY(m_fWindTurbulenceMultiplier,float32 , 0x4d0);
+			PROPERTY(m_fWindSpeedVariationMultiplier,float32 , 0x4d4);
+			PROPERTY(m_fWindDirectionVariationMultiplier,float32 , 0x4d8);
 			S2_PAD(0x38);
 		};
-		//static_assert(sizeof(CS2::server::CEnvWindVolume) == 0x528, "CEnvWindVolume size should be 0x528");
+		//static_assert(sizeof(CS2::server::CEnvWindVolume) == 0x4E0, "CEnvWindVolume size should be 0x4E0");
 	}
 }

@@ -11,7 +11,7 @@
 
 
 #include <SDK/server/CPointEntity.hpp>
-#include <SDK/soundsystem/soundlevel_t.hpp>
+#include <SDK/client/soundlevel_t.hpp>
 #include <SDK/server/dynpitchvol_t.hpp>
 
 
@@ -28,18 +28,18 @@ namespace CS2 {
 	namespace server {
 		class CAmbientGeneric : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_radius,float32 , 0x4f0);
-			PROPERTY(m_flMaxRadius,float32 , 0x4f4);
-			PROPERTY(m_iSoundLevel,soundsystem::soundlevel_t , 0x4f8);
-			PROPERTY(m_dpv,server::dynpitchvol_t , 0x4fc);
-			PROPERTY(m_fActive,bool , 0x560);
-			PROPERTY(m_fLooping,bool , 0x561);
-			PROPERTY(m_iszSound,GlobalTypes::CUtlSymbolLarge* , 0x568);
-			PROPERTY(m_sSourceEntName,GlobalTypes::CUtlSymbolLarge* , 0x570);
-			PROPERTY(m_hSoundSource,GlobalTypes::CHandle<server::CBaseEntity>, 0x578);
-			PROPERTY(m_nSoundSourceEntIndex,GlobalTypes::CEntityIndex , 0x57c);
+			PROPERTY(m_radius,float32 , 0x4a8);
+			PROPERTY(m_flMaxRadius,float32 , 0x4ac);
+			PROPERTY(m_iSoundLevel,client::soundlevel_t , 0x4b0);
+			PROPERTY(m_dpv,server::dynpitchvol_t , 0x4b4);
+			PROPERTY(m_fActive,bool , 0x518);
+			PROPERTY(m_fLooping,bool , 0x519);
+			PROPERTY(m_iszSound,GlobalTypes::CUtlSymbolLarge* , 0x520);
+			PROPERTY(m_sSourceEntName,GlobalTypes::CUtlSymbolLarge* , 0x528);
+			PROPERTY(m_hSoundSource,GlobalTypes::CHandle<server::CBaseEntity>, 0x530);
+			PROPERTY(m_nSoundSourceEntIndex,GlobalTypes::CEntityIndex , 0x534);
 			S2_PAD(0xA8);
 		};
-		//static_assert(sizeof(CS2::server::CAmbientGeneric) == 0x598, "CAmbientGeneric size should be 0x598");
+		//static_assert(sizeof(CS2::server::CAmbientGeneric) == 0x550, "CAmbientGeneric size should be 0x550");
 	}
 }

@@ -22,16 +22,16 @@ namespace CS2 {
 	namespace client {
 		class C_BasePropDoor : public CS2::client::C_DynamicProp {
 		public:
-			PROPERTY(m_eDoorState,client::DoorState_t , 0x1430);
-			PROPERTY(m_modelChanged,bool , 0x1434);
-			PROPERTY(m_bLocked,bool , 0x1435);
-			PROPERTY(m_bNoNPCs,bool , 0x1436);
-			PROPERTY(m_closedPosition,GlobalTypes::Vector , 0x1438);
-			PROPERTY(m_closedAngles,GlobalTypes::QAngle , 0x1444);
-			PROPERTY(m_hMaster,GlobalTypes::CHandle<client::C_BasePropDoor>, 0x1450);
-			PROPERTY(m_vWhereToSetLightingOrigin,GlobalTypes::Vector , 0x1454);
+			PROPERTY(m_eDoorState,client::DoorState_t , 0x13b0);
+			PROPERTY(m_modelChanged,bool , 0x13b4);
+			PROPERTY(m_bLocked,bool , 0x13b5);
+			PROPERTY(m_bNoNPCs,bool , 0x13b6);
+			PROPERTY(m_closedPosition,GlobalTypes::Vector , 0x13b8);
+			PROPERTY(m_closedAngles,GlobalTypes::QAngle , 0x13c4);
+			PROPERTY(m_hMaster,GlobalTypes::CHandle<client::C_BasePropDoor>, 0x13d0);
+			PROPERTY(m_vWhereToSetLightingOrigin,GlobalTypes::Vector , 0x13d4);
 			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::client::C_BasePropDoor) == 0x1460, "C_BasePropDoor size should be 0x1460");
+		//static_assert(sizeof(CS2::client::C_BasePropDoor) == 0x13E0, "C_BasePropDoor size should be 0x13E0");
 	}
 }

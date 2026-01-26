@@ -22,21 +22,21 @@ namespace CS2 {
 	namespace server {
 		class CTimerEntity : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_OnTimer,entity2::CEntityIOOutput , 0x4f0);
-			PROPERTY(m_OnTimerHigh,entity2::CEntityIOOutput , 0x518);
-			PROPERTY(m_OnTimerLow,entity2::CEntityIOOutput , 0x540);
-			PROPERTY(m_iDisabled,int32_t , 0x568);
-			PROPERTY(m_flInitialDelay,float32 , 0x56c);
-			PROPERTY(m_flRefireTime,float32 , 0x570);
-			PROPERTY(m_bUpDownState,bool , 0x574);
-			PROPERTY(m_iUseRandomTime,int32_t , 0x578);
-			PROPERTY(m_bPauseAfterFiring,bool , 0x57c);
-			PROPERTY(m_flLowerRandomBound,float32 , 0x580);
-			PROPERTY(m_flUpperRandomBound,float32 , 0x584);
-			PROPERTY(m_flRemainingTime,float32 , 0x588);
-			PROPERTY(m_bPaused,bool , 0x58c);
-			S2_PAD(0xA0);
+			PROPERTY(m_OnTimer,entity2::CEntityIOOutput , 0x4a8);
+			PROPERTY(m_OnTimerHigh,entity2::CEntityIOOutput , 0x4c0);
+			PROPERTY(m_OnTimerLow,entity2::CEntityIOOutput , 0x4d8);
+			PROPERTY(m_iDisabled,int32_t , 0x4f0);
+			PROPERTY(m_flInitialDelay,float32 , 0x4f4);
+			PROPERTY(m_flRefireTime,float32 , 0x4f8);
+			PROPERTY(m_bUpDownState,bool , 0x4fc);
+			PROPERTY(m_iUseRandomTime,int32_t , 0x500);
+			PROPERTY(m_bPauseAfterFiring,bool , 0x504);
+			PROPERTY(m_flLowerRandomBound,float32 , 0x508);
+			PROPERTY(m_flUpperRandomBound,float32 , 0x50c);
+			PROPERTY(m_flRemainingTime,float32 , 0x510);
+			PROPERTY(m_bPaused,bool , 0x514);
+			S2_PAD(0x70);
 		};
-		//static_assert(sizeof(CS2::server::CTimerEntity) == 0x590, "CTimerEntity size should be 0x590");
+		//static_assert(sizeof(CS2::server::CTimerEntity) == 0x518, "CTimerEntity size should be 0x518");
 	}
 }

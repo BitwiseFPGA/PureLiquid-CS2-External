@@ -27,15 +27,15 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayerBase_CameraServices : public CS2::server::CPlayer_CameraServices {
 		public:
-			PROPERTY(m_iFOV,uint32_t , 0x170);
-			PROPERTY(m_iFOVStart,uint32_t , 0x174);
-			PROPERTY(m_flFOVTime,entity2::GameTime_t , 0x178);
-			PROPERTY(m_flFOVRate,float32 , 0x17c);
-			PROPERTY(m_hZoomOwner,GlobalTypes::CHandle<server::CBaseEntity>, 0x180);
-			PROPERTY(m_hTriggerFogList,server::CUtlVector<GlobalTypes::CHandle<server::CBaseEntity>>, 0x188);
-			PROPERTY(m_hLastFogTrigger,GlobalTypes::CHandle<server::CBaseEntity>, 0x1a0);
+			PROPERTY(m_iFOV,uint32_t , 0x178);
+			PROPERTY(m_iFOVStart,uint32_t , 0x17c);
+			PROPERTY(m_flFOVTime,entity2::GameTime_t , 0x180);
+			PROPERTY(m_flFOVRate,float32 , 0x184);
+			PROPERTY(m_hZoomOwner,GlobalTypes::CHandle<server::CBaseEntity>, 0x188);
+			PROPERTY(m_hTriggerFogList,server::CUtlVector<GlobalTypes::CHandle<server::CBaseEntity>>, 0x190);
+			PROPERTY(m_hLastFogTrigger,GlobalTypes::CHandle<server::CBaseEntity>, 0x1a8);
 			S2_PAD(0x38);
 		};
-		//static_assert(sizeof(CS2::server::CCSPlayerBase_CameraServices) == 0x1A8, "CCSPlayerBase_CameraServices size should be 0x1A8");
+		//static_assert(sizeof(CS2::server::CCSPlayerBase_CameraServices) == 0x1B0, "CCSPlayerBase_CameraServices size should be 0x1B0");
 	}
 }

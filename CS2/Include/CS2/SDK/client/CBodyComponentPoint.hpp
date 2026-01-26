@@ -23,8 +23,8 @@ namespace CS2 {
 		class CBodyComponentPoint : public CS2::client::CBodyComponent {
 		public:
 			PROPERTY(m_sceneNode,client::CGameSceneNode , 0x80);
-			S2_PAD(0x188);
+			S2_PAD(0x158);
 		};
-		//static_assert(sizeof(CS2::client::CBodyComponentPoint) == 0x200, "CBodyComponentPoint size should be 0x200");
+		//static_assert(sizeof(CS2::client::CBodyComponentPoint) == 0x1D0, "CBodyComponentPoint size should be 0x1D0");
 	}
 }

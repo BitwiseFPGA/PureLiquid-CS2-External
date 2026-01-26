@@ -26,26 +26,26 @@ namespace CS2 {
 	namespace server {
 		class CEnvCubemap : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_Entity_hCubemapTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x570);
-			PROPERTY(m_Entity_bCustomCubemapTexture,bool , 0x578);
-			PROPERTY(m_Entity_flInfluenceRadius,float32 , 0x57c);
-			PROPERTY(m_Entity_vBoxProjectMins,GlobalTypes::Vector , 0x580);
-			PROPERTY(m_Entity_vBoxProjectMaxs,GlobalTypes::Vector , 0x58c);
-			PROPERTY(m_Entity_bMoveable,bool , 0x598);
-			PROPERTY(m_Entity_nHandshake,int32_t , 0x59c);
-			PROPERTY(m_Entity_nEnvCubeMapArrayIndex,int32_t , 0x5a0);
-			PROPERTY(m_Entity_nPriority,int32_t , 0x5a4);
-			PROPERTY(m_Entity_flEdgeFadeDist,float32 , 0x5a8);
-			PROPERTY(m_Entity_vEdgeFadeDists,GlobalTypes::Vector , 0x5ac);
-			PROPERTY(m_Entity_flDiffuseScale,float32 , 0x5b8);
-			PROPERTY(m_Entity_bStartDisabled,bool , 0x5bc);
-			PROPERTY(m_Entity_bDefaultEnvMap,bool , 0x5bd);
-			PROPERTY(m_Entity_bDefaultSpecEnvMap,bool , 0x5be);
-			PROPERTY(m_Entity_bIndoorCubeMap,bool , 0x5bf);
-			PROPERTY(m_Entity_bCopyDiffuseFromDefaultCubemap,bool , 0x5c0);
-			PROPERTY(m_Entity_bEnabled,bool , 0x5d0);
+			PROPERTY(m_Entity_hCubemapTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x528);
+			PROPERTY(m_Entity_bCustomCubemapTexture,bool , 0x530);
+			PROPERTY(m_Entity_flInfluenceRadius,float32 , 0x534);
+			PROPERTY(m_Entity_vBoxProjectMins,GlobalTypes::Vector , 0x538);
+			PROPERTY(m_Entity_vBoxProjectMaxs,GlobalTypes::Vector , 0x544);
+			PROPERTY(m_Entity_bMoveable,bool , 0x550);
+			PROPERTY(m_Entity_nHandshake,int32_t , 0x554);
+			PROPERTY(m_Entity_nEnvCubeMapArrayIndex,int32_t , 0x558);
+			PROPERTY(m_Entity_nPriority,int32_t , 0x55c);
+			PROPERTY(m_Entity_flEdgeFadeDist,float32 , 0x560);
+			PROPERTY(m_Entity_vEdgeFadeDists,GlobalTypes::Vector , 0x564);
+			PROPERTY(m_Entity_flDiffuseScale,float32 , 0x570);
+			PROPERTY(m_Entity_bStartDisabled,bool , 0x574);
+			PROPERTY(m_Entity_bDefaultEnvMap,bool , 0x575);
+			PROPERTY(m_Entity_bDefaultSpecEnvMap,bool , 0x576);
+			PROPERTY(m_Entity_bIndoorCubeMap,bool , 0x577);
+			PROPERTY(m_Entity_bCopyDiffuseFromDefaultCubemap,bool , 0x578);
+			PROPERTY(m_Entity_bEnabled,bool , 0x588);
 			S2_PAD(0xE8);
 		};
-		//static_assert(sizeof(CS2::server::CEnvCubemap) == 0x5D8, "CEnvCubemap size should be 0x5D8");
+		//static_assert(sizeof(CS2::server::CEnvCubemap) == 0x590, "CEnvCubemap size should be 0x590");
 	}
 }

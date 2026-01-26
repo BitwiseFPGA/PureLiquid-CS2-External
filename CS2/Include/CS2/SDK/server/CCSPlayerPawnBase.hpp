@@ -30,23 +30,23 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayerPawnBase : public CS2::server::CBasePlayerPawn {
 		public:
-			PROPERTY(m_CTouchExpansionComponent,server::CTouchExpansionComponent , 0xda0);
-			PROPERTY(m_pPingServices,server::CCSPlayer_PingServices* , 0xdf0);
-			PROPERTY(m_blindUntilTime,entity2::GameTime_t , 0xdf8);
-			PROPERTY(m_blindStartTime,entity2::GameTime_t , 0xdfc);
-			PROPERTY(m_iPlayerState,client::CSPlayerState , 0xe00);
-			PROPERTY(m_bRespawning,bool , 0xeb0);
-			PROPERTY(m_bHasMovedSinceSpawn,bool , 0xeb1);
-			PROPERTY(m_iNumSpawns,int32_t , 0xeb4);
-			PROPERTY(m_flIdleTimeSinceLastAction,float32 , 0xebc);
-			PROPERTY(m_fNextRadarUpdateTime,float32 , 0xec0);
-			PROPERTY(m_flFlashDuration,float32 , 0xec4);
-			PROPERTY(m_flFlashMaxAlpha,float32 , 0xec8);
-			PROPERTY(m_flProgressBarStartTime,float32 , 0xecc);
-			PROPERTY(m_iProgressBarDuration,int32_t , 0xed0);
-			PROPERTY(m_hOriginalController,GlobalTypes::CHandle<server::CCSPlayerController>, 0xed4);
+			PROPERTY(m_CTouchExpansionComponent,server::CTouchExpansionComponent , 0xd30);
+			PROPERTY(m_pPingServices,server::CCSPlayer_PingServices* , 0xd80);
+			PROPERTY(m_blindUntilTime,entity2::GameTime_t , 0xd88);
+			PROPERTY(m_blindStartTime,entity2::GameTime_t , 0xd8c);
+			PROPERTY(m_iPlayerState,client::CSPlayerState , 0xd90);
+			PROPERTY(m_bRespawning,bool , 0xe40);
+			PROPERTY(m_bHasMovedSinceSpawn,bool , 0xe41);
+			PROPERTY(m_iNumSpawns,int32_t , 0xe44);
+			PROPERTY(m_flIdleTimeSinceLastAction,float32 , 0xe4c);
+			PROPERTY(m_fNextRadarUpdateTime,float32 , 0xe50);
+			PROPERTY(m_flFlashDuration,float32 , 0xe54);
+			PROPERTY(m_flFlashMaxAlpha,float32 , 0xe58);
+			PROPERTY(m_flProgressBarStartTime,float32 , 0xe5c);
+			PROPERTY(m_iProgressBarDuration,int32_t , 0xe60);
+			PROPERTY(m_hOriginalController,GlobalTypes::CHandle<server::CCSPlayerController>, 0xe64);
 			S2_PAD(0x150);
 		};
-		//static_assert(sizeof(CS2::server::CCSPlayerPawnBase) == 0xEE0, "CCSPlayerPawnBase size should be 0xEE0");
+		//static_assert(sizeof(CS2::server::CCSPlayerPawnBase) == 0xE70, "CCSPlayerPawnBase size should be 0xE70");
 	}
 }

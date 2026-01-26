@@ -11,6 +11,7 @@
 
 
 #include <SDK/particles/CParticleFunctionPreEmission.hpp>
+#include <SDK/particles/ParticleEntityPos_t.hpp>
 
 
 
@@ -24,6 +25,7 @@ namespace CS2 {
 			PROPERTY(m_nCP1,int32_t , 0x1d8);
 			PROPERTY(m_vecCP1Pos,GlobalTypes::Vector , 0x1dc);
 			PROPERTY(m_bOrientToEyes,bool , 0x1e8);
+			PROPERTY(m_nPosition,particles::ParticleEntityPos_t , 0x1ec);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetControlPointToPlayer) == 0x1F0, "C_OP_SetControlPointToPlayer size should be 0x1F0");

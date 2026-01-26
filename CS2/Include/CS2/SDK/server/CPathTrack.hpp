@@ -23,17 +23,17 @@ namespace CS2 {
 	namespace server {
 		class CPathTrack : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_pnext,server::CPathTrack* , 0x4f0);
-			PROPERTY(m_pprevious,server::CPathTrack* , 0x4f8);
-			PROPERTY(m_paltpath,server::CPathTrack* , 0x500);
-			PROPERTY(m_flRadius,float32 , 0x508);
-			PROPERTY(m_length,float32 , 0x50c);
-			PROPERTY(m_altName,GlobalTypes::CUtlSymbolLarge* , 0x510);
-			PROPERTY(m_nIterVal,int32_t , 0x518);
-			PROPERTY(m_eOrientationType,server::TrackOrientationType_t , 0x51c);
-			PROPERTY(m_OnPass,entity2::CEntityIOOutput , 0x520);
-			S2_PAD(0x58);
+			PROPERTY(m_pnext,server::CPathTrack* , 0x4a8);
+			PROPERTY(m_pprevious,server::CPathTrack* , 0x4b0);
+			PROPERTY(m_paltpath,server::CPathTrack* , 0x4b8);
+			PROPERTY(m_flRadius,float32 , 0x4c0);
+			PROPERTY(m_length,float32 , 0x4c4);
+			PROPERTY(m_altName,GlobalTypes::CUtlSymbolLarge* , 0x4c8);
+			PROPERTY(m_nIterVal,int32_t , 0x4d0);
+			PROPERTY(m_eOrientationType,server::TrackOrientationType_t , 0x4d4);
+			PROPERTY(m_OnPass,entity2::CEntityIOOutput , 0x4d8);
+			S2_PAD(0x48);
 		};
-		//static_assert(sizeof(CS2::server::CPathTrack) == 0x548, "CPathTrack size should be 0x548");
+		//static_assert(sizeof(CS2::server::CPathTrack) == 0x4F0, "CPathTrack size should be 0x4F0");
 	}
 }

@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CPhysicsWire : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_nDensity,int32_t , 0x4f0);
+			PROPERTY(m_nDensity,int32_t , 0x4a8);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CPhysicsWire) == 0x4F8, "CPhysicsWire size should be 0x4F8");
+		//static_assert(sizeof(CS2::server::CPhysicsWire) == 0x4B0, "CPhysicsWire size should be 0x4B0");
 	}
 }

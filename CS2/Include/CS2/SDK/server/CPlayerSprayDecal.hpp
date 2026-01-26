@@ -21,23 +21,23 @@ namespace CS2 {
 	namespace server {
 		class CPlayerSprayDecal : public CS2::server::CModelPointEntity {
 		public:
-			PROPERTY(m_nUniqueID,int32_t , 0x7d8);
-			PROPERTY(m_unAccountID,uint32_t , 0x7dc);
-			PROPERTY(m_unTraceID,uint32_t , 0x7e0);
-			PROPERTY(m_rtGcTime,uint32_t , 0x7e4);
-			PROPERTY(m_vecEndPos,GlobalTypes::Vector , 0x7e8);
-			PROPERTY(m_vecStart,GlobalTypes::Vector , 0x7f4);
-			PROPERTY(m_vecLeft,GlobalTypes::Vector , 0x800);
-			PROPERTY(m_vecNormal,GlobalTypes::Vector , 0x80c);
-			PROPERTY(m_nPlayer,int32_t , 0x818);
-			PROPERTY(m_nEntity,int32_t , 0x81c);
-			PROPERTY(m_nHitbox,int32_t , 0x820);
-			PROPERTY(m_flCreationTime,float32 , 0x824);
-			PROPERTY(m_nTintID,int32_t , 0x828);
-			PROPERTY(m_nVersion,uint8_t , 0x82c);
-			PROPERTY_ARRAY(m_ubSignature,uint8_t , 128 , 0x82d);
+			PROPERTY(m_nUniqueID,int32_t , 0x730);
+			PROPERTY(m_unAccountID,uint32_t , 0x734);
+			PROPERTY(m_unTraceID,uint32_t , 0x738);
+			PROPERTY(m_rtGcTime,uint32_t , 0x73c);
+			PROPERTY(m_vecEndPos,GlobalTypes::Vector , 0x740);
+			PROPERTY(m_vecStart,GlobalTypes::Vector , 0x74c);
+			PROPERTY(m_vecLeft,GlobalTypes::Vector , 0x758);
+			PROPERTY(m_vecNormal,GlobalTypes::Vector , 0x764);
+			PROPERTY(m_nPlayer,int32_t , 0x770);
+			PROPERTY(m_nEntity,int32_t , 0x774);
+			PROPERTY(m_nHitbox,int32_t , 0x778);
+			PROPERTY(m_flCreationTime,float32 , 0x77c);
+			PROPERTY(m_nTintID,int32_t , 0x780);
+			PROPERTY(m_nVersion,uint8_t , 0x784);
+			PROPERTY_ARRAY(m_ubSignature,uint8_t , 128 , 0x785);
 			S2_PAD(0xD8);
 		};
-		//static_assert(sizeof(CS2::server::CPlayerSprayDecal) == 0x8B0, "CPlayerSprayDecal size should be 0x8B0");
+		//static_assert(sizeof(CS2::server::CPlayerSprayDecal) == 0x808, "CPlayerSprayDecal size should be 0x808");
 	}
 }

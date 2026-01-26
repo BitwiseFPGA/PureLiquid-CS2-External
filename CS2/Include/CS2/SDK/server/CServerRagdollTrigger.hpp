@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CServerRagdollTrigger) == 0x9A8, "CServerRagdollTrigger size should be 0x9A8");
+		//static_assert(sizeof(CS2::server::CServerRagdollTrigger) == 0x890, "CServerRagdollTrigger size should be 0x890");
 	}
 }

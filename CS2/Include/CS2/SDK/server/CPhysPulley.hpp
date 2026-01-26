@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CPhysPulley : public CS2::server::CPhysConstraint {
 		public:
-			PROPERTY(m_position2,GlobalTypes::VectorWS , 0x560);
-			PROPERTY_ARRAY(m_offset,GlobalTypes::Vector , 2 , 0x56c);
-			PROPERTY(m_addLength,float32 , 0x584);
-			PROPERTY(m_gearRatio,float32 , 0x588);
+			PROPERTY(m_position2,GlobalTypes::VectorWS , 0x508);
+			PROPERTY_ARRAY(m_offset,GlobalTypes::Vector , 2 , 0x514);
+			PROPERTY(m_addLength,float32 , 0x52c);
+			PROPERTY(m_gearRatio,float32 , 0x530);
 			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CPhysPulley) == 0x590, "CPhysPulley size should be 0x590");
+		//static_assert(sizeof(CS2::server::CPhysPulley) == 0x538, "CPhysPulley size should be 0x538");
 	}
 }

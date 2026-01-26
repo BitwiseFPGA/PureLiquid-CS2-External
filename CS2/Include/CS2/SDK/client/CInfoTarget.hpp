@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CInfoTarget) == 0x5F8, "CInfoTarget size should be 0x5F8");
+		//static_assert(sizeof(CS2::client::CInfoTarget) == 0x608, "CInfoTarget size should be 0x608");
 	}
 }

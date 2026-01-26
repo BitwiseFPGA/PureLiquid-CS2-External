@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CRopeKeyframeAlias_move_rope) == 0x830, "CRopeKeyframeAlias_move_rope size should be 0x830");
+		//static_assert(sizeof(CS2::server::CRopeKeyframeAlias_move_rope) == 0x788, "CRopeKeyframeAlias_move_rope size should be 0x788");
 	}
 }

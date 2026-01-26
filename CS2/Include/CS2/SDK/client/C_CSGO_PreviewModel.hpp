@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace client {
 		class C_CSGO_PreviewModel : public CS2::client::C_BaseFlex {
 		public:
-			PROPERTY(m_defaultAnim,GlobalTypes::CUtlString* , 0x1368);
-			PROPERTY(m_nDefaultAnimLoopMode,client::AnimLoopMode_t , 0x1370);
-			PROPERTY(m_flInitialModelScale,float32 , 0x1374);
-			PROPERTY(m_sInitialWeaponState,GlobalTypes::CUtlString* , 0x1378);
-			S2_PAD(0x518);
+			PROPERTY(m_defaultAnim,GlobalTypes::CUtlString* , 0x1350);
+			PROPERTY(m_nDefaultAnimLoopMode,client::AnimLoopMode_t , 0x1358);
+			PROPERTY(m_flInitialModelScale,float32 , 0x135c);
+			PROPERTY(m_sInitialWeaponState,GlobalTypes::CUtlString* , 0x1360);
+			S2_PAD(0x510);
 		};
-		//static_assert(sizeof(CS2::client::C_CSGO_PreviewModel) == 0x1880, "C_CSGO_PreviewModel size should be 0x1880");
+		//static_assert(sizeof(CS2::client::C_CSGO_PreviewModel) == 0x1860, "C_CSGO_PreviewModel size should be 0x1860");
 	}
 }

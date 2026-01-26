@@ -21,14 +21,14 @@ namespace CS2 {
 	namespace server {
 		class CPlayerVisibility : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_flVisibilityStrength,float32 , 0x4f0);
-			PROPERTY(m_flFogDistanceMultiplier,float32 , 0x4f4);
-			PROPERTY(m_flFogMaxDensityMultiplier,float32 , 0x4f8);
-			PROPERTY(m_flFadeTime,float32 , 0x4fc);
-			PROPERTY(m_bStartDisabled,bool , 0x500);
-			PROPERTY(m_bIsEnabled,bool , 0x501);
+			PROPERTY(m_flVisibilityStrength,float32 , 0x4a8);
+			PROPERTY(m_flFogDistanceMultiplier,float32 , 0x4ac);
+			PROPERTY(m_flFogMaxDensityMultiplier,float32 , 0x4b0);
+			PROPERTY(m_flFadeTime,float32 , 0x4b4);
+			PROPERTY(m_bStartDisabled,bool , 0x4b8);
+			PROPERTY(m_bIsEnabled,bool , 0x4b9);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CPlayerVisibility) == 0x508, "CPlayerVisibility size should be 0x508");
+		//static_assert(sizeof(CS2::server::CPlayerVisibility) == 0x4C0, "CPlayerVisibility size should be 0x4C0");
 	}
 }

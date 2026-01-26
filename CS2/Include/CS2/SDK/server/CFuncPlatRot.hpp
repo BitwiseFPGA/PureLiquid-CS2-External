@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CFuncPlatRot : public CS2::server::CFuncPlat {
 		public:
-			PROPERTY(m_end,GlobalTypes::QAngle , 0x888);
-			PROPERTY(m_start,GlobalTypes::QAngle , 0x894);
+			PROPERTY(m_end,GlobalTypes::QAngle , 0x7e0);
+			PROPERTY(m_start,GlobalTypes::QAngle , 0x7ec);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CFuncPlatRot) == 0x8A0, "CFuncPlatRot size should be 0x8A0");
+		//static_assert(sizeof(CS2::server::CFuncPlatRot) == 0x7F8, "CFuncPlatRot size should be 0x7F8");
 	}
 }

@@ -26,17 +26,17 @@ namespace CS2 {
 	namespace server {
 		class CLogicMeasureMovement : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_strMeasureTarget,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
-			PROPERTY(m_strMeasureReference,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_strTargetReference,GlobalTypes::CUtlSymbolLarge* , 0x500);
-			PROPERTY(m_hMeasureTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x508);
-			PROPERTY(m_hMeasureReference,GlobalTypes::CHandle<server::CBaseEntity>, 0x50c);
-			PROPERTY(m_hTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x510);
-			PROPERTY(m_hTargetReference,GlobalTypes::CHandle<server::CBaseEntity>, 0x514);
-			PROPERTY(m_flScale,float32 , 0x518);
-			PROPERTY(m_nMeasureType,int32_t , 0x51c);
+			PROPERTY(m_strMeasureTarget,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
+			PROPERTY(m_strMeasureReference,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_strTargetReference,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
+			PROPERTY(m_hMeasureTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c0);
+			PROPERTY(m_hMeasureReference,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c4);
+			PROPERTY(m_hTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c8);
+			PROPERTY(m_hTargetReference,GlobalTypes::CHandle<server::CBaseEntity>, 0x4cc);
+			PROPERTY(m_flScale,float32 , 0x4d0);
+			PROPERTY(m_nMeasureType,int32_t , 0x4d4);
 			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CLogicMeasureMovement) == 0x520, "CLogicMeasureMovement size should be 0x520");
+		//static_assert(sizeof(CS2::server::CLogicMeasureMovement) == 0x4D8, "CLogicMeasureMovement size should be 0x4D8");
 	}
 }

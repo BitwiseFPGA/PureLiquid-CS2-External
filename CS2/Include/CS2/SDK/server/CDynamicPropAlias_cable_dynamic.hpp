@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CDynamicPropAlias_cable_dynamic) == 0xD50, "CDynamicPropAlias_cable_dynamic size should be 0xD50");
+		//static_assert(sizeof(CS2::server::CDynamicPropAlias_cable_dynamic) == 0xC50, "CDynamicPropAlias_cable_dynamic size should be 0xC50");
 	}
 }

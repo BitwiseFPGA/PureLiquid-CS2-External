@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_DynamicPropAlias_prop_dynamic_override) == 0x1420, "C_DynamicPropAlias_prop_dynamic_override size should be 0x1420");
+		//static_assert(sizeof(CS2::client::C_DynamicPropAlias_prop_dynamic_override) == 0x13A0, "C_DynamicPropAlias_prop_dynamic_override size should be 0x13A0");
 	}
 }

@@ -26,20 +26,20 @@ namespace CS2 {
 	namespace server {
 		class CPhysWheelConstraint : public CS2::server::CPhysConstraint {
 		public:
-			PROPERTY(m_flSuspensionFrequency,float32 , 0x560);
-			PROPERTY(m_flSuspensionDampingRatio,float32 , 0x564);
-			PROPERTY(m_flSuspensionHeightOffset,float32 , 0x568);
-			PROPERTY(m_bEnableSuspensionLimit,bool , 0x56c);
-			PROPERTY(m_flMinSuspensionOffset,float32 , 0x570);
-			PROPERTY(m_flMaxSuspensionOffset,float32 , 0x574);
-			PROPERTY(m_bEnableSteeringLimit,bool , 0x578);
-			PROPERTY(m_flMinSteeringAngle,float32 , 0x57c);
-			PROPERTY(m_flMaxSteeringAngle,float32 , 0x580);
-			PROPERTY(m_flSteeringAxisFriction,float32 , 0x584);
-			PROPERTY(m_flSpinAxisFriction,float32 , 0x588);
-			PROPERTY(m_hSteeringMimicsEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x58c);
+			PROPERTY(m_flSuspensionFrequency,float32 , 0x508);
+			PROPERTY(m_flSuspensionDampingRatio,float32 , 0x50c);
+			PROPERTY(m_flSuspensionHeightOffset,float32 , 0x510);
+			PROPERTY(m_bEnableSuspensionLimit,bool , 0x514);
+			PROPERTY(m_flMinSuspensionOffset,float32 , 0x518);
+			PROPERTY(m_flMaxSuspensionOffset,float32 , 0x51c);
+			PROPERTY(m_bEnableSteeringLimit,bool , 0x520);
+			PROPERTY(m_flMinSteeringAngle,float32 , 0x524);
+			PROPERTY(m_flMaxSteeringAngle,float32 , 0x528);
+			PROPERTY(m_flSteeringAxisFriction,float32 , 0x52c);
+			PROPERTY(m_flSpinAxisFriction,float32 , 0x530);
+			PROPERTY(m_hSteeringMimicsEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x534);
 			S2_PAD(0x38);
 		};
-		//static_assert(sizeof(CS2::server::CPhysWheelConstraint) == 0x598, "CPhysWheelConstraint size should be 0x598");
+		//static_assert(sizeof(CS2::server::CPhysWheelConstraint) == 0x540, "CPhysWheelConstraint size should be 0x540");
 	}
 }

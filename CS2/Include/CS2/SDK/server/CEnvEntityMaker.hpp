@@ -27,20 +27,20 @@ namespace CS2 {
 	namespace server {
 		class CEnvEntityMaker : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_vecEntityMins,GlobalTypes::Vector , 0x4f0);
-			PROPERTY(m_vecEntityMaxs,GlobalTypes::Vector , 0x4fc);
-			PROPERTY(m_hCurrentInstance,GlobalTypes::CHandle<server::CBaseEntity>, 0x508);
-			PROPERTY(m_hCurrentBlocker,GlobalTypes::CHandle<server::CBaseEntity>, 0x50c);
-			PROPERTY(m_vecBlockerOrigin,GlobalTypes::Vector , 0x510);
-			PROPERTY(m_angPostSpawnDirection,GlobalTypes::QAngle , 0x51c);
-			PROPERTY(m_flPostSpawnDirectionVariance,float32 , 0x528);
-			PROPERTY(m_flPostSpawnSpeed,float32 , 0x52c);
-			PROPERTY(m_bPostSpawnUseAngles,bool , 0x530);
-			PROPERTY(m_iszTemplate,GlobalTypes::CUtlSymbolLarge* , 0x538);
-			PROPERTY(m_pOutputOnSpawned,entity2::CEntityIOOutput , 0x540);
-			PROPERTY(m_pOutputOnFailedSpawn,entity2::CEntityIOOutput , 0x568);
-			S2_PAD(0xA0);
+			PROPERTY(m_vecEntityMins,GlobalTypes::Vector , 0x4a8);
+			PROPERTY(m_vecEntityMaxs,GlobalTypes::Vector , 0x4b4);
+			PROPERTY(m_hCurrentInstance,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c0);
+			PROPERTY(m_hCurrentBlocker,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c4);
+			PROPERTY(m_vecBlockerOrigin,GlobalTypes::Vector , 0x4c8);
+			PROPERTY(m_angPostSpawnDirection,GlobalTypes::QAngle , 0x4d4);
+			PROPERTY(m_flPostSpawnDirectionVariance,float32 , 0x4e0);
+			PROPERTY(m_flPostSpawnSpeed,float32 , 0x4e4);
+			PROPERTY(m_bPostSpawnUseAngles,bool , 0x4e8);
+			PROPERTY(m_iszTemplate,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
+			PROPERTY(m_pOutputOnSpawned,entity2::CEntityIOOutput , 0x4f8);
+			PROPERTY(m_pOutputOnFailedSpawn,entity2::CEntityIOOutput , 0x510);
+			S2_PAD(0x80);
 		};
-		//static_assert(sizeof(CS2::server::CEnvEntityMaker) == 0x590, "CEnvEntityMaker size should be 0x590");
+		//static_assert(sizeof(CS2::server::CEnvEntityMaker) == 0x528, "CEnvEntityMaker size should be 0x528");
 	}
 }

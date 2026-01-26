@@ -26,16 +26,16 @@ namespace CS2 {
 	namespace client {
 		class C_FuncMonitor : public CS2::client::C_FuncBrush {
 		public:
-			PROPERTY(m_targetCamera,GlobalTypes::CUtlString* , 0xeb0);
-			PROPERTY(m_nResolutionEnum,int32_t , 0xeb8);
-			PROPERTY(m_bRenderShadows,bool , 0xebc);
-			PROPERTY(m_bUseUniqueColorTarget,bool , 0xebd);
-			PROPERTY(m_brushModelName,GlobalTypes::CUtlString* , 0xec0);
-			PROPERTY(m_hTargetCamera,GlobalTypes::CHandle<client::C_BaseEntity>, 0xec8);
-			PROPERTY(m_bEnabled,bool , 0xecc);
-			PROPERTY(m_bDraw3DSkybox,bool , 0xecd);
-			S2_PAD(0x4C0);
+			PROPERTY(m_targetCamera,GlobalTypes::CUtlString* , 0xe88);
+			PROPERTY(m_nResolutionEnum,int32_t , 0xe90);
+			PROPERTY(m_bRenderShadows,bool , 0xe94);
+			PROPERTY(m_bUseUniqueColorTarget,bool , 0xe95);
+			PROPERTY(m_brushModelName,GlobalTypes::CUtlString* , 0xe98);
+			PROPERTY(m_hTargetCamera,GlobalTypes::CHandle<client::C_BaseEntity>, 0xea0);
+			PROPERTY(m_bEnabled,bool , 0xea4);
+			PROPERTY(m_bDraw3DSkybox,bool , 0xea5);
+			S2_PAD(0x478);
 		};
-		//static_assert(sizeof(CS2::client::C_FuncMonitor) == 0x1370, "C_FuncMonitor size should be 0x1370");
+		//static_assert(sizeof(CS2::client::C_FuncMonitor) == 0x1300, "C_FuncMonitor size should be 0x1300");
 	}
 }

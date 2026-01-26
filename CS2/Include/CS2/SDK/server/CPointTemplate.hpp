@@ -23,19 +23,19 @@ namespace CS2 {
 	namespace server {
 		class CPointTemplate : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_iszWorldName,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
-			PROPERTY(m_iszSource2EntityLumpName,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_iszEntityFilterName,GlobalTypes::CUtlSymbolLarge* , 0x500);
-			PROPERTY(m_flTimeoutInterval,float32 , 0x508);
-			PROPERTY(m_bAsynchronouslySpawnEntities,bool , 0x50c);
-			PROPERTY(m_clientOnlyEntityBehavior,client::PointTemplateClientOnlyEntityBehavior_t , 0x510);
-			PROPERTY(m_ownerSpawnGroupType,client::PointTemplateOwnerSpawnGroupType_t , 0x514);
-			PROPERTY(m_createdSpawnGroupHandles,GlobalTypes::CUtlVector< uint32 >, 0x518);
-			PROPERTY(m_SpawnedEntityHandles,GlobalTypes::CUtlVector<GlobalTypes::CEntityHandle>, 0x530);
-			PROPERTY(m_ScriptSpawnCallback,GlobalTypes::HSCRIPT , 0x548);
-			PROPERTY(m_ScriptCallbackScope,GlobalTypes::HSCRIPT , 0x550);
+			PROPERTY(m_iszWorldName,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
+			PROPERTY(m_iszSource2EntityLumpName,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_iszEntityFilterName,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
+			PROPERTY(m_flTimeoutInterval,float32 , 0x4c0);
+			PROPERTY(m_bAsynchronouslySpawnEntities,bool , 0x4c4);
+			PROPERTY(m_clientOnlyEntityBehavior,client::PointTemplateClientOnlyEntityBehavior_t , 0x4c8);
+			PROPERTY(m_ownerSpawnGroupType,client::PointTemplateOwnerSpawnGroupType_t , 0x4cc);
+			PROPERTY(m_createdSpawnGroupHandles,GlobalTypes::CUtlVector< uint32 >, 0x4d0);
+			PROPERTY(m_SpawnedEntityHandles,GlobalTypes::CUtlVector<GlobalTypes::CEntityHandle>, 0x4e8);
+			PROPERTY(m_ScriptSpawnCallback,GlobalTypes::HSCRIPT , 0x500);
+			PROPERTY(m_ScriptCallbackScope,GlobalTypes::HSCRIPT , 0x508);
 			S2_PAD(0x68);
 		};
-		//static_assert(sizeof(CS2::server::CPointTemplate) == 0x558, "CPointTemplate size should be 0x558");
+		//static_assert(sizeof(CS2::server::CPointTemplate) == 0x510, "CPointTemplate size should be 0x510");
 	}
 }

@@ -27,10 +27,10 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayer_PingServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY_ARRAY(m_flPlayerPingTokens,entity2::GameTime_t , 5 , 0x40);
-			PROPERTY(m_hPlayerPing,GlobalTypes::CHandle<server::CPlayerPing>, 0x54);
+			PROPERTY_ARRAY(m_flPlayerPingTokens,entity2::GameTime_t , 5 , 0x48);
+			PROPERTY(m_hPlayerPing,GlobalTypes::CHandle<server::CPlayerPing>, 0x5c);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CCSPlayer_PingServices) == 0x58, "CCSPlayer_PingServices size should be 0x58");
+		//static_assert(sizeof(CS2::server::CCSPlayer_PingServices) == 0x60, "CCSPlayer_PingServices size should be 0x60");
 	}
 }

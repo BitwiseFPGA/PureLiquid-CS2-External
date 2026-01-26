@@ -21,16 +21,16 @@ namespace CS2 {
 	namespace server {
 		class CPathKeyFrame : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_Origin,GlobalTypes::Vector , 0x4f0);
-			PROPERTY(m_Angles,GlobalTypes::QAngle , 0x4fc);
-			PROPERTY(m_qAngle,GlobalTypes::Quaternion , 0x510);
-			PROPERTY(m_iNextKey,GlobalTypes::CUtlSymbolLarge* , 0x520);
-			PROPERTY(m_flNextTime,float32 , 0x528);
-			PROPERTY(m_pNextKey,server::CPathKeyFrame* , 0x530);
-			PROPERTY(m_pPrevKey,server::CPathKeyFrame* , 0x538);
-			PROPERTY(m_flMoveSpeed,float32 , 0x540);
-			S2_PAD(0x60);
+			PROPERTY(m_Origin,GlobalTypes::Vector , 0x4a8);
+			PROPERTY(m_Angles,GlobalTypes::QAngle , 0x4b4);
+			PROPERTY(m_qAngle,GlobalTypes::Quaternion , 0x4c0);
+			PROPERTY(m_iNextKey,GlobalTypes::CUtlSymbolLarge* , 0x4d0);
+			PROPERTY(m_flNextTime,float32 , 0x4d8);
+			PROPERTY(m_pNextKey,server::CPathKeyFrame* , 0x4e0);
+			PROPERTY(m_pPrevKey,server::CPathKeyFrame* , 0x4e8);
+			PROPERTY(m_flMoveSpeed,float32 , 0x4f0);
+			S2_PAD(0x58);
 		};
-		//static_assert(sizeof(CS2::server::CPathKeyFrame) == 0x550, "CPathKeyFrame size should be 0x550");
+		//static_assert(sizeof(CS2::server::CPathKeyFrame) == 0x500, "CPathKeyFrame size should be 0x500");
 	}
 }

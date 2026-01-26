@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace client {
 		class C_InfoVisibilityBox : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_nMode,int32_t , 0x5fc);
-			PROPERTY(m_vBoxSize,GlobalTypes::Vector , 0x600);
-			PROPERTY(m_bEnabled,bool , 0x60c);
+			PROPERTY(m_nMode,int32_t , 0x60c);
+			PROPERTY(m_vBoxSize,GlobalTypes::Vector , 0x610);
+			PROPERTY(m_bEnabled,bool , 0x61c);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::client::C_InfoVisibilityBox) == 0x610, "C_InfoVisibilityBox size should be 0x610");
+		//static_assert(sizeof(CS2::client::C_InfoVisibilityBox) == 0x620, "C_InfoVisibilityBox size should be 0x620");
 	}
 }

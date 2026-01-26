@@ -50,12 +50,12 @@ namespace CS2 {
 			PROPERTY(m_nHierarchyType,uint8_t , 0x110);
 			PROPERTY(m_nDoNotSetAnimTimeInInvalidatePhysicsCount,uint8_t , 0x111);
 			PROPERTY(m_name,GlobalTypes::CUtlStringToken* , 0x114);
-			PROPERTY(m_hierarchyAttachName,GlobalTypes::CUtlStringToken* , 0x158);
-			PROPERTY(m_flZOffset,float32 , 0x15c);
-			PROPERTY(m_flClientLocalScale,float32 , 0x160);
-			PROPERTY(m_vRenderOrigin,GlobalTypes::Vector , 0x164);
-			S2_PAD(0x180);
+			PROPERTY(m_hierarchyAttachName,GlobalTypes::CUtlStringToken* , 0x128);
+			PROPERTY(m_flZOffset,float32 , 0x12c);
+			PROPERTY(m_flClientLocalScale,float32 , 0x130);
+			PROPERTY(m_vRenderOrigin,GlobalTypes::Vector , 0x134);
+			S2_PAD(0x150);
 		};
-		//static_assert(sizeof(CS2::client::CGameSceneNode) == 0x180, "CGameSceneNode size should be 0x180");
+		//static_assert(sizeof(CS2::client::CGameSceneNode) == 0x150, "CGameSceneNode size should be 0x150");
 	}
 }

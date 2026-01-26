@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace server {
 		class CBaseFilter : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_bNegated,bool , 0x4f0);
-			PROPERTY(m_OnPass,entity2::CEntityIOOutput , 0x4f8);
-			PROPERTY(m_OnFail,entity2::CEntityIOOutput , 0x520);
-			S2_PAD(0x58);
+			PROPERTY(m_bNegated,bool , 0x4a8);
+			PROPERTY(m_OnPass,entity2::CEntityIOOutput , 0x4b0);
+			PROPERTY(m_OnFail,entity2::CEntityIOOutput , 0x4c8);
+			S2_PAD(0x38);
 		};
-		//static_assert(sizeof(CS2::server::CBaseFilter) == 0x548, "CBaseFilter size should be 0x548");
+		//static_assert(sizeof(CS2::server::CBaseFilter) == 0x4E0, "CBaseFilter size should be 0x4E0");
 	}
 }

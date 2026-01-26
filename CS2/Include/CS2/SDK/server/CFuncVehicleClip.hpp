@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CFuncVehicleClip) == 0x7D8, "CFuncVehicleClip size should be 0x7D8");
+		//static_assert(sizeof(CS2::server::CFuncVehicleClip) == 0x730, "CFuncVehicleClip size should be 0x730");
 	}
 }

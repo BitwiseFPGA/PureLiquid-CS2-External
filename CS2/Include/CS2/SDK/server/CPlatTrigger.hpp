@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace server {
 		class CPlatTrigger : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_pPlatform,GlobalTypes::CHandle<server::CFuncPlat>, 0x7d8);
+			PROPERTY(m_pPlatform,GlobalTypes::CHandle<server::CFuncPlat>, 0x730);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CPlatTrigger) == 0x7E0, "CPlatTrigger size should be 0x7E0");
+		//static_assert(sizeof(CS2::server::CPlatTrigger) == 0x738, "CPlatTrigger size should be 0x738");
 	}
 }

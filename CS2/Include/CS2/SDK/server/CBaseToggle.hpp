@@ -27,24 +27,24 @@ namespace CS2 {
 	namespace server {
 		class CBaseToggle : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_toggle_state,server::TOGGLE_STATE , 0x7d8);
-			PROPERTY(m_flMoveDistance,float32 , 0x7dc);
-			PROPERTY(m_flWait,float32 , 0x7e0);
-			PROPERTY(m_flLip,float32 , 0x7e4);
-			PROPERTY(m_bAlwaysFireBlockedOutputs,bool , 0x7e8);
-			PROPERTY(m_vecPosition1,GlobalTypes::Vector , 0x7ec);
-			PROPERTY(m_vecPosition2,GlobalTypes::Vector , 0x7f8);
-			PROPERTY(m_vecMoveAng,GlobalTypes::QAngle , 0x804);
-			PROPERTY(m_vecAngle1,GlobalTypes::QAngle , 0x810);
-			PROPERTY(m_vecAngle2,GlobalTypes::QAngle , 0x81c);
-			PROPERTY(m_flHeight,float32 , 0x828);
-			PROPERTY(m_hActivator,GlobalTypes::CHandle<server::CBaseEntity>, 0x82c);
-			PROPERTY(m_vecFinalDest,GlobalTypes::Vector , 0x830);
-			PROPERTY(m_vecFinalAngle,GlobalTypes::QAngle , 0x83c);
-			PROPERTY(m_movementType,int32_t , 0x848);
-			PROPERTY(m_sMaster,GlobalTypes::CUtlSymbolLarge* , 0x850);
+			PROPERTY(m_toggle_state,server::TOGGLE_STATE , 0x730);
+			PROPERTY(m_flMoveDistance,float32 , 0x734);
+			PROPERTY(m_flWait,float32 , 0x738);
+			PROPERTY(m_flLip,float32 , 0x73c);
+			PROPERTY(m_bAlwaysFireBlockedOutputs,bool , 0x740);
+			PROPERTY(m_vecPosition1,GlobalTypes::Vector , 0x744);
+			PROPERTY(m_vecPosition2,GlobalTypes::Vector , 0x750);
+			PROPERTY(m_vecMoveAng,GlobalTypes::QAngle , 0x75c);
+			PROPERTY(m_vecAngle1,GlobalTypes::QAngle , 0x768);
+			PROPERTY(m_vecAngle2,GlobalTypes::QAngle , 0x774);
+			PROPERTY(m_flHeight,float32 , 0x780);
+			PROPERTY(m_hActivator,GlobalTypes::CHandle<server::CBaseEntity>, 0x784);
+			PROPERTY(m_vecFinalDest,GlobalTypes::Vector , 0x788);
+			PROPERTY(m_vecFinalAngle,GlobalTypes::QAngle , 0x794);
+			PROPERTY(m_movementType,int32_t , 0x7a0);
+			PROPERTY(m_sMaster,GlobalTypes::CUtlSymbolLarge* , 0x7a8);
 			S2_PAD(0x80);
 		};
-		//static_assert(sizeof(CS2::server::CBaseToggle) == 0x858, "CBaseToggle size should be 0x858");
+		//static_assert(sizeof(CS2::server::CBaseToggle) == 0x7B0, "CBaseToggle size should be 0x7B0");
 	}
 }

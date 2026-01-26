@@ -21,17 +21,17 @@ namespace CS2 {
 	namespace server {
 		class CDynamicLight : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_ActualFlags,uint8_t , 0x7d8);
-			PROPERTY(m_Flags,uint8_t , 0x7d9);
-			PROPERTY(m_LightStyle,uint8_t , 0x7da);
-			PROPERTY(m_On,bool , 0x7db);
-			PROPERTY(m_Radius,float32 , 0x7dc);
-			PROPERTY(m_Exponent,int32_t , 0x7e0);
-			PROPERTY(m_InnerAngle,float32 , 0x7e4);
-			PROPERTY(m_OuterAngle,float32 , 0x7e8);
-			PROPERTY(m_SpotRadius,float32 , 0x7ec);
+			PROPERTY(m_ActualFlags,uint8_t , 0x730);
+			PROPERTY(m_Flags,uint8_t , 0x731);
+			PROPERTY(m_LightStyle,uint8_t , 0x732);
+			PROPERTY(m_On,bool , 0x733);
+			PROPERTY(m_Radius,float32 , 0x734);
+			PROPERTY(m_Exponent,int32_t , 0x738);
+			PROPERTY(m_InnerAngle,float32 , 0x73c);
+			PROPERTY(m_OuterAngle,float32 , 0x740);
+			PROPERTY(m_SpotRadius,float32 , 0x744);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CDynamicLight) == 0x7F0, "CDynamicLight size should be 0x7F0");
+		//static_assert(sizeof(CS2::server::CDynamicLight) == 0x748, "CDynamicLight size should be 0x748");
 	}
 }

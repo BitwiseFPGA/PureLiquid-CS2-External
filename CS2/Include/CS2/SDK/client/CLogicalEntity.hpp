@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CLogicalEntity) == 0x5F8, "CLogicalEntity size should be 0x5F8");
+		//static_assert(sizeof(CS2::client::CLogicalEntity) == 0x608, "CLogicalEntity size should be 0x608");
 	}
 }

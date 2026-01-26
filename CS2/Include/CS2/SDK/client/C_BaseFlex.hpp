@@ -24,27 +24,20 @@ namespace CS2 {
 	namespace client {
 		class C_BaseFlex : public CS2::client::CBaseAnimGraph {
 		public:
-			PROPERTY(m_flexWeight,GlobalTypes::C_NetworkUtlVectorBase< float32 >, 0x1168);
-			PROPERTY(m_vLookTargetPosition,GlobalTypes::VectorWS , 0x1180);
-			PROPERTY(m_blinktoggle,bool , 0x1210);
+			PROPERTY(m_flexWeight,GlobalTypes::C_NetworkUtlVectorBase< float32 >, 0x1170);
+			PROPERTY(m_vLookTargetPosition,GlobalTypes::VectorWS , 0x1188);
 			PROPERTY(m_nLastFlexUpdateFrameCount,int32_t , 0x1270);
 			PROPERTY(m_CachedViewTarget,GlobalTypes::Vector , 0x1274);
 			PROPERTY(m_nNextSceneEventId,client::SceneEventId_t , 0x1280);
-			PROPERTY(m_iBlink,int32_t , 0x1284);
-			PROPERTY(m_blinktime,float32 , 0x1288);
-			PROPERTY(m_prevblinktoggle,bool , 0x128c);
-			PROPERTY(m_iJawOpen,int32_t , 0x1290);
-			PROPERTY(m_flJawOpenAmount,float32 , 0x1294);
-			PROPERTY(m_flBlinkAmount,float32 , 0x1298);
-			PROPERTY(m_iMouthAttachment,modellib::AttachmentHandle_t , 0x129c);
-			PROPERTY(m_iEyeAttachment,modellib::AttachmentHandle_t , 0x129d);
-			PROPERTY(m_bResetFlexWeightsOnModelChange,bool , 0x129e);
-			PROPERTY(m_nEyeOcclusionRendererBone,int32_t , 0x12b8);
-			PROPERTY(m_mEyeOcclusionRendererCameraToBoneTransform,GlobalTypes::matrix3x4_t , 0x12bc);
-			PROPERTY(m_vEyeOcclusionRendererHalfExtent,GlobalTypes::Vector , 0x12ec);
-			PROPERTY_ARRAY(m_PhonemeClasses,client::Emphasized_Phoneme , 3 , 0x1308);
-			S2_PAD(0x210);
+			PROPERTY(m_iMouthAttachment,modellib::AttachmentHandle_t , 0x1284);
+			PROPERTY(m_iEyeAttachment,modellib::AttachmentHandle_t , 0x1285);
+			PROPERTY(m_bResetFlexWeightsOnModelChange,bool , 0x1286);
+			PROPERTY(m_nEyeOcclusionRendererBone,int32_t , 0x12a0);
+			PROPERTY(m_mEyeOcclusionRendererCameraToBoneTransform,GlobalTypes::matrix3x4_t , 0x12a4);
+			PROPERTY(m_vEyeOcclusionRendererHalfExtent,GlobalTypes::Vector , 0x12d4);
+			PROPERTY_ARRAY(m_PhonemeClasses,client::Emphasized_Phoneme , 3 , 0x12f0);
+			S2_PAD(0x1E8);
 		};
-		//static_assert(sizeof(CS2::client::C_BaseFlex) == 0x1368, "C_BaseFlex size should be 0x1368");
+		//static_assert(sizeof(CS2::client::C_BaseFlex) == 0x1350, "C_BaseFlex size should be 0x1350");
 	}
 }

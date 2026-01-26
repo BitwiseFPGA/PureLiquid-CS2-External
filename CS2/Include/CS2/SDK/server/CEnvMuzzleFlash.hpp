@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CEnvMuzzleFlash : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_flScale,float32 , 0x4f0);
-			PROPERTY(m_iszParentAttachment,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
+			PROPERTY(m_flScale,float32 , 0x4a8);
+			PROPERTY(m_iszParentAttachment,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CEnvMuzzleFlash) == 0x500, "CEnvMuzzleFlash size should be 0x500");
+		//static_assert(sizeof(CS2::server::CEnvMuzzleFlash) == 0x4B8, "CEnvMuzzleFlash size should be 0x4B8");
 	}
 }

@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CHandleDummy) == 0x4F0, "CHandleDummy size should be 0x4F0");
+		//static_assert(sizeof(CS2::server::CHandleDummy) == 0x4A8, "CHandleDummy size should be 0x4A8");
 	}
 }

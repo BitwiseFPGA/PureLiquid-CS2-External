@@ -27,13 +27,13 @@ namespace CS2 {
 	namespace server {
 		class CLogicPlayerProxy : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_hPlayer,GlobalTypes::CHandle<server::CBaseEntity>, 0x4f0);
-			PROPERTY(m_PlayerHasAmmo,entity2::CEntityIOOutput , 0x4f8);
-			PROPERTY(m_PlayerHasNoAmmo,entity2::CEntityIOOutput , 0x520);
-			PROPERTY(m_PlayerDied,entity2::CEntityIOOutput , 0x548);
-			PROPERTY(m_RequestedPlayerHealth,GlobalTypes::CEntityOutputTemplate< int32 >, 0x570);
-			S2_PAD(0xA8);
+			PROPERTY(m_PlayerHasAmmo,entity2::CEntityIOOutput , 0x4a8);
+			PROPERTY(m_PlayerHasNoAmmo,entity2::CEntityIOOutput , 0x4c0);
+			PROPERTY(m_PlayerDied,entity2::CEntityIOOutput , 0x4d8);
+			PROPERTY(m_RequestedPlayerHealth,GlobalTypes::CEntityOutputTemplate< int32, int32 >, 0x4f0);
+			PROPERTY(m_hPlayer,GlobalTypes::CHandle<server::CBaseEntity>, 0x510);
+			S2_PAD(0x70);
 		};
-		//static_assert(sizeof(CS2::server::CLogicPlayerProxy) == 0x598, "CLogicPlayerProxy size should be 0x598");
+		//static_assert(sizeof(CS2::server::CLogicPlayerProxy) == 0x518, "CLogicPlayerProxy size should be 0x518");
 	}
 }

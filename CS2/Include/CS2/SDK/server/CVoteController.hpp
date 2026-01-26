@@ -27,22 +27,22 @@ namespace CS2 {
 	namespace server {
 		class CVoteController : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_iActiveIssueIndex,int32_t , 0x4f0);
-			PROPERTY(m_iOnlyTeamToVote,int32_t , 0x4f4);
-			PROPERTY_ARRAY(m_nVoteOptionCount,int32_t , 5 , 0x4f8);
-			PROPERTY(m_nPotentialVotes,int32_t , 0x50c);
-			PROPERTY(m_bIsYesNoVote,bool , 0x510);
-			PROPERTY(m_acceptingVotesTimer,server::CountdownTimer , 0x518);
-			PROPERTY(m_executeCommandTimer,server::CountdownTimer , 0x530);
-			PROPERTY(m_resetVoteTimer,server::CountdownTimer , 0x548);
-			PROPERTY_ARRAY(m_nVotesCast,int32_t , 64 , 0x560);
-			PROPERTY(m_playerHoldingVote,GlobalTypes::CPlayerSlot , 0x660);
-			PROPERTY(m_playerOverrideForVote,GlobalTypes::CPlayerSlot , 0x664);
-			PROPERTY(m_nHighestCountIndex,int32_t , 0x668);
-			PROPERTY(m_potentialIssues,GlobalTypes::CUtlVector<server::CBaseIssue*>, 0x670);
-			PROPERTY(m_VoteOptions,GlobalTypes::CUtlVector<char*>, 0x688);
+			PROPERTY(m_iActiveIssueIndex,int32_t , 0x4a8);
+			PROPERTY(m_iOnlyTeamToVote,int32_t , 0x4ac);
+			PROPERTY_ARRAY(m_nVoteOptionCount,int32_t , 5 , 0x4b0);
+			PROPERTY(m_nPotentialVotes,int32_t , 0x4c4);
+			PROPERTY(m_bIsYesNoVote,bool , 0x4c8);
+			PROPERTY(m_acceptingVotesTimer,server::CountdownTimer , 0x4d0);
+			PROPERTY(m_executeCommandTimer,server::CountdownTimer , 0x4e8);
+			PROPERTY(m_resetVoteTimer,server::CountdownTimer , 0x500);
+			PROPERTY_ARRAY(m_nVotesCast,int32_t , 64 , 0x518);
+			PROPERTY(m_playerHoldingVote,GlobalTypes::CPlayerSlot , 0x618);
+			PROPERTY(m_playerOverrideForVote,GlobalTypes::CPlayerSlot , 0x61c);
+			PROPERTY(m_nHighestCountIndex,int32_t , 0x620);
+			PROPERTY(m_potentialIssues,GlobalTypes::CUtlVector<server::CBaseIssue*>, 0x628);
+			PROPERTY(m_VoteOptions,GlobalTypes::CUtlVector<char*>, 0x640);
 			S2_PAD(0x1B0);
 		};
-		//static_assert(sizeof(CS2::server::CVoteController) == 0x6A0, "CVoteController size should be 0x6A0");
+		//static_assert(sizeof(CS2::server::CVoteController) == 0x658, "CVoteController size should be 0x658");
 	}
 }

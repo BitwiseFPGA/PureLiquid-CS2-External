@@ -22,17 +22,17 @@ namespace CS2 {
 	namespace client {
 		class C_ColorCorrectionVolume : public CS2::client::C_BaseTrigger {
 		public:
-			PROPERTY(m_LastEnterWeight,float32 , 0xff0);
-			PROPERTY(m_LastEnterTime,entity2::GameTime_t , 0xff4);
-			PROPERTY(m_LastExitWeight,float32 , 0xff8);
-			PROPERTY(m_LastExitTime,entity2::GameTime_t , 0xffc);
-			PROPERTY(m_bEnabled,bool , 0x1000);
-			PROPERTY(m_MaxWeight,float32 , 0x1004);
-			PROPERTY(m_FadeDuration,float32 , 0x1008);
-			PROPERTY(m_Weight,float32 , 0x100c);
-			PROPERTY_ARRAY(m_lookupFilename,char , 512 , 0x1010);
+			PROPERTY(m_LastEnterWeight,float32 , 0xf58);
+			PROPERTY(m_LastEnterTime,entity2::GameTime_t , 0xf5c);
+			PROPERTY(m_LastExitWeight,float32 , 0xf60);
+			PROPERTY(m_LastExitTime,entity2::GameTime_t , 0xf64);
+			PROPERTY(m_bEnabled,bool , 0xf68);
+			PROPERTY(m_MaxWeight,float32 , 0xf6c);
+			PROPERTY(m_FadeDuration,float32 , 0xf70);
+			PROPERTY(m_Weight,float32 , 0xf74);
+			PROPERTY_ARRAY(m_lookupFilename,char , 512 , 0xf78);
 			S2_PAD(0x228);
 		};
-		//static_assert(sizeof(CS2::client::C_ColorCorrectionVolume) == 0x1218, "C_ColorCorrectionVolume size should be 0x1218");
+		//static_assert(sizeof(CS2::client::C_ColorCorrectionVolume) == 0x1180, "C_ColorCorrectionVolume size should be 0x1180");
 	}
 }

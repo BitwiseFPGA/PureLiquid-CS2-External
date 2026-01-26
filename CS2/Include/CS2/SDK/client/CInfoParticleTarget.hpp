@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CInfoParticleTarget) == 0x5F8, "CInfoParticleTarget size should be 0x5F8");
+		//static_assert(sizeof(CS2::client::CInfoParticleTarget) == 0x608, "CInfoParticleTarget size should be 0x608");
 	}
 }

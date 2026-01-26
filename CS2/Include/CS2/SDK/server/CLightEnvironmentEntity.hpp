@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CLightEnvironmentEntity) == 0x7E0, "CLightEnvironmentEntity size should be 0x7E0");
+		//static_assert(sizeof(CS2::server::CLightEnvironmentEntity) == 0x738, "CLightEnvironmentEntity size should be 0x738");
 	}
 }

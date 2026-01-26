@@ -27,17 +27,17 @@ namespace CS2 {
 	namespace server {
 		class CEconEntity : public CS2::server::CBaseFlex {
 		public:
-			PROPERTY(m_AttributeManager,server::CAttributeContainer , 0xb30);
-			PROPERTY(m_OriginalOwnerXuidLow,uint32_t , 0xe28);
-			PROPERTY(m_OriginalOwnerXuidHigh,uint32_t , 0xe2c);
-			PROPERTY(m_nFallbackPaintKit,int32_t , 0xe30);
-			PROPERTY(m_nFallbackSeed,int32_t , 0xe34);
-			PROPERTY(m_flFallbackWear,float32 , 0xe38);
-			PROPERTY(m_nFallbackStatTrak,int32_t , 0xe3c);
-			PROPERTY(m_hOldProvidee,GlobalTypes::CHandle<server::CBaseEntity>, 0xe40);
-			PROPERTY(m_iOldOwnerClass,int32_t , 0xe44);
+			PROPERTY(m_AttributeManager,server::CAttributeContainer , 0xac0);
+			PROPERTY(m_OriginalOwnerXuidLow,uint32_t , 0xdb8);
+			PROPERTY(m_OriginalOwnerXuidHigh,uint32_t , 0xdbc);
+			PROPERTY(m_nFallbackPaintKit,int32_t , 0xdc0);
+			PROPERTY(m_nFallbackSeed,int32_t , 0xdc4);
+			PROPERTY(m_flFallbackWear,float32 , 0xdc8);
+			PROPERTY(m_nFallbackStatTrak,int32_t , 0xdcc);
+			PROPERTY(m_hOldProvidee,GlobalTypes::CHandle<server::CBaseEntity>, 0xdd0);
+			PROPERTY(m_iOldOwnerClass,int32_t , 0xdd4);
 			S2_PAD(0x330);
 		};
-		//static_assert(sizeof(CS2::server::CEconEntity) == 0xE50, "CEconEntity size should be 0xE50");
+		//static_assert(sizeof(CS2::server::CEconEntity) == 0xDE0, "CEconEntity size should be 0xDE0");
 	}
 }

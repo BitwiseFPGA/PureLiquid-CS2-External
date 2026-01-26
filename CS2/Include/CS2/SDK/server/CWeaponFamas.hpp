@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CWeaponFamas) == 0x11F0, "CWeaponFamas size should be 0x11F0");
+		//static_assert(sizeof(CS2::server::CWeaponFamas) == 0x1150, "CWeaponFamas size should be 0x1150");
 	}
 }

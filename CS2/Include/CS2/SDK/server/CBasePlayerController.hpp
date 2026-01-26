@@ -28,32 +28,32 @@ namespace CS2 {
 	namespace server {
 		class CBasePlayerController : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_nInButtonsWhichAreToggles,uint64_t , 0x4f8);
-			PROPERTY(m_nTickBase,uint32_t , 0x500);
-			PROPERTY(m_hPawn,GlobalTypes::CHandle<server::CBasePlayerPawn>, 0x528);
-			PROPERTY(m_bKnownTeamMismatch,bool , 0x52c);
-			PROPERTY(m_nSplitScreenSlot,GlobalTypes::CSplitScreenSlot , 0x530);
-			PROPERTY(m_hSplitOwner,GlobalTypes::CHandle<server::CBasePlayerController>, 0x534);
-			PROPERTY(m_hSplitScreenPlayers,server::CUtlVector<GlobalTypes::CHandle<server::CBasePlayerController>>, 0x538);
-			PROPERTY(m_bIsHLTV,bool , 0x550);
-			PROPERTY(m_iConnected,client::PlayerConnectedState , 0x554);
-			PROPERTY_ARRAY(m_iszPlayerName,char , 128 , 0x558);
-			PROPERTY(m_szNetworkIDString,GlobalTypes::CUtlString* , 0x5d8);
-			PROPERTY(m_fLerpTime,float32 , 0x5e0);
-			PROPERTY(m_bLagCompensation,bool , 0x5e4);
-			PROPERTY(m_bPredict,bool , 0x5e5);
-			PROPERTY(m_bIsLowViolence,bool , 0x5ec);
-			PROPERTY(m_bGamePaused,bool , 0x5ed);
-			PROPERTY(m_iIgnoreGlobalChat,client::ChatIgnoreType_t , 0x728);
-			PROPERTY(m_flLastPlayerTalkTime,float32 , 0x72c);
-			PROPERTY(m_flLastEntitySteadyState,float32 , 0x730);
-			PROPERTY(m_nAvailableEntitySteadyState,int32_t , 0x734);
-			PROPERTY(m_bHasAnySteadyStateEnts,bool , 0x738);
-			PROPERTY(m_steamID,uint64_t , 0x748);
-			PROPERTY(m_bNoClipEnabled,bool , 0x750);
-			PROPERTY(m_iDesiredFOV,uint32_t , 0x754);
+			PROPERTY(m_nInButtonsWhichAreToggles,uint64_t , 0x4b0);
+			PROPERTY(m_nTickBase,uint32_t , 0x4b8);
+			PROPERTY(m_hPawn,GlobalTypes::CHandle<server::CBasePlayerPawn>, 0x4e0);
+			PROPERTY(m_bKnownTeamMismatch,bool , 0x4e4);
+			PROPERTY(m_nSplitScreenSlot,GlobalTypes::CSplitScreenSlot , 0x4e8);
+			PROPERTY(m_hSplitOwner,GlobalTypes::CHandle<server::CBasePlayerController>, 0x4ec);
+			PROPERTY(m_hSplitScreenPlayers,server::CUtlVector<GlobalTypes::CHandle<server::CBasePlayerController>>, 0x4f0);
+			PROPERTY(m_bIsHLTV,bool , 0x508);
+			PROPERTY(m_iConnected,client::PlayerConnectedState , 0x50c);
+			PROPERTY_ARRAY(m_iszPlayerName,char , 128 , 0x510);
+			PROPERTY(m_szNetworkIDString,GlobalTypes::CUtlString* , 0x590);
+			PROPERTY(m_fLerpTime,float32 , 0x598);
+			PROPERTY(m_bLagCompensation,bool , 0x59c);
+			PROPERTY(m_bPredict,bool , 0x59d);
+			PROPERTY(m_bIsLowViolence,bool , 0x5a4);
+			PROPERTY(m_bGamePaused,bool , 0x5a5);
+			PROPERTY(m_iIgnoreGlobalChat,client::ChatIgnoreType_t , 0x6e0);
+			PROPERTY(m_flLastPlayerTalkTime,float32 , 0x6e4);
+			PROPERTY(m_flLastEntitySteadyState,float32 , 0x6e8);
+			PROPERTY(m_nAvailableEntitySteadyState,int32_t , 0x6ec);
+			PROPERTY(m_bHasAnySteadyStateEnts,bool , 0x6f0);
+			PROPERTY(m_steamID,uint64_t , 0x700);
+			PROPERTY(m_bNoClipEnabled,bool , 0x708);
+			PROPERTY(m_iDesiredFOV,uint32_t , 0x70c);
 			S2_PAD(0x320);
 		};
-		//static_assert(sizeof(CS2::server::CBasePlayerController) == 0x810, "CBasePlayerController size should be 0x810");
+		//static_assert(sizeof(CS2::server::CBasePlayerController) == 0x7C8, "CBasePlayerController size should be 0x7C8");
 	}
 }

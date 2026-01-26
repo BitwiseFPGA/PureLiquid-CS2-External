@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_LightOrthoEntity) == 0xEB8, "C_LightOrthoEntity size should be 0xEB8");
+		//static_assert(sizeof(CS2::client::C_LightOrthoEntity) == 0xE90, "C_LightOrthoEntity size should be 0xE90");
 	}
 }

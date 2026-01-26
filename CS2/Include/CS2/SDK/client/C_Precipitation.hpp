@@ -22,16 +22,16 @@ namespace CS2 {
 	namespace client {
 		class C_Precipitation : public CS2::client::C_BaseTrigger {
 		public:
-			PROPERTY(m_flDensity,float32 , 0xff0);
-			PROPERTY(m_flParticleInnerDist,float32 , 0x1000);
-			PROPERTY(m_pParticleDef,char* , 0x1008);
-			PROPERTY_ARRAY(m_tParticlePrecipTraceTimer,client::TimedEvent , 1 , 0x1030);
-			PROPERTY_ARRAY(m_bActiveParticlePrecipEmitter,bool , 1 , 0x1038);
-			PROPERTY(m_bParticlePrecipInitialized,bool , 0x1039);
-			PROPERTY(m_bHasSimulatedSinceLastSceneObjectUpdate,bool , 0x103a);
-			PROPERTY(m_nAvailableSheetSequencesMaxIndex,int32_t , 0x103c);
+			PROPERTY(m_flDensity,float32 , 0xf58);
+			PROPERTY(m_flParticleInnerDist,float32 , 0xf68);
+			PROPERTY(m_pParticleDef,char* , 0xf70);
+			PROPERTY_ARRAY(m_tParticlePrecipTraceTimer,client::TimedEvent , 1 , 0xf98);
+			PROPERTY_ARRAY(m_bActiveParticlePrecipEmitter,bool , 1 , 0xfa0);
+			PROPERTY(m_bParticlePrecipInitialized,bool , 0xfa1);
+			PROPERTY(m_bHasSimulatedSinceLastSceneObjectUpdate,bool , 0xfa2);
+			PROPERTY(m_nAvailableSheetSequencesMaxIndex,int32_t , 0xfa4);
 			S2_PAD(0x50);
 		};
-		//static_assert(sizeof(CS2::client::C_Precipitation) == 0x1040, "C_Precipitation size should be 0x1040");
+		//static_assert(sizeof(CS2::client::C_Precipitation) == 0xFA8, "C_Precipitation size should be 0xFA8");
 	}
 }

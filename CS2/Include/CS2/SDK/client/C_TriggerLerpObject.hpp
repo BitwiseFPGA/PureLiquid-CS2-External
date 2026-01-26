@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_TriggerLerpObject) == 0xFF0, "C_TriggerLerpObject size should be 0xFF0");
+		//static_assert(sizeof(CS2::client::C_TriggerLerpObject) == 0xF58, "C_TriggerLerpObject size should be 0xF58");
 	}
 }

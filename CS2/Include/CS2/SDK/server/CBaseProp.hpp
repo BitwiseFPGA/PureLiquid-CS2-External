@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CBaseProp : public CS2::server::CBaseAnimGraph {
 		public:
-			PROPERTY(m_bModelOverrodeBlockLOS,bool , 0xa90);
-			PROPERTY(m_iShapeType,int32_t , 0xa94);
-			PROPERTY(m_bConformToCollisionBounds,bool , 0xa98);
-			PROPERTY(m_mPreferredCatchTransform,GlobalTypes::CTransform , 0xaa0);
+			PROPERTY(m_bModelOverrodeBlockLOS,bool , 0xa20);
+			PROPERTY(m_iShapeType,int32_t , 0xa24);
+			PROPERTY(m_bConformToCollisionBounds,bool , 0xa28);
+			PROPERTY(m_mPreferredCatchTransform,GlobalTypes::CTransform , 0xa30);
 			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CBaseProp) == 0xAC0, "CBaseProp size should be 0xAC0");
+		//static_assert(sizeof(CS2::server::CBaseProp) == 0xA50, "CBaseProp size should be 0xA50");
 	}
 }

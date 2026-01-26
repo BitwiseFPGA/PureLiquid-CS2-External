@@ -21,16 +21,16 @@ namespace CS2 {
 	namespace client {
 		class CCitadelSoundOpvarSetOBB : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_iszStackName,GlobalTypes::CUtlSymbolLarge* , 0x610);
-			PROPERTY(m_iszOperatorName,GlobalTypes::CUtlSymbolLarge* , 0x618);
-			PROPERTY(m_iszOpvarName,GlobalTypes::CUtlSymbolLarge* , 0x620);
-			PROPERTY(m_vDistanceInnerMins,GlobalTypes::Vector , 0x628);
-			PROPERTY(m_vDistanceInnerMaxs,GlobalTypes::Vector , 0x634);
-			PROPERTY(m_vDistanceOuterMins,GlobalTypes::Vector , 0x640);
-			PROPERTY(m_vDistanceOuterMaxs,GlobalTypes::Vector , 0x64c);
-			PROPERTY(m_nAABBDirection,int32_t , 0x658);
+			PROPERTY(m_iszStackName,GlobalTypes::CUtlSymbolLarge* , 0x620);
+			PROPERTY(m_iszOperatorName,GlobalTypes::CUtlSymbolLarge* , 0x628);
+			PROPERTY(m_iszOpvarName,GlobalTypes::CUtlSymbolLarge* , 0x630);
+			PROPERTY(m_vDistanceInnerMins,GlobalTypes::Vector , 0x638);
+			PROPERTY(m_vDistanceInnerMaxs,GlobalTypes::Vector , 0x644);
+			PROPERTY(m_vDistanceOuterMins,GlobalTypes::Vector , 0x650);
+			PROPERTY(m_vDistanceOuterMaxs,GlobalTypes::Vector , 0x65c);
+			PROPERTY(m_nAABBDirection,int32_t , 0x668);
 			S2_PAD(0x68);
 		};
-		//static_assert(sizeof(CS2::client::CCitadelSoundOpvarSetOBB) == 0x660, "CCitadelSoundOpvarSetOBB size should be 0x660");
+		//static_assert(sizeof(CS2::client::CCitadelSoundOpvarSetOBB) == 0x670, "CCitadelSoundOpvarSetOBB size should be 0x670");
 	}
 }

@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace client {
 		class C_PhysMagnet : public CS2::client::CBaseAnimGraph {
 		public:
-			PROPERTY(m_aAttachedObjectsFromServer,GlobalTypes::CUtlVector< int32 >, 0x1158);
-			PROPERTY(m_aAttachedObjects,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::C_BaseEntity>>, 0x1170);
+			PROPERTY(m_aAttachedObjectsFromServer,GlobalTypes::CUtlVector< int32 >, 0x1168);
+			PROPERTY(m_aAttachedObjects,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::C_BaseEntity>>, 0x1180);
 			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::client::C_PhysMagnet) == 0x1188, "C_PhysMagnet size should be 0x1188");
+		//static_assert(sizeof(CS2::client::C_PhysMagnet) == 0x1198, "C_PhysMagnet size should be 0x1198");
 	}
 }

@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_SoundOpvarSetPointEntity) == 0x618, "C_SoundOpvarSetPointEntity size should be 0x618");
+		//static_assert(sizeof(CS2::client::C_SoundOpvarSetPointEntity) == 0x628, "C_SoundOpvarSetPointEntity size should be 0x628");
 	}
 }

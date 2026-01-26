@@ -21,16 +21,16 @@ namespace CS2 {
 	namespace server {
 		class CPhysFixed : public CS2::server::CPhysConstraint {
 		public:
-			PROPERTY(m_flLinearFrequency,float32 , 0x560);
-			PROPERTY(m_flLinearDampingRatio,float32 , 0x564);
-			PROPERTY(m_flAngularFrequency,float32 , 0x568);
-			PROPERTY(m_flAngularDampingRatio,float32 , 0x56c);
-			PROPERTY(m_bEnableLinearConstraint,bool , 0x570);
-			PROPERTY(m_bEnableAngularConstraint,bool , 0x571);
-			PROPERTY(m_sBoneName1,GlobalTypes::CUtlSymbolLarge* , 0x578);
-			PROPERTY(m_sBoneName2,GlobalTypes::CUtlSymbolLarge* , 0x580);
+			PROPERTY(m_flLinearFrequency,float32 , 0x508);
+			PROPERTY(m_flLinearDampingRatio,float32 , 0x50c);
+			PROPERTY(m_flAngularFrequency,float32 , 0x510);
+			PROPERTY(m_flAngularDampingRatio,float32 , 0x514);
+			PROPERTY(m_bEnableLinearConstraint,bool , 0x518);
+			PROPERTY(m_bEnableAngularConstraint,bool , 0x519);
+			PROPERTY(m_sBoneName1,GlobalTypes::CUtlSymbolLarge* , 0x520);
+			PROPERTY(m_sBoneName2,GlobalTypes::CUtlSymbolLarge* , 0x528);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::server::CPhysFixed) == 0x588, "CPhysFixed size should be 0x588");
+		//static_assert(sizeof(CS2::server::CPhysFixed) == 0x530, "CPhysFixed size should be 0x530");
 	}
 }

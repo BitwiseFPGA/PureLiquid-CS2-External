@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace client {
 		class FilterHealth : public CS2::client::CBaseFilter {
 		public:
-			PROPERTY(m_bAdrenalineActive,bool , 0x650);
-			PROPERTY(m_iHealthMin,int32_t , 0x654);
-			PROPERTY(m_iHealthMax,int32_t , 0x658);
+			PROPERTY(m_bAdrenalineActive,bool , 0x640);
+			PROPERTY(m_iHealthMin,int32_t , 0x644);
+			PROPERTY(m_iHealthMax,int32_t , 0x648);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::client::FilterHealth) == 0x660, "FilterHealth size should be 0x660");
+		//static_assert(sizeof(CS2::client::FilterHealth) == 0x650, "FilterHealth size should be 0x650");
 	}
 }

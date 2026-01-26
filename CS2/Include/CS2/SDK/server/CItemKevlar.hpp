@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CItemKevlar) == 0xB70, "CItemKevlar size should be 0xB70");
+		//static_assert(sizeof(CS2::server::CItemKevlar) == 0xAC0, "CItemKevlar size should be 0xAC0");
 	}
 }

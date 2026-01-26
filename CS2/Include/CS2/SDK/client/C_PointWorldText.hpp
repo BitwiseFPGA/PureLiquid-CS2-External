@@ -24,25 +24,27 @@ namespace CS2 {
 	namespace client {
 		class C_PointWorldText : public CS2::client::C_ModelPointEntity {
 		public:
-			PROPERTY(m_bForceRecreateNextUpdate,bool , 0xeb8);
-			PROPERTY_ARRAY(m_messageText,char , 512 , 0xed0);
-			PROPERTY_ARRAY(m_FontName,char , 64 , 0x10d0);
-			PROPERTY_ARRAY(m_BackgroundMaterialName,char , 64 , 0x1110);
-			PROPERTY(m_bEnabled,bool , 0x1150);
-			PROPERTY(m_bFullbright,bool , 0x1151);
-			PROPERTY(m_flWorldUnitsPerPx,float32 , 0x1154);
-			PROPERTY(m_flFontSize,float32 , 0x1158);
-			PROPERTY(m_flDepthOffset,float32 , 0x115c);
-			PROPERTY(m_bDrawBackground,bool , 0x1160);
-			PROPERTY(m_flBackgroundBorderWidth,float32 , 0x1164);
-			PROPERTY(m_flBackgroundBorderHeight,float32 , 0x1168);
-			PROPERTY(m_flBackgroundWorldToUV,float32 , 0x116c);
-			PROPERTY(m_Color,GlobalTypes::Color , 0x1170);
-			PROPERTY(m_nJustifyHorizontal,client::PointWorldTextJustifyHorizontal_t , 0x1174);
-			PROPERTY(m_nJustifyVertical,client::PointWorldTextJustifyVertical_t , 0x1178);
-			PROPERTY(m_nReorientMode,client::PointWorldTextReorientMode_t , 0x117c);
-			S2_PAD(0x2D0);
+			PROPERTY(m_bForceRecreateNextUpdate,bool , 0xe90);
+			PROPERTY(m_nTextWidthPx,int32_t , 0xea8);
+			PROPERTY(m_nTextHeightPx,int32_t , 0xeac);
+			PROPERTY_ARRAY(m_messageText,char , 512 , 0xeb0);
+			PROPERTY_ARRAY(m_FontName,char , 64 , 0x10b0);
+			PROPERTY_ARRAY(m_BackgroundMaterialName,char , 64 , 0x10f0);
+			PROPERTY(m_bEnabled,bool , 0x1130);
+			PROPERTY(m_bFullbright,bool , 0x1131);
+			PROPERTY(m_flWorldUnitsPerPx,float32 , 0x1134);
+			PROPERTY(m_flFontSize,float32 , 0x1138);
+			PROPERTY(m_flDepthOffset,float32 , 0x113c);
+			PROPERTY(m_bDrawBackground,bool , 0x1140);
+			PROPERTY(m_flBackgroundBorderWidth,float32 , 0x1144);
+			PROPERTY(m_flBackgroundBorderHeight,float32 , 0x1148);
+			PROPERTY(m_flBackgroundWorldToUV,float32 , 0x114c);
+			PROPERTY(m_Color,GlobalTypes::Color , 0x1150);
+			PROPERTY(m_nJustifyHorizontal,client::PointWorldTextJustifyHorizontal_t , 0x1154);
+			PROPERTY(m_nJustifyVertical,client::PointWorldTextJustifyVertical_t , 0x1158);
+			PROPERTY(m_nReorientMode,client::PointWorldTextReorientMode_t , 0x115c);
+			S2_PAD(0x2D8);
 		};
-		//static_assert(sizeof(CS2::client::C_PointWorldText) == 0x1180, "C_PointWorldText size should be 0x1180");
+		//static_assert(sizeof(CS2::client::C_PointWorldText) == 0x1160, "C_PointWorldText size should be 0x1160");
 	}
 }

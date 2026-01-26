@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CEnvHudHint : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_iszMessage,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
+			PROPERTY(m_iszMessage,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CEnvHudHint) == 0x4F8, "CEnvHudHint size should be 0x4F8");
+		//static_assert(sizeof(CS2::server::CEnvHudHint) == 0x4B0, "CEnvHudHint size should be 0x4B0");
 	}
 }

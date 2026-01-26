@@ -23,16 +23,16 @@ namespace CS2 {
 	namespace server {
 		class CBasePlayerWeapon : public CS2::server::CEconEntity {
 		public:
-			PROPERTY(m_nNextPrimaryAttackTick,entity2::GameTick_t , 0xe50);
-			PROPERTY(m_flNextPrimaryAttackTickRatio,float32 , 0xe54);
-			PROPERTY(m_nNextSecondaryAttackTick,entity2::GameTick_t , 0xe58);
-			PROPERTY(m_flNextSecondaryAttackTickRatio,float32 , 0xe5c);
-			PROPERTY(m_iClip1,int32_t , 0xe60);
-			PROPERTY(m_iClip2,int32_t , 0xe64);
-			PROPERTY_ARRAY(m_pReserveAmmo,int32_t , 2 , 0xe68);
-			PROPERTY(m_OnPlayerUse,entity2::CEntityIOOutput , 0xe70);
-			S2_PAD(0x50);
+			PROPERTY(m_nNextPrimaryAttackTick,entity2::GameTick_t , 0xde0);
+			PROPERTY(m_flNextPrimaryAttackTickRatio,float32 , 0xde4);
+			PROPERTY(m_nNextSecondaryAttackTick,entity2::GameTick_t , 0xde8);
+			PROPERTY(m_flNextSecondaryAttackTickRatio,float32 , 0xdec);
+			PROPERTY(m_iClip1,int32_t , 0xdf0);
+			PROPERTY(m_iClip2,int32_t , 0xdf4);
+			PROPERTY_ARRAY(m_pReserveAmmo,int32_t , 2 , 0xdf8);
+			PROPERTY(m_OnPlayerUse,entity2::CEntityIOOutput , 0xe00);
+			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CBasePlayerWeapon) == 0xEA0, "CBasePlayerWeapon size should be 0xEA0");
+		//static_assert(sizeof(CS2::server::CBasePlayerWeapon) == 0xE20, "CBasePlayerWeapon size should be 0xE20");
 	}
 }

@@ -22,8 +22,8 @@ namespace CS2 {
 		class CPlayerPawnComponent  {
 		public:
 			PROPERTY(__m_pChainEntity,entity2::CNetworkVarChainer , 0x8);
-			S2_PAD(0x40);
+			S2_PAD(0x48);
 		};
-		//static_assert(sizeof(CS2::client::CPlayerPawnComponent) == 0x40, "CPlayerPawnComponent size should be 0x40");
+		//static_assert(sizeof(CS2::client::CPlayerPawnComponent) == 0x48, "CPlayerPawnComponent size should be 0x48");
 	}
 }

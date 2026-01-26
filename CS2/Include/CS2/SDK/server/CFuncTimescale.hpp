@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace server {
 		class CFuncTimescale : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_flDesiredTimescale,float32 , 0x4f0);
-			PROPERTY(m_flAcceleration,float32 , 0x4f4);
-			PROPERTY(m_flMinBlendRate,float32 , 0x4f8);
-			PROPERTY(m_flBlendDeltaMultiplier,float32 , 0x4fc);
-			PROPERTY(m_isStarted,bool , 0x500);
+			PROPERTY(m_flDesiredTimescale,float32 , 0x4a8);
+			PROPERTY(m_flAcceleration,float32 , 0x4ac);
+			PROPERTY(m_flMinBlendRate,float32 , 0x4b0);
+			PROPERTY(m_flBlendDeltaMultiplier,float32 , 0x4b4);
+			PROPERTY(m_isStarted,bool , 0x4b8);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CFuncTimescale) == 0x508, "CFuncTimescale size should be 0x508");
+		//static_assert(sizeof(CS2::server::CFuncTimescale) == 0x4C0, "CFuncTimescale size should be 0x4C0");
 	}
 }

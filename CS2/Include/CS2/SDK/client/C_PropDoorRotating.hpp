@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_PropDoorRotating) == 0x1460, "C_PropDoorRotating size should be 0x1460");
+		//static_assert(sizeof(CS2::client::C_PropDoorRotating) == 0x13E0, "C_PropDoorRotating size should be 0x13E0");
 	}
 }

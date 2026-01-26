@@ -35,6 +35,7 @@ namespace CS2 {
 			PROPERTY(m_bCreateBufferUAV,bool , 0x10);
 			PROPERTY(m_bCreateRawBuffer,bool , 0x11);
 			PROPERTY(m_bCreatePooledBuffer,bool , 0x12);
+			PROPERTY(m_nBufferUsage,uint8_t , 0x13);
 			PROPERTY(m_inputLayoutFields,GlobalTypes::CUtlVector<modellib::RenderInputLayoutField_t>, 0x18);
 			S2_PAD(0x30);
 		};

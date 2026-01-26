@@ -26,15 +26,15 @@ namespace CS2 {
 	namespace server {
 		class CKeepUpright : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_worldGoalAxis,GlobalTypes::Vector , 0x4f8);
-			PROPERTY(m_localTestAxis,GlobalTypes::Vector , 0x504);
-			PROPERTY(m_nameAttach,GlobalTypes::CUtlSymbolLarge* , 0x518);
-			PROPERTY(m_attachedObject,GlobalTypes::CHandle<server::CBaseEntity>, 0x520);
-			PROPERTY(m_angularLimit,float32 , 0x524);
-			PROPERTY(m_bActive,bool , 0x528);
-			PROPERTY(m_bDampAllRotation,bool , 0x529);
+			PROPERTY(m_worldGoalAxis,GlobalTypes::Vector , 0x4b0);
+			PROPERTY(m_localTestAxis,GlobalTypes::Vector , 0x4bc);
+			PROPERTY(m_nameAttach,GlobalTypes::CUtlSymbolLarge* , 0x4d0);
+			PROPERTY(m_attachedObject,GlobalTypes::CHandle<server::CBaseEntity>, 0x4d8);
+			PROPERTY(m_angularLimit,float32 , 0x4dc);
+			PROPERTY(m_bActive,bool , 0x4e0);
+			PROPERTY(m_bDampAllRotation,bool , 0x4e1);
 			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CKeepUpright) == 0x530, "CKeepUpright size should be 0x530");
+		//static_assert(sizeof(CS2::server::CKeepUpright) == 0x4E8, "CKeepUpright size should be 0x4E8");
 	}
 }

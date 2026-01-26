@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_Item_Healthshot) == 0x1F90, "C_Item_Healthshot size should be 0x1F90");
+		//static_assert(sizeof(CS2::client::C_Item_Healthshot) == 0x1F50, "C_Item_Healthshot size should be 0x1F50");
 	}
 }

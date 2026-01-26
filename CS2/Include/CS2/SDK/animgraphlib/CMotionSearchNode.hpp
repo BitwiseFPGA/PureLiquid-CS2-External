@@ -11,7 +11,6 @@
 
 
 #include <SDK/animgraphlib/CVectorQuantizer.hpp>
-#include <SDK/animgraphlib/SampleCode.hpp>
 
 
 
@@ -24,8 +23,8 @@ namespace CS2 {
 		public:
 			PROPERTY(m_children,GlobalTypes::CUtlVector<animgraphlib::CMotionSearchNode*>, 0x0);
 			PROPERTY(m_quantizer,animgraphlib::CVectorQuantizer , 0x18);
-			PROPERTY(m_sampleCodes,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector<animgraphlib::SampleCode>>, 0x38);
-			PROPERTY(m_sampleIndices,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector<int32_t>>, 0x50);
+			PROPERTY(m_sampleCodes,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector>, 0x38);
+			PROPERTY(m_sampleIndices,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector>, 0x50);
 			PROPERTY(m_selectableSamples,GlobalTypes::CUtlVector< int32 >, 0x68);
 			S2_PAD(0x80);
 		};

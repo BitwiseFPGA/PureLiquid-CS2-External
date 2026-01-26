@@ -62,10 +62,9 @@ namespace CS2 {
 			PROPERTY(m_flDiffuseAmount,particleslib::CParticleCollectionRendererFloatInput , 0x1498);
 			PROPERTY(m_flDiffuseClamp,particleslib::CParticleCollectionRendererFloatInput , 0x1608);
 			PROPERTY(m_nLightingControlPoint,int32_t , 0x1778);
-			PROPERTY(m_nSelfIllumPerParticle,particles::ParticleAttributeIndex_t , 0x177c);
-			PROPERTY(m_nOutputBlendMode,particles::ParticleOutputBlendMode_t , 0x1780);
-			PROPERTY(m_bGammaCorrectVertexColors,bool , 0x1784);
-			PROPERTY(m_bSaturateColorPreAlphaBlend,bool , 0x1785);
+			PROPERTY(m_nOutputBlendMode,particles::ParticleOutputBlendMode_t , 0x177c);
+			PROPERTY(m_bGammaCorrectVertexColors,bool , 0x1780);
+			PROPERTY(m_bSaturateColorPreAlphaBlend,bool , 0x1781);
 			PROPERTY(m_flAddSelfAmount,particleslib::CParticleCollectionRendererFloatInput , 0x1788);
 			PROPERTY(m_flDesaturation,particleslib::CParticleCollectionRendererFloatInput , 0x18f8);
 			PROPERTY(m_flOverbrightFactor,particleslib::CParticleCollectionRendererFloatInput , 0x1a68);

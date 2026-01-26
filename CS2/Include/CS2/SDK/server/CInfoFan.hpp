@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CInfoFan : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_fFanForceMaxRadius,float32 , 0x530);
-			PROPERTY(m_fFanForceMinRadius,float32 , 0x534);
-			PROPERTY(m_flCurveDistRange,float32 , 0x538);
-			PROPERTY(m_FanForceCurveString,GlobalTypes::CUtlSymbolLarge* , 0x540);
+			PROPERTY(m_fFanForceMaxRadius,float32 , 0x4e8);
+			PROPERTY(m_fFanForceMinRadius,float32 , 0x4ec);
+			PROPERTY(m_flCurveDistRange,float32 , 0x4f0);
+			PROPERTY(m_FanForceCurveString,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
 			S2_PAD(0x58);
 		};
-		//static_assert(sizeof(CS2::server::CInfoFan) == 0x548, "CInfoFan size should be 0x548");
+		//static_assert(sizeof(CS2::server::CInfoFan) == 0x500, "CInfoFan size should be 0x500");
 	}
 }

@@ -46,13 +46,13 @@ namespace CS2 {
 			PROPERTY(m_iOriginOverride,int32_t , 0x1f8);
 			PROPERTY(m_ubStyleOverride,uint8_t , 0x1fc);
 			PROPERTY(m_unClientFlags,uint8_t , 0x1fd);
-			PROPERTY(m_AttributeList,client::CAttributeList , 0x210);
-			PROPERTY(m_NetworkedDynamicAttributes,client::CAttributeList , 0x288);
-			PROPERTY_ARRAY(m_szCustomName,char , 161 , 0x300);
-			PROPERTY_ARRAY(m_szCustomNameOverride,char , 161 , 0x3a1);
-			PROPERTY(m_bInitializedTags,bool , 0x470);
-			S2_PAD(0x470);
+			PROPERTY(m_AttributeList,client::CAttributeList , 0x208);
+			PROPERTY(m_NetworkedDynamicAttributes,client::CAttributeList , 0x280);
+			PROPERTY_ARRAY(m_szCustomName,char , 161 , 0x2f8);
+			PROPERTY_ARRAY(m_szCustomNameOverride,char , 161 , 0x399);
+			PROPERTY(m_bInitializedTags,bool , 0x468);
+			S2_PAD(0x468);
 		};
-		//static_assert(sizeof(CS2::client::C_EconItemView) == 0x478, "C_EconItemView size should be 0x478");
+		//static_assert(sizeof(CS2::client::C_EconItemView) == 0x470, "C_EconItemView size should be 0x470");
 	}
 }

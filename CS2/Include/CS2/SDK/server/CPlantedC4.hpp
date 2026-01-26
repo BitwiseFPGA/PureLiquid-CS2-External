@@ -30,35 +30,35 @@ namespace CS2 {
 	namespace server {
 		class CPlantedC4 : public CS2::server::CBaseAnimGraph {
 		public:
-			PROPERTY(m_bBombTicking,bool , 0xa98);
-			PROPERTY(m_flC4Blow,entity2::GameTime_t , 0xa9c);
-			PROPERTY(m_nBombSite,int32_t , 0xaa0);
-			PROPERTY(m_nSourceSoundscapeHash,int32_t , 0xaa4);
-			PROPERTY(m_bAbortDetonationBecauseWorldIsFrozen,bool , 0xaa8);
-			PROPERTY(m_AttributeManager,server::CAttributeContainer , 0xab0);
-			PROPERTY(m_OnBombDefused,entity2::CEntityIOOutput , 0xda8);
-			PROPERTY(m_OnBombBeginDefuse,entity2::CEntityIOOutput , 0xdd0);
-			PROPERTY(m_OnBombDefuseAborted,entity2::CEntityIOOutput , 0xdf8);
-			PROPERTY(m_bCannotBeDefused,bool , 0xe20);
-			PROPERTY(m_entitySpottedState,server::EntitySpottedState_t , 0xe28);
-			PROPERTY(m_nSpotRules,int32_t , 0xe40);
-			PROPERTY(m_bTrainingPlacedByPlayer,bool , 0xe44);
-			PROPERTY(m_bHasExploded,bool , 0xe45);
-			PROPERTY(m_flTimerLength,float32 , 0xe48);
-			PROPERTY(m_bBeingDefused,bool , 0xe4c);
-			PROPERTY(m_fLastDefuseTime,entity2::GameTime_t , 0xe54);
-			PROPERTY(m_flDefuseLength,float32 , 0xe5c);
-			PROPERTY(m_flDefuseCountDown,entity2::GameTime_t , 0xe60);
-			PROPERTY(m_bBombDefused,bool , 0xe64);
-			PROPERTY(m_hBombDefuser,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0xe68);
-			PROPERTY(m_iProgressBarTime,int32_t , 0xe6c);
-			PROPERTY(m_bVoiceAlertFired,bool , 0xe70);
-			PROPERTY_ARRAY(m_bVoiceAlertPlayed,bool , 4 , 0xe71);
-			PROPERTY(m_flNextBotBeepTime,entity2::GameTime_t , 0xe78);
-			PROPERTY(m_angCatchUpToPlayerEye,GlobalTypes::QAngle , 0xe80);
-			PROPERTY(m_flLastSpinDetectionTime,entity2::GameTime_t , 0xe8c);
-			S2_PAD(0x400);
+			PROPERTY(m_bBombTicking,bool , 0xa28);
+			PROPERTY(m_flC4Blow,entity2::GameTime_t , 0xa2c);
+			PROPERTY(m_nBombSite,int32_t , 0xa30);
+			PROPERTY(m_nSourceSoundscapeHash,int32_t , 0xa34);
+			PROPERTY(m_bAbortDetonationBecauseWorldIsFrozen,bool , 0xa38);
+			PROPERTY(m_AttributeManager,server::CAttributeContainer , 0xa40);
+			PROPERTY(m_OnBombDefused,entity2::CEntityIOOutput , 0xd38);
+			PROPERTY(m_OnBombBeginDefuse,entity2::CEntityIOOutput , 0xd50);
+			PROPERTY(m_OnBombDefuseAborted,entity2::CEntityIOOutput , 0xd68);
+			PROPERTY(m_bCannotBeDefused,bool , 0xd80);
+			PROPERTY(m_entitySpottedState,server::EntitySpottedState_t , 0xd88);
+			PROPERTY(m_nSpotRules,int32_t , 0xda0);
+			PROPERTY(m_bHasExploded,bool , 0xda4);
+			PROPERTY(m_bBombDefused,bool , 0xda5);
+			PROPERTY(m_bTrainingPlacedByPlayer,bool , 0xda6);
+			PROPERTY(m_flTimerLength,float32 , 0xda8);
+			PROPERTY(m_bBeingDefused,bool , 0xdac);
+			PROPERTY(m_fLastDefuseTime,entity2::GameTime_t , 0xdb4);
+			PROPERTY(m_flDefuseLength,float32 , 0xdbc);
+			PROPERTY(m_flDefuseCountDown,entity2::GameTime_t , 0xdc0);
+			PROPERTY(m_hBombDefuser,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0xdc4);
+			PROPERTY(m_iProgressBarTime,int32_t , 0xdc8);
+			PROPERTY(m_bVoiceAlertFired,bool , 0xdcc);
+			PROPERTY_ARRAY(m_bVoiceAlertPlayed,bool , 4 , 0xdcd);
+			PROPERTY(m_flNextBotBeepTime,entity2::GameTime_t , 0xdd4);
+			PROPERTY(m_angCatchUpToPlayerEye,GlobalTypes::QAngle , 0xddc);
+			PROPERTY(m_flLastSpinDetectionTime,entity2::GameTime_t , 0xde8);
+			S2_PAD(0x3D0);
 		};
-		//static_assert(sizeof(CS2::server::CPlantedC4) == 0xE90, "CPlantedC4 size should be 0xE90");
+		//static_assert(sizeof(CS2::server::CPlantedC4) == 0xDF0, "CPlantedC4 size should be 0xDF0");
 	}
 }

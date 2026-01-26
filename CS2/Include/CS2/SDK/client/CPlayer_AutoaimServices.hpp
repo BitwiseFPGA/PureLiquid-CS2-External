@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CPlayer_AutoaimServices) == 0x40, "CPlayer_AutoaimServices size should be 0x40");
+		//static_assert(sizeof(CS2::client::CPlayer_AutoaimServices) == 0x48, "CPlayer_AutoaimServices size should be 0x48");
 	}
 }

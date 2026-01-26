@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CItemSoda) == 0xA90, "CItemSoda size should be 0xA90");
+		//static_assert(sizeof(CS2::server::CItemSoda) == 0xA20, "CItemSoda size should be 0xA20");
 	}
 }

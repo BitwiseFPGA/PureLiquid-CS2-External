@@ -82,8 +82,8 @@ namespace CS2 {
 		
 		CACHED_PROPERTY(pGlobalScope, CSchemaSystemTypeScope*, 0x108);
 		
-		CACHED_PROPERTY(m_nNumDeclaredClasses, uint16_t, 0x510);
-		CACHED_PROPERTY(m_pDeclaredClassesPtr, uintptr_t, 0x448);
+		CACHED_PROPERTY(m_nNumDeclaredClasses, uint16_t, 0x470);
+		CACHED_PROPERTY(m_pDeclaredClassesPtr, uintptr_t, 0x478);
 
 
 		CSchemaDeclaredClass* GetDeclaredClass(int idx) {
@@ -110,7 +110,7 @@ namespace CS2 {
 		inline static std::vector< CSchemaSystemTypeScope*> m_pScopeArrayCached = {};
 		inline static std::map<std::string, uint32_t> m_OffsetMap = {};
 
-		NESTED_PROPERTY(m_pScopeArray, ::Source2::CUtlVector<CSchemaSystemTypeScope**>, 0x188);
+		NESTED_PROPERTY(m_pScopeArray, ::Source2::CUtlVector<CSchemaSystemTypeScope**>, 0x190);
 
 	public:
 		

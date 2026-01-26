@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CInfoPlayerCounterterrorist) == 0x500, "CInfoPlayerCounterterrorist size should be 0x500");
+		//static_assert(sizeof(CS2::server::CInfoPlayerCounterterrorist) == 0x4B8, "CInfoPlayerCounterterrorist size should be 0x4B8");
 	}
 }

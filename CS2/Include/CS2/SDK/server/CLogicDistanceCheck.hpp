@@ -22,15 +22,15 @@ namespace CS2 {
 	namespace server {
 		class CLogicDistanceCheck : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_iszEntityA,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
-			PROPERTY(m_iszEntityB,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_flZone1Distance,float32 , 0x500);
-			PROPERTY(m_flZone2Distance,float32 , 0x504);
-			PROPERTY(m_InZone1,entity2::CEntityIOOutput , 0x508);
-			PROPERTY(m_InZone2,entity2::CEntityIOOutput , 0x530);
-			PROPERTY(m_InZone3,entity2::CEntityIOOutput , 0x558);
-			S2_PAD(0x90);
+			PROPERTY(m_iszEntityA,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
+			PROPERTY(m_iszEntityB,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_flZone1Distance,float32 , 0x4b8);
+			PROPERTY(m_flZone2Distance,float32 , 0x4bc);
+			PROPERTY(m_InZone1,entity2::CEntityIOOutput , 0x4c0);
+			PROPERTY(m_InZone2,entity2::CEntityIOOutput , 0x4d8);
+			PROPERTY(m_InZone3,entity2::CEntityIOOutput , 0x4f0);
+			S2_PAD(0x60);
 		};
-		//static_assert(sizeof(CS2::server::CLogicDistanceCheck) == 0x580, "CLogicDistanceCheck size should be 0x580");
+		//static_assert(sizeof(CS2::server::CLogicDistanceCheck) == 0x508, "CLogicDistanceCheck size should be 0x508");
 	}
 }

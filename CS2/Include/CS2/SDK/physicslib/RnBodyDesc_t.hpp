@@ -34,13 +34,13 @@ namespace CS2 {
 			PROPERTY(m_flInertiaScaleInv,float32 , 0x78);
 			PROPERTY(m_flLinearDamping,float32 , 0x7c);
 			PROPERTY(m_flAngularDamping,float32 , 0x80);
-			PROPERTY(m_flLinearDrag,float32 , 0x84);
-			PROPERTY(m_flAngularDrag,float32 , 0x88);
-			PROPERTY(m_flLinearBuoyancyDrag,float32 , 0x8c);
-			PROPERTY(m_flAngularBuoyancyDrag,float32 , 0x90);
+			PROPERTY(m_flLinearDragScale,float32 , 0x84);
+			PROPERTY(m_flAngularDragScale,float32 , 0x88);
+			PROPERTY(m_flLinearFluidDragScale,float32 , 0x8c);
+			PROPERTY(m_flAngularFluidDragScale,float32 , 0x90);
 			PROPERTY(m_vLastAwakeForceAccum,GlobalTypes::Vector , 0x94);
 			PROPERTY(m_vLastAwakeTorqueAccum,GlobalTypes::Vector , 0xa0);
-			PROPERTY(m_flBuoyancyFactor,float32 , 0xac);
+			PROPERTY(m_flBuoyancyScale,float32 , 0xac);
 			PROPERTY(m_flGravityScale,float32 , 0xb0);
 			PROPERTY(m_flTimeScale,float32 , 0xb4);
 			PROPERTY(m_nBodyType,int32_t , 0xb8);
@@ -53,7 +53,6 @@ namespace CS2 {
 			PROPERTY(m_bSleeping,bool , 0xc8);
 			PROPERTY(m_bIsContinuousEnabled,bool , 0xc9);
 			PROPERTY(m_bDragEnabled,bool , 0xca);
-			PROPERTY(m_bBuoyancyDragEnabled,bool , 0xcb);
 			PROPERTY(m_vGravity,GlobalTypes::Vector , 0xcc);
 			PROPERTY(m_bSpeculativeEnabled,bool , 0xd8);
 			PROPERTY(m_bHasShadowController,bool , 0xd9);

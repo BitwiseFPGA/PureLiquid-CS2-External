@@ -12,6 +12,7 @@
 
 #include <SDK/animgraphlib/CAnimTagBase.hpp>
 #include <SDK/animgraphlib/FootstepLandedFootSoundType_t.hpp>
+#include <SDK/animgraphlib/FootstepJumpPhase_t.hpp>
 
 
 
@@ -26,8 +27,9 @@ namespace CS2 {
 			PROPERTY(m_OverrideSoundName,GlobalTypes::CUtlString* , 0x60);
 			PROPERTY(m_DebugAnimSourceString,GlobalTypes::CUtlString* , 0x68);
 			PROPERTY(m_BoneName,GlobalTypes::CUtlString* , 0x70);
-			S2_PAD(0x28);
+			PROPERTY(m_footstepJumpPhase,animgraphlib::FootstepJumpPhase_t , 0x78);
+			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::animgraphlib::CFootstepLandedAnimTag) == 0x78, "CFootstepLandedAnimTag size should be 0x78");
+		//static_assert(sizeof(CS2::animgraphlib::CFootstepLandedAnimTag) == 0x80, "CFootstepLandedAnimTag size should be 0x80");
 	}
 }

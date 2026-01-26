@@ -8,6 +8,6 @@ namespace CS2 {
 		// function and DLL is cloned in this process. We can execute remote functions here,
 		// and get the same result as in the remote process!
 		using GetCSceneViewDebugOverlaysFn = CSceneViewDebugOverlays*(__fastcall*)();
-		return reinterpret_cast<GetCSceneViewDebugOverlaysFn>(proc.GetVTableFunction<160>(reinterpret_cast<uintptr_t>(this)))();
+		return nullptr; // reinterpret_cast<GetCSceneViewDebugOverlaysFn>(proc.GetVTableFunction<160>(reinterpret_cast<uintptr_t>(this)))();
 	}
 }

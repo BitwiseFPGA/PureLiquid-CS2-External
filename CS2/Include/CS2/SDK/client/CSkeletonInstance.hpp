@@ -22,14 +22,14 @@ namespace CS2 {
 	namespace client {
 		class CSkeletonInstance : public CS2::client::CGameSceneNode {
 		public:
-			PROPERTY(m_modelState,client::CModelState , 0x190);
-			PROPERTY(m_bIsAnimationEnabled,bool , 0x490);
-			PROPERTY(m_bUseParentRenderBounds,bool , 0x491);
-			PROPERTY(m_bDisableSolidCollisionsForHierarchy,bool , 0x492);
-			PROPERTY(m_materialGroup,GlobalTypes::CUtlStringToken* , 0x494);
-			PROPERTY(m_nHitboxSet,uint8_t , 0x498);
-			S2_PAD(0x3B0);
+			PROPERTY(m_modelState,client::CModelState , 0x160);
+			PROPERTY(m_bIsAnimationEnabled,bool , 0x430);
+			PROPERTY(m_bUseParentRenderBounds,bool , 0x431);
+			PROPERTY(m_bDisableSolidCollisionsForHierarchy,bool , 0x432);
+			PROPERTY(m_materialGroup,GlobalTypes::CUtlStringToken* , 0x434);
+			PROPERTY(m_nHitboxSet,uint8_t , 0x438);
+			S2_PAD(0x380);
 		};
-		//static_assert(sizeof(CS2::client::CSkeletonInstance) == 0x530, "CSkeletonInstance size should be 0x530");
+		//static_assert(sizeof(CS2::client::CSkeletonInstance) == 0x4D0, "CSkeletonInstance size should be 0x4D0");
 	}
 }

@@ -39,14 +39,14 @@ namespace CS2 {
 			PROPERTY(m_ParentMapName,GlobalTypes::PulseSymbol_t , 0x30);
 			PROPERTY(m_ParentXmlName,GlobalTypes::PulseSymbol_t , 0x40);
 			PROPERTY(m_Chunks,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_Chunk*>, 0x50);
-			PROPERTY(m_Cells,assetpreview::CUtlVector<pulse_runtime_lib::CPulseCell_Base*>, 0x68);
+			PROPERTY(m_Cells,server::CUtlVector<pulse_runtime_lib::CPulseCell_Base*>, 0x68);
 			PROPERTY(m_Vars,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_Variable>, 0x80);
 			PROPERTY(m_PublicOutputs,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_PublicOutput>, 0x98);
-			PROPERTY(m_InvokeBindings,assetpreview::CUtlVector<pulse_runtime_lib::CPulse_InvokeBinding*>, 0xb0);
-			PROPERTY(m_CallInfos,assetpreview::CUtlVector<pulse_runtime_lib::CPulse_CallInfo*>, 0xc8);
+			PROPERTY(m_InvokeBindings,server::CUtlVector<pulse_runtime_lib::CPulse_InvokeBinding*>, 0xb0);
+			PROPERTY(m_CallInfos,server::CUtlVector<pulse_runtime_lib::CPulse_CallInfo*>, 0xc8);
 			PROPERTY(m_Constants,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_Constant>, 0xe0);
 			PROPERTY(m_DomainValues,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_DomainValue>, 0xf8);
-			PROPERTY(m_BlackboardReferences,assetpreview::CUtlVector<pulse_runtime_lib::CPulse_BlackboardReference>, 0x110);
+			PROPERTY(m_BlackboardReferences,server::CUtlVector<pulse_runtime_lib::CPulse_BlackboardReference>, 0x110);
 			PROPERTY(m_OutputConnections,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_OutputConnection*>, 0x128);
 			S2_PAD(0x198);
 		};

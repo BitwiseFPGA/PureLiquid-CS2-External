@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CSoundEventSphereEntity : public CS2::server::CSoundEventEntity {
 		public:
-			PROPERTY(m_flRadius,float32 , 0x5b8);
+			PROPERTY(m_flRadius,float32 , 0x558);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CSoundEventSphereEntity) == 0x5C0, "CSoundEventSphereEntity size should be 0x5C0");
+		//static_assert(sizeof(CS2::server::CSoundEventSphereEntity) == 0x560, "CSoundEventSphereEntity size should be 0x560");
 	}
 }

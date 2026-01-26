@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CPushable) == 0x8B0, "CPushable size should be 0x8B0");
+		//static_assert(sizeof(CS2::server::CPushable) == 0x808, "CPushable size should be 0x808");
 	}
 }

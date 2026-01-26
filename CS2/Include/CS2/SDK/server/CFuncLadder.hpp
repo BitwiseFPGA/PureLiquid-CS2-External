@@ -22,20 +22,20 @@ namespace CS2 {
 	namespace server {
 		class CFuncLadder : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_vecLadderDir,GlobalTypes::Vector , 0x7d8);
-			PROPERTY(m_Dismounts,server::CUtlVector<GlobalTypes::CHandle<server::CInfoLadderDismount>>, 0x7e8);
-			PROPERTY(m_vecLocalTop,GlobalTypes::Vector , 0x800);
-			PROPERTY(m_vecPlayerMountPositionTop,GlobalTypes::VectorWS , 0x80c);
-			PROPERTY(m_vecPlayerMountPositionBottom,GlobalTypes::VectorWS , 0x818);
-			PROPERTY(m_flAutoRideSpeed,float32 , 0x824);
-			PROPERTY(m_bDisabled,bool , 0x828);
-			PROPERTY(m_bFakeLadder,bool , 0x829);
-			PROPERTY(m_bHasSlack,bool , 0x82a);
-			PROPERTY(m_surfacePropName,GlobalTypes::CUtlSymbolLarge* , 0x830);
-			PROPERTY(m_OnPlayerGotOnLadder,entity2::CEntityIOOutput , 0x838);
-			PROPERTY(m_OnPlayerGotOffLadder,entity2::CEntityIOOutput , 0x860);
-			S2_PAD(0xB0);
+			PROPERTY(m_vecLadderDir,GlobalTypes::Vector , 0x730);
+			PROPERTY(m_Dismounts,server::CUtlVector<GlobalTypes::CHandle<server::CInfoLadderDismount>>, 0x740);
+			PROPERTY(m_vecLocalTop,GlobalTypes::Vector , 0x758);
+			PROPERTY(m_vecPlayerMountPositionTop,GlobalTypes::VectorWS , 0x764);
+			PROPERTY(m_vecPlayerMountPositionBottom,GlobalTypes::VectorWS , 0x770);
+			PROPERTY(m_flAutoRideSpeed,float32 , 0x77c);
+			PROPERTY(m_bDisabled,bool , 0x780);
+			PROPERTY(m_bFakeLadder,bool , 0x781);
+			PROPERTY(m_bHasSlack,bool , 0x782);
+			PROPERTY(m_surfacePropName,GlobalTypes::CUtlSymbolLarge* , 0x788);
+			PROPERTY(m_OnPlayerGotOnLadder,entity2::CEntityIOOutput , 0x790);
+			PROPERTY(m_OnPlayerGotOffLadder,entity2::CEntityIOOutput , 0x7a8);
+			S2_PAD(0x90);
 		};
-		//static_assert(sizeof(CS2::server::CFuncLadder) == 0x888, "CFuncLadder size should be 0x888");
+		//static_assert(sizeof(CS2::server::CFuncLadder) == 0x7C0, "CFuncLadder size should be 0x7C0");
 	}
 }

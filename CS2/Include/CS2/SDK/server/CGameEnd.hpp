@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CGameEnd) == 0x7E8, "CGameEnd size should be 0x7E8");
+		//static_assert(sizeof(CS2::server::CGameEnd) == 0x740, "CGameEnd size should be 0x740");
 	}
 }

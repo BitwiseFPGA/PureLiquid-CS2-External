@@ -16,6 +16,7 @@
 #include <SDK/client/inv_image_light_sun_t.hpp>
 #include <SDK/client/inv_image_light_fill_t.hpp>
 #include <SDK/client/inv_image_light_barn_t.hpp>
+#include <SDK/client/inv_image_clearcolor_t.hpp>
 
 
 
@@ -33,8 +34,9 @@ namespace CS2 {
 			PROPERTY(lightfill,client::inv_image_light_fill_t , 0x80);
 			PROPERTY(light0,client::inv_image_light_barn_t , 0x9c);
 			PROPERTY(light1,client::inv_image_light_barn_t , 0xbc);
-			S2_PAD(0xE0);
+			PROPERTY(clearcolor,client::inv_image_clearcolor_t , 0xdc);
+			S2_PAD(0xE8);
 		};
-		//static_assert(sizeof(CS2::client::inv_image_data_t) == 0xE0, "inv_image_data_t size should be 0xE0");
+		//static_assert(sizeof(CS2::client::inv_image_data_t) == 0xE8, "inv_image_data_t size should be 0xE8");
 	}
 }

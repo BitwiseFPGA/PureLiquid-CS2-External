@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerHostageReset) == 0x9A8, "CTriggerHostageReset size should be 0x9A8");
+		//static_assert(sizeof(CS2::server::CTriggerHostageReset) == 0x890, "CTriggerHostageReset size should be 0x890");
 	}
 }

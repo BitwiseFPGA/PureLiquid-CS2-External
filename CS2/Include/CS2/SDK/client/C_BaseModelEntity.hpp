@@ -17,7 +17,7 @@
 #include <SDK/client/RenderFx_t.hpp>
 #include <SDK/client/CCollisionProperty.hpp>
 #include <SDK/client/CGlowProperty.hpp>
-#include <SDK/client/DecalMode_t.hpp>
+#include <SDK/client/DecalRtEncoding_t.hpp>
 #include <SDK/client/CNetworkViewOffsetVector.hpp>
 
 
@@ -37,45 +37,46 @@ namespace CS2 {
 	namespace client {
 		class C_BaseModelEntity : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_CRenderComponent,client::CRenderComponent* , 0xae0);
-			PROPERTY(m_CHitboxComponent,client::CHitboxComponent , 0xae8);
-			PROPERTY(m_pDestructiblePartsSystemComponent,client::CDestructiblePartsComponent* , 0xb00);
-			PROPERTY(m_LastHitGroup,client::HitGroup_t , 0xb08);
-			PROPERTY(m_sLastDamageSourceName,GlobalTypes::CGlobalSymbol , 0xb10);
-			PROPERTY(m_vLastDamagePosition,GlobalTypes::VectorWS , 0xb18);
-			PROPERTY(m_bInitModelEffects,bool , 0xb40);
-			PROPERTY(m_bIsStaticProp,bool , 0xb41);
-			PROPERTY(m_nLastAddDecal,int32_t , 0xb44);
-			PROPERTY(m_nDecalsAdded,int32_t , 0xb48);
-			PROPERTY(m_iOldHealth,int32_t , 0xb4c);
-			PROPERTY(m_nRenderMode,client::RenderMode_t , 0xb50);
-			PROPERTY(m_nRenderFX,client::RenderFx_t , 0xb51);
-			PROPERTY(m_bAllowFadeInView,bool , 0xb52);
-			PROPERTY(m_clrRender,GlobalTypes::Color , 0xb70);
-			PROPERTY(m_vecRenderAttributes,GlobalTypes::C_UtlVectorEmbeddedNetworkVar<client::EntityRenderAttribute_t>, 0xb78);
-			PROPERTY(m_bRenderToCubemaps,bool , 0xbf8);
-			PROPERTY(m_bNoInterpolate,bool , 0xbf9);
-			PROPERTY(m_Collision,client::CCollisionProperty , 0xc00);
-			PROPERTY(m_Glow,client::CGlowProperty , 0xcb0);
-			PROPERTY(m_flGlowBackfaceMult,float32 , 0xd08);
-			PROPERTY(m_fadeMinDist,float32 , 0xd0c);
-			PROPERTY(m_fadeMaxDist,float32 , 0xd10);
-			PROPERTY(m_flFadeScale,float32 , 0xd14);
-			PROPERTY(m_flShadowStrength,float32 , 0xd18);
-			PROPERTY(m_nObjectCulling,uint8_t , 0xd1c);
-			PROPERTY(m_nAddDecal,int32_t , 0xd20);
-			PROPERTY(m_vDecalPosition,GlobalTypes::Vector , 0xd24);
-			PROPERTY(m_vDecalForwardAxis,GlobalTypes::Vector , 0xd30);
-			PROPERTY(m_nDecalMode,client::DecalMode_t , 0xd3c);
-			PROPERTY(m_nRequiredDecalMode,client::DecalMode_t , 0xd3d);
-			PROPERTY(m_ConfigEntitiesToPropagateMaterialDecalsTo,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_BaseModelEntity>>, 0xd40);
-			PROPERTY(m_vecViewOffset,GlobalTypes::Vector, 0xd80);
-			PROPERTY(m_pClientAlphaProperty,client::CClientAlphaProperty* , 0xe60);
-			PROPERTY(m_ClientOverrideTint,GlobalTypes::Color , 0xe68);
-			PROPERTY(m_bUseClientOverrideTint,bool , 0xe6c);
-			PROPERTY_ARRAY(m_bvDisabledHitGroups,uint32_t , 1 , 0xea8);
-			S2_PAD(0x8B8);
+			PROPERTY(m_CRenderComponent,client::CRenderComponent* , 0xaf0);
+			PROPERTY(m_CHitboxComponent,client::CHitboxComponent , 0xaf8);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed0,client::HitGroup_t , 0xb10);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed1,client::HitGroup_t , 0xb14);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed2,client::HitGroup_t , 0xb18);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed3,client::HitGroup_t , 0xb1c);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed4,client::HitGroup_t , 0xb20);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed0_PartIndex,int32_t , 0xb24);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed1_PartIndex,int32_t , 0xb28);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed2_PartIndex,int32_t , 0xb2c);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed3_PartIndex,int32_t , 0xb30);
+			PROPERTY(m_nDestructiblePartInitialStateDestructed4_PartIndex,int32_t , 0xb34);
+			PROPERTY(m_pDestructiblePartsSystemComponent,client::CDestructiblePartsComponent* , 0xb38);
+			PROPERTY(m_bInitModelEffects,bool , 0xb58);
+			PROPERTY(m_bDoingModelEffects,bool , 0xb59);
+			PROPERTY(m_bIsStaticProp,bool , 0xb5a);
+			PROPERTY(m_iOldHealth,int32_t , 0xb5c);
+			PROPERTY(m_nRenderMode,client::RenderMode_t , 0xb60);
+			PROPERTY(m_nRenderFX,client::RenderFx_t , 0xb61);
+			PROPERTY(m_bAllowFadeInView,bool , 0xb62);
+			PROPERTY(m_clrRender,GlobalTypes::Color , 0xb80);
+			PROPERTY(m_vecRenderAttributes,GlobalTypes::C_UtlVectorEmbeddedNetworkVar<client::EntityRenderAttribute_t>, 0xb88);
+			PROPERTY(m_bRenderToCubemaps,bool , 0xc08);
+			PROPERTY(m_bNoInterpolate,bool , 0xc09);
+			PROPERTY(m_Collision,client::CCollisionProperty , 0xc10);
+			PROPERTY(m_Glow,client::CGlowProperty , 0xcc0);
+			PROPERTY(m_flGlowBackfaceMult,float32 , 0xd18);
+			PROPERTY(m_fadeMinDist,float32 , 0xd1c);
+			PROPERTY(m_fadeMaxDist,float32 , 0xd20);
+			PROPERTY(m_flFadeScale,float32 , 0xd24);
+			PROPERTY(m_flShadowStrength,float32 , 0xd28);
+			PROPERTY(m_nObjectCulling,uint8_t , 0xd2c);
+			PROPERTY(m_nRequiredDecalRtEncoding,client::DecalRtEncoding_t , 0xd2d);
+			PROPERTY(m_vecViewOffset,GlobalTypes::Vector, 0xd58);
+			PROPERTY(m_pClientAlphaProperty,client::CClientAlphaProperty* , 0xe38);
+			PROPERTY(m_ClientOverrideTint,GlobalTypes::Color , 0xe40);
+			PROPERTY(m_bUseClientOverrideTint,bool , 0xe44);
+			PROPERTY_ARRAY(m_bvDisabledHitGroups,uint32_t , 1 , 0xe80);
+			S2_PAD(0x880);
 		};
-		//static_assert(sizeof(CS2::client::C_BaseModelEntity) == 0xEB0, "C_BaseModelEntity size should be 0xEB0");
+		//static_assert(sizeof(CS2::client::C_BaseModelEntity) == 0xE88, "C_BaseModelEntity size should be 0xE88");
 	}
 }

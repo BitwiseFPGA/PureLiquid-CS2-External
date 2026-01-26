@@ -38,7 +38,6 @@ namespace CS2 {
 			PROPERTY(m_bBoneMergeFlex,bool , 0x8c);
 			PROPERTY(m_bUserSpecifiedColor,bool , 0x8d);
 			PROPERTY(m_bUserSpecifiedMaterialGroup,bool , 0x8e);
-			PROPERTY(m_bAcceptParentMaterialDrivenDecals,bool , 0x8f);
 			PROPERTY(m_BodygroupOnOtherModels,GlobalTypes::CUtlString* , 0x90);
 			PROPERTY(m_MaterialGroupOnOtherModels,GlobalTypes::CUtlString* , 0x98);
 			S2_PAD(0xA0);

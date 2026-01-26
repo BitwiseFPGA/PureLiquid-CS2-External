@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_SoundEventEntityAlias_snd_event_point) == 0x6C0, "C_SoundEventEntityAlias_snd_event_point size should be 0x6C0");
+		//static_assert(sizeof(CS2::client::C_SoundEventEntityAlias_snd_event_point) == 0x6B8, "C_SoundEventEntityAlias_snd_event_point size should be 0x6B8");
 	}
 }

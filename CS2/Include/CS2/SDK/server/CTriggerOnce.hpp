@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerOnce) == 0x9D0, "CTriggerOnce size should be 0x9D0");
+		//static_assert(sizeof(CS2::server::CTriggerOnce) == 0x8A8, "CTriggerOnce size should be 0x8A8");
 	}
 }

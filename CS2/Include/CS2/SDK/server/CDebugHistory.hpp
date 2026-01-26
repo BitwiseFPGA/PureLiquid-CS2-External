@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CDebugHistory : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_nNpcEvents,int32_t , 0x3e8530);
+			PROPERTY(m_nNpcEvents,int32_t , 0x3e84e8);
 			S2_PAD(0x3E8FE8);
 		};
-		//static_assert(sizeof(CS2::server::CDebugHistory) == 0x3E94D8, "CDebugHistory size should be 0x3E94D8");
+		//static_assert(sizeof(CS2::server::CDebugHistory) == 0x3E9490, "CDebugHistory size should be 0x3E9490");
 	}
 }

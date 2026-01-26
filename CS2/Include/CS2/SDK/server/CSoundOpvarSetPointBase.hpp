@@ -21,17 +21,19 @@ namespace CS2 {
 	namespace server {
 		class CSoundOpvarSetPointBase : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x4f0);
-			PROPERTY(m_hSource,GlobalTypes::CEntityHandle , 0x4f4);
-			PROPERTY(m_iszSourceEntityName,GlobalTypes::CUtlSymbolLarge* , 0x510);
-			PROPERTY(m_vLastPosition,GlobalTypes::Vector , 0x568);
-			PROPERTY(m_iszStackName,GlobalTypes::CUtlSymbolLarge* , 0x578);
-			PROPERTY(m_iszOperatorName,GlobalTypes::CUtlSymbolLarge* , 0x580);
-			PROPERTY(m_iszOpvarName,GlobalTypes::CUtlSymbolLarge* , 0x588);
-			PROPERTY(m_iOpvarIndex,int32_t , 0x590);
-			PROPERTY(m_bUseAutoCompare,bool , 0x594);
+			PROPERTY(m_bDisabled,bool , 0x4a8);
+			PROPERTY(m_hSource,GlobalTypes::CEntityHandle , 0x4ac);
+			PROPERTY(m_iszSourceEntityName,GlobalTypes::CUtlSymbolLarge* , 0x4c8);
+			PROPERTY(m_vLastPosition,GlobalTypes::Vector , 0x520);
+			PROPERTY(m_flRefreshTime,float32 , 0x52c);
+			PROPERTY(m_iszStackName,GlobalTypes::CUtlSymbolLarge* , 0x530);
+			PROPERTY(m_iszOperatorName,GlobalTypes::CUtlSymbolLarge* , 0x538);
+			PROPERTY(m_iszOpvarName,GlobalTypes::CUtlSymbolLarge* , 0x540);
+			PROPERTY(m_iOpvarIndex,int32_t , 0x548);
+			PROPERTY(m_bUseAutoCompare,bool , 0x54c);
+			PROPERTY(m_bFastRefresh,bool , 0x54d);
 			S2_PAD(0xA8);
 		};
-		//static_assert(sizeof(CS2::server::CSoundOpvarSetPointBase) == 0x598, "CSoundOpvarSetPointBase size should be 0x598");
+		//static_assert(sizeof(CS2::server::CSoundOpvarSetPointBase) == 0x550, "CSoundOpvarSetPointBase size should be 0x550");
 	}
 }

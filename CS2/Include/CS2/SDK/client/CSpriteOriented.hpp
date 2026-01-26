@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CSpriteOriented) == 0xF28, "CSpriteOriented size should be 0xF28");
+		//static_assert(sizeof(CS2::client::CSpriteOriented) == 0xF00, "CSpriteOriented size should be 0xF00");
 	}
 }

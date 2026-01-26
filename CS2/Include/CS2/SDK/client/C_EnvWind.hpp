@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace client {
 		class C_EnvWind : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_EnvWindShared,client::C_EnvWindShared , 0x5f8);
+			PROPERTY(m_EnvWindShared,client::C_EnvWindShared , 0x608);
 			S2_PAD(0xF8);
 		};
-		//static_assert(sizeof(CS2::client::C_EnvWind) == 0x6F0, "C_EnvWind size should be 0x6F0");
+		//static_assert(sizeof(CS2::client::C_EnvWind) == 0x700, "C_EnvWind size should be 0x700");
 	}
 }

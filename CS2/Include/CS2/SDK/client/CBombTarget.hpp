@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace client {
 		class CBombTarget : public CS2::client::C_BaseTrigger {
 		public:
-			PROPERTY(m_bBombPlantedHere,bool , 0xff0);
+			PROPERTY(m_bBombPlantedHere,bool , 0xf58);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::CBombTarget) == 0xFF8, "CBombTarget size should be 0xFF8");
+		//static_assert(sizeof(CS2::client::CBombTarget) == 0xF60, "CBombTarget size should be 0xF60");
 	}
 }

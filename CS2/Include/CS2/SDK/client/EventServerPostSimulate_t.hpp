@@ -21,8 +21,9 @@ namespace CS2 {
 	namespace client {
 		class EventServerPostSimulate_t : public CS2::client::EventSimulate_t {
 		public:
-			S2_PAD(0x0);
+			PROPERTY(m_bLastTickBeforeClientUpdate,bool , 0x30);
+			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::EventServerPostSimulate_t) == 0x30, "EventServerPostSimulate_t size should be 0x30");
+		//static_assert(sizeof(CS2::client::EventServerPostSimulate_t) == 0x38, "EventServerPostSimulate_t size should be 0x38");
 	}
 }

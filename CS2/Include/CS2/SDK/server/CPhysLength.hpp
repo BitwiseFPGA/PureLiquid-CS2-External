@@ -21,14 +21,13 @@ namespace CS2 {
 	namespace server {
 		class CPhysLength : public CS2::server::CPhysConstraint {
 		public:
-			PROPERTY_ARRAY(m_offset,GlobalTypes::Vector , 2 , 0x560);
-			PROPERTY(m_vecAttach,GlobalTypes::VectorWS , 0x578);
-			PROPERTY(m_addLength,float32 , 0x584);
-			PROPERTY(m_minLength,float32 , 0x588);
-			PROPERTY(m_totalLength,float32 , 0x58c);
-			PROPERTY(m_bEnableCollision,bool , 0x590);
-			S2_PAD(0x38);
+			PROPERTY_ARRAY(m_offset,GlobalTypes::Vector , 2 , 0x508);
+			PROPERTY(m_vecAttach,GlobalTypes::VectorWS , 0x520);
+			PROPERTY(m_addLength,float32 , 0x52c);
+			PROPERTY(m_minLength,float32 , 0x530);
+			PROPERTY(m_totalLength,float32 , 0x534);
+			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CPhysLength) == 0x598, "CPhysLength size should be 0x598");
+		//static_assert(sizeof(CS2::server::CPhysLength) == 0x538, "CPhysLength size should be 0x538");
 	}
 }

@@ -22,15 +22,15 @@ namespace CS2 {
 	namespace server {
 		class CFishPool : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_fishCount,int32_t , 0x500);
-			PROPERTY(m_maxRange,float32 , 0x504);
-			PROPERTY(m_swimDepth,float32 , 0x508);
-			PROPERTY(m_waterLevel,float32 , 0x50c);
-			PROPERTY(m_isDormant,bool , 0x510);
-			PROPERTY(m_fishes,server::CUtlVector<GlobalTypes::CHandle<server::CFish>>, 0x518);
-			PROPERTY(m_visTimer,server::CountdownTimer , 0x530);
+			PROPERTY(m_fishCount,int32_t , 0x4b8);
+			PROPERTY(m_maxRange,float32 , 0x4bc);
+			PROPERTY(m_swimDepth,float32 , 0x4c0);
+			PROPERTY(m_waterLevel,float32 , 0x4c4);
+			PROPERTY(m_isDormant,bool , 0x4c8);
+			PROPERTY(m_fishes,server::CUtlVector<GlobalTypes::CHandle<server::CFish>>, 0x4d0);
+			PROPERTY(m_visTimer,server::CountdownTimer , 0x4e8);
 			S2_PAD(0x58);
 		};
-		//static_assert(sizeof(CS2::server::CFishPool) == 0x548, "CFishPool size should be 0x548");
+		//static_assert(sizeof(CS2::server::CFishPool) == 0x500, "CFishPool size should be 0x500");
 	}
 }

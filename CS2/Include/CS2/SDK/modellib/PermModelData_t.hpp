@@ -17,6 +17,7 @@
 #include <SDK/resourcesystem/InfoForResourceTypeCSequenceGroupData.hpp>
 #include <SDK/modellib/ModelSkeletonData_t.hpp>
 #include <SDK/resourcesystem/InfoForResourceTypeCModel.hpp>
+#include <SDK/resourcesystem/InfoForResourceTypeCNmSkeleton.hpp>
 
 
 
@@ -27,6 +28,7 @@ namespace CS2 {
 		class ModelBoneFlexDriver_t;
 		class CModelConfigList;
 		class PermModelDataAnimatedMaterialAttribute_t;
+		class ModelAnimGraph2Ref_t;
 	}
 }
 
@@ -59,8 +61,10 @@ namespace CS2 {
 			PROPERTY(m_BodyGroupsHiddenInTools,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x280);
 			PROPERTY(m_refAnimIncludeModels,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>>, 0x298);
 			PROPERTY(m_AnimatedMaterialAttributes,GlobalTypes::CUtlVector<modellib::PermModelDataAnimatedMaterialAttribute_t>, 0x2b0);
-			S2_PAD(0x2C8);
+			PROPERTY(m_animGraph2Refs,GlobalTypes::CUtlVector<modellib::ModelAnimGraph2Ref_t>, 0x2c8);
+			PROPERTY(m_vecNmSkeletonRefs,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCNmSkeleton>>, 0x2e0);
+			S2_PAD(0x2F8);
 		};
-		//static_assert(sizeof(CS2::modellib::PermModelData_t) == 0x2C8, "PermModelData_t size should be 0x2C8");
+		//static_assert(sizeof(CS2::modellib::PermModelData_t) == 0x2F8, "PermModelData_t size should be 0x2F8");
 	}
 }

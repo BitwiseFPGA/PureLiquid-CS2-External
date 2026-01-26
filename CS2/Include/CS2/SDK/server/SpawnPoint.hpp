@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class SpawnPoint : public CS2::server::CServerOnlyPointEntity {
 		public:
-			PROPERTY(m_iPriority,int32_t , 0x4f0);
-			PROPERTY(m_bEnabled,bool , 0x4f4);
-			PROPERTY(m_nType,int32_t , 0x4f8);
+			PROPERTY(m_iPriority,int32_t , 0x4a8);
+			PROPERTY(m_bEnabled,bool , 0x4ac);
+			PROPERTY(m_nType,int32_t , 0x4b0);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::SpawnPoint) == 0x500, "SpawnPoint size should be 0x500");
+		//static_assert(sizeof(CS2::server::SpawnPoint) == 0x4B8, "SpawnPoint size should be 0x4B8");
 	}
 }

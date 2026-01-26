@@ -21,14 +21,14 @@ namespace CS2 {
 	namespace server {
 		class CPhysBallSocket : public CS2::server::CPhysConstraint {
 		public:
-			PROPERTY(m_flJointFriction,float32 , 0x560);
-			PROPERTY(m_bEnableSwingLimit,bool , 0x564);
-			PROPERTY(m_flSwingLimit,float32 , 0x568);
-			PROPERTY(m_bEnableTwistLimit,bool , 0x56c);
-			PROPERTY(m_flMinTwistAngle,float32 , 0x570);
-			PROPERTY(m_flMaxTwistAngle,float32 , 0x574);
+			PROPERTY(m_flJointFriction,float32 , 0x508);
+			PROPERTY(m_bEnableSwingLimit,bool , 0x50c);
+			PROPERTY(m_flSwingLimit,float32 , 0x510);
+			PROPERTY(m_bEnableTwistLimit,bool , 0x514);
+			PROPERTY(m_flMinTwistAngle,float32 , 0x518);
+			PROPERTY(m_flMaxTwistAngle,float32 , 0x51c);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CPhysBallSocket) == 0x578, "CPhysBallSocket size should be 0x578");
+		//static_assert(sizeof(CS2::server::CPhysBallSocket) == 0x520, "CPhysBallSocket size should be 0x520");
 	}
 }

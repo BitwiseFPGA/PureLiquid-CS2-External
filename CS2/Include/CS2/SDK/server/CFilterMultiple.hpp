@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace server {
 		class CFilterMultiple : public CS2::server::CBaseFilter {
 		public:
-			PROPERTY(m_nFilterType,client::filter_t , 0x548);
-			PROPERTY_ARRAY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 10 , 0x550);
-			PROPERTY_ARRAY(m_hFilter,server::CHandle< CBaseEntity >, 10 , 0x5a0);
+			PROPERTY(m_nFilterType,client::filter_t , 0x4e0);
+			PROPERTY_ARRAY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 10 , 0x4e8);
+			PROPERTY_ARRAY(m_hFilter,server::CHandle< CBaseEntity >, 10 , 0x538);
 			S2_PAD(0x80);
 		};
-		//static_assert(sizeof(CS2::server::CFilterMultiple) == 0x5C8, "CFilterMultiple size should be 0x5C8");
+		//static_assert(sizeof(CS2::server::CFilterMultiple) == 0x560, "CFilterMultiple size should be 0x560");
 	}
 }

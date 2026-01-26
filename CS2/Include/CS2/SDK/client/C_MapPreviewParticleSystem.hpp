@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_MapPreviewParticleSystem) == 0x1460, "C_MapPreviewParticleSystem size should be 0x1460");
+		//static_assert(sizeof(CS2::client::C_MapPreviewParticleSystem) == 0x1438, "C_MapPreviewParticleSystem size should be 0x1438");
 	}
 }

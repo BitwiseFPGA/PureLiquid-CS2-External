@@ -24,36 +24,36 @@ namespace CS2 {
 	namespace server {
 		class CBaseDoor : public CS2::server::CBaseToggle {
 		public:
-			PROPERTY(m_angMoveEntitySpace,GlobalTypes::QAngle , 0x868);
-			PROPERTY(m_vecMoveDirParentSpace,GlobalTypes::Vector , 0x874);
-			PROPERTY(m_ls,server::locksound_t , 0x880);
-			PROPERTY(m_bForceClosed,bool , 0x8a0);
-			PROPERTY(m_bDoorGroup,bool , 0x8a1);
-			PROPERTY(m_bLocked,bool , 0x8a2);
-			PROPERTY(m_bIgnoreDebris,bool , 0x8a3);
-			PROPERTY(m_bNoNPCs,bool , 0x8a4);
-			PROPERTY(m_eSpawnPosition,server::FuncDoorSpawnPos_t , 0x8a8);
-			PROPERTY(m_flBlockDamage,float32 , 0x8ac);
-			PROPERTY(m_NoiseMoving,GlobalTypes::CUtlSymbolLarge* , 0x8b0);
-			PROPERTY(m_NoiseArrived,GlobalTypes::CUtlSymbolLarge* , 0x8b8);
-			PROPERTY(m_NoiseMovingClosed,GlobalTypes::CUtlSymbolLarge* , 0x8c0);
-			PROPERTY(m_NoiseArrivedClosed,GlobalTypes::CUtlSymbolLarge* , 0x8c8);
-			PROPERTY(m_ChainTarget,GlobalTypes::CUtlSymbolLarge* , 0x8d0);
-			PROPERTY(m_OnBlockedClosing,entity2::CEntityIOOutput , 0x8d8);
-			PROPERTY(m_OnBlockedOpening,entity2::CEntityIOOutput , 0x900);
-			PROPERTY(m_OnUnblockedClosing,entity2::CEntityIOOutput , 0x928);
-			PROPERTY(m_OnUnblockedOpening,entity2::CEntityIOOutput , 0x950);
-			PROPERTY(m_OnFullyClosed,entity2::CEntityIOOutput , 0x978);
-			PROPERTY(m_OnFullyOpen,entity2::CEntityIOOutput , 0x9a0);
-			PROPERTY(m_OnClose,entity2::CEntityIOOutput , 0x9c8);
-			PROPERTY(m_OnOpen,entity2::CEntityIOOutput , 0x9f0);
-			PROPERTY(m_OnLockedUse,entity2::CEntityIOOutput , 0xa18);
-			PROPERTY(m_bLoopMoveSound,bool , 0xa40);
-			PROPERTY(m_bCreateNavObstacle,bool , 0xa60);
-			PROPERTY(m_isChaining,bool , 0xa61);
-			PROPERTY(m_bIsUsable,bool , 0xa62);
-			S2_PAD(0x210);
+			PROPERTY(m_angMoveEntitySpace,GlobalTypes::QAngle , 0x7c0);
+			PROPERTY(m_vecMoveDirParentSpace,GlobalTypes::Vector , 0x7cc);
+			PROPERTY(m_ls,server::locksound_t , 0x7d8);
+			PROPERTY(m_bForceClosed,bool , 0x7f8);
+			PROPERTY(m_bDoorGroup,bool , 0x7f9);
+			PROPERTY(m_bLocked,bool , 0x7fa);
+			PROPERTY(m_bIgnoreDebris,bool , 0x7fb);
+			PROPERTY(m_bNoNPCs,bool , 0x7fc);
+			PROPERTY(m_eSpawnPosition,server::FuncDoorSpawnPos_t , 0x800);
+			PROPERTY(m_flBlockDamage,float32 , 0x804);
+			PROPERTY(m_NoiseMoving,GlobalTypes::CUtlSymbolLarge* , 0x808);
+			PROPERTY(m_NoiseArrived,GlobalTypes::CUtlSymbolLarge* , 0x810);
+			PROPERTY(m_NoiseMovingClosed,GlobalTypes::CUtlSymbolLarge* , 0x818);
+			PROPERTY(m_NoiseArrivedClosed,GlobalTypes::CUtlSymbolLarge* , 0x820);
+			PROPERTY(m_ChainTarget,GlobalTypes::CUtlSymbolLarge* , 0x828);
+			PROPERTY(m_OnBlockedClosing,entity2::CEntityIOOutput , 0x830);
+			PROPERTY(m_OnBlockedOpening,entity2::CEntityIOOutput , 0x848);
+			PROPERTY(m_OnUnblockedClosing,entity2::CEntityIOOutput , 0x860);
+			PROPERTY(m_OnUnblockedOpening,entity2::CEntityIOOutput , 0x878);
+			PROPERTY(m_OnFullyClosed,entity2::CEntityIOOutput , 0x890);
+			PROPERTY(m_OnFullyOpen,entity2::CEntityIOOutput , 0x8a8);
+			PROPERTY(m_OnClose,entity2::CEntityIOOutput , 0x8c0);
+			PROPERTY(m_OnOpen,entity2::CEntityIOOutput , 0x8d8);
+			PROPERTY(m_OnLockedUse,entity2::CEntityIOOutput , 0x8f0);
+			PROPERTY(m_bLoopMoveSound,bool , 0x908);
+			PROPERTY(m_bCreateNavObstacle,bool , 0x928);
+			PROPERTY(m_isChaining,bool , 0x929);
+			PROPERTY(m_bIsUsable,bool , 0x92a);
+			S2_PAD(0x180);
 		};
-		//static_assert(sizeof(CS2::server::CBaseDoor) == 0xA68, "CBaseDoor size should be 0xA68");
+		//static_assert(sizeof(CS2::server::CBaseDoor) == 0x930, "CBaseDoor size should be 0x930");
 	}
 }

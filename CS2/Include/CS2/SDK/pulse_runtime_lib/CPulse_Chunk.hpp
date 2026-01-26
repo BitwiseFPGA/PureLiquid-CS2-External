@@ -17,7 +17,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class PGDInstruction_t;
 		class CPulse_RegisterInfo;
-		class PulseDocNodeID_t;
+		class CPulse_InstructionDebug;
 	}
 }
 
@@ -29,7 +29,7 @@ namespace CS2 {
 		public:
 			PROPERTY(m_Instructions,GlobalTypes::CUtlLeanVector<pulse_runtime_lib::PGDInstruction_t>, 0x0);
 			PROPERTY(m_Registers,GlobalTypes::CUtlLeanVector<pulse_runtime_lib::CPulse_RegisterInfo>, 0x10);
-			PROPERTY(m_InstructionEditorIDs,GlobalTypes::CUtlLeanVector<pulse_runtime_lib::PulseDocNodeID_t>, 0x20);
+			PROPERTY(m_InstructionDebugInfos,GlobalTypes::CUtlLeanVector<pulse_runtime_lib::CPulse_InstructionDebug>, 0x20);
 			S2_PAD(0x58);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulse_Chunk) == 0x58, "CPulse_Chunk size should be 0x58");

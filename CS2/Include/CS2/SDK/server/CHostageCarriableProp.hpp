@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CHostageCarriableProp) == 0xA90, "CHostageCarriableProp size should be 0xA90");
+		//static_assert(sizeof(CS2::server::CHostageCarriableProp) == 0xA20, "CHostageCarriableProp size should be 0xA20");
 	}
 }

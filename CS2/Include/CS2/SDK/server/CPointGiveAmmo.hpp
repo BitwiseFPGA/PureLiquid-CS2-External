@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace server {
 		class CPointGiveAmmo : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_pActivator,GlobalTypes::CHandle<server::CBaseEntity>, 0x4f0);
+			PROPERTY(m_pActivator,GlobalTypes::CHandle<server::CBaseEntity>, 0x4a8);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CPointGiveAmmo) == 0x4F8, "CPointGiveAmmo size should be 0x4F8");
+		//static_assert(sizeof(CS2::server::CPointGiveAmmo) == 0x4B0, "CPointGiveAmmo size should be 0x4B0");
 	}
 }

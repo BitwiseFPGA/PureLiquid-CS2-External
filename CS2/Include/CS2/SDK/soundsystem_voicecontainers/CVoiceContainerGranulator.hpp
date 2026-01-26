@@ -10,7 +10,7 @@
 #endif
 
 
-#include <SDK/soundsystem_voicecontainers/CVoiceContainerBase.hpp>
+#include <SDK/soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.hpp>
 
 
 
@@ -24,7 +24,7 @@ namespace CS2 {
 using namespace GlobalTypes;
 namespace CS2 {
 	namespace soundsystem_voicecontainers {
-		class CVoiceContainerGranulator : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
+		class CVoiceContainerGranulator : public CS2::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator {
 		public:
 			PROPERTY(m_flGrainLength,float32 , 0xb8);
 			PROPERTY(m_flGrainCrossfadeAmount,float32 , 0xbc);

@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_TonemapController2Alias_env_tonemap_controller2) == 0x610, "C_TonemapController2Alias_env_tonemap_controller2 size should be 0x610");
+		//static_assert(sizeof(CS2::client::C_TonemapController2Alias_env_tonemap_controller2) == 0x620, "C_TonemapController2Alias_env_tonemap_controller2 size should be 0x620");
 	}
 }

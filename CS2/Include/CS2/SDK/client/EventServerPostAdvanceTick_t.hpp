@@ -21,8 +21,9 @@ namespace CS2 {
 	namespace client {
 		class EventServerPostAdvanceTick_t : public CS2::client::EventPostAdvanceTick_t {
 		public:
-			S2_PAD(0x0);
+			PROPERTY(m_bLastTickBeforeClientUpdate,bool , 0x40);
+			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::EventServerPostAdvanceTick_t) == 0x40, "EventServerPostAdvanceTick_t size should be 0x40");
+		//static_assert(sizeof(CS2::client::EventServerPostAdvanceTick_t) == 0x48, "EventServerPostAdvanceTick_t size should be 0x48");
 	}
 }

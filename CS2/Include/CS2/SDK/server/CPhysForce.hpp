@@ -27,14 +27,14 @@ namespace CS2 {
 	namespace server {
 		class CPhysForce : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_nameAttach,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_force,float32 , 0x500);
-			PROPERTY(m_forceTime,float32 , 0x504);
-			PROPERTY(m_attachedObject,GlobalTypes::CHandle<server::CBaseEntity>, 0x508);
-			PROPERTY(m_wasRestored,bool , 0x50c);
-			PROPERTY(m_integrator,server::CConstantForceController , 0x510);
+			PROPERTY(m_nameAttach,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_force,float32 , 0x4b8);
+			PROPERTY(m_forceTime,float32 , 0x4bc);
+			PROPERTY(m_attachedObject,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c0);
+			PROPERTY(m_wasRestored,bool , 0x4c4);
+			PROPERTY(m_integrator,server::CConstantForceController , 0x4c8);
 			S2_PAD(0x60);
 		};
-		//static_assert(sizeof(CS2::server::CPhysForce) == 0x550, "CPhysForce size should be 0x550");
+		//static_assert(sizeof(CS2::server::CPhysForce) == 0x508, "CPhysForce size should be 0x508");
 	}
 }

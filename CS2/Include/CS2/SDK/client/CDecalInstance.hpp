@@ -12,7 +12,7 @@
 
 #include <SDK/client/DecalFlags_t.hpp>
 #include <SDK/entity2/GameTime_t.hpp>
-#include <SDK/client/DecalMode_t.hpp>
+#include <SDK/client/DecalRtEncoding_t.hpp>
 
 
 
@@ -45,19 +45,21 @@ namespace CS2 {
 			PROPERTY(m_flWidth,float32 , 0x4c);
 			PROPERTY(m_flHeight,float32 , 0x50);
 			PROPERTY(m_flDepth,float32 , 0x54);
-			PROPERTY(m_flAnimationScale,float32 , 0x58);
-			PROPERTY(m_flAnimationStartTime,float32 , 0x5c);
-			PROPERTY(m_flPlaceTime,entity2::GameTime_t , 0x60);
-			PROPERTY(m_flFadeStartTime,float32 , 0x64);
-			PROPERTY(m_flFadeDuration,float32 , 0x68);
-			PROPERTY(m_flLightingOriginOffset,float32 , 0x6c);
-			PROPERTY(m_flBoundingRadiusSqr,float32 , 0x78);
-			PROPERTY(m_nSequenceIndex,int16_t , 0x7c);
-			PROPERTY(m_bIsAdjacent,bool , 0x7e);
-			PROPERTY(m_bDoDecalLightmapping,bool , 0x7f);
-			PROPERTY(m_nSkinnedModelMode,client::DecalMode_t , 0x80);
-			S2_PAD(0x88);
+			PROPERTY(m_transform,GlobalTypes::CTransformWS , 0x60);
+			PROPERTY(m_flAnimationScale,float32 , 0x80);
+			PROPERTY(m_flAnimationStartTime,float32 , 0x84);
+			PROPERTY(m_flPlaceTime,entity2::GameTime_t , 0x88);
+			PROPERTY(m_flFadeStartTime,float32 , 0x8c);
+			PROPERTY(m_flFadeDuration,float32 , 0x90);
+			PROPERTY(m_flLightingOriginOffset,float32 , 0x94);
+			PROPERTY(m_flBoundingRadiusSqr,float32 , 0xa0);
+			PROPERTY(m_nSequenceIndex,int16_t , 0xa4);
+			PROPERTY(m_bIsAdjacent,bool , 0xa6);
+			PROPERTY(m_bDoDecalLightmapping,bool , 0xa7);
+			PROPERTY(m_nDecalRtEncoding,client::DecalRtEncoding_t , 0xa8);
+			PROPERTY(m_bProjectToBackfaces,bool , 0xa9);
+			S2_PAD(0xB0);
 		};
-		//static_assert(sizeof(CS2::client::CDecalInstance) == 0x88, "CDecalInstance size should be 0x88");
+		//static_assert(sizeof(CS2::client::CDecalInstance) == 0xB0, "CDecalInstance size should be 0xB0");
 	}
 }

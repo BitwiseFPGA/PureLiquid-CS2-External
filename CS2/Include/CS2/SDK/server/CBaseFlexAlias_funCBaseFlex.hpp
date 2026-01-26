@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CBaseFlexAlias_funCBaseFlex) == 0xB20, "CBaseFlexAlias_funCBaseFlex size should be 0xB20");
+		//static_assert(sizeof(CS2::server::CBaseFlexAlias_funCBaseFlex) == 0xAB0, "CBaseFlexAlias_funCBaseFlex size should be 0xAB0");
 	}
 }

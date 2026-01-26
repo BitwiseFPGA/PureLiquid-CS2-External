@@ -21,15 +21,15 @@ namespace CS2 {
 	namespace client {
 		class C_RagdollPropAttached : public CS2::client::C_RagdollProp {
 		public:
-			PROPERTY(m_boneIndexAttached,uint32_t , 0x11e8);
-			PROPERTY(m_ragdollAttachedObjectIndex,uint32_t , 0x11ec);
-			PROPERTY(m_attachmentPointBoneSpace,GlobalTypes::Vector , 0x11f0);
-			PROPERTY(m_attachmentPointRagdollSpace,GlobalTypes::Vector , 0x11fc);
-			PROPERTY(m_vecOffset,GlobalTypes::Vector , 0x1208);
-			PROPERTY(m_parentTime,float32 , 0x1214);
-			PROPERTY(m_bHasParent,bool , 0x1218);
+			PROPERTY(m_boneIndexAttached,uint32_t , 0x11f8);
+			PROPERTY(m_ragdollAttachedObjectIndex,uint32_t , 0x11fc);
+			PROPERTY(m_attachmentPointBoneSpace,GlobalTypes::Vector , 0x1200);
+			PROPERTY(m_attachmentPointRagdollSpace,GlobalTypes::Vector , 0x120c);
+			PROPERTY(m_vecOffset,GlobalTypes::Vector , 0x1218);
+			PROPERTY(m_parentTime,float32 , 0x1224);
+			PROPERTY(m_bHasParent,bool , 0x1228);
 			S2_PAD(0x38);
 		};
-		//static_assert(sizeof(CS2::client::C_RagdollPropAttached) == 0x1220, "C_RagdollPropAttached size should be 0x1220");
+		//static_assert(sizeof(CS2::client::C_RagdollPropAttached) == 0x1230, "C_RagdollPropAttached size should be 0x1230");
 	}
 }

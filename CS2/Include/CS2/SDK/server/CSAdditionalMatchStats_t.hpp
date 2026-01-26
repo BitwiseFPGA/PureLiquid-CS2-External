@@ -21,20 +21,20 @@ namespace CS2 {
 	namespace server {
 		class CSAdditionalMatchStats_t : public CS2::server::CSAdditionalPerRoundStats_t {
 		public:
-			PROPERTY(m_numRoundsSurvived,int32_t , 0x18);
-			PROPERTY(m_maxNumRoundsSurvived,int32_t , 0x1c);
-			PROPERTY(m_numRoundsSurvivedTotal,int32_t , 0x20);
-			PROPERTY(m_iRoundsWonWithoutPurchase,int32_t , 0x24);
-			PROPERTY(m_iRoundsWonWithoutPurchaseTotal,int32_t , 0x28);
-			PROPERTY(m_numFirstKills,int32_t , 0x2c);
-			PROPERTY(m_numClutchKills,int32_t , 0x30);
-			PROPERTY(m_numPistolKills,int32_t , 0x34);
-			PROPERTY(m_numSniperKills,int32_t , 0x38);
-			PROPERTY(m_iNumSuicides,int32_t , 0x3c);
-			PROPERTY(m_iNumTeamKills,int32_t , 0x40);
-			PROPERTY(m_flTeamDamage,float32 , 0x44);
+			PROPERTY(m_numRoundsSurvivedStreak,int32_t , 0xf0);
+			PROPERTY(m_maxNumRoundsSurvivedStreak,int32_t , 0xf4);
+			PROPERTY(m_numRoundsSurvivedTotal,int32_t , 0xf8);
+			PROPERTY(m_iRoundsWonWithoutPurchase,int32_t , 0xfc);
+			PROPERTY(m_iRoundsWonWithoutPurchaseTotal,int32_t , 0x100);
+			PROPERTY(m_numFirstKills,int32_t , 0x104);
+			PROPERTY(m_numClutchKills,int32_t , 0x108);
+			PROPERTY(m_numPistolKills,int32_t , 0x10c);
+			PROPERTY(m_numSniperKills,int32_t , 0x110);
+			PROPERTY(m_iNumSuicides,int32_t , 0x114);
+			PROPERTY(m_iNumTeamKills,int32_t , 0x118);
+			PROPERTY(m_flTeamDamage,float32 , 0x11c);
 			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CSAdditionalMatchStats_t) == 0x48, "CSAdditionalMatchStats_t size should be 0x48");
+		//static_assert(sizeof(CS2::server::CSAdditionalMatchStats_t) == 0x120, "CSAdditionalMatchStats_t size should be 0x120");
 	}
 }

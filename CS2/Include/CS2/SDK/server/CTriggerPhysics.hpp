@@ -21,21 +21,21 @@ namespace CS2 {
 	namespace server {
 		class CTriggerPhysics : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_gravityScale,float32 , 0x9b8);
-			PROPERTY(m_linearLimit,float32 , 0x9bc);
-			PROPERTY(m_linearDamping,float32 , 0x9c0);
-			PROPERTY(m_angularLimit,float32 , 0x9c4);
-			PROPERTY(m_angularDamping,float32 , 0x9c8);
-			PROPERTY(m_linearForce,float32 , 0x9cc);
-			PROPERTY(m_flFrequency,float32 , 0x9d0);
-			PROPERTY(m_flDampingRatio,float32 , 0x9d4);
-			PROPERTY(m_vecLinearForcePointAt,GlobalTypes::Vector , 0x9d8);
-			PROPERTY(m_bCollapseToForcePoint,bool , 0x9e4);
-			PROPERTY(m_vecLinearForcePointAtWorld,GlobalTypes::Vector , 0x9e8);
-			PROPERTY(m_vecLinearForceDirection,GlobalTypes::Vector , 0x9f4);
-			PROPERTY(m_bConvertToDebrisWhenPossible,bool , 0xa00);
+			PROPERTY(m_gravityScale,float32 , 0x8a0);
+			PROPERTY(m_linearLimit,float32 , 0x8a4);
+			PROPERTY(m_linearDamping,float32 , 0x8a8);
+			PROPERTY(m_angularLimit,float32 , 0x8ac);
+			PROPERTY(m_angularDamping,float32 , 0x8b0);
+			PROPERTY(m_linearForce,float32 , 0x8b4);
+			PROPERTY(m_flFrequency,float32 , 0x8b8);
+			PROPERTY(m_flDampingRatio,float32 , 0x8bc);
+			PROPERTY(m_vecLinearForcePointAt,GlobalTypes::Vector , 0x8c0);
+			PROPERTY(m_bCollapseToForcePoint,bool , 0x8cc);
+			PROPERTY(m_vecLinearForcePointAtWorld,GlobalTypes::Vector , 0x8d0);
+			PROPERTY(m_vecLinearForceDirection,GlobalTypes::Vector , 0x8dc);
+			PROPERTY(m_bConvertToDebrisWhenPossible,bool , 0x8e8);
 			S2_PAD(0x60);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerPhysics) == 0xA08, "CTriggerPhysics size should be 0xA08");
+		//static_assert(sizeof(CS2::server::CTriggerPhysics) == 0x8F0, "CTriggerPhysics size should be 0x8F0");
 	}
 }

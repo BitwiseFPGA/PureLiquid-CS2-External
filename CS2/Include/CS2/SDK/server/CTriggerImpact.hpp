@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CTriggerImpact : public CS2::server::CTriggerMultiple {
 		public:
-			PROPERTY(m_flMagnitude,float32 , 0x9d0);
-			PROPERTY(m_flNoise,float32 , 0x9d4);
-			PROPERTY(m_flViewkick,float32 , 0x9d8);
-			PROPERTY(m_pOutputForce,GlobalTypes::CEntityOutputTemplate<GlobalTypes::Vector>, 0x9e0);
+			PROPERTY(m_flMagnitude,float32 , 0x8a8);
+			PROPERTY(m_flNoise,float32 , 0x8ac);
+			PROPERTY(m_flViewkick,float32 , 0x8b0);
+			PROPERTY(m_pOutputForce,GlobalTypes::CEntityOutputTemplate< Vector, Vector >, 0x8b8);
 			S2_PAD(0x38);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerImpact) == 0xA08, "CTriggerImpact size should be 0xA08");
+		//static_assert(sizeof(CS2::server::CTriggerImpact) == 0x8E0, "CTriggerImpact size should be 0x8E0");
 	}
 }

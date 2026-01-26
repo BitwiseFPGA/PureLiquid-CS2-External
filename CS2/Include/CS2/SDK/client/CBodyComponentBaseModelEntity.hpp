@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CBodyComponentBaseModelEntity) == 0x5B0, "CBodyComponentBaseModelEntity size should be 0x5B0");
+		//static_assert(sizeof(CS2::client::CBodyComponentBaseModelEntity) == 0x550, "CBodyComponentBaseModelEntity size should be 0x550");
 	}
 }

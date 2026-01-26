@@ -11,7 +11,6 @@
 
 
 #include <SDK/server/CBaseEntity.hpp>
-#include <SDK/server/CBeam.hpp>
 #include <SDK/entity2/GameTime_t.hpp>
 
 
@@ -23,13 +22,13 @@ namespace CS2 {
 	namespace server {
 		class CTestEffect : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_iLoop,int32_t , 0x4f0);
-			PROPERTY(m_iBeam,int32_t , 0x4f4);
-			PROPERTY_ARRAY(m_pBeam,server::CBeam , 24 , 0x4f8);
-			PROPERTY_ARRAY(m_flBeamTime,entity2::GameTime_t , 24 , 0x5b8);
-			PROPERTY(m_flStartTime,entity2::GameTime_t , 0x618);
-			S2_PAD(0x130);
+			PROPERTY(m_iLoop,int32_t , 0x4a8);
+			PROPERTY(m_iBeam,int32_t , 0x4ac);
+			PROPERTY_ARRAY(m_pBeam,server::CHandle< CBeam >, 24 , 0x4b0);
+			PROPERTY_ARRAY(m_flBeamTime,entity2::GameTime_t , 24 , 0x510);
+			PROPERTY(m_flStartTime,entity2::GameTime_t , 0x570);
+			S2_PAD(0xD0);
 		};
-		//static_assert(sizeof(CS2::server::CTestEffect) == 0x620, "CTestEffect size should be 0x620");
+		//static_assert(sizeof(CS2::server::CTestEffect) == 0x578, "CTestEffect size should be 0x578");
 	}
 }

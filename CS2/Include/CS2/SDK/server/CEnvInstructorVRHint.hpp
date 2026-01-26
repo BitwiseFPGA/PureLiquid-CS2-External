@@ -21,17 +21,17 @@ namespace CS2 {
 	namespace server {
 		class CEnvInstructorVRHint : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_iszName,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
-			PROPERTY(m_iszHintTargetEntity,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_iTimeout,int32_t , 0x500);
-			PROPERTY(m_iszCaption,GlobalTypes::CUtlSymbolLarge* , 0x508);
-			PROPERTY(m_iszStartSound,GlobalTypes::CUtlSymbolLarge* , 0x510);
-			PROPERTY(m_iLayoutFileType,int32_t , 0x518);
-			PROPERTY(m_iszCustomLayoutFile,GlobalTypes::CUtlSymbolLarge* , 0x520);
-			PROPERTY(m_iAttachType,int32_t , 0x528);
-			PROPERTY(m_flHeightOffset,float32 , 0x52c);
+			PROPERTY(m_iszName,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
+			PROPERTY(m_iszHintTargetEntity,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_iTimeout,int32_t , 0x4b8);
+			PROPERTY(m_iszCaption,GlobalTypes::CUtlSymbolLarge* , 0x4c0);
+			PROPERTY(m_iszStartSound,GlobalTypes::CUtlSymbolLarge* , 0x4c8);
+			PROPERTY(m_iLayoutFileType,int32_t , 0x4d0);
+			PROPERTY(m_iszCustomLayoutFile,GlobalTypes::CUtlSymbolLarge* , 0x4d8);
+			PROPERTY(m_iAttachType,int32_t , 0x4e0);
+			PROPERTY(m_flHeightOffset,float32 , 0x4e4);
 			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CEnvInstructorVRHint) == 0x530, "CEnvInstructorVRHint size should be 0x530");
+		//static_assert(sizeof(CS2::server::CEnvInstructorVRHint) == 0x4E8, "CEnvInstructorVRHint size should be 0x4E8");
 	}
 }

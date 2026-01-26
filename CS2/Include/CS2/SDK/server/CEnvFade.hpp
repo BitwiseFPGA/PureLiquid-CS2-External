@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace server {
 		class CEnvFade : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_fadeColor,GlobalTypes::Color , 0x4f0);
-			PROPERTY(m_Duration,float32 , 0x4f4);
-			PROPERTY(m_HoldDuration,float32 , 0x4f8);
-			PROPERTY(m_OnBeginFade,entity2::CEntityIOOutput , 0x500);
-			S2_PAD(0x38);
+			PROPERTY(m_fadeColor,GlobalTypes::Color , 0x4a8);
+			PROPERTY(m_Duration,float32 , 0x4ac);
+			PROPERTY(m_HoldDuration,float32 , 0x4b0);
+			PROPERTY(m_OnBeginFade,entity2::CEntityIOOutput , 0x4b8);
+			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::server::CEnvFade) == 0x528, "CEnvFade size should be 0x528");
+		//static_assert(sizeof(CS2::server::CEnvFade) == 0x4D0, "CEnvFade size should be 0x4D0");
 	}
 }

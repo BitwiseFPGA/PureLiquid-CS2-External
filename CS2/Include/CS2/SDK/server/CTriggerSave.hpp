@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class CTriggerSave : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_bForceNewLevelUnit,bool , 0x9a8);
-			PROPERTY(m_fDangerousTimer,float32 , 0x9ac);
-			PROPERTY(m_minHitPoints,int32_t , 0x9b0);
+			PROPERTY(m_bForceNewLevelUnit,bool , 0x890);
+			PROPERTY(m_fDangerousTimer,float32 , 0x894);
+			PROPERTY(m_minHitPoints,int32_t , 0x898);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerSave) == 0x9B8, "CTriggerSave size should be 0x9B8");
+		//static_assert(sizeof(CS2::server::CTriggerSave) == 0x8A0, "CTriggerSave size should be 0x8A0");
 	}
 }

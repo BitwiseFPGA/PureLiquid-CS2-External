@@ -42,10 +42,10 @@ namespace CS2 {
 			PROPERTY(m_flInitialWindSpeed,float32 , 0x2c);
 			PROPERTY(m_location,GlobalTypes::Vector , 0x30);
 			PROPERTY(m_OnGustStart,entity2::CEntityIOOutput , 0x40);
-			PROPERTY(m_OnGustEnd,entity2::CEntityIOOutput , 0x68);
-			PROPERTY(m_hEntOwner,GlobalTypes::CHandle<server::CBaseEntity>, 0x90);
-			S2_PAD(0x150);
+			PROPERTY(m_OnGustEnd,entity2::CEntityIOOutput , 0x58);
+			PROPERTY(m_hEntOwner,GlobalTypes::CHandle<server::CBaseEntity>, 0x70);
+			S2_PAD(0x130);
 		};
-		//static_assert(sizeof(CS2::server::CEnvWindShared) == 0x150, "CEnvWindShared size should be 0x150");
+		//static_assert(sizeof(CS2::server::CEnvWindShared) == 0x130, "CEnvWindShared size should be 0x130");
 	}
 }

@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace server {
 		class CFuncTankTrain : public CS2::server::CFuncTrackTrain {
 		public:
-			PROPERTY(m_OnDeath,entity2::CEntityIOOutput , 0x930);
-			S2_PAD(0x28);
+			PROPERTY(m_OnDeath,entity2::CEntityIOOutput , 0x858);
+			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CFuncTankTrain) == 0x958, "CFuncTankTrain size should be 0x958");
+		//static_assert(sizeof(CS2::server::CFuncTankTrain) == 0x870, "CFuncTankTrain size should be 0x870");
 	}
 }

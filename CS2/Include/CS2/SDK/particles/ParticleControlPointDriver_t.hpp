@@ -21,14 +21,14 @@ namespace CS2 {
 	namespace particles {
 		class ParticleControlPointDriver_t  {
 		public:
-			PROPERTY(m_iControlPoint,int32_t , 0x0);
-			PROPERTY(m_iAttachType,animationsystem::ParticleAttachment_t , 0x4);
-			PROPERTY(m_attachmentName,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_vecOffset,GlobalTypes::Vector , 0x10);
-			PROPERTY(m_angOffset,GlobalTypes::QAngle , 0x1c);
-			PROPERTY(m_entityName,GlobalTypes::CUtlString* , 0x28);
-			S2_PAD(0x30);
+			PROPERTY(m_iControlPoint,GlobalTypes::ParticleParamID_t , 0x0);
+			PROPERTY(m_iAttachType,animationsystem::ParticleAttachment_t , 0x10);
+			PROPERTY(m_attachmentName,GlobalTypes::CUtlString* , 0x18);
+			PROPERTY(m_vecOffset,GlobalTypes::Vector , 0x20);
+			PROPERTY(m_angOffset,GlobalTypes::QAngle , 0x2c);
+			PROPERTY(m_entityName,GlobalTypes::CUtlString* , 0x38);
+			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::particles::ParticleControlPointDriver_t) == 0x30, "ParticleControlPointDriver_t size should be 0x30");
+		//static_assert(sizeof(CS2::particles::ParticleControlPointDriver_t) == 0x40, "ParticleControlPointDriver_t size should be 0x40");
 	}
 }

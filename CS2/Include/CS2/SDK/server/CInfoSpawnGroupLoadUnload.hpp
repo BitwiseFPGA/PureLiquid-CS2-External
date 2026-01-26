@@ -22,21 +22,21 @@ namespace CS2 {
 	namespace server {
 		class CInfoSpawnGroupLoadUnload : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_OnSpawnGroupLoadStarted,entity2::CEntityIOOutput , 0x4f0);
-			PROPERTY(m_OnSpawnGroupLoadFinished,entity2::CEntityIOOutput , 0x518);
-			PROPERTY(m_OnSpawnGroupUnloadStarted,entity2::CEntityIOOutput , 0x540);
-			PROPERTY(m_OnSpawnGroupUnloadFinished,entity2::CEntityIOOutput , 0x568);
-			PROPERTY(m_iszSpawnGroupName,GlobalTypes::CUtlSymbolLarge* , 0x590);
-			PROPERTY(m_iszSpawnGroupFilterName,GlobalTypes::CUtlSymbolLarge* , 0x598);
-			PROPERTY(m_iszLandmarkName,GlobalTypes::CUtlSymbolLarge* , 0x5a0);
-			PROPERTY(m_sFixedSpawnGroupName,GlobalTypes::CUtlString* , 0x5a8);
-			PROPERTY(m_flTimeoutInterval,float32 , 0x5b0);
-			PROPERTY(m_bAutoActivate,bool , 0x5b4);
-			PROPERTY(m_bUnloadingStarted,bool , 0x5b5);
-			PROPERTY(m_bQueueActiveSpawnGroupChange,bool , 0x5b6);
-			PROPERTY(m_bQueueFinishLoading,bool , 0x5b7);
-			S2_PAD(0x118);
+			PROPERTY(m_OnSpawnGroupLoadStarted,entity2::CEntityIOOutput , 0x4a8);
+			PROPERTY(m_OnSpawnGroupLoadFinished,entity2::CEntityIOOutput , 0x4c0);
+			PROPERTY(m_OnSpawnGroupUnloadStarted,entity2::CEntityIOOutput , 0x4d8);
+			PROPERTY(m_OnSpawnGroupUnloadFinished,entity2::CEntityIOOutput , 0x4f0);
+			PROPERTY(m_iszSpawnGroupName,GlobalTypes::CUtlSymbolLarge* , 0x508);
+			PROPERTY(m_iszSpawnGroupFilterName,GlobalTypes::CUtlSymbolLarge* , 0x510);
+			PROPERTY(m_iszLandmarkName,GlobalTypes::CUtlSymbolLarge* , 0x518);
+			PROPERTY(m_sFixedSpawnGroupName,GlobalTypes::CUtlString* , 0x520);
+			PROPERTY(m_flTimeoutInterval,float32 , 0x528);
+			PROPERTY(m_bAutoActivate,bool , 0x52c);
+			PROPERTY(m_bUnloadingStarted,bool , 0x52d);
+			PROPERTY(m_bQueueActiveSpawnGroupChange,bool , 0x52e);
+			PROPERTY(m_bQueueFinishLoading,bool , 0x52f);
+			S2_PAD(0xD8);
 		};
-		//static_assert(sizeof(CS2::server::CInfoSpawnGroupLoadUnload) == 0x608, "CInfoSpawnGroupLoadUnload size should be 0x608");
+		//static_assert(sizeof(CS2::server::CInfoSpawnGroupLoadUnload) == 0x580, "CInfoSpawnGroupLoadUnload size should be 0x580");
 	}
 }

@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_PhysicsPropMultiplayer) == 0x1310, "C_PhysicsPropMultiplayer size should be 0x1310");
+		//static_assert(sizeof(CS2::client::C_PhysicsPropMultiplayer) == 0x12E0, "C_PhysicsPropMultiplayer size should be 0x12E0");
 	}
 }

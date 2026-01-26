@@ -16,7 +16,7 @@
 
 
 namespace CS2 {
-	namespace client {
+	namespace server {
 		class ServerAuthoritativeWeaponSlot_t;
 	}
 }
@@ -36,7 +36,7 @@ namespace CS2 {
 			PROPERTY(m_nPersonaDataXpTrailLevel,int32_t , 0x6c);
 			PROPERTY_ARRAY(m_unEquippedPlayerSprayIDs,uint32_t , 1 , 0xf48);
 			PROPERTY(m_unCurrentLoadoutHash,uint64_t , 0xf50);
-			PROPERTY(m_vecServerAuthoritativeWeaponSlots,GlobalTypes::CUtlVectorEmbeddedNetworkVar<client::ServerAuthoritativeWeaponSlot_t>, 0xf58);
+			PROPERTY(m_vecServerAuthoritativeWeaponSlots,server::CUtlVectorEmbeddedNetworkVar<server::ServerAuthoritativeWeaponSlot_t>, 0xf58);
 			S2_PAD(0xFA0);
 		};
 		//static_assert(sizeof(CS2::server::CCSPlayerController_InventoryServices) == 0xFE0, "CCSPlayerController_InventoryServices size should be 0xFE0");

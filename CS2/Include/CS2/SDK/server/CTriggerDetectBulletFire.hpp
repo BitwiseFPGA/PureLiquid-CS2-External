@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace server {
 		class CTriggerDetectBulletFire : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_bPlayerFireOnly,bool , 0x9a8);
-			PROPERTY(m_OnDetectedBulletFire,entity2::CEntityIOOutput , 0x9b0);
-			S2_PAD(0x30);
+			PROPERTY(m_bPlayerFireOnly,bool , 0x890);
+			PROPERTY(m_OnDetectedBulletFire,entity2::CEntityIOOutput , 0x898);
+			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerDetectBulletFire) == 0x9D8, "CTriggerDetectBulletFire size should be 0x9D8");
+		//static_assert(sizeof(CS2::server::CTriggerDetectBulletFire) == 0x8B0, "CTriggerDetectBulletFire size should be 0x8B0");
 	}
 }

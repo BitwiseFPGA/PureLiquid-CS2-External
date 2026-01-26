@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace server {
 		class CTriggerRemove : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_OnRemove,entity2::CEntityIOOutput , 0x9a8);
-			S2_PAD(0x28);
+			PROPERTY(m_OnRemove,entity2::CEntityIOOutput , 0x890);
+			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerRemove) == 0x9D0, "CTriggerRemove size should be 0x9D0");
+		//static_assert(sizeof(CS2::server::CTriggerRemove) == 0x8A8, "CTriggerRemove size should be 0x8A8");
 	}
 }

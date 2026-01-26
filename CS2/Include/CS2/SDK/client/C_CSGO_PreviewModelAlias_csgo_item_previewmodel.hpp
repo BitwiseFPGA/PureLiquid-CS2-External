@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_CSGO_PreviewModelAlias_csgo_item_previewmodel) == 0x1880, "C_CSGO_PreviewModelAlias_csgo_item_previewmodel size should be 0x1880");
+		//static_assert(sizeof(CS2::client::C_CSGO_PreviewModelAlias_csgo_item_previewmodel) == 0x1860, "C_CSGO_PreviewModelAlias_csgo_item_previewmodel size should be 0x1860");
 	}
 }

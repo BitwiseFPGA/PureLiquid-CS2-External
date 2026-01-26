@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CCSObserver_MovementServices) == 0x238, "CCSObserver_MovementServices size should be 0x238");
+		//static_assert(sizeof(CS2::client::CCSObserver_MovementServices) == 0x240, "CCSObserver_MovementServices size should be 0x240");
 	}
 }

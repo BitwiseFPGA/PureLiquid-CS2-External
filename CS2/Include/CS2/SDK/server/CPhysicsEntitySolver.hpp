@@ -27,12 +27,12 @@ namespace CS2 {
 	namespace server {
 		class CPhysicsEntitySolver : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_hMovingEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x508);
-			PROPERTY(m_hPhysicsBlocker,GlobalTypes::CHandle<server::CBaseEntity>, 0x50c);
-			PROPERTY(m_separationDuration,float32 , 0x510);
-			PROPERTY(m_cancelTime,entity2::GameTime_t , 0x514);
+			PROPERTY(m_hMovingEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c0);
+			PROPERTY(m_hPhysicsBlocker,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c4);
+			PROPERTY(m_separationDuration,float32 , 0x4c8);
+			PROPERTY(m_cancelTime,entity2::GameTime_t , 0x4cc);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::server::CPhysicsEntitySolver) == 0x518, "CPhysicsEntitySolver size should be 0x518");
+		//static_assert(sizeof(CS2::server::CPhysicsEntitySolver) == 0x4D0, "CPhysicsEntitySolver size should be 0x4D0");
 	}
 }

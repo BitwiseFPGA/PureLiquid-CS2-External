@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class CSceneListManager : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_hListManagers,server::CUtlVector<GlobalTypes::CHandle<server::CSceneListManager>>, 0x4f0);
-			PROPERTY_ARRAY(m_iszScenes,GlobalTypes::CUtlSymbolLarge* , 16 , 0x508);
-			PROPERTY_ARRAY(m_hScenes,server::CHandle< CBaseEntity >, 16 , 0x588);
+			PROPERTY(m_hListManagers,server::CUtlVector<GlobalTypes::CHandle<server::CSceneListManager>>, 0x4a8);
+			PROPERTY_ARRAY(m_iszScenes,GlobalTypes::CUtlSymbolLarge* , 16 , 0x4c0);
+			PROPERTY_ARRAY(m_hScenes,server::CHandle< CBaseEntity >, 16 , 0x540);
 			S2_PAD(0xD8);
 		};
-		//static_assert(sizeof(CS2::server::CSceneListManager) == 0x5C8, "CSceneListManager size should be 0x5C8");
+		//static_assert(sizeof(CS2::server::CSceneListManager) == 0x580, "CSceneListManager size should be 0x580");
 	}
 }

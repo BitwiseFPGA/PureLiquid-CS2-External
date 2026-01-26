@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class CLogicAutosave : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_bForceNewLevelUnit,bool , 0x4f0);
-			PROPERTY(m_minHitPoints,int32_t , 0x4f4);
-			PROPERTY(m_minHitPointsToCommit,int32_t , 0x4f8);
+			PROPERTY(m_bForceNewLevelUnit,bool , 0x4a8);
+			PROPERTY(m_minHitPoints,int32_t , 0x4ac);
+			PROPERTY(m_minHitPointsToCommit,int32_t , 0x4b0);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CLogicAutosave) == 0x500, "CLogicAutosave size should be 0x500");
+		//static_assert(sizeof(CS2::server::CLogicAutosave) == 0x4B8, "CLogicAutosave size should be 0x4B8");
 	}
 }

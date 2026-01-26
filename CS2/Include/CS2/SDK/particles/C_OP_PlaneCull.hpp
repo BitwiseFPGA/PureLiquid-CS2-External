@@ -11,6 +11,7 @@
 
 
 #include <SDK/particles/CParticleFunctionOperator.hpp>
+#include <SDK/particleslib/CParticleCollectionVecInput.hpp>
 
 
 
@@ -22,11 +23,11 @@ namespace CS2 {
 		class C_OP_PlaneCull : public CS2::particles::CParticleFunctionOperator {
 		public:
 			PROPERTY(m_nPlaneControlPoint,int32_t , 0x1d0);
-			PROPERTY(m_vecPlaneDirection,GlobalTypes::Vector , 0x1d4);
-			PROPERTY(m_bLocalSpace,bool , 0x1e0);
-			PROPERTY(m_flPlaneOffset,float32 , 0x1e4);
-			S2_PAD(0x18);
+			PROPERTY(m_vecPlaneDirection,particleslib::CParticleCollectionVecInput , 0x1d8);
+			PROPERTY(m_bLocalSpace,bool , 0x890);
+			PROPERTY(m_flPlaneOffset,float32 , 0x894);
+			S2_PAD(0x6C8);
 		};
-		//static_assert(sizeof(CS2::particles::C_OP_PlaneCull) == 0x1E8, "C_OP_PlaneCull size should be 0x1E8");
+		//static_assert(sizeof(CS2::particles::C_OP_PlaneCull) == 0x898, "C_OP_PlaneCull size should be 0x898");
 	}
 }

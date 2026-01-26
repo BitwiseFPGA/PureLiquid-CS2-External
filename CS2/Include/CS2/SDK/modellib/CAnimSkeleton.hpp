@@ -28,7 +28,7 @@ namespace CS2 {
 			PROPERTY(m_localSpaceTransforms,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x10);
 			PROPERTY(m_modelSpaceTransforms,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x28);
 			PROPERTY(m_boneNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x40);
-			PROPERTY(m_children,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector<int32_t>>, 0x58);
+			PROPERTY(m_children,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector>, 0x58);
 			PROPERTY(m_parents,GlobalTypes::CUtlVector< int32 >, 0x70);
 			PROPERTY(m_feet,GlobalTypes::CUtlVector<modellib::CAnimFoot>, 0x88);
 			PROPERTY(m_morphNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0xa0);

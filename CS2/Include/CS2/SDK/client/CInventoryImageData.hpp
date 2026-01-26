@@ -25,8 +25,8 @@ namespace CS2 {
 			PROPERTY(m_nNodeType,client::InventoryNodeType_t , 0x0);
 			PROPERTY(name,GlobalTypes::CUtlString* , 0x8);
 			PROPERTY(inventory_image_data,client::inv_image_data_t , 0x10);
-			S2_PAD(0xF0);
+			S2_PAD(0xF8);
 		};
-		//static_assert(sizeof(CS2::client::CInventoryImageData) == 0xF0, "CInventoryImageData size should be 0xF0");
+		//static_assert(sizeof(CS2::client::CInventoryImageData) == 0xF8, "CInventoryImageData size should be 0xF8");
 	}
 }

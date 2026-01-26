@@ -28,24 +28,24 @@ namespace CS2 {
 	namespace client {
 		class CBasePlayerController : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_CommandContext,client::C_CommandContext , 0x600);
-			PROPERTY(m_nInButtonsWhichAreToggles,uint64_t , 0x6a8);
-			PROPERTY(m_nTickBase,uint32_t , 0x6b0);
-			PROPERTY(m_hPawn,GlobalTypes::CHandle<client::C_BasePlayerPawn>, 0x6b4);
-			PROPERTY(m_bKnownTeamMismatch,bool , 0x6b8);
-			PROPERTY(m_hPredictedPawn,GlobalTypes::CHandle<client::C_BasePlayerPawn>, 0x6bc);
-			PROPERTY(m_nSplitScreenSlot,GlobalTypes::CSplitScreenSlot , 0x6c0);
-			PROPERTY(m_hSplitOwner,GlobalTypes::CHandle<client::CBasePlayerController>, 0x6c4);
-			PROPERTY(m_hSplitScreenPlayers,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::CBasePlayerController>>, 0x6c8);
-			PROPERTY(m_bIsHLTV,bool , 0x6e0);
-			PROPERTY(m_iConnected,client::PlayerConnectedState , 0x6e4);
-			PROPERTY_ARRAY(m_iszPlayerName,char , 128 , 0x6e8);
-			PROPERTY(m_steamID,uint64_t , 0x770);
-			PROPERTY(m_bIsLocalPlayerController,bool , 0x778);
-			PROPERTY(m_bNoClipEnabled,bool , 0x779);
-			PROPERTY(m_iDesiredFOV,uint32_t , 0x77c);
+			PROPERTY(m_CommandContext,client::C_CommandContext , 0x610);
+			PROPERTY(m_nInButtonsWhichAreToggles,uint64_t , 0x6b8);
+			PROPERTY(m_nTickBase,uint32_t , 0x6c0);
+			PROPERTY(m_hPawn,GlobalTypes::CHandle<client::C_BasePlayerPawn>, 0x6c4);
+			PROPERTY(m_bKnownTeamMismatch,bool , 0x6c8);
+			PROPERTY(m_hPredictedPawn,GlobalTypes::CHandle<client::C_BasePlayerPawn>, 0x6cc);
+			PROPERTY(m_nSplitScreenSlot,GlobalTypes::CSplitScreenSlot , 0x6d0);
+			PROPERTY(m_hSplitOwner,GlobalTypes::CHandle<client::CBasePlayerController>, 0x6d4);
+			PROPERTY(m_hSplitScreenPlayers,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::CBasePlayerController>>, 0x6d8);
+			PROPERTY(m_bIsHLTV,bool , 0x6f0);
+			PROPERTY(m_iConnected,client::PlayerConnectedState , 0x6f4);
+			PROPERTY_ARRAY(m_iszPlayerName,char , 128 , 0x6f8);
+			PROPERTY(m_steamID,uint64_t , 0x780);
+			PROPERTY(m_bIsLocalPlayerController,bool , 0x788);
+			PROPERTY(m_bNoClipEnabled,bool , 0x789);
+			PROPERTY(m_iDesiredFOV,uint32_t , 0x78c);
 			S2_PAD(0x1F0);
 		};
-		//static_assert(sizeof(CS2::client::CBasePlayerController) == 0x7E8, "CBasePlayerController size should be 0x7E8");
+		//static_assert(sizeof(CS2::client::CBasePlayerController) == 0x7F8, "CBasePlayerController size should be 0x7F8");
 	}
 }

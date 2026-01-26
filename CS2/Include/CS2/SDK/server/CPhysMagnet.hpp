@@ -28,20 +28,20 @@ namespace CS2 {
 	namespace server {
 		class CPhysMagnet : public CS2::server::CBaseAnimGraph {
 		public:
-			PROPERTY(m_OnMagnetAttach,entity2::CEntityIOOutput , 0xa90);
-			PROPERTY(m_OnMagnetDetach,entity2::CEntityIOOutput , 0xab8);
-			PROPERTY(m_massScale,float32 , 0xae0);
-			PROPERTY(m_forceLimit,float32 , 0xae4);
-			PROPERTY(m_torqueLimit,float32 , 0xae8);
-			PROPERTY(m_MagnettedEntities,GlobalTypes::CUtlVector<server::magnetted_objects_t>, 0xaf0);
-			PROPERTY(m_bActive,bool , 0xb08);
-			PROPERTY(m_bHasHitSomething,bool , 0xb09);
-			PROPERTY(m_flTotalMass,float32 , 0xb0c);
-			PROPERTY(m_flRadius,float32 , 0xb10);
-			PROPERTY(m_flNextSuckTime,entity2::GameTime_t , 0xb14);
-			PROPERTY(m_iMaxObjectsAttached,int32_t , 0xb18);
-			S2_PAD(0x90);
+			PROPERTY(m_OnMagnetAttach,entity2::CEntityIOOutput , 0xa20);
+			PROPERTY(m_OnMagnetDetach,entity2::CEntityIOOutput , 0xa38);
+			PROPERTY(m_massScale,float32 , 0xa50);
+			PROPERTY(m_forceLimit,float32 , 0xa54);
+			PROPERTY(m_torqueLimit,float32 , 0xa58);
+			PROPERTY(m_MagnettedEntities,GlobalTypes::CUtlVector<server::magnetted_objects_t>, 0xa60);
+			PROPERTY(m_bActive,bool , 0xa78);
+			PROPERTY(m_bHasHitSomething,bool , 0xa79);
+			PROPERTY(m_flTotalMass,float32 , 0xa7c);
+			PROPERTY(m_flRadius,float32 , 0xa80);
+			PROPERTY(m_flNextSuckTime,entity2::GameTime_t , 0xa84);
+			PROPERTY(m_iMaxObjectsAttached,int32_t , 0xa88);
+			S2_PAD(0x70);
 		};
-		//static_assert(sizeof(CS2::server::CPhysMagnet) == 0xB20, "CPhysMagnet size should be 0xB20");
+		//static_assert(sizeof(CS2::server::CPhysMagnet) == 0xA90, "CPhysMagnet size should be 0xA90");
 	}
 }

@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CCSGO_WingmanIntroCounterTerroristPosition) == 0xD08, "CCSGO_WingmanIntroCounterTerroristPosition size should be 0xD08");
+		//static_assert(sizeof(CS2::server::CCSGO_WingmanIntroCounterTerroristPosition) == 0xCC0, "CCSGO_WingmanIntroCounterTerroristPosition size should be 0xCC0");
 	}
 }

@@ -22,15 +22,15 @@ namespace CS2 {
 	namespace client {
 		class CCSPlayer_WeaponServices : public CS2::client::CPlayer_WeaponServices {
 		public:
-			PROPERTY(m_flNextAttack,entity2::GameTime_t , 0xc8);
-			PROPERTY(m_bIsLookingAtWeapon,bool , 0xcc);
-			PROPERTY(m_bIsHoldingLookAtWeapon,bool , 0xcd);
-			PROPERTY(m_nOldTotalShootPositionHistoryCount,uint32_t , 0xd0);
-			PROPERTY(m_nOldTotalInputHistoryCount,uint32_t , 0x368);
-			PROPERTY(m_networkAnimTiming,GlobalTypes::C_NetworkUtlVectorBase< uint8 >, 0x18e0);
-			PROPERTY(m_bBlockInspectUntilNextGraphUpdate,bool , 0x18f8);
-			S2_PAD(0x1888);
+			PROPERTY(m_flNextAttack,entity2::GameTime_t , 0xd0);
+			PROPERTY(m_bIsLookingAtWeapon,bool , 0xd4);
+			PROPERTY(m_bIsHoldingLookAtWeapon,bool , 0xd5);
+			PROPERTY(m_nOldTotalShootPositionHistoryCount,uint32_t , 0xd8);
+			PROPERTY(m_nOldTotalInputHistoryCount,uint32_t , 0x370);
+			PROPERTY(m_networkAnimTiming,GlobalTypes::C_NetworkUtlVectorBase< uint8 >, 0x1588);
+			PROPERTY(m_bBlockInspectUntilNextGraphUpdate,bool , 0x15a0);
+			S2_PAD(0x1528);
 		};
-		//static_assert(sizeof(CS2::client::CCSPlayer_WeaponServices) == 0x1928, "CCSPlayer_WeaponServices size should be 0x1928");
+		//static_assert(sizeof(CS2::client::CCSPlayer_WeaponServices) == 0x15D0, "CCSPlayer_WeaponServices size should be 0x15D0");
 	}
 }

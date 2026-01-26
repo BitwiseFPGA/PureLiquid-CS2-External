@@ -10,7 +10,7 @@
 #endif
 
 
-#include <SDK/soundsystem_voicecontainers/CVoiceContainerBase.hpp>
+#include <SDK/soundsystem_voicecontainers/CVoiceContainerGenerator.hpp>
 
 
 
@@ -19,12 +19,12 @@
 using namespace GlobalTypes;
 namespace CS2 {
 	namespace soundsystem_voicecontainers {
-		class CVoiceContainerDecayingSineWave : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
+		class CVoiceContainerDecayingSineWave : public CS2::soundsystem_voicecontainers::CVoiceContainerGenerator {
 		public:
-			PROPERTY(m_flFrequency,float32 , 0xb8);
-			PROPERTY(m_flDecayTime,float32 , 0xbc);
+			PROPERTY(m_flFrequency,float32 , 0xa8);
+			PROPERTY(m_flDecayTime,float32 , 0xac);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerDecayingSineWave) == 0xC0, "CVoiceContainerDecayingSineWave size should be 0xC0");
+		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerDecayingSineWave) == 0xB0, "CVoiceContainerDecayingSineWave size should be 0xB0");
 	}
 }

@@ -29,26 +29,26 @@ namespace CS2 {
 	namespace server {
 		class CPropDoorRotating : public CS2::server::CBasePropDoor {
 		public:
-			PROPERTY(m_vecAxis,GlobalTypes::Vector , 0xff0);
-			PROPERTY(m_flDistance,float32 , 0xffc);
-			PROPERTY(m_eSpawnPosition,server::PropDoorRotatingSpawnPos_t , 0x1000);
-			PROPERTY(m_eOpenDirection,server::PropDoorRotatingOpenDirection_e , 0x1004);
-			PROPERTY(m_eCurrentOpenDirection,server::PropDoorRotatingOpenDirection_e , 0x1008);
-			PROPERTY(m_eDefaultCheckDirection,server::doorCheck_e , 0x100c);
-			PROPERTY(m_flAjarAngle,float32 , 0x1010);
-			PROPERTY(m_angRotationAjarDeprecated,GlobalTypes::QAngle , 0x1014);
-			PROPERTY(m_angRotationClosed,GlobalTypes::QAngle , 0x1020);
-			PROPERTY(m_angRotationOpenForward,GlobalTypes::QAngle , 0x102c);
-			PROPERTY(m_angRotationOpenBack,GlobalTypes::QAngle , 0x1038);
-			PROPERTY(m_angGoal,GlobalTypes::QAngle , 0x1044);
-			PROPERTY(m_vecForwardBoundsMin,GlobalTypes::Vector , 0x1050);
-			PROPERTY(m_vecForwardBoundsMax,GlobalTypes::Vector , 0x105c);
-			PROPERTY(m_vecBackBoundsMin,GlobalTypes::Vector , 0x1068);
-			PROPERTY(m_vecBackBoundsMax,GlobalTypes::Vector , 0x1074);
-			PROPERTY(m_bAjarDoorShouldntAlwaysOpen,bool , 0x1080);
-			PROPERTY(m_hEntityBlocker,GlobalTypes::CHandle<server::CEntityBlocker>, 0x1084);
+			PROPERTY(m_vecAxis,GlobalTypes::Vector , 0xe50);
+			PROPERTY(m_flDistance,float32 , 0xe5c);
+			PROPERTY(m_eSpawnPosition,server::PropDoorRotatingSpawnPos_t , 0xe60);
+			PROPERTY(m_eOpenDirection,server::PropDoorRotatingOpenDirection_e , 0xe64);
+			PROPERTY(m_eCurrentOpenDirection,server::PropDoorRotatingOpenDirection_e , 0xe68);
+			PROPERTY(m_eDefaultCheckDirection,server::doorCheck_e , 0xe6c);
+			PROPERTY(m_flAjarAngle,float32 , 0xe70);
+			PROPERTY(m_angRotationAjarDeprecated,GlobalTypes::QAngle , 0xe74);
+			PROPERTY(m_angRotationClosed,GlobalTypes::QAngle , 0xe80);
+			PROPERTY(m_angRotationOpenForward,GlobalTypes::QAngle , 0xe8c);
+			PROPERTY(m_angRotationOpenBack,GlobalTypes::QAngle , 0xe98);
+			PROPERTY(m_angGoal,GlobalTypes::QAngle , 0xea4);
+			PROPERTY(m_vecForwardBoundsMin,GlobalTypes::Vector , 0xeb0);
+			PROPERTY(m_vecForwardBoundsMax,GlobalTypes::Vector , 0xebc);
+			PROPERTY(m_vecBackBoundsMin,GlobalTypes::Vector , 0xec8);
+			PROPERTY(m_vecBackBoundsMax,GlobalTypes::Vector , 0xed4);
+			PROPERTY(m_bAjarDoorShouldntAlwaysOpen,bool , 0xee0);
+			PROPERTY(m_hEntityBlocker,GlobalTypes::CHandle<server::CEntityBlocker>, 0xee4);
 			S2_PAD(0xA0);
 		};
-		//static_assert(sizeof(CS2::server::CPropDoorRotating) == 0x1090, "CPropDoorRotating size should be 0x1090");
+		//static_assert(sizeof(CS2::server::CPropDoorRotating) == 0xEF0, "CPropDoorRotating size should be 0xEF0");
 	}
 }

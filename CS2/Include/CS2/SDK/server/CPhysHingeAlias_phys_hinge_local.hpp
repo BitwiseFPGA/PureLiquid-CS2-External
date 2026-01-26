@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CPhysHingeAlias_phys_hinge_local) == 0x710, "CPhysHingeAlias_phys_hinge_local size should be 0x710");
+		//static_assert(sizeof(CS2::server::CPhysHingeAlias_phys_hinge_local) == 0x678, "CPhysHingeAlias_phys_hinge_local size should be 0x678");
 	}
 }

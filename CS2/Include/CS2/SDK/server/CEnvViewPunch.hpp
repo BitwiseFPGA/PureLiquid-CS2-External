@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CEnvViewPunch : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_flRadius,float32 , 0x4f0);
-			PROPERTY(m_angViewPunch,GlobalTypes::QAngle , 0x4f4);
+			PROPERTY(m_flRadius,float32 , 0x4a8);
+			PROPERTY(m_angViewPunch,GlobalTypes::QAngle , 0x4ac);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CEnvViewPunch) == 0x500, "CEnvViewPunch size should be 0x500");
+		//static_assert(sizeof(CS2::server::CEnvViewPunch) == 0x4B8, "CEnvViewPunch size should be 0x4B8");
 	}
 }

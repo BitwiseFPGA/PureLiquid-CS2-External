@@ -22,24 +22,24 @@ namespace CS2 {
 	namespace client {
 		class C_PlayerSprayDecal : public CS2::client::C_ModelPointEntity {
 		public:
-			PROPERTY(m_nUniqueID,int32_t , 0xeb0);
-			PROPERTY(m_unAccountID,uint32_t , 0xeb4);
-			PROPERTY(m_unTraceID,uint32_t , 0xeb8);
-			PROPERTY(m_rtGcTime,uint32_t , 0xebc);
-			PROPERTY(m_vecEndPos,GlobalTypes::Vector , 0xec0);
-			PROPERTY(m_vecStart,GlobalTypes::Vector , 0xecc);
-			PROPERTY(m_vecLeft,GlobalTypes::Vector , 0xed8);
-			PROPERTY(m_vecNormal,GlobalTypes::Vector , 0xee4);
-			PROPERTY(m_nPlayer,int32_t , 0xef0);
-			PROPERTY(m_nEntity,int32_t , 0xef4);
-			PROPERTY(m_nHitbox,int32_t , 0xef8);
-			PROPERTY(m_flCreationTime,float32 , 0xefc);
-			PROPERTY(m_nTintID,int32_t , 0xf00);
-			PROPERTY(m_nVersion,uint8_t , 0xf04);
-			PROPERTY_ARRAY(m_ubSignature,uint8_t , 128 , 0xf05);
-			PROPERTY(m_SprayRenderHelper,client::CPlayerSprayDecalRenderHelper , 0xf90);
+			PROPERTY(m_nUniqueID,int32_t , 0xe88);
+			PROPERTY(m_unAccountID,uint32_t , 0xe8c);
+			PROPERTY(m_unTraceID,uint32_t , 0xe90);
+			PROPERTY(m_rtGcTime,uint32_t , 0xe94);
+			PROPERTY(m_vecEndPos,GlobalTypes::Vector , 0xe98);
+			PROPERTY(m_vecStart,GlobalTypes::Vector , 0xea4);
+			PROPERTY(m_vecLeft,GlobalTypes::Vector , 0xeb0);
+			PROPERTY(m_vecNormal,GlobalTypes::Vector , 0xebc);
+			PROPERTY(m_nPlayer,int32_t , 0xec8);
+			PROPERTY(m_nEntity,int32_t , 0xecc);
+			PROPERTY(m_nHitbox,int32_t , 0xed0);
+			PROPERTY(m_flCreationTime,float32 , 0xed4);
+			PROPERTY(m_nTintID,int32_t , 0xed8);
+			PROPERTY(m_nVersion,uint8_t , 0xedc);
+			PROPERTY_ARRAY(m_ubSignature,uint8_t , 128 , 0xedd);
+			PROPERTY(m_SprayRenderHelper,client::CPlayerSprayDecalRenderHelper , 0xf68);
 			S2_PAD(0x110);
 		};
-		//static_assert(sizeof(CS2::client::C_PlayerSprayDecal) == 0xFC0, "C_PlayerSprayDecal size should be 0xFC0");
+		//static_assert(sizeof(CS2::client::C_PlayerSprayDecal) == 0xF98, "C_PlayerSprayDecal size should be 0xF98");
 	}
 }

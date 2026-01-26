@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_NetTestBaseCombatCharacter) == 0x13F0, "C_NetTestBaseCombatCharacter size should be 0x13F0");
+		//static_assert(sizeof(CS2::client::C_NetTestBaseCombatCharacter) == 0x13D8, "C_NetTestBaseCombatCharacter size should be 0x13D8");
 	}
 }

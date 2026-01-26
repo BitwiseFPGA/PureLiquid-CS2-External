@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace client {
 		class CPathSimple : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_CPathQueryComponent,client::CPathQueryComponent , 0x600);
-			PROPERTY(m_pathString,GlobalTypes::CUtlString* , 0x6f0);
-			PROPERTY(m_bClosedLoop,bool , 0x6f8);
+			PROPERTY(m_CPathQueryComponent,client::CPathQueryComponent , 0x610);
+			PROPERTY(m_pathString,GlobalTypes::CUtlString* , 0x700);
+			PROPERTY(m_bClosedLoop,bool , 0x708);
 			S2_PAD(0x108);
 		};
-		//static_assert(sizeof(CS2::client::CPathSimple) == 0x700, "CPathSimple size should be 0x700");
+		//static_assert(sizeof(CS2::client::CPathSimple) == 0x710, "CPathSimple size should be 0x710");
 	}
 }

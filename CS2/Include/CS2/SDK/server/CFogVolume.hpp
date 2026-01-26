@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace server {
 		class CFogVolume : public CS2::server::CServerOnlyModelEntity {
 		public:
-			PROPERTY(m_fogName,GlobalTypes::CUtlSymbolLarge* , 0x7d8);
-			PROPERTY(m_postProcessName,GlobalTypes::CUtlSymbolLarge* , 0x7e0);
-			PROPERTY(m_colorCorrectionName,GlobalTypes::CUtlSymbolLarge* , 0x7e8);
-			PROPERTY(m_bDisabled,bool , 0x7f8);
-			PROPERTY(m_bInFogVolumesList,bool , 0x7f9);
+			PROPERTY(m_fogName,GlobalTypes::CUtlSymbolLarge* , 0x730);
+			PROPERTY(m_postProcessName,GlobalTypes::CUtlSymbolLarge* , 0x738);
+			PROPERTY(m_colorCorrectionName,GlobalTypes::CUtlSymbolLarge* , 0x740);
+			PROPERTY(m_bDisabled,bool , 0x750);
+			PROPERTY(m_bInFogVolumesList,bool , 0x751);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::server::CFogVolume) == 0x800, "CFogVolume size should be 0x800");
+		//static_assert(sizeof(CS2::server::CFogVolume) == 0x758, "CFogVolume size should be 0x758");
 	}
 }

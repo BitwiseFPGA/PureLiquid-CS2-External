@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CDynamicPropAlias_dynamic_prop) == 0xD50, "CDynamicPropAlias_dynamic_prop size should be 0xD50");
+		//static_assert(sizeof(CS2::server::CDynamicPropAlias_dynamic_prop) == 0xC50, "CDynamicPropAlias_dynamic_prop size should be 0xC50");
 	}
 }

@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class C_EnvDetailController : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_flFadeStartDist,float32 , 0x5f8);
-			PROPERTY(m_flFadeEndDist,float32 , 0x5fc);
+			PROPERTY(m_flFadeStartDist,float32 , 0x608);
+			PROPERTY(m_flFadeEndDist,float32 , 0x60c);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::C_EnvDetailController) == 0x600, "C_EnvDetailController size should be 0x600");
+		//static_assert(sizeof(CS2::client::C_EnvDetailController) == 0x610, "C_EnvDetailController size should be 0x610");
 	}
 }

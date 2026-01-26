@@ -20,16 +20,19 @@ namespace CS2 {
 	namespace modellib {
 		class VPhysXCollisionAttributes_t  {
 		public:
-			PROPERTY(m_CollisionGroup,uint32_t , 0x0);
+			PROPERTY(m_nIncludeDetailLayerCount,int32_t , 0x0);
+			PROPERTY(m_CollisionGroup,uint32_t , 0x4);
 			PROPERTY(m_InteractAs,GlobalTypes::CUtlVector< uint32 >, 0x8);
 			PROPERTY(m_InteractWith,GlobalTypes::CUtlVector< uint32 >, 0x20);
 			PROPERTY(m_InteractExclude,GlobalTypes::CUtlVector< uint32 >, 0x38);
-			PROPERTY(m_CollisionGroupString,GlobalTypes::CUtlString* , 0x50);
-			PROPERTY(m_InteractAsStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x58);
-			PROPERTY(m_InteractWithStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x70);
-			PROPERTY(m_InteractExcludeStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x88);
-			S2_PAD(0xA0);
+			PROPERTY(m_DetailLayers,GlobalTypes::CUtlVector< uint32 >, 0x50);
+			PROPERTY(m_CollisionGroupString,GlobalTypes::CUtlString* , 0x68);
+			PROPERTY(m_InteractAsStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x70);
+			PROPERTY(m_InteractWithStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x88);
+			PROPERTY(m_InteractExcludeStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0xa0);
+			PROPERTY(m_DetailLayerStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0xb8);
+			S2_PAD(0xD0);
 		};
-		//static_assert(sizeof(CS2::modellib::VPhysXCollisionAttributes_t) == 0xA0, "VPhysXCollisionAttributes_t size should be 0xA0");
+		//static_assert(sizeof(CS2::modellib::VPhysXCollisionAttributes_t) == 0xD0, "VPhysXCollisionAttributes_t size should be 0xD0");
 	}
 }

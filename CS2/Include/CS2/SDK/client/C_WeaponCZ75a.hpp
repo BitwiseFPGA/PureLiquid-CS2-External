@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace client {
 		class C_WeaponCZ75a : public CS2::client::C_CSWeaponBaseGun {
 		public:
-			PROPERTY(m_bMagazineRemoved,bool , 0x1fb0);
+			PROPERTY(m_bMagazineRemoved,bool , 0x1f70);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::client::C_WeaponCZ75a) == 0x1FC0, "C_WeaponCZ75a size should be 0x1FC0");
+		//static_assert(sizeof(CS2::client::C_WeaponCZ75a) == 0x1F80, "C_WeaponCZ75a size should be 0x1F80");
 	}
 }

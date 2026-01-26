@@ -22,26 +22,26 @@ namespace CS2 {
 	namespace server {
 		class CFuncRotating : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_OnStopped,entity2::CEntityIOOutput , 0x7d8);
-			PROPERTY(m_OnStarted,entity2::CEntityIOOutput , 0x800);
-			PROPERTY(m_OnReachedStart,entity2::CEntityIOOutput , 0x828);
-			PROPERTY(m_localRotationVector,GlobalTypes::RotationVector , 0x850);
-			PROPERTY(m_flFanFriction,float32 , 0x85c);
-			PROPERTY(m_flAttenuation,float32 , 0x860);
-			PROPERTY(m_flVolume,float32 , 0x864);
-			PROPERTY(m_flTargetSpeed,float32 , 0x868);
-			PROPERTY(m_flMaxSpeed,float32 , 0x86c);
-			PROPERTY(m_flBlockDamage,float32 , 0x870);
-			PROPERTY(m_NoiseRunning,GlobalTypes::CUtlSymbolLarge* , 0x878);
-			PROPERTY(m_bReversed,bool , 0x880);
-			PROPERTY(m_bAccelDecel,bool , 0x881);
-			PROPERTY(m_prevLocalAngles,GlobalTypes::QAngle , 0x898);
-			PROPERTY(m_angStart,GlobalTypes::QAngle , 0x8a4);
-			PROPERTY(m_bStopAtStartPos,bool , 0x8b0);
-			PROPERTY(m_vecClientOrigin,GlobalTypes::Vector , 0x8b4);
-			PROPERTY(m_vecClientAngles,GlobalTypes::QAngle , 0x8c0);
-			S2_PAD(0xF8);
+			PROPERTY(m_OnStopped,entity2::CEntityIOOutput , 0x730);
+			PROPERTY(m_OnStarted,entity2::CEntityIOOutput , 0x748);
+			PROPERTY(m_OnReachedStart,entity2::CEntityIOOutput , 0x760);
+			PROPERTY(m_localRotationVector,GlobalTypes::RotationVector , 0x778);
+			PROPERTY(m_flFanFriction,float32 , 0x784);
+			PROPERTY(m_flAttenuation,float32 , 0x788);
+			PROPERTY(m_flVolume,float32 , 0x78c);
+			PROPERTY(m_flTargetSpeed,float32 , 0x790);
+			PROPERTY(m_flMaxSpeed,float32 , 0x794);
+			PROPERTY(m_flBlockDamage,float32 , 0x798);
+			PROPERTY(m_NoiseRunning,GlobalTypes::CUtlSymbolLarge* , 0x7a0);
+			PROPERTY(m_bReversed,bool , 0x7a8);
+			PROPERTY(m_bAccelDecel,bool , 0x7a9);
+			PROPERTY(m_prevLocalAngles,GlobalTypes::QAngle , 0x7c0);
+			PROPERTY(m_angStart,GlobalTypes::QAngle , 0x7cc);
+			PROPERTY(m_bStopAtStartPos,bool , 0x7d8);
+			PROPERTY(m_vecClientOrigin,GlobalTypes::Vector , 0x7dc);
+			PROPERTY(m_vecClientAngles,GlobalTypes::QAngle , 0x7e8);
+			S2_PAD(0xC8);
 		};
-		//static_assert(sizeof(CS2::server::CFuncRotating) == 0x8D0, "CFuncRotating size should be 0x8D0");
+		//static_assert(sizeof(CS2::server::CFuncRotating) == 0x7F8, "CFuncRotating size should be 0x7F8");
 	}
 }

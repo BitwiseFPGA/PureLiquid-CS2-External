@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace client {
 		class C_Item : public CS2::client::C_EconEntity {
 		public:
-			PROPERTY_ARRAY(m_pReticleHintTextName,char , 256 , 0x18e0);
+			PROPERTY_ARRAY(m_pReticleHintTextName,char , 256 , 0x18c0);
 			S2_PAD(0x100);
 		};
-		//static_assert(sizeof(CS2::client::C_Item) == 0x19E0, "C_Item size should be 0x19E0");
+		//static_assert(sizeof(CS2::client::C_Item) == 0x19C0, "C_Item size should be 0x19C0");
 	}
 }

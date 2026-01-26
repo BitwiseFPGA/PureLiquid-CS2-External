@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CFuncVPhysicsClip : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x7d8);
+			PROPERTY(m_bDisabled,bool , 0x730);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CFuncVPhysicsClip) == 0x7E0, "CFuncVPhysicsClip size should be 0x7E0");
+		//static_assert(sizeof(CS2::server::CFuncVPhysicsClip) == 0x738, "CFuncVPhysicsClip size should be 0x738");
 	}
 }

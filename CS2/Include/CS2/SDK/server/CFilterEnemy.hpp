@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace server {
 		class CFilterEnemy : public CS2::server::CBaseFilter {
 		public:
-			PROPERTY(m_iszEnemyName,GlobalTypes::CUtlSymbolLarge* , 0x548);
-			PROPERTY(m_flRadius,float32 , 0x550);
-			PROPERTY(m_flOuterRadius,float32 , 0x554);
-			PROPERTY(m_nMaxSquadmatesPerEnemy,int32_t , 0x558);
-			PROPERTY(m_iszPlayerName,GlobalTypes::CUtlSymbolLarge* , 0x560);
+			PROPERTY(m_iszEnemyName,GlobalTypes::CUtlSymbolLarge* , 0x4e0);
+			PROPERTY(m_flRadius,float32 , 0x4e8);
+			PROPERTY(m_flOuterRadius,float32 , 0x4ec);
+			PROPERTY(m_nMaxSquadmatesPerEnemy,int32_t , 0x4f0);
+			PROPERTY(m_iszPlayerName,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CFilterEnemy) == 0x568, "CFilterEnemy size should be 0x568");
+		//static_assert(sizeof(CS2::server::CFilterEnemy) == 0x500, "CFilterEnemy size should be 0x500");
 	}
 }

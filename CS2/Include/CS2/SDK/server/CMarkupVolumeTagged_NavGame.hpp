@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace server {
 		class CMarkupVolumeTagged_NavGame : public CS2::server::CMarkupVolumeWithRef {
 		public:
-			PROPERTY(m_nScopes,server::NavScopeFlags_t , 0x840);
-			PROPERTY(m_bFloodFillAttribute,bool , 0x841);
-			PROPERTY(m_bSplitNavSpace,bool , 0x842);
+			PROPERTY(m_nScopes,server::NavScopeFlags_t , 0x798);
+			PROPERTY(m_bFloodFillAttribute,bool , 0x799);
+			PROPERTY(m_bSplitNavSpace,bool , 0x79a);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CMarkupVolumeTagged_NavGame) == 0x848, "CMarkupVolumeTagged_NavGame size should be 0x848");
+		//static_assert(sizeof(CS2::server::CMarkupVolumeTagged_NavGame) == 0x7A0, "CMarkupVolumeTagged_NavGame size should be 0x7A0");
 	}
 }

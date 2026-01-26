@@ -27,14 +27,14 @@ namespace CS2 {
 	namespace server {
 		class CPointHurt : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_nDamage,int32_t , 0x4f0);
-			PROPERTY(m_bitsDamageType,client::DamageTypes_t , 0x4f4);
-			PROPERTY(m_flRadius,float32 , 0x4f8);
-			PROPERTY(m_flDelay,float32 , 0x4fc);
-			PROPERTY(m_strTarget,GlobalTypes::CUtlSymbolLarge* , 0x500);
-			PROPERTY(m_pActivator,GlobalTypes::CHandle<server::CBaseEntity>, 0x508);
+			PROPERTY(m_nDamage,int32_t , 0x4a8);
+			PROPERTY(m_bitsDamageType,client::DamageTypes_t , 0x4ac);
+			PROPERTY(m_flRadius,float32 , 0x4b0);
+			PROPERTY(m_flDelay,float32 , 0x4b4);
+			PROPERTY(m_strTarget,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
+			PROPERTY(m_pActivator,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c0);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CPointHurt) == 0x510, "CPointHurt size should be 0x510");
+		//static_assert(sizeof(CS2::server::CPointHurt) == 0x4C8, "CPointHurt size should be 0x4C8");
 	}
 }

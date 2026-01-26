@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerDefault) == 0xB8, "CVoiceContainerDefault size should be 0xB8");
+		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerDefault) == 0xA8, "CVoiceContainerDefault size should be 0xA8");
 	}
 }

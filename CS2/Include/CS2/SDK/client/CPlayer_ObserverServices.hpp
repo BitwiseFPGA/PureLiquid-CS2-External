@@ -28,14 +28,14 @@ namespace CS2 {
 	namespace client {
 		class CPlayer_ObserverServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY(m_iObserverMode,uint8_t , 0x40);
-			PROPERTY(m_hObserverTarget,GlobalTypes::CHandle<client::C_BaseEntity>, 0x44);
-			PROPERTY(m_iObserverLastMode,client::ObserverMode_t , 0x48);
-			PROPERTY(m_bForcedObserverMode,bool , 0x4c);
-			PROPERTY(m_flObserverChaseDistance,float32 , 0x50);
-			PROPERTY(m_flObserverChaseDistanceCalcTime,entity2::GameTime_t , 0x54);
+			PROPERTY(m_iObserverMode,uint8_t , 0x48);
+			PROPERTY(m_hObserverTarget,GlobalTypes::CHandle<client::C_BaseEntity>, 0x4c);
+			PROPERTY(m_iObserverLastMode,client::ObserverMode_t , 0x50);
+			PROPERTY(m_bForcedObserverMode,bool , 0x54);
+			PROPERTY(m_flObserverChaseDistance,float32 , 0x58);
+			PROPERTY(m_flObserverChaseDistanceCalcTime,entity2::GameTime_t , 0x5c);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::client::CPlayer_ObserverServices) == 0x58, "CPlayer_ObserverServices size should be 0x58");
+		//static_assert(sizeof(CS2::client::CPlayer_ObserverServices) == 0x60, "CPlayer_ObserverServices size should be 0x60");
 	}
 }

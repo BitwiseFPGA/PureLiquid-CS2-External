@@ -10,36 +10,24 @@
 #endif
 
 
-#include <SDK/server/CPointEntity.hpp>
-#include <SDK/entity2/CEntityIOOutput.hpp>
+#include <SDK/server/CPathNode.hpp>
 
 
 
-namespace CS2 {
-	namespace server {
-		class CPathMover;
-	}
-}
 
 
 using namespace GlobalTypes;
 namespace CS2 {
 	namespace server {
-		class CMoverPathNode : public CS2::server::CPointEntity {
+		class CMoverPathNode : public CS2::server::CPathNode {
 		public:
-			PROPERTY(m_vInTangentLocal,GlobalTypes::Vector , 0x4f0);
-			PROPERTY(m_vOutTangentLocal,GlobalTypes::Vector , 0x4fc);
-			PROPERTY(m_szParentPathUniqueID,GlobalTypes::CUtlSymbolLarge* , 0x508);
-			PROPERTY(m_szPathNodeParameter,GlobalTypes::CUtlSymbolLarge* , 0x510);
-			PROPERTY(m_OnStartFromOrInSegment,entity2::CEntityIOOutput , 0x518);
-			PROPERTY(m_OnStoppedAtOrInSegment,entity2::CEntityIOOutput , 0x540);
-			PROPERTY(m_OnPassThrough,entity2::CEntityIOOutput , 0x568);
-			PROPERTY(m_OnPassThroughForward,entity2::CEntityIOOutput , 0x590);
-			PROPERTY(m_OnPassThroughReverse,entity2::CEntityIOOutput , 0x5b8);
-			PROPERTY(m_hMover,GlobalTypes::CHandle<server::CPathMover>, 0x5e0);
-			PROPERTY(m_xWSPrevParent,GlobalTypes::CTransform , 0x5f0);
-			S2_PAD(0x120);
+			PROPERTY(m_OnStartFromOrInSegment,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x500);
+			PROPERTY(m_OnStoppedAtOrInSegment,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x520);
+			PROPERTY(m_OnPassThrough,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x540);
+			PROPERTY(m_OnPassThroughForward,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x560);
+			PROPERTY(m_OnPassThroughReverse,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x580);
+			S2_PAD(0xA0);
 		};
-		//static_assert(sizeof(CS2::server::CMoverPathNode) == 0x610, "CMoverPathNode size should be 0x610");
+		//static_assert(sizeof(CS2::server::CMoverPathNode) == 0x5A0, "CMoverPathNode size should be 0x5A0");
 	}
 }

@@ -23,11 +23,11 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerSelector : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
 		public:
-			PROPERTY(m_mode,soundsystem_voicecontainers::PlayBackMode_t , 0xb8);
-			PROPERTY(m_soundsToPlay,soundsystem_voicecontainers::CSoundContainerReferenceArray , 0xc0);
-			PROPERTY(m_fProbabilityWeights,GlobalTypes::CUtlVector< float32 >, 0xf8);
+			PROPERTY(m_mode,soundsystem_voicecontainers::PlayBackMode_t , 0xa8);
+			PROPERTY(m_soundsToPlay,soundsystem_voicecontainers::CSoundContainerReferenceArray , 0xb0);
+			PROPERTY(m_fProbabilityWeights,GlobalTypes::CUtlVector< float32 >, 0xe8);
 			S2_PAD(0x78);
 		};
-		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerSelector) == 0x130, "CVoiceContainerSelector size should be 0x130");
+		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerSelector) == 0x120, "CVoiceContainerSelector size should be 0x120");
 	}
 }

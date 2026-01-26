@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CLogicNPCCounterOBB) == 0x860, "CLogicNPCCounterOBB size should be 0x860");
+		//static_assert(sizeof(CS2::server::CLogicNPCCounterOBB) == 0x758, "CLogicNPCCounterOBB size should be 0x758");
 	}
 }

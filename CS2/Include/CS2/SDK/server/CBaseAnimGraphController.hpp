@@ -11,17 +11,27 @@
 
 
 #include <SDK/client/CSkeletonAnimationController.hpp>
+#include <SDK/client/AnimationAlgorithm_t.hpp>
 #include <SDK/server/CAnimGraphNetworkedVariables.hpp>
+#include <SDK/client/ExternalAnimGraphHandle_t.hpp>
 #include <SDK/animationsystem/HSequence.hpp>
 #include <SDK/entity2/GameTime_t.hpp>
 #include <SDK/client/AnimLoopMode_t.hpp>
 #include <SDK/client/SequenceFinishNotifyState_t.hpp>
+#include <SDK/entity2/GameTick_t.hpp>
+#include <SDK/resourcefile/ResourceId_t.hpp>
 
 
 
 namespace CS2 {
+	namespace animgraphlib {
+		class IAnimationGraphInstance;
+	}
 	namespace resourcesystem {
 		class InfoForResourceTypeCNmGraphDefinition;
+	}
+	namespace client {
+		class ExternalAnimGraph_t;
 	}
 }
 
@@ -31,30 +41,39 @@ namespace CS2 {
 	namespace server {
 		class CBaseAnimGraphController : public CS2::client::CSkeletonAnimationController {
 		public:
-			PROPERTY(m_animGraphNetworkedVars,server::CAnimGraphNetworkedVariables , 0x18);
-			PROPERTY(m_bSequenceFinished,bool , 0x220);
-			PROPERTY(m_flSoundSyncTime,float32 , 0x224);
-			PROPERTY(m_nActiveIKChainMask,uint32_t , 0x228);
-			PROPERTY(m_hSequence,animationsystem::HSequence , 0x22c);
-			PROPERTY(m_flSeqStartTime,entity2::GameTime_t , 0x230);
-			PROPERTY(m_flSeqFixedCycle,float32 , 0x234);
-			PROPERTY(m_nAnimLoopMode,client::AnimLoopMode_t , 0x238);
-			PROPERTY(m_flPlaybackRate,GlobalTypes::CNetworkedQuantizedFloat , 0x23c);
-			PROPERTY(m_nNotifyState,client::SequenceFinishNotifyState_t , 0x248);
-			PROPERTY(m_bNetworkedAnimationInputsChanged,bool , 0x24a);
-			PROPERTY(m_bNetworkedSequenceChanged,bool , 0x24b);
-			PROPERTY(m_bLastUpdateSkipped,bool , 0x24c);
-			PROPERTY(m_flPrevAnimUpdateTime,entity2::GameTime_t , 0x250);
-			PROPERTY(m_hGraphDefinitionAG2,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCNmGraphDefinition>, 0x588);
-			PROPERTY(m_bIsUsingAG2,bool , 0x590);
+			PROPERTY(m_nAnimationAlgorithm,client::AnimationAlgorithm_t , 0x18);
+			PROPERTY(m_animGraphNetworkedVars,server::CAnimGraphNetworkedVariables , 0x20);
+			PROPERTY(m_pAnimGraphInstance,GlobalTypes::CSmartPtr<animgraphlib::IAnimationGraphInstance>, 0x228);
+			PROPERTY(m_nNextExternalGraphHandle,client::ExternalAnimGraphHandle_t , 0x288);
+			PROPERTY(m_vecSecondarySkeletonNames,GlobalTypes::CUtlVector<GlobalTypes::CGlobalSymbol>, 0x290);
+			PROPERTY(m_vecSecondarySkeletons,server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CBaseAnimGraph>>, 0x2a8);
+			PROPERTY(m_nSecondarySkeletonMasterCount,int32_t , 0x2c0);
+			PROPERTY(m_flSoundSyncTime,float32 , 0x2c4);
+			PROPERTY(m_nActiveIKChainMask,uint32_t , 0x2c8);
+			PROPERTY(m_hSequence,animationsystem::HSequence , 0x2cc);
+			PROPERTY(m_flSeqStartTime,entity2::GameTime_t , 0x2d0);
+			PROPERTY(m_flSeqFixedCycle,float32 , 0x2d4);
+			PROPERTY(m_nAnimLoopMode,client::AnimLoopMode_t , 0x2d8);
+			PROPERTY(m_flPlaybackRate,GlobalTypes::CNetworkedQuantizedFloat , 0x2dc);
+			PROPERTY(m_nNotifyState,client::SequenceFinishNotifyState_t , 0x2e8);
+			PROPERTY(m_bNetworkedAnimationInputsChanged,bool , 0x2e9);
+			PROPERTY(m_bNetworkedSequenceChanged,bool , 0x2ea);
+			PROPERTY(m_bLastUpdateSkipped,bool , 0x2eb);
+			PROPERTY(m_bSequenceFinished,bool , 0x2ec);
+			PROPERTY(m_nPrevAnimUpdateTick,entity2::GameTick_t , 0x2f0);
+			PROPERTY(m_hGraphDefinitionAG2,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCNmGraphDefinition>, 0x590);
 			PROPERTY(m_serializedPoseRecipeAG2,GlobalTypes::CNetworkUtlVectorBase< uint8 >, 0x598);
 			PROPERTY(m_nSerializePoseRecipeSizeAG2,int32_t , 0x5b0);
 			PROPERTY(m_nSerializePoseRecipeVersionAG2,int32_t , 0x5b4);
-			PROPERTY(m_nGraphCreationFlagsAG2,uint8_t , 0x5b8);
-			PROPERTY(m_nServerGraphDefReloadCountAG2,int32_t , 0x7a0);
-			PROPERTY(m_nServerSerializationContextIteration,int32_t , 0x7a4);
-			S2_PAD(0x7A0);
+			PROPERTY(m_nServerGraphInstanceIteration,int32_t , 0x5b8);
+			PROPERTY(m_nServerSerializationContextIteration,int32_t , 0x5bc);
+			PROPERTY(m_primaryGraphId,resourcefile::ResourceId_t , 0x5c0);
+			PROPERTY(m_vecExternalGraphIds,GlobalTypes::CNetworkUtlVectorBase<resourcefile::ResourceId_t>, 0x5c8);
+			PROPERTY(m_vecExternalClipIds,GlobalTypes::CNetworkUtlVectorBase<resourcefile::ResourceId_t>, 0x5e0);
+			PROPERTY(m_sAnimGraph2Identifier,GlobalTypes::CGlobalSymbol , 0x5f8);
+			PROPERTY(m_vecExternalGraphs,GlobalTypes::CUtlVector<client::ExternalAnimGraph_t>, 0x820);
+			S2_PAD(0x848);
 		};
-		//static_assert(sizeof(CS2::server::CBaseAnimGraphController) == 0x7B0, "CBaseAnimGraphController size should be 0x7B0");
+		//static_assert(sizeof(CS2::server::CBaseAnimGraphController) == 0x858, "CBaseAnimGraphController size should be 0x858");
 	}
 }

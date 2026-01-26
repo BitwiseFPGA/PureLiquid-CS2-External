@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CKnife : public CS2::server::CCSWeaponBase {
 		public:
-			PROPERTY(m_bFirstAttack,bool , 0x11d0);
+			PROPERTY(m_bFirstAttack,bool , 0x1130);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CKnife) == 0x11E0, "CKnife size should be 0x11E0");
+		//static_assert(sizeof(CS2::server::CKnife) == 0x1140, "CKnife size should be 0x1140");
 	}
 }

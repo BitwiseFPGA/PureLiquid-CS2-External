@@ -27,33 +27,33 @@ namespace CS2 {
 	namespace server {
 		class CTriggerFan : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_vFanOriginOffset,GlobalTypes::Vector , 0x9a8);
-			PROPERTY(m_vDirection,GlobalTypes::Vector , 0x9b4);
-			PROPERTY(m_bPushTowardsInfoTarget,bool , 0x9c0);
-			PROPERTY(m_bPushAwayFromInfoTarget,bool , 0x9c1);
-			PROPERTY(m_qNoiseDelta,GlobalTypes::Quaternion , 0x9d0);
-			PROPERTY(m_hInfoFan,GlobalTypes::CHandle<server::CInfoFan>, 0x9e0);
-			PROPERTY(m_flForce,float32 , 0x9e4);
-			PROPERTY(m_bFalloff,bool , 0x9e8);
-			PROPERTY(m_RampTimer,server::CountdownTimer , 0x9f0);
-			PROPERTY(m_vFanOriginWS,GlobalTypes::VectorWS , 0xa08);
-			PROPERTY(m_vFanOriginLS,GlobalTypes::Vector , 0xa14);
-			PROPERTY(m_vFanEndLS,GlobalTypes::Vector , 0xa20);
-			PROPERTY(m_vNoiseDirectionTarget,GlobalTypes::Vector , 0xa2c);
-			PROPERTY(m_iszInfoFan,GlobalTypes::CUtlSymbolLarge* , 0xa38);
-			PROPERTY(m_flRopeForceScale,float32 , 0xa40);
-			PROPERTY(m_flParticleForceScale,float32 , 0xa44);
-			PROPERTY(m_flPlayerForce,float32 , 0xa48);
-			PROPERTY(m_bPlayerWindblock,bool , 0xa4c);
-			PROPERTY(m_flNPCForce,float32 , 0xa50);
-			PROPERTY(m_flRampTime,float32 , 0xa54);
-			PROPERTY(m_fNoiseDegrees,float32 , 0xa58);
-			PROPERTY(m_fNoiseSpeed,float32 , 0xa5c);
-			PROPERTY(m_bPushPlayer,bool , 0xa60);
-			PROPERTY(m_bRampDown,bool , 0xa61);
-			PROPERTY(m_nManagerFanIdx,int32_t , 0xa64);
-			S2_PAD(0xC8);
+			PROPERTY(m_vFanOriginOffset,GlobalTypes::Vector , 0x890);
+			PROPERTY(m_vDirection,GlobalTypes::Vector , 0x89c);
+			PROPERTY(m_bPushTowardsInfoTarget,bool , 0x8a8);
+			PROPERTY(m_bPushAwayFromInfoTarget,bool , 0x8a9);
+			PROPERTY(m_qNoiseDelta,GlobalTypes::Quaternion , 0x8b0);
+			PROPERTY(m_hInfoFan,GlobalTypes::CHandle<server::CInfoFan>, 0x8c0);
+			PROPERTY(m_flForce,float32 , 0x8c4);
+			PROPERTY(m_bFalloff,bool , 0x8c8);
+			PROPERTY(m_RampTimer,server::CountdownTimer , 0x8d0);
+			PROPERTY(m_vFanOriginWS,GlobalTypes::VectorWS , 0x8e8);
+			PROPERTY(m_vFanOriginLS,GlobalTypes::Vector , 0x8f4);
+			PROPERTY(m_vFanEndLS,GlobalTypes::Vector , 0x900);
+			PROPERTY(m_vNoiseDirectionTarget,GlobalTypes::Vector , 0x90c);
+			PROPERTY(m_iszInfoFan,GlobalTypes::CUtlSymbolLarge* , 0x918);
+			PROPERTY(m_flRopeForceScale,float32 , 0x920);
+			PROPERTY(m_flParticleForceScale,float32 , 0x924);
+			PROPERTY(m_flPlayerForce,float32 , 0x928);
+			PROPERTY(m_bPlayerWindblock,bool , 0x92c);
+			PROPERTY(m_flNPCForce,float32 , 0x930);
+			PROPERTY(m_flRampTime,float32 , 0x934);
+			PROPERTY(m_fNoiseDegrees,float32 , 0x938);
+			PROPERTY(m_fNoiseSpeed,float32 , 0x93c);
+			PROPERTY(m_bPushPlayer,bool , 0x940);
+			PROPERTY(m_bRampDown,bool , 0x941);
+			PROPERTY(m_nManagerFanIdx,int32_t , 0x944);
+			S2_PAD(0xC0);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerFan) == 0xA70, "CTriggerFan size should be 0xA70");
+		//static_assert(sizeof(CS2::server::CTriggerFan) == 0x950, "CTriggerFan size should be 0x950");
 	}
 }

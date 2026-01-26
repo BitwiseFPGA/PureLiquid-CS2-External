@@ -21,11 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CSoundOpvarSetPathCornerEntity : public CS2::server::CSoundOpvarSetPointEntity {
 		public:
-			PROPERTY(m_flDistMinSqr,float32 , 0x6c0);
-			PROPERTY(m_flDistMaxSqr,float32 , 0x6c4);
-			PROPERTY(m_iszPathCornerEntityName,GlobalTypes::CUtlSymbolLarge* , 0x6c8);
-			S2_PAD(0x28);
+			PROPERTY(m_bUseParentedPath,bool , 0x658);
+			PROPERTY(m_flDistMinSqr,float32 , 0x65c);
+			PROPERTY(m_flDistMaxSqr,float32 , 0x660);
+			PROPERTY(m_iszPathCornerEntityName,GlobalTypes::CUtlSymbolLarge* , 0x668);
+			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CSoundOpvarSetPathCornerEntity) == 0x6D0, "CSoundOpvarSetPathCornerEntity size should be 0x6D0");
+		//static_assert(sizeof(CS2::server::CSoundOpvarSetPathCornerEntity) == 0x670, "CSoundOpvarSetPathCornerEntity size should be 0x670");
 	}
 }

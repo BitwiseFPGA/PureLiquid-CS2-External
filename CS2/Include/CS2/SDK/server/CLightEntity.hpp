@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace server {
 		class CLightEntity : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_CLightComponent,server::CLightComponent* , 0x7d8);
+			PROPERTY(m_CLightComponent,server::CLightComponent* , 0x730);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CLightEntity) == 0x7E0, "CLightEntity size should be 0x7E0");
+		//static_assert(sizeof(CS2::server::CLightEntity) == 0x738, "CLightEntity size should be 0x738");
 	}
 }

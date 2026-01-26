@@ -76,12 +76,12 @@ namespace CS2 {
 			PROPERTY(m_bIsDroppingItems,bool , 0x8c4);
 			PROPERTY(m_bIsQuestEligible,bool , 0x8c5);
 			PROPERTY(m_bIsHltvActive,bool , 0x8c6);
+			PROPERTY(m_bBombPlanted,bool , 0x8c7);
 			PROPERTY_ARRAY(m_arrProhibitedItemIndices,uint16_t , 100 , 0x8c8);
 			PROPERTY_ARRAY(m_arrTournamentActiveCasterAccounts,uint32_t , 4 , 0x990);
 			PROPERTY(m_numBestOfMaps,int32_t , 0x9a0);
 			PROPERTY(m_nHalloweenMaskListSeed,int32_t , 0x9a4);
 			PROPERTY(m_bBombDropped,bool , 0x9a8);
-			PROPERTY(m_bBombPlanted,bool , 0x9a9);
 			PROPERTY(m_iRoundWinStatus,int32_t , 0x9ac);
 			PROPERTY(m_eRoundWinReason,int32_t , 0x9b0);
 			PROPERTY(m_bTCantBuy,bool , 0x9b4);

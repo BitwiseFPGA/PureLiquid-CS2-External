@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CCSObserver_CameraServices) == 0x1A8, "CCSObserver_CameraServices size should be 0x1A8");
+		//static_assert(sizeof(CS2::server::CCSObserver_CameraServices) == 0x1B0, "CCSObserver_CameraServices size should be 0x1B0");
 	}
 }

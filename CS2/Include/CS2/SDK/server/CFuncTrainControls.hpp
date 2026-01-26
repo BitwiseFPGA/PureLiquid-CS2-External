@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CFuncTrainControls) == 0x7D8, "CFuncTrainControls size should be 0x7D8");
+		//static_assert(sizeof(CS2::server::CFuncTrainControls) == 0x730, "CFuncTrainControls size should be 0x730");
 	}
 }

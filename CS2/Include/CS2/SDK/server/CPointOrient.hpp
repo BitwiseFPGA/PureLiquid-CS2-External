@@ -24,15 +24,15 @@ namespace CS2 {
 	namespace server {
 		class CPointOrient : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_iszSpawnTargetName,GlobalTypes::CUtlSymbolLarge* , 0x4f0);
-			PROPERTY(m_hTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x4f8);
-			PROPERTY(m_bActive,bool , 0x4fc);
-			PROPERTY(m_nGoalDirection,client::PointOrientGoalDirectionType_t , 0x500);
-			PROPERTY(m_nConstraint,client::PointOrientConstraint_t , 0x504);
-			PROPERTY(m_flMaxTurnRate,float32 , 0x508);
-			PROPERTY(m_flLastGameTime,entity2::GameTime_t , 0x50c);
+			PROPERTY(m_iszSpawnTargetName,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
+			PROPERTY(m_hTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x4b0);
+			PROPERTY(m_bActive,bool , 0x4b4);
+			PROPERTY(m_nGoalDirection,client::PointOrientGoalDirectionType_t , 0x4b8);
+			PROPERTY(m_nConstraint,client::PointOrientConstraint_t , 0x4bc);
+			PROPERTY(m_flMaxTurnRate,float32 , 0x4c0);
+			PROPERTY(m_flLastGameTime,entity2::GameTime_t , 0x4c4);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CPointOrient) == 0x510, "CPointOrient size should be 0x510");
+		//static_assert(sizeof(CS2::server::CPointOrient) == 0x4C8, "CPointOrient size should be 0x4C8");
 	}
 }

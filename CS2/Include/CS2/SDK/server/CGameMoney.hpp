@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace server {
 		class CGameMoney : public CS2::server::CRulePointEntity {
 		public:
-			PROPERTY(m_OnMoneySpent,entity2::CEntityIOOutput , 0x7e8);
-			PROPERTY(m_OnMoneySpentFail,entity2::CEntityIOOutput , 0x810);
-			PROPERTY(m_nMoney,int32_t , 0x838);
-			PROPERTY(m_strAwardText,GlobalTypes::CUtlString* , 0x840);
-			S2_PAD(0x60);
+			PROPERTY(m_OnMoneySpent,entity2::CEntityIOOutput , 0x740);
+			PROPERTY(m_OnMoneySpentFail,entity2::CEntityIOOutput , 0x758);
+			PROPERTY(m_nMoney,int32_t , 0x770);
+			PROPERTY(m_strAwardText,GlobalTypes::CUtlString* , 0x778);
+			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CGameMoney) == 0x848, "CGameMoney size should be 0x848");
+		//static_assert(sizeof(CS2::server::CGameMoney) == 0x780, "CGameMoney size should be 0x780");
 	}
 }

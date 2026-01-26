@@ -26,14 +26,14 @@ namespace CS2 {
 	namespace server {
 		class CPointVelocitySensor : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_hTargetEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4f0);
-			PROPERTY(m_vecAxis,GlobalTypes::Vector , 0x4f4);
-			PROPERTY(m_bEnabled,bool , 0x500);
-			PROPERTY(m_fPrevVelocity,float32 , 0x504);
-			PROPERTY(m_flAvgInterval,float32 , 0x508);
-			PROPERTY(m_Velocity,GlobalTypes::CEntityOutputTemplate< float32 >, 0x510);
-			S2_PAD(0x48);
+			PROPERTY(m_hTargetEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4a8);
+			PROPERTY(m_vecAxis,GlobalTypes::Vector , 0x4ac);
+			PROPERTY(m_bEnabled,bool , 0x4b8);
+			PROPERTY(m_fPrevVelocity,float32 , 0x4bc);
+			PROPERTY(m_flAvgInterval,float32 , 0x4c0);
+			PROPERTY(m_Velocity,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4c8);
+			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CPointVelocitySensor) == 0x538, "CPointVelocitySensor size should be 0x538");
+		//static_assert(sizeof(CS2::server::CPointVelocitySensor) == 0x4E8, "CPointVelocitySensor size should be 0x4E8");
 	}
 }

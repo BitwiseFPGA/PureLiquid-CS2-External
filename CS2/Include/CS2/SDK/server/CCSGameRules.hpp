@@ -18,7 +18,6 @@
 
 namespace CS2 {
 	namespace server {
-		class SpawnPoint;
 		class CCSGameModeRules;
 		class CBaseEntity;
 	}
@@ -78,12 +77,12 @@ namespace CS2 {
 			PROPERTY(m_bIsDroppingItems,bool , 0x94c);
 			PROPERTY(m_bIsQuestEligible,bool , 0x94d);
 			PROPERTY(m_bIsHltvActive,bool , 0x94e);
+			PROPERTY(m_bBombPlanted,bool , 0x94f);
 			PROPERTY_ARRAY(m_arrProhibitedItemIndices,uint16_t , 100 , 0x950);
 			PROPERTY_ARRAY(m_arrTournamentActiveCasterAccounts,uint32_t , 4 , 0xa18);
 			PROPERTY(m_numBestOfMaps,int32_t , 0xa28);
 			PROPERTY(m_nHalloweenMaskListSeed,int32_t , 0xa2c);
 			PROPERTY(m_bBombDropped,bool , 0xa30);
-			PROPERTY(m_bBombPlanted,bool , 0xa31);
 			PROPERTY(m_iRoundWinStatus,int32_t , 0xa34);
 			PROPERTY(m_eRoundWinReason,int32_t , 0xa38);
 			PROPERTY(m_bTCantBuy,bool , 0xa3c);
@@ -169,15 +168,15 @@ namespace CS2 {
 			PROPERTY(m_bBombDefused,bool , 0xef1);
 			PROPERTY(m_bMapHasBombZone,bool , 0xef2);
 			PROPERTY(m_vecMainCTSpawnPos,GlobalTypes::Vector , 0xf40);
-			PROPERTY(m_CTSpawnPointsMasterList,server::CUtlVector<server::SpawnPoint*>, 0xf50);
-			PROPERTY(m_TerroristSpawnPointsMasterList,server::CUtlVector<server::SpawnPoint*>, 0xf68);
+			PROPERTY(m_CTSpawnPointsMasterList,server::CUtlVector<GlobalTypes::CHandle<server::SpawnPoint>>, 0xf50);
+			PROPERTY(m_TerroristSpawnPointsMasterList,server::CUtlVector<GlobalTypes::CHandle<server::SpawnPoint>>, 0xf68);
 			PROPERTY(m_bRespawningAllRespawnablePlayers,bool , 0xf80);
 			PROPERTY(m_iNextCTSpawnPoint,int32_t , 0xf84);
 			PROPERTY(m_flCTSpawnPointUsedTime,float32 , 0xf88);
 			PROPERTY(m_iNextTerroristSpawnPoint,int32_t , 0xf8c);
 			PROPERTY(m_flTerroristSpawnPointUsedTime,float32 , 0xf90);
-			PROPERTY(m_CTSpawnPoints,server::CUtlVector<server::SpawnPoint*>, 0xf98);
-			PROPERTY(m_TerroristSpawnPoints,server::CUtlVector<server::SpawnPoint*>, 0xfb0);
+			PROPERTY(m_CTSpawnPoints,server::CUtlVector<GlobalTypes::CHandle<server::SpawnPoint>>, 0xf98);
+			PROPERTY(m_TerroristSpawnPoints,server::CUtlVector<GlobalTypes::CHandle<server::SpawnPoint>>, 0xfb0);
 			PROPERTY(m_bIsUnreservedGameServer,bool , 0xfc8);
 			PROPERTY(m_fAutobalanceDisplayTime,float32 , 0xfcc);
 			PROPERTY(m_bAllowWeaponSwitch,bool , 0x1008);

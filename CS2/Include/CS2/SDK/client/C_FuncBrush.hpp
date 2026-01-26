@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_FuncBrush) == 0xEB0, "C_FuncBrush size should be 0xEB0");
+		//static_assert(sizeof(CS2::client::C_FuncBrush) == 0xE88, "C_FuncBrush size should be 0xE88");
 	}
 }

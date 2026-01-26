@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CGameGibManager : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_bAllowNewGibs,bool , 0x508);
-			PROPERTY(m_iCurrentMaxPieces,int32_t , 0x50c);
-			PROPERTY(m_iMaxPieces,int32_t , 0x510);
-			PROPERTY(m_iLastFrame,int32_t , 0x514);
+			PROPERTY(m_bAllowNewGibs,bool , 0x4c0);
+			PROPERTY(m_iCurrentMaxPieces,int32_t , 0x4c4);
+			PROPERTY(m_iMaxPieces,int32_t , 0x4c8);
+			PROPERTY(m_iLastFrame,int32_t , 0x4cc);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::server::CGameGibManager) == 0x518, "CGameGibManager size should be 0x518");
+		//static_assert(sizeof(CS2::server::CGameGibManager) == 0x4D0, "CGameGibManager size should be 0x4D0");
 	}
 }

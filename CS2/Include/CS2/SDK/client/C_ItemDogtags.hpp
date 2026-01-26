@@ -26,10 +26,10 @@ namespace CS2 {
 	namespace client {
 		class C_ItemDogtags : public CS2::client::C_Item {
 		public:
-			PROPERTY(m_OwningPlayer,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x19e0);
-			PROPERTY(m_KillingPlayer,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x19e4);
+			PROPERTY(m_OwningPlayer,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x19c0);
+			PROPERTY(m_KillingPlayer,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x19c4);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::C_ItemDogtags) == 0x19E8, "C_ItemDogtags size should be 0x19E8");
+		//static_assert(sizeof(CS2::client::C_ItemDogtags) == 0x19C8, "C_ItemDogtags size should be 0x19C8");
 	}
 }

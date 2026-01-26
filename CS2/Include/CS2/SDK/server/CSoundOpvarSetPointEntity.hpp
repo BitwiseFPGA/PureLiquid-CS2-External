@@ -22,32 +22,32 @@ namespace CS2 {
 	namespace server {
 		class CSoundOpvarSetPointEntity : public CS2::server::CSoundOpvarSetPointBase {
 		public:
-			PROPERTY(m_OnEnter,entity2::CEntityIOOutput , 0x598);
-			PROPERTY(m_OnExit,entity2::CEntityIOOutput , 0x5c0);
-			PROPERTY(m_bAutoDisable,bool , 0x5e8);
-			PROPERTY(m_flDistanceMin,float32 , 0x62c);
-			PROPERTY(m_flDistanceMax,float32 , 0x630);
-			PROPERTY(m_flDistanceMapMin,float32 , 0x634);
-			PROPERTY(m_flDistanceMapMax,float32 , 0x638);
-			PROPERTY(m_flOcclusionRadius,float32 , 0x63c);
-			PROPERTY(m_flOcclusionMin,float32 , 0x640);
-			PROPERTY(m_flOcclusionMax,float32 , 0x644);
-			PROPERTY(m_flValSetOnDisable,float32 , 0x648);
-			PROPERTY(m_bSetValueOnDisable,bool , 0x64c);
-			PROPERTY(m_bReloading,bool , 0x64d);
-			PROPERTY(m_nSimulationMode,int32_t , 0x650);
-			PROPERTY(m_nVisibilitySamples,int32_t , 0x654);
-			PROPERTY(m_vDynamicProxyPoint,GlobalTypes::Vector , 0x658);
-			PROPERTY(m_flDynamicMaximumOcclusion,float32 , 0x664);
-			PROPERTY(m_hDynamicEntity,GlobalTypes::CEntityHandle , 0x668);
-			PROPERTY(m_iszDynamicEntityName,GlobalTypes::CUtlSymbolLarge* , 0x670);
-			PROPERTY(m_flPathingDistanceNormFactor,float32 , 0x678);
-			PROPERTY(m_vPathingSourcePos,GlobalTypes::Vector , 0x67c);
-			PROPERTY(m_vPathingListenerPos,GlobalTypes::Vector , 0x688);
-			PROPERTY(m_vPathingDirection,GlobalTypes::Vector , 0x694);
-			PROPERTY(m_nPathingSourceIndex,int32_t , 0x6a0);
-			S2_PAD(0x110);
+			PROPERTY(m_OnEnter,entity2::CEntityIOOutput , 0x550);
+			PROPERTY(m_OnExit,entity2::CEntityIOOutput , 0x568);
+			PROPERTY(m_bAutoDisable,bool , 0x580);
+			PROPERTY(m_flDistanceMin,float32 , 0x5c4);
+			PROPERTY(m_flDistanceMax,float32 , 0x5c8);
+			PROPERTY(m_flDistanceMapMin,float32 , 0x5cc);
+			PROPERTY(m_flDistanceMapMax,float32 , 0x5d0);
+			PROPERTY(m_flOcclusionRadius,float32 , 0x5d4);
+			PROPERTY(m_flOcclusionMin,float32 , 0x5d8);
+			PROPERTY(m_flOcclusionMax,float32 , 0x5dc);
+			PROPERTY(m_flValSetOnDisable,float32 , 0x5e0);
+			PROPERTY(m_bSetValueOnDisable,bool , 0x5e4);
+			PROPERTY(m_bReloading,bool , 0x5e5);
+			PROPERTY(m_nSimulationMode,int32_t , 0x5e8);
+			PROPERTY(m_nVisibilitySamples,int32_t , 0x5ec);
+			PROPERTY(m_vDynamicProxyPoint,GlobalTypes::Vector , 0x5f0);
+			PROPERTY(m_flDynamicMaximumOcclusion,float32 , 0x5fc);
+			PROPERTY(m_hDynamicEntity,GlobalTypes::CEntityHandle , 0x600);
+			PROPERTY(m_iszDynamicEntityName,GlobalTypes::CUtlSymbolLarge* , 0x608);
+			PROPERTY(m_flPathingDistanceNormFactor,float32 , 0x610);
+			PROPERTY(m_vPathingSourcePos,GlobalTypes::Vector , 0x614);
+			PROPERTY(m_vPathingListenerPos,GlobalTypes::Vector , 0x620);
+			PROPERTY(m_vPathingDirection,GlobalTypes::Vector , 0x62c);
+			PROPERTY(m_nPathingSourceIndex,int32_t , 0x638);
+			S2_PAD(0xF0);
 		};
-		//static_assert(sizeof(CS2::server::CSoundOpvarSetPointEntity) == 0x6A8, "CSoundOpvarSetPointEntity size should be 0x6A8");
+		//static_assert(sizeof(CS2::server::CSoundOpvarSetPointEntity) == 0x640, "CSoundOpvarSetPointEntity size should be 0x640");
 	}
 }

@@ -26,17 +26,17 @@ namespace CS2 {
 	namespace server {
 		class CEnvDecal : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_hDecalMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x7d8);
-			PROPERTY(m_flWidth,float32 , 0x7e0);
-			PROPERTY(m_flHeight,float32 , 0x7e4);
-			PROPERTY(m_flDepth,float32 , 0x7e8);
-			PROPERTY(m_nRenderOrder,uint32_t , 0x7ec);
-			PROPERTY(m_bProjectOnWorld,bool , 0x7f0);
-			PROPERTY(m_bProjectOnCharacters,bool , 0x7f1);
-			PROPERTY(m_bProjectOnWater,bool , 0x7f2);
-			PROPERTY(m_flDepthSortBias,float32 , 0x7f4);
+			PROPERTY(m_hDecalMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x730);
+			PROPERTY(m_flWidth,float32 , 0x738);
+			PROPERTY(m_flHeight,float32 , 0x73c);
+			PROPERTY(m_flDepth,float32 , 0x740);
+			PROPERTY(m_nRenderOrder,uint32_t , 0x744);
+			PROPERTY(m_bProjectOnWorld,bool , 0x748);
+			PROPERTY(m_bProjectOnCharacters,bool , 0x749);
+			PROPERTY(m_bProjectOnWater,bool , 0x74a);
+			PROPERTY(m_flDepthSortBias,float32 , 0x74c);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CEnvDecal) == 0x7F8, "CEnvDecal size should be 0x7F8");
+		//static_assert(sizeof(CS2::server::CEnvDecal) == 0x750, "CEnvDecal size should be 0x750");
 	}
 }

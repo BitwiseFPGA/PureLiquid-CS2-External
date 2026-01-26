@@ -25,16 +25,14 @@ namespace CS2 {
 		public:
 			PROPERTY(m_hParameterPosition,animgraphlib::CAnimParamHandle , 0x70);
 			PROPERTY(m_hParameterOrientation,animgraphlib::CAnimParamHandle , 0x72);
-			PROPERTY(m_hParameterSpineRotationWeight,animgraphlib::CAnimParamHandle , 0x74);
-			PROPERTY(m_hParameterPelvisOffset,animgraphlib::CAnimParamHandle , 0x76);
-			PROPERTY(m_hParameterUseIK,animgraphlib::CAnimParamHandle , 0x78);
-			PROPERTY(m_hParameterCameraOnly,animgraphlib::CAnimParamHandle , 0x7a);
-			PROPERTY(m_hParameterWeaponDepenetrationDistance,animgraphlib::CAnimParamHandle , 0x7c);
-			PROPERTY(m_hParameterWeaponDepenetrationDelta,animgraphlib::CAnimParamHandle , 0x7e);
-			PROPERTY(m_hParameterCameraClearanceDistance,animgraphlib::CAnimParamHandle , 0x80);
-			PROPERTY(m_opFixedSettings,animgraphlib::AimCameraOpFixedSettings_t , 0x88);
-			S2_PAD(0x50);
+			PROPERTY(m_hParameterPelvisOffset,animgraphlib::CAnimParamHandle , 0x74);
+			PROPERTY(m_hParameterCameraOnly,animgraphlib::CAnimParamHandle , 0x76);
+			PROPERTY(m_hParameterWeaponDepenetrationDistance,animgraphlib::CAnimParamHandle , 0x78);
+			PROPERTY(m_hParameterWeaponDepenetrationDelta,animgraphlib::CAnimParamHandle , 0x7a);
+			PROPERTY(m_hParameterCameraClearanceDistance,animgraphlib::CAnimParamHandle , 0x7c);
+			PROPERTY(m_opFixedSettings,animgraphlib::AimCameraOpFixedSettings_t , 0x80);
+			S2_PAD(0x48);
 		};
-		//static_assert(sizeof(CS2::animgraphlib::CAimCameraUpdateNode) == 0xC0, "CAimCameraUpdateNode size should be 0xC0");
+		//static_assert(sizeof(CS2::animgraphlib::CAimCameraUpdateNode) == 0xB8, "CAimCameraUpdateNode size should be 0xB8");
 	}
 }

@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class C_CsmFovOverride : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_cameraName,GlobalTypes::CUtlString* , 0x5f8);
-			PROPERTY(m_flCsmFovOverrideValue,float32 , 0x600);
+			PROPERTY(m_cameraName,GlobalTypes::CUtlString* , 0x608);
+			PROPERTY(m_flCsmFovOverrideValue,float32 , 0x610);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::client::C_CsmFovOverride) == 0x608, "C_CsmFovOverride size should be 0x608");
+		//static_assert(sizeof(CS2::client::C_CsmFovOverride) == 0x618, "C_CsmFovOverride size should be 0x618");
 	}
 }

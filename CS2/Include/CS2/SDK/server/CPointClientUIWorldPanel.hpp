@@ -21,32 +21,32 @@ namespace CS2 {
 	namespace server {
 		class CPointClientUIWorldPanel : public CS2::server::CBaseClientUIEntity {
 		public:
-			PROPERTY(m_bIgnoreInput,bool , 0x988);
-			PROPERTY(m_bLit,bool , 0x989);
-			PROPERTY(m_bFollowPlayerAcrossTeleport,bool , 0x98a);
-			PROPERTY(m_flWidth,float32 , 0x98c);
-			PROPERTY(m_flHeight,float32 , 0x990);
-			PROPERTY(m_flDPI,float32 , 0x994);
-			PROPERTY(m_flInteractDistance,float32 , 0x998);
-			PROPERTY(m_flDepthOffset,float32 , 0x99c);
-			PROPERTY(m_unOwnerContext,uint32_t , 0x9a0);
-			PROPERTY(m_unHorizontalAlign,uint32_t , 0x9a4);
-			PROPERTY(m_unVerticalAlign,uint32_t , 0x9a8);
-			PROPERTY(m_unOrientation,uint32_t , 0x9ac);
-			PROPERTY(m_bAllowInteractionFromAllSceneWorlds,bool , 0x9b0);
-			PROPERTY(m_vecCSSClasses,GlobalTypes::CNetworkUtlVectorBase<GlobalTypes::CUtlSymbolLarge>, 0x9b8);
-			PROPERTY(m_bOpaque,bool , 0x9d0);
-			PROPERTY(m_bNoDepth,bool , 0x9d1);
-			PROPERTY(m_bVisibleWhenParentNoDraw,bool , 0x9d2);
-			PROPERTY(m_bRenderBackface,bool , 0x9d3);
-			PROPERTY(m_bUseOffScreenIndicator,bool , 0x9d4);
-			PROPERTY(m_bExcludeFromSaveGames,bool , 0x9d5);
-			PROPERTY(m_bGrabbable,bool , 0x9d6);
-			PROPERTY(m_bOnlyRenderToTexture,bool , 0x9d7);
-			PROPERTY(m_bDisableMipGen,bool , 0x9d8);
-			PROPERTY(m_nExplicitImageLayout,int32_t , 0x9dc);
+			PROPERTY(m_bIgnoreInput,bool , 0x890);
+			PROPERTY(m_bLit,bool , 0x891);
+			PROPERTY(m_bFollowPlayerAcrossTeleport,bool , 0x892);
+			PROPERTY(m_flWidth,float32 , 0x894);
+			PROPERTY(m_flHeight,float32 , 0x898);
+			PROPERTY(m_flDPI,float32 , 0x89c);
+			PROPERTY(m_flInteractDistance,float32 , 0x8a0);
+			PROPERTY(m_flDepthOffset,float32 , 0x8a4);
+			PROPERTY(m_unOwnerContext,uint32_t , 0x8a8);
+			PROPERTY(m_unHorizontalAlign,uint32_t , 0x8ac);
+			PROPERTY(m_unVerticalAlign,uint32_t , 0x8b0);
+			PROPERTY(m_unOrientation,uint32_t , 0x8b4);
+			PROPERTY(m_bAllowInteractionFromAllSceneWorlds,bool , 0x8b8);
+			PROPERTY(m_vecCSSClasses,GlobalTypes::CNetworkUtlVectorBase<GlobalTypes::CUtlSymbolLarge>, 0x8c0);
+			PROPERTY(m_bOpaque,bool , 0x8d8);
+			PROPERTY(m_bNoDepth,bool , 0x8d9);
+			PROPERTY(m_bVisibleWhenParentNoDraw,bool , 0x8da);
+			PROPERTY(m_bRenderBackface,bool , 0x8db);
+			PROPERTY(m_bUseOffScreenIndicator,bool , 0x8dc);
+			PROPERTY(m_bExcludeFromSaveGames,bool , 0x8dd);
+			PROPERTY(m_bGrabbable,bool , 0x8de);
+			PROPERTY(m_bOnlyRenderToTexture,bool , 0x8df);
+			PROPERTY(m_bDisableMipGen,bool , 0x8e0);
+			PROPERTY(m_nExplicitImageLayout,int32_t , 0x8e4);
 			S2_PAD(0x58);
 		};
-		//static_assert(sizeof(CS2::server::CPointClientUIWorldPanel) == 0x9E0, "CPointClientUIWorldPanel size should be 0x9E0");
+		//static_assert(sizeof(CS2::server::CPointClientUIWorldPanel) == 0x8E8, "CPointClientUIWorldPanel size should be 0x8E8");
 	}
 }

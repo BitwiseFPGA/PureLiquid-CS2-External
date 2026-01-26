@@ -21,16 +21,16 @@ namespace CS2 {
 	namespace server {
 		class CPhysicsSpring : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_flFrequency,float32 , 0x4f8);
-			PROPERTY(m_flDampingRatio,float32 , 0x4fc);
-			PROPERTY(m_flRestLength,float32 , 0x500);
-			PROPERTY(m_nameAttachStart,GlobalTypes::CUtlSymbolLarge* , 0x508);
-			PROPERTY(m_nameAttachEnd,GlobalTypes::CUtlSymbolLarge* , 0x510);
-			PROPERTY(m_start,GlobalTypes::VectorWS , 0x518);
-			PROPERTY(m_end,GlobalTypes::VectorWS , 0x524);
-			PROPERTY(m_teleportTick,uint32_t , 0x530);
+			PROPERTY(m_flFrequency,float32 , 0x4b0);
+			PROPERTY(m_flDampingRatio,float32 , 0x4b4);
+			PROPERTY(m_flRestLength,float32 , 0x4b8);
+			PROPERTY(m_nameAttachStart,GlobalTypes::CUtlSymbolLarge* , 0x4c0);
+			PROPERTY(m_nameAttachEnd,GlobalTypes::CUtlSymbolLarge* , 0x4c8);
+			PROPERTY(m_start,GlobalTypes::VectorWS , 0x4d0);
+			PROPERTY(m_end,GlobalTypes::VectorWS , 0x4dc);
+			PROPERTY(m_teleportTick,uint32_t , 0x4e8);
 			S2_PAD(0x48);
 		};
-		//static_assert(sizeof(CS2::server::CPhysicsSpring) == 0x538, "CPhysicsSpring size should be 0x538");
+		//static_assert(sizeof(CS2::server::CPhysicsSpring) == 0x4F0, "CPhysicsSpring size should be 0x4F0");
 	}
 }

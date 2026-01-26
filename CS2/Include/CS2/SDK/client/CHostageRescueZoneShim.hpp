@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CHostageRescueZoneShim) == 0xFF0, "CHostageRescueZoneShim size should be 0xFF0");
+		//static_assert(sizeof(CS2::client::CHostageRescueZoneShim) == 0xF58, "CHostageRescueZoneShim size should be 0xF58");
 	}
 }

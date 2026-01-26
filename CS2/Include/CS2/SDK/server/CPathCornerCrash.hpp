@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CPathCornerCrash) == 0x520, "CPathCornerCrash size should be 0x520");
+		//static_assert(sizeof(CS2::server::CPathCornerCrash) == 0x4C8, "CPathCornerCrash size should be 0x4C8");
 	}
 }

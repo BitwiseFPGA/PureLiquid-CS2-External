@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class C_WeaponBaseItem : public CS2::client::C_CSWeaponBase {
 		public:
-			PROPERTY(m_bSequenceInProgress,bool , 0x1f80);
-			PROPERTY(m_bRedraw,bool , 0x1f81);
+			PROPERTY(m_bSequenceInProgress,bool , 0x1f40);
+			PROPERTY(m_bRedraw,bool , 0x1f41);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::client::C_WeaponBaseItem) == 0x1F90, "C_WeaponBaseItem size should be 0x1F90");
+		//static_assert(sizeof(CS2::client::C_WeaponBaseItem) == 0x1F50, "C_WeaponBaseItem size should be 0x1F50");
 	}
 }

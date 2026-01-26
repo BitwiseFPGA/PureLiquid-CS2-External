@@ -26,15 +26,15 @@ namespace CS2 {
 	namespace server {
 		class CInstancedSceneEntity : public CS2::server::CSceneEntity {
 		public:
-			PROPERTY(m_hOwner,GlobalTypes::CHandle<server::CBaseEntity>, 0xa50);
-			PROPERTY(m_bHadOwner,bool , 0xa54);
-			PROPERTY(m_flPostSpeakDelay,float32 , 0xa58);
-			PROPERTY(m_flPreDelay,float32 , 0xa5c);
-			PROPERTY(m_bIsBackground,bool , 0xa60);
-			PROPERTY(m_bRemoveOnCompletion,bool , 0xa61);
-			PROPERTY(m_hTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0xa64);
+			PROPERTY(m_hOwner,GlobalTypes::CHandle<server::CBaseEntity>, 0x730);
+			PROPERTY(m_bHadOwner,bool , 0x734);
+			PROPERTY(m_flPostSpeakDelay,float32 , 0x738);
+			PROPERTY(m_flPreDelay,float32 , 0x73c);
+			PROPERTY(m_bIsBackground,bool , 0x740);
+			PROPERTY(m_bRemoveOnCompletion,bool , 0x741);
+			PROPERTY(m_hTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x744);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CInstancedSceneEntity) == 0xA68, "CInstancedSceneEntity size should be 0xA68");
+		//static_assert(sizeof(CS2::server::CInstancedSceneEntity) == 0x748, "CInstancedSceneEntity size should be 0x748");
 	}
 }

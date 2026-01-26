@@ -22,18 +22,18 @@ namespace CS2 {
 	namespace server {
 		class CPhysSlideConstraint : public CS2::server::CPhysConstraint {
 		public:
-			PROPERTY(m_axisEnd,GlobalTypes::VectorWS , 0x568);
-			PROPERTY(m_slideFriction,float32 , 0x574);
-			PROPERTY(m_systemLoadScale,float32 , 0x578);
-			PROPERTY(m_initialOffset,float32 , 0x57c);
-			PROPERTY(m_bEnableLinearConstraint,bool , 0x580);
-			PROPERTY(m_bEnableAngularConstraint,bool , 0x581);
-			PROPERTY(m_flMotorFrequency,float32 , 0x584);
-			PROPERTY(m_flMotorDampingRatio,float32 , 0x588);
-			PROPERTY(m_bUseEntityPivot,bool , 0x58c);
-			PROPERTY(m_soundInfo,server::ConstraintSoundInfo , 0x590);
+			PROPERTY(m_axisEnd,GlobalTypes::VectorWS , 0x510);
+			PROPERTY(m_slideFriction,float32 , 0x51c);
+			PROPERTY(m_systemLoadScale,float32 , 0x520);
+			PROPERTY(m_initialOffset,float32 , 0x524);
+			PROPERTY(m_bEnableLinearConstraint,bool , 0x528);
+			PROPERTY(m_bEnableAngularConstraint,bool , 0x529);
+			PROPERTY(m_flMotorFrequency,float32 , 0x52c);
+			PROPERTY(m_flMotorDampingRatio,float32 , 0x530);
+			PROPERTY(m_bUseEntityPivot,bool , 0x534);
+			PROPERTY(m_soundInfo,server::ConstraintSoundInfo , 0x538);
 			S2_PAD(0xC8);
 		};
-		//static_assert(sizeof(CS2::server::CPhysSlideConstraint) == 0x628, "CPhysSlideConstraint size should be 0x628");
+		//static_assert(sizeof(CS2::server::CPhysSlideConstraint) == 0x5D0, "CPhysSlideConstraint size should be 0x5D0");
 	}
 }

@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace server {
 		class CCredits : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_OnCreditsDone,entity2::CEntityIOOutput , 0x4f0);
-			PROPERTY(m_bRolledOutroCredits,bool , 0x518);
-			PROPERTY(m_flLogoLength,float32 , 0x51c);
-			S2_PAD(0x30);
+			PROPERTY(m_OnCreditsDone,entity2::CEntityIOOutput , 0x4a8);
+			PROPERTY(m_bRolledOutroCredits,bool , 0x4c0);
+			PROPERTY(m_flLogoLength,float32 , 0x4c4);
+			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CCredits) == 0x520, "CCredits size should be 0x520");
+		//static_assert(sizeof(CS2::server::CCredits) == 0x4C8, "CCredits size should be 0x4C8");
 	}
 }

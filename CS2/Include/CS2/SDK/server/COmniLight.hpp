@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class COmniLight : public CS2::server::CBarnLight {
 		public:
-			PROPERTY(m_flInnerAngle,float32 , 0xb00);
-			PROPERTY(m_flOuterAngle,float32 , 0xb04);
-			PROPERTY(m_bShowLight,bool , 0xb08);
+			PROPERTY(m_flInnerAngle,float32 , 0xa20);
+			PROPERTY(m_flOuterAngle,float32 , 0xa24);
+			PROPERTY(m_bShowLight,bool , 0xa28);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::COmniLight) == 0xB10, "COmniLight size should be 0xB10");
+		//static_assert(sizeof(CS2::server::COmniLight) == 0xA30, "COmniLight size should be 0xA30");
 	}
 }

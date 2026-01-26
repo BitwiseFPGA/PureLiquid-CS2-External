@@ -26,13 +26,13 @@ namespace CS2 {
 	namespace server {
 		class CInfoDynamicShadowHint : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x4f0);
-			PROPERTY(m_flRange,float32 , 0x4f4);
-			PROPERTY(m_nImportance,int32_t , 0x4f8);
-			PROPERTY(m_nLightChoice,int32_t , 0x4fc);
-			PROPERTY(m_hLight,GlobalTypes::CHandle<server::CBaseEntity>, 0x500);
+			PROPERTY(m_bDisabled,bool , 0x4a8);
+			PROPERTY(m_flRange,float32 , 0x4ac);
+			PROPERTY(m_nImportance,int32_t , 0x4b0);
+			PROPERTY(m_nLightChoice,int32_t , 0x4b4);
+			PROPERTY(m_hLight,GlobalTypes::CHandle<server::CBaseEntity>, 0x4b8);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::server::CInfoDynamicShadowHint) == 0x508, "CInfoDynamicShadowHint size should be 0x508");
+		//static_assert(sizeof(CS2::server::CInfoDynamicShadowHint) == 0x4C0, "CInfoDynamicShadowHint size should be 0x4C0");
 	}
 }

@@ -30,8 +30,9 @@ namespace CS2 {
 			PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput , 0x4c0);
 			PROPERTY(m_nOutputCP,int32_t , 0x630);
 			PROPERTY(m_nOutVectorField,int32_t , 0x634);
-			S2_PAD(0x460);
+			PROPERTY(m_flInterpolation,particleslib::CParticleCollectionFloatInput , 0x638);
+			S2_PAD(0x5D0);
 		};
-		//static_assert(sizeof(CS2::particles::C_OP_SetControlPointFieldToScalarExpression) == 0x638, "C_OP_SetControlPointFieldToScalarExpression size should be 0x638");
+		//static_assert(sizeof(CS2::particles::C_OP_SetControlPointFieldToScalarExpression) == 0x7A8, "C_OP_SetControlPointFieldToScalarExpression size should be 0x7A8");
 	}
 }

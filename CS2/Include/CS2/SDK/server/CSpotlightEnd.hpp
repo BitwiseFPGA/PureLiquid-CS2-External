@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CSpotlightEnd : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_flLightScale,float32 , 0x7d8);
-			PROPERTY(m_Radius,float32 , 0x7dc);
-			PROPERTY(m_vSpotlightDir,GlobalTypes::Vector , 0x7e0);
-			PROPERTY(m_vSpotlightOrg,GlobalTypes::VectorWS , 0x7ec);
+			PROPERTY(m_flLightScale,float32 , 0x730);
+			PROPERTY(m_Radius,float32 , 0x734);
+			PROPERTY(m_vSpotlightDir,GlobalTypes::Vector , 0x738);
+			PROPERTY(m_vSpotlightOrg,GlobalTypes::VectorWS , 0x744);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CSpotlightEnd) == 0x7F8, "CSpotlightEnd size should be 0x7F8");
+		//static_assert(sizeof(CS2::server::CSpotlightEnd) == 0x750, "CSpotlightEnd size should be 0x750");
 	}
 }

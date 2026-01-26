@@ -32,8 +32,8 @@ namespace CS2 {
 			PROPERTY(m_iNumRoundKills,int32_t , 0x188);
 			PROPERTY(m_iNumRoundKillsHeadshots,int32_t , 0x18c);
 			PROPERTY(m_flTotalRoundDamageDealt,float32 , 0x190);
-			S2_PAD(0x230);
+			S2_PAD(0x3E0);
 		};
-		//static_assert(sizeof(CS2::server::CCSPlayerController_ActionTrackingServices) == 0x270, "CCSPlayerController_ActionTrackingServices size should be 0x270");
+		//static_assert(sizeof(CS2::server::CCSPlayerController_ActionTrackingServices) == 0x420, "CCSPlayerController_ActionTrackingServices size should be 0x420");
 	}
 }

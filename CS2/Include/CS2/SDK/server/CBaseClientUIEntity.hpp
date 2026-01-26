@@ -11,7 +11,6 @@
 
 
 #include <SDK/server/CBaseModelEntity.hpp>
-#include <SDK/entity2/CEntityIOOutput.hpp>
 
 
 
@@ -22,22 +21,22 @@ namespace CS2 {
 	namespace server {
 		class CBaseClientUIEntity : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_bEnabled,bool , 0x7d8);
-			PROPERTY(m_DialogXMLName,GlobalTypes::CUtlSymbolLarge* , 0x7e0);
-			PROPERTY(m_PanelClassName,GlobalTypes::CUtlSymbolLarge* , 0x7e8);
-			PROPERTY(m_PanelID,GlobalTypes::CUtlSymbolLarge* , 0x7f0);
-			PROPERTY(m_CustomOutput0,entity2::CEntityIOOutput , 0x7f8);
-			PROPERTY(m_CustomOutput1,entity2::CEntityIOOutput , 0x820);
-			PROPERTY(m_CustomOutput2,entity2::CEntityIOOutput , 0x848);
-			PROPERTY(m_CustomOutput3,entity2::CEntityIOOutput , 0x870);
-			PROPERTY(m_CustomOutput4,entity2::CEntityIOOutput , 0x898);
-			PROPERTY(m_CustomOutput5,entity2::CEntityIOOutput , 0x8c0);
-			PROPERTY(m_CustomOutput6,entity2::CEntityIOOutput , 0x8e8);
-			PROPERTY(m_CustomOutput7,entity2::CEntityIOOutput , 0x910);
-			PROPERTY(m_CustomOutput8,entity2::CEntityIOOutput , 0x938);
-			PROPERTY(m_CustomOutput9,entity2::CEntityIOOutput , 0x960);
-			S2_PAD(0x1B0);
+			PROPERTY(m_bEnabled,bool , 0x730);
+			PROPERTY(m_DialogXMLName,GlobalTypes::CUtlSymbolLarge* , 0x738);
+			PROPERTY(m_PanelClassName,GlobalTypes::CUtlSymbolLarge* , 0x740);
+			PROPERTY(m_PanelID,GlobalTypes::CUtlSymbolLarge* , 0x748);
+			PROPERTY(m_CustomOutput0,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x750);
+			PROPERTY(m_CustomOutput1,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x770);
+			PROPERTY(m_CustomOutput2,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x790);
+			PROPERTY(m_CustomOutput3,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x7b0);
+			PROPERTY(m_CustomOutput4,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x7d0);
+			PROPERTY(m_CustomOutput5,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x7f0);
+			PROPERTY(m_CustomOutput6,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x810);
+			PROPERTY(m_CustomOutput7,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x830);
+			PROPERTY(m_CustomOutput8,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x850);
+			PROPERTY(m_CustomOutput9,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x870);
+			S2_PAD(0x160);
 		};
-		//static_assert(sizeof(CS2::server::CBaseClientUIEntity) == 0x988, "CBaseClientUIEntity size should be 0x988");
+		//static_assert(sizeof(CS2::server::CBaseClientUIEntity) == 0x890, "CBaseClientUIEntity size should be 0x890");
 	}
 }

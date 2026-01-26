@@ -26,10 +26,10 @@ namespace CS2 {
 	namespace server {
 		class CTriggerVolume : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 0x7d8);
-			PROPERTY(m_hFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x7e0);
+			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 0x730);
+			PROPERTY(m_hFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x738);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerVolume) == 0x7E8, "CTriggerVolume size should be 0x7E8");
+		//static_assert(sizeof(CS2::server::CTriggerVolume) == 0x740, "CTriggerVolume size should be 0x740");
 	}
 }

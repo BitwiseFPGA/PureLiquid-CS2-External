@@ -28,15 +28,15 @@ namespace CS2 {
 	namespace server {
 		class CPointEntityFinder : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_hEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4f0);
-			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_hFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x500);
-			PROPERTY(m_iRefName,GlobalTypes::CUtlSymbolLarge* , 0x508);
-			PROPERTY(m_hReference,GlobalTypes::CHandle<server::CBaseEntity>, 0x510);
-			PROPERTY(m_FindMethod,server::EntFinderMethod_t , 0x514);
-			PROPERTY(m_OnFoundEntity,entity2::CEntityIOOutput , 0x518);
-			S2_PAD(0x50);
+			PROPERTY(m_hEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4a8);
+			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_hFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x4b8);
+			PROPERTY(m_iRefName,GlobalTypes::CUtlSymbolLarge* , 0x4c0);
+			PROPERTY(m_hReference,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c8);
+			PROPERTY(m_FindMethod,server::EntFinderMethod_t , 0x4cc);
+			PROPERTY(m_OnFoundEntity,entity2::CEntityIOOutput , 0x4d0);
+			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CPointEntityFinder) == 0x540, "CPointEntityFinder size should be 0x540");
+		//static_assert(sizeof(CS2::server::CPointEntityFinder) == 0x4E8, "CPointEntityFinder size should be 0x4E8");
 	}
 }

@@ -19,6 +19,7 @@ namespace CS2 {
 		class SceneObject_t;
 		class AggregateSceneObject_t;
 		class ClutterSceneObject_t;
+		class AggregateRTProxySceneObject_t;
 		class ExtraVertexStreamOverride_t;
 		class MaterialOverride_t;
 		class WorldNodeOnDiskBufferData_t;
@@ -37,18 +38,19 @@ namespace CS2 {
 			PROPERTY(m_visClusterMembership,GlobalTypes::CUtlVector< uint16 >, 0x18);
 			PROPERTY(m_aggregateSceneObjects,GlobalTypes::CUtlVector<worldrenderer::AggregateSceneObject_t>, 0x30);
 			PROPERTY(m_clutterSceneObjects,GlobalTypes::CUtlVector<worldrenderer::ClutterSceneObject_t>, 0x48);
-			PROPERTY(m_extraVertexStreamOverrides,GlobalTypes::CUtlVector<worldrenderer::ExtraVertexStreamOverride_t>, 0x60);
-			PROPERTY(m_materialOverrides,GlobalTypes::CUtlVector<worldrenderer::MaterialOverride_t>, 0x78);
-			PROPERTY(m_extraVertexStreams,GlobalTypes::CUtlVector<worldrenderer::WorldNodeOnDiskBufferData_t>, 0x90);
-			PROPERTY(m_aggregateInstanceStreams,GlobalTypes::CUtlVector<worldrenderer::AggregateInstanceStreamOnDiskData_t>, 0xa8);
-			PROPERTY(m_vertexAlbedoStreams,GlobalTypes::CUtlVector<worldrenderer::AggregateVertexAlbedoStreamOnDiskData_t>, 0xc0);
-			PROPERTY(m_layerNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0xd8);
-			PROPERTY(m_sceneObjectLayerIndices,GlobalTypes::CUtlVector< uint8 >, 0xf0);
-			PROPERTY(m_grassFileName,GlobalTypes::CUtlString* , 0x108);
-			PROPERTY(m_nodeLightingInfo,worldrenderer::BakedLightingInfo_t , 0x110);
-			PROPERTY(m_bHasBakedGeometryFlag,bool , 0x158);
-			S2_PAD(0x160);
+			PROPERTY(m_rtProxies,GlobalTypes::CUtlVector<worldrenderer::AggregateRTProxySceneObject_t>, 0x60);
+			PROPERTY(m_extraVertexStreamOverrides,GlobalTypes::CUtlVector<worldrenderer::ExtraVertexStreamOverride_t>, 0x78);
+			PROPERTY(m_materialOverrides,GlobalTypes::CUtlVector<worldrenderer::MaterialOverride_t>, 0x90);
+			PROPERTY(m_extraVertexStreams,GlobalTypes::CUtlVector<worldrenderer::WorldNodeOnDiskBufferData_t>, 0xa8);
+			PROPERTY(m_aggregateInstanceStreams,GlobalTypes::CUtlVector<worldrenderer::AggregateInstanceStreamOnDiskData_t>, 0xc0);
+			PROPERTY(m_vertexAlbedoStreams,GlobalTypes::CUtlVector<worldrenderer::AggregateVertexAlbedoStreamOnDiskData_t>, 0xd8);
+			PROPERTY(m_layerNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0xf0);
+			PROPERTY(m_sceneObjectLayerIndices,GlobalTypes::CUtlVector< uint8 >, 0x108);
+			PROPERTY(m_grassFileName,GlobalTypes::CUtlString* , 0x120);
+			PROPERTY(m_nodeLightingInfo,worldrenderer::BakedLightingInfo_t , 0x128);
+			PROPERTY(m_bHasBakedGeometryFlag,bool , 0x170);
+			S2_PAD(0x178);
 		};
-		//static_assert(sizeof(CS2::worldrenderer::WorldNode_t) == 0x160, "WorldNode_t size should be 0x160");
+		//static_assert(sizeof(CS2::worldrenderer::WorldNode_t) == 0x178, "WorldNode_t size should be 0x178");
 	}
 }

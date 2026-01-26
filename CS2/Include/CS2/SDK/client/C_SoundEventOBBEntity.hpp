@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class C_SoundEventOBBEntity : public CS2::client::C_SoundEventEntity {
 		public:
-			PROPERTY(m_vMins,GlobalTypes::Vector , 0x6c0);
-			PROPERTY(m_vMaxs,GlobalTypes::Vector , 0x6cc);
+			PROPERTY(m_vMins,GlobalTypes::Vector , 0x6b8);
+			PROPERTY(m_vMaxs,GlobalTypes::Vector , 0x6c4);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::client::C_SoundEventOBBEntity) == 0x6E8, "C_SoundEventOBBEntity size should be 0x6E8");
+		//static_assert(sizeof(CS2::client::C_SoundEventOBBEntity) == 0x6E0, "C_SoundEventOBBEntity size should be 0x6E0");
 	}
 }

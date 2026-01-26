@@ -38,36 +38,36 @@ namespace CS2 {
 	namespace client {
 		class C_BasePlayerPawn : public CS2::client::C_BaseCombatCharacter {
 		public:
-			PROPERTY(m_pWeaponServices,client::CPlayer_WeaponServices* , 0x13f0);
-			PROPERTY(m_pItemServices,client::CPlayer_ItemServices* , 0x13f8);
-			PROPERTY(m_pAutoaimServices,client::CPlayer_AutoaimServices* , 0x1400);
-			PROPERTY(m_pObserverServices,client::CPlayer_ObserverServices* , 0x1408);
-			PROPERTY(m_pWaterServices,client::CPlayer_WaterServices* , 0x1410);
-			PROPERTY(m_pUseServices,client::CPlayer_UseServices* , 0x1418);
-			PROPERTY(m_pFlashlightServices,client::CPlayer_FlashlightServices* , 0x1420);
-			PROPERTY(m_pCameraServices,client::CPlayer_CameraServices* , 0x1428);
-			PROPERTY(m_pMovementServices,client::CPlayer_MovementServices* , 0x1430);
-			PROPERTY(m_ServerViewAngleChanges,GlobalTypes::C_UtlVectorEmbeddedNetworkVar<client::ViewAngleServerChange_t>, 0x1440);
-			PROPERTY(v_angle,GlobalTypes::QAngle , 0x14a8);
-			PROPERTY(v_anglePrevious,GlobalTypes::QAngle , 0x14b4);
-			PROPERTY(m_iHideHUD,uint32_t , 0x14c0);
-			PROPERTY(m_skybox3d,client::sky3dparams_t , 0x14c8);
-			PROPERTY(m_flDeathTime,entity2::GameTime_t , 0x1558);
-			PROPERTY(m_vecPredictionError,GlobalTypes::Vector , 0x155c);
-			PROPERTY(m_flPredictionErrorTime,entity2::GameTime_t , 0x1568);
-			PROPERTY(m_vecLastCameraSetupLocalOrigin,GlobalTypes::Vector , 0x1588);
-			PROPERTY(m_flLastCameraSetupTime,entity2::GameTime_t , 0x1594);
-			PROPERTY(m_flFOVSensitivityAdjust,float32 , 0x1598);
-			PROPERTY(m_flMouseSensitivity,float32 , 0x159c);
-			PROPERTY(m_vOldOrigin,GlobalTypes::Vector , 0x15a0);
-			PROPERTY(m_flOldSimulationTime,float32 , 0x15ac);
-			PROPERTY(m_nLastExecutedCommandNumber,int32_t , 0x15b0);
-			PROPERTY(m_nLastExecutedCommandTick,int32_t , 0x15b4);
-			PROPERTY(m_hController,GlobalTypes::CHandle<client::CBasePlayerController>, 0x15b8);
-			PROPERTY(m_hDefaultController,GlobalTypes::CHandle<client::CBasePlayerController>, 0x15bc);
-			PROPERTY(m_bIsSwappingToPredictableController,bool , 0x15c0);
+			PROPERTY(m_pWeaponServices,client::CPlayer_WeaponServices* , 0x13d8);
+			PROPERTY(m_pItemServices,client::CPlayer_ItemServices* , 0x13e0);
+			PROPERTY(m_pAutoaimServices,client::CPlayer_AutoaimServices* , 0x13e8);
+			PROPERTY(m_pObserverServices,client::CPlayer_ObserverServices* , 0x13f0);
+			PROPERTY(m_pWaterServices,client::CPlayer_WaterServices* , 0x13f8);
+			PROPERTY(m_pUseServices,client::CPlayer_UseServices* , 0x1400);
+			PROPERTY(m_pFlashlightServices,client::CPlayer_FlashlightServices* , 0x1408);
+			PROPERTY(m_pCameraServices,client::CPlayer_CameraServices* , 0x1410);
+			PROPERTY(m_pMovementServices,client::CPlayer_MovementServices* , 0x1418);
+			PROPERTY(m_ServerViewAngleChanges,GlobalTypes::C_UtlVectorEmbeddedNetworkVar<client::ViewAngleServerChange_t>, 0x1428);
+			PROPERTY(v_angle,GlobalTypes::QAngle , 0x1490);
+			PROPERTY(v_anglePrevious,GlobalTypes::QAngle , 0x149c);
+			PROPERTY(m_iHideHUD,uint32_t , 0x14a8);
+			PROPERTY(m_skybox3d,client::sky3dparams_t , 0x14b0);
+			PROPERTY(m_flDeathTime,entity2::GameTime_t , 0x1540);
+			PROPERTY(m_vecPredictionError,GlobalTypes::Vector , 0x1544);
+			PROPERTY(m_flPredictionErrorTime,entity2::GameTime_t , 0x1550);
+			PROPERTY(m_vecLastCameraSetupLocalOrigin,GlobalTypes::Vector , 0x1570);
+			PROPERTY(m_flLastCameraSetupTime,entity2::GameTime_t , 0x157c);
+			PROPERTY(m_flFOVSensitivityAdjust,float32 , 0x1580);
+			PROPERTY(m_flMouseSensitivity,float32 , 0x1584);
+			PROPERTY(m_vOldOrigin,GlobalTypes::Vector , 0x1588);
+			PROPERTY(m_flOldSimulationTime,float32 , 0x1594);
+			PROPERTY(m_nLastExecutedCommandNumber,int32_t , 0x1598);
+			PROPERTY(m_nLastExecutedCommandTick,int32_t , 0x159c);
+			PROPERTY(m_hController,GlobalTypes::CHandle<client::CBasePlayerController>, 0x15a0);
+			PROPERTY(m_hDefaultController,GlobalTypes::CHandle<client::CBasePlayerController>, 0x15a4);
+			PROPERTY(m_bIsSwappingToPredictableController,bool , 0x15a8);
 			S2_PAD(0x1D8);
 		};
-		//static_assert(sizeof(CS2::client::C_BasePlayerPawn) == 0x15C8, "C_BasePlayerPawn size should be 0x15C8");
+		//static_assert(sizeof(CS2::client::C_BasePlayerPawn) == 0x15B0, "C_BasePlayerPawn size should be 0x15B0");
 	}
 }

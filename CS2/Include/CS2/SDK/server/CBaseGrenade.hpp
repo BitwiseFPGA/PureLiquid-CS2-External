@@ -28,22 +28,22 @@ namespace CS2 {
 	namespace server {
 		class CBaseGrenade : public CS2::server::CBaseFlex {
 		public:
-			PROPERTY(m_OnPlayerPickup,entity2::CEntityIOOutput , 0xb28);
-			PROPERTY(m_OnExplode,entity2::CEntityIOOutput , 0xb50);
-			PROPERTY(m_bHasWarnedAI,bool , 0xb78);
-			PROPERTY(m_bIsSmokeGrenade,bool , 0xb79);
-			PROPERTY(m_bIsLive,bool , 0xb7a);
-			PROPERTY(m_DmgRadius,float32 , 0xb7c);
-			PROPERTY(m_flDetonateTime,entity2::GameTime_t , 0xb80);
-			PROPERTY(m_flWarnAITime,float32 , 0xb84);
-			PROPERTY(m_flDamage,float32 , 0xb88);
-			PROPERTY(m_iszBounceSound,GlobalTypes::CUtlSymbolLarge* , 0xb90);
-			PROPERTY(m_ExplosionSound,GlobalTypes::CUtlString* , 0xb98);
-			PROPERTY(m_hThrower,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0xba4);
-			PROPERTY(m_flNextAttack,entity2::GameTime_t , 0xbbc);
-			PROPERTY(m_hOriginalThrower,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0xbc0);
-			S2_PAD(0xB0);
+			PROPERTY(m_OnPlayerPickup,entity2::CEntityIOOutput , 0xab8);
+			PROPERTY(m_OnExplode,entity2::CEntityIOOutput , 0xad0);
+			PROPERTY(m_bHasWarnedAI,bool , 0xae8);
+			PROPERTY(m_bIsSmokeGrenade,bool , 0xae9);
+			PROPERTY(m_bIsLive,bool , 0xaea);
+			PROPERTY(m_DmgRadius,float32 , 0xaec);
+			PROPERTY(m_flDetonateTime,entity2::GameTime_t , 0xaf0);
+			PROPERTY(m_flWarnAITime,float32 , 0xaf4);
+			PROPERTY(m_flDamage,float32 , 0xaf8);
+			PROPERTY(m_iszBounceSound,GlobalTypes::CUtlSymbolLarge* , 0xb00);
+			PROPERTY(m_ExplosionSound,GlobalTypes::CUtlString* , 0xb08);
+			PROPERTY(m_hThrower,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0xb14);
+			PROPERTY(m_flNextAttack,entity2::GameTime_t , 0xb2c);
+			PROPERTY(m_hOriginalThrower,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0xb30);
+			S2_PAD(0x90);
 		};
-		//static_assert(sizeof(CS2::server::CBaseGrenade) == 0xBD0, "CBaseGrenade size should be 0xBD0");
+		//static_assert(sizeof(CS2::server::CBaseGrenade) == 0xB40, "CBaseGrenade size should be 0xB40");
 	}
 }

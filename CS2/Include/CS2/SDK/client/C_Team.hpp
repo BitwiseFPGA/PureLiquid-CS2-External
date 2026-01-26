@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace client {
 		class C_Team : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_aPlayerControllers,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::CBasePlayerController>>, 0x5f8);
-			PROPERTY(m_aPlayers,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_BasePlayerPawn>>, 0x610);
-			PROPERTY(m_iScore,int32_t , 0x628);
-			PROPERTY_ARRAY(m_szTeamname,char , 129 , 0x62c);
+			PROPERTY(m_aPlayerControllers,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::CBasePlayerController>>, 0x608);
+			PROPERTY(m_aPlayers,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_BasePlayerPawn>>, 0x620);
+			PROPERTY(m_iScore,int32_t , 0x638);
+			PROPERTY_ARRAY(m_szTeamname,char , 129 , 0x63c);
 			S2_PAD(0xB8);
 		};
-		//static_assert(sizeof(CS2::client::C_Team) == 0x6B0, "C_Team size should be 0x6B0");
+		//static_assert(sizeof(CS2::client::C_Team) == 0x6C0, "C_Team size should be 0x6C0");
 	}
 }

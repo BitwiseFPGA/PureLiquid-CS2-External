@@ -11,12 +11,14 @@
 
 
 #include <SDK/server/CBaseModelEntity.hpp>
+#include <SDK/client/CAnimGraphControllerManager.hpp>
 #include <SDK/server/PhysicsRagdollPose_t.hpp>
 
 
 
 namespace CS2 {
 	namespace client {
+		class CAnimGraphControllerBase;
 		class IChoreoServices;
 	}
 }
@@ -27,20 +29,23 @@ namespace CS2 {
 	namespace server {
 		class CBaseAnimGraph : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_bInitiallyPopulateInterpHistory,bool , 0x858);
-			PROPERTY(m_pChoreoServices,client::IChoreoServices* , 0x860);
-			PROPERTY(m_bAnimGraphUpdateEnabled,bool , 0x868);
-			PROPERTY(m_flMaxSlopeDistance,float32 , 0x86c);
-			PROPERTY(m_vLastSlopeCheckPos,GlobalTypes::VectorWS , 0x870);
-			PROPERTY(m_bAnimationUpdateScheduled,bool , 0x87c);
-			PROPERTY(m_vecForce,GlobalTypes::Vector , 0x880);
-			PROPERTY(m_nForceBone,int32_t , 0x88c);
-			PROPERTY(m_RagdollPose,server::PhysicsRagdollPose_t , 0x8a0);
-			PROPERTY(m_bRagdollEnabled,bool , 0x8c8);
-			PROPERTY(m_bRagdollClientSide,bool , 0x8c9);
-			PROPERTY(m_xParentedRagdollRootInEntitySpace,GlobalTypes::CTransform , 0x8d0);
-			S2_PAD(0x2B8);
+			PROPERTY(m_graphControllerManager,client::CAnimGraphControllerManager , 0x730);
+			PROPERTY(m_pMainGraphController,client::CAnimGraphControllerBase* , 0x7e0);
+			PROPERTY(m_bInitiallyPopulateInterpHistory,bool , 0x7e8);
+			PROPERTY(m_pChoreoServices,client::IChoreoServices* , 0x7f0);
+			PROPERTY(m_bAnimGraphUpdateEnabled,bool , 0x7f8);
+			PROPERTY(m_flMaxSlopeDistance,float32 , 0x7fc);
+			PROPERTY(m_vLastSlopeCheckPos,GlobalTypes::VectorWS , 0x800);
+			PROPERTY(m_nAnimGraphUpdateId,uint32_t , 0x80c);
+			PROPERTY(m_bAnimationUpdateScheduled,bool , 0x810);
+			PROPERTY(m_vecForce,GlobalTypes::Vector , 0x814);
+			PROPERTY(m_nForceBone,int32_t , 0x820);
+			PROPERTY(m_RagdollPose,server::PhysicsRagdollPose_t , 0x838);
+			PROPERTY(m_bRagdollEnabled,bool , 0x860);
+			PROPERTY(m_bRagdollClientSide,bool , 0x861);
+			PROPERTY(m_xParentedRagdollRootInEntitySpace,GlobalTypes::CTransform , 0x870);
+			S2_PAD(0x2F0);
 		};
-		//static_assert(sizeof(CS2::server::CBaseAnimGraph) == 0xA90, "CBaseAnimGraph size should be 0xA90");
+		//static_assert(sizeof(CS2::server::CBaseAnimGraph) == 0xA20, "CBaseAnimGraph size should be 0xA20");
 	}
 }

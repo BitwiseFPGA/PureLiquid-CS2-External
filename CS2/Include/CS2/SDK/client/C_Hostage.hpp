@@ -32,31 +32,31 @@ namespace CS2 {
 	namespace client {
 		class C_Hostage : public CS2::client::C_BaseCombatCharacter {
 		public:
-			PROPERTY(m_entitySpottedState,client::EntitySpottedState_t , 0x13f0);
-			PROPERTY(m_leader,GlobalTypes::CHandle<client::C_BaseEntity>, 0x1408);
-			PROPERTY(m_reuseTimer,client::CountdownTimer , 0x1410);
-			PROPERTY(m_vel,GlobalTypes::Vector , 0x1428);
-			PROPERTY(m_isRescued,bool , 0x1434);
-			PROPERTY(m_jumpedThisFrame,bool , 0x1435);
-			PROPERTY(m_nHostageState,int32_t , 0x1438);
-			PROPERTY(m_bHandsHaveBeenCut,bool , 0x143c);
-			PROPERTY(m_hHostageGrabber,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x1440);
-			PROPERTY(m_fLastGrabTime,entity2::GameTime_t , 0x1444);
-			PROPERTY(m_vecGrabbedPos,GlobalTypes::Vector , 0x1448);
-			PROPERTY(m_flRescueStartTime,entity2::GameTime_t , 0x1454);
-			PROPERTY(m_flGrabSuccessTime,entity2::GameTime_t , 0x1458);
-			PROPERTY(m_flDropStartTime,entity2::GameTime_t , 0x145c);
-			PROPERTY(m_flDeadOrRescuedTime,entity2::GameTime_t , 0x1460);
-			PROPERTY(m_blinkTimer,client::CountdownTimer , 0x1468);
-			PROPERTY(m_lookAt,GlobalTypes::Vector , 0x1480);
-			PROPERTY(m_lookAroundTimer,client::CountdownTimer , 0x1490);
-			PROPERTY(m_isInit,bool , 0x14a8);
-			PROPERTY(m_eyeAttachment,modellib::AttachmentHandle_t , 0x14a9);
-			PROPERTY(m_chestAttachment,modellib::AttachmentHandle_t , 0x14aa);
-			PROPERTY(m_pPredictionOwner,client::CBasePlayerController* , 0x14b0);
-			PROPERTY(m_fNewestAlphaThinkTime,entity2::GameTime_t , 0x14b8);
+			PROPERTY(m_entitySpottedState,client::EntitySpottedState_t , 0x13d8);
+			PROPERTY(m_leader,GlobalTypes::CHandle<client::C_BaseEntity>, 0x13f0);
+			PROPERTY(m_reuseTimer,client::CountdownTimer , 0x13f8);
+			PROPERTY(m_vel,GlobalTypes::Vector , 0x1410);
+			PROPERTY(m_isRescued,bool , 0x141c);
+			PROPERTY(m_jumpedThisFrame,bool , 0x141d);
+			PROPERTY(m_nHostageState,int32_t , 0x1420);
+			PROPERTY(m_bHandsHaveBeenCut,bool , 0x1424);
+			PROPERTY(m_hHostageGrabber,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x1428);
+			PROPERTY(m_fLastGrabTime,entity2::GameTime_t , 0x142c);
+			PROPERTY(m_vecGrabbedPos,GlobalTypes::Vector , 0x1430);
+			PROPERTY(m_flRescueStartTime,entity2::GameTime_t , 0x143c);
+			PROPERTY(m_flGrabSuccessTime,entity2::GameTime_t , 0x1440);
+			PROPERTY(m_flDropStartTime,entity2::GameTime_t , 0x1444);
+			PROPERTY(m_flDeadOrRescuedTime,entity2::GameTime_t , 0x1448);
+			PROPERTY(m_blinkTimer,client::CountdownTimer , 0x1450);
+			PROPERTY(m_lookAt,GlobalTypes::Vector , 0x1468);
+			PROPERTY(m_lookAroundTimer,client::CountdownTimer , 0x1478);
+			PROPERTY(m_isInit,bool , 0x1490);
+			PROPERTY(m_eyeAttachment,modellib::AttachmentHandle_t , 0x1491);
+			PROPERTY(m_chestAttachment,modellib::AttachmentHandle_t , 0x1492);
+			PROPERTY(m_pPredictionOwner,client::CBasePlayerController* , 0x1498);
+			PROPERTY(m_fNewestAlphaThinkTime,entity2::GameTime_t , 0x14a0);
 			S2_PAD(0xD0);
 		};
-		//static_assert(sizeof(CS2::client::C_Hostage) == 0x14C0, "C_Hostage size should be 0x14C0");
+		//static_assert(sizeof(CS2::client::C_Hostage) == 0x14A8, "C_Hostage size should be 0x14A8");
 	}
 }

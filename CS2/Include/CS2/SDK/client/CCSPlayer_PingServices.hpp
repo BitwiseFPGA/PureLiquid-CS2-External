@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace client {
 		class CCSPlayer_PingServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY(m_hPlayerPing,GlobalTypes::CHandle<client::C_PlayerPing>, 0x40);
+			PROPERTY(m_hPlayerPing,GlobalTypes::CHandle<client::C_PlayerPing>, 0x48);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::client::CCSPlayer_PingServices) == 0x48, "CCSPlayer_PingServices size should be 0x48");
+		//static_assert(sizeof(CS2::client::CCSPlayer_PingServices) == 0x50, "CCSPlayer_PingServices size should be 0x50");
 	}
 }

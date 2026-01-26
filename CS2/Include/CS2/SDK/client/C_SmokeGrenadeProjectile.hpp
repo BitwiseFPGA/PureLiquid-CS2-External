@@ -21,18 +21,18 @@ namespace CS2 {
 	namespace client {
 		class C_SmokeGrenadeProjectile : public CS2::client::C_BaseCSGrenadeProjectile {
 		public:
-			PROPERTY(m_nSmokeEffectTickBegin,int32_t , 0x1468);
-			PROPERTY(m_bDidSmokeEffect,bool , 0x146c);
-			PROPERTY(m_nRandomSeed,int32_t , 0x1470);
-			PROPERTY(m_vSmokeColor,GlobalTypes::Vector , 0x1474);
-			PROPERTY(m_vSmokeDetonationPos,GlobalTypes::Vector , 0x1480);
-			PROPERTY(m_VoxelFrameData,GlobalTypes::C_NetworkUtlVectorBase< uint8 >, 0x1490);
-			PROPERTY(m_nVoxelFrameDataSize,int32_t , 0x14a8);
-			PROPERTY(m_nVoxelUpdate,int32_t , 0x14ac);
-			PROPERTY(m_bSmokeVolumeDataReceived,bool , 0x14b0);
-			PROPERTY(m_bSmokeEffectSpawned,bool , 0x14b1);
+			PROPERTY(m_nSmokeEffectTickBegin,int32_t , 0x1450);
+			PROPERTY(m_bDidSmokeEffect,bool , 0x1454);
+			PROPERTY(m_nRandomSeed,int32_t , 0x1458);
+			PROPERTY(m_vSmokeColor,GlobalTypes::Vector , 0x145c);
+			PROPERTY(m_vSmokeDetonationPos,GlobalTypes::Vector , 0x1468);
+			PROPERTY(m_VoxelFrameData,GlobalTypes::C_NetworkUtlVectorBase< uint8 >, 0x1478);
+			PROPERTY(m_nVoxelFrameDataSize,int32_t , 0x1490);
+			PROPERTY(m_nVoxelUpdate,int32_t , 0x1494);
+			PROPERTY(m_bSmokeVolumeDataReceived,bool , 0x1498);
+			PROPERTY(m_bSmokeEffectSpawned,bool , 0x1499);
 			S2_PAD(0x1B8);
 		};
-		//static_assert(sizeof(CS2::client::C_SmokeGrenadeProjectile) == 0x1608, "C_SmokeGrenadeProjectile size should be 0x1608");
+		//static_assert(sizeof(CS2::client::C_SmokeGrenadeProjectile) == 0x15F0, "C_SmokeGrenadeProjectile size should be 0x15F0");
 	}
 }

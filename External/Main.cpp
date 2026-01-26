@@ -126,6 +126,7 @@ int main() {
 	
 	I::Initialize();
 
+
 #ifdef INCLUDE_OVERLAY
 	OverlayAPI::InitImGuiContext();
 	Overlay::Show(proc.GetHwnd(), &renderer);

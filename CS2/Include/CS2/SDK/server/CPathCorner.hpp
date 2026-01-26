@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace server {
 		class CPathCorner : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_flWait,float32 , 0x4f0);
-			PROPERTY(m_flRadius,float32 , 0x4f4);
-			PROPERTY(m_OnPass,entity2::CEntityIOOutput , 0x4f8);
-			S2_PAD(0x30);
+			PROPERTY(m_flWait,float32 , 0x4a8);
+			PROPERTY(m_flRadius,float32 , 0x4ac);
+			PROPERTY(m_OnPass,entity2::CEntityIOOutput , 0x4b0);
+			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CPathCorner) == 0x520, "CPathCorner size should be 0x520");
+		//static_assert(sizeof(CS2::server::CPathCorner) == 0x4C8, "CPathCorner size should be 0x4C8");
 	}
 }

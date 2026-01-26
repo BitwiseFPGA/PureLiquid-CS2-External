@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CWeaponNegev) == 0x11F0, "CWeaponNegev size should be 0x11F0");
+		//static_assert(sizeof(CS2::server::CWeaponNegev) == 0x1150, "CWeaponNegev size should be 0x1150");
 	}
 }

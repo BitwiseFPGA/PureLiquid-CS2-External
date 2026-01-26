@@ -22,18 +22,18 @@ namespace CS2 {
 	namespace server {
 		class CEntityFlame : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_hEntAttached,GlobalTypes::CHandle<server::CBaseEntity>, 0x4f0);
-			PROPERTY(m_bCheapEffect,bool , 0x4f4);
-			PROPERTY(m_flSize,float32 , 0x4f8);
-			PROPERTY(m_bUseHitboxes,bool , 0x4fc);
-			PROPERTY(m_iNumHitboxFires,int32_t , 0x500);
-			PROPERTY(m_flHitboxFireScale,float32 , 0x504);
-			PROPERTY(m_flLifetime,entity2::GameTime_t , 0x508);
-			PROPERTY(m_hAttacker,GlobalTypes::CHandle<server::CBaseEntity>, 0x50c);
-			PROPERTY(m_flDirectDamagePerSecond,float32 , 0x510);
-			PROPERTY(m_iCustomDamageType,int32_t , 0x514);
+			PROPERTY(m_hEntAttached,GlobalTypes::CHandle<server::CBaseEntity>, 0x4a8);
+			PROPERTY(m_bCheapEffect,bool , 0x4ac);
+			PROPERTY(m_flSize,float32 , 0x4b0);
+			PROPERTY(m_bUseHitboxes,bool , 0x4b4);
+			PROPERTY(m_iNumHitboxFires,int32_t , 0x4b8);
+			PROPERTY(m_flHitboxFireScale,float32 , 0x4bc);
+			PROPERTY(m_flLifetime,entity2::GameTime_t , 0x4c0);
+			PROPERTY(m_hAttacker,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c4);
+			PROPERTY(m_flDirectDamagePerSecond,float32 , 0x4c8);
+			PROPERTY(m_iCustomDamageType,int32_t , 0x4cc);
 			S2_PAD(0x40);
 		};
-		//static_assert(sizeof(CS2::server::CEntityFlame) == 0x530, "CEntityFlame size should be 0x530");
+		//static_assert(sizeof(CS2::server::CEntityFlame) == 0x4E8, "CEntityFlame size should be 0x4E8");
 	}
 }

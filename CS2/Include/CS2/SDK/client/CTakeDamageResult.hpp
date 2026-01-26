@@ -10,6 +10,7 @@
 #endif
 
 
+#include <SDK/client/HitGroup_t.hpp>
 
 
 
@@ -32,9 +33,12 @@ namespace CS2 {
 			PROPERTY(m_flPreModifiedDamage,float32 , 0x14);
 			PROPERTY(m_nTotalledHealthLost,int32_t , 0x18);
 			PROPERTY(m_nTotalledDamageDealt,int32_t , 0x1c);
-			PROPERTY(m_bWasDamageSuppressed,bool , 0x20);
-			S2_PAD(0x28);
+			PROPERTY(m_flTotalledPreModifiedDamage,float32 , 0x20);
+			PROPERTY(m_bWasDamageSuppressed,bool , 0x24);
+			PROPERTY(m_bSuppressFlinch,bool , 0x25);
+			PROPERTY(m_nOverrideFlinchHitGroup,client::HitGroup_t , 0x28);
+			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::client::CTakeDamageResult) == 0x28, "CTakeDamageResult size should be 0x28");
+		//static_assert(sizeof(CS2::client::CTakeDamageResult) == 0x30, "CTakeDamageResult size should be 0x30");
 	}
 }

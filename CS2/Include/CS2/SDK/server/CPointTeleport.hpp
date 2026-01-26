@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CPointTeleport : public CS2::server::CServerOnlyPointEntity {
 		public:
-			PROPERTY(m_vSaveOrigin,GlobalTypes::Vector , 0x4f0);
-			PROPERTY(m_vSaveAngles,GlobalTypes::QAngle , 0x4fc);
-			PROPERTY(m_bTeleportParentedEntities,bool , 0x508);
-			PROPERTY(m_bTeleportUseCurrentAngle,bool , 0x509);
+			PROPERTY(m_vSaveOrigin,GlobalTypes::Vector , 0x4a8);
+			PROPERTY(m_vSaveAngles,GlobalTypes::QAngle , 0x4b4);
+			PROPERTY(m_bTeleportParentedEntities,bool , 0x4c0);
+			PROPERTY(m_bTeleportUseCurrentAngle,bool , 0x4c1);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CPointTeleport) == 0x510, "CPointTeleport size should be 0x510");
+		//static_assert(sizeof(CS2::server::CPointTeleport) == 0x4C8, "CPointTeleport size should be 0x4C8");
 	}
 }

@@ -26,8 +26,13 @@ namespace CS2 {
 			PROPERTY(m_flBurnDamageInflicted,float32 , 0xc);
 			PROPERTY(m_flBlastDamageInflicted,float32 , 0x10);
 			PROPERTY(m_iDinks,int32_t , 0x14);
-			S2_PAD(0x18);
+			PROPERTY(m_bFreshStartThisRound,bool , 0x18);
+			PROPERTY(m_bBombPlantedAndAlive,bool , 0x19);
+			PROPERTY(m_nDefuseStarts,int32_t , 0x1c);
+			PROPERTY(m_nHostagePickUps,int32_t , 0x20);
+			PROPERTY(m_numTeammatesFlashed,int32_t , 0x24);
+			S2_PAD(0xF0);
 		};
-		//static_assert(sizeof(CS2::server::CSAdditionalPerRoundStats_t) == 0x18, "CSAdditionalPerRoundStats_t size should be 0x18");
+		//static_assert(sizeof(CS2::server::CSAdditionalPerRoundStats_t) == 0xF0, "CSAdditionalPerRoundStats_t size should be 0xF0");
 	}
 }

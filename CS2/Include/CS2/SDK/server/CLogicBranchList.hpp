@@ -23,14 +23,14 @@ namespace CS2 {
 	namespace server {
 		class CLogicBranchList : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY_ARRAY(m_nLogicBranchNames,GlobalTypes::CUtlSymbolLarge* , 16 , 0x4f0);
-			PROPERTY(m_LogicBranchList,server::CUtlVector<GlobalTypes::CHandle<server::CBaseEntity>>, 0x570);
-			PROPERTY(m_eLastState,server::LogicBranchListenerLastState_t , 0x588);
-			PROPERTY(m_OnAllTrue,entity2::CEntityIOOutput , 0x590);
-			PROPERTY(m_OnAllFalse,entity2::CEntityIOOutput , 0x5b8);
-			PROPERTY(m_OnMixed,entity2::CEntityIOOutput , 0x5e0);
-			S2_PAD(0x118);
+			PROPERTY_ARRAY(m_nLogicBranchNames,GlobalTypes::CUtlSymbolLarge* , 16 , 0x4a8);
+			PROPERTY(m_LogicBranchList,server::CUtlVector<GlobalTypes::CHandle<server::CBaseEntity>>, 0x528);
+			PROPERTY(m_eLastState,server::LogicBranchListenerLastState_t , 0x540);
+			PROPERTY(m_OnAllTrue,entity2::CEntityIOOutput , 0x548);
+			PROPERTY(m_OnAllFalse,entity2::CEntityIOOutput , 0x560);
+			PROPERTY(m_OnMixed,entity2::CEntityIOOutput , 0x578);
+			S2_PAD(0xE8);
 		};
-		//static_assert(sizeof(CS2::server::CLogicBranchList) == 0x608, "CLogicBranchList size should be 0x608");
+		//static_assert(sizeof(CS2::server::CLogicBranchList) == 0x590, "CLogicBranchList size should be 0x590");
 	}
 }

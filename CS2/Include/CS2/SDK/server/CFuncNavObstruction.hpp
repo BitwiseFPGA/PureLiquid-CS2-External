@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CFuncNavObstruction : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x7f0);
-			PROPERTY(m_bUseAsyncObstacleUpdate,bool , 0x7f1);
+			PROPERTY(m_bDisabled,bool , 0x748);
+			PROPERTY(m_bUseAsyncObstacleUpdate,bool , 0x749);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CFuncNavObstruction) == 0x7F8, "CFuncNavObstruction size should be 0x7F8");
+		//static_assert(sizeof(CS2::server::CFuncNavObstruction) == 0x750, "CFuncNavObstruction size should be 0x750");
 	}
 }

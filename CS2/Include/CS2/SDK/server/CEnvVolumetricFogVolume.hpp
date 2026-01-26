@@ -21,26 +21,26 @@ namespace CS2 {
 	namespace server {
 		class CEnvVolumetricFogVolume : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_bActive,bool , 0x4f0);
-			PROPERTY(m_vBoxMins,GlobalTypes::Vector , 0x4f4);
-			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector , 0x500);
-			PROPERTY(m_bStartDisabled,bool , 0x50c);
-			PROPERTY(m_bIndirectUseLPVs,bool , 0x50d);
-			PROPERTY(m_flStrength,float32 , 0x510);
-			PROPERTY(m_nFalloffShape,int32_t , 0x514);
-			PROPERTY(m_flFalloffExponent,float32 , 0x518);
-			PROPERTY(m_flHeightFogDepth,float32 , 0x51c);
-			PROPERTY(m_fHeightFogEdgeWidth,float32 , 0x520);
-			PROPERTY(m_fIndirectLightStrength,float32 , 0x524);
-			PROPERTY(m_fSunLightStrength,float32 , 0x528);
-			PROPERTY(m_fNoiseStrength,float32 , 0x52c);
-			PROPERTY(m_TintColor,GlobalTypes::Color , 0x530);
-			PROPERTY(m_bOverrideTintColor,bool , 0x534);
-			PROPERTY(m_bOverrideIndirectLightStrength,bool , 0x535);
-			PROPERTY(m_bOverrideSunLightStrength,bool , 0x536);
-			PROPERTY(m_bOverrideNoiseStrength,bool , 0x537);
+			PROPERTY(m_bActive,bool , 0x4a8);
+			PROPERTY(m_vBoxMins,GlobalTypes::Vector , 0x4ac);
+			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector , 0x4b8);
+			PROPERTY(m_bStartDisabled,bool , 0x4c4);
+			PROPERTY(m_bIndirectUseLPVs,bool , 0x4c5);
+			PROPERTY(m_flStrength,float32 , 0x4c8);
+			PROPERTY(m_nFalloffShape,int32_t , 0x4cc);
+			PROPERTY(m_flFalloffExponent,float32 , 0x4d0);
+			PROPERTY(m_flHeightFogDepth,float32 , 0x4d4);
+			PROPERTY(m_fHeightFogEdgeWidth,float32 , 0x4d8);
+			PROPERTY(m_fIndirectLightStrength,float32 , 0x4dc);
+			PROPERTY(m_fSunLightStrength,float32 , 0x4e0);
+			PROPERTY(m_fNoiseStrength,float32 , 0x4e4);
+			PROPERTY(m_TintColor,GlobalTypes::Color , 0x4e8);
+			PROPERTY(m_bOverrideTintColor,bool , 0x4ec);
+			PROPERTY(m_bOverrideIndirectLightStrength,bool , 0x4ed);
+			PROPERTY(m_bOverrideSunLightStrength,bool , 0x4ee);
+			PROPERTY(m_bOverrideNoiseStrength,bool , 0x4ef);
 			S2_PAD(0x48);
 		};
-		//static_assert(sizeof(CS2::server::CEnvVolumetricFogVolume) == 0x538, "CEnvVolumetricFogVolume size should be 0x538");
+		//static_assert(sizeof(CS2::server::CEnvVolumetricFogVolume) == 0x4F0, "CEnvVolumetricFogVolume size should be 0x4F0");
 	}
 }

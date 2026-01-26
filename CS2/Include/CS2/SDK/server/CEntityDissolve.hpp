@@ -23,18 +23,18 @@ namespace CS2 {
 	namespace server {
 		class CEntityDissolve : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_flFadeInStart,float32 , 0x7d8);
-			PROPERTY(m_flFadeInLength,float32 , 0x7dc);
-			PROPERTY(m_flFadeOutModelStart,float32 , 0x7e0);
-			PROPERTY(m_flFadeOutModelLength,float32 , 0x7e4);
-			PROPERTY(m_flFadeOutStart,float32 , 0x7e8);
-			PROPERTY(m_flFadeOutLength,float32 , 0x7ec);
-			PROPERTY(m_flStartTime,entity2::GameTime_t , 0x7f0);
-			PROPERTY(m_nDissolveType,client::EntityDisolveType_t , 0x7f4);
-			PROPERTY(m_vDissolverOrigin,GlobalTypes::Vector , 0x7f8);
-			PROPERTY(m_nMagnitude,uint32_t , 0x804);
+			PROPERTY(m_flFadeInStart,float32 , 0x730);
+			PROPERTY(m_flFadeInLength,float32 , 0x734);
+			PROPERTY(m_flFadeOutModelStart,float32 , 0x738);
+			PROPERTY(m_flFadeOutModelLength,float32 , 0x73c);
+			PROPERTY(m_flFadeOutStart,float32 , 0x740);
+			PROPERTY(m_flFadeOutLength,float32 , 0x744);
+			PROPERTY(m_flStartTime,entity2::GameTime_t , 0x748);
+			PROPERTY(m_nDissolveType,client::EntityDisolveType_t , 0x74c);
+			PROPERTY(m_vDissolverOrigin,GlobalTypes::Vector , 0x750);
+			PROPERTY(m_nMagnitude,uint32_t , 0x75c);
 			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CEntityDissolve) == 0x808, "CEntityDissolve size should be 0x808");
+		//static_assert(sizeof(CS2::server::CEntityDissolve) == 0x760, "CEntityDissolve size should be 0x760");
 	}
 }

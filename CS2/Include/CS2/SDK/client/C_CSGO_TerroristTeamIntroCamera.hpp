@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_CSGO_TerroristTeamIntroCamera) == 0x688, "C_CSGO_TerroristTeamIntroCamera size should be 0x688");
+		//static_assert(sizeof(CS2::client::C_CSGO_TerroristTeamIntroCamera) == 0x698, "C_CSGO_TerroristTeamIntroCamera size should be 0x698");
 	}
 }

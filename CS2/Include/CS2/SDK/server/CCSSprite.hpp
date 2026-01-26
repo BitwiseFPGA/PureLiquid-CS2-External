@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CCSSprite) == 0x848, "CCSSprite size should be 0x848");
+		//static_assert(sizeof(CS2::server::CCSSprite) == 0x7A0, "CCSSprite size should be 0x7A0");
 	}
 }

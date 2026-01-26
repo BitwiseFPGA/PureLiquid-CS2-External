@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CEnvSoundscapeProxyAlias_snd_soundscape_proxy) == 0x598, "CEnvSoundscapeProxyAlias_snd_soundscape_proxy size should be 0x598");
+		//static_assert(sizeof(CS2::server::CEnvSoundscapeProxyAlias_snd_soundscape_proxy) == 0x540, "CEnvSoundscapeProxyAlias_snd_soundscape_proxy size should be 0x540");
 	}
 }

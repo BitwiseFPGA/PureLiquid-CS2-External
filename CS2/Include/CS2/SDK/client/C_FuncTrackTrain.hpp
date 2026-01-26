@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace client {
 		class C_FuncTrackTrain : public CS2::client::C_BaseModelEntity {
 		public:
-			PROPERTY(m_nLongAxis,int32_t , 0xeb0);
-			PROPERTY(m_flRadius,float32 , 0xeb4);
-			PROPERTY(m_flLineLength,float32 , 0xeb8);
+			PROPERTY(m_nLongAxis,int32_t , 0xe88);
+			PROPERTY(m_flRadius,float32 , 0xe8c);
+			PROPERTY(m_flLineLength,float32 , 0xe90);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::client::C_FuncTrackTrain) == 0xEC0, "C_FuncTrackTrain size should be 0xEC0");
+		//static_assert(sizeof(CS2::client::C_FuncTrackTrain) == 0xE98, "C_FuncTrackTrain size should be 0xE98");
 	}
 }

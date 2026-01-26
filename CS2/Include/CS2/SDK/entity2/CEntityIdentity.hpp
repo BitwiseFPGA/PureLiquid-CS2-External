@@ -14,6 +14,11 @@
 
 
 
+namespace CS2 {
+	namespace entity2 {
+		class CEntityAttributeTable;
+	}
+}
 
 
 using namespace GlobalTypes;
@@ -28,6 +33,7 @@ namespace CS2 {
 			PROPERTY(m_worldGroupId,GlobalTypes::WorldGroupId_t , 0x38);
 			PROPERTY(m_fDataObjectTypes,uint32_t , 0x3c);
 			PROPERTY(m_PathIndex,networksystem::ChangeAccessorFieldPathIndex_t , 0x40);
+			PROPERTY(m_pAttributes,entity2::CEntityAttributeTable* , 0x48);
 			PROPERTY(m_pPrev,entity2::CEntityIdentity* , 0x50);
 			PROPERTY(m_pNext,entity2::CEntityIdentity* , 0x58);
 			PROPERTY(m_pPrevByClass,entity2::CEntityIdentity* , 0x60);

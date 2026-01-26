@@ -22,15 +22,15 @@ namespace CS2 {
 	namespace server {
 		class CChangeLevel : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_sMapName,GlobalTypes::CUtlString* , 0x9a8);
-			PROPERTY(m_sLandmarkName,GlobalTypes::CUtlString* , 0x9b0);
-			PROPERTY(m_OnChangeLevel,entity2::CEntityIOOutput , 0x9b8);
-			PROPERTY(m_bTouched,bool , 0x9e0);
-			PROPERTY(m_bNoTouch,bool , 0x9e1);
-			PROPERTY(m_bNewChapter,bool , 0x9e2);
-			PROPERTY(m_bOnChangeLevelFired,bool , 0x9e3);
-			S2_PAD(0x40);
+			PROPERTY(m_sMapName,GlobalTypes::CUtlString* , 0x890);
+			PROPERTY(m_sLandmarkName,GlobalTypes::CUtlString* , 0x898);
+			PROPERTY(m_OnChangeLevel,entity2::CEntityIOOutput , 0x8a0);
+			PROPERTY(m_bTouched,bool , 0x8b8);
+			PROPERTY(m_bNoTouch,bool , 0x8b9);
+			PROPERTY(m_bNewChapter,bool , 0x8ba);
+			PROPERTY(m_bOnChangeLevelFired,bool , 0x8bb);
+			S2_PAD(0x30);
 		};
-		//static_assert(sizeof(CS2::server::CChangeLevel) == 0x9E8, "CChangeLevel size should be 0x9E8");
+		//static_assert(sizeof(CS2::server::CChangeLevel) == 0x8C0, "CChangeLevel size should be 0x8C0");
 	}
 }

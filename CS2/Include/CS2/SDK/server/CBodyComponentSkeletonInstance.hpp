@@ -23,8 +23,8 @@ namespace CS2 {
 		class CBodyComponentSkeletonInstance : public CS2::server::CBodyComponent {
 		public:
 			PROPERTY(m_skeletonInstance,server::CSkeletonInstance , 0x80);
-			S2_PAD(0x498);
+			S2_PAD(0x438);
 		};
-		//static_assert(sizeof(CS2::server::CBodyComponentSkeletonInstance) == 0x510, "CBodyComponentSkeletonInstance size should be 0x510");
+		//static_assert(sizeof(CS2::server::CBodyComponentSkeletonInstance) == 0x4B0, "CBodyComponentSkeletonInstance size should be 0x4B0");
 	}
 }

@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class CPhysImpact : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_damage,float32 , 0x4f0);
-			PROPERTY(m_distance,float32 , 0x4f4);
-			PROPERTY(m_directionEntityName,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
+			PROPERTY(m_damage,float32 , 0x4a8);
+			PROPERTY(m_distance,float32 , 0x4ac);
+			PROPERTY(m_directionEntityName,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CPhysImpact) == 0x500, "CPhysImpact size should be 0x500");
+		//static_assert(sizeof(CS2::server::CPhysImpact) == 0x4B8, "CPhysImpact size should be 0x4B8");
 	}
 }

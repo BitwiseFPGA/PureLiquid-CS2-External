@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CAI_ChangeHintGroup : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_iSearchType,int32_t , 0x4f0);
-			PROPERTY(m_strSearchName,GlobalTypes::CUtlSymbolLarge* , 0x4f8);
-			PROPERTY(m_strNewHintGroup,GlobalTypes::CUtlSymbolLarge* , 0x500);
-			PROPERTY(m_flRadius,float32 , 0x508);
+			PROPERTY(m_iSearchType,int32_t , 0x4a8);
+			PROPERTY(m_strSearchName,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_strNewHintGroup,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
+			PROPERTY(m_flRadius,float32 , 0x4c0);
 			S2_PAD(0x20);
 		};
-		//static_assert(sizeof(CS2::server::CAI_ChangeHintGroup) == 0x510, "CAI_ChangeHintGroup size should be 0x510");
+		//static_assert(sizeof(CS2::server::CAI_ChangeHintGroup) == 0x4C8, "CAI_ChangeHintGroup size should be 0x4C8");
 	}
 }

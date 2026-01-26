@@ -22,16 +22,16 @@ namespace CS2 {
 	namespace client {
 		class C_CSGO_TeamPreviewCharacterPosition : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_nVariant,int32_t , 0x5f8);
-			PROPERTY(m_nRandom,int32_t , 0x5fc);
-			PROPERTY(m_nOrdinal,int32_t , 0x600);
-			PROPERTY(m_sWeaponName,GlobalTypes::CUtlString* , 0x608);
-			PROPERTY(m_xuid,uint64_t , 0x610);
-			PROPERTY(m_agentItem,client::C_EconItemView , 0x618);
-			PROPERTY(m_glovesItem,client::C_EconItemView , 0xa90);
+			PROPERTY(m_nVariant,int32_t , 0x608);
+			PROPERTY(m_nRandom,int32_t , 0x60c);
+			PROPERTY(m_nOrdinal,int32_t , 0x610);
+			PROPERTY(m_sWeaponName,GlobalTypes::CUtlString* , 0x618);
+			PROPERTY(m_xuid,uint64_t , 0x620);
+			PROPERTY(m_agentItem,client::C_EconItemView , 0x628);
+			PROPERTY(m_glovesItem,client::C_EconItemView , 0xa98);
 			PROPERTY(m_weaponItem,client::C_EconItemView , 0xf08);
-			S2_PAD(0xDB8);
+			S2_PAD(0xDA0);
 		};
-		//static_assert(sizeof(CS2::client::C_CSGO_TeamPreviewCharacterPosition) == 0x13B0, "C_CSGO_TeamPreviewCharacterPosition size should be 0x13B0");
+		//static_assert(sizeof(CS2::client::C_CSGO_TeamPreviewCharacterPosition) == 0x13A8, "C_CSGO_TeamPreviewCharacterPosition size should be 0x13A8");
 	}
 }

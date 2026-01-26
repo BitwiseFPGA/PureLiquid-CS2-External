@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace client {
 		class C_TonemapController2 : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_flAutoExposureMin,float32 , 0x5f8);
-			PROPERTY(m_flAutoExposureMax,float32 , 0x5fc);
-			PROPERTY(m_flExposureAdaptationSpeedUp,float32 , 0x600);
-			PROPERTY(m_flExposureAdaptationSpeedDown,float32 , 0x604);
-			PROPERTY(m_flTonemapEVSmoothingRange,float32 , 0x608);
+			PROPERTY(m_flAutoExposureMin,float32 , 0x608);
+			PROPERTY(m_flAutoExposureMax,float32 , 0x60c);
+			PROPERTY(m_flExposureAdaptationSpeedUp,float32 , 0x610);
+			PROPERTY(m_flExposureAdaptationSpeedDown,float32 , 0x614);
+			PROPERTY(m_flTonemapEVSmoothingRange,float32 , 0x618);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::client::C_TonemapController2) == 0x610, "C_TonemapController2 size should be 0x610");
+		//static_assert(sizeof(CS2::client::C_TonemapController2) == 0x620, "C_TonemapController2 size should be 0x620");
 	}
 }

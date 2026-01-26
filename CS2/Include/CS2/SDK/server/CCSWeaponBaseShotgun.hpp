@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CCSWeaponBaseShotgun) == 0x11D0, "CCSWeaponBaseShotgun size should be 0x11D0");
+		//static_assert(sizeof(CS2::server::CCSWeaponBaseShotgun) == 0x1130, "CCSWeaponBaseShotgun size should be 0x1130");
 	}
 }

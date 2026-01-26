@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CHEGrenade) == 0x1210, "CHEGrenade size should be 0x1210");
+		//static_assert(sizeof(CS2::server::CHEGrenade) == 0x1170, "CHEGrenade size should be 0x1170");
 	}
 }

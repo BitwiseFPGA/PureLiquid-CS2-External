@@ -21,17 +21,17 @@ namespace CS2 {
 	namespace server {
 		class CRagdollConstraint : public CS2::server::CPhysConstraint {
 		public:
-			PROPERTY(m_xmin,float32 , 0x560);
-			PROPERTY(m_xmax,float32 , 0x564);
-			PROPERTY(m_ymin,float32 , 0x568);
-			PROPERTY(m_ymax,float32 , 0x56c);
-			PROPERTY(m_zmin,float32 , 0x570);
-			PROPERTY(m_zmax,float32 , 0x574);
-			PROPERTY(m_xfriction,float32 , 0x578);
-			PROPERTY(m_yfriction,float32 , 0x57c);
-			PROPERTY(m_zfriction,float32 , 0x580);
+			PROPERTY(m_xmin,float32 , 0x508);
+			PROPERTY(m_xmax,float32 , 0x50c);
+			PROPERTY(m_ymin,float32 , 0x510);
+			PROPERTY(m_ymax,float32 , 0x514);
+			PROPERTY(m_zmin,float32 , 0x518);
+			PROPERTY(m_zmax,float32 , 0x51c);
+			PROPERTY(m_xfriction,float32 , 0x520);
+			PROPERTY(m_yfriction,float32 , 0x524);
+			PROPERTY(m_zfriction,float32 , 0x528);
 			S2_PAD(0x28);
 		};
-		//static_assert(sizeof(CS2::server::CRagdollConstraint) == 0x588, "CRagdollConstraint size should be 0x588");
+		//static_assert(sizeof(CS2::server::CRagdollConstraint) == 0x530, "CRagdollConstraint size should be 0x530");
 	}
 }

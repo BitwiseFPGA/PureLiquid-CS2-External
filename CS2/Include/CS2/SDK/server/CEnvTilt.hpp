@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace server {
 		class CEnvTilt : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_Duration,float32 , 0x4f0);
-			PROPERTY(m_Radius,float32 , 0x4f4);
-			PROPERTY(m_TiltTime,float32 , 0x4f8);
-			PROPERTY(m_stopTime,entity2::GameTime_t , 0x4fc);
+			PROPERTY(m_Duration,float32 , 0x4a8);
+			PROPERTY(m_Radius,float32 , 0x4ac);
+			PROPERTY(m_TiltTime,float32 , 0x4b0);
+			PROPERTY(m_stopTime,entity2::GameTime_t , 0x4b4);
 			S2_PAD(0x10);
 		};
-		//static_assert(sizeof(CS2::server::CEnvTilt) == 0x500, "CEnvTilt size should be 0x500");
+		//static_assert(sizeof(CS2::server::CEnvTilt) == 0x4B8, "CEnvTilt size should be 0x4B8");
 	}
 }

@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerSet : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
 		public:
-			PROPERTY(m_soundsToPlay,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CVoiceContainerSetElement>, 0xb8);
+			PROPERTY(m_soundsToPlay,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CVoiceContainerSetElement>, 0xa8);
 			S2_PAD(0x18);
 		};
-		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerSet) == 0xD0, "CVoiceContainerSet size should be 0xD0");
+		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerSet) == 0xC0, "CVoiceContainerSet size should be 0xC0");
 	}
 }

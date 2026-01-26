@@ -21,14 +21,14 @@ namespace CS2 {
 	namespace server {
 		class CLogicCompare : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_flInValue,float32 , 0x4f0);
-			PROPERTY(m_flCompareValue,float32 , 0x4f4);
-			PROPERTY(m_OnLessThan,GlobalTypes::CEntityOutputTemplate< float32 >, 0x4f8);
-			PROPERTY(m_OnEqualTo,GlobalTypes::CEntityOutputTemplate< float32 >, 0x520);
-			PROPERTY(m_OnNotEqualTo,GlobalTypes::CEntityOutputTemplate< float32 >, 0x548);
-			PROPERTY(m_OnGreaterThan,GlobalTypes::CEntityOutputTemplate< float32 >, 0x570);
-			S2_PAD(0xA8);
+			PROPERTY(m_flInValue,float32 , 0x4a8);
+			PROPERTY(m_flCompareValue,float32 , 0x4ac);
+			PROPERTY(m_OnLessThan,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4b0);
+			PROPERTY(m_OnEqualTo,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4d0);
+			PROPERTY(m_OnNotEqualTo,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4f0);
+			PROPERTY(m_OnGreaterThan,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x510);
+			S2_PAD(0x88);
 		};
-		//static_assert(sizeof(CS2::server::CLogicCompare) == 0x598, "CLogicCompare size should be 0x598");
+		//static_assert(sizeof(CS2::server::CLogicCompare) == 0x530, "CLogicCompare size should be 0x530");
 	}
 }

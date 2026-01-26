@@ -27,32 +27,32 @@ namespace CS2 {
 	namespace client {
 		class C_Inferno : public CS2::client::C_BaseModelEntity {
 		public:
-			PROPERTY(m_nfxFireDamageEffect,client::ParticleIndex_t , 0xef0);
-			PROPERTY(m_hInfernoPointsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xef8);
-			PROPERTY(m_hInfernoFillerPointsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xf00);
-			PROPERTY(m_hInfernoOutlinePointsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xf08);
-			PROPERTY(m_hInfernoClimbingOutlinePointsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xf10);
-			PROPERTY(m_hInfernoDecalsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xf18);
-			PROPERTY_ARRAY(m_firePositions,GlobalTypes::Vector , 64 , 0xf20);
-			PROPERTY_ARRAY(m_fireParentPositions,GlobalTypes::Vector , 64 , 0x1220);
-			PROPERTY_ARRAY(m_bFireIsBurning,bool , 64 , 0x1520);
-			PROPERTY_ARRAY(m_BurnNormal,GlobalTypes::Vector , 64 , 0x1560);
-			PROPERTY(m_fireCount,int32_t , 0x1860);
-			PROPERTY(m_nInfernoType,int32_t , 0x1864);
-			PROPERTY(m_nFireLifetime,float32 , 0x1868);
-			PROPERTY(m_bInPostEffectTime,bool , 0x186c);
-			PROPERTY(m_lastFireCount,int32_t , 0x1870);
-			PROPERTY(m_nFireEffectTickBegin,int32_t , 0x1874);
-			PROPERTY(m_drawableCount,int32_t , 0x8480);
-			PROPERTY(m_blosCheck,bool , 0x8484);
-			PROPERTY(m_nlosperiod,int32_t , 0x8488);
-			PROPERTY(m_maxFireHalfWidth,float32 , 0x848c);
-			PROPERTY(m_maxFireHeight,float32 , 0x8490);
-			PROPERTY(m_minBounds,GlobalTypes::Vector , 0x8494);
-			PROPERTY(m_maxBounds,GlobalTypes::Vector , 0x84a0);
-			PROPERTY(m_flLastGrassBurnThink,float32 , 0x84ac);
-			S2_PAD(0x7610);
+			PROPERTY(m_nfxFireDamageEffect,client::ParticleIndex_t , 0xec8);
+			PROPERTY(m_hInfernoPointsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xed0);
+			PROPERTY(m_hInfernoFillerPointsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xed8);
+			PROPERTY(m_hInfernoOutlinePointsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xee0);
+			PROPERTY(m_hInfernoClimbingOutlinePointsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xee8);
+			PROPERTY(m_hInfernoDecalsSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0xef0);
+			PROPERTY_ARRAY(m_firePositions,GlobalTypes::Vector , 64 , 0xef8);
+			PROPERTY_ARRAY(m_fireParentPositions,GlobalTypes::Vector , 64 , 0x11f8);
+			PROPERTY_ARRAY(m_bFireIsBurning,bool , 64 , 0x14f8);
+			PROPERTY_ARRAY(m_BurnNormal,GlobalTypes::Vector , 64 , 0x1538);
+			PROPERTY(m_fireCount,int32_t , 0x1838);
+			PROPERTY(m_nInfernoType,int32_t , 0x183c);
+			PROPERTY(m_nFireLifetime,float32 , 0x1840);
+			PROPERTY(m_bInPostEffectTime,bool , 0x1844);
+			PROPERTY(m_lastFireCount,int32_t , 0x1848);
+			PROPERTY(m_nFireEffectTickBegin,int32_t , 0x184c);
+			PROPERTY(m_drawableCount,int32_t , 0x8450);
+			PROPERTY(m_blosCheck,bool , 0x8454);
+			PROPERTY(m_nlosperiod,int32_t , 0x8458);
+			PROPERTY(m_maxFireHalfWidth,float32 , 0x845c);
+			PROPERTY(m_maxFireHeight,float32 , 0x8460);
+			PROPERTY(m_minBounds,GlobalTypes::Vector , 0x8464);
+			PROPERTY(m_maxBounds,GlobalTypes::Vector , 0x8470);
+			PROPERTY(m_flLastGrassBurnThink,float32 , 0x847c);
+			S2_PAD(0x7608);
 		};
-		//static_assert(sizeof(CS2::client::C_Inferno) == 0x84C0, "C_Inferno size should be 0x84C0");
+		//static_assert(sizeof(CS2::client::C_Inferno) == 0x8490, "C_Inferno size should be 0x8490");
 	}
 }

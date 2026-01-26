@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::CServerOnlyModelEntity) == 0xEB0, "CServerOnlyModelEntity size should be 0xEB0");
+		//static_assert(sizeof(CS2::client::CServerOnlyModelEntity) == 0xE88, "CServerOnlyModelEntity size should be 0xE88");
 	}
 }

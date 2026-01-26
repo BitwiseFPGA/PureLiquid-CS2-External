@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_WaterBullet) == 0x1158, "C_WaterBullet size should be 0x1158");
+		//static_assert(sizeof(CS2::client::C_WaterBullet) == 0x1168, "C_WaterBullet size should be 0x1168");
 	}
 }

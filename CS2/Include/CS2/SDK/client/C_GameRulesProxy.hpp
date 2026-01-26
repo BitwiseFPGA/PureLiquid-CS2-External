@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::client::C_GameRulesProxy) == 0x5F8, "C_GameRulesProxy size should be 0x5F8");
+		//static_assert(sizeof(CS2::client::C_GameRulesProxy) == 0x608, "C_GameRulesProxy size should be 0x608");
 	}
 }

@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CRagdollPropAlias_physics_prop_ragdoll) == 0xBE0, "CRagdollPropAlias_physics_prop_ragdoll size should be 0xBE0");
+		//static_assert(sizeof(CS2::server::CRagdollPropAlias_physics_prop_ragdoll) == 0xB70, "CRagdollPropAlias_physics_prop_ragdoll size should be 0xB70");
 	}
 }

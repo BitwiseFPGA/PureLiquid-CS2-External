@@ -10,7 +10,7 @@
 #endif
 
 
-#include <SDK/soundsystem_voicecontainers/CVoiceContainerBase.hpp>
+#include <SDK/soundsystem_voicecontainers/CVoiceContainerGenerator.hpp>
 
 
 
@@ -19,10 +19,10 @@
 using namespace GlobalTypes;
 namespace CS2 {
 	namespace soundsystem_voicecontainers {
-		class CVoiceContainerNull : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
+		class CVoiceContainerNull : public CS2::soundsystem_voicecontainers::CVoiceContainerGenerator {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerNull) == 0xB8, "CVoiceContainerNull size should be 0xB8");
+		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerNull) == 0xA8, "CVoiceContainerNull size should be 0xA8");
 	}
 }

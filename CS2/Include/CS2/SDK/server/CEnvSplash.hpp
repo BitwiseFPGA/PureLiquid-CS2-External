@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CEnvSplash : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_flScale,float32 , 0x4f0);
+			PROPERTY(m_flScale,float32 , 0x4a8);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CEnvSplash) == 0x4F8, "CEnvSplash size should be 0x4F8");
+		//static_assert(sizeof(CS2::server::CEnvSplash) == 0x4B0, "CEnvSplash size should be 0x4B0");
 	}
 }

@@ -21,15 +21,15 @@ namespace CS2 {
 	namespace client {
 		class C_VoteController : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_iActiveIssueIndex,int32_t , 0x608);
-			PROPERTY(m_iOnlyTeamToVote,int32_t , 0x60c);
-			PROPERTY_ARRAY(m_nVoteOptionCount,int32_t , 5 , 0x610);
-			PROPERTY(m_nPotentialVotes,int32_t , 0x624);
-			PROPERTY(m_bVotesDirty,bool , 0x628);
-			PROPERTY(m_bTypeDirty,bool , 0x629);
-			PROPERTY(m_bIsYesNoVote,bool , 0x62a);
+			PROPERTY(m_iActiveIssueIndex,int32_t , 0x618);
+			PROPERTY(m_iOnlyTeamToVote,int32_t , 0x61c);
+			PROPERTY_ARRAY(m_nVoteOptionCount,int32_t , 5 , 0x620);
+			PROPERTY(m_nPotentialVotes,int32_t , 0x634);
+			PROPERTY(m_bVotesDirty,bool , 0x638);
+			PROPERTY(m_bTypeDirty,bool , 0x639);
+			PROPERTY(m_bIsYesNoVote,bool , 0x63a);
 			S2_PAD(0x38);
 		};
-		//static_assert(sizeof(CS2::client::C_VoteController) == 0x630, "C_VoteController size should be 0x630");
+		//static_assert(sizeof(CS2::client::C_VoteController) == 0x640, "C_VoteController size should be 0x640");
 	}
 }

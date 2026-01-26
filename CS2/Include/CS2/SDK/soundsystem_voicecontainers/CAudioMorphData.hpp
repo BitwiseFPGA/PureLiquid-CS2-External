@@ -23,7 +23,7 @@ namespace CS2 {
 			PROPERTY(m_times,GlobalTypes::CUtlVector< float32 >, 0x0);
 			PROPERTY(m_nameHashCodes,GlobalTypes::CUtlVector< uint32 >, 0x18);
 			PROPERTY(m_nameStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x30);
-			PROPERTY(m_samples,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector<float32>>, 0x48);
+			PROPERTY(m_samples,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector>, 0x48);
 			PROPERTY(m_flEaseIn,float32 , 0x60);
 			PROPERTY(m_flEaseOut,float32 , 0x64);
 			S2_PAD(0x68);

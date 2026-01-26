@@ -26,15 +26,15 @@ namespace CS2 {
 	namespace server {
 		class CTriggerPush : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_angPushEntitySpace,GlobalTypes::QAngle , 0x9a8);
-			PROPERTY(m_vecPushDirEntitySpace,GlobalTypes::Vector , 0x9b4);
-			PROPERTY(m_bTriggerOnStartTouch,bool , 0x9c0);
-			PROPERTY(m_bUsePathSimple,bool , 0x9c1);
-			PROPERTY(m_iszPathSimpleName,GlobalTypes::CUtlSymbolLarge* , 0x9c8);
-			PROPERTY(m_PathSimple,server::CPathSimple* , 0x9d0);
-			PROPERTY(m_splinePushType,uint32_t , 0x9d8);
+			PROPERTY(m_angPushEntitySpace,GlobalTypes::QAngle , 0x890);
+			PROPERTY(m_vecPushDirEntitySpace,GlobalTypes::Vector , 0x89c);
+			PROPERTY(m_bTriggerOnStartTouch,bool , 0x8a8);
+			PROPERTY(m_bUsePathSimple,bool , 0x8a9);
+			PROPERTY(m_iszPathSimpleName,GlobalTypes::CUtlSymbolLarge* , 0x8b0);
+			PROPERTY(m_PathSimple,server::CPathSimple* , 0x8b8);
+			PROPERTY(m_splinePushType,uint32_t , 0x8c0);
 			S2_PAD(0x38);
 		};
-		//static_assert(sizeof(CS2::server::CTriggerPush) == 0x9E0, "CTriggerPush size should be 0x9E0");
+		//static_assert(sizeof(CS2::server::CTriggerPush) == 0x8C8, "CTriggerPush size should be 0x8C8");
 	}
 }

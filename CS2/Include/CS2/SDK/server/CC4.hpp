@@ -23,19 +23,19 @@ namespace CS2 {
 	namespace server {
 		class CC4 : public CS2::server::CCSWeaponBase {
 		public:
-			PROPERTY(m_vecLastValidPlayerHeldPosition,GlobalTypes::Vector , 0x1200);
-			PROPERTY(m_vecLastValidDroppedPosition,GlobalTypes::Vector , 0x120c);
-			PROPERTY(m_bDoValidDroppedPositionCheck,bool , 0x1218);
-			PROPERTY(m_bStartedArming,bool , 0x1219);
-			PROPERTY(m_fArmedTime,entity2::GameTime_t , 0x121c);
-			PROPERTY(m_bBombPlacedAnimation,bool , 0x1220);
-			PROPERTY(m_bIsPlantingViaUse,bool , 0x1221);
-			PROPERTY(m_entitySpottedState,server::EntitySpottedState_t , 0x1228);
-			PROPERTY(m_nSpotRules,int32_t , 0x1240);
-			PROPERTY_ARRAY(m_bPlayedArmingBeeps,bool , 7 , 0x1244);
-			PROPERTY(m_bBombPlanted,bool , 0x124b);
+			PROPERTY(m_vecLastValidPlayerHeldPosition,GlobalTypes::Vector , 0x1160);
+			PROPERTY(m_vecLastValidDroppedPosition,GlobalTypes::Vector , 0x116c);
+			PROPERTY(m_bDoValidDroppedPositionCheck,bool , 0x1178);
+			PROPERTY(m_bStartedArming,bool , 0x1179);
+			PROPERTY(m_fArmedTime,entity2::GameTime_t , 0x117c);
+			PROPERTY(m_bBombPlacedAnimation,bool , 0x1180);
+			PROPERTY(m_bIsPlantingViaUse,bool , 0x1181);
+			PROPERTY(m_entitySpottedState,server::EntitySpottedState_t , 0x1188);
+			PROPERTY(m_nSpotRules,int32_t , 0x11a0);
+			PROPERTY_ARRAY(m_bPlayedArmingBeeps,bool , 7 , 0x11a4);
+			PROPERTY(m_bBombPlanted,bool , 0x11ab);
 			S2_PAD(0x80);
 		};
-		//static_assert(sizeof(CS2::server::CC4) == 0x1250, "CC4 size should be 0x1250");
+		//static_assert(sizeof(CS2::server::CC4) == 0x11B0, "CC4 size should be 0x11B0");
 	}
 }
