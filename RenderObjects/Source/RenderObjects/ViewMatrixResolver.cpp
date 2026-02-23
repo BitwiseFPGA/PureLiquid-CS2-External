@@ -1,5 +1,6 @@
 #include <RenderObjects/ViewMatrixResolver.h>
 #include <GlobalData/Include.h>
+#include <CS2/Patterns.h>
 #include <Math/Matrix.h>
 namespace CS2 {
 
@@ -9,7 +10,7 @@ namespace CS2 {
 			if (!hClient || hClient && !hClient->GetAddr()) {
 				return NULL;
 			}
-			auto getViewMatrixFn = hClient->ScanMemory("48 63 C2 48 8D 0D ?? ?? ?? ?? 48 C1 E0");
+			auto getViewMatrixFn = hClient->ScanMemory(GET_VIEW_MATRIX_FN);
 			pViewMatrixAddr = hClient->ResolveRIP(getViewMatrixFn + 0x3, 0x3, 0x7);
 		}
 		return pViewMatrixAddr;

@@ -200,8 +200,8 @@ text:000000000003BE30                 mov     [rsp+arg_0], rbx
 // tier0.dll => exported function.
 #define LOAD_KV3_PROC_ADDRESS "?LoadKV3@@YA_NPEAVKeyValues3@@PEAVCUtlString@@PEBDAEBUKV3ID_t@@2I@Z"
 
-
-
+// client.dll
+#define GET_VIEW_MATRIX_FN "48 63 C1 48 8D 0D ?? ?? ?? ?? 48 C1 E0 06"
 
 // scenesystem.dll =>
 // .rdata:0000000000593D28                         ; class CAnimatableSceneObjectDesc: CBaseSceneObjectDesc, ISceneObjectDesc;  (#classinformer)
