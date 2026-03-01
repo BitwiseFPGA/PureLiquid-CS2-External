@@ -20,7 +20,7 @@ namespace CS2 {
 
 			};
 
-			NESTED_PROPERTY(m_HitboxData, GlobalTypes::CUtlVector<CRenderMeshHitboxUtlVector>, 0x138);
+			NESTED_PROPERTY(m_HitboxData, GlobalTypes::CUtlVector<CRenderMeshHitboxUtlVector>, 0x148);
 		public:
 			std::vector<CHitBox*> GetHitboxes();
 			std::vector<CS2::modellib::RenderSkeletonBone_t*> GetBoneData();
