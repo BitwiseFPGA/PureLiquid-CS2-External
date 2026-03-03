@@ -3,6 +3,7 @@
 // #define INCLUDE_OVERLAY
 
 #define DEMO_MODE
+// #define USE_GET_INACCURACY
 #ifdef DEMO_MODE
 #define USE_CHAMS
 #define USE_CREATE_MOVE

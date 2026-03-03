@@ -16,6 +16,7 @@
 #include <CS2/SDK/modellib/RenderSkeletonBone_t.hpp>
 #include <CS2/Interfaces/Include.h>
 #include <Features/Aimbot.h>
+#include <Features/Triggerbot.h>
 #include <Features/CModelChanger.h>
 #include <CS2/Managers/CModelManager.h>
 #include <CS2/Hooks/Client/CMsgQAngleCpyHook.h>
@@ -159,9 +160,10 @@ int main() {
 
 #ifdef USE_CREATE_MOVE
 	I::pCsGoInput->HookCreateMove();
-	
-	std::thread([]() {Aimbot::AimbotThread();}).detach();
 #endif
+	std::thread([]() {Aimbot::AimbotThread(); }).detach();
+	// std::thread([]() {Triggerbot::Run(); }).detach();
+
 #ifdef USE_SILENT_AIM
 	CMsgQAngleCpy::Hook();
 	Aimbot::m_bUseSilentAim = true;
@@ -183,6 +185,11 @@ int main() {
 			continue;
 			
 		}
+
+
+
+
+
 #ifdef USE_GET_INACCURACY
 		auto res = CS2::GetInaccuracy::GetData();
 		printf("Weapon: 0x%p\n", res.weapon);

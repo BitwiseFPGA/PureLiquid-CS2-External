@@ -381,8 +381,10 @@ namespace CS2 {
 
 
     void CCSGOInput::SetSubTickAngle(Vector vAngle) {
-        if (!m_pDataRemote)
+        if (!m_pDataRemote) {
+            vViewAngles = QAngle_t{ vAngle.x,vAngle.y,vAngle.z };
             return;
+        }
         proc.Write<Vector>(reinterpret_cast<uintptr_t>(m_pDataRemote) +
             offsetof(CreateMoveHookData, vViewAnglesToSet), vAngle);
 

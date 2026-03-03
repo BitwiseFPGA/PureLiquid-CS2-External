@@ -39,6 +39,21 @@ Aimbot::FOVResult Aimbot::GetTargetFOVAndDistance(
 
     return { fovDeg, distance };
 }
+
+
+void Aimbot::ShootIfPossible(CS2::client::C_CSPlayerPawnExtended* pLocalPawn, CS2::client::CCSPlayerController* pLocalController) {
+    auto pLocalWeapon = CS2::I::pGameResourceService->GetGameEntitySystem()->GetEntityByIndex<CS2::client::C_BasePlayerWeapon>(pLocalPawn->m_pWeaponServices->m_hActiveWeapon.GetEntryIndex());
+    auto pWeaponVData = proc.ReadDirect<CS2::client::CCSWeaponBaseVData*>(reinterpret_cast<uintptr_t>(pLocalWeapon) + CS2::SchemaOffsets::client::C_BaseEntity::m_nSubclassID + 0x8);
+    auto weaponType = pWeaponVData->m_WeaponType;
+    if (weaponType == CS2::client::WEAPONTYPE_PISTOL) {
+        if (pLocalWeapon->m_nNextPrimaryAttackTick <= pLocalController->m_nTickBase) {
+            CS2::I::pCsGoInput->Attack();
+        }
+    }
+    else {
+        CS2::I::pCsGoInput->Attack();
+    }
+}
 void Aimbot::Run() {
 
     auto pLocalEntity = CS2::CGameEntitySystem::GetLocalPlayer();
@@ -49,9 +64,6 @@ void Aimbot::Run() {
     auto pLocalController = pLocalEntity->m_pController;
     auto pLocalPawn = pLocalEntity->m_pPawn;
     
-    auto pLocalWeapon = CS2::I::pGameResourceService->GetGameEntitySystem()->GetEntityByIndex<CS2::client::C_BasePlayerWeapon>(pLocalPawn->m_pWeaponServices->m_hActiveWeapon.GetEntryIndex());
-    auto pWeaponVData = proc.ReadDirect<CS2::client::CCSWeaponBaseVData*>(reinterpret_cast<uintptr_t>(pLocalWeapon) + CS2::SchemaOffsets::client::C_BaseEntity::m_nSubclassID + 0x8);
-    auto weaponType = pWeaponVData->m_WeaponType;
 
     Vector vecView = pLocalPawn->m_vecViewOffset;
     Vector vLocalPos = pLocalPawn->m_vOldOrigin + vecView;
@@ -108,6 +120,8 @@ void Aimbot::Run() {
                 bestTarget.entity = entity;
                 bestTargetIdx = i;
                 targetBoneIdx = iTargetBone;
+                bestTarget.targetBoneMatrix = Matrix2x4_t(&boneMatrix.at(targetBoneIdx));
+
             }
         }
 
@@ -152,16 +166,7 @@ void Aimbot::Run() {
 
             // CS2::I::pCsGoInput->vViewAngles = aimAngle;
             if (bAuthoShoot) {
-
-                if (weaponType == CS2::client::WEAPONTYPE_PISTOL) {
-                    if (pLocalWeapon->m_nNextPrimaryAttackTick <= pLocalController->m_nTickBase) {
-                        CS2::I::pCsGoInput->Attack();
-
-                    }
-
-                } else {
-                    CS2::I::pCsGoInput->Attack();
-                }
+                ShootIfPossible(pLocalPawn, pLocalController);
             }
 
             if (!bestTarget.entity->m_bIsAlive) {
@@ -181,6 +186,8 @@ void Aimbot::ResetTarget() {
     bestTarget.entity = nullptr;
     bestTargetIdx = -1;
     targetBoneIdx = -1;
+    bestTarget.targetBoneMatrix = {};
+
     if(m_bUseSilentAim)
         CS2::CMsgQAngleCpy::SetAngleChange(false);
 

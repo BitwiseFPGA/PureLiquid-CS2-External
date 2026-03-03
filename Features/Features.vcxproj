@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClInclude Include="Include\Features\Aimbot.h" />
     <ClInclude Include="Include\Features\CModelChanger.h" />
+    <ClInclude Include="Include\Features\Triggerbot.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Features\Aimbot.cpp" />
     <ClCompile Include="Source\Features\CModelChanger.cpp" />
+    <ClCompile Include="Source\Features\Triggerbot.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CS2\CS2.vcxproj">

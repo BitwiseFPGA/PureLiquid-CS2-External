@@ -21,12 +21,18 @@
     <ClInclude Include="Include\Features\CModelChanger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Features\Triggerbot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Features\Aimbot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Features\CModelChanger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Features\Triggerbot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

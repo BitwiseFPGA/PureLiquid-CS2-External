@@ -2,6 +2,7 @@
 #include <CS2/Interfaces/CGameEntitySystem.h>
 #include <Math/Vector.h>
 #include <Math/QAngle.h>
+#include <Math/Matrix.h>
 
 class Aimbot {
 private:
@@ -10,6 +11,7 @@ private:
 	{
 		float distance;
 		float fovDeg;
+		Matrix2x4_t targetBoneMatrix;
 		CS2::Entity* entity;
 	};
 
@@ -38,5 +40,6 @@ public:
 	inline static bool m_bIgnoreTeamMembers = false;
 	static void Run();
 	static void ResetTarget();
+	static void ShootIfPossible(CS2::client::C_CSPlayerPawnExtended* , CS2::client::CCSPlayerController*);
 	static void AimbotThread();
 };
