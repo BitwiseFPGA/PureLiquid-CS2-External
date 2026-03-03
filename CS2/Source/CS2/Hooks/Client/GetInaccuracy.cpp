@@ -1,4 +1,4 @@
-#include <CS2/Hooks/Client/GetSpread.h>
+#include <CS2/Hooks/Client/GetInaccuracy.h>
 #include <CS2/Patterns.h>
 #include <CS2/Offsets/client/CCSWeaponBaseVData.hpp>
 #include <CS2/Offsets/client/C_BaseEntity.hpp>
@@ -9,7 +9,7 @@ using namespace Globals;
 
 namespace CS2 {
 
-    static GetSpreadFnHookData* g_pGetSpreadHookData = nullptr;
+    static GetInaccuracyFnHookData* g_pGetSpreadHookData = nullptr;
 
 #pragma code_seg(".getSpreadHook")
 #pragma optimize("", off)
@@ -17,30 +17,35 @@ namespace CS2 {
 #pragma check_stack(off)
 
     __declspec(noinline)
-        double __fastcall GetSpread::GetSpread_Hook_Shellcode(
+        float __fastcall GetInaccuracy::GetInaccuracy_Hook_Shellcode(
             client::C_CSWeaponBaseGun* a1, void* a2, void* a3)
     {
         uintptr_t vftable = *reinterpret_cast<uintptr_t*>(a1);
-        typedef double(__fastcall* GetSpreadFn)(client::C_CSWeaponBaseGun*, void*, void*);
-        GetSpreadFn original = *reinterpret_cast<GetSpreadFn*>(vftable + 0xCD0);
+        typedef float(__fastcall* GetInaccuracyFn)(client::C_CSWeaponBaseGun*, void*, void*);
+        GetInaccuracyFn original = *reinterpret_cast<GetInaccuracyFn*>(vftable + 0xCD0);
 
-        double res = original(a1, a2, a3);
+        float res = original(a1, a2, a3);
 
-        volatile GetSpreadFnHookData* data = g_pGetSpreadHookData;
-        data->flSpread = res;
+        volatile GetInaccuracyFnHookData* data = g_pGetSpreadHookData;
+        data->flInaccuracy = res;
         data->weapon = a1;
         return res;
     }
 
-    void GetSpread::GetSpread_Hook_Shellcode_End() {}
+    void GetInaccuracy::GetInaccuracy_Hook_Shellcode_End() {}
 
 #pragma check_stack()  
 #pragma runtime_checks("", restore) 
 #pragma optimize("", on)
 #pragma code_seg()
 
+    GetInaccuracyFnHookData GetInaccuracy::GetData() {
+        if (!m_bIsHooked)
+            return { 0x0,-1.0f };
 
-    bool GetSpread::Hook()
+        return proc.ReadDirect<GetInaccuracyFnHookData>(reinterpret_cast<uintptr_t>(m_pDataRemote));
+    }
+    bool GetInaccuracy::Hook()
     {
         auto client = proc.GetRemoteModule("client.dll");
         if (!client || !client->IsValid()) {
@@ -48,21 +53,21 @@ namespace CS2 {
             return false;
         }
 
-        m_pDataRemote = proc.Alloc(sizeof(GetSpreadFnHookData));
+        m_pDataRemote = proc.Alloc(sizeof(GetInaccuracyFnHookData));
         if (!m_pDataRemote) {
-            printf("[!] Failed to allocate GetSpreadFnHookData\n");
+            printf("[!] Failed to allocate GetInaccuracyFnHookData\n");
             return false;
         }
-        printf("[+] Remote GetSpreadFnHookData: 0x%p\n", m_pDataRemote);
+        printf("[+] Remote GetInaccuracyFnHookData: 0x%p\n", m_pDataRemote);
 
-        GetSpreadFnHookData data{};
+        GetInaccuracyFnHookData data{};
         data.weapon = nullptr;
-        data.flSpread = 0.0f;
+        data.flInaccuracy = 0.0f;
 
-        proc.Write<GetSpreadFnHookData>(reinterpret_cast<uintptr_t>(m_pDataRemote), data);
+        proc.Write<GetInaccuracyFnHookData>(reinterpret_cast<uintptr_t>(m_pDataRemote), data);
 
-        size_t shellcodeSize = reinterpret_cast<uintptr_t>(GetSpread_Hook_Shellcode_End) -
-            reinterpret_cast<uintptr_t>(GetSpread_Hook_Shellcode);
+        size_t shellcodeSize = reinterpret_cast<uintptr_t>(GetInaccuracy_Hook_Shellcode_End) -
+            reinterpret_cast<uintptr_t>(GetInaccuracy_Hook_Shellcode);
 
         m_pShellcodeRemote = proc.Alloc(shellcodeSize, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
         if (!m_pShellcodeRemote) {
@@ -71,7 +76,7 @@ namespace CS2 {
         }
 
         std::vector<uint8_t> localCode(shellcodeSize);
-        memcpy(localCode.data(), GetSpread_Hook_Shellcode, shellcodeSize);
+        memcpy(localCode.data(), GetInaccuracy_Hook_Shellcode, shellcodeSize);
 
         if (!proc.WriteArray(reinterpret_cast<uintptr_t>(m_pShellcodeRemote), localCode)) {
             printf("[!] Failed to write shellcode\n");
@@ -145,7 +150,7 @@ namespace CS2 {
         // ================================================================
         auto pCallSite = client->ScanMemory(GET_SPREAD_CALLSITE_PATTERN);
         if (!pCallSite) {
-            printf("[!] Couldn't find GetSpread call site!\n");
+            printf("[!] Couldn't find GetInaccuracy call site!\n");
             return false;
         }
 
@@ -239,10 +244,10 @@ namespace CS2 {
         m_bIsHooked = true;
         return true;
     }
-    bool GetSpread::Unhook()
+    bool GetInaccuracy::Unhook()
     {
         if (!m_bIsHooked) {
-            printf("[!] GetSpread is not hooked\n");
+            printf("[!] GetInaccuracy is not hooked\n");
             return false;
         }
 
@@ -316,10 +321,10 @@ namespace CS2 {
         g_pGetSpreadHookData = nullptr;
 
         if (success) {
-            printf("[+] GetSpread unhook completed successfully!\n\n");
+            printf("[+] GetInaccuracy unhook completed successfully!\n\n");
         }
         else {
-            printf("[!] GetSpread unhook completed with errors\n\n");
+            printf("[!] GetInaccuracy unhook completed with errors\n\n");
         }
 
         return success;

@@ -9,15 +9,15 @@ namespace CS2 {
 		class C_CSWeaponBaseGun;
 	}
 
-	using GetSpreadFn = __int64(__thiscall*)(client::C_CSWeaponBaseGun* pWeapon, void* unknown, void* unknown2);
+	using GetInaccuracyFn = float(__thiscall*)(client::C_CSWeaponBaseGun* pWeapon, void* unknown, void* unknown2);
 
 
-	struct GetSpreadFnHookData {
+	struct GetInaccuracyFnHookData {
 		client::C_CSWeaponBaseGun* weapon;
-		double flSpread;
+		float flInaccuracy;
 	};
 
-	class GetSpread {
+	class GetInaccuracy {
 	private:
 
 
@@ -32,12 +32,13 @@ namespace CS2 {
 
 
 		// SetAng Shellcode
-		static double __fastcall GetSpread_Hook_Shellcode(
+		static float __fastcall GetInaccuracy_Hook_Shellcode(
 			client::C_CSWeaponBaseGun* pWeapon, void* unknown, void* unknown2);
-		static void GetSpread_Hook_Shellcode_End();
+		static void GetInaccuracy_Hook_Shellcode_End();
 
 	public:
 		static bool Hook();
 		static bool Unhook();
+		static GetInaccuracyFnHookData GetData();
 	};
 };

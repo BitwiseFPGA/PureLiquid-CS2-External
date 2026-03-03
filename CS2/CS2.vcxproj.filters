@@ -99,7 +99,7 @@
     <ClInclude Include="Include\CS2\Interfaces\CCSGO_Hud.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CS2\Hooks\Client\GetSpread.h">
+    <ClInclude Include="Include\CS2\Hooks\Client\GetInaccuracy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -164,7 +164,7 @@
     <ClCompile Include="Source\CS2\Interfaces\CCSGO_Hud.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CS2\Hooks\Client\GetSpread.cpp">
+    <ClCompile Include="Source\CS2\Hooks\Client\GetInaccuracy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

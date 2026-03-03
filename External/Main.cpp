@@ -3,6 +3,9 @@
 #include <External/Include.h>
 #include <Source2/CBaseHandle.h>
 #include <CS2/SDK/client/CCSPlayerController.hpp>
+#include <CS2/Offsets/client/C_CSWeaponBaseGun.hpp>
+#include <CS2/Offsets/client/CCSWeaponBaseVData.hpp>
+#include <CS2/Offsets/client/C_BaseEntity.hpp>
 #include <CS2/SDK/modellib/CRenderMesh.hpp>
 #include <CS2/ExtendedSDK/scenesystem/CAnimatableSceneObjectDesc.h>
 #include <CS2/ExtendedSDK/client/C_CSPlayerPawn.h>
@@ -17,7 +20,7 @@
 #include <CS2/Managers/CModelManager.h>
 #include <CS2/Hooks/Client/CMsgQAngleCpyHook.h>
 #include <CS2/Panorama/CUI.h>
-#include <CS2/Hooks/Client/GetSpread.h>
+#include <CS2/Hooks/Client/GetInaccuracy.h>
 
 
 #ifdef INCLUDE_OVERLAY
@@ -169,8 +172,8 @@ int main() {
 	panorama::CUI::ShowWelcomeMsg();
 #endif
 
-#ifdef USE_GET_SPREAD 
-	CS2::GetSpread::Hook();
+#ifdef USE_GET_INACCURACY 
+	CS2::GetInaccuracy::Hook();
 #endif
 
 	while (!GetAsyncKeyState(VK_DELETE)) {
@@ -180,6 +183,15 @@ int main() {
 			continue;
 			
 		}
+#ifdef USE_GET_INACCURACY
+		auto res = CS2::GetInaccuracy::GetData();
+		printf("Weapon: 0x%p\n", res.weapon);
+		printf("Inaccuracy: %.5f\n", res.flInaccuracy);
+		auto weaponVData = proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(res.weapon) + CS2::SchemaOffsets::client::C_BaseEntity::m_nSubclassID + 0x8);
+		auto flSpread = proc.ReadDirect<float>(weaponVData + CS2::SchemaOffsets::client::CCSWeaponBaseVData::m_flSpread);
+		printf("Spread: %.5f\n", flSpread);
+#endif
+
 		
 		continue;	
 
@@ -196,8 +208,8 @@ int main() {
 
 	}
 
-#ifdef USE_GET_SPREAD 
-	CS2::GetSpread::Unhook();
+#ifdef USE_GET_INACCURACY
+	CS2::GetInaccuracy::Unhook();
 #endif
 
 #ifdef USE_SILENT_AIM
