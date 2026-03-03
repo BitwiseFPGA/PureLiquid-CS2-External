@@ -17,7 +17,7 @@
 #include <CS2/Managers/CModelManager.h>
 #include <CS2/Hooks/Client/CMsgQAngleCpyHook.h>
 #include <CS2/Panorama/CUI.h>
-
+#include <CS2/Hooks/Client/GetSpread.h>
 
 
 #ifdef INCLUDE_OVERLAY
@@ -166,8 +166,13 @@ int main() {
 	auto pGameEntitySystem = I::pGameResourceService->GetGameEntitySystem();
 #ifdef USE_POPUP_MSGS
 	I::pLegacyGameUI->ShowPopup("PureLiquid v0.1", "Pure Liquid Loaded!");
-#endif
 	panorama::CUI::ShowWelcomeMsg();
+#endif
+
+#ifdef USE_GET_SPREAD 
+	CS2::GetSpread::Hook();
+#endif
+
 	while (!GetAsyncKeyState(VK_DELETE)) {
 
 		if (!GetAsyncKeyState(VK_LSHIFT) && !GetAsyncKeyState(VK_RSHIFT)) {
@@ -190,6 +195,11 @@ int main() {
 		// printf("CMD: 0x%p\n", I::pCsGoInput->GetExecutionData().cmd);
 
 	}
+
+#ifdef USE_GET_SPREAD 
+	CS2::GetSpread::Unhook();
+#endif
+
 #ifdef USE_SILENT_AIM
 	CMsgQAngleCpy::Unhook();
 #endif
@@ -199,8 +209,8 @@ int main() {
 #ifdef USE_CHAMS
 	CAnimatableSceneObjectDesc::UninstallRendererHook();
 #endif
-	panorama::CUI::ShowShutdownMsg();
 #ifdef USE_POPUP_MSGS
+	panorama::CUI::ShowShutdownMsg();
 	I::pLegacyGameUI->ShowPopup("PureLiquid v0.1", "Pure Liquid Unloaded!");
 #endif
 	return 1;
