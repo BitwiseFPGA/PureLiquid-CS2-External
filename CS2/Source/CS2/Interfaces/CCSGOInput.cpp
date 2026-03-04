@@ -68,7 +68,11 @@ namespace CS2 {
             data->bForcedBtn = true;
         }
 
-
+        uintptr_t pBase = *(uintptr_t*)((uintptr_t)cmd + 0x40);
+        
+        if (pBase) {
+            data->m_nRandomSeed = *(int*)(pBase + 0x6C);
+        }
 
         // Call original
         typedef double(__fastcall* CreateMoveFn)(int64_t, unsigned int, CUserCmd*);
@@ -181,6 +185,7 @@ namespace CS2 {
         data.bForceBtn = false;
         data.bForcedBtn = true;
         data.btnToForce = IN_JUMP;
+        data.m_nRandomSeed = 0;
 
         data.bForceSubtickViewAngle = false;
         data.vViewAnglesToSet = { 0.0f,0.0f,0.0f };
@@ -399,6 +404,14 @@ namespace CS2 {
             proc.Read(reinterpret_cast<uintptr_t>(m_pDataRemote), &data, sizeof(CreateMoveHookData));
         }
         return data;
+    }
+
+    int CCSGOInput::GetRandomSeed() {
+        CreateMoveHookData data{};
+        if (m_pDataRemote) {
+            proc.Read(reinterpret_cast<uintptr_t>(m_pDataRemote), &data, sizeof(CreateMoveHookData));
+        }
+        return data.m_nRandomSeed ? data.m_nRandomSeed : 0;
     }
 
     uintptr_t CCSGOInput::ResolveViewAnglesOffset() {

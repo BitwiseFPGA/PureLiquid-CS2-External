@@ -126,7 +126,7 @@ void Triggerbot::Run() {
         Vector minTransformed = targetBoneHitbox.hitbox.m_vMinBounds.Transform(bone_matrix);
         Vector maxTransformed = targetBoneHitbox.hitbox.m_vMaxBounds.Transform(bone_matrix);
 
-        if (!IntersectRayCapsule(vLocalPos, viewDir, minTransformed, maxTransformed, shapeRadius)) // replace this with  ComputeHitchance
+        if (!IntersectRayCapsule(vLocalPos, viewDir, minTransformed, maxTransformed, shapeRadius))
             continue;
 
         SimulateMouseClick();
