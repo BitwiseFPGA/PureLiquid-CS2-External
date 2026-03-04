@@ -2,6 +2,7 @@
 #include <GlobalData/Include.h>
 #include <Math/QAngle.h>
 #include <Memory/HookConfig.h>
+#include <Memory/LiquidHookEx.h>
 namespace CS2 {
 
 	enum ECommandButtons : uint64_t {
@@ -184,9 +185,8 @@ namespace CS2 {
 
 
 
-	struct CreateMoveHookData
+	struct CreateMoveHookData: public LiquidHookEx::BaseHookData
 	{
-		uint64_t originalFunc;
 		uint64_t cmd;
 		uint64_t btnToForce;
 		int m_nRandomSeed;
@@ -199,6 +199,7 @@ namespace CS2 {
 
 	class CCSGOInput {
 	private:
+		inline static LiquidHookEx m_Hook = LiquidHookEx(&Globals::proc, LiquidHookEx::HookType::VTable, "CreateMoveHook");
 		// CreateMove Hook
 		inline static bool m_bIsHooked = false;
 		inline static void* m_pDataRemote = nullptr;
