@@ -74,49 +74,48 @@ void Triggerbot::Run() {
             continue;
         }
 
+        auto target = Aimbot::bestTarget;
+
+
+        if (!target.entity) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            continue;
+        }
         auto pLocalPawn = pLocalEntity->m_pPawn;
 
         // Compute ONCE outside the loop
         Vector vLocalPos = pLocalPawn->m_vOldOrigin + pLocalPawn->m_vecViewOffset;
         auto vViewAngles = CS2::I::pCsGoInput->vViewAngles;
         Vector viewDir = vViewAngles.AngleToDirection();
+        auto entity = target.entity;
+        if (!entity->m_bIsAlive || !entity->m_bIsValid) continue;
 
-        for (int i = 1; i < 65; i++) {
-            auto entity = &CS2::CGameEntitySystem::vEntityList[i];
-            if (!entity->m_bIsAlive || !entity->m_bIsValid) continue;
+        auto entityPawn = entity->m_pPawn;
+        if (!entityPawn || entityPawn == pLocalPawn) continue;
+        if (entity->m_pPawn->m_iTeamNum == pLocalPawn->m_iTeamNum && m_bIgnoreTeamMembers) continue;
 
-            auto entityPawn = entity->m_pPawn;
-            if (!entityPawn || entityPawn == pLocalPawn) continue;
-            if (entity->m_pPawn->m_iTeamNum == pLocalPawn->m_iTeamNum && m_bIgnoreTeamMembers) continue;
+        auto vHeadMatrix = target.targetBoneMatrix;
 
-            auto boneMatrix = entityPawn->GetGameSceneNodeExtended()->pGameSceneNodeBonePtr->m_Bones;
-            if (boneMatrix.empty()) continue;
-            auto vHeadMatrix = boneMatrix[Aimbot::targetBoneIdx];
-            Vector vEnemyHead = vHeadMatrix.GetOrigin();
-            if (!vEnemyHead.IsValid()) continue;
 
-            auto targetInfo = Aimbot::GetTargetFOVAndDistance(vLocalPos, viewDir, vEnemyHead);
-            if (targetInfo.fovDeg > 20.0f) continue;
+        auto targetBoneHitbox = CS2::pModelManager->GetHitboxAndBoneData(
+            entity->m_pPawn->GetCModel_Imp(), Aimbot::targetBoneIdx);
 
-            auto targetBoneHitbox = CS2::pModelManager->GetHitboxAndBoneData(
-                entity->m_pPawn->GetCModel_Imp(), Aimbot::targetBoneIdx);
+        if (!targetBoneHitbox.hitbox.m_iBoneIdx) continue;
 
-            if (!targetBoneHitbox.hitbox.m_iBoneIdx) continue;
+        if (targetBoneHitbox.hitbox.m_flShapreRadius < 0.f || targetBoneHitbox.hitbox.m_flShapreRadius > 100.f)
+            continue;
 
-            if (targetBoneHitbox.hitbox.m_flShapreRadius < 0.f || targetBoneHitbox.hitbox.m_flShapreRadius > 100.f)
-                continue;
+        float shapeRadius = targetBoneHitbox.hitbox.m_flShapreRadius;
 
-            float shapeRadius = targetBoneHitbox.hitbox.m_flShapreRadius;
+        Matrix3x4_t bone_matrix = vHeadMatrix.TranslateToMatrix3x4();
+        Vector minTransformed = targetBoneHitbox.hitbox.m_vMinBounds.Transform(bone_matrix);
+        Vector maxTransformed = targetBoneHitbox.hitbox.m_vMaxBounds.Transform(bone_matrix);
 
-            Matrix3x4_t bone_matrix = vHeadMatrix.TranslateToMatrix3x4();
-            Vector minTransformed = targetBoneHitbox.hitbox.m_vMinBounds.Transform(bone_matrix);
-            Vector maxTransformed = targetBoneHitbox.hitbox.m_vMaxBounds.Transform(bone_matrix);
+        if (!IntersectRayCapsule(vLocalPos, viewDir, minTransformed, maxTransformed, shapeRadius))
+            continue;
 
-            if (!IntersectRayCapsule(vLocalPos, viewDir, minTransformed, maxTransformed, shapeRadius))
-                continue;
+        printf("Shoot!!\n");
+        Aimbot::ShootIfPossible(pLocalPawn, pLocalEntity->m_pController);
 
-            printf("Shoot!!\n");
-            Aimbot::ShootIfPossible(pLocalPawn, pLocalEntity->m_pController);
-        }
     }
 }
