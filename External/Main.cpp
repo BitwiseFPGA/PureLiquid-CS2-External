@@ -162,7 +162,7 @@ int main() {
 	I::pCsGoInput->HookCreateMove();
 #endif
 	std::thread([]() {Aimbot::AimbotThread(); }).detach();
-	// std::thread([]() {Triggerbot::Run(); }).detach();
+	std::thread([]() {Triggerbot::Run(); }).detach();
 
 #ifdef USE_SILENT_AIM
 	CMsgQAngleCpy::Hook();

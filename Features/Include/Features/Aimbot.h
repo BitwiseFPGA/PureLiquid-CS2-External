@@ -23,14 +23,13 @@ private:
 		float fovDeg;
 		float distance; 
 	};
-
+public:
 	static Aimbot::FOVResult GetTargetFOVAndDistance(
 		const Vector3& eyePos,
 		const Vector3& viewDir,
 		const Vector3& targetPos);
 
 
-public:
 	inline static TargetInfo bestTarget{};
 	inline static bool m_bUseSilentAim = false;
 	inline static int bestTargetIdx = -1;
