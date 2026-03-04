@@ -4,7 +4,7 @@
 
 #define USE_CREATE_MOVE
 #define USE_SILENT_AIM
-
+#define USE_CHAMS
 // #define DEMO_MODE
 // #define USE_GET_INACCURACY
 // #define USE_CREATE_MOVE

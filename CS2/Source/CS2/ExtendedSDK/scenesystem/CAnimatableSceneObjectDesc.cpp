@@ -129,7 +129,7 @@ namespace CS2 {
     // -----------------------------------------------------------------------
     bool CAnimatableSceneObjectDesc::TryRestore(::Source2::CStrongHandle<CMaterial2>* hMaterialToUse)
     {
-        uint32_t currentPid = proc.GetProcId();
+        /*uint32_t currentPid = proc.GetProcId();
         auto entry = HookConfig::Find("CAnimatableSceneObjectDescHook", currentPid);
         if (!entry) {
             printf("[HookConfig] No saved CAnimatableSceneObjectDescHook state for pid %u\n", currentPid);
@@ -174,11 +174,43 @@ namespace CS2 {
 
         m_bIsHooked = true;
         printf("[HookConfig] CAnimatableSceneObjectDescHook state restored from config (pid %u)\n", currentPid);
+        */
         return true;
     }
 
     bool CAnimatableSceneObjectDesc::InstallRendererHook(::Source2::CStrongHandle<CMaterial2>* hMaterialToUse)
     {
+
+        CAnimatableSceneObjectDescRenderHookData data{};
+        data.hMaterialToUse = hMaterialToUse;
+        data.bChamsEnabled = false;
+
+        data.r = 255;
+        data.g = 255;
+        data.b = 255;
+        data.a = 25;
+
+        data.r_visible = 0;
+        data.g_visible = 255;
+        data.b_visible = 0;
+        data.a_visible = 255;
+
+        data.pStrstr = reinterpret_cast<uintptr_t>(GetProcAddress(GetModuleHandleA("ucrtbase.dll"), "strstr"));
+
+        strcpy_s(data.weaponStr, sizeof(data.weaponStr), "weapon");
+
+        return m_Hook.Hook<CAnimatableSceneObjectDescRenderHookData>(
+            CANIMATABLE_SCENE_OBJECT_DESC_RENDER_FN_PATTERN,
+            "scenesystem.dll",
+            data,
+            reinterpret_cast<void*>(RenderObjects_Hook_Shellcode),
+            reinterpret_cast<void*>(RenderObjects_Hook_Shellcode_End),
+            {
+                LiquidHookEx::RipSlot::Data(&g_pHookData),
+                LiquidHookEx::RipSlot::Orig(&g_pOriginalRenderObjects),
+            }
+            );
+        /*
         if (m_bIsHooked) {
             printf("CAnimatableSceneObjectDesc::Render Hook already installed\n");
             return false;
@@ -357,11 +389,14 @@ namespace CS2 {
         HookConfig::Upsert(cfgEntry);
         printf("[HookConfig] CAnimatableSceneObjectDescHook state saved to config\n");
 
-        return true;
+        return true;*/
     }
 
     bool CAnimatableSceneObjectDesc::UninstallRendererHook()
     {
+
+        return m_Hook.Unhook();
+        /*
         if (!m_bIsHooked) {
             printf("Hook not installed\n");
             return false;
@@ -396,19 +431,27 @@ namespace CS2 {
         HookConfig::Remove("CAnimatableSceneObjectDescHook");
         printf("[HookConfig] CAnimatableSceneObjectDescHook entry removed from config\n");
 
-        return true;
+        return true;*/
     }
 
     CAnimatableSceneObjectDescRenderHookData CAnimatableSceneObjectDesc::GetExecutionData()
     {
+        return m_Hook.ReadData<CAnimatableSceneObjectDescRenderHookData>();
+        /*
         CAnimatableSceneObjectDescRenderHookData data{};
         if (m_pDataRemote) {
             proc.Read(reinterpret_cast<uintptr_t>(m_pDataRemote), &data, sizeof(CAnimatableSceneObjectDescRenderHookData));
         }
-        return data;
+        return data;*/
     }
 
     void CAnimatableSceneObjectDesc::SetChamsEnabled(bool bActive) {
+
+        if (!m_Hook.IsHooked())
+            return;
+
+        m_Hook.WriteField<bool>(offsetof(CAnimatableSceneObjectDescRenderHookData, bChamsEnabled), bActive);
+        /*
         if (!m_pDataRemote) return;
 
         proc.Write<bool>(
@@ -417,11 +460,21 @@ namespace CS2 {
         );
 
         printf("[+] Chams %s\n", bActive ? "enabled" : "disabled");
-
+        */
     }
 
     void CAnimatableSceneObjectDesc::SetChamsColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a, bool bLog) {
-        if (!m_pDataRemote) return;
+
+        if (!m_Hook.IsHooked())
+            return;
+
+        m_Hook.WriteField<uint8_t>(offsetof(CAnimatableSceneObjectDescRenderHookData, r), r);
+        m_Hook.WriteField<uint8_t>(offsetof(CAnimatableSceneObjectDescRenderHookData, g), g);
+        m_Hook.WriteField<uint8_t>(offsetof(CAnimatableSceneObjectDescRenderHookData, b), b);
+        m_Hook.WriteField<uint8_t>(offsetof(CAnimatableSceneObjectDescRenderHookData, a), a);
+
+
+        /*if (!m_pDataRemote) return;
 
         proc.Write<uint8_t>(
             reinterpret_cast<uintptr_t>(m_pDataRemote) + offsetof(CAnimatableSceneObjectDescRenderHookData, r),
@@ -444,10 +497,19 @@ namespace CS2 {
         );
         if (bLog)
             printf("[+] Chams Color override: %i %i %i %i\n", r, g, b, a);
+            */
 
     }
 
     void CAnimatableSceneObjectDesc::SetChamsMaterial(::Source2::CStrongHandle<CMaterial2>* mat) {
+
+
+        if (!m_Hook.IsHooked())
+            return;
+
+        m_Hook.WriteField<::Source2::CStrongHandle<CMaterial2>*>(offsetof(CAnimatableSceneObjectDescRenderHookData, hMaterialToUse), mat);
+        /*
+
         if (!m_pDataRemote) return;
 
         proc.Write<::Source2::CStrongHandle<CMaterial2>*>(
@@ -456,7 +518,7 @@ namespace CS2 {
         );
 
         printf("[+] Setting Chams Material: 0x%p\n", mat);
-
+        */
     }
 
     void CAnimatableSceneObjectDesc::SetVisibleChamsColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a, bool bLog)

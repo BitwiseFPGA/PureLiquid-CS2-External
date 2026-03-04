@@ -2,6 +2,8 @@
 #include <cstdint>
 #include <array>
 #include <Memory/HookConfig.h>
+#include <Memory/LiquidHookEx.h>
+#include <GlobalData/Include.h>
 struct VTableFunctionInfo;
 namespace Source2 {
     template <typename T>
@@ -15,9 +17,8 @@ namespace CS2 {
     using CMaterial2 = void;
     class CBaseSceneData;
 
-    struct CAnimatableSceneObjectDescRenderHookData
+    struct CAnimatableSceneObjectDescRenderHookData : public LiquidHookEx::BaseHookData
     {
-        uint64_t originalFunc;
         ::Source2::CStrongHandle<CMaterial2>* hMaterialToUse;
         bool bChamsEnabled;
 
@@ -42,6 +43,7 @@ namespace CS2 {
     class CAnimatableSceneObjectDesc
     {
     private:
+        inline static LiquidHookEx m_Hook = LiquidHookEx(&Globals::proc, LiquidHookEx::HookType::VTable, "CAnimatableSceneObjectDescHook");
         inline static bool m_bIsHooked = false;
         inline static void* m_pDataRemote = nullptr;
         inline static void* m_pShellcodeRemote = nullptr;

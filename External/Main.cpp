@@ -151,7 +151,7 @@ int main() {
 		return 0;
 	}
 
-	CAnimatableSceneObjectDesc::SetChamsColor(35, 35, 35, 255);
+	CAnimatableSceneObjectDesc::SetChamsColor(0, 35, 35, 255);
 	if(hLatexChamsMaterial)
 		CAnimatableSceneObjectDesc::SetChamsMaterial(hLatexChamsMaterial);
 	CAnimatableSceneObjectDesc::SetChamsEnabled(true);
