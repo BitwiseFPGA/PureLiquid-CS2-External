@@ -6,6 +6,12 @@
 #include <CS2/SDK/modellib/CHitBox.hpp>
 #include <CS2/ExtendedSDK/client/CGameSceneNode.h>
 #include <CS2/Interfaces/Include.h>
+#include <CS2/Hooks/Client/GetInaccuracy.h>
+#include <Source2/Random.h>
+#include <CS2/Offsets/client/C_CSWeaponBaseGun.hpp>
+#include <CS2/Offsets/client/CCSWeaponBaseVData.hpp>
+#include <CS2/Offsets/client/C_BaseEntity.hpp>
+#include <numbers>
 #undef min
 #undef max
 
@@ -60,7 +66,16 @@ inline bool IntersectRayCapsule(
     float distSq = (closestRayPoint - closestCapsulePoint).LengthSqr();
     return distSq <= radius * radius;
 }
+
+
+void SimulateMouseClick()
+{
+    mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+}
 // https://www.unknowncheats.me/forum/counter-strike-2-a/704473-external-hitbox-triggerbot.html
+
 void Triggerbot::Run() {
     while (true) {
         if (!GetAsyncKeyState(VK_LSHIFT)) {
@@ -111,11 +126,10 @@ void Triggerbot::Run() {
         Vector minTransformed = targetBoneHitbox.hitbox.m_vMinBounds.Transform(bone_matrix);
         Vector maxTransformed = targetBoneHitbox.hitbox.m_vMaxBounds.Transform(bone_matrix);
 
-        if (!IntersectRayCapsule(vLocalPos, viewDir, minTransformed, maxTransformed, shapeRadius))
+        if (!IntersectRayCapsule(vLocalPos, viewDir, minTransformed, maxTransformed, shapeRadius)) // replace this with  ComputeHitchance
             continue;
 
-        printf("Shoot!!\n");
-        Aimbot::ShootIfPossible(pLocalPawn, pLocalEntity->m_pController);
+        SimulateMouseClick();
 
     }
 }

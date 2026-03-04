@@ -180,7 +180,7 @@ int main() {
 
 	while (!GetAsyncKeyState(VK_DELETE)) {
 
-		if (!GetAsyncKeyState(VK_LSHIFT) && !GetAsyncKeyState(VK_RSHIFT)) {
+		if (!GetAsyncKeyState(VK_RSHIFT)) {
 			Sleep(100);
 			continue;
 			

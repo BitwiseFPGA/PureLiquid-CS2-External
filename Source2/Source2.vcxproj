@@ -145,6 +145,7 @@
     <ClInclude Include="Include\Source2\CUtlString.h" />
     <ClInclude Include="Include\Source2\CUtlSymbolLarge.h" />
     <ClInclude Include="Include\Source2\CUtlVector.h" />
+    <ClInclude Include="Include\Source2\Random.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source2.cpp" />
