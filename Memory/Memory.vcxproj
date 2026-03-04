@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Include\Memory\Definitions.h" />
+    <ClInclude Include="Include\Memory\HookConfig.h" />
     <ClInclude Include="Include\Memory\Include.h" />
     <ClInclude Include="Include\Memory\PointerCheck.h" />
     <ClInclude Include="Include\Memory\Process.h" />

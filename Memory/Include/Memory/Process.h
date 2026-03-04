@@ -107,6 +107,8 @@ public:
 		return res;
 	}
 
+	DWORD GetProcId() { return pProcId; };
+
 	void* AllocateAndWriteString(std::string str);
 	VTableFunctionInfo FindVTableContainingFunction(uintptr_t fn, std::string szMod);
 

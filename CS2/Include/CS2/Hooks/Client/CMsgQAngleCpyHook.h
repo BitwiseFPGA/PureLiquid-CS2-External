@@ -1,6 +1,7 @@
 #pragma once
 #include <Math/QAngle.h>
 #include <Math/Vector.h>
+#include <Memory/HookConfig.h>
 namespace CS2 {
 
 
@@ -14,7 +15,7 @@ namespace CS2 {
 	}; //Size: 0x0080
 
 	using OriginalCpyQAngleFnDef = __int64(__thiscall*)(CMsgQAngleTest* to, CMsgQAngleTest* from);
-	
+
 	struct CMsgQAngleCpyHookData {
 		OriginalCpyQAngleFnDef pOriginal;
 		Vector qAngleToSet;
@@ -22,7 +23,7 @@ namespace CS2 {
 	};
 
 	class CMsgQAngleCpy {
-	private :
+	private:
 		inline static bool m_bIsHooked = false;
 		inline static void* m_pDataRemote = nullptr;
 		inline static void* m_pShellcodeRemote = nullptr;
@@ -40,6 +41,7 @@ namespace CS2 {
 	public:
 		static bool Hook();
 		static bool Unhook();
+		static bool TryRestore();
 		static void ToggleAngleChange();
 		static void SetAngleChange(bool bEnabled);
 		static void SetAngle(Vector vAngle);

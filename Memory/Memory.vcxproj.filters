@@ -33,6 +33,9 @@
     <ClInclude Include="Include\Memory\SysCall\SyscallManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Memory\HookConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Memory\Process.cpp">

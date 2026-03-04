@@ -1,4 +1,4 @@
-#include <CS2/Hooks/Client/GetInaccuracy.h>
+﻿#include <CS2/Hooks/Client/GetInaccuracy.h>
 #include <CS2/Patterns.h>
 #include <CS2/Offsets/client/CCSWeaponBaseVData.hpp>
 #include <CS2/Offsets/client/C_BaseEntity.hpp>
@@ -45,12 +45,72 @@ namespace CS2 {
 
         return proc.ReadDirect<GetInaccuracyFnHookData>(reinterpret_cast<uintptr_t>(m_pDataRemote));
     }
+    // -----------------------------------------------------------------------
+    // TryRestore – reload hook state saved by a previous process instance.
+    // -----------------------------------------------------------------------
+    bool GetInaccuracy::TryRestore()
+    {
+        uint32_t currentPid = proc.GetProcId();
+        auto entry = HookConfig::Find("GetInaccuracyHook", currentPid);
+        if (!entry) {
+            printf("[HookConfig] No saved GetInaccuracyHook state for pid %u\n", currentPid);
+            return false;
+        }
+
+        if (!entry->dataRemote || !entry->shellcodeRemote) {
+            printf("[HookConfig] Saved GetInaccuracyHook state is incomplete – ignoring\n");
+            HookConfig::Remove("GetInaccuracyHook");
+            return false;
+        }
+
+        if (!entry->callSiteAddr) {
+            printf("[HookConfig] Saved GetInaccuracyHook state has no callSiteAddr – ignoring\n");
+            HookConfig::Remove("GetInaccuracyHook");
+            return false;
+        }
+
+        // Probe the remote data allocation.
+        GetInaccuracyFnHookData probe{};
+        if (!proc.Read(entry->dataRemote, &probe, sizeof(probe))) {
+            printf("[HookConfig] Remote GetInaccuracyFnHookData at 0x%llX is invalid\n", (uint64_t)entry->dataRemote);
+            HookConfig::Remove("GetInaccuracyHook");
+            return false;
+        }
+
+        // Verify the call site still carries our FF 15 patch using the saved address directly.
+        uint8_t opcode[2] = {};
+        proc.Read(entry->callSiteAddr, opcode, 2);
+        if (opcode[0] != 0xFF || opcode[1] != 0x15) {
+            printf("[HookConfig] GetInaccuracy call site at 0x%llX no longer has FF 15 – hook was removed\n",
+                (uint64_t)entry->callSiteAddr);
+            HookConfig::Remove("GetInaccuracyHook");
+            return false;
+        }
+
+        m_pDataRemote = reinterpret_cast<void*>(entry->dataRemote);
+        m_pShellcodeRemote = reinterpret_cast<void*>(entry->shellcodeRemote);
+        m_pTargetFunction = 0; // call-site hook, no vtable entry
+
+        g_pGetSpreadHookData = reinterpret_cast<GetInaccuracyFnHookData*>(entry->dataRemote);
+        m_pPatchedMostCommonCallAddr = reinterpret_cast<uint8_t*>(entry->callSiteAddr);
+
+        m_bIsHooked = true;
+        printf("[HookConfig] GetInaccuracyHook state restored from config (pid %u)\n", currentPid);
+        return true;
+    }
+
     bool GetInaccuracy::Hook()
     {
         auto client = proc.GetRemoteModule("client.dll");
         if (!client || !client->IsValid()) {
             printf("[!] Failed to get client.dll\n");
             return false;
+        }
+
+        // Attempt to reuse allocations from a previous run before doing a full hook.
+        if (TryRestore()) {
+            printf("[+] GetInaccuracy hook restored from saved state – skipping re-injection\n");
+            return true;
         }
 
         m_pDataRemote = proc.Alloc(sizeof(GetInaccuracyFnHookData));
@@ -159,7 +219,7 @@ namespace CS2 {
         uintptr_t callSiteAddr = reinterpret_cast<uintptr_t>(pCallSite);
 
         // ================================================================
-        // Allocate function pointer storage within �2GB of callsite
+        // Allocate function pointer storage within �2GB of callsite
         // for FF 15 (call qword ptr [rip+offset])
         // ================================================================
         SYSTEM_INFO si;
@@ -189,7 +249,7 @@ namespace CS2 {
         }
 
         if (!pFuncPtrStorage) {
-            printf("[!] Failed to allocate function pointer storage within �2GB of call site\n");
+            printf("[!] Failed to allocate function pointer storage within �2GB of call site\n");
             return false;
         }
 
@@ -242,6 +302,18 @@ namespace CS2 {
         printf("[+] Successfully patched call site!\n\n");
 
         m_bIsHooked = true;
+
+        // Persist state for cross-restart restore.
+        HookConfig::HookEntry cfgEntry;
+        cfgEntry.pid = proc.GetProcId();
+        cfgEntry.hookName = "GetInaccuracyHook";
+        cfgEntry.dataRemote = reinterpret_cast<uintptr_t>(m_pDataRemote);
+        cfgEntry.shellcodeRemote = reinterpret_cast<uintptr_t>(m_pShellcodeRemote);
+        cfgEntry.targetFunction = 0; // call-site hook, no vtable entry
+        cfgEntry.callSiteAddr = callSiteAddr;
+        HookConfig::Upsert(cfgEntry);
+        printf("[HookConfig] GetInaccuracyHook state saved to config\n");
+
         return true;
     }
     bool GetInaccuracy::Unhook()
@@ -319,6 +391,10 @@ namespace CS2 {
         m_pTargetFunction = 0;
         m_pPatchedMostCommonCallAddr = nullptr;
         g_pGetSpreadHookData = nullptr;
+
+        // Remove persisted state so a future restart won't try to restore a dead hook.
+        HookConfig::Remove("GetInaccuracyHook");
+        printf("[HookConfig] GetInaccuracyHook entry removed from config\n");
 
         if (success) {
             printf("[+] GetInaccuracy unhook completed successfully!\n\n");

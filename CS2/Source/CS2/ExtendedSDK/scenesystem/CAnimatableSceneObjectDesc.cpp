@@ -54,7 +54,7 @@ namespace CS2 {
 
             bool isVisible = false;
 
-            
+
             uint32_t handleValue = *reinterpret_cast<uint32_t*>(&a3->sceneObject->m_hOwner);
             if (handleValue) {
                 uint32_t entityIndex = handleValue & 0x7FFF;
@@ -122,11 +122,72 @@ namespace CS2 {
 
     }
 
+    // -----------------------------------------------------------------------
+    // TryRestore – reload hook state saved by a previous process instance.
+    // hMaterialToUse is passed through so callers don't need a separate
+    // SetChamsMaterial() call after restore.
+    // -----------------------------------------------------------------------
+    bool CAnimatableSceneObjectDesc::TryRestore(::Source2::CStrongHandle<CMaterial2>* hMaterialToUse)
+    {
+        uint32_t currentPid = proc.GetProcId();
+        auto entry = HookConfig::Find("CAnimatableSceneObjectDescHook", currentPid);
+        if (!entry) {
+            printf("[HookConfig] No saved CAnimatableSceneObjectDescHook state for pid %u\n", currentPid);
+            return false;
+        }
+
+        if (!entry->dataRemote || !entry->shellcodeRemote || !entry->targetFunction) {
+            printf("[HookConfig] Saved CAnimatableSceneObjectDescHook state is incomplete – ignoring\n");
+            HookConfig::Remove("CAnimatableSceneObjectDescHook");
+            return false;
+        }
+
+        // Verify vtable entry still points to our shellcode.
+        uint64_t currentVtableEntry = proc.ReadDirect<uint64_t>(entry->targetFunction);
+        if (currentVtableEntry != entry->shellcodeRemote) {
+            printf("[HookConfig] VTable entry no longer points to our shellcode – hook was removed\n");
+            HookConfig::Remove("CAnimatableSceneObjectDescHook");
+            return false;
+        }
+
+        // Probe the remote data struct.
+        CAnimatableSceneObjectDescRenderHookData probe{};
+        if (!proc.Read(entry->dataRemote, &probe, sizeof(probe)) || !probe.originalFunc) {
+            printf("[HookConfig] Remote hook data at 0x%llX is invalid\n", (uint64_t)entry->dataRemote);
+            HookConfig::Remove("CAnimatableSceneObjectDescHook");
+            return false;
+        }
+
+        m_pDataRemote = reinterpret_cast<void*>(entry->dataRemote);
+        m_pShellcodeRemote = reinterpret_cast<void*>(entry->shellcodeRemote);
+        m_pTargetFunction = entry->targetFunction;
+
+        g_pOriginalRenderObjects = reinterpret_cast<void*>(probe.originalFunc);
+        g_pHookData = reinterpret_cast<CAnimatableSceneObjectDescRenderHookData*>(entry->dataRemote);
+
+        // Re-apply the material pointer (it lives in our address space, so it changes each run).
+        if (hMaterialToUse) {
+            proc.Write<::Source2::CStrongHandle<CMaterial2>*>(
+                entry->dataRemote + offsetof(CAnimatableSceneObjectDescRenderHookData, hMaterialToUse),
+                hMaterialToUse);
+        }
+
+        m_bIsHooked = true;
+        printf("[HookConfig] CAnimatableSceneObjectDescHook state restored from config (pid %u)\n", currentPid);
+        return true;
+    }
+
     bool CAnimatableSceneObjectDesc::InstallRendererHook(::Source2::CStrongHandle<CMaterial2>* hMaterialToUse)
     {
         if (m_bIsHooked) {
             printf("CAnimatableSceneObjectDesc::Render Hook already installed\n");
             return false;
+        }
+
+        // Attempt to reuse allocations from a previous run before doing a full hook.
+        if (TryRestore(hMaterialToUse)) {
+            printf("[+] CAnimatableSceneObjectDesc hook restored from saved state – skipping re-injection\n");
+            return true;
         }
 
         printf("[+] Trying to hook CAnimatableSceneObjectDesc::Render\n");
@@ -285,6 +346,17 @@ namespace CS2 {
 
         m_bIsHooked = true;
         printf("[+] CAnimatableSceneObjectDesc::Render Hooked\n");
+
+        // Persist state for cross-restart restore.
+        HookConfig::HookEntry cfgEntry;
+        cfgEntry.pid = proc.GetProcId();
+        cfgEntry.hookName = "CAnimatableSceneObjectDescHook";
+        cfgEntry.dataRemote = reinterpret_cast<uintptr_t>(m_pDataRemote);
+        cfgEntry.shellcodeRemote = reinterpret_cast<uintptr_t>(m_pShellcodeRemote);
+        cfgEntry.targetFunction = m_pTargetFunction;
+        HookConfig::Upsert(cfgEntry);
+        printf("[HookConfig] CAnimatableSceneObjectDescHook state saved to config\n");
+
         return true;
     }
 
@@ -319,6 +391,10 @@ namespace CS2 {
         printf("[+] CAnimatableSceneObjectDesc::Render hook uninstalled\n");
 
         m_bIsHooked = false;
+
+        // Remove persisted state so a future restart won't try to restore a dead hook.
+        HookConfig::Remove("CAnimatableSceneObjectDescHook");
+        printf("[HookConfig] CAnimatableSceneObjectDescHook entry removed from config\n");
 
         return true;
     }
@@ -427,7 +503,7 @@ namespace CS2 {
             indexVec
         );
 
-       // printf("[+] Updated %zu visible pawn indexes\n", count);
+        // printf("[+] Updated %zu visible pawn indexes\n", count);
     }
 
 }

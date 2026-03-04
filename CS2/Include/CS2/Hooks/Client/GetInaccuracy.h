@@ -1,6 +1,7 @@
 #pragma once
 #include <GlobalData/Include.h>
 #include <Math/Vector.h>
+#include <Memory/HookConfig.h>
 
 using namespace Globals;
 
@@ -39,6 +40,7 @@ namespace CS2 {
 	public:
 		static bool Hook();
 		static bool Unhook();
+		static bool TryRestore();
 		static GetInaccuracyFnHookData GetData();
 	};
 };

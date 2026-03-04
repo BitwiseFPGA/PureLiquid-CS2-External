@@ -69,7 +69,7 @@ namespace CS2 {
         }
 
         uintptr_t pBase = *(uintptr_t*)((uintptr_t)cmd + 0x40);
-        
+
         if (pBase) {
             data->m_nRandomSeed = *(int*)(pBase + 0x6C);
         }
@@ -113,6 +113,57 @@ namespace CS2 {
 
 
 
+    // -----------------------------------------------------------------------
+    // TryRestore – reload hook state saved by a previous process instance.
+    // Returns true if the state was valid and all members were restored,
+    // so that HookCreateMove() can skip re-injecting shellcode.
+    // -----------------------------------------------------------------------
+    bool CCSGOInput::TryRestore()
+    {
+        uint32_t currentPid = proc.GetProcId();
+        auto entry = HookConfig::Find("CreateMoveHook", currentPid);
+        if (!entry) {
+            printf("[HookConfig] No saved CreateMoveHook state for pid %u\n", currentPid);
+            return false;
+        }
+
+        if (!entry->dataRemote || !entry->shellcodeRemote || !entry->targetFunction) {
+            printf("[HookConfig] Saved CreateMoveHook state is incomplete – ignoring\n");
+            HookConfig::Remove("CreateMoveHook");
+            return false;
+        }
+
+        // Verify the remote allocations are still alive (readable).
+        uint64_t probe = 0;
+        if (!proc.ReadDirect<uint64_t>(entry->dataRemote)) {
+            printf("[HookConfig] Remote dataRemote 0x%llX is no longer valid\n", (uint64_t)entry->dataRemote);
+            HookConfig::Remove("CreateMoveHook");
+            return false;
+        }
+
+        // Verify the vtable entry still points at our shellcode.
+        uint64_t currentVtableEntry = proc.ReadDirect<uint64_t>(entry->targetFunction);
+        if (currentVtableEntry != entry->shellcodeRemote) {
+            printf("[HookConfig] VTable entry no longer points to our shellcode – hook was removed\n");
+            HookConfig::Remove("CreateMoveHook");
+            return false;
+        }
+
+        // Everything checks out – restore pointers.
+        m_pDataRemote = reinterpret_cast<void*>(entry->dataRemote);
+        m_pShellcodeRemote = reinterpret_cast<void*>(entry->shellcodeRemote);
+        m_pTargetFunction = entry->targetFunction;
+
+        // Restore g_pOriginalCreateMove from the saved hook data.
+        CreateMoveHookData savedData{};
+        proc.Read(entry->dataRemote, &savedData, sizeof(savedData));
+        g_pOriginalCreateMove = reinterpret_cast<void*>(savedData.originalFunc);
+
+        m_bIsHooked = true;
+        printf("[HookConfig] CreateMoveHook state restored from config (pid %u)\n", currentPid);
+        return true;
+    }
+
     bool CCSGOInput::HookCreateMove()
     {
 
@@ -120,6 +171,12 @@ namespace CS2 {
         if (!client || !client->IsValid()) {
             printf("[!] Failed to get client.dll\n");
             return false;
+        }
+
+        // Try to reuse allocations from a previous run before doing a full hook.
+        if (TryRestore()) {
+            printf("[+] CreateMove hook restored from saved state – skipping re-injection\n");
+            return true;
         }
 
         uintptr_t instanceAddr = reinterpret_cast<uintptr_t>(this);
@@ -141,8 +198,8 @@ namespace CS2 {
             return false;
         }
 
- 
- 
+
+
 
         auto res = client->FindVTableContainingFunction(createMoveFunc);
 
@@ -327,6 +384,16 @@ namespace CS2 {
         m_bIsHooked = true;
         printf("[+] CreateMove VTable hook installed successfully!\n\n");
 
+        // Persist state so a restarted external process can restore without re-injecting.
+        HookConfig::HookEntry cfgEntry;
+        cfgEntry.pid = proc.GetProcId();
+        cfgEntry.hookName = "CreateMoveHook";
+        cfgEntry.dataRemote = reinterpret_cast<uintptr_t>(m_pDataRemote);
+        cfgEntry.shellcodeRemote = reinterpret_cast<uintptr_t>(m_pShellcodeRemote);
+        cfgEntry.targetFunction = m_pTargetFunction;
+        HookConfig::Upsert(cfgEntry);
+        printf("[HookConfig] CreateMoveHook state saved to config\n");
+
         return true;
     }
 
@@ -362,6 +429,10 @@ namespace CS2 {
 
         m_bIsHooked = false;
 
+        // Remove persisted state so a future restart won't try to restore a dead hook.
+        HookConfig::Remove("CreateMoveHook");
+        printf("[HookConfig] CreateMoveHook entry removed from config\n");
+
         return true;
     }
 
@@ -380,7 +451,7 @@ namespace CS2 {
         // printf("[+] Queued button force: 0x%llX\n", static_cast<uint64_t>(btn));
     }
 
-    void CCSGOInput::Attack(){
+    void CCSGOInput::Attack() {
         ForceButton(IN_ATTACK);
     }
 

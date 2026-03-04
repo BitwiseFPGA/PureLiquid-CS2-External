@@ -21,7 +21,7 @@ namespace CS2 {
             uintptr_t a1, CMsgQAngleTest* a2)
     {
         volatile uintptr_t va1 = a1;
-        volatile CMsgQAngleTest *va2 = a2;
+        volatile CMsgQAngleTest* va2 = a2;
 
 
 
@@ -51,12 +51,75 @@ namespace CS2 {
 #pragma runtime_checks("", restore) 
 #pragma optimize("", on)
 #pragma code_seg()
+    // -----------------------------------------------------------------------
+    // TryRestore – reload hook state saved by a previous process instance.
+    // Returns true when all pointers were still valid and state was restored.
+    // -----------------------------------------------------------------------
+    bool CMsgQAngleCpy::TryRestore()
+    {
+        uint32_t currentPid = proc.GetProcId();
+        auto entry = HookConfig::Find("CMsgQAngleCpyHook", currentPid);
+        if (!entry) {
+            printf("[HookConfig] No saved CMsgQAngleCpyHook state for pid %u\n", currentPid);
+            return false;
+        }
+
+        if (!entry->dataRemote || !entry->shellcodeRemote) {
+            printf("[HookConfig] Saved CMsgQAngleCpyHook state is incomplete – ignoring\n");
+            HookConfig::Remove("CMsgQAngleCpyHook");
+            return false;
+        }
+
+        // Probe the remote data allocation.
+        CMsgQAngleCpyHookData probe{};
+        if (!proc.Read(entry->dataRemote, &probe, sizeof(probe)) || !probe.pOriginal) {
+            printf("[HookConfig] Remote CMsgQAngleCpyHookData at 0x%llX is invalid\n", (uint64_t)entry->dataRemote);
+            HookConfig::Remove("CMsgQAngleCpyHook");
+            return false;
+        }
+
+        if (!entry->callSiteAddr) {
+            printf("[HookConfig] Saved CMsgQAngleCpyHook state has no callSiteAddr – ignoring\n");
+            HookConfig::Remove("CMsgQAngleCpyHook");
+            return false;
+        }
+
+        // Verify the call site still carries our FF 15 patch using the saved address directly.
+        uint8_t opcode[2] = {};
+        proc.Read(entry->callSiteAddr, opcode, 2);
+        if (opcode[0] != 0xFF || opcode[1] != 0x15) {
+            printf("[HookConfig] CMsgQAngleCpy call site at 0x%llX no longer has FF 15 – hook was removed\n",
+                (uint64_t)entry->callSiteAddr);
+            HookConfig::Remove("CMsgQAngleCpyHook");
+            return false;
+        }
+
+        // Restore globals.
+        m_pDataRemote = reinterpret_cast<void*>(entry->dataRemote);
+        m_pShellcodeRemote = reinterpret_cast<void*>(entry->shellcodeRemote);
+        m_pTargetFunction = entry->targetFunction;   // may be 0 for call-site hook
+
+        g_pOriginalSetAng = reinterpret_cast<void*>(probe.pOriginal);
+        g_pSetAngHookData = reinterpret_cast<CMsgQAngleCpyHookData*>(entry->dataRemote);
+        m_pPatchedMostCommonCallAddr = reinterpret_cast<uint8_t*>(entry->callSiteAddr);
+
+        m_bIsHooked = true;
+        printf("[HookConfig] CMsgQAngleCpyHook state restored from config (pid %u)\n", currentPid);
+        return true;
+    }
+
     bool CMsgQAngleCpy::Hook()
     {
         auto client = proc.GetRemoteModule("client.dll");
         if (!client || !client->IsValid()) {
             printf("[!] Failed to get client.dll\n");
             return false;
+        }
+
+        // Attempt to reuse existing remote allocations from a previous run.
+        if (TryRestore()) {
+            printf("[+] CMsgQAngleCpy hook restored from saved state – skipping re-injection\n");
+            return true;
         }
 
         auto pSetAngFnCall = client->ScanMemory(SET_SERVER_ANGLE_CALLSITE_PATTERN);
@@ -289,6 +352,18 @@ namespace CS2 {
         printf("[+] Successfully patched call site!\n\n");
 
         m_bIsHooked = true;
+
+        // Persist state for cross-restart restore.
+        HookConfig::HookEntry cfgEntry;
+        cfgEntry.pid = proc.GetProcId();
+        cfgEntry.hookName = "CMsgQAngleCpyHook";
+        cfgEntry.dataRemote = reinterpret_cast<uintptr_t>(m_pDataRemote);
+        cfgEntry.shellcodeRemote = reinterpret_cast<uintptr_t>(m_pShellcodeRemote);
+        cfgEntry.targetFunction = m_pTargetFunction; // 0 for call-site hook, that's fine
+        cfgEntry.callSiteAddr = callSiteAddr;
+        HookConfig::Upsert(cfgEntry);
+        printf("[HookConfig] CMsgQAngleCpyHook state saved to config\n");
+
         return true;
     }
 
@@ -389,13 +464,17 @@ namespace CS2 {
         g_pOriginalSetAng = nullptr;
         g_pSetAngHookData = nullptr;
 
+        // Remove persisted state.
+        HookConfig::Remove("CMsgQAngleCpyHook");
+        printf("[HookConfig] CMsgQAngleCpyHook entry removed from config\n");
+
         if (success) {
             printf("[+] CMsgQAngleCpy unhook completed successfully!\n\n");
         }
         else {
             printf("[!] CMsgQAngleCpy unhook completed with errors\n\n");
         }
-        
+
         return success;
     }
 

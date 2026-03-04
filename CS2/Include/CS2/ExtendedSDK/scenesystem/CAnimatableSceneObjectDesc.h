@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <array>
+#include <Memory/HookConfig.h>
 struct VTableFunctionInfo;
 namespace Source2 {
     template <typename T>
@@ -59,6 +60,8 @@ namespace CS2 {
         static bool InstallRendererHook(::Source2::CStrongHandle<CMaterial2>* hMaterialToUse);
 
         static bool UninstallRendererHook();
+
+        static bool TryRestore(::Source2::CStrongHandle<CMaterial2>* hMaterialToUse);
 
         static CAnimatableSceneObjectDescRenderHookData GetExecutionData();
         static void SetChamsEnabled(bool bActive);
