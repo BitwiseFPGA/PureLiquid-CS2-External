@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropSelectionCriteria_ChoiceWeight : public CS2::smartprops::CSmartPropSelectionCriteria {
 		public:
-			PROPERTY(m_flWeight,GlobalTypes::CSmartPropAttributeFloat , 0x48);
+			PROPERTY(m_flWeight,GlobalTypes::CSmartPropAttributeFloat, 0x48);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropSelectionCriteria_ChoiceWeight) == 0x88, "CSmartPropSelectionCriteria_ChoiceWeight size should be 0x88");

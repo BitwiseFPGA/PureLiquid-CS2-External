@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class CTonemapController2 : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_flAutoExposureMin,float32 , 0x4a8);
-			PROPERTY(m_flAutoExposureMax,float32 , 0x4ac);
-			PROPERTY(m_flExposureAdaptationSpeedUp,float32 , 0x4b0);
-			PROPERTY(m_flExposureAdaptationSpeedDown,float32 , 0x4b4);
-			PROPERTY(m_flTonemapEVSmoothingRange,float32 , 0x4b8);
+			PROPERTY(m_flAutoExposureMin,float32, 0x4a8);
+			PROPERTY(m_flAutoExposureMax,float32, 0x4ac);
+			PROPERTY(m_flExposureAdaptationSpeedUp,float32, 0x4b0);
+			PROPERTY(m_flExposureAdaptationSpeedDown,float32, 0x4b4);
+			PROPERTY(m_flTonemapEVSmoothingRange,float32, 0x4b8);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CTonemapController2) == 0x4C0, "CTonemapController2 size should be 0x4C0");

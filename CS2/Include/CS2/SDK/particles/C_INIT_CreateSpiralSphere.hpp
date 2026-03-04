@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_CreateSpiralSphere : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nControlPointNumber,int32_t , 0x1d8);
-			PROPERTY(m_nOverrideCP,int32_t , 0x1dc);
-			PROPERTY(m_nDensity,int32_t , 0x1e0);
-			PROPERTY(m_flInitialRadius,float32 , 0x1e4);
-			PROPERTY(m_flInitialSpeedMin,float32 , 0x1e8);
-			PROPERTY(m_flInitialSpeedMax,float32 , 0x1ec);
-			PROPERTY(m_bUseParticleCount,bool , 0x1f0);
+			PROPERTY(m_nControlPointNumber,int32_t, 0x1d8);
+			PROPERTY(m_nOverrideCP,int32_t, 0x1dc);
+			PROPERTY(m_nDensity,int32_t, 0x1e0);
+			PROPERTY(m_flInitialRadius,float32, 0x1e4);
+			PROPERTY(m_flInitialSpeedMin,float32, 0x1e8);
+			PROPERTY(m_flInitialSpeedMax,float32, 0x1ec);
+			PROPERTY(m_bUseParticleCount,bool, 0x1f0);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_CreateSpiralSphere) == 0x1F8, "C_INIT_CreateSpiralSphere size should be 0x1F8");

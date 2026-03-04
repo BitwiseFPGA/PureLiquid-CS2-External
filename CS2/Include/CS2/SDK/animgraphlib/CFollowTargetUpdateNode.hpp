@@ -23,9 +23,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CFollowTargetUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_opFixedData,animgraphlib::FollowTargetOpFixedSettings_t , 0x70);
-			PROPERTY(m_hParameterPosition,animgraphlib::CAnimParamHandle , 0x88);
-			PROPERTY(m_hParameterOrientation,animgraphlib::CAnimParamHandle , 0x8a);
+			NESTED_PROPERTY(m_opFixedData,animgraphlib::FollowTargetOpFixedSettings_t, 0x70);
+			NESTED_PROPERTY(m_hParameterPosition,animgraphlib::CAnimParamHandle, 0x88);
+			NESTED_PROPERTY(m_hParameterOrientation,animgraphlib::CAnimParamHandle, 0x8a);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CFollowTargetUpdateNode) == 0x90, "CFollowTargetUpdateNode size should be 0x90");

@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Inflow_Wait : public CS2::pulse_runtime_lib::CPulseCell_BaseYieldingInflow {
 		public:
-			PROPERTY(m_WakeResume,pulse_runtime_lib::CPulse_ResumePoint , 0x48);
+			NESTED_PROPERTY(m_WakeResume,pulse_runtime_lib::CPulse_ResumePoint, 0x48);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Inflow_Wait) == 0x90, "CPulseCell_Inflow_Wait size should be 0x90");

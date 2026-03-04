@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CPathAnimMotorUpdaterBase : public CS2::animgraphlib::CAnimMotorUpdaterBase {
 		public:
-			PROPERTY(m_bLockToPath,bool , 0x20);
+			PROPERTY(m_bLockToPath,bool, 0x20);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CPathAnimMotorUpdaterBase) == 0x28, "CPathAnimMotorUpdaterBase size should be 0x28");

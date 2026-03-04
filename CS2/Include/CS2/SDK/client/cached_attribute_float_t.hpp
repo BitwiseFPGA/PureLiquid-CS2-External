@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace client {
 		class cached_attribute_float_t  {
 		public:
-			PROPERTY(flIn,float32 , 0x0);
-			PROPERTY(iAttribHook,GlobalTypes::CUtlSymbolLarge* , 0x8);
-			PROPERTY(flOut,float32 , 0x10);
+			PROPERTY(flIn,float32, 0x0);
+			PROPERTY(iAttribHook,GlobalTypes::CUtlSymbolLarge*, 0x8);
+			PROPERTY(flOut,float32, 0x10);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::cached_attribute_float_t) == 0x18, "CAttributeManager::cached_attribute_float_t size should be 0x18");

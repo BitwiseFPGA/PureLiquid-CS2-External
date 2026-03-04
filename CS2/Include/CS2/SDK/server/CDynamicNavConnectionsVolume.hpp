@@ -11,14 +11,10 @@
 
 
 #include <SDK/server/CTriggerMultiple.hpp>
+#include <SDK/server/DynamicVolumeDef_t.hpp>
 
 
 
-namespace CS2 {
-	namespace server {
-		class DynamicVolumeDef_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,13 +22,13 @@ namespace CS2 {
 	namespace server {
 		class CDynamicNavConnectionsVolume : public CS2::server::CTriggerMultiple {
 		public:
-			PROPERTY(m_iszConnectionTarget,GlobalTypes::CUtlSymbolLarge* , 0x8a8);
-			PROPERTY(m_vecConnections,GlobalTypes::CUtlVector<server::DynamicVolumeDef_t>, 0x8b0);
-			PROPERTY(m_sTransitionType,GlobalTypes::CGlobalSymbol , 0x8c8);
-			PROPERTY(m_bConnectionsEnabled,bool , 0x8d0);
-			PROPERTY(m_flTargetAreaSearchRadius,float32 , 0x8d4);
-			PROPERTY(m_flUpdateDistance,float32 , 0x8d8);
-			PROPERTY(m_flMaxConnectionDistance,float32 , 0x8dc);
+			PROPERTY(m_iszConnectionTarget,GlobalTypes::CUtlSymbolLarge*, 0x8a8);
+			NESTED_PROPERTY(m_vecConnections,GlobalTypes::CUtlVector<server::DynamicVolumeDef_t>, 0x8b0);
+			PROPERTY(m_sTransitionType,GlobalTypes::CGlobalSymbol, 0x8c8);
+			PROPERTY(m_bConnectionsEnabled,bool, 0x8d0);
+			PROPERTY(m_flTargetAreaSearchRadius,float32, 0x8d4);
+			PROPERTY(m_flUpdateDistance,float32, 0x8d8);
+			PROPERTY(m_flMaxConnectionDistance,float32, 0x8dc);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::server::CDynamicNavConnectionsVolume) == 0x8E0, "CDynamicNavConnectionsVolume size should be 0x8E0");

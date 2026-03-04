@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace toolscene {
 		class CLightRigSunLight : public CS2::toolscene::CLightRigLight {
 		public:
-			PROPERTY(m_flShadowCascadeDistance0,float32 , 0x40);
-			PROPERTY(m_flShadowCascadeDistance1,float32 , 0x44);
-			PROPERTY(m_flShadowCascadeDistance2,float32 , 0x48);
-			PROPERTY(m_flShadowCascadeDistance3,float32 , 0x4c);
-			PROPERTY(m_bCastShadows,bool , 0x50);
+			PROPERTY(m_flShadowCascadeDistance0,float32, 0x40);
+			PROPERTY(m_flShadowCascadeDistance1,float32, 0x44);
+			PROPERTY(m_flShadowCascadeDistance2,float32, 0x48);
+			PROPERTY(m_flShadowCascadeDistance3,float32, 0x4c);
+			PROPERTY(m_bCastShadows,bool, 0x50);
 			S2_PAD(0x14);
 		};
 		//static_assert(sizeof(CS2::toolscene::CLightRigSunLight) == 0x54, "CLightRigSunLight size should be 0x54");

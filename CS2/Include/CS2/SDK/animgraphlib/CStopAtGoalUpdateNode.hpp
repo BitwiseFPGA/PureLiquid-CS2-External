@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CStopAtGoalUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_flOuterRadius,float32 , 0x74);
-			PROPERTY(m_flInnerRadius,float32 , 0x78);
-			PROPERTY(m_flMaxScale,float32 , 0x7c);
-			PROPERTY(m_flMinScale,float32 , 0x80);
-			PROPERTY(m_damping,animgraphlib::CAnimInputDamping , 0x88);
+			PROPERTY(m_flOuterRadius,float32, 0x74);
+			PROPERTY(m_flInnerRadius,float32, 0x78);
+			PROPERTY(m_flMaxScale,float32, 0x7c);
+			PROPERTY(m_flMinScale,float32, 0x80);
+			NESTED_PROPERTY(m_damping,animgraphlib::CAnimInputDamping, 0x88);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CStopAtGoalUpdateNode) == 0xA0, "CStopAtGoalUpdateNode size should be 0xA0");

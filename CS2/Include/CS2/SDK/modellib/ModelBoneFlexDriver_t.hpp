@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/ModelBoneFlexDriverControl_t.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class ModelBoneFlexDriverControl_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,9 +21,9 @@ namespace CS2 {
 	namespace modellib {
 		class ModelBoneFlexDriver_t  {
 		public:
-			PROPERTY(m_boneName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_boneNameToken,uint32_t , 0x8);
-			PROPERTY(m_controls,GlobalTypes::CUtlVector<modellib::ModelBoneFlexDriverControl_t>, 0x10);
+			PROPERTY(m_boneName,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_boneNameToken,uint32_t, 0x8);
+			NESTED_PROPERTY(m_controls,GlobalTypes::CUtlVector<modellib::ModelBoneFlexDriverControl_t>, 0x10);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::modellib::ModelBoneFlexDriver_t) == 0x28, "ModelBoneFlexDriver_t size should be 0x28");

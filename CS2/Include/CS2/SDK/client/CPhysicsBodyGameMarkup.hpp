@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace client {
 		class CPhysicsBodyGameMarkup  {
 		public:
-			PROPERTY(m_TargetBody,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_Tag,GlobalTypes::CGlobalSymbol , 0x8);
+			PROPERTY(m_TargetBody,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_Tag,GlobalTypes::CGlobalSymbol, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::CPhysicsBodyGameMarkup) == 0x10, "CPhysicsBodyGameMarkup size should be 0x10");

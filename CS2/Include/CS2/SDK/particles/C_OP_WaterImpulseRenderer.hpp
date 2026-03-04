@@ -24,14 +24,14 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_WaterImpulseRenderer : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_vecPos,particleslib::CPerParticleVecInput , 0x220);
-			PROPERTY(m_flRadius,particleslib::CPerParticleFloatInput , 0x8d8);
-			PROPERTY(m_flMagnitude,particleslib::CPerParticleFloatInput , 0xa48);
-			PROPERTY(m_flShape,particleslib::CPerParticleFloatInput , 0xbb8);
-			PROPERTY(m_flWindSpeed,particleslib::CPerParticleFloatInput , 0xd28);
-			PROPERTY(m_flWobble,particleslib::CPerParticleFloatInput , 0xe98);
-			PROPERTY(m_bIsRadialWind,bool , 0x1008);
-			PROPERTY(m_nEventType,particles::EventTypeSelection_t , 0x100c);
+			NESTED_PROPERTY(m_vecPos,particleslib::CPerParticleVecInput, 0x220);
+			NESTED_PROPERTY(m_flRadius,particleslib::CPerParticleFloatInput, 0x8d8);
+			NESTED_PROPERTY(m_flMagnitude,particleslib::CPerParticleFloatInput, 0xa48);
+			NESTED_PROPERTY(m_flShape,particleslib::CPerParticleFloatInput, 0xbb8);
+			NESTED_PROPERTY(m_flWindSpeed,particleslib::CPerParticleFloatInput, 0xd28);
+			NESTED_PROPERTY(m_flWobble,particleslib::CPerParticleFloatInput, 0xe98);
+			PROPERTY(m_bIsRadialWind,bool, 0x1008);
+			PROPERTY(m_nEventType,particles::EventTypeSelection_t, 0x100c);
 			S2_PAD(0xDF0);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_WaterImpulseRenderer) == 0x1010, "C_OP_WaterImpulseRenderer size should be 0x1010");

@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CBodyGroupSetting  {
 		public:
-			PROPERTY(m_BodyGroupName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_nBodyGroupOption,int32_t , 0x8);
+			PROPERTY(m_BodyGroupName,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_nBodyGroupOption,int32_t, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CBodyGroupSetting) == 0x10, "CBodyGroupSetting size should be 0x10");

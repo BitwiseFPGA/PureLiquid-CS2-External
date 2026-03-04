@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimTagManagerUpdater  {
 		public:
-			PROPERTY(m_tags,GlobalTypes::CUtlVector<GlobalTypes::CSmartPtr<animgraphlib::CAnimTagBase>>, 0x38);
+			NESTED_PROPERTY(m_tags,GlobalTypes::CUtlVector<GlobalTypes::CSmartPtr<animgraphlib::CAnimTagBase>>, 0x38);
 			S2_PAD(0x78);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAnimTagManagerUpdater) == 0x78, "CAnimTagManagerUpdater size should be 0x78");

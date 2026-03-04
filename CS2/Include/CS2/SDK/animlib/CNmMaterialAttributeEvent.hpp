@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace animlib {
 		class CNmMaterialAttributeEvent : public CS2::animlib::CNmEvent {
 		public:
-			PROPERTY(m_attributeName,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_attributeNameToken,GlobalTypes::CUtlStringToken* , 0x28);
-			PROPERTY(m_x,GlobalTypes::CPiecewiseCurve , 0x30);
-			PROPERTY(m_y,GlobalTypes::CPiecewiseCurve , 0x70);
-			PROPERTY(m_z,GlobalTypes::CPiecewiseCurve , 0xb0);
-			PROPERTY(m_w,GlobalTypes::CPiecewiseCurve , 0xf0);
+			PROPERTY(m_attributeName,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_attributeNameToken,GlobalTypes::CUtlStringToken*, 0x28);
+			PROPERTY(m_x,GlobalTypes::CPiecewiseCurve, 0x30);
+			PROPERTY(m_y,GlobalTypes::CPiecewiseCurve, 0x70);
+			PROPERTY(m_z,GlobalTypes::CPiecewiseCurve, 0xb0);
+			PROPERTY(m_w,GlobalTypes::CPiecewiseCurve, 0xf0);
 			S2_PAD(0x110);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmMaterialAttributeEvent) == 0x130, "CNmMaterialAttributeEvent size should be 0x130");

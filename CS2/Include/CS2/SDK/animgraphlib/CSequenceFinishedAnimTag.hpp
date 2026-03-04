@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CSequenceFinishedAnimTag : public CS2::animgraphlib::CAnimTagBase {
 		public:
-			PROPERTY(m_sequenceName,GlobalTypes::CUtlString* , 0x58);
+			PROPERTY(m_sequenceName,GlobalTypes::CUtlString*, 0x58);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CSequenceFinishedAnimTag) == 0x60, "CSequenceFinishedAnimTag size should be 0x60");

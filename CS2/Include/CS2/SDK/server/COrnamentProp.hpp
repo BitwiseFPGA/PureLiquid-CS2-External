@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class COrnamentProp : public CS2::server::CDynamicProp {
 		public:
-			PROPERTY(m_initialOwner,GlobalTypes::CUtlSymbolLarge* , 0xc50);
+			PROPERTY(m_initialOwner,GlobalTypes::CUtlSymbolLarge*, 0xc50);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::COrnamentProp) == 0xC60, "COrnamentProp size should be 0xC60");

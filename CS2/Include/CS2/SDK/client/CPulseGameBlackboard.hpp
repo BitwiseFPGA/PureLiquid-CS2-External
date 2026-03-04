@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class CPulseGameBlackboard : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_strGraphName,GlobalTypes::CUtlString* , 0x610);
-			PROPERTY(m_strStateBlob,GlobalTypes::CUtlString* , 0x618);
+			PROPERTY(m_strGraphName,GlobalTypes::CUtlString*, 0x610);
+			PROPERTY(m_strStateBlob,GlobalTypes::CUtlString*, 0x618);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::CPulseGameBlackboard) == 0x620, "CPulseGameBlackboard size should be 0x620");

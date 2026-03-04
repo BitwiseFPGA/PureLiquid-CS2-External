@@ -20,12 +20,12 @@ namespace CS2 {
 	namespace animlib {
 		class CNmTarget  {
 		public:
-			PROPERTY(m_transform,GlobalTypes::CTransform , 0x0);
-			PROPERTY(m_boneID,GlobalTypes::CGlobalSymbol , 0x20);
-			PROPERTY(m_bIsBoneTarget,bool , 0x28);
-			PROPERTY(m_bIsUsingBoneSpaceOffsets,bool , 0x29);
-			PROPERTY(m_bHasOffsets,bool , 0x2a);
-			PROPERTY(m_bIsSet,bool , 0x2b);
+			PROPERTY(m_transform,GlobalTypes::CTransform, 0x0);
+			PROPERTY(m_boneID,GlobalTypes::CGlobalSymbol, 0x20);
+			PROPERTY(m_bIsBoneTarget,bool, 0x28);
+			PROPERTY(m_bIsUsingBoneSpaceOffsets,bool, 0x29);
+			PROPERTY(m_bHasOffsets,bool, 0x2a);
+			PROPERTY(m_bIsSet,bool, 0x2b);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmTarget) == 0x30, "CNmTarget size should be 0x30");

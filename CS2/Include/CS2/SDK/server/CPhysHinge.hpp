@@ -24,25 +24,25 @@ namespace CS2 {
 	namespace server {
 		class CPhysHinge : public CS2::server::CPhysConstraint {
 		public:
-			PROPERTY(m_soundInfo,server::ConstraintSoundInfo , 0x510);
-			PROPERTY(m_NotifyMinLimitReached,entity2::CEntityIOOutput , 0x5a8);
-			PROPERTY(m_NotifyMaxLimitReached,entity2::CEntityIOOutput , 0x5c0);
-			PROPERTY(m_bAtMinLimit,bool , 0x5d8);
-			PROPERTY(m_bAtMaxLimit,bool , 0x5d9);
-			PROPERTY(m_hinge,vphysics2::constraint_hingeparams_t , 0x5dc);
-			PROPERTY(m_hingeFriction,float32 , 0x61c);
-			PROPERTY(m_systemLoadScale,float32 , 0x620);
-			PROPERTY(m_bIsAxisLocal,bool , 0x624);
-			PROPERTY(m_flMinRotation,float32 , 0x628);
-			PROPERTY(m_flMaxRotation,float32 , 0x62c);
-			PROPERTY(m_flInitialRotation,float32 , 0x630);
-			PROPERTY(m_flMotorFrequency,float32 , 0x634);
-			PROPERTY(m_flMotorDampingRatio,float32 , 0x638);
-			PROPERTY(m_flAngleSpeed,float32 , 0x63c);
-			PROPERTY(m_flAngleSpeedThreshold,float32 , 0x640);
-			PROPERTY(m_flLimitsDebugVisRotation,float32 , 0x644);
-			PROPERTY(m_OnStartMoving,entity2::CEntityIOOutput , 0x648);
-			PROPERTY(m_OnStopMoving,entity2::CEntityIOOutput , 0x660);
+			NESTED_PROPERTY(m_soundInfo,server::ConstraintSoundInfo, 0x510);
+			NESTED_PROPERTY(m_NotifyMinLimitReached,entity2::CEntityIOOutput, 0x5a8);
+			NESTED_PROPERTY(m_NotifyMaxLimitReached,entity2::CEntityIOOutput, 0x5c0);
+			PROPERTY(m_bAtMinLimit,bool, 0x5d8);
+			PROPERTY(m_bAtMaxLimit,bool, 0x5d9);
+			NESTED_PROPERTY(m_hinge,vphysics2::constraint_hingeparams_t, 0x5dc);
+			PROPERTY(m_hingeFriction,float32, 0x61c);
+			PROPERTY(m_systemLoadScale,float32, 0x620);
+			PROPERTY(m_bIsAxisLocal,bool, 0x624);
+			PROPERTY(m_flMinRotation,float32, 0x628);
+			PROPERTY(m_flMaxRotation,float32, 0x62c);
+			PROPERTY(m_flInitialRotation,float32, 0x630);
+			PROPERTY(m_flMotorFrequency,float32, 0x634);
+			PROPERTY(m_flMotorDampingRatio,float32, 0x638);
+			PROPERTY(m_flAngleSpeed,float32, 0x63c);
+			PROPERTY(m_flAngleSpeedThreshold,float32, 0x640);
+			PROPERTY(m_flLimitsDebugVisRotation,float32, 0x644);
+			NESTED_PROPERTY(m_OnStartMoving,entity2::CEntityIOOutput, 0x648);
+			NESTED_PROPERTY(m_OnStopMoving,entity2::CEntityIOOutput, 0x660);
 			S2_PAD(0x170);
 		};
 		//static_assert(sizeof(CS2::server::CPhysHinge) == 0x678, "CPhysHinge size should be 0x678");

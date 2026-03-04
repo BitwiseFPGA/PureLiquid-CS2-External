@@ -20,12 +20,12 @@ namespace CS2 {
 	namespace physicslib {
 		class FeBoxRigid_t  {
 		public:
-			PROPERTY(tmFrame2,GlobalTypes::CTransform , 0x0);
-			PROPERTY(nNode,uint16_t , 0x20);
-			PROPERTY(nCollisionMask,uint16_t , 0x22);
-			PROPERTY(vSize,GlobalTypes::Vector , 0x24);
-			PROPERTY(nVertexMapIndex,uint16_t , 0x30);
-			PROPERTY(nFlags,uint16_t , 0x32);
+			PROPERTY(tmFrame2,GlobalTypes::CTransform, 0x0);
+			PROPERTY(nNode,uint16_t, 0x20);
+			PROPERTY(nCollisionMask,uint16_t, 0x22);
+			PROPERTY(vSize,GlobalTypes::Vector, 0x24);
+			PROPERTY(nVertexMapIndex,uint16_t, 0x30);
+			PROPERTY(nFlags,uint16_t, 0x32);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeBoxRigid_t) == 0x40, "FeBoxRigid_t size should be 0x40");

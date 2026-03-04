@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace particles {
 		class PointDefinition_t  {
 		public:
-			PROPERTY(m_nControlPoint,int32_t , 0x0);
-			PROPERTY(m_bLocalCoords,bool , 0x4);
-			PROPERTY(m_vOffset,GlobalTypes::Vector , 0x8);
+			PROPERTY(m_nControlPoint,int32_t, 0x0);
+			PROPERTY(m_bLocalCoords,bool, 0x4);
+			PROPERTY(m_vOffset,GlobalTypes::Vector, 0x8);
 			S2_PAD(0x14);
 		};
 		//static_assert(sizeof(CS2::particles::PointDefinition_t) == 0x14, "PointDefinition_t size should be 0x14");

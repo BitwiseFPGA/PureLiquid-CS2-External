@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace animlib {
 		class CNmBitFlags  {
 		public:
-			PROPERTY(m_flags,uint32_t , 0x0);
+			PROPERTY(m_flags,uint32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmBitFlags) == 0x4, "CNmBitFlags size should be 0x4");

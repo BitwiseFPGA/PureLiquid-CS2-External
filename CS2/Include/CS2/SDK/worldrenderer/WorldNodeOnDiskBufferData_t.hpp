@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/RenderInputLayoutField_t.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class RenderInputLayoutField_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,10 +21,10 @@ namespace CS2 {
 	namespace worldrenderer {
 		class WorldNodeOnDiskBufferData_t  {
 		public:
-			PROPERTY(m_nElementCount,int32_t , 0x0);
-			PROPERTY(m_nElementSizeInBytes,int32_t , 0x4);
-			PROPERTY(m_inputLayoutFields,GlobalTypes::CUtlVector<modellib::RenderInputLayoutField_t>, 0x8);
-			PROPERTY(m_pData,GlobalTypes::CUtlVector< uint8 >, 0x20);
+			PROPERTY(m_nElementCount,int32_t, 0x0);
+			PROPERTY(m_nElementSizeInBytes,int32_t, 0x4);
+			NESTED_PROPERTY(m_inputLayoutFields,GlobalTypes::CUtlVector<modellib::RenderInputLayoutField_t>, 0x8);
+			NESTED_PROPERTY(m_pData,GlobalTypes::CUtlVector< uint8 >, 0x20);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::WorldNodeOnDiskBufferData_t) == 0x38, "WorldNodeOnDiskBufferData_t size should be 0x38");

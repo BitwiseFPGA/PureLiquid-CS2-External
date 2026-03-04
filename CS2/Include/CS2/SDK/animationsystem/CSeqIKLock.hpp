@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqIKLock  {
 		public:
-			PROPERTY(m_flPosWeight,float32 , 0x0);
-			PROPERTY(m_flAngleWeight,float32 , 0x4);
-			PROPERTY(m_nLocalBone,int16_t , 0x8);
-			PROPERTY(m_bBonesOrientedAlongPositiveX,bool , 0xa);
+			PROPERTY(m_flPosWeight,float32, 0x0);
+			PROPERTY(m_flAngleWeight,float32, 0x4);
+			PROPERTY(m_nLocalBone,int16_t, 0x8);
+			PROPERTY(m_bBonesOrientedAlongPositiveX,bool, 0xa);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqIKLock) == 0xC, "CSeqIKLock size should be 0xC");

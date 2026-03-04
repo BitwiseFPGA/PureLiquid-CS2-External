@@ -11,14 +11,10 @@
 
 
 #include <SDK/animgraphlib/CUnaryUpdateNode.hpp>
+#include <SDK/animgraphlib/CDirectPlaybackTagData.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CDirectPlaybackTagData;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,9 +22,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CDirectPlaybackUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_bFinishEarly,bool , 0x74);
-			PROPERTY(m_bResetOnFinish,bool , 0x75);
-			PROPERTY(m_allTags,GlobalTypes::CUtlVector<animgraphlib::CDirectPlaybackTagData>, 0x78);
+			PROPERTY(m_bFinishEarly,bool, 0x74);
+			PROPERTY(m_bResetOnFinish,bool, 0x75);
+			NESTED_PROPERTY(m_allTags,GlobalTypes::CUtlVector<animgraphlib::CDirectPlaybackTagData>, 0x78);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CDirectPlaybackUpdateNode) == 0x90, "CDirectPlaybackUpdateNode size should be 0x90");

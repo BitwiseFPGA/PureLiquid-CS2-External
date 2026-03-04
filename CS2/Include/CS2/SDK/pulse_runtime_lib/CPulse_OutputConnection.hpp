@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulse_OutputConnection  {
 		public:
-			PROPERTY(m_SourceOutput,GlobalTypes::PulseSymbol_t , 0x0);
-			PROPERTY(m_TargetEntity,GlobalTypes::PulseSymbol_t , 0x10);
-			PROPERTY(m_TargetInput,GlobalTypes::PulseSymbol_t , 0x20);
-			PROPERTY(m_Param,GlobalTypes::PulseSymbol_t , 0x30);
+			PROPERTY(m_SourceOutput,GlobalTypes::PulseSymbol_t, 0x0);
+			PROPERTY(m_TargetEntity,GlobalTypes::PulseSymbol_t, 0x10);
+			PROPERTY(m_TargetInput,GlobalTypes::PulseSymbol_t, 0x20);
+			PROPERTY(m_Param,GlobalTypes::PulseSymbol_t, 0x30);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulse_OutputConnection) == 0x40, "CPulse_OutputConnection size should be 0x40");

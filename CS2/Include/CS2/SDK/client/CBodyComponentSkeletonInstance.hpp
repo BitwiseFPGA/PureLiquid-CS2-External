@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace client {
 		class CBodyComponentSkeletonInstance : public CS2::client::CBodyComponent {
 		public:
-			PROPERTY(m_skeletonInstance,client::CSkeletonInstance , 0x80);
+			NESTED_PROPERTY(m_skeletonInstance,client::CSkeletonInstance, 0x80);
 			S2_PAD(0x4D8);
 		};
 		//static_assert(sizeof(CS2::client::CBodyComponentSkeletonInstance) == 0x550, "CBodyComponentSkeletonInstance size should be 0x550");

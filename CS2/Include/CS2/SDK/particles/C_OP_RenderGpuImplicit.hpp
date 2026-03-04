@@ -27,13 +27,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderGpuImplicit : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_bUsePerParticleRadius,bool , 0x220);
-			PROPERTY(m_nVertexCountKb,uint32_t , 0x224);
-			PROPERTY(m_nIndexCountKb,uint32_t , 0x228);
-			PROPERTY(m_fGridSize,particleslib::CParticleCollectionRendererFloatInput , 0x230);
-			PROPERTY(m_fRadiusScale,particleslib::CParticleCollectionRendererFloatInput , 0x3a0);
-			PROPERTY(m_fIsosurfaceThreshold,particleslib::CParticleCollectionRendererFloatInput , 0x510);
-			PROPERTY(m_nScaleCP,int32_t , 0x680);
+			PROPERTY(m_bUsePerParticleRadius,bool, 0x220);
+			PROPERTY(m_nVertexCountKb,uint32_t, 0x224);
+			PROPERTY(m_nIndexCountKb,uint32_t, 0x228);
+			NESTED_PROPERTY(m_fGridSize,particleslib::CParticleCollectionRendererFloatInput, 0x230);
+			NESTED_PROPERTY(m_fRadiusScale,particleslib::CParticleCollectionRendererFloatInput, 0x3a0);
+			NESTED_PROPERTY(m_fIsosurfaceThreshold,particleslib::CParticleCollectionRendererFloatInput, 0x510);
+			PROPERTY(m_nScaleCP,int32_t, 0x680);
 			PROPERTY(m_hMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x688);
 			S2_PAD(0x470);
 		};

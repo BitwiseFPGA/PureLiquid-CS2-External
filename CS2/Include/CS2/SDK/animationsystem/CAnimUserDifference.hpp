@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimUserDifference  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_nType,int32_t , 0x10);
+			PROPERTY(m_name,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_nType,int32_t, 0x10);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimUserDifference) == 0x18, "CAnimUserDifference size should be 0x18");

@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/animgraphlib/TagSpan_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class TagSpan_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CDirectPlaybackTagData  {
 		public:
-			PROPERTY(m_sequenceName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_tags,GlobalTypes::CUtlVector<animgraphlib::TagSpan_t>, 0x8);
+			PROPERTY(m_sequenceName,GlobalTypes::CUtlString*, 0x0);
+			NESTED_PROPERTY(m_tags,GlobalTypes::CUtlVector<animgraphlib::TagSpan_t>, 0x8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CDirectPlaybackTagData) == 0x20, "CDirectPlaybackTagData size should be 0x20");

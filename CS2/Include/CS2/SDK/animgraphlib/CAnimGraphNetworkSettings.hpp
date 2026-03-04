@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimGraphNetworkSettings : public CS2::animgraphlib::CAnimGraphSettingsGroup {
 		public:
-			PROPERTY(m_bNetworkingEnabled,bool , 0x20);
+			PROPERTY(m_bNetworkingEnabled,bool, 0x20);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAnimGraphNetworkSettings) == 0x28, "CAnimGraphNetworkSettings size should be 0x28");

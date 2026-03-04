@@ -20,14 +20,14 @@ namespace CS2 {
 	namespace modellib {
 		class CPhysSurfacePropertiesAudio  {
 		public:
-			PROPERTY(m_reflectivity,float32 , 0x0);
-			PROPERTY(m_hardnessFactor,float32 , 0x4);
-			PROPERTY(m_roughnessFactor,float32 , 0x8);
-			PROPERTY(m_roughThreshold,float32 , 0xc);
-			PROPERTY(m_hardThreshold,float32 , 0x10);
-			PROPERTY(m_hardVelocityThreshold,float32 , 0x14);
-			PROPERTY(m_flStaticImpactVolume,float32 , 0x18);
-			PROPERTY(m_flOcclusionFactor,float32 , 0x1c);
+			PROPERTY(m_reflectivity,float32, 0x0);
+			PROPERTY(m_hardnessFactor,float32, 0x4);
+			PROPERTY(m_roughnessFactor,float32, 0x8);
+			PROPERTY(m_roughThreshold,float32, 0xc);
+			PROPERTY(m_hardThreshold,float32, 0x10);
+			PROPERTY(m_hardVelocityThreshold,float32, 0x14);
+			PROPERTY(m_flStaticImpactVolume,float32, 0x18);
+			PROPERTY(m_flOcclusionFactor,float32, 0x1c);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::modellib::CPhysSurfacePropertiesAudio) == 0x20, "CPhysSurfacePropertiesAudio size should be 0x20");

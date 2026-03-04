@@ -12,15 +12,11 @@
 
 #include <SDK/animgraphlib/CMotionSearchDB.hpp>
 #include <SDK/animgraphlib/CMotionGraph.hpp>
+#include <SDK/animgraphlib/CMotionGraphConfig.hpp>
 #include <SDK/modellib/AnimScriptHandle.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CMotionGraphConfig;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -28,11 +24,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CMotionGraphGroup  {
 		public:
-			PROPERTY(m_searchDB,animgraphlib::CMotionSearchDB , 0x0);
-			PROPERTY(m_motionGraphs,GlobalTypes::CUtlVector<GlobalTypes::CSmartPtr<animgraphlib::CMotionGraph>>, 0xb8);
-			PROPERTY(m_motionGraphConfigs,GlobalTypes::CUtlVector<animgraphlib::CMotionGraphConfig>, 0xd0);
-			PROPERTY(m_sampleToConfig,GlobalTypes::CUtlVector< int32 >, 0xe8);
-			PROPERTY(m_hIsActiveScript,modellib::AnimScriptHandle , 0x100);
+			NESTED_PROPERTY(m_searchDB,animgraphlib::CMotionSearchDB, 0x0);
+			NESTED_PROPERTY(m_motionGraphs,GlobalTypes::CUtlVector<GlobalTypes::CSmartPtr<animgraphlib::CMotionGraph>>, 0xb8);
+			NESTED_PROPERTY(m_motionGraphConfigs,GlobalTypes::CUtlVector<animgraphlib::CMotionGraphConfig>, 0xd0);
+			NESTED_PROPERTY(m_sampleToConfig,GlobalTypes::CUtlVector< int32 >, 0xe8);
+			NESTED_PROPERTY(m_hIsActiveScript,modellib::AnimScriptHandle, 0x100);
 			S2_PAD(0x108);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CMotionGraphGroup) == 0x108, "CMotionGraphGroup size should be 0x108");

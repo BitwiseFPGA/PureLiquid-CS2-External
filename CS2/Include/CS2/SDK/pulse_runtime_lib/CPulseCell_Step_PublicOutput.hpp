@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Step_PublicOutput : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_OutputIndex,pulse_runtime_lib::PulseRuntimeOutputIndex_t , 0x48);
+			NESTED_PROPERTY(m_OutputIndex,pulse_runtime_lib::PulseRuntimeOutputIndex_t, 0x48);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Step_PublicOutput) == 0x50, "CPulseCell_Step_PublicOutput size should be 0x50");

@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace modellib {
 		class CModelConfigElement_Command : public CS2::modellib::CModelConfigElement {
 		public:
-			PROPERTY(m_Command,GlobalTypes::CUtlString* , 0x48);
-			PROPERTY(m_Args,GlobalTypes::KeyValues3 , 0x50);
+			PROPERTY(m_Command,GlobalTypes::CUtlString*, 0x48);
+			PROPERTY(m_Args,GlobalTypes::KeyValues3, 0x50);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::modellib::CModelConfigElement_Command) == 0x60, "CModelConfigElement_Command size should be 0x60");

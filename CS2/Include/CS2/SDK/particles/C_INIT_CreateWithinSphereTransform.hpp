@@ -25,19 +25,19 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_CreateWithinSphereTransform : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_fRadiusMin,particleslib::CPerParticleFloatInput , 0x1d8);
-			PROPERTY(m_fRadiusMax,particleslib::CPerParticleFloatInput , 0x348);
-			PROPERTY(m_vecDistanceBias,particleslib::CPerParticleVecInput , 0x4b8);
-			PROPERTY(m_vecDistanceBiasAbs,GlobalTypes::Vector , 0xb70);
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0xb80);
-			PROPERTY(m_fSpeedMin,particleslib::CPerParticleFloatInput , 0xbe8);
-			PROPERTY(m_fSpeedMax,particleslib::CPerParticleFloatInput , 0xd58);
-			PROPERTY(m_fSpeedRandExp,float32 , 0xec8);
-			PROPERTY(m_bLocalCoords,bool , 0xecc);
-			PROPERTY(m_LocalCoordinateSystemSpeedMin,particleslib::CPerParticleVecInput , 0xed0);
-			PROPERTY(m_LocalCoordinateSystemSpeedMax,particleslib::CPerParticleVecInput , 0x1588);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1c40);
-			PROPERTY(m_nFieldVelocity,particles::ParticleAttributeIndex_t , 0x1c44);
+			NESTED_PROPERTY(m_fRadiusMin,particleslib::CPerParticleFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_fRadiusMax,particleslib::CPerParticleFloatInput, 0x348);
+			NESTED_PROPERTY(m_vecDistanceBias,particleslib::CPerParticleVecInput, 0x4b8);
+			PROPERTY(m_vecDistanceBiasAbs,GlobalTypes::Vector, 0xb70);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0xb80);
+			NESTED_PROPERTY(m_fSpeedMin,particleslib::CPerParticleFloatInput, 0xbe8);
+			NESTED_PROPERTY(m_fSpeedMax,particleslib::CPerParticleFloatInput, 0xd58);
+			PROPERTY(m_fSpeedRandExp,float32, 0xec8);
+			PROPERTY(m_bLocalCoords,bool, 0xecc);
+			NESTED_PROPERTY(m_LocalCoordinateSystemSpeedMin,particleslib::CPerParticleVecInput, 0xed0);
+			NESTED_PROPERTY(m_LocalCoordinateSystemSpeedMax,particleslib::CPerParticleVecInput, 0x1588);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1c40);
+			NESTED_PROPERTY(m_nFieldVelocity,particles::ParticleAttributeIndex_t, 0x1c44);
 			S2_PAD(0x1A70);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_CreateWithinSphereTransform) == 0x1C48, "C_INIT_CreateWithinSphereTransform size should be 0x1C48");

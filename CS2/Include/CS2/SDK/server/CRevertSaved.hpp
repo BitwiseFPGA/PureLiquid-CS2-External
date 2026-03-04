@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CRevertSaved : public CS2::server::CModelPointEntity {
 		public:
-			PROPERTY(m_loadTime,float32 , 0x730);
-			PROPERTY(m_Duration,float32 , 0x734);
-			PROPERTY(m_HoldTime,float32 , 0x738);
+			PROPERTY(m_loadTime,float32, 0x730);
+			PROPERTY(m_Duration,float32, 0x734);
+			PROPERTY(m_HoldTime,float32, 0x738);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CRevertSaved) == 0x740, "CRevertSaved size should be 0x740");

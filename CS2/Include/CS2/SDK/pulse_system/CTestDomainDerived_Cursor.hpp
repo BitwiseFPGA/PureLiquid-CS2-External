@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace pulse_system {
 		class CTestDomainDerived_Cursor : public CS2::pulse_runtime_lib::CPulseExecCursor {
 		public:
-			PROPERTY(m_nCursorValueA,int32_t , 0xd0);
-			PROPERTY(m_nCursorValueB,int32_t , 0xd4);
+			PROPERTY(m_nCursorValueA,int32_t, 0xd0);
+			PROPERTY(m_nCursorValueB,int32_t, 0xd4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::pulse_system::CTestDomainDerived_Cursor) == 0xD8, "CTestDomainDerived_Cursor size should be 0xD8");

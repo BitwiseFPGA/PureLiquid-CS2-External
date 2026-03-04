@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace client {
 		class CStopwatch : public CS2::client::CStopwatchBase {
 		public:
-			PROPERTY(m_flInterval,float32 , 0xc);
+			PROPERTY(m_flInterval,float32, 0xc);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::client::CStopwatch) == 0x10, "CStopwatch size should be 0x10");

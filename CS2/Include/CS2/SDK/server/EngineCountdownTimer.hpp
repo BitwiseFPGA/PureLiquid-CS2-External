@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace server {
 		class EngineCountdownTimer  {
 		public:
-			PROPERTY(m_duration,float32 , 0x8);
-			PROPERTY(m_timestamp,float32 , 0xc);
-			PROPERTY(m_timescale,float32 , 0x10);
+			PROPERTY(m_duration,float32, 0x8);
+			PROPERTY(m_timestamp,float32, 0xc);
+			PROPERTY(m_timescale,float32, 0x10);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::EngineCountdownTimer) == 0x18, "EngineCountdownTimer size should be 0x18");

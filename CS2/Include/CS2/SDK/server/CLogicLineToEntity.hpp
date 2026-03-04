@@ -27,7 +27,7 @@ namespace CS2 {
 		class CLogicLineToEntity : public CS2::server::CLogicalEntity {
 		public:
 			PROPERTY(m_Line,GlobalTypes::CEntityOutputTemplate< Vector, Vector >, 0x4a8);
-			PROPERTY(m_SourceName,GlobalTypes::CUtlSymbolLarge* , 0x4d0);
+			PROPERTY(m_SourceName,GlobalTypes::CUtlSymbolLarge*, 0x4d0);
 			PROPERTY(m_StartEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4d8);
 			PROPERTY(m_EndEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4dc);
 			S2_PAD(0x38);

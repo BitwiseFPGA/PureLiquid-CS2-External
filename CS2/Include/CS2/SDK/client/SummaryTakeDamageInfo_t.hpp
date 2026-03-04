@@ -27,9 +27,9 @@ namespace CS2 {
 	namespace client {
 		class SummaryTakeDamageInfo_t  {
 		public:
-			PROPERTY(nSummarisedCount,int32_t , 0x0);
-			PROPERTY(info,client::CTakeDamageInfo , 0x8);
-			PROPERTY(result,client::CTakeDamageResult , 0x128);
+			PROPERTY(nSummarisedCount,int32_t, 0x0);
+			NESTED_PROPERTY(info,client::CTakeDamageInfo, 0x8);
+			NESTED_PROPERTY(result,client::CTakeDamageResult, 0x128);
 			PROPERTY(hTarget,GlobalTypes::CHandle<client::C_BaseEntity>, 0x158);
 			S2_PAD(0x160);
 		};

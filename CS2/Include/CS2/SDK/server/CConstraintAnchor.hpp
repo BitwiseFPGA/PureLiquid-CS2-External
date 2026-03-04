@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CConstraintAnchor : public CS2::server::CBaseAnimGraph {
 		public:
-			PROPERTY(m_massScale,float32 , 0xa20);
+			PROPERTY(m_massScale,float32, 0xa20);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CConstraintAnchor) == 0xA30, "CConstraintAnchor size should be 0xA30");

@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimMotorUpdaterBase  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x10);
-			PROPERTY(m_bDefault,bool , 0x18);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x10);
+			PROPERTY(m_bDefault,bool, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAnimMotorUpdaterBase) == 0x20, "CAnimMotorUpdaterBase size should be 0x20");

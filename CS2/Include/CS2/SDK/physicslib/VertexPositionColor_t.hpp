@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace physicslib {
 		class VertexPositionColor_t  {
 		public:
-			PROPERTY(m_vPosition,GlobalTypes::Vector , 0x0);
+			PROPERTY(m_vPosition,GlobalTypes::Vector, 0x0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::VertexPositionColor_t) == 0x10, "VertexPositionColor_t size should be 0x10");

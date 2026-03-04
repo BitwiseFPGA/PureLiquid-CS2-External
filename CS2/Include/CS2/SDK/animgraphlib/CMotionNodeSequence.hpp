@@ -11,15 +11,11 @@
 
 
 #include <SDK/animgraphlib/CMotionNode.hpp>
+#include <SDK/animgraphlib/TagSpan_t.hpp>
 #include <SDK/animationsystem/HSequence.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class TagSpan_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,9 +23,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CMotionNodeSequence : public CS2::animgraphlib::CMotionNode {
 		public:
-			PROPERTY(m_tags,GlobalTypes::CUtlVector<animgraphlib::TagSpan_t>, 0x28);
-			PROPERTY(m_hSequence,animationsystem::HSequence , 0x40);
-			PROPERTY(m_flPlaybackSpeed,float32 , 0x44);
+			NESTED_PROPERTY(m_tags,GlobalTypes::CUtlVector<animgraphlib::TagSpan_t>, 0x28);
+			NESTED_PROPERTY(m_hSequence,animationsystem::HSequence, 0x40);
+			PROPERTY(m_flPlaybackSpeed,float32, 0x44);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CMotionNodeSequence) == 0x48, "CMotionNodeSequence size should be 0x48");

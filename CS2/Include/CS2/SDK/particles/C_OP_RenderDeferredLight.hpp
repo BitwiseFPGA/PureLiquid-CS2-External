@@ -29,22 +29,22 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderDeferredLight : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_bUseAlphaTestWindow,bool , 0x220);
-			PROPERTY(m_bUseTexture,bool , 0x221);
-			PROPERTY(m_flRadiusScale,float32 , 0x224);
-			PROPERTY(m_flAlphaScale,float32 , 0x228);
-			PROPERTY(m_nAlpha2Field,particles::ParticleAttributeIndex_t , 0x22c);
-			PROPERTY(m_vecColorScale,particleslib::CParticleCollectionVecInput , 0x230);
-			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t , 0x8e8);
-			PROPERTY(m_flLightDistance,float32 , 0x8ec);
-			PROPERTY(m_flStartFalloff,float32 , 0x8f0);
-			PROPERTY(m_flDistanceFalloff,float32 , 0x8f4);
-			PROPERTY(m_flSpotFoV,float32 , 0x8f8);
-			PROPERTY(m_nAlphaTestPointField,particles::ParticleAttributeIndex_t , 0x8fc);
-			PROPERTY(m_nAlphaTestRangeField,particles::ParticleAttributeIndex_t , 0x900);
-			PROPERTY(m_nAlphaTestSharpnessField,particles::ParticleAttributeIndex_t , 0x904);
+			PROPERTY(m_bUseAlphaTestWindow,bool, 0x220);
+			PROPERTY(m_bUseTexture,bool, 0x221);
+			PROPERTY(m_flRadiusScale,float32, 0x224);
+			PROPERTY(m_flAlphaScale,float32, 0x228);
+			NESTED_PROPERTY(m_nAlpha2Field,particles::ParticleAttributeIndex_t, 0x22c);
+			NESTED_PROPERTY(m_vecColorScale,particleslib::CParticleCollectionVecInput, 0x230);
+			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t, 0x8e8);
+			PROPERTY(m_flLightDistance,float32, 0x8ec);
+			PROPERTY(m_flStartFalloff,float32, 0x8f0);
+			PROPERTY(m_flDistanceFalloff,float32, 0x8f4);
+			PROPERTY(m_flSpotFoV,float32, 0x8f8);
+			NESTED_PROPERTY(m_nAlphaTestPointField,particles::ParticleAttributeIndex_t, 0x8fc);
+			NESTED_PROPERTY(m_nAlphaTestRangeField,particles::ParticleAttributeIndex_t, 0x900);
+			NESTED_PROPERTY(m_nAlphaTestSharpnessField,particles::ParticleAttributeIndex_t, 0x904);
 			PROPERTY(m_hTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x908);
-			PROPERTY(m_nHSVShiftControlPoint,int32_t , 0x910);
+			PROPERTY(m_nHSVShiftControlPoint,int32_t, 0x910);
 			S2_PAD(0x6F8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RenderDeferredLight) == 0x918, "C_OP_RenderDeferredLight size should be 0x918");

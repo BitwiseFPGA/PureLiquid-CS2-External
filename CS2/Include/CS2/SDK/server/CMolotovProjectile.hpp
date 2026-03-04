@@ -22,12 +22,11 @@ namespace CS2 {
 	namespace server {
 		class CMolotovProjectile : public CS2::server::CBaseCSGrenadeProjectile {
 		public:
-			PROPERTY(m_bIsIncGrenade,bool , 0xbb0);
-			PROPERTY(m_bDetonated,bool , 0xbc8);
-			PROPERTY(m_stillTimer,server::IntervalTimer , 0xbd0);
-			PROPERTY(m_bHasBouncedOffPlayer,bool , 0xcb0);
-			S2_PAD(0x110);
+			PROPERTY(m_bIsIncGrenade,bool, 0xbb0);
+			PROPERTY(m_bDetonated,bool, 0xbc8);
+			NESTED_PROPERTY(m_stillTimer,server::IntervalTimer, 0xbd0);
+			S2_PAD(0x100);
 		};
-		//static_assert(sizeof(CS2::server::CMolotovProjectile) == 0xCC0, "CMolotovProjectile size should be 0xCC0");
+		//static_assert(sizeof(CS2::server::CMolotovProjectile) == 0xCB0, "CMolotovProjectile size should be 0xCB0");
 	}
 }

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_Rotate : public CS2::smartprops::CSmartPropTransformOperation {
 		public:
-			PROPERTY(m_vRotation,GlobalTypes::CSmartPropAttributeAngles , 0x50);
+			PROPERTY(m_vRotation,GlobalTypes::CSmartPropAttributeAngles, 0x50);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_Rotate) == 0x90, "CSmartPropOperation_Rotate size should be 0x90");

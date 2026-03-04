@@ -10,15 +10,11 @@
 #endif
 
 
+#include <SDK/animgraphlib/CStateUpdateData.hpp>
+#include <SDK/animgraphlib/CTransitionUpdateData.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CStateUpdateData;
-		class CTransitionUpdateData;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,9 +22,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimStateMachineUpdater  {
 		public:
-			PROPERTY(m_states,GlobalTypes::CUtlVector<animgraphlib::CStateUpdateData>, 0x8);
-			PROPERTY(m_transitions,GlobalTypes::CUtlVector<animgraphlib::CTransitionUpdateData>, 0x20);
-			PROPERTY(m_startStateIndex,int32_t , 0x50);
+			NESTED_PROPERTY(m_states,GlobalTypes::CUtlVector<animgraphlib::CStateUpdateData>, 0x8);
+			NESTED_PROPERTY(m_transitions,GlobalTypes::CUtlVector<animgraphlib::CTransitionUpdateData>, 0x20);
+			PROPERTY(m_startStateIndex,int32_t, 0x50);
 			S2_PAD(0x58);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAnimStateMachineUpdater) == 0x58, "CAnimStateMachineUpdater size should be 0x58");

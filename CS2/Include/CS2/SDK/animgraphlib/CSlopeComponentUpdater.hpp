@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CSlopeComponentUpdater : public CS2::animgraphlib::CAnimComponentUpdater {
 		public:
-			PROPERTY(m_flTraceDistance,float32 , 0x34);
-			PROPERTY(m_hSlopeAngle,animgraphlib::CAnimParamHandle , 0x38);
-			PROPERTY(m_hSlopeAngleFront,animgraphlib::CAnimParamHandle , 0x3a);
-			PROPERTY(m_hSlopeAngleSide,animgraphlib::CAnimParamHandle , 0x3c);
-			PROPERTY(m_hSlopeHeading,animgraphlib::CAnimParamHandle , 0x3e);
-			PROPERTY(m_hSlopeNormal,animgraphlib::CAnimParamHandle , 0x40);
-			PROPERTY(m_hSlopeNormal_WorldSpace,animgraphlib::CAnimParamHandle , 0x42);
+			PROPERTY(m_flTraceDistance,float32, 0x34);
+			NESTED_PROPERTY(m_hSlopeAngle,animgraphlib::CAnimParamHandle, 0x38);
+			NESTED_PROPERTY(m_hSlopeAngleFront,animgraphlib::CAnimParamHandle, 0x3a);
+			NESTED_PROPERTY(m_hSlopeAngleSide,animgraphlib::CAnimParamHandle, 0x3c);
+			NESTED_PROPERTY(m_hSlopeHeading,animgraphlib::CAnimParamHandle, 0x3e);
+			NESTED_PROPERTY(m_hSlopeNormal,animgraphlib::CAnimParamHandle, 0x40);
+			NESTED_PROPERTY(m_hSlopeNormal_WorldSpace,animgraphlib::CAnimParamHandle, 0x42);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CSlopeComponentUpdater) == 0x48, "CSlopeComponentUpdater size should be 0x48");

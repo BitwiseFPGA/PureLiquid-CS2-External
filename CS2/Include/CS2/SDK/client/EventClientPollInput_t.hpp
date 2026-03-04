@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class EventClientPollInput_t  {
 		public:
-			PROPERTY(m_LoopState,client::EngineLoopState_t , 0x0);
-			PROPERTY(m_flRealTime,float32 , 0x28);
+			NESTED_PROPERTY(m_LoopState,client::EngineLoopState_t, 0x0);
+			PROPERTY(m_flRealTime,float32, 0x28);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::client::EventClientPollInput_t) == 0x30, "EventClientPollInput_t size should be 0x30");

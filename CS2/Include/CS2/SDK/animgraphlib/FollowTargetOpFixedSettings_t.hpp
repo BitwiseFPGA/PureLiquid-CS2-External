@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class FollowTargetOpFixedSettings_t  {
 		public:
-			PROPERTY(m_boneIndex,int32_t , 0x0);
-			PROPERTY(m_bBoneTarget,bool , 0x4);
-			PROPERTY(m_boneTargetIndex,int32_t , 0x8);
-			PROPERTY(m_bWorldCoodinateTarget,bool , 0xc);
-			PROPERTY(m_bMatchTargetOrientation,bool , 0xd);
+			PROPERTY(m_boneIndex,int32_t, 0x0);
+			PROPERTY(m_bBoneTarget,bool, 0x4);
+			PROPERTY(m_boneTargetIndex,int32_t, 0x8);
+			PROPERTY(m_bWorldCoodinateTarget,bool, 0xc);
+			PROPERTY(m_bMatchTargetOrientation,bool, 0xd);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::FollowTargetOpFixedSettings_t) == 0x10, "FollowTargetOpFixedSettings_t size should be 0x10");

@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/pulse_runtime_lib/OutflowWithRequirements_t.hpp>
 
 
 
-namespace CS2 {
-	namespace pulse_runtime_lib {
-		class OutflowWithRequirements_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,7 +21,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class PulseSelectorOutflowList_t  {
 		public:
-			PROPERTY(m_Outflows,server::CUtlVector<pulse_runtime_lib::OutflowWithRequirements_t>, 0x0);
+			NESTED_PROPERTY(m_Outflows,server::CUtlVector<pulse_runtime_lib::OutflowWithRequirements_t>, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::PulseSelectorOutflowList_t) == 0x18, "PulseSelectorOutflowList_t size should be 0x18");

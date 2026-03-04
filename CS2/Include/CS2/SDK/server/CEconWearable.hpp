@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class CEconWearable : public CS2::server::CEconEntity {
 		public:
-			PROPERTY(m_nForceSkin,int32_t , 0xde0);
-			PROPERTY(m_bAlwaysAllow,bool , 0xde4);
+			PROPERTY(m_nForceSkin,int32_t, 0xde0);
+			PROPERTY(m_bAlwaysAllow,bool, 0xde4);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CEconWearable) == 0xDF0, "CEconWearable size should be 0xDF0");

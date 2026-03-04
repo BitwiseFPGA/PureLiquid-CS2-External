@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeEdgeDesc_t  {
 		public:
-			PROPERTY_ARRAY(nEdge,uint16_t , 2 , 0x0);
-			PROPERTY_ARRAY(nSide,uint16_t , 2 , 0x4);
-			PROPERTY_ARRAY(nVirtElem,uint16_t , 2 , 0xc);
+			PROPERTY_ARRAY(nEdge,uint16_t, 2 , 0x0);
+			PROPERTY_ARRAY(nSide,uint16_t, 2 , 0x4);
+			PROPERTY_ARRAY(nVirtElem,uint16_t, 2 , 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeEdgeDesc_t) == 0x10, "FeEdgeDesc_t size should be 0x10");

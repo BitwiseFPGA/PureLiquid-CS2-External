@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace modellib {
 		class CModelConfigElement_RandomColor : public CS2::modellib::CModelConfigElement {
 		public:
-			PROPERTY(m_Gradient,GlobalTypes::CColorGradient , 0x48);
+			PROPERTY(m_Gradient,GlobalTypes::CColorGradient, 0x48);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::modellib::CModelConfigElement_RandomColor) == 0x60, "CModelConfigElement_RandomColor size should be 0x60");

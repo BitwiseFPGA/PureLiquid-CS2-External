@@ -25,22 +25,22 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_CreateOnModel : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_modelInput,particleslib::CParticleModelInput , 0x1d8);
-			PROPERTY(m_transformInput,particleslib::CParticleTransformInput , 0x238);
-			PROPERTY(m_nForceInModel,int32_t , 0x2a0);
-			PROPERTY(m_bScaleToVolume,bool , 0x2a4);
-			PROPERTY(m_bEvenDistribution,bool , 0x2a5);
-			PROPERTY(m_nDesiredHitbox,particleslib::CParticleCollectionFloatInput , 0x2a8);
-			PROPERTY(m_nHitboxValueFromControlPointIndex,int32_t , 0x418);
-			PROPERTY(m_vecHitBoxScale,particleslib::CParticleCollectionVecInput , 0x420);
-			PROPERTY(m_flBoneVelocity,float32 , 0xad8);
-			PROPERTY(m_flMaxBoneVelocity,float32 , 0xadc);
-			PROPERTY(m_vecDirectionBias,particleslib::CParticleCollectionVecInput , 0xae0);
-			PROPERTY_ARRAY(m_HitboxSetName,char , 128 , 0x1198);
-			PROPERTY(m_bLocalCoords,bool , 0x1218);
-			PROPERTY(m_bUseBones,bool , 0x1219);
-			PROPERTY(m_bUseMesh,bool , 0x121a);
-			PROPERTY(m_flShellSize,particleslib::CParticleCollectionFloatInput , 0x1220);
+			NESTED_PROPERTY(m_modelInput,particleslib::CParticleModelInput, 0x1d8);
+			NESTED_PROPERTY(m_transformInput,particleslib::CParticleTransformInput, 0x238);
+			PROPERTY(m_nForceInModel,int32_t, 0x2a0);
+			PROPERTY(m_bScaleToVolume,bool, 0x2a4);
+			PROPERTY(m_bEvenDistribution,bool, 0x2a5);
+			NESTED_PROPERTY(m_nDesiredHitbox,particleslib::CParticleCollectionFloatInput, 0x2a8);
+			PROPERTY(m_nHitboxValueFromControlPointIndex,int32_t, 0x418);
+			NESTED_PROPERTY(m_vecHitBoxScale,particleslib::CParticleCollectionVecInput, 0x420);
+			PROPERTY(m_flBoneVelocity,float32, 0xad8);
+			PROPERTY(m_flMaxBoneVelocity,float32, 0xadc);
+			NESTED_PROPERTY(m_vecDirectionBias,particleslib::CParticleCollectionVecInput, 0xae0);
+			PROPERTY_ARRAY(m_HitboxSetName,char, 128 , 0x1198);
+			PROPERTY(m_bLocalCoords,bool, 0x1218);
+			PROPERTY(m_bUseBones,bool, 0x1219);
+			PROPERTY(m_bUseMesh,bool, 0x121a);
+			NESTED_PROPERTY(m_flShellSize,particleslib::CParticleCollectionFloatInput, 0x1220);
 			S2_PAD(0x11B8);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_CreateOnModel) == 0x1390, "C_INIT_CreateOnModel size should be 0x1390");

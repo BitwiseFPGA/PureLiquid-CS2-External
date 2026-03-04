@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/animgraphlib/FootFixedData_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class FootFixedData_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,13 +21,13 @@ namespace CS2 {
 	namespace animgraphlib {
 		class FootPinningPoseOpFixedData_t  {
 		public:
-			PROPERTY(m_footInfo,GlobalTypes::CUtlVector<animgraphlib::FootFixedData_t>, 0x0);
-			PROPERTY(m_flBlendTime,float32 , 0x18);
-			PROPERTY(m_flLockBreakDistance,float32 , 0x1c);
-			PROPERTY(m_flMaxLegTwist,float32 , 0x20);
-			PROPERTY(m_nHipBoneIndex,int32_t , 0x24);
-			PROPERTY(m_bApplyLegTwistLimits,bool , 0x28);
-			PROPERTY(m_bApplyFootRotationLimits,bool , 0x29);
+			NESTED_PROPERTY(m_footInfo,GlobalTypes::CUtlVector<animgraphlib::FootFixedData_t>, 0x0);
+			PROPERTY(m_flBlendTime,float32, 0x18);
+			PROPERTY(m_flLockBreakDistance,float32, 0x1c);
+			PROPERTY(m_flMaxLegTwist,float32, 0x20);
+			PROPERTY(m_nHipBoneIndex,int32_t, 0x24);
+			PROPERTY(m_bApplyLegTwistLimits,bool, 0x28);
+			PROPERTY(m_bApplyFootRotationLimits,bool, 0x29);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::FootPinningPoseOpFixedData_t) == 0x30, "FootPinningPoseOpFixedData_t size should be 0x30");

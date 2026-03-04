@@ -20,14 +20,14 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqAutoLayerFlag  {
 		public:
-			PROPERTY(m_bPost,bool , 0x0);
-			PROPERTY(m_bSpline,bool , 0x1);
-			PROPERTY(m_bXFade,bool , 0x2);
-			PROPERTY(m_bNoBlend,bool , 0x3);
-			PROPERTY(m_bLocal,bool , 0x4);
-			PROPERTY(m_bPose,bool , 0x5);
-			PROPERTY(m_bFetchFrame,bool , 0x6);
-			PROPERTY(m_bSubtract,bool , 0x7);
+			PROPERTY(m_bPost,bool, 0x0);
+			PROPERTY(m_bSpline,bool, 0x1);
+			PROPERTY(m_bXFade,bool, 0x2);
+			PROPERTY(m_bNoBlend,bool, 0x3);
+			PROPERTY(m_bLocal,bool, 0x4);
+			PROPERTY(m_bPose,bool, 0x5);
+			PROPERTY(m_bFetchFrame,bool, 0x6);
+			PROPERTY(m_bSubtract,bool, 0x7);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqAutoLayerFlag) == 0x8, "CSeqAutoLayerFlag size should be 0x8");

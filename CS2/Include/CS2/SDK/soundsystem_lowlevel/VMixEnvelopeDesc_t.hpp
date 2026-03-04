@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixEnvelopeDesc_t  {
 		public:
-			PROPERTY(m_flAttackTimeMS,float32 , 0x0);
-			PROPERTY(m_flHoldTimeMS,float32 , 0x4);
-			PROPERTY(m_flReleaseTimeMS,float32 , 0x8);
+			PROPERTY(m_flAttackTimeMS,float32, 0x0);
+			PROPERTY(m_flHoldTimeMS,float32, 0x4);
+			PROPERTY(m_flReleaseTimeMS,float32, 0x8);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixEnvelopeDesc_t) == 0xC, "VMixEnvelopeDesc_t size should be 0xC");

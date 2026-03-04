@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimationGraphVisualizerPrimitiveBase  {
 		public:
-			PROPERTY(m_Type,animgraphlib::CAnimationGraphVisualizerPrimitiveType , 0x8);
-			PROPERTY_ARRAY(m_OwningAnimNodePaths,modellib::AnimNodeID , 11 , 0xc);
-			PROPERTY(m_nOwningAnimNodePathCount,int32_t , 0x38);
+			PROPERTY(m_Type,animgraphlib::CAnimationGraphVisualizerPrimitiveType, 0x8);
+			PROPERTY_ARRAY(m_OwningAnimNodePaths,modellib::AnimNodeID, 11 , 0xc);
+			PROPERTY(m_nOwningAnimNodePathCount,int32_t, 0x38);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAnimationGraphVisualizerPrimitiveBase) == 0x40, "CAnimationGraphVisualizerPrimitiveBase size should be 0x40");

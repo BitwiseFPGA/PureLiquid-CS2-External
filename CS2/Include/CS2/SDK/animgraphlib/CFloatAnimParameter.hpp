@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CFloatAnimParameter : public CS2::animgraphlib::CConcreteAnimParameter {
 		public:
-			PROPERTY(m_fDefaultValue,float32 , 0x80);
-			PROPERTY(m_fMinValue,float32 , 0x84);
-			PROPERTY(m_fMaxValue,float32 , 0x88);
-			PROPERTY(m_bInterpolate,bool , 0x8c);
+			PROPERTY(m_fDefaultValue,float32, 0x80);
+			PROPERTY(m_fMinValue,float32, 0x84);
+			PROPERTY(m_fMaxValue,float32, 0x88);
+			PROPERTY(m_bInterpolate,bool, 0x8c);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CFloatAnimParameter) == 0x90, "CFloatAnimParameter size should be 0x90");

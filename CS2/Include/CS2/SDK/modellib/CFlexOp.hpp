@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace modellib {
 		class CFlexOp  {
 		public:
-			PROPERTY(m_OpCode,modellib::FlexOpCode_t , 0x0);
-			PROPERTY(m_Data,int32_t , 0x4);
+			PROPERTY(m_OpCode,modellib::FlexOpCode_t, 0x0);
+			PROPERTY(m_Data,int32_t, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::modellib::CFlexOp) == 0x8, "CFlexOp size should be 0x8");

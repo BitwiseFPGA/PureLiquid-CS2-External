@@ -27,9 +27,9 @@ namespace CS2 {
 		class C_INIT_RemapParticleCountToNamedModelElementScalar : public CS2::particles::C_INIT_RemapParticleCountToScalar {
 		public:
 			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0x208);
-			PROPERTY(m_outputMinName,GlobalTypes::CUtlString* , 0x210);
-			PROPERTY(m_outputMaxName,GlobalTypes::CUtlString* , 0x218);
-			PROPERTY(m_bModelFromRenderer,bool , 0x220);
+			PROPERTY(m_outputMinName,GlobalTypes::CUtlString*, 0x210);
+			PROPERTY(m_outputMaxName,GlobalTypes::CUtlString*, 0x218);
+			PROPERTY(m_bModelFromRenderer,bool, 0x220);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_RemapParticleCountToNamedModelElementScalar) == 0x228, "C_INIT_RemapParticleCountToNamedModelElementScalar size should be 0x228");

@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace client {
 		class CWorldCompositionChunkReferenceElement_t  {
 		public:
-			PROPERTY(m_strMapToLoad,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_strLandmarkName,GlobalTypes::CUtlString* , 0x8);
+			PROPERTY(m_strMapToLoad,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_strLandmarkName,GlobalTypes::CUtlString*, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::CWorldCompositionChunkReferenceElement_t) == 0x10, "CWorldCompositionChunkReferenceElement_t size should be 0x10");

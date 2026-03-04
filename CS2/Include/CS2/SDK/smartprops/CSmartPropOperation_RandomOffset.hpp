@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_RandomOffset : public CS2::smartprops::CSmartPropTransformOperation {
 		public:
-			PROPERTY(m_vRandomPositionMin,GlobalTypes::CSmartPropAttributeVector , 0x50);
-			PROPERTY(m_vRandomPositionMax,GlobalTypes::CSmartPropAttributeVector , 0x90);
-			PROPERTY(m_vSnapIncrement,GlobalTypes::CSmartPropAttributeVector , 0xd0);
+			PROPERTY(m_vRandomPositionMin,GlobalTypes::CSmartPropAttributeVector, 0x50);
+			PROPERTY(m_vRandomPositionMax,GlobalTypes::CSmartPropAttributeVector, 0x90);
+			PROPERTY(m_vSnapIncrement,GlobalTypes::CSmartPropAttributeVector, 0xd0);
 			S2_PAD(0xC0);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_RandomOffset) == 0x110, "CSmartPropOperation_RandomOffset size should be 0x110");

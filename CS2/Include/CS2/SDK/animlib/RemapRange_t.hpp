@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animlib {
 		class RemapRange_t  {
 		public:
-			PROPERTY(m_flBegin,float32 , 0x0);
-			PROPERTY(m_flEnd,float32 , 0x4);
+			PROPERTY(m_flBegin,float32, 0x0);
+			PROPERTY(m_flEnd,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animlib::RemapRange_t) == 0x8, "CNmFloatRemapNode::RemapRange_t size should be 0x8");

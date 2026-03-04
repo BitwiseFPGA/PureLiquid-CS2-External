@@ -10,15 +10,12 @@
 #endif
 
 
+#include <SDK/resourcesystem/InfoForResourceTypeCModel.hpp>
 #include <SDK/animationsystem/MoodType_t.hpp>
+#include <SDK/animationsystem/MoodAnimationLayer_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animationsystem {
-		class MoodAnimationLayer_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,8 +24,8 @@ namespace CS2 {
 		class CMoodVData  {
 		public:
 			PROPERTY(m_sModelName,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCModel>>, 0x0);
-			PROPERTY(m_nMoodType,animationsystem::MoodType_t , 0xe0);
-			PROPERTY(m_animationLayers,GlobalTypes::CUtlVector<animationsystem::MoodAnimationLayer_t>, 0xe8);
+			PROPERTY(m_nMoodType,animationsystem::MoodType_t, 0xe0);
+			NESTED_PROPERTY(m_animationLayers,GlobalTypes::CUtlVector<animationsystem::MoodAnimationLayer_t>, 0xe8);
 			S2_PAD(0x100);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CMoodVData) == 0x100, "CMoodVData size should be 0x100");

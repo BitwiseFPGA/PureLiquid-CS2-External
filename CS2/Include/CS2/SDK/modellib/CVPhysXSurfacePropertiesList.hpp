@@ -25,7 +25,7 @@ namespace CS2 {
 	namespace modellib {
 		class CVPhysXSurfacePropertiesList  {
 		public:
-			PROPERTY(m_surfacePropertiesList,GlobalTypes::CUtlVector<modellib::CPhysSurfaceProperties*>, 0x0);
+			NESTED_PROPERTY(m_surfacePropertiesList,GlobalTypes::CUtlVector<modellib::CPhysSurfaceProperties*>, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::modellib::CVPhysXSurfacePropertiesList) == 0x18, "CVPhysXSurfacePropertiesList size should be 0x18");

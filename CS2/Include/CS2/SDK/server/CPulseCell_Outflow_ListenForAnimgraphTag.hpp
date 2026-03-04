@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace server {
 		class CPulseCell_Outflow_ListenForAnimgraphTag : public CS2::pulse_runtime_lib::CPulseCell_BaseYieldingInflow {
 		public:
-			PROPERTY(m_OnStart,pulse_runtime_lib::CPulse_ResumePoint , 0x48);
-			PROPERTY(m_OnEnd,pulse_runtime_lib::CPulse_ResumePoint , 0x90);
-			PROPERTY(m_OnCanceled,pulse_runtime_lib::CPulse_ResumePoint , 0xd8);
-			PROPERTY(m_TagName,GlobalTypes::CGlobalSymbol , 0x120);
+			NESTED_PROPERTY(m_OnStart,pulse_runtime_lib::CPulse_ResumePoint, 0x48);
+			NESTED_PROPERTY(m_OnEnd,pulse_runtime_lib::CPulse_ResumePoint, 0x90);
+			NESTED_PROPERTY(m_OnCanceled,pulse_runtime_lib::CPulse_ResumePoint, 0xd8);
+			PROPERTY(m_TagName,GlobalTypes::CGlobalSymbol, 0x120);
 			S2_PAD(0xE0);
 		};
 		//static_assert(sizeof(CS2::server::CPulseCell_Outflow_ListenForAnimgraphTag) == 0x128, "CPulseCell_Outflow_ListenForAnimgraphTag size should be 0x128");

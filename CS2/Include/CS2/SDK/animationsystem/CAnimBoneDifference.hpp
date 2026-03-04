@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimBoneDifference  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_parent,GlobalTypes::CBufferString , 0x10);
-			PROPERTY(m_posError,GlobalTypes::Vector , 0x20);
-			PROPERTY(m_bHasRotation,bool , 0x2c);
-			PROPERTY(m_bHasMovement,bool , 0x2d);
+			PROPERTY(m_name,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_parent,GlobalTypes::CBufferString, 0x10);
+			PROPERTY(m_posError,GlobalTypes::Vector, 0x20);
+			PROPERTY(m_bHasRotation,bool, 0x2c);
+			PROPERTY(m_bHasMovement,bool, 0x2d);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimBoneDifference) == 0x30, "CAnimBoneDifference size should be 0x30");

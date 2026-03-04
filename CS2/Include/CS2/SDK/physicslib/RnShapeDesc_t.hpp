@@ -20,12 +20,12 @@ namespace CS2 {
 	namespace physicslib {
 		class RnShapeDesc_t  {
 		public:
-			PROPERTY(m_nCollisionAttributeIndex,uint32_t , 0x0);
-			PROPERTY(m_nSurfacePropertyIndex,uint32_t , 0x4);
-			PROPERTY(m_UserFriendlyName,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_bUserFriendlyNameSealed,bool , 0x10);
-			PROPERTY(m_bUserFriendlyNameLong,bool , 0x11);
-			PROPERTY(m_nToolMaterialHash,uint32_t , 0x14);
+			PROPERTY(m_nCollisionAttributeIndex,uint32_t, 0x0);
+			PROPERTY(m_nSurfacePropertyIndex,uint32_t, 0x4);
+			PROPERTY(m_UserFriendlyName,GlobalTypes::CUtlString*, 0x8);
+			PROPERTY(m_bUserFriendlyNameSealed,bool, 0x10);
+			PROPERTY(m_bUserFriendlyNameLong,bool, 0x11);
+			PROPERTY(m_nToolMaterialHash,uint32_t, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnShapeDesc_t) == 0x18, "RnShapeDesc_t size should be 0x18");

@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderScreenVelocityRotate : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_flRotateRateDegrees,float32 , 0x220);
-			PROPERTY(m_flForwardDegrees,float32 , 0x224);
+			PROPERTY(m_flRotateRateDegrees,float32, 0x220);
+			PROPERTY(m_flForwardDegrees,float32, 0x224);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RenderScreenVelocityRotate) == 0x228, "C_OP_RenderScreenVelocityRotate size should be 0x228");

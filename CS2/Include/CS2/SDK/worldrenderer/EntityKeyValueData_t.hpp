@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/worldrenderer/EntityIOConnectionData_t.hpp>
 
 
 
-namespace CS2 {
-	namespace worldrenderer {
-		class EntityIOConnectionData_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace worldrenderer {
 		class EntityKeyValueData_t  {
 		public:
-			PROPERTY(m_connections,GlobalTypes::CUtlVector<worldrenderer::EntityIOConnectionData_t>, 0x8);
-			PROPERTY(m_keyValuesData,GlobalTypes::CUtlBinaryBlock , 0x20);
+			NESTED_PROPERTY(m_connections,GlobalTypes::CUtlVector<worldrenderer::EntityIOConnectionData_t>, 0x8);
+			PROPERTY(m_keyValuesData,GlobalTypes::CUtlBinaryBlock, 0x20);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::EntityKeyValueData_t) == 0x38, "EntityKeyValueData_t size should be 0x38");

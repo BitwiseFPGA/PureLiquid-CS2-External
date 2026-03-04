@@ -11,14 +11,10 @@
 
 
 #include <SDK/smartprops/CSmartPropOperation.hpp>
+#include <SDK/smartprops/CSmartPropMaterialReplacement.hpp>
 
 
 
-namespace CS2 {
-	namespace smartprops {
-		class CSmartPropMaterialReplacement;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,8 +22,8 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_MaterialOverride : public CS2::smartprops::CSmartPropOperation {
 		public:
-			PROPERTY(m_bClearCurrentOverrides,GlobalTypes::CSmartPropAttributeBool , 0x50);
-			PROPERTY(m_MaterialReplacements,GlobalTypes::CUtlVector<smartprops::CSmartPropMaterialReplacement>, 0x90);
+			PROPERTY(m_bClearCurrentOverrides,GlobalTypes::CSmartPropAttributeBool, 0x50);
+			NESTED_PROPERTY(m_MaterialReplacements,GlobalTypes::CUtlVector<smartprops::CSmartPropMaterialReplacement>, 0x90);
 			S2_PAD(0x58);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_MaterialOverride) == 0xA8, "CSmartPropOperation_MaterialOverride size should be 0xA8");

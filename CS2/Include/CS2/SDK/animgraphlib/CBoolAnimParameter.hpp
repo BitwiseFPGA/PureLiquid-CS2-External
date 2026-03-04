@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CBoolAnimParameter : public CS2::animgraphlib::CConcreteAnimParameter {
 		public:
-			PROPERTY(m_bDefaultValue,bool , 0x80);
+			PROPERTY(m_bDefaultValue,bool, 0x80);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CBoolAnimParameter) == 0x88, "CBoolAnimParameter size should be 0x88");

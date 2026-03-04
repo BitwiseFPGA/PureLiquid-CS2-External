@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace particleslib {
 		class CParticleVariableRef  {
 		public:
-			PROPERTY(m_variableName,GlobalTypes::CKV3MemberNameWithStorage , 0x0);
-			PROPERTY(m_variableType,GlobalTypes::CPulseValueFullType , 0x38);
+			PROPERTY(m_variableName,GlobalTypes::CKV3MemberNameWithStorage, 0x0);
+			PROPERTY(m_variableType,GlobalTypes::CPulseValueFullType, 0x38);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::particleslib::CParticleVariableRef) == 0x50, "CParticleVariableRef size should be 0x50");

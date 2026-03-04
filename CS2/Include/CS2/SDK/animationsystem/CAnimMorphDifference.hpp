@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimMorphDifference  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CBufferString , 0x0);
+			PROPERTY(m_name,GlobalTypes::CBufferString, 0x0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimMorphDifference) == 0x10, "CAnimMorphDifference size should be 0x10");

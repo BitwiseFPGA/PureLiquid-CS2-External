@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class LookAtBone_t  {
 		public:
-			PROPERTY(m_index,int32_t , 0x0);
-			PROPERTY(m_weight,float32 , 0x4);
+			PROPERTY(m_index,int32_t, 0x0);
+			PROPERTY(m_weight,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::LookAtBone_t) == 0x8, "LookAtBone_t size should be 0x8");

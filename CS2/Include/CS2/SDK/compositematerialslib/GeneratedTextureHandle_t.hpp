@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace compositematerialslib {
 		class GeneratedTextureHandle_t  {
 		public:
-			PROPERTY(m_strBitmapName,GlobalTypes::CUtlString* , 0x0);
+			PROPERTY(m_strBitmapName,GlobalTypes::CUtlString*, 0x0);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::compositematerialslib::GeneratedTextureHandle_t) == 0x60, "GeneratedTextureHandle_t size should be 0x60");

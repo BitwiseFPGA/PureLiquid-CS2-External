@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace mathlib_extended {
 		class AABB_t  {
 		public:
-			PROPERTY(m_vMinBounds,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_vMaxBounds,GlobalTypes::Vector , 0xc);
+			PROPERTY(m_vMinBounds,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_vMaxBounds,GlobalTypes::Vector, 0xc);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::mathlib_extended::AABB_t) == 0x18, "AABB_t size should be 0x18");

@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapTransformOrientationToRotations : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0x1d0);
-			PROPERTY(m_vecRotation,GlobalTypes::Vector , 0x238);
-			PROPERTY(m_bUseQuat,bool , 0x244);
-			PROPERTY(m_bWriteNormal,bool , 0x245);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0x1d0);
+			PROPERTY(m_vecRotation,GlobalTypes::Vector, 0x238);
+			PROPERTY(m_bUseQuat,bool, 0x244);
+			PROPERTY(m_bWriteNormal,bool, 0x245);
 			S2_PAD(0x78);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapTransformOrientationToRotations) == 0x248, "C_OP_RemapTransformOrientationToRotations size should be 0x248");

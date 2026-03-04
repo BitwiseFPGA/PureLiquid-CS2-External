@@ -30,15 +30,15 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderSimpleModelCollection : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_bCenterOffset,bool , 0x220);
+			PROPERTY(m_bCenterOffset,bool, 0x220);
 			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0x228);
-			PROPERTY(m_modelInput,particleslib::CParticleModelInput , 0x230);
-			PROPERTY(m_fSizeCullScale,particleslib::CParticleCollectionFloatInput , 0x290);
-			PROPERTY(m_bDisableShadows,bool , 0x400);
-			PROPERTY(m_bDisableMotionBlur,bool , 0x401);
-			PROPERTY(m_bAcceptsDecals,bool , 0x402);
-			PROPERTY(m_fDrawFilter,particleslib::CPerParticleFloatInput , 0x408);
-			PROPERTY(m_nAngularVelocityField,particles::ParticleAttributeIndex_t , 0x578);
+			NESTED_PROPERTY(m_modelInput,particleslib::CParticleModelInput, 0x230);
+			NESTED_PROPERTY(m_fSizeCullScale,particleslib::CParticleCollectionFloatInput, 0x290);
+			PROPERTY(m_bDisableShadows,bool, 0x400);
+			PROPERTY(m_bDisableMotionBlur,bool, 0x401);
+			PROPERTY(m_bAcceptsDecals,bool, 0x402);
+			NESTED_PROPERTY(m_fDrawFilter,particleslib::CPerParticleFloatInput, 0x408);
+			NESTED_PROPERTY(m_nAngularVelocityField,particles::ParticleAttributeIndex_t, 0x578);
 			S2_PAD(0x370);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RenderSimpleModelCollection) == 0x590, "C_OP_RenderSimpleModelCollection size should be 0x590");

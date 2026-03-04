@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace server {
 		class CTriggerDetectBulletFire : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_bPlayerFireOnly,bool , 0x890);
-			PROPERTY(m_OnDetectedBulletFire,entity2::CEntityIOOutput , 0x898);
+			PROPERTY(m_bPlayerFireOnly,bool, 0x890);
+			NESTED_PROPERTY(m_OnDetectedBulletFire,entity2::CEntityIOOutput, 0x898);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::CTriggerDetectBulletFire) == 0x8B0, "CTriggerDetectBulletFire size should be 0x8B0");

@@ -11,15 +11,11 @@
 
 
 #include <SDK/pulse_runtime_lib/CPulseCell_BaseYieldingInflow.hpp>
+#include <SDK/pulse_runtime_lib/CPulse_OutflowConnection.hpp>
 #include <SDK/pulse_runtime_lib/CPulse_ResumePoint.hpp>
 
 
 
-namespace CS2 {
-	namespace pulse_runtime_lib {
-		class CPulse_OutflowConnection;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,10 +23,10 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_FireCursors : public CS2::pulse_runtime_lib::CPulseCell_BaseYieldingInflow {
 		public:
-			PROPERTY(m_Outflows,server::CUtlVector<pulse_runtime_lib::CPulse_OutflowConnection>, 0x48);
-			PROPERTY(m_bWaitForChildOutflows,bool , 0x60);
-			PROPERTY(m_OnFinished,pulse_runtime_lib::CPulse_ResumePoint , 0x68);
-			PROPERTY(m_OnCanceled,pulse_runtime_lib::CPulse_ResumePoint , 0xb0);
+			NESTED_PROPERTY(m_Outflows,server::CUtlVector<pulse_runtime_lib::CPulse_OutflowConnection>, 0x48);
+			PROPERTY(m_bWaitForChildOutflows,bool, 0x60);
+			NESTED_PROPERTY(m_OnFinished,pulse_runtime_lib::CPulse_ResumePoint, 0x68);
+			NESTED_PROPERTY(m_OnCanceled,pulse_runtime_lib::CPulse_ResumePoint, 0xb0);
 			S2_PAD(0xB0);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_FireCursors) == 0xF8, "CPulseCell_FireCursors size should be 0xF8");

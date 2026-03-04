@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulse_OutflowConnection  {
 		public:
-			PROPERTY(m_SourceOutflowName,GlobalTypes::PulseSymbol_t , 0x0);
-			PROPERTY(m_nDestChunk,pulse_runtime_lib::PulseRuntimeChunkIndex_t , 0x10);
-			PROPERTY(m_nInstruction,int32_t , 0x14);
-			PROPERTY(m_OutflowRegisterMap,pulse_runtime_lib::PulseRegisterMap_t , 0x18);
+			PROPERTY(m_SourceOutflowName,GlobalTypes::PulseSymbol_t, 0x0);
+			NESTED_PROPERTY(m_nDestChunk,pulse_runtime_lib::PulseRuntimeChunkIndex_t, 0x10);
+			PROPERTY(m_nInstruction,int32_t, 0x14);
+			NESTED_PROPERTY(m_OutflowRegisterMap,pulse_runtime_lib::PulseRegisterMap_t, 0x18);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulse_OutflowConnection) == 0x48, "CPulse_OutflowConnection size should be 0x48");

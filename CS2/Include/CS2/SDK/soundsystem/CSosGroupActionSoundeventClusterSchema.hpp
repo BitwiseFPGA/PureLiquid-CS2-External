@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace soundsystem {
 		class CSosGroupActionSoundeventClusterSchema : public CS2::soundsystem::CSosGroupActionSchema {
 		public:
-			PROPERTY(m_nMinNearby,int32_t , 0x8);
-			PROPERTY(m_flClusterEpsilon,float32 , 0xc);
-			PROPERTY(m_shouldPlayOpvar,GlobalTypes::CUtlString* , 0x10);
-			PROPERTY(m_shouldPlayClusterChild,GlobalTypes::CUtlString* , 0x18);
-			PROPERTY(m_clusterSizeOpvar,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_groupBoundingBoxMinsOpvar,GlobalTypes::CUtlString* , 0x28);
-			PROPERTY(m_groupBoundingBoxMaxsOpvar,GlobalTypes::CUtlString* , 0x30);
+			PROPERTY(m_nMinNearby,int32_t, 0x8);
+			PROPERTY(m_flClusterEpsilon,float32, 0xc);
+			PROPERTY(m_shouldPlayOpvar,GlobalTypes::CUtlString*, 0x10);
+			PROPERTY(m_shouldPlayClusterChild,GlobalTypes::CUtlString*, 0x18);
+			PROPERTY(m_clusterSizeOpvar,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_groupBoundingBoxMinsOpvar,GlobalTypes::CUtlString*, 0x28);
+			PROPERTY(m_groupBoundingBoxMaxsOpvar,GlobalTypes::CUtlString*, 0x30);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::soundsystem::CSosGroupActionSoundeventClusterSchema) == 0x50, "CSosGroupActionSoundeventClusterSchema size should be 0x50");

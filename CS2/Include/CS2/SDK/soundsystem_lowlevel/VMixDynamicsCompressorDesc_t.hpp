@@ -20,15 +20,15 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixDynamicsCompressorDesc_t  {
 		public:
-			PROPERTY(m_fldbOutputGain,float32 , 0x0);
-			PROPERTY(m_fldbCompressionThreshold,float32 , 0x4);
-			PROPERTY(m_fldbKneeWidth,float32 , 0x8);
-			PROPERTY(m_flCompressionRatio,float32 , 0xc);
-			PROPERTY(m_flAttackTimeMS,float32 , 0x10);
-			PROPERTY(m_flReleaseTimeMS,float32 , 0x14);
-			PROPERTY(m_flRMSTimeMS,float32 , 0x18);
-			PROPERTY(m_flWetMix,float32 , 0x1c);
-			PROPERTY(m_bPeakMode,bool , 0x20);
+			PROPERTY(m_fldbOutputGain,float32, 0x0);
+			PROPERTY(m_fldbCompressionThreshold,float32, 0x4);
+			PROPERTY(m_fldbKneeWidth,float32, 0x8);
+			PROPERTY(m_flCompressionRatio,float32, 0xc);
+			PROPERTY(m_flAttackTimeMS,float32, 0x10);
+			PROPERTY(m_flReleaseTimeMS,float32, 0x14);
+			PROPERTY(m_flRMSTimeMS,float32, 0x18);
+			PROPERTY(m_flWetMix,float32, 0x1c);
+			PROPERTY(m_bPeakMode,bool, 0x20);
 			S2_PAD(0x24);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixDynamicsCompressorDesc_t) == 0x24, "VMixDynamicsCompressorDesc_t size should be 0x24");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Value_Gradient : public CS2::pulse_runtime_lib::CPulseCell_BaseValue {
 		public:
-			PROPERTY(m_Gradient,GlobalTypes::CColorGradient , 0x48);
+			PROPERTY(m_Gradient,GlobalTypes::CColorGradient, 0x48);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Value_Gradient) == 0x60, "CPulseCell_Value_Gradient size should be 0x60");

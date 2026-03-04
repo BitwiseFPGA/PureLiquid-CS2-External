@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class FollowAttachmentSettings_t  {
 		public:
-			PROPERTY(m_attachment,modellib::CAnimAttachment , 0x0);
-			PROPERTY(m_boneIndex,int32_t , 0x80);
-			PROPERTY(m_attachmentHandle,modellib::AttachmentHandle_t , 0x84);
-			PROPERTY(m_bMatchTranslation,bool , 0x85);
-			PROPERTY(m_bMatchRotation,bool , 0x86);
+			NESTED_PROPERTY(m_attachment,modellib::CAnimAttachment, 0x0);
+			PROPERTY(m_boneIndex,int32_t, 0x80);
+			NESTED_PROPERTY(m_attachmentHandle,modellib::AttachmentHandle_t, 0x84);
+			PROPERTY(m_bMatchTranslation,bool, 0x85);
+			PROPERTY(m_bMatchRotation,bool, 0x86);
 			S2_PAD(0x90);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::FollowAttachmentSettings_t) == 0x90, "FollowAttachmentSettings_t size should be 0x90");

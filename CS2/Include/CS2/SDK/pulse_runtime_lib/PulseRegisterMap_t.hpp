@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class PulseRegisterMap_t  {
 		public:
-			PROPERTY(m_Inparams,GlobalTypes::KeyValues3 , 0x0);
-			PROPERTY(m_InparamsWhichCanBeMoved,GlobalTypes::CKV3MemberNameSet , 0x10);
-			PROPERTY(m_Outparams,GlobalTypes::KeyValues3 , 0x20);
+			PROPERTY(m_Inparams,GlobalTypes::KeyValues3, 0x0);
+			PROPERTY(m_InparamsWhichCanBeMoved,GlobalTypes::CKV3MemberNameSet, 0x10);
+			PROPERTY(m_Outparams,GlobalTypes::KeyValues3, 0x20);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::PulseRegisterMap_t) == 0x30, "PulseRegisterMap_t size should be 0x30");

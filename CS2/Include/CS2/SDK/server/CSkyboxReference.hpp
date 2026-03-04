@@ -26,7 +26,7 @@ namespace CS2 {
 	namespace server {
 		class CSkyboxReference : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_worldGroupId,GlobalTypes::WorldGroupId_t , 0x4a8);
+			PROPERTY(m_worldGroupId,GlobalTypes::WorldGroupId_t, 0x4a8);
 			PROPERTY(m_hSkyCamera,GlobalTypes::CHandle<server::CSkyCamera>, 0x4ac);
 			S2_PAD(0x8);
 		};

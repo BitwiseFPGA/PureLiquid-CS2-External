@@ -25,7 +25,7 @@ namespace CS2 {
 	namespace client {
 		class CPhysicsDelegate  {
 		public:
-			PROPERTY(m_pKeyframe,client::C_RopeKeyframe* , 0x8);
+			PROPERTY(m_pKeyframe,client::C_RopeKeyframe*, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::CPhysicsDelegate) == 0x10, "C_RopeKeyframe::CPhysicsDelegate size should be 0x10");

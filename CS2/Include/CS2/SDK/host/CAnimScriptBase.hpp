@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace host {
 		class CAnimScriptBase  {
 		public:
-			PROPERTY(m_bIsValid,bool , 0x8);
+			PROPERTY(m_bIsValid,bool, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::host::CAnimScriptBase) == 0x10, "CAnimScriptBase size should be 0x10");

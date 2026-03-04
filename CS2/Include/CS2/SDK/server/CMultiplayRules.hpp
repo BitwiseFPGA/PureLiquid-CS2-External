@@ -23,6 +23,6 @@ namespace CS2 {
 		public:
 			S2_PAD(0x0);
 		};
-		//static_assert(sizeof(CS2::server::CMultiplayRules) == 0xC0, "CMultiplayRules size should be 0xC0");
+		//static_assert(sizeof(CS2::server::CMultiplayRules) == 0xD0, "CMultiplayRules size should be 0xD0");
 	}
 }

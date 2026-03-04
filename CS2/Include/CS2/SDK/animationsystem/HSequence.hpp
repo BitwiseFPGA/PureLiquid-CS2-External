@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace animationsystem {
 		class HSequence  {
 		public:
-			PROPERTY(m_Value,int32_t , 0x0);
+			PROPERTY(m_Value,int32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::animationsystem::HSequence) == 0x4, "HSequence size should be 0x4");

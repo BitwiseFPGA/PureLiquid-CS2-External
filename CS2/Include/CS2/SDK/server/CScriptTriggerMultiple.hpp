@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CScriptTriggerMultiple : public CS2::server::CTriggerMultiple {
 		public:
-			PROPERTY(m_vExtent,GlobalTypes::Vector , 0x8a8);
+			PROPERTY(m_vExtent,GlobalTypes::Vector, 0x8a8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CScriptTriggerMultiple) == 0x8B8, "CScriptTriggerMultiple size should be 0x8B8");

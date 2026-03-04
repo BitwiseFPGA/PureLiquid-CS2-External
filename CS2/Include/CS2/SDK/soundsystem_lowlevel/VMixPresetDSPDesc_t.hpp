@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixPresetDSPDesc_t  {
 		public:
-			PROPERTY(m_effectName,GlobalTypes::CUtlString* , 0x0);
+			PROPERTY(m_effectName,GlobalTypes::CUtlString*, 0x0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixPresetDSPDesc_t) == 0x10, "VMixPresetDSPDesc_t size should be 0x10");

@@ -27,11 +27,11 @@ namespace CS2 {
 		class CPulseGraphInstance_ServerEntity : public CS2::pulse_runtime_lib::CBasePulseGraphInstance {
 		public:
 			PROPERTY(m_hOwner,GlobalTypes::CHandle<server::CBaseEntity>, 0x190);
-			PROPERTY(m_bActivated,bool , 0x194);
-			PROPERTY(m_sNameFixupStaticPrefix,GlobalTypes::CUtlSymbolLarge* , 0x198);
-			PROPERTY(m_sNameFixupParent,GlobalTypes::CUtlSymbolLarge* , 0x1a0);
-			PROPERTY(m_sNameFixupLocal,GlobalTypes::CUtlSymbolLarge* , 0x1a8);
-			PROPERTY(m_sProceduralWorldNameForRelays,GlobalTypes::CUtlSymbolLarge* , 0x1b0);
+			PROPERTY(m_bActivated,bool, 0x194);
+			PROPERTY(m_sNameFixupStaticPrefix,GlobalTypes::CUtlSymbolLarge*, 0x198);
+			PROPERTY(m_sNameFixupParent,GlobalTypes::CUtlSymbolLarge*, 0x1a0);
+			PROPERTY(m_sNameFixupLocal,GlobalTypes::CUtlSymbolLarge*, 0x1a8);
+			PROPERTY(m_sProceduralWorldNameForRelays,GlobalTypes::CUtlSymbolLarge*, 0x1b0);
 			S2_PAD(0xA0);
 		};
 		//static_assert(sizeof(CS2::server::CPulseGraphInstance_ServerEntity) == 0x1B8, "CPulseGraphInstance_ServerEntity size should be 0x1B8");

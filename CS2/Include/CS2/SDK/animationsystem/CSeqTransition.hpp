@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqTransition  {
 		public:
-			PROPERTY(m_flFadeInTime,float32 , 0x0);
-			PROPERTY(m_flFadeOutTime,float32 , 0x4);
+			PROPERTY(m_flFadeInTime,float32, 0x0);
+			PROPERTY(m_flFadeOutTime,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqTransition) == 0x8, "CSeqTransition size should be 0x8");

@@ -11,6 +11,7 @@
 
 
 #include <SDK/server/CBaseFlex.hpp>
+#include <SDK/server/CEconWearable.hpp>
 #include <SDK/client/Hull_t.hpp>
 #include <SDK/server/CMovementStatsProperty.hpp>
 
@@ -23,16 +24,16 @@ namespace CS2 {
 	namespace server {
 		class CBaseCombatCharacter : public CS2::server::CBaseFlex {
 		public:
-			PROPERTY(m_bForceServerRagdoll,bool , 0xab0);
+			PROPERTY(m_bForceServerRagdoll,bool, 0xab0);
 			PROPERTY(m_hMyWearables,server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CEconWearable>>, 0xab8);
-			PROPERTY(m_impactEnergyScale,float32 , 0xad0);
-			PROPERTY(m_bApplyStressDamage,bool , 0xad4);
-			PROPERTY(m_bDeathEventsDispatched,bool , 0xad5);
+			PROPERTY(m_impactEnergyScale,float32, 0xad0);
+			PROPERTY(m_bApplyStressDamage,bool, 0xad4);
+			PROPERTY(m_bDeathEventsDispatched,bool, 0xad5);
 			PROPERTY(m_pVecRelationships,GlobalTypes::CUtlVector< RelationshipOverride_t >**, 0xb18);
-			PROPERTY(m_strRelationships,GlobalTypes::CUtlSymbolLarge* , 0xb20);
-			PROPERTY(m_eHull,client::Hull_t , 0xb28);
-			PROPERTY(m_nNavHullIdx,uint32_t , 0xb2c);
-			PROPERTY(m_movementStats,server::CMovementStatsProperty , 0xb30);
+			PROPERTY(m_strRelationships,GlobalTypes::CUtlSymbolLarge*, 0xb20);
+			PROPERTY(m_eHull,client::Hull_t, 0xb28);
+			PROPERTY(m_nNavHullIdx,uint32_t, 0xb2c);
+			NESTED_PROPERTY(m_movementStats,server::CMovementStatsProperty, 0xb30);
 			S2_PAD(0xC0);
 		};
 		//static_assert(sizeof(CS2::server::CBaseCombatCharacter) == 0xB70, "CBaseCombatCharacter size should be 0xB70");

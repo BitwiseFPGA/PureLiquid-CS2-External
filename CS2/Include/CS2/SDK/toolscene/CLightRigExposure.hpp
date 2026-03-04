@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace toolscene {
 		class CLightRigExposure  {
 		public:
-			PROPERTY(m_bEnabled,bool , 0x0);
-			PROPERTY(m_flMinEV,float32 , 0x4);
-			PROPERTY(m_flMaxEV,float32 , 0x8);
+			PROPERTY(m_bEnabled,bool, 0x0);
+			PROPERTY(m_flMinEV,float32, 0x4);
+			PROPERTY(m_flMaxEV,float32, 0x8);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::toolscene::CLightRigExposure) == 0xC, "CLightRigExposure size should be 0xC");

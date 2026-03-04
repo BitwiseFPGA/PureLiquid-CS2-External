@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace navlib {
 		class CNavVolumeSphericalShell : public CS2::navlib::CNavVolumeSphere {
 		public:
-			PROPERTY(m_flRadiusInner,float32 , 0x88);
+			PROPERTY(m_flRadiusInner,float32, 0x88);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::navlib::CNavVolumeSphericalShell) == 0x90, "CNavVolumeSphericalShell size should be 0x90");

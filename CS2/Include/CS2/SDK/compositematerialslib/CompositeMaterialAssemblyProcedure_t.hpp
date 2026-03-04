@@ -10,16 +10,12 @@
 #endif
 
 
+#include <SDK/compositematerialslib/CompositeMaterialMatchFilter_t.hpp>
+#include <SDK/compositematerialslib/CompositeMaterialInputContainer_t.hpp>
+#include <SDK/compositematerialslib/CompMatPropertyMutator_t.hpp>
 
 
 
-namespace CS2 {
-	namespace compositematerialslib {
-		class CompositeMaterialMatchFilter_t;
-		class CompositeMaterialInputContainer_t;
-		class CompMatPropertyMutator_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,10 +23,10 @@ namespace CS2 {
 	namespace compositematerialslib {
 		class CompositeMaterialAssemblyProcedure_t  {
 		public:
-			PROPERTY(m_vecCompMatIncludes,GlobalTypes::CUtlVector<GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCCompositeMaterialKit>>>, 0x0);
-			PROPERTY(m_vecMatchFilters,GlobalTypes::CUtlVector<compositematerialslib::CompositeMaterialMatchFilter_t>, 0x18);
-			PROPERTY(m_vecCompositeInputContainers,GlobalTypes::CUtlVector<compositematerialslib::CompositeMaterialInputContainer_t>, 0x30);
-			PROPERTY(m_vecPropertyMutators,GlobalTypes::CUtlVector<compositematerialslib::CompMatPropertyMutator_t>, 0x48);
+			NESTED_PROPERTY(m_vecCompMatIncludes,GlobalTypes::CUtlVector<GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCCompositeMaterialKit>>>, 0x0);
+			NESTED_PROPERTY(m_vecMatchFilters,GlobalTypes::CUtlVector<compositematerialslib::CompositeMaterialMatchFilter_t>, 0x18);
+			NESTED_PROPERTY(m_vecCompositeInputContainers,GlobalTypes::CUtlVector<compositematerialslib::CompositeMaterialInputContainer_t>, 0x30);
+			NESTED_PROPERTY(m_vecPropertyMutators,GlobalTypes::CUtlVector<compositematerialslib::CompMatPropertyMutator_t>, 0x48);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::compositematerialslib::CompositeMaterialAssemblyProcedure_t) == 0x60, "CompositeMaterialAssemblyProcedure_t size should be 0x60");

@@ -11,6 +11,7 @@
 
 
 #include <SDK/client/CEntitySubclassVDataBase.hpp>
+#include <SDK/resourcesystem/InfoForResourceTypeIParticleSystemDefinition.hpp>
 #include <SDK/animationsystem/ParticleAttachment_t.hpp>
 
 
@@ -23,12 +24,12 @@ namespace CS2 {
 		class CPrecipitationVData : public CS2::client::CEntitySubclassVDataBase {
 		public:
 			PROPERTY(m_szParticlePrecipitationEffect,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>>, 0x28);
-			PROPERTY(m_flInnerDistance,float32 , 0x108);
-			PROPERTY(m_nAttachType,animationsystem::ParticleAttachment_t , 0x10c);
-			PROPERTY(m_bBatchSameVolumeType,bool , 0x110);
-			PROPERTY(m_nRTEnvCP,int32_t , 0x114);
-			PROPERTY(m_nRTEnvCPComponent,int32_t , 0x118);
-			PROPERTY(m_szModifier,GlobalTypes::CUtlString* , 0x120);
+			PROPERTY(m_flInnerDistance,float32, 0x108);
+			PROPERTY(m_nAttachType,animationsystem::ParticleAttachment_t, 0x10c);
+			PROPERTY(m_bBatchSameVolumeType,bool, 0x110);
+			PROPERTY(m_nRTEnvCP,int32_t, 0x114);
+			PROPERTY(m_nRTEnvCPComponent,int32_t, 0x118);
+			PROPERTY(m_szModifier,GlobalTypes::CUtlString*, 0x120);
 			S2_PAD(0x100);
 		};
 		//static_assert(sizeof(CS2::server::CPrecipitationVData) == 0x128, "CPrecipitationVData size should be 0x128");

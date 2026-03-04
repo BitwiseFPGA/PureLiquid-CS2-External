@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace client {
 		class CStopwatchBase : public CS2::client::CSimpleSimTimer {
 		public:
-			PROPERTY(m_fIsRunning,bool , 0x8);
+			PROPERTY(m_fIsRunning,bool, 0x8);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::client::CStopwatchBase) == 0xC, "CStopwatchBase size should be 0xC");

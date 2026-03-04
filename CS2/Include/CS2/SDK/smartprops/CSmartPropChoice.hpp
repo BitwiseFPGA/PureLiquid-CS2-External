@@ -11,14 +11,10 @@
 
 
 #include <SDK/smartprops/CSmartPropParameter.hpp>
+#include <SDK/smartprops/CSmartPropChoiceOption.hpp>
 
 
 
-namespace CS2 {
-	namespace smartprops {
-		class CSmartPropChoiceOption;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,9 +22,9 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropChoice : public CS2::smartprops::CSmartPropParameter {
 		public:
-			PROPERTY(m_Name,GlobalTypes::CUtlString* , 0x10);
-			PROPERTY(m_DefaultOption,GlobalTypes::CUtlString* , 0x18);
-			PROPERTY(m_Options,GlobalTypes::CUtlVector<smartprops::CSmartPropChoiceOption>, 0x20);
+			PROPERTY(m_Name,GlobalTypes::CUtlString*, 0x10);
+			PROPERTY(m_DefaultOption,GlobalTypes::CUtlString*, 0x18);
+			NESTED_PROPERTY(m_Options,GlobalTypes::CUtlVector<smartprops::CSmartPropChoiceOption>, 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropChoice) == 0x38, "CSmartPropChoice size should be 0x38");

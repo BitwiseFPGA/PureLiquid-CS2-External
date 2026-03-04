@@ -21,15 +21,15 @@ namespace CS2 {
 	namespace server {
 		class CSoundOpvarSetAABBEntity : public CS2::server::CSoundOpvarSetPointEntity {
 		public:
-			PROPERTY(m_vDistanceInnerMins,GlobalTypes::Vector , 0x640);
-			PROPERTY(m_vDistanceInnerMaxs,GlobalTypes::Vector , 0x64c);
-			PROPERTY(m_vDistanceOuterMins,GlobalTypes::Vector , 0x658);
-			PROPERTY(m_vDistanceOuterMaxs,GlobalTypes::Vector , 0x664);
-			PROPERTY(m_nAABBDirection,int32_t , 0x670);
-			PROPERTY(m_vInnerMins,GlobalTypes::Vector , 0x674);
-			PROPERTY(m_vInnerMaxs,GlobalTypes::Vector , 0x680);
-			PROPERTY(m_vOuterMins,GlobalTypes::Vector , 0x68c);
-			PROPERTY(m_vOuterMaxs,GlobalTypes::Vector , 0x698);
+			PROPERTY(m_vDistanceInnerMins,GlobalTypes::Vector, 0x640);
+			PROPERTY(m_vDistanceInnerMaxs,GlobalTypes::Vector, 0x64c);
+			PROPERTY(m_vDistanceOuterMins,GlobalTypes::Vector, 0x658);
+			PROPERTY(m_vDistanceOuterMaxs,GlobalTypes::Vector, 0x664);
+			PROPERTY(m_nAABBDirection,int32_t, 0x670);
+			PROPERTY(m_vInnerMins,GlobalTypes::Vector, 0x674);
+			PROPERTY(m_vInnerMaxs,GlobalTypes::Vector, 0x680);
+			PROPERTY(m_vOuterMins,GlobalTypes::Vector, 0x68c);
+			PROPERTY(m_vOuterMaxs,GlobalTypes::Vector, 0x698);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::server::CSoundOpvarSetAABBEntity) == 0x6A8, "CSoundOpvarSetAABBEntity size should be 0x6A8");

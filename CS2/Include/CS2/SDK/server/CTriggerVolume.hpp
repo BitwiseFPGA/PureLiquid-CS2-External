@@ -26,7 +26,7 @@ namespace CS2 {
 	namespace server {
 		class CTriggerVolume : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 0x730);
+			PROPERTY(m_iFilterName,GlobalTypes::CUtlSymbolLarge*, 0x730);
 			PROPERTY(m_hFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x738);
 			S2_PAD(0x10);
 		};

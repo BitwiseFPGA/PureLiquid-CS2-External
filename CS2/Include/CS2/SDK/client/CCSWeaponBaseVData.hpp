@@ -13,12 +13,13 @@
 #include <SDK/client/CBasePlayerWeaponVData.hpp>
 #include <SDK/client/CSWeaponType.hpp>
 #include <SDK/client/CSWeaponCategory.hpp>
+#include <SDK/resourcesystem/InfoForResourceTypeCNmSkeleton.hpp>
+#include <SDK/resourcesystem/InfoForResourceTypeIParticleSystemDefinition.hpp>
 #include <SDK/client/gear_slot_t.hpp>
 #include <SDK/client/loadout_slot_t.hpp>
 #include <SDK/client/CSWeaponSilencerType.hpp>
 #include <SDK/client/CFiringModeFloat.hpp>
 #include <SDK/client/CFiringModeInt.hpp>
-#include <SDK/resourcesystem/InfoForResourceTypeCNmSkeleton.hpp>
 
 
 
@@ -29,88 +30,88 @@ namespace CS2 {
 	namespace client {
 		class CCSWeaponBaseVData : public CS2::client::CBasePlayerWeaponVData {
 		public:
-			PROPERTY(m_WeaponType,client::CSWeaponType , 0x440);
-			PROPERTY(m_WeaponCategory,client::CSWeaponCategory , 0x444);
+			PROPERTY(m_WeaponType,client::CSWeaponType, 0x440);
+			PROPERTY(m_WeaponCategory,client::CSWeaponCategory, 0x444);
 			PROPERTY(m_szAnimSkeleton,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCNmSkeleton>>, 0x448);
-			PROPERTY(m_vecMuzzlePos0,GlobalTypes::Vector , 0x528);
-			PROPERTY(m_vecMuzzlePos1,GlobalTypes::Vector , 0x534);
+			PROPERTY(m_vecMuzzlePos0,GlobalTypes::Vector, 0x528);
+			PROPERTY(m_vecMuzzlePos1,GlobalTypes::Vector, 0x534);
 			PROPERTY(m_szTracerParticle,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>>, 0x540);
-			PROPERTY(m_GearSlot,client::gear_slot_t , 0x620);
-			PROPERTY(m_GearSlotPosition,int32_t , 0x624);
-			PROPERTY(m_DefaultLoadoutSlot,client::loadout_slot_t , 0x628);
-			PROPERTY(m_nPrice,int32_t , 0x62c);
-			PROPERTY(m_nKillAward,int32_t , 0x630);
-			PROPERTY(m_nPrimaryReserveAmmoMax,int32_t , 0x634);
-			PROPERTY(m_nSecondaryReserveAmmoMax,int32_t , 0x638);
-			PROPERTY(m_bMeleeWeapon,bool , 0x63c);
-			PROPERTY(m_bHasBurstMode,bool , 0x63d);
-			PROPERTY(m_bIsRevolver,bool , 0x63e);
-			PROPERTY(m_bCannotShootUnderwater,bool , 0x63f);
-			PROPERTY(m_szName,GlobalTypes::CGlobalSymbol , 0x640);
-			PROPERTY(m_eSilencerType,client::CSWeaponSilencerType , 0x648);
-			PROPERTY(m_nCrosshairMinDistance,int32_t , 0x64c);
-			PROPERTY(m_nCrosshairDeltaDistance,int32_t , 0x650);
-			PROPERTY(m_bIsFullAuto,bool , 0x654);
-			PROPERTY(m_nNumBullets,int32_t , 0x658);
-			PROPERTY(m_bReloadsSingleShells,bool , 0x65c);
-			PROPERTY(m_flCycleTime,client::CFiringModeFloat , 0x660);
-			PROPERTY(m_flMaxSpeed,client::CFiringModeFloat , 0x668);
-			PROPERTY(m_flSpread,client::CFiringModeFloat , 0x670);
-			PROPERTY(m_flInaccuracyCrouch,client::CFiringModeFloat , 0x678);
-			PROPERTY(m_flInaccuracyStand,client::CFiringModeFloat , 0x680);
-			PROPERTY(m_flInaccuracyJump,client::CFiringModeFloat , 0x688);
-			PROPERTY(m_flInaccuracyLand,client::CFiringModeFloat , 0x690);
-			PROPERTY(m_flInaccuracyLadder,client::CFiringModeFloat , 0x698);
-			PROPERTY(m_flInaccuracyFire,client::CFiringModeFloat , 0x6a0);
-			PROPERTY(m_flInaccuracyMove,client::CFiringModeFloat , 0x6a8);
-			PROPERTY(m_flRecoilAngle,client::CFiringModeFloat , 0x6b0);
-			PROPERTY(m_flRecoilAngleVariance,client::CFiringModeFloat , 0x6b8);
-			PROPERTY(m_flRecoilMagnitude,client::CFiringModeFloat , 0x6c0);
-			PROPERTY(m_flRecoilMagnitudeVariance,client::CFiringModeFloat , 0x6c8);
-			PROPERTY(m_nTracerFrequency,client::CFiringModeInt , 0x6d0);
-			PROPERTY(m_flInaccuracyJumpInitial,float32 , 0x6d8);
-			PROPERTY(m_flInaccuracyJumpApex,float32 , 0x6dc);
-			PROPERTY(m_flInaccuracyReload,float32 , 0x6e0);
-			PROPERTY(m_flDeployDuration,float32 , 0x6e4);
-			PROPERTY(m_flDisallowAttackAfterReloadStartDuration,float32 , 0x6e8);
-			PROPERTY(m_nBurstShotCount,int32_t , 0x6ec);
-			PROPERTY(m_bAllowBurstHolster,bool , 0x6f0);
-			PROPERTY(m_nRecoilSeed,int32_t , 0x6f4);
-			PROPERTY(m_nSpreadSeed,int32_t , 0x6f8);
-			PROPERTY(m_flAttackMovespeedFactor,float32 , 0x6fc);
-			PROPERTY(m_flInaccuracyPitchShift,float32 , 0x700);
-			PROPERTY(m_flInaccuracyAltSoundThreshold,float32 , 0x704);
-			PROPERTY(m_szUseRadioSubtitle,GlobalTypes::CUtlString* , 0x708);
-			PROPERTY(m_bUnzoomsAfterShot,bool , 0x710);
-			PROPERTY(m_bHideViewModelWhenZoomed,bool , 0x711);
-			PROPERTY(m_nZoomLevels,int32_t , 0x714);
-			PROPERTY(m_nZoomFOV1,int32_t , 0x718);
-			PROPERTY(m_nZoomFOV2,int32_t , 0x71c);
-			PROPERTY(m_flZoomTime0,float32 , 0x720);
-			PROPERTY(m_flZoomTime1,float32 , 0x724);
-			PROPERTY(m_flZoomTime2,float32 , 0x728);
-			PROPERTY(m_flIronSightPullUpSpeed,float32 , 0x72c);
-			PROPERTY(m_flIronSightPutDownSpeed,float32 , 0x730);
-			PROPERTY(m_flIronSightFOV,float32 , 0x734);
-			PROPERTY(m_flIronSightPivotForward,float32 , 0x738);
-			PROPERTY(m_flIronSightLooseness,float32 , 0x73c);
-			PROPERTY(m_nDamage,int32_t , 0x740);
-			PROPERTY(m_flHeadshotMultiplier,float32 , 0x744);
-			PROPERTY(m_flArmorRatio,float32 , 0x748);
-			PROPERTY(m_flPenetration,float32 , 0x74c);
-			PROPERTY(m_flRange,float32 , 0x750);
-			PROPERTY(m_flRangeModifier,float32 , 0x754);
-			PROPERTY(m_flFlinchVelocityModifierLarge,float32 , 0x758);
-			PROPERTY(m_flFlinchVelocityModifierSmall,float32 , 0x75c);
-			PROPERTY(m_flRecoveryTimeCrouch,float32 , 0x760);
-			PROPERTY(m_flRecoveryTimeStand,float32 , 0x764);
-			PROPERTY(m_flRecoveryTimeCrouchFinal,float32 , 0x768);
-			PROPERTY(m_flRecoveryTimeStandFinal,float32 , 0x76c);
-			PROPERTY(m_nRecoveryTransitionStartBullet,int32_t , 0x770);
-			PROPERTY(m_nRecoveryTransitionEndBullet,int32_t , 0x774);
-			PROPERTY(m_flThrowVelocity,float32 , 0x778);
-			PROPERTY(m_vSmokeColor,GlobalTypes::Vector , 0x77c);
-			PROPERTY(m_szAnimClass,GlobalTypes::CGlobalSymbol , 0x788);
+			PROPERTY(m_GearSlot,client::gear_slot_t, 0x620);
+			PROPERTY(m_GearSlotPosition,int32_t, 0x624);
+			PROPERTY(m_DefaultLoadoutSlot,client::loadout_slot_t, 0x628);
+			PROPERTY(m_nPrice,int32_t, 0x62c);
+			PROPERTY(m_nKillAward,int32_t, 0x630);
+			PROPERTY(m_nPrimaryReserveAmmoMax,int32_t, 0x634);
+			PROPERTY(m_nSecondaryReserveAmmoMax,int32_t, 0x638);
+			PROPERTY(m_bMeleeWeapon,bool, 0x63c);
+			PROPERTY(m_bHasBurstMode,bool, 0x63d);
+			PROPERTY(m_bIsRevolver,bool, 0x63e);
+			PROPERTY(m_bCannotShootUnderwater,bool, 0x63f);
+			PROPERTY(m_szName,GlobalTypes::CGlobalSymbol, 0x640);
+			PROPERTY(m_eSilencerType,client::CSWeaponSilencerType, 0x648);
+			PROPERTY(m_nCrosshairMinDistance,int32_t, 0x64c);
+			PROPERTY(m_nCrosshairDeltaDistance,int32_t, 0x650);
+			PROPERTY(m_bIsFullAuto,bool, 0x654);
+			PROPERTY(m_nNumBullets,int32_t, 0x658);
+			PROPERTY(m_bReloadsSingleShells,bool, 0x65c);
+			NESTED_PROPERTY(m_flCycleTime,client::CFiringModeFloat, 0x660);
+			NESTED_PROPERTY(m_flMaxSpeed,client::CFiringModeFloat, 0x668);
+			NESTED_PROPERTY(m_flSpread,client::CFiringModeFloat, 0x670);
+			NESTED_PROPERTY(m_flInaccuracyCrouch,client::CFiringModeFloat, 0x678);
+			NESTED_PROPERTY(m_flInaccuracyStand,client::CFiringModeFloat, 0x680);
+			NESTED_PROPERTY(m_flInaccuracyJump,client::CFiringModeFloat, 0x688);
+			NESTED_PROPERTY(m_flInaccuracyLand,client::CFiringModeFloat, 0x690);
+			NESTED_PROPERTY(m_flInaccuracyLadder,client::CFiringModeFloat, 0x698);
+			NESTED_PROPERTY(m_flInaccuracyFire,client::CFiringModeFloat, 0x6a0);
+			NESTED_PROPERTY(m_flInaccuracyMove,client::CFiringModeFloat, 0x6a8);
+			NESTED_PROPERTY(m_flRecoilAngle,client::CFiringModeFloat, 0x6b0);
+			NESTED_PROPERTY(m_flRecoilAngleVariance,client::CFiringModeFloat, 0x6b8);
+			NESTED_PROPERTY(m_flRecoilMagnitude,client::CFiringModeFloat, 0x6c0);
+			NESTED_PROPERTY(m_flRecoilMagnitudeVariance,client::CFiringModeFloat, 0x6c8);
+			NESTED_PROPERTY(m_nTracerFrequency,client::CFiringModeInt, 0x6d0);
+			PROPERTY(m_flInaccuracyJumpInitial,float32, 0x6d8);
+			PROPERTY(m_flInaccuracyJumpApex,float32, 0x6dc);
+			PROPERTY(m_flInaccuracyReload,float32, 0x6e0);
+			PROPERTY(m_flDeployDuration,float32, 0x6e4);
+			PROPERTY(m_flDisallowAttackAfterReloadStartDuration,float32, 0x6e8);
+			PROPERTY(m_nBurstShotCount,int32_t, 0x6ec);
+			PROPERTY(m_bAllowBurstHolster,bool, 0x6f0);
+			PROPERTY(m_nRecoilSeed,int32_t, 0x6f4);
+			PROPERTY(m_nSpreadSeed,int32_t, 0x6f8);
+			PROPERTY(m_flAttackMovespeedFactor,float32, 0x6fc);
+			PROPERTY(m_flInaccuracyPitchShift,float32, 0x700);
+			PROPERTY(m_flInaccuracyAltSoundThreshold,float32, 0x704);
+			PROPERTY(m_szUseRadioSubtitle,GlobalTypes::CUtlString*, 0x708);
+			PROPERTY(m_bUnzoomsAfterShot,bool, 0x710);
+			PROPERTY(m_bHideViewModelWhenZoomed,bool, 0x711);
+			PROPERTY(m_nZoomLevels,int32_t, 0x714);
+			PROPERTY(m_nZoomFOV1,int32_t, 0x718);
+			PROPERTY(m_nZoomFOV2,int32_t, 0x71c);
+			PROPERTY(m_flZoomTime0,float32, 0x720);
+			PROPERTY(m_flZoomTime1,float32, 0x724);
+			PROPERTY(m_flZoomTime2,float32, 0x728);
+			PROPERTY(m_flIronSightPullUpSpeed,float32, 0x72c);
+			PROPERTY(m_flIronSightPutDownSpeed,float32, 0x730);
+			PROPERTY(m_flIronSightFOV,float32, 0x734);
+			PROPERTY(m_flIronSightPivotForward,float32, 0x738);
+			PROPERTY(m_flIronSightLooseness,float32, 0x73c);
+			PROPERTY(m_nDamage,int32_t, 0x740);
+			PROPERTY(m_flHeadshotMultiplier,float32, 0x744);
+			PROPERTY(m_flArmorRatio,float32, 0x748);
+			PROPERTY(m_flPenetration,float32, 0x74c);
+			PROPERTY(m_flRange,float32, 0x750);
+			PROPERTY(m_flRangeModifier,float32, 0x754);
+			PROPERTY(m_flFlinchVelocityModifierLarge,float32, 0x758);
+			PROPERTY(m_flFlinchVelocityModifierSmall,float32, 0x75c);
+			PROPERTY(m_flRecoveryTimeCrouch,float32, 0x760);
+			PROPERTY(m_flRecoveryTimeStand,float32, 0x764);
+			PROPERTY(m_flRecoveryTimeCrouchFinal,float32, 0x768);
+			PROPERTY(m_flRecoveryTimeStandFinal,float32, 0x76c);
+			PROPERTY(m_nRecoveryTransitionStartBullet,int32_t, 0x770);
+			PROPERTY(m_nRecoveryTransitionEndBullet,int32_t, 0x774);
+			PROPERTY(m_flThrowVelocity,float32, 0x778);
+			PROPERTY(m_vSmokeColor,GlobalTypes::Vector, 0x77c);
+			PROPERTY(m_szAnimClass,GlobalTypes::CGlobalSymbol, 0x788);
 			S2_PAD(0x380);
 		};
 		//static_assert(sizeof(CS2::client::CCSWeaponBaseVData) == 0x7C0, "CCSWeaponBaseVData size should be 0x7C0");

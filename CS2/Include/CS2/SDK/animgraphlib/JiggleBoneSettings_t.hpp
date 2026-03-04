@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace animgraphlib {
 		class JiggleBoneSettings_t  {
 		public:
-			PROPERTY(m_nBoneIndex,int32_t , 0x0);
-			PROPERTY(m_flSpringStrength,float32 , 0x4);
-			PROPERTY(m_flMaxTimeStep,float32 , 0x8);
-			PROPERTY(m_flDamping,float32 , 0xc);
-			PROPERTY(m_vBoundsMaxLS,GlobalTypes::Vector , 0x10);
-			PROPERTY(m_vBoundsMinLS,GlobalTypes::Vector , 0x1c);
-			PROPERTY(m_eSimSpace,animgraphlib::JiggleBoneSimSpace , 0x28);
+			PROPERTY(m_nBoneIndex,int32_t, 0x0);
+			PROPERTY(m_flSpringStrength,float32, 0x4);
+			PROPERTY(m_flMaxTimeStep,float32, 0x8);
+			PROPERTY(m_flDamping,float32, 0xc);
+			PROPERTY(m_vBoundsMaxLS,GlobalTypes::Vector, 0x10);
+			PROPERTY(m_vBoundsMinLS,GlobalTypes::Vector, 0x1c);
+			PROPERTY(m_eSimSpace,animgraphlib::JiggleBoneSimSpace, 0x28);
 			S2_PAD(0x2C);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::JiggleBoneSettings_t) == 0x2C, "JiggleBoneSettings_t size should be 0x2C");

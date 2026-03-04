@@ -25,7 +25,7 @@ namespace CS2 {
 	namespace resourcesystem {
 		class ManifestTestResource_t  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
 			PROPERTY(m_child,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeManifestTestResource_t>, 0x8);
 			S2_PAD(0x10);
 		};

@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CFuncInteractionLayerClip : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x730);
-			PROPERTY(m_iszInteractsAs,GlobalTypes::CUtlSymbolLarge* , 0x738);
-			PROPERTY(m_iszInteractsWith,GlobalTypes::CUtlSymbolLarge* , 0x740);
+			PROPERTY(m_bDisabled,bool, 0x730);
+			PROPERTY(m_iszInteractsAs,GlobalTypes::CUtlSymbolLarge*, 0x738);
+			PROPERTY(m_iszInteractsWith,GlobalTypes::CUtlSymbolLarge*, 0x740);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CFuncInteractionLayerClip) == 0x748, "CFuncInteractionLayerClip size should be 0x748");

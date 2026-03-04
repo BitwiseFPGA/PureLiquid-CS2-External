@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/CMorphRectData.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class CMorphRectData;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace modellib {
 		class CMorphData  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_morphRectDatas,GlobalTypes::CUtlVector<modellib::CMorphRectData>, 0x8);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			NESTED_PROPERTY(m_morphRectDatas,GlobalTypes::CUtlVector<modellib::CMorphRectData>, 0x8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::modellib::CMorphData) == 0x20, "CMorphData size should be 0x20");

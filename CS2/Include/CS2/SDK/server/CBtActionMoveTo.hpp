@@ -22,20 +22,20 @@ namespace CS2 {
 	namespace server {
 		class CBtActionMoveTo : public CS2::server::CBtNode {
 		public:
-			PROPERTY(m_szDestinationInputKey,GlobalTypes::CUtlString* , 0x60);
-			PROPERTY(m_szHidingSpotInputKey,GlobalTypes::CUtlString* , 0x68);
-			PROPERTY(m_szThreatInputKey,GlobalTypes::CUtlString* , 0x70);
-			PROPERTY(m_vecDestination,GlobalTypes::Vector , 0x78);
-			PROPERTY(m_bAutoLookAdjust,bool , 0x84);
-			PROPERTY(m_bComputePath,bool , 0x85);
-			PROPERTY(m_flDamagingAreasPenaltyCost,float32 , 0x88);
-			PROPERTY(m_CheckApproximateCornersTimer,server::CountdownTimer , 0x90);
-			PROPERTY(m_CheckHighPriorityItem,server::CountdownTimer , 0xa8);
-			PROPERTY(m_RepathTimer,server::CountdownTimer , 0xc0);
-			PROPERTY(m_flArrivalEpsilon,float32 , 0xd8);
-			PROPERTY(m_flAdditionalArrivalEpsilon2D,float32 , 0xdc);
-			PROPERTY(m_flHidingSpotCheckDistanceThreshold,float32 , 0xe0);
-			PROPERTY(m_flNearestAreaDistanceThreshold,float32 , 0xe4);
+			PROPERTY(m_szDestinationInputKey,GlobalTypes::CUtlString*, 0x60);
+			PROPERTY(m_szHidingSpotInputKey,GlobalTypes::CUtlString*, 0x68);
+			PROPERTY(m_szThreatInputKey,GlobalTypes::CUtlString*, 0x70);
+			PROPERTY(m_vecDestination,GlobalTypes::Vector, 0x78);
+			PROPERTY(m_bAutoLookAdjust,bool, 0x84);
+			PROPERTY(m_bComputePath,bool, 0x85);
+			PROPERTY(m_flDamagingAreasPenaltyCost,float32, 0x88);
+			NESTED_PROPERTY(m_CheckApproximateCornersTimer,server::CountdownTimer, 0x90);
+			NESTED_PROPERTY(m_CheckHighPriorityItem,server::CountdownTimer, 0xa8);
+			NESTED_PROPERTY(m_RepathTimer,server::CountdownTimer, 0xc0);
+			PROPERTY(m_flArrivalEpsilon,float32, 0xd8);
+			PROPERTY(m_flAdditionalArrivalEpsilon2D,float32, 0xdc);
+			PROPERTY(m_flHidingSpotCheckDistanceThreshold,float32, 0xe0);
+			PROPERTY(m_flNearestAreaDistanceThreshold,float32, 0xe4);
 			S2_PAD(0x90);
 		};
 		//static_assert(sizeof(CS2::server::CBtActionMoveTo) == 0xE8, "CBtActionMoveTo size should be 0xE8");

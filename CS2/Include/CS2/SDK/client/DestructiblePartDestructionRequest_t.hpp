@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace client {
 		class DestructiblePartDestructionRequest_t  {
 		public:
-			PROPERTY(m_nDestroyFlags,client::EDestructibleParts_DestroyParameterFlags , 0x0);
-			PROPERTY(m_nDamageType,client::DamageTypes_t , 0x4);
-			PROPERTY(m_flPartDamage,float32 , 0x8);
-			PROPERTY(m_flPartDamageRadius,float32 , 0xc);
-			PROPERTY(m_vWsPartDamageOrigin,GlobalTypes::VectorWS , 0x10);
-			PROPERTY(m_vWsPartDamageForce,GlobalTypes::Vector , 0x1c);
+			PROPERTY(m_nDestroyFlags,client::EDestructibleParts_DestroyParameterFlags, 0x0);
+			PROPERTY(m_nDamageType,client::DamageTypes_t, 0x4);
+			PROPERTY(m_flPartDamage,float32, 0x8);
+			PROPERTY(m_flPartDamageRadius,float32, 0xc);
+			PROPERTY(m_vWsPartDamageOrigin,GlobalTypes::VectorWS, 0x10);
+			PROPERTY(m_vWsPartDamageForce,GlobalTypes::Vector, 0x1c);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::client::DestructiblePartDestructionRequest_t) == 0x28, "DestructiblePartDestructionRequest_t size should be 0x28");

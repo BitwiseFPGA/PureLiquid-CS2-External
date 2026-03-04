@@ -11,6 +11,7 @@
 
 
 #include <SDK/client/CPathSimple.hpp>
+#include <SDK/client/CPathNode.hpp>
 
 
 
@@ -22,7 +23,7 @@ namespace CS2 {
 		class CPathWithDynamicNodes : public CS2::client::CPathSimple {
 		public:
 			PROPERTY(m_vecPathNodes,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::CPathNode>>, 0x710);
-			PROPERTY(m_xInitialPathWorldToLocal,GlobalTypes::CTransform , 0x730);
+			PROPERTY(m_xInitialPathWorldToLocal,GlobalTypes::CTransform, 0x730);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::client::CPathWithDynamicNodes) == 0x750, "CPathWithDynamicNodes size should be 0x750");

@@ -10,15 +10,11 @@
 #endif
 
 
+#include <SDK/animgraphlib/CAnimActionUpdater.hpp>
 #include <SDK/animgraphlib/StateActionBehavior.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CAnimActionUpdater;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,7 +23,7 @@ namespace CS2 {
 		class CStateActionUpdater  {
 		public:
 			PROPERTY(m_pAction,GlobalTypes::CSmartPtr<animgraphlib::CAnimActionUpdater>, 0x0);
-			PROPERTY(m_eBehavior,animgraphlib::StateActionBehavior , 0x8);
+			PROPERTY(m_eBehavior,animgraphlib::StateActionBehavior, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CStateActionUpdater) == 0x10, "CStateActionUpdater size should be 0x10");

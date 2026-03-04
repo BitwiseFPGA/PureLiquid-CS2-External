@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class ViewAngleServerChange_t  {
 		public:
-			PROPERTY(nType,client::FixAngleSet_t , 0x30);
-			PROPERTY(qAngle,GlobalTypes::QAngle , 0x34);
-			PROPERTY(nIndex,uint32_t , 0x40);
+			PROPERTY(nType,client::FixAngleSet_t, 0x30);
+			PROPERTY(qAngle,GlobalTypes::QAngle, 0x34);
+			PROPERTY(nIndex,uint32_t, 0x40);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::server::ViewAngleServerChange_t) == 0x48, "ViewAngleServerChange_t size should be 0x48");

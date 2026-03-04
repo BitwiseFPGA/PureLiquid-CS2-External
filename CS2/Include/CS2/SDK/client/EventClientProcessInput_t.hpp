@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class EventClientProcessInput_t  {
 		public:
-			PROPERTY(m_LoopState,client::EngineLoopState_t , 0x0);
-			PROPERTY(m_flRealTime,float32 , 0x28);
-			PROPERTY(m_flTickInterval,float32 , 0x2c);
-			PROPERTY(m_flTickStartTime,float64 , 0x30);
+			NESTED_PROPERTY(m_LoopState,client::EngineLoopState_t, 0x0);
+			PROPERTY(m_flRealTime,float32, 0x28);
+			PROPERTY(m_flTickInterval,float32, 0x2c);
+			PROPERTY(m_flTickStartTime,float64, 0x30);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::client::EventClientProcessInput_t) == 0x38, "EventClientProcessInput_t size should be 0x38");

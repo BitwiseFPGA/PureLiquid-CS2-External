@@ -22,20 +22,20 @@ namespace CS2 {
 	namespace server {
 		class CSoundEventEntity : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_bStartOnSpawn,bool , 0x4a8);
-			PROPERTY(m_bToLocalPlayer,bool , 0x4a9);
-			PROPERTY(m_bStopOnNew,bool , 0x4aa);
-			PROPERTY(m_bSaveRestore,bool , 0x4ab);
-			PROPERTY(m_bSavedIsPlaying,bool , 0x4ac);
-			PROPERTY(m_flSavedElapsedTime,float32 , 0x4b0);
-			PROPERTY(m_iszSourceEntityName,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
-			PROPERTY(m_iszAttachmentName,GlobalTypes::CUtlSymbolLarge* , 0x4c0);
+			PROPERTY(m_bStartOnSpawn,bool, 0x4a8);
+			PROPERTY(m_bToLocalPlayer,bool, 0x4a9);
+			PROPERTY(m_bStopOnNew,bool, 0x4aa);
+			PROPERTY(m_bSaveRestore,bool, 0x4ab);
+			PROPERTY(m_bSavedIsPlaying,bool, 0x4ac);
+			PROPERTY(m_flSavedElapsedTime,float32, 0x4b0);
+			PROPERTY(m_iszSourceEntityName,GlobalTypes::CUtlSymbolLarge*, 0x4b8);
+			PROPERTY(m_iszAttachmentName,GlobalTypes::CUtlSymbolLarge*, 0x4c0);
 			PROPERTY(m_onGUIDChanged,GlobalTypes::CEntityOutputTemplate< uint64, uint64 >, 0x4c8);
-			PROPERTY(m_onSoundFinished,entity2::CEntityIOOutput , 0x4e8);
-			PROPERTY(m_flClientCullRadius,float32 , 0x500);
-			PROPERTY(m_iszSoundName,GlobalTypes::CUtlSymbolLarge* , 0x530);
-			PROPERTY(m_hSource,GlobalTypes::CEntityHandle , 0x54c);
-			PROPERTY(m_nEntityIndexSelection,int32_t , 0x550);
+			NESTED_PROPERTY(m_onSoundFinished,entity2::CEntityIOOutput, 0x4e8);
+			PROPERTY(m_flClientCullRadius,float32, 0x500);
+			PROPERTY(m_iszSoundName,GlobalTypes::CUtlSymbolLarge*, 0x530);
+			PROPERTY(m_hSource,GlobalTypes::CEntityHandle, 0x54c);
+			PROPERTY(m_nEntityIndexSelection,int32_t, 0x550);
 			S2_PAD(0xB0);
 		};
 		//static_assert(sizeof(CS2::server::CSoundEventEntity) == 0x558, "CSoundEventEntity size should be 0x558");

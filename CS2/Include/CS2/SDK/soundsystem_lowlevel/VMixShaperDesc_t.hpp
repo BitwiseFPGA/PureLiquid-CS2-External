@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixShaperDesc_t  {
 		public:
-			PROPERTY(m_nShape,int32_t , 0x0);
-			PROPERTY(m_fldbDrive,float32 , 0x4);
-			PROPERTY(m_fldbOutputGain,float32 , 0x8);
-			PROPERTY(m_flWetMix,float32 , 0xc);
-			PROPERTY(m_nOversampleFactor,int32_t , 0x10);
+			PROPERTY(m_nShape,int32_t, 0x0);
+			PROPERTY(m_fldbDrive,float32, 0x4);
+			PROPERTY(m_fldbOutputGain,float32, 0x8);
+			PROPERTY(m_flWetMix,float32, 0xc);
+			PROPERTY(m_nOversampleFactor,int32_t, 0x10);
 			S2_PAD(0x14);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixShaperDesc_t) == 0x14, "VMixShaperDesc_t size should be 0x14");

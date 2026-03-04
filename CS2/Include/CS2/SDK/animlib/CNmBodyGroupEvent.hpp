@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animlib {
 		class CNmBodyGroupEvent : public CS2::animlib::CNmEvent {
 		public:
-			PROPERTY(m_groupName,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_nGroupValue,int32_t , 0x28);
+			PROPERTY(m_groupName,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_nGroupValue,int32_t, 0x28);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmBodyGroupEvent) == 0x30, "CNmBodyGroupEvent size should be 0x30");

@@ -11,14 +11,10 @@
 
 
 #include <SDK/animgraphlib/CAnimTagBase.hpp>
+#include <SDK/animgraphlib/CBodyGroupSetting.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CBodyGroupSetting;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,8 +22,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CBodyGroupAnimTag : public CS2::animgraphlib::CAnimTagBase {
 		public:
-			PROPERTY(m_nPriority,int32_t , 0x58);
-			PROPERTY(m_bodyGroupSettings,GlobalTypes::CUtlVector<animgraphlib::CBodyGroupSetting>, 0x60);
+			PROPERTY(m_nPriority,int32_t, 0x58);
+			NESTED_PROPERTY(m_bodyGroupSettings,GlobalTypes::CUtlVector<animgraphlib::CBodyGroupSetting>, 0x60);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CBodyGroupAnimTag) == 0x78, "CBodyGroupAnimTag size should be 0x78");

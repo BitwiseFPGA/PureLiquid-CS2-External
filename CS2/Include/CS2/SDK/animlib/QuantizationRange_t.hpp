@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animlib {
 		class QuantizationRange_t  {
 		public:
-			PROPERTY(m_flRangeStart,float32 , 0x0);
-			PROPERTY(m_flRangeLength,float32 , 0x4);
+			PROPERTY(m_flRangeStart,float32, 0x0);
+			PROPERTY(m_flRangeLength,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animlib::QuantizationRange_t) == 0x8, "NmCompressionSettings_t::QuantizationRange_t size should be 0x8");

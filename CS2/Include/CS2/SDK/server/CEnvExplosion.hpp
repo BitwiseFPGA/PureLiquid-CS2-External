@@ -28,20 +28,20 @@ namespace CS2 {
 	namespace server {
 		class CEnvExplosion : public CS2::server::CModelPointEntity {
 		public:
-			PROPERTY(m_iMagnitude,int32_t , 0x730);
-			PROPERTY(m_flPlayerDamage,float32 , 0x734);
-			PROPERTY(m_iRadiusOverride,int32_t , 0x738);
-			PROPERTY(m_flInnerRadius,float32 , 0x73c);
-			PROPERTY(m_flDamageForce,float32 , 0x740);
+			PROPERTY(m_iMagnitude,int32_t, 0x730);
+			PROPERTY(m_flPlayerDamage,float32, 0x734);
+			PROPERTY(m_iRadiusOverride,int32_t, 0x738);
+			PROPERTY(m_flInnerRadius,float32, 0x73c);
+			PROPERTY(m_flDamageForce,float32, 0x740);
 			PROPERTY(m_hInflictor,GlobalTypes::CHandle<server::CBaseEntity>, 0x744);
-			PROPERTY(m_iCustomDamageType,client::DamageTypes_t , 0x748);
-			PROPERTY(m_bCreateDebris,bool , 0x74c);
-			PROPERTY(m_iszCustomEffectName,GlobalTypes::CUtlSymbolLarge* , 0x758);
-			PROPERTY(m_iszCustomSoundName,GlobalTypes::CUtlSymbolLarge* , 0x760);
-			PROPERTY(m_bSuppressParticleImpulse,bool , 0x768);
-			PROPERTY(m_iClassIgnore,client::Class_T , 0x76c);
-			PROPERTY(m_iClassIgnore2,client::Class_T , 0x770);
-			PROPERTY(m_iszEntityIgnoreName,GlobalTypes::CUtlSymbolLarge* , 0x778);
+			PROPERTY(m_iCustomDamageType,client::DamageTypes_t, 0x748);
+			PROPERTY(m_bCreateDebris,bool, 0x74c);
+			PROPERTY(m_iszCustomEffectName,GlobalTypes::CUtlSymbolLarge*, 0x758);
+			PROPERTY(m_iszCustomSoundName,GlobalTypes::CUtlSymbolLarge*, 0x760);
+			PROPERTY(m_bSuppressParticleImpulse,bool, 0x768);
+			PROPERTY(m_iClassIgnore,client::Class_T, 0x76c);
+			PROPERTY(m_iClassIgnore2,client::Class_T, 0x770);
+			PROPERTY(m_iszEntityIgnoreName,GlobalTypes::CUtlSymbolLarge*, 0x778);
 			PROPERTY(m_hEntityIgnore,GlobalTypes::CHandle<server::CBaseEntity>, 0x780);
 			S2_PAD(0x58);
 		};

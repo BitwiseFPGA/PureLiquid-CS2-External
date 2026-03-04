@@ -25,15 +25,15 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_DistanceBetweenVecs : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d0);
-			PROPERTY(m_vecPoint1,particleslib::CPerParticleVecInput , 0x1d8);
-			PROPERTY(m_vecPoint2,particleslib::CPerParticleVecInput , 0x890);
-			PROPERTY(m_flInputMin,particleslib::CPerParticleFloatInput , 0xf48);
-			PROPERTY(m_flInputMax,particleslib::CPerParticleFloatInput , 0x10b8);
-			PROPERTY(m_flOutputMin,particleslib::CPerParticleFloatInput , 0x1228);
-			PROPERTY(m_flOutputMax,particleslib::CPerParticleFloatInput , 0x1398);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x1508);
-			PROPERTY(m_bDeltaTime,bool , 0x150c);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d0);
+			NESTED_PROPERTY(m_vecPoint1,particleslib::CPerParticleVecInput, 0x1d8);
+			NESTED_PROPERTY(m_vecPoint2,particleslib::CPerParticleVecInput, 0x890);
+			NESTED_PROPERTY(m_flInputMin,particleslib::CPerParticleFloatInput, 0xf48);
+			NESTED_PROPERTY(m_flInputMax,particleslib::CPerParticleFloatInput, 0x10b8);
+			NESTED_PROPERTY(m_flOutputMin,particleslib::CPerParticleFloatInput, 0x1228);
+			NESTED_PROPERTY(m_flOutputMax,particleslib::CPerParticleFloatInput, 0x1398);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x1508);
+			PROPERTY(m_bDeltaTime,bool, 0x150c);
 			S2_PAD(0x1340);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_DistanceBetweenVecs) == 0x1510, "C_OP_DistanceBetweenVecs size should be 0x1510");

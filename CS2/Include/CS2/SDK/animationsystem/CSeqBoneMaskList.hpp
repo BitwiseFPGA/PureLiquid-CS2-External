@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqBoneMaskList  {
 		public:
-			PROPERTY(m_sName,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_nLocalBoneArray,GlobalTypes::CUtlVector< int16 >, 0x10);
-			PROPERTY(m_flBoneWeightArray,GlobalTypes::CUtlVector< float32 >, 0x28);
-			PROPERTY(m_flDefaultMorphCtrlWeight,float32 , 0x40);
-			PROPERTY(m_morphCtrlWeightArray,GlobalTypes::CUtlVector<std::pair< CBufferString, float32 >>, 0x48);
+			PROPERTY(m_sName,GlobalTypes::CBufferString, 0x0);
+			NESTED_PROPERTY(m_nLocalBoneArray,GlobalTypes::CUtlVector< int16 >, 0x10);
+			NESTED_PROPERTY(m_flBoneWeightArray,GlobalTypes::CUtlVector< float32 >, 0x28);
+			PROPERTY(m_flDefaultMorphCtrlWeight,float32, 0x40);
+			NESTED_PROPERTY(m_morphCtrlWeightArray,GlobalTypes::CUtlVector<std::pair< CBufferString, float32 >>, 0x48);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqBoneMaskList) == 0x60, "CSeqBoneMaskList size should be 0x60");

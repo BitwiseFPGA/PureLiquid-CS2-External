@@ -24,17 +24,17 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapAverageHitboxSpeedtoCP : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nInControlPointNumber,int32_t , 0x1d8);
-			PROPERTY(m_nOutControlPointNumber,int32_t , 0x1dc);
-			PROPERTY(m_nField,int32_t , 0x1e0);
-			PROPERTY(m_nHitboxDataType,particles::ParticleHitboxDataSelection_t , 0x1e4);
-			PROPERTY(m_flInputMin,particleslib::CParticleCollectionFloatInput , 0x1e8);
-			PROPERTY(m_flInputMax,particleslib::CParticleCollectionFloatInput , 0x358);
-			PROPERTY(m_flOutputMin,particleslib::CParticleCollectionFloatInput , 0x4c8);
-			PROPERTY(m_flOutputMax,particleslib::CParticleCollectionFloatInput , 0x638);
-			PROPERTY(m_nHeightControlPointNumber,int32_t , 0x7a8);
-			PROPERTY(m_vecComparisonVelocity,particleslib::CParticleCollectionVecInput , 0x7b0);
-			PROPERTY_ARRAY(m_HitboxSetName,char , 128 , 0xe68);
+			PROPERTY(m_nInControlPointNumber,int32_t, 0x1d8);
+			PROPERTY(m_nOutControlPointNumber,int32_t, 0x1dc);
+			PROPERTY(m_nField,int32_t, 0x1e0);
+			PROPERTY(m_nHitboxDataType,particles::ParticleHitboxDataSelection_t, 0x1e4);
+			NESTED_PROPERTY(m_flInputMin,particleslib::CParticleCollectionFloatInput, 0x1e8);
+			NESTED_PROPERTY(m_flInputMax,particleslib::CParticleCollectionFloatInput, 0x358);
+			NESTED_PROPERTY(m_flOutputMin,particleslib::CParticleCollectionFloatInput, 0x4c8);
+			NESTED_PROPERTY(m_flOutputMax,particleslib::CParticleCollectionFloatInput, 0x638);
+			PROPERTY(m_nHeightControlPointNumber,int32_t, 0x7a8);
+			NESTED_PROPERTY(m_vecComparisonVelocity,particleslib::CParticleCollectionVecInput, 0x7b0);
+			PROPERTY_ARRAY(m_HitboxSetName,char, 128 , 0xe68);
 			S2_PAD(0xD10);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapAverageHitboxSpeedtoCP) == 0xEE8, "C_OP_RemapAverageHitboxSpeedtoCP size should be 0xEE8");

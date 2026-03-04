@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/CHitBox.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class CHitBox;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,10 +21,10 @@ namespace CS2 {
 	namespace modellib {
 		class CHitBoxSet  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_nNameHash,uint32_t , 0x8);
-			PROPERTY(m_HitBoxes,GlobalTypes::CUtlVector<modellib::CHitBox>, 0x10);
-			PROPERTY(m_SourceFilename,GlobalTypes::CUtlString* , 0x28);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_nNameHash,uint32_t, 0x8);
+			NESTED_PROPERTY(m_HitBoxes,GlobalTypes::CUtlVector<modellib::CHitBox>, 0x10);
+			PROPERTY(m_SourceFilename,GlobalTypes::CUtlString*, 0x28);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::modellib::CHitBoxSet) == 0x30, "CHitBoxSet size should be 0x30");

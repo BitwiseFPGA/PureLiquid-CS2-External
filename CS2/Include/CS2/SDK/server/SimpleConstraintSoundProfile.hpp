@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace server {
 		class SimpleConstraintSoundProfile  {
 		public:
-			PROPERTY(m_flKeyPointMinSoundThreshold,float32 , 0x8);
-			PROPERTY(m_flKeyPointMaxSoundThreshold,float32 , 0xc);
-			PROPERTY(m_reversalSoundThresholdSmall,float32 , 0x10);
-			PROPERTY(m_reversalSoundThresholdMedium,float32 , 0x14);
-			PROPERTY(m_reversalSoundThresholdLarge,float32 , 0x18);
+			PROPERTY(m_flKeyPointMinSoundThreshold,float32, 0x8);
+			PROPERTY(m_flKeyPointMaxSoundThreshold,float32, 0xc);
+			PROPERTY(m_reversalSoundThresholdSmall,float32, 0x10);
+			PROPERTY(m_reversalSoundThresholdMedium,float32, 0x14);
+			PROPERTY(m_reversalSoundThresholdLarge,float32, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::SimpleConstraintSoundProfile) == 0x20, "SimpleConstraintSoundProfile size should be 0x20");

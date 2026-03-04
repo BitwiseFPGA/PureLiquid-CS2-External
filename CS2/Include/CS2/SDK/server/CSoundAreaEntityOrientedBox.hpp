@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class CSoundAreaEntityOrientedBox : public CS2::server::CSoundAreaEntityBase {
 		public:
-			PROPERTY(m_vMin,GlobalTypes::Vector , 0x4c8);
-			PROPERTY(m_vMax,GlobalTypes::Vector , 0x4d4);
+			PROPERTY(m_vMin,GlobalTypes::Vector, 0x4c8);
+			PROPERTY(m_vMax,GlobalTypes::Vector, 0x4d4);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CSoundAreaEntityOrientedBox) == 0x4E0, "CSoundAreaEntityOrientedBox size should be 0x4E0");

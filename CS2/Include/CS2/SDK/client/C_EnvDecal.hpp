@@ -27,14 +27,14 @@ namespace CS2 {
 		class C_EnvDecal : public CS2::client::C_BaseModelEntity {
 		public:
 			PROPERTY(m_hDecalMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0xe88);
-			PROPERTY(m_flWidth,float32 , 0xe90);
-			PROPERTY(m_flHeight,float32 , 0xe94);
-			PROPERTY(m_flDepth,float32 , 0xe98);
-			PROPERTY(m_nRenderOrder,uint32_t , 0xe9c);
-			PROPERTY(m_bProjectOnWorld,bool , 0xea0);
-			PROPERTY(m_bProjectOnCharacters,bool , 0xea1);
-			PROPERTY(m_bProjectOnWater,bool , 0xea2);
-			PROPERTY(m_flDepthSortBias,float32 , 0xea4);
+			PROPERTY(m_flWidth,float32, 0xe90);
+			PROPERTY(m_flHeight,float32, 0xe94);
+			PROPERTY(m_flDepth,float32, 0xe98);
+			PROPERTY(m_nRenderOrder,uint32_t, 0xe9c);
+			PROPERTY(m_bProjectOnWorld,bool, 0xea0);
+			PROPERTY(m_bProjectOnCharacters,bool, 0xea1);
+			PROPERTY(m_bProjectOnWater,bool, 0xea2);
+			PROPERTY(m_flDepthSortBias,float32, 0xea4);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::client::C_EnvDecal) == 0xEC0, "C_EnvDecal size should be 0xEC0");

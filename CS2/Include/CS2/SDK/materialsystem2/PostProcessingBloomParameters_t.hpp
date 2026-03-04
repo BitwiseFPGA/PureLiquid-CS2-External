@@ -21,22 +21,22 @@ namespace CS2 {
 	namespace materialsystem2 {
 		class PostProcessingBloomParameters_t  {
 		public:
-			PROPERTY(m_blendMode,materialsystem2::BloomBlendMode_t , 0x0);
-			PROPERTY(m_flBloomStrength,float32 , 0x4);
-			PROPERTY(m_flScreenBloomStrength,float32 , 0x8);
-			PROPERTY(m_flBlurBloomStrength,float32 , 0xc);
-			PROPERTY(m_flBloomThreshold,float32 , 0x10);
-			PROPERTY(m_flBloomThresholdWidth,float32 , 0x14);
-			PROPERTY(m_flSkyboxBloomStrength,float32 , 0x18);
-			PROPERTY(m_flBloomStartValue,float32 , 0x1c);
-			PROPERTY(m_flComputeBloomStrength,float32 , 0x20);
-			PROPERTY(m_flComputeBloomThreshold,float32 , 0x24);
-			PROPERTY(m_flComputeBloomRadius,float32 , 0x28);
-			PROPERTY(m_flComputeBloomEffectsScale,float32 , 0x2c);
-			PROPERTY(m_flComputeBloomLensDirtStrength,float32 , 0x30);
-			PROPERTY(m_flComputeBloomLensDirtBlackLevel,float32 , 0x34);
-			PROPERTY_ARRAY(m_flBlurWeight,float32 , 5 , 0x38);
-			PROPERTY_ARRAY(m_vBlurTint,GlobalTypes::Vector , 5 , 0x4c);
+			PROPERTY(m_blendMode,materialsystem2::BloomBlendMode_t, 0x0);
+			PROPERTY(m_flBloomStrength,float32, 0x4);
+			PROPERTY(m_flScreenBloomStrength,float32, 0x8);
+			PROPERTY(m_flBlurBloomStrength,float32, 0xc);
+			PROPERTY(m_flBloomThreshold,float32, 0x10);
+			PROPERTY(m_flBloomThresholdWidth,float32, 0x14);
+			PROPERTY(m_flSkyboxBloomStrength,float32, 0x18);
+			PROPERTY(m_flBloomStartValue,float32, 0x1c);
+			PROPERTY(m_flComputeBloomStrength,float32, 0x20);
+			PROPERTY(m_flComputeBloomThreshold,float32, 0x24);
+			PROPERTY(m_flComputeBloomRadius,float32, 0x28);
+			PROPERTY(m_flComputeBloomEffectsScale,float32, 0x2c);
+			PROPERTY(m_flComputeBloomLensDirtStrength,float32, 0x30);
+			PROPERTY(m_flComputeBloomLensDirtBlackLevel,float32, 0x34);
+			PROPERTY_ARRAY(m_flBlurWeight,float32, 5 , 0x38);
+			PROPERTY_ARRAY(m_vBlurTint,GlobalTypes::Vector, 5 , 0x4c);
 			S2_PAD(0x88);
 		};
 		//static_assert(sizeof(CS2::materialsystem2::PostProcessingBloomParameters_t) == 0x88, "PostProcessingBloomParameters_t size should be 0x88");

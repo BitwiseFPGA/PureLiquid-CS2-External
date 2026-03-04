@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class EventFrameBoundary_t  {
 		public:
-			PROPERTY(m_flFrameTime,float32 , 0x0);
+			PROPERTY(m_flFrameTime,float32, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::client::EventFrameBoundary_t) == 0x4, "EventFrameBoundary_t size should be 0x4");

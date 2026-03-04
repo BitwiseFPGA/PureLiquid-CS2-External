@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace server {
 		class CTimeline : public CS2::server::IntervalTimer {
 		public:
-			PROPERTY_ARRAY(m_flValues,float32 , 64 , 0x10);
-			PROPERTY_ARRAY(m_nValueCounts,int32_t , 64 , 0x110);
-			PROPERTY(m_nBucketCount,int32_t , 0x210);
-			PROPERTY(m_flInterval,float32 , 0x214);
-			PROPERTY(m_flFinalValue,float32 , 0x218);
-			PROPERTY(m_nCompressionType,client::TimelineCompression_t , 0x21c);
-			PROPERTY(m_bStopped,bool , 0x220);
+			PROPERTY_ARRAY(m_flValues,float32, 64 , 0x10);
+			PROPERTY_ARRAY(m_nValueCounts,int32_t, 64 , 0x110);
+			PROPERTY(m_nBucketCount,int32_t, 0x210);
+			PROPERTY(m_flInterval,float32, 0x214);
+			PROPERTY(m_flFinalValue,float32, 0x218);
+			PROPERTY(m_nCompressionType,client::TimelineCompression_t, 0x21c);
+			PROPERTY(m_bStopped,bool, 0x220);
 			S2_PAD(0x218);
 		};
 		//static_assert(sizeof(CS2::server::CTimeline) == 0x228, "CTimeline size should be 0x228");

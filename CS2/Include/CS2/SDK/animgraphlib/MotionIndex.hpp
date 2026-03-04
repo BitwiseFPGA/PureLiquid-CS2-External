@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class MotionIndex  {
 		public:
-			PROPERTY(m_nGroup,uint16_t , 0x0);
-			PROPERTY(m_nMotion,uint16_t , 0x2);
+			PROPERTY(m_nGroup,uint16_t, 0x0);
+			PROPERTY(m_nMotion,uint16_t, 0x2);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::MotionIndex) == 0x4, "MotionIndex size should be 0x4");

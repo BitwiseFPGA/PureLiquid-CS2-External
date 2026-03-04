@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class FilterHealth : public CS2::server::CBaseFilter {
 		public:
-			PROPERTY(m_bAdrenalineActive,bool , 0x4e0);
-			PROPERTY(m_iHealthMin,int32_t , 0x4e4);
-			PROPERTY(m_iHealthMax,int32_t , 0x4e8);
+			PROPERTY(m_bAdrenalineActive,bool, 0x4e0);
+			PROPERTY(m_iHealthMin,int32_t, 0x4e4);
+			PROPERTY(m_iHealthMax,int32_t, 0x4e8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::FilterHealth) == 0x4F0, "FilterHealth size should be 0x4F0");

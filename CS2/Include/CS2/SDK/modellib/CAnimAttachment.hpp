@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace modellib {
 		class CAnimAttachment  {
 		public:
-			PROPERTY_ARRAY(m_influenceRotations,GlobalTypes::Quaternion , 3 , 0x0);
-			PROPERTY_ARRAY(m_influenceOffsets,GlobalTypes::VectorAligned , 3 , 0x30);
-			PROPERTY_ARRAY(m_influenceIndices,int32_t , 3 , 0x60);
-			PROPERTY_ARRAY(m_influenceWeights,float32 , 3 , 0x6c);
-			PROPERTY(m_numInfluences,uint8_t , 0x78);
+			PROPERTY_ARRAY(m_influenceRotations,GlobalTypes::Quaternion, 3 , 0x0);
+			PROPERTY_ARRAY(m_influenceOffsets,GlobalTypes::VectorAligned, 3 , 0x30);
+			PROPERTY_ARRAY(m_influenceIndices,int32_t, 3 , 0x60);
+			PROPERTY_ARRAY(m_influenceWeights,float32, 3 , 0x6c);
+			PROPERTY(m_numInfluences,uint8_t, 0x78);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::modellib::CAnimAttachment) == 0x80, "CAnimAttachment size should be 0x80");

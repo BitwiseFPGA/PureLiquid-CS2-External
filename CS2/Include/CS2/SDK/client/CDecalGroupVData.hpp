@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/client/DecalGroupOption_t.hpp>
 
 
 
-namespace CS2 {
-	namespace client {
-		class DecalGroupOption_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class CDecalGroupVData  {
 		public:
-			PROPERTY(m_vecOptions,GlobalTypes::CUtlVector<client::DecalGroupOption_t>, 0x0);
-			PROPERTY(m_flTotalProbability,float32 , 0x18);
+			NESTED_PROPERTY(m_vecOptions,GlobalTypes::CUtlVector<client::DecalGroupOption_t>, 0x0);
+			PROPERTY(m_flTotalProbability,float32, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::CDecalGroupVData) == 0x20, "CDecalGroupVData size should be 0x20");

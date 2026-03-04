@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animlib {
 		class ReferencedGraphSlot_t  {
 		public:
-			PROPERTY(m_nNodeIdx,int16_t , 0x0);
-			PROPERTY(m_dataSlotIdx,int16_t , 0x2);
+			PROPERTY(m_nNodeIdx,int16_t, 0x0);
+			PROPERTY(m_dataSlotIdx,int16_t, 0x2);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::animlib::ReferencedGraphSlot_t) == 0x4, "CNmGraphDefinition::ReferencedGraphSlot_t size should be 0x4");

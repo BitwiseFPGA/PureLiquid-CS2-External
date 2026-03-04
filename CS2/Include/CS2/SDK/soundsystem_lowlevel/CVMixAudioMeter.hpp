@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixAudioMeter  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_displayName,GlobalTypes::CUtlString* , 0x8);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_displayName,GlobalTypes::CUtlString*, 0x8);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixAudioMeter) == 0x18, "CVMixAudioMeter size should be 0x18");

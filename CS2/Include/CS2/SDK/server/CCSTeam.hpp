@@ -21,20 +21,20 @@ namespace CS2 {
 	namespace server {
 		class CCSTeam : public CS2::server::CTeam {
 		public:
-			PROPERTY(m_nLastRecievedShorthandedRoundBonus,int32_t , 0x560);
-			PROPERTY(m_nShorthandedRoundBonusStartRound,int32_t , 0x564);
-			PROPERTY(m_bSurrendered,bool , 0x568);
-			PROPERTY_ARRAY(m_szTeamMatchStat,char , 512 , 0x569);
-			PROPERTY(m_numMapVictories,int32_t , 0x76c);
-			PROPERTY(m_scoreFirstHalf,int32_t , 0x770);
-			PROPERTY(m_scoreSecondHalf,int32_t , 0x774);
-			PROPERTY(m_scoreOvertime,int32_t , 0x778);
-			PROPERTY_ARRAY(m_szClanTeamname,char , 129 , 0x77c);
-			PROPERTY(m_iClanID,uint32_t , 0x800);
-			PROPERTY_ARRAY(m_szTeamFlagImage,char , 8 , 0x804);
-			PROPERTY_ARRAY(m_szTeamLogoImage,char , 8 , 0x80c);
-			PROPERTY(m_flNextResourceTime,float32 , 0x814);
-			PROPERTY(m_iLastUpdateSentAt,int32_t , 0x818);
+			PROPERTY(m_nLastRecievedShorthandedRoundBonus,int32_t, 0x560);
+			PROPERTY(m_nShorthandedRoundBonusStartRound,int32_t, 0x564);
+			PROPERTY(m_bSurrendered,bool, 0x568);
+			PROPERTY_ARRAY(m_szTeamMatchStat,char, 512 , 0x569);
+			PROPERTY(m_numMapVictories,int32_t, 0x76c);
+			PROPERTY(m_scoreFirstHalf,int32_t, 0x770);
+			PROPERTY(m_scoreSecondHalf,int32_t, 0x774);
+			PROPERTY(m_scoreOvertime,int32_t, 0x778);
+			PROPERTY_ARRAY(m_szClanTeamname,char, 129 , 0x77c);
+			PROPERTY(m_iClanID,uint32_t, 0x800);
+			PROPERTY_ARRAY(m_szTeamFlagImage,char, 8 , 0x804);
+			PROPERTY_ARRAY(m_szTeamLogoImage,char, 8 , 0x80c);
+			PROPERTY(m_flNextResourceTime,float32, 0x814);
+			PROPERTY(m_iLastUpdateSentAt,int32_t, 0x818);
 			S2_PAD(0x2C0);
 		};
 		//static_assert(sizeof(CS2::server::CCSTeam) == 0x820, "CCSTeam size should be 0x820");

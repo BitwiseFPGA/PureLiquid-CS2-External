@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CDampedPathAnimMotorUpdater : public CS2::animgraphlib::CPathAnimMotorUpdaterBase {
 		public:
-			PROPERTY(m_flAnticipationTime,float32 , 0x2c);
-			PROPERTY(m_flMinSpeedScale,float32 , 0x30);
-			PROPERTY(m_hAnticipationPosParam,animgraphlib::CAnimParamHandle , 0x34);
-			PROPERTY(m_hAnticipationHeadingParam,animgraphlib::CAnimParamHandle , 0x36);
-			PROPERTY(m_flSpringConstant,float32 , 0x38);
-			PROPERTY(m_flMinSpringTension,float32 , 0x3c);
-			PROPERTY(m_flMaxSpringTension,float32 , 0x40);
+			PROPERTY(m_flAnticipationTime,float32, 0x2c);
+			PROPERTY(m_flMinSpeedScale,float32, 0x30);
+			NESTED_PROPERTY(m_hAnticipationPosParam,animgraphlib::CAnimParamHandle, 0x34);
+			NESTED_PROPERTY(m_hAnticipationHeadingParam,animgraphlib::CAnimParamHandle, 0x36);
+			PROPERTY(m_flSpringConstant,float32, 0x38);
+			PROPERTY(m_flMinSpringTension,float32, 0x3c);
+			PROPERTY(m_flMaxSpringTension,float32, 0x40);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CDampedPathAnimMotorUpdater) == 0x48, "CDampedPathAnimMotorUpdater size should be 0x48");

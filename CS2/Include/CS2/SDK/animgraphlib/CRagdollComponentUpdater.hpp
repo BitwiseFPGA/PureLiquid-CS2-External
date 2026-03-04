@@ -11,15 +11,11 @@
 
 
 #include <SDK/animgraphlib/CAnimComponentUpdater.hpp>
+#include <SDK/animgraphlib/CAnimNodePath.hpp>
+#include <SDK/animgraphlib/WeightList.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CAnimNodePath;
-		class WeightList;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,16 +23,16 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CRagdollComponentUpdater : public CS2::animgraphlib::CAnimComponentUpdater {
 		public:
-			PROPERTY(m_ragdollNodePaths,GlobalTypes::CUtlVector<animgraphlib::CAnimNodePath>, 0x30);
-			PROPERTY(m_followAttachmentNodePaths,GlobalTypes::CUtlVector<animgraphlib::CAnimNodePath>, 0x48);
-			PROPERTY(m_boneIndices,GlobalTypes::CUtlVector< int32 >, 0x60);
+			NESTED_PROPERTY(m_ragdollNodePaths,GlobalTypes::CUtlVector<animgraphlib::CAnimNodePath>, 0x30);
+			NESTED_PROPERTY(m_followAttachmentNodePaths,GlobalTypes::CUtlVector<animgraphlib::CAnimNodePath>, 0x48);
+			NESTED_PROPERTY(m_boneIndices,GlobalTypes::CUtlVector< int32 >, 0x60);
 			PROPERTY(m_boneNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x78);
-			PROPERTY(m_weightLists,GlobalTypes::CUtlVector<animgraphlib::WeightList>, 0x90);
-			PROPERTY(m_boneToWeightIndices,GlobalTypes::CUtlVector< int32 >, 0xa8);
-			PROPERTY(m_flSpringFrequencyMin,float32 , 0xc0);
-			PROPERTY(m_flSpringFrequencyMax,float32 , 0xc4);
-			PROPERTY(m_flMaxStretch,float32 , 0xc8);
-			PROPERTY(m_bSolidCollisionAtZeroWeight,bool , 0xcc);
+			NESTED_PROPERTY(m_weightLists,GlobalTypes::CUtlVector<animgraphlib::WeightList>, 0x90);
+			NESTED_PROPERTY(m_boneToWeightIndices,GlobalTypes::CUtlVector< int32 >, 0xa8);
+			PROPERTY(m_flSpringFrequencyMin,float32, 0xc0);
+			PROPERTY(m_flSpringFrequencyMax,float32, 0xc4);
+			PROPERTY(m_flMaxStretch,float32, 0xc8);
+			PROPERTY(m_bSolidCollisionAtZeroWeight,bool, 0xcc);
 			S2_PAD(0xA8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CRagdollComponentUpdater) == 0xD8, "CRagdollComponentUpdater size should be 0xD8");

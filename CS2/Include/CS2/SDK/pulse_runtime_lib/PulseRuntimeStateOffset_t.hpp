@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class PulseRuntimeStateOffset_t  {
 		public:
-			PROPERTY(m_Value,uint16_t , 0x0);
+			PROPERTY(m_Value,uint16_t, 0x0);
 			S2_PAD(0x2);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::PulseRuntimeStateOffset_t) == 0x2, "PulseRuntimeStateOffset_t size should be 0x2");

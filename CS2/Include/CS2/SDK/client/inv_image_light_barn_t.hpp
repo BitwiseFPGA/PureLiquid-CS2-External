@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace client {
 		class inv_image_light_barn_t  {
 		public:
-			PROPERTY(color,GlobalTypes::Vector , 0x0);
-			PROPERTY(angle,GlobalTypes::QAngle , 0xc);
-			PROPERTY(brightness,float32 , 0x18);
-			PROPERTY(orbit_distance,float32 , 0x1c);
+			PROPERTY(color,GlobalTypes::Vector, 0x0);
+			PROPERTY(angle,GlobalTypes::QAngle, 0xc);
+			PROPERTY(brightness,float32, 0x18);
+			PROPERTY(orbit_distance,float32, 0x1c);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::inv_image_light_barn_t) == 0x20, "inv_image_light_barn_t size should be 0x20");

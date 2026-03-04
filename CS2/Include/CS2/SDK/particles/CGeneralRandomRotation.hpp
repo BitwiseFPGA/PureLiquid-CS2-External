@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace particles {
 		class CGeneralRandomRotation : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d8);
-			PROPERTY(m_flDegrees,float32 , 0x1dc);
-			PROPERTY(m_flDegreesMin,float32 , 0x1e0);
-			PROPERTY(m_flDegreesMax,float32 , 0x1e4);
-			PROPERTY(m_flRotationRandExponent,float32 , 0x1e8);
-			PROPERTY(m_bRandomlyFlipDirection,bool , 0x1ec);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d8);
+			PROPERTY(m_flDegrees,float32, 0x1dc);
+			PROPERTY(m_flDegreesMin,float32, 0x1e0);
+			PROPERTY(m_flDegreesMax,float32, 0x1e4);
+			PROPERTY(m_flRotationRandExponent,float32, 0x1e8);
+			PROPERTY(m_bRandomlyFlipDirection,bool, 0x1ec);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::particles::CGeneralRandomRotation) == 0x1F8, "CGeneralRandomRotation size should be 0x1F8");

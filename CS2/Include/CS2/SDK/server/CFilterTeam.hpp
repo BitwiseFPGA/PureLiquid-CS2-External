@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CFilterTeam : public CS2::server::CBaseFilter {
 		public:
-			PROPERTY(m_iFilterTeam,int32_t , 0x4e0);
+			PROPERTY(m_iFilterTeam,int32_t, 0x4e0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::CFilterTeam) == 0x4E8, "CFilterTeam size should be 0x4E8");

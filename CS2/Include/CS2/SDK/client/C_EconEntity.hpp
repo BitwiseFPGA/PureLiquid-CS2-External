@@ -12,6 +12,7 @@
 
 #include <SDK/client/C_BaseFlex.hpp>
 #include <SDK/client/C_AttributeContainer.hpp>
+#include <SDK/client/AttachedModelData_t.hpp>
 
 
 
@@ -19,7 +20,6 @@ namespace CS2 {
 	namespace client {
 		class CBaseAnimGraph;
 		class C_BaseEntity;
-		class AttachedModelData_t;
 	}
 }
 
@@ -29,26 +29,26 @@ namespace CS2 {
 	namespace client {
 		class C_EconEntity : public CS2::client::C_BaseFlex {
 		public:
-			PROPERTY(m_flFlexDelayTime,float32 , 0x1360);
-			PROPERTY(m_flFlexDelayedWeight,float32* , 0x1368);
-			PROPERTY(m_bAttributesInitialized,bool , 0x1370);
-			PROPERTY(m_AttributeManager,client::C_AttributeContainer , 0x1378);
-			PROPERTY(m_OriginalOwnerXuidLow,uint32_t , 0x1848);
-			PROPERTY(m_OriginalOwnerXuidHigh,uint32_t , 0x184c);
-			PROPERTY(m_nFallbackPaintKit,int32_t , 0x1850);
-			PROPERTY(m_nFallbackSeed,int32_t , 0x1854);
-			PROPERTY(m_flFallbackWear,float32 , 0x1858);
-			PROPERTY(m_nFallbackStatTrak,int32_t , 0x185c);
-			PROPERTY(m_bClientside,bool , 0x1860);
-			PROPERTY(m_bParticleSystemsCreated,bool , 0x1861);
-			PROPERTY(m_vecAttachedParticles,GlobalTypes::CUtlVector< int32 >, 0x1868);
+			PROPERTY(m_flFlexDelayTime,float32, 0x1360);
+			PROPERTY(m_flFlexDelayedWeight,float32*, 0x1368);
+			PROPERTY(m_bAttributesInitialized,bool, 0x1370);
+			NESTED_PROPERTY(m_AttributeManager,client::C_AttributeContainer, 0x1378);
+			PROPERTY(m_OriginalOwnerXuidLow,uint32_t, 0x1848);
+			PROPERTY(m_OriginalOwnerXuidHigh,uint32_t, 0x184c);
+			PROPERTY(m_nFallbackPaintKit,int32_t, 0x1850);
+			PROPERTY(m_nFallbackSeed,int32_t, 0x1854);
+			PROPERTY(m_flFallbackWear,float32, 0x1858);
+			PROPERTY(m_nFallbackStatTrak,int32_t, 0x185c);
+			PROPERTY(m_bClientside,bool, 0x1860);
+			PROPERTY(m_bParticleSystemsCreated,bool, 0x1861);
+			NESTED_PROPERTY(m_vecAttachedParticles,GlobalTypes::CUtlVector< int32 >, 0x1868);
 			PROPERTY(m_hViewmodelAttachment,GlobalTypes::CHandle<client::CBaseAnimGraph>, 0x1880);
-			PROPERTY(m_iOldTeam,int32_t , 0x1884);
-			PROPERTY(m_bAttachmentDirty,bool , 0x1888);
-			PROPERTY(m_nUnloadedModelIndex,int32_t , 0x188c);
-			PROPERTY(m_iNumOwnerValidationRetries,int32_t , 0x1890);
+			PROPERTY(m_iOldTeam,int32_t, 0x1884);
+			PROPERTY(m_bAttachmentDirty,bool, 0x1888);
+			PROPERTY(m_nUnloadedModelIndex,int32_t, 0x188c);
+			PROPERTY(m_iNumOwnerValidationRetries,int32_t, 0x1890);
 			PROPERTY(m_hOldProvidee,GlobalTypes::CHandle<client::C_BaseEntity>, 0x18a0);
-			PROPERTY(m_vecAttachedModels,GlobalTypes::CUtlVector<client::AttachedModelData_t>, 0x18a8);
+			NESTED_PROPERTY(m_vecAttachedModels,GlobalTypes::CUtlVector<client::AttachedModelData_t>, 0x18a8);
 			S2_PAD(0x570);
 		};
 		//static_assert(sizeof(CS2::client::C_EconEntity) == 0x18C0, "C_EconEntity size should be 0x18C0");

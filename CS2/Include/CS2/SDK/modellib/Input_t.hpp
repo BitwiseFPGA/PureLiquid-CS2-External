@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace modellib {
 		class Input_t  {
 		public:
-			PROPERTY(m_inputValue,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_outputWeightList,GlobalTypes::CUtlVector< float32 >, 0x10);
+			PROPERTY(m_inputValue,GlobalTypes::Vector, 0x0);
+			NESTED_PROPERTY(m_outputWeightList,GlobalTypes::CUtlVector< float32 >, 0x10);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::modellib::Input_t) == 0x28, "CBoneConstraintPoseSpaceMorph::Input_t size should be 0x28");

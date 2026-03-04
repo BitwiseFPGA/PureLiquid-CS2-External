@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class OutflowWithRequirements_t  {
 		public:
-			PROPERTY(m_Connection,pulse_runtime_lib::CPulse_OutflowConnection , 0x0);
-			PROPERTY(m_DestinationFlowNodeID,pulse_runtime_lib::PulseDocNodeID_t , 0x48);
-			PROPERTY(m_RequirementNodeIDs,GlobalTypes::CUtlVector<pulse_runtime_lib::PulseDocNodeID_t>, 0x50);
-			PROPERTY(m_nCursorStateBlockIndex,GlobalTypes::CUtlVector< int32 >, 0x68);
+			NESTED_PROPERTY(m_Connection,pulse_runtime_lib::CPulse_OutflowConnection, 0x0);
+			NESTED_PROPERTY(m_DestinationFlowNodeID,pulse_runtime_lib::PulseDocNodeID_t, 0x48);
+			NESTED_PROPERTY(m_RequirementNodeIDs,GlobalTypes::CUtlVector<pulse_runtime_lib::PulseDocNodeID_t>, 0x50);
+			NESTED_PROPERTY(m_nCursorStateBlockIndex,GlobalTypes::CUtlVector< int32 >, 0x68);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::OutflowWithRequirements_t) == 0x80, "OutflowWithRequirements_t size should be 0x80");

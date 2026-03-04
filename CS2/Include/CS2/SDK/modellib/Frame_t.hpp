@@ -21,15 +21,15 @@ namespace CS2 {
 	namespace modellib {
 		class Frame_t  {
 		public:
-			PROPERTY(m_flTime,float32 , 0x0);
-			PROPERTY(m_Stamp,modellib::FrameStamp_t , 0x4);
-			PROPERTY(m_Transform,GlobalTypes::CTransform , 0x20);
-			PROPERTY(m_bTeleport,bool , 0x40);
-			PROPERTY(m_CompositeBones,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x48);
-			PROPERTY(m_SimStateBones,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x60);
-			PROPERTY(m_FeModelAnims,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x78);
-			PROPERTY(m_FeModelPos,GlobalTypes::CUtlVector<GlobalTypes::VectorAligned>, 0x90);
-			PROPERTY(m_FlexControllerWeights,GlobalTypes::CUtlVector< float32 >, 0xa8);
+			PROPERTY(m_flTime,float32, 0x0);
+			NESTED_PROPERTY(m_Stamp,modellib::FrameStamp_t, 0x4);
+			PROPERTY(m_Transform,GlobalTypes::CTransform, 0x20);
+			PROPERTY(m_bTeleport,bool, 0x40);
+			NESTED_PROPERTY(m_CompositeBones,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x48);
+			NESTED_PROPERTY(m_SimStateBones,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x60);
+			NESTED_PROPERTY(m_FeModelAnims,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x78);
+			NESTED_PROPERTY(m_FeModelPos,GlobalTypes::CUtlVector<GlobalTypes::VectorAligned>, 0x90);
+			NESTED_PROPERTY(m_FlexControllerWeights,GlobalTypes::CUtlVector< float32 >, 0xa8);
 			S2_PAD(0xC0);
 		};
 		//static_assert(sizeof(CS2::modellib::Frame_t) == 0xC0, "SkeletonAnimCapture_t::Frame_t size should be 0xC0");

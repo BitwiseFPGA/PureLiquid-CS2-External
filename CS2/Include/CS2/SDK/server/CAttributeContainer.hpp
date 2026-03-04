@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace server {
 		class CAttributeContainer : public CS2::server::CAttributeManager {
 		public:
-			PROPERTY(m_Item,server::CEconItemView , 0x50);
+			NESTED_PROPERTY(m_Item,server::CEconItemView, 0x50);
 			S2_PAD(0x2A8);
 		};
 		//static_assert(sizeof(CS2::server::CAttributeContainer) == 0x2F8, "CAttributeContainer size should be 0x2F8");

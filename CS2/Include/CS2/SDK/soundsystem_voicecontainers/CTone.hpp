@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/soundsystem_voicecontainers/CHarmonic.hpp>
 
 
 
-namespace CS2 {
-	namespace soundsystem_voicecontainers {
-		class CHarmonic;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,9 +21,9 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CTone  {
 		public:
-			PROPERTY(m_harmonics,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth::CHarmonic>, 0x0);
-			PROPERTY(m_curve,GlobalTypes::CPiecewiseCurve , 0x18);
-			PROPERTY(m_bSyncInstances,bool , 0x58);
+			NESTED_PROPERTY(m_harmonics,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CHarmonic>, 0x0);
+			PROPERTY(m_curve,GlobalTypes::CPiecewiseCurve, 0x18);
+			PROPERTY(m_bSyncInstances,bool, 0x58);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CTone) == 0x60, "CVoiceContainerStaticAdditiveSynth::CTone size should be 0x60");

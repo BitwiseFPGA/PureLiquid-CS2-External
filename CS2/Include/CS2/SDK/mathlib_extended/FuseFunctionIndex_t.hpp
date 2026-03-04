@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace mathlib_extended {
 		class FuseFunctionIndex_t  {
 		public:
-			PROPERTY(m_Value,uint16_t , 0x0);
+			PROPERTY(m_Value,uint16_t, 0x0);
 			S2_PAD(0x2);
 		};
 		//static_assert(sizeof(CS2::mathlib_extended::FuseFunctionIndex_t) == 0x2, "FuseFunctionIndex_t size should be 0x2");

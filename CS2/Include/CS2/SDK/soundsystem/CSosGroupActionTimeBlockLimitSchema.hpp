@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace soundsystem {
 		class CSosGroupActionTimeBlockLimitSchema : public CS2::soundsystem::CSosGroupActionSchema {
 		public:
-			PROPERTY(m_nMaxCount,int32_t , 0x8);
-			PROPERTY(m_flMaxDuration,float32 , 0xc);
+			PROPERTY(m_nMaxCount,int32_t, 0x8);
+			PROPERTY(m_flMaxDuration,float32, 0xc);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::soundsystem::CSosGroupActionTimeBlockLimitSchema) == 0x10, "CSosGroupActionTimeBlockLimitSchema size should be 0x10");

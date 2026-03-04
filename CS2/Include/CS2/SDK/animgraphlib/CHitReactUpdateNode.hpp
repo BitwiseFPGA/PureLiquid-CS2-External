@@ -23,14 +23,14 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CHitReactUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_opFixedSettings,animgraphlib::HitReactFixedSettings_t , 0x70);
-			PROPERTY(m_triggerParam,animgraphlib::CAnimParamHandle , 0xbc);
-			PROPERTY(m_hitBoneParam,animgraphlib::CAnimParamHandle , 0xbe);
-			PROPERTY(m_hitOffsetParam,animgraphlib::CAnimParamHandle , 0xc0);
-			PROPERTY(m_hitDirectionParam,animgraphlib::CAnimParamHandle , 0xc2);
-			PROPERTY(m_hitStrengthParam,animgraphlib::CAnimParamHandle , 0xc4);
-			PROPERTY(m_flMinDelayBetweenHits,float32 , 0xc8);
-			PROPERTY(m_bResetChild,bool , 0xcc);
+			NESTED_PROPERTY(m_opFixedSettings,animgraphlib::HitReactFixedSettings_t, 0x70);
+			NESTED_PROPERTY(m_triggerParam,animgraphlib::CAnimParamHandle, 0xbc);
+			NESTED_PROPERTY(m_hitBoneParam,animgraphlib::CAnimParamHandle, 0xbe);
+			NESTED_PROPERTY(m_hitOffsetParam,animgraphlib::CAnimParamHandle, 0xc0);
+			NESTED_PROPERTY(m_hitDirectionParam,animgraphlib::CAnimParamHandle, 0xc2);
+			NESTED_PROPERTY(m_hitStrengthParam,animgraphlib::CAnimParamHandle, 0xc4);
+			PROPERTY(m_flMinDelayBetweenHits,float32, 0xc8);
+			PROPERTY(m_bResetChild,bool, 0xcc);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CHitReactUpdateNode) == 0xD0, "CHitReactUpdateNode size should be 0xD0");

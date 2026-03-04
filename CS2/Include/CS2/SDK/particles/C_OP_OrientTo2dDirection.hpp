@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_OrientTo2dDirection : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_flRotOffset,float32 , 0x1d0);
-			PROPERTY(m_flSpinStrength,float32 , 0x1d4);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d8);
+			PROPERTY(m_flRotOffset,float32, 0x1d0);
+			PROPERTY(m_flSpinStrength,float32, 0x1d4);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_OrientTo2dDirection) == 0x1E0, "C_OP_OrientTo2dDirection size should be 0x1E0");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CRagdollAnimTag : public CS2::animgraphlib::CAnimTagBase {
 		public:
-			PROPERTY(m_profileName,GlobalTypes::CGlobalSymbol , 0x58);
+			PROPERTY(m_profileName,GlobalTypes::CGlobalSymbol, 0x58);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CRagdollAnimTag) == 0x60, "CRagdollAnimTag size should be 0x60");

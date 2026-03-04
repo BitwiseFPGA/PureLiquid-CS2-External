@@ -24,10 +24,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_MovementRotateParticleAroundAxis : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_vecRotAxis,particleslib::CParticleCollectionVecInput , 0x1d0);
-			PROPERTY(m_flRotRate,particleslib::CParticleCollectionFloatInput , 0x888);
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0x9f8);
-			PROPERTY(m_bLocalSpace,bool , 0xa60);
+			NESTED_PROPERTY(m_vecRotAxis,particleslib::CParticleCollectionVecInput, 0x1d0);
+			NESTED_PROPERTY(m_flRotRate,particleslib::CParticleCollectionFloatInput, 0x888);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0x9f8);
+			PROPERTY(m_bLocalSpace,bool, 0xa60);
 			S2_PAD(0x898);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_MovementRotateParticleAroundAxis) == 0xA68, "C_OP_MovementRotateParticleAroundAxis size should be 0xA68");

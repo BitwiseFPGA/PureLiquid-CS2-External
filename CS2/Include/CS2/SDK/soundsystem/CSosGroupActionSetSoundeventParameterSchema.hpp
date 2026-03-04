@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace soundsystem {
 		class CSosGroupActionSetSoundeventParameterSchema : public CS2::soundsystem::CSosGroupActionSchema {
 		public:
-			PROPERTY(m_nMaxCount,int32_t , 0x8);
-			PROPERTY(m_flMinValue,float32 , 0xc);
-			PROPERTY(m_flMaxValue,float32 , 0x10);
-			PROPERTY(m_opvarName,GlobalTypes::CUtlString* , 0x18);
-			PROPERTY(m_nSortType,soundsystem::SosActionSetParamSortType_t , 0x20);
+			PROPERTY(m_nMaxCount,int32_t, 0x8);
+			PROPERTY(m_flMinValue,float32, 0xc);
+			PROPERTY(m_flMaxValue,float32, 0x10);
+			PROPERTY(m_opvarName,GlobalTypes::CUtlString*, 0x18);
+			PROPERTY(m_nSortType,soundsystem::SosActionSetParamSortType_t, 0x20);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::soundsystem::CSosGroupActionSetSoundeventParameterSchema) == 0x28, "CSosGroupActionSetSoundeventParameterSchema size should be 0x28");

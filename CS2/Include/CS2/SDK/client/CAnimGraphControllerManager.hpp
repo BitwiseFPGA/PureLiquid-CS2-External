@@ -25,8 +25,8 @@ namespace CS2 {
 	namespace client {
 		class CAnimGraphControllerManager  {
 		public:
-			PROPERTY(m_controllers,GlobalTypes::CUtlVector<client::CAnimGraphControllerBase*>, 0x0);
-			PROPERTY(m_bGraphBindingsCreated,bool , 0xa8);
+			NESTED_PROPERTY(m_controllers,GlobalTypes::CUtlVector<client::CAnimGraphControllerBase*>, 0x0);
+			PROPERTY(m_bGraphBindingsCreated,bool, 0xa8);
 			S2_PAD(0xB0);
 		};
 		//static_assert(sizeof(CS2::client::CAnimGraphControllerManager) == 0xB0, "CAnimGraphControllerManager size should be 0xB0");

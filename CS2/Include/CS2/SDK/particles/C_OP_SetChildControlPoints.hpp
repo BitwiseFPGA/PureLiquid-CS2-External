@@ -23,13 +23,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetChildControlPoints : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nChildGroupID,int32_t , 0x1d0);
-			PROPERTY(m_nFirstControlPoint,int32_t , 0x1d4);
-			PROPERTY(m_nNumControlPoints,int32_t , 0x1d8);
-			PROPERTY(m_nFirstSourcePoint,particleslib::CParticleCollectionFloatInput , 0x1e0);
-			PROPERTY(m_bReverse,bool , 0x350);
-			PROPERTY(m_bSetOrientation,bool , 0x351);
-			PROPERTY(m_nOrientation,particles::ParticleOrientationType_t , 0x354);
+			PROPERTY(m_nChildGroupID,int32_t, 0x1d0);
+			PROPERTY(m_nFirstControlPoint,int32_t, 0x1d4);
+			PROPERTY(m_nNumControlPoints,int32_t, 0x1d8);
+			NESTED_PROPERTY(m_nFirstSourcePoint,particleslib::CParticleCollectionFloatInput, 0x1e0);
+			PROPERTY(m_bReverse,bool, 0x350);
+			PROPERTY(m_bSetOrientation,bool, 0x351);
+			PROPERTY(m_nOrientation,particles::ParticleOrientationType_t, 0x354);
 			S2_PAD(0x188);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetChildControlPoints) == 0x358, "C_OP_SetChildControlPoints size should be 0x358");

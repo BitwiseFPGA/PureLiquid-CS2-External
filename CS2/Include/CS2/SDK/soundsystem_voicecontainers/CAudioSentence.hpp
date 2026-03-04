@@ -10,16 +10,12 @@
 #endif
 
 
+#include <SDK/soundsystem_voicecontainers/CAudioPhonemeTag.hpp>
+#include <SDK/soundsystem_voicecontainers/CAudioEmphasisSample.hpp>
 #include <SDK/soundsystem_voicecontainers/CAudioMorphData.hpp>
 
 
 
-namespace CS2 {
-	namespace soundsystem_voicecontainers {
-		class CAudioPhonemeTag;
-		class CAudioEmphasisSample;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,10 +23,10 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CAudioSentence  {
 		public:
-			PROPERTY(m_bShouldVoiceDuck,bool , 0x0);
-			PROPERTY(m_RunTimePhonemes,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CAudioPhonemeTag>, 0x8);
-			PROPERTY(m_EmphasisSamples,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CAudioEmphasisSample>, 0x20);
-			PROPERTY(m_morphData,soundsystem_voicecontainers::CAudioMorphData , 0x38);
+			PROPERTY(m_bShouldVoiceDuck,bool, 0x0);
+			NESTED_PROPERTY(m_RunTimePhonemes,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CAudioPhonemeTag>, 0x8);
+			NESTED_PROPERTY(m_EmphasisSamples,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CAudioEmphasisSample>, 0x20);
+			NESTED_PROPERTY(m_morphData,soundsystem_voicecontainers::CAudioMorphData, 0x38);
 			S2_PAD(0xA0);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CAudioSentence) == 0xA0, "CAudioSentence size should be 0xA0");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CFilterContext : public CS2::server::CBaseFilter {
 		public:
-			PROPERTY(m_iFilterContext,GlobalTypes::CUtlSymbolLarge* , 0x4e0);
+			PROPERTY(m_iFilterContext,GlobalTypes::CUtlSymbolLarge*, 0x4e0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::CFilterContext) == 0x4E8, "CFilterContext size should be 0x4E8");

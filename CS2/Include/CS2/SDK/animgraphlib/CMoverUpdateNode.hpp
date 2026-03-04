@@ -24,18 +24,18 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CMoverUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_damping,animgraphlib::CAnimInputDamping , 0x78);
-			PROPERTY(m_facingTarget,animgraphlib::AnimValueSource , 0x90);
-			PROPERTY(m_hMoveVecParam,animgraphlib::CAnimParamHandle , 0x94);
-			PROPERTY(m_hMoveHeadingParam,animgraphlib::CAnimParamHandle , 0x96);
-			PROPERTY(m_hTurnToFaceParam,animgraphlib::CAnimParamHandle , 0x98);
-			PROPERTY(m_flTurnToFaceOffset,float32 , 0x9c);
-			PROPERTY(m_flTurnToFaceLimit,float32 , 0xa0);
-			PROPERTY(m_bAdditive,bool , 0xa4);
-			PROPERTY(m_bApplyMovement,bool , 0xa5);
-			PROPERTY(m_bOrientMovement,bool , 0xa6);
-			PROPERTY(m_bApplyRotation,bool , 0xa7);
-			PROPERTY(m_bLimitOnly,bool , 0xa8);
+			NESTED_PROPERTY(m_damping,animgraphlib::CAnimInputDamping, 0x78);
+			PROPERTY(m_facingTarget,animgraphlib::AnimValueSource, 0x90);
+			NESTED_PROPERTY(m_hMoveVecParam,animgraphlib::CAnimParamHandle, 0x94);
+			NESTED_PROPERTY(m_hMoveHeadingParam,animgraphlib::CAnimParamHandle, 0x96);
+			NESTED_PROPERTY(m_hTurnToFaceParam,animgraphlib::CAnimParamHandle, 0x98);
+			PROPERTY(m_flTurnToFaceOffset,float32, 0x9c);
+			PROPERTY(m_flTurnToFaceLimit,float32, 0xa0);
+			PROPERTY(m_bAdditive,bool, 0xa4);
+			PROPERTY(m_bApplyMovement,bool, 0xa5);
+			PROPERTY(m_bOrientMovement,bool, 0xa6);
+			PROPERTY(m_bApplyRotation,bool, 0xa7);
+			PROPERTY(m_bLimitOnly,bool, 0xa8);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CMoverUpdateNode) == 0xB0, "CMoverUpdateNode size should be 0xB0");

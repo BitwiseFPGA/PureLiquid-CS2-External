@@ -10,23 +10,19 @@
 #endif
 
 
+#include <SDK/worldrenderer/SceneObject_t.hpp>
+#include <SDK/worldrenderer/AggregateSceneObject_t.hpp>
+#include <SDK/worldrenderer/ClutterSceneObject_t.hpp>
+#include <SDK/worldrenderer/AggregateRTProxySceneObject_t.hpp>
+#include <SDK/worldrenderer/ExtraVertexStreamOverride_t.hpp>
+#include <SDK/worldrenderer/MaterialOverride_t.hpp>
+#include <SDK/worldrenderer/WorldNodeOnDiskBufferData_t.hpp>
+#include <SDK/worldrenderer/AggregateInstanceStreamOnDiskData_t.hpp>
+#include <SDK/worldrenderer/AggregateVertexAlbedoStreamOnDiskData_t.hpp>
 #include <SDK/worldrenderer/BakedLightingInfo_t.hpp>
 
 
 
-namespace CS2 {
-	namespace worldrenderer {
-		class SceneObject_t;
-		class AggregateSceneObject_t;
-		class ClutterSceneObject_t;
-		class AggregateRTProxySceneObject_t;
-		class ExtraVertexStreamOverride_t;
-		class MaterialOverride_t;
-		class WorldNodeOnDiskBufferData_t;
-		class AggregateInstanceStreamOnDiskData_t;
-		class AggregateVertexAlbedoStreamOnDiskData_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -34,21 +30,21 @@ namespace CS2 {
 	namespace worldrenderer {
 		class WorldNode_t  {
 		public:
-			PROPERTY(m_sceneObjects,GlobalTypes::CUtlVector<worldrenderer::SceneObject_t>, 0x0);
-			PROPERTY(m_visClusterMembership,GlobalTypes::CUtlVector< uint16 >, 0x18);
-			PROPERTY(m_aggregateSceneObjects,GlobalTypes::CUtlVector<worldrenderer::AggregateSceneObject_t>, 0x30);
-			PROPERTY(m_clutterSceneObjects,GlobalTypes::CUtlVector<worldrenderer::ClutterSceneObject_t>, 0x48);
-			PROPERTY(m_rtProxies,GlobalTypes::CUtlVector<worldrenderer::AggregateRTProxySceneObject_t>, 0x60);
-			PROPERTY(m_extraVertexStreamOverrides,GlobalTypes::CUtlVector<worldrenderer::ExtraVertexStreamOverride_t>, 0x78);
-			PROPERTY(m_materialOverrides,GlobalTypes::CUtlVector<worldrenderer::MaterialOverride_t>, 0x90);
-			PROPERTY(m_extraVertexStreams,GlobalTypes::CUtlVector<worldrenderer::WorldNodeOnDiskBufferData_t>, 0xa8);
-			PROPERTY(m_aggregateInstanceStreams,GlobalTypes::CUtlVector<worldrenderer::AggregateInstanceStreamOnDiskData_t>, 0xc0);
-			PROPERTY(m_vertexAlbedoStreams,GlobalTypes::CUtlVector<worldrenderer::AggregateVertexAlbedoStreamOnDiskData_t>, 0xd8);
+			NESTED_PROPERTY(m_sceneObjects,GlobalTypes::CUtlVector<worldrenderer::SceneObject_t>, 0x0);
+			NESTED_PROPERTY(m_visClusterMembership,GlobalTypes::CUtlVector< uint16 >, 0x18);
+			NESTED_PROPERTY(m_aggregateSceneObjects,GlobalTypes::CUtlVector<worldrenderer::AggregateSceneObject_t>, 0x30);
+			NESTED_PROPERTY(m_clutterSceneObjects,GlobalTypes::CUtlVector<worldrenderer::ClutterSceneObject_t>, 0x48);
+			NESTED_PROPERTY(m_rtProxies,GlobalTypes::CUtlVector<worldrenderer::AggregateRTProxySceneObject_t>, 0x60);
+			NESTED_PROPERTY(m_extraVertexStreamOverrides,GlobalTypes::CUtlVector<worldrenderer::ExtraVertexStreamOverride_t>, 0x78);
+			NESTED_PROPERTY(m_materialOverrides,GlobalTypes::CUtlVector<worldrenderer::MaterialOverride_t>, 0x90);
+			NESTED_PROPERTY(m_extraVertexStreams,GlobalTypes::CUtlVector<worldrenderer::WorldNodeOnDiskBufferData_t>, 0xa8);
+			NESTED_PROPERTY(m_aggregateInstanceStreams,GlobalTypes::CUtlVector<worldrenderer::AggregateInstanceStreamOnDiskData_t>, 0xc0);
+			NESTED_PROPERTY(m_vertexAlbedoStreams,GlobalTypes::CUtlVector<worldrenderer::AggregateVertexAlbedoStreamOnDiskData_t>, 0xd8);
 			PROPERTY(m_layerNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0xf0);
-			PROPERTY(m_sceneObjectLayerIndices,GlobalTypes::CUtlVector< uint8 >, 0x108);
-			PROPERTY(m_grassFileName,GlobalTypes::CUtlString* , 0x120);
-			PROPERTY(m_nodeLightingInfo,worldrenderer::BakedLightingInfo_t , 0x128);
-			PROPERTY(m_bHasBakedGeometryFlag,bool , 0x170);
+			NESTED_PROPERTY(m_sceneObjectLayerIndices,GlobalTypes::CUtlVector< uint8 >, 0x108);
+			PROPERTY(m_grassFileName,GlobalTypes::CUtlString*, 0x120);
+			NESTED_PROPERTY(m_nodeLightingInfo,worldrenderer::BakedLightingInfo_t, 0x128);
+			PROPERTY(m_bHasBakedGeometryFlag,bool, 0x170);
 			S2_PAD(0x178);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::WorldNode_t) == 0x178, "WorldNode_t size should be 0x178");

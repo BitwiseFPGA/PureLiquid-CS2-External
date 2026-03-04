@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Inflow_EntOutputHandler : public CS2::pulse_runtime_lib::CPulseCell_Inflow_BaseEntrypoint {
 		public:
-			PROPERTY(m_SourceEntity,GlobalTypes::PulseSymbol_t , 0x80);
-			PROPERTY(m_SourceOutput,GlobalTypes::PulseSymbol_t , 0x90);
-			PROPERTY(m_ExpectedParamType,GlobalTypes::CPulseValueFullType , 0xa0);
+			PROPERTY(m_SourceEntity,GlobalTypes::PulseSymbol_t, 0x80);
+			PROPERTY(m_SourceOutput,GlobalTypes::PulseSymbol_t, 0x90);
+			PROPERTY(m_ExpectedParamType,GlobalTypes::CPulseValueFullType, 0xa0);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Inflow_EntOutputHandler) == 0xB8, "CPulseCell_Inflow_EntOutputHandler size should be 0xB8");

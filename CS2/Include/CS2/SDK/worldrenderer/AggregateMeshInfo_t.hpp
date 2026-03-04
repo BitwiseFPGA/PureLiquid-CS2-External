@@ -22,18 +22,18 @@ namespace CS2 {
 	namespace worldrenderer {
 		class AggregateMeshInfo_t  {
 		public:
-			PROPERTY(m_nVisClusterMemberOffset,uint32_t , 0x0);
-			PROPERTY(m_nVisClusterMemberCount,uint8_t , 0x4);
-			PROPERTY(m_bHasTransform,bool , 0x5);
-			PROPERTY(m_nLODGroupMask,uint8_t , 0x6);
-			PROPERTY(m_nDrawCallIndex,int16_t , 0x8);
-			PROPERTY(m_nLODSetupIndex,int16_t , 0xa);
-			PROPERTY(m_vTintColor,GlobalTypes::Color , 0xc);
-			PROPERTY(m_objectFlags,worldrenderer::ObjectTypeFlags_t , 0x10);
-			PROPERTY(m_nLightProbeVolumePrecomputedHandshake,int32_t , 0x14);
-			PROPERTY(m_nInstanceStreamOffset,uint32_t , 0x18);
-			PROPERTY(m_nVertexAlbedoStreamOffset,uint32_t , 0x1c);
-			PROPERTY(m_instanceStreams,worldrenderer::AggregateInstanceStream_t , 0x20);
+			PROPERTY(m_nVisClusterMemberOffset,uint32_t, 0x0);
+			PROPERTY(m_nVisClusterMemberCount,uint8_t, 0x4);
+			PROPERTY(m_bHasTransform,bool, 0x5);
+			PROPERTY(m_nLODGroupMask,uint8_t, 0x6);
+			PROPERTY(m_nDrawCallIndex,int16_t, 0x8);
+			PROPERTY(m_nLODSetupIndex,int16_t, 0xa);
+			PROPERTY(m_vTintColor,GlobalTypes::Color, 0xc);
+			PROPERTY(m_objectFlags,worldrenderer::ObjectTypeFlags_t, 0x10);
+			PROPERTY(m_nLightProbeVolumePrecomputedHandshake,int32_t, 0x14);
+			PROPERTY(m_nInstanceStreamOffset,uint32_t, 0x18);
+			PROPERTY(m_nVertexAlbedoStreamOffset,uint32_t, 0x1c);
+			PROPERTY(m_instanceStreams,worldrenderer::AggregateInstanceStream_t, 0x20);
 			S2_PAD(0x24);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::AggregateMeshInfo_t) == 0x24, "AggregateMeshInfo_t size should be 0x24");

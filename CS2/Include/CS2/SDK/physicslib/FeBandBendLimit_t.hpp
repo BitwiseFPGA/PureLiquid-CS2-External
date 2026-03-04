@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeBandBendLimit_t  {
 		public:
-			PROPERTY(flDistMin,float32 , 0x0);
-			PROPERTY(flDistMax,float32 , 0x4);
-			PROPERTY_ARRAY(nNode,uint16_t , 6 , 0x8);
+			PROPERTY(flDistMin,float32, 0x0);
+			PROPERTY(flDistMax,float32, 0x4);
+			PROPERTY_ARRAY(nNode,uint16_t, 6 , 0x8);
 			S2_PAD(0x14);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeBandBendLimit_t) == 0x14, "FeBandBendLimit_t size should be 0x14");

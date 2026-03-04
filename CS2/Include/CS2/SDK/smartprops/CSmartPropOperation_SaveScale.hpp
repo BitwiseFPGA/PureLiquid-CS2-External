@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_SaveScale : public CS2::smartprops::CSmartPropOperation {
 		public:
-			PROPERTY(m_VariableName,GlobalTypes::CUtlString* , 0x50);
+			PROPERTY(m_VariableName,GlobalTypes::CUtlString*, 0x50);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_SaveScale) == 0x58, "CSmartPropOperation_SaveScale size should be 0x58");

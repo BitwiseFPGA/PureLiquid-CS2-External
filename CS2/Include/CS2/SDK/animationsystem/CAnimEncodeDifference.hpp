@@ -10,16 +10,12 @@
 #endif
 
 
+#include <SDK/animationsystem/CAnimBoneDifference.hpp>
+#include <SDK/animationsystem/CAnimMorphDifference.hpp>
+#include <SDK/animationsystem/CAnimUserDifference.hpp>
 
 
 
-namespace CS2 {
-	namespace animationsystem {
-		class CAnimBoneDifference;
-		class CAnimMorphDifference;
-		class CAnimUserDifference;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,13 +23,13 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimEncodeDifference  {
 		public:
-			PROPERTY(m_boneArray,GlobalTypes::CUtlVector<animationsystem::CAnimBoneDifference>, 0x0);
-			PROPERTY(m_morphArray,GlobalTypes::CUtlVector<animationsystem::CAnimMorphDifference>, 0x18);
-			PROPERTY(m_userArray,GlobalTypes::CUtlVector<animationsystem::CAnimUserDifference>, 0x30);
-			PROPERTY(m_bHasRotationBitArray,GlobalTypes::CUtlVector< uint8 >, 0x48);
-			PROPERTY(m_bHasMovementBitArray,GlobalTypes::CUtlVector< uint8 >, 0x60);
-			PROPERTY(m_bHasMorphBitArray,GlobalTypes::CUtlVector< uint8 >, 0x78);
-			PROPERTY(m_bHasUserBitArray,GlobalTypes::CUtlVector< uint8 >, 0x90);
+			NESTED_PROPERTY(m_boneArray,GlobalTypes::CUtlVector<animationsystem::CAnimBoneDifference>, 0x0);
+			NESTED_PROPERTY(m_morphArray,GlobalTypes::CUtlVector<animationsystem::CAnimMorphDifference>, 0x18);
+			NESTED_PROPERTY(m_userArray,GlobalTypes::CUtlVector<animationsystem::CAnimUserDifference>, 0x30);
+			NESTED_PROPERTY(m_bHasRotationBitArray,GlobalTypes::CUtlVector< uint8 >, 0x48);
+			NESTED_PROPERTY(m_bHasMovementBitArray,GlobalTypes::CUtlVector< uint8 >, 0x60);
+			NESTED_PROPERTY(m_bHasMorphBitArray,GlobalTypes::CUtlVector< uint8 >, 0x78);
+			NESTED_PROPERTY(m_bHasUserBitArray,GlobalTypes::CUtlVector< uint8 >, 0x90);
 			S2_PAD(0xA8);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimEncodeDifference) == 0xA8, "CAnimEncodeDifference size should be 0xA8");

@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace client {
 		class CPathQueryUtil  {
 		public:
-			PROPERTY(m_PathToEntityTransform,GlobalTypes::CTransform , 0x10);
-			PROPERTY(m_vecPathSamplePositions,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x30);
-			PROPERTY(m_vecPathSampleParameters,GlobalTypes::CUtlVector< float32 >, 0x48);
-			PROPERTY(m_vecPathSampleDistances,GlobalTypes::CUtlVector< float32 >, 0x60);
-			PROPERTY(m_bIsClosedLoop,bool , 0x78);
+			PROPERTY(m_PathToEntityTransform,GlobalTypes::CTransform, 0x10);
+			NESTED_PROPERTY(m_vecPathSamplePositions,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x30);
+			NESTED_PROPERTY(m_vecPathSampleParameters,GlobalTypes::CUtlVector< float32 >, 0x48);
+			NESTED_PROPERTY(m_vecPathSampleDistances,GlobalTypes::CUtlVector< float32 >, 0x60);
+			PROPERTY(m_bIsClosedLoop,bool, 0x78);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::client::CPathQueryUtil) == 0x80, "CPathQueryUtil size should be 0x80");

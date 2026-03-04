@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animlib {
 		class CNmIDEvent : public CS2::animlib::CNmEvent {
 		public:
-			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol , 0x20);
-			PROPERTY(m_secondaryID,GlobalTypes::CGlobalSymbol , 0x28);
+			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol, 0x20);
+			PROPERTY(m_secondaryID,GlobalTypes::CGlobalSymbol, 0x28);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmIDEvent) == 0x30, "CNmIDEvent size should be 0x30");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace materialsystem2 {
 		class MaterialParamFloat_t : public CS2::materialsystem2::MaterialParam_t {
 		public:
-			PROPERTY(m_flValue,float32 , 0x8);
+			PROPERTY(m_flValue,float32, 0x8);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::materialsystem2::MaterialParamFloat_t) == 0x10, "MaterialParamFloat_t size should be 0x10");

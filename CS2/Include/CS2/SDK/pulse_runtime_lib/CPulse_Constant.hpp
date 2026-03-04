@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulse_Constant  {
 		public:
-			PROPERTY(m_Type,GlobalTypes::CPulseValueFullType , 0x0);
-			PROPERTY(m_Value,GlobalTypes::KeyValues3 , 0x18);
+			PROPERTY(m_Type,GlobalTypes::CPulseValueFullType, 0x0);
+			PROPERTY(m_Value,GlobalTypes::KeyValues3, 0x18);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulse_Constant) == 0x30, "CPulse_Constant size should be 0x30");

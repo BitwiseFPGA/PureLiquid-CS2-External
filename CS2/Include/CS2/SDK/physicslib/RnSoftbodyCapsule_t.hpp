@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class RnSoftbodyCapsule_t  {
 		public:
-			PROPERTY_ARRAY(m_vCenter,GlobalTypes::Vector , 2 , 0x0);
-			PROPERTY(m_flRadius,float32 , 0x18);
-			PROPERTY_ARRAY(m_nParticle,uint16_t , 2 , 0x1c);
+			PROPERTY_ARRAY(m_vCenter,GlobalTypes::Vector, 2 , 0x0);
+			PROPERTY(m_flRadius,float32, 0x18);
+			PROPERTY_ARRAY(m_nParticle,uint16_t, 2 , 0x1c);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnSoftbodyCapsule_t) == 0x20, "RnSoftbodyCapsule_t size should be 0x20");

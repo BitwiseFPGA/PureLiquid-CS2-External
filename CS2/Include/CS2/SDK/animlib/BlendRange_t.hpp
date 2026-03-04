@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace animlib {
 		class BlendRange_t  {
 		public:
-			PROPERTY(m_nInputIdx0,int16_t , 0x0);
-			PROPERTY(m_nInputIdx1,int16_t , 0x2);
-			PROPERTY(m_parameterValueRange,GlobalTypes::Range_t , 0x4);
+			PROPERTY(m_nInputIdx0,int16_t, 0x0);
+			PROPERTY(m_nInputIdx1,int16_t, 0x2);
+			PROPERTY(m_parameterValueRange,GlobalTypes::Range_t, 0x4);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::animlib::BlendRange_t) == 0xC, "CNmParameterizedBlendNode::BlendRange_t size should be 0xC");

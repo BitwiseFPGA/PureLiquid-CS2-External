@@ -26,7 +26,7 @@ namespace CS2 {
 	namespace server {
 		class CPointProximitySensor : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x4a8);
+			PROPERTY(m_bDisabled,bool, 0x4a8);
 			PROPERTY(m_hTargetEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4ac);
 			PROPERTY(m_Distance,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4b0);
 			S2_PAD(0x28);

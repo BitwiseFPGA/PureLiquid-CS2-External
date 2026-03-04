@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseRuntimeMethodArg  {
 		public:
-			PROPERTY(m_Name,GlobalTypes::CKV3MemberNameWithStorage , 0x0);
-			PROPERTY(m_Description,GlobalTypes::CUtlString* , 0x38);
-			PROPERTY(m_Type,GlobalTypes::CPulseValueFullType , 0x40);
+			PROPERTY(m_Name,GlobalTypes::CKV3MemberNameWithStorage, 0x0);
+			PROPERTY(m_Description,GlobalTypes::CUtlString*, 0x38);
+			PROPERTY(m_Type,GlobalTypes::CPulseValueFullType, 0x40);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseRuntimeMethodArg) == 0x80, "CPulseRuntimeMethodArg size should be 0x80");

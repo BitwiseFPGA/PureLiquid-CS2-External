@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/animlib/BlendRange_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animlib {
-		class BlendRange_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace animlib {
 		class Parameterization_t  {
 		public:
-			PROPERTY(m_blendRanges,GlobalTypes::CUtlLeanVectorFixedGrowable<animlib::CNmParameterizedBlendNode::BlendRange_t>, 0x0);
-			PROPERTY(m_parameterRange,GlobalTypes::Range_t , 0x48);
+			PROPERTY(m_blendRanges,GlobalTypes::CUtlLeanVectorFixedGrowable<animlib::BlendRange_t>, 0x0);
+			PROPERTY(m_parameterRange,GlobalTypes::Range_t, 0x48);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::animlib::Parameterization_t) == 0x50, "CNmParameterizedBlendNode::Parameterization_t size should be 0x50");

@@ -22,7 +22,7 @@ namespace CS2 {
 		class CDestructiblePartsSystemData  {
 		public:
 			PROPERTY(m_PartsDataByHitGroup,GlobalTypes::CUtlOrderedMap< HitGroup_t, CDestructiblePart >, 0x0);
-			PROPERTY(m_nMinMaxNumberHitGroupsToDestroyWhenGibbing,tier2::CRangeInt , 0x28);
+			NESTED_PROPERTY(m_nMinMaxNumberHitGroupsToDestroyWhenGibbing,tier2::CRangeInt, 0x28);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::client::CDestructiblePartsSystemData) == 0x30, "CDestructiblePartsSystemData size should be 0x30");

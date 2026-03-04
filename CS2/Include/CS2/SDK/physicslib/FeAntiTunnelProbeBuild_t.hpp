@@ -20,13 +20,13 @@ namespace CS2 {
 	namespace physicslib {
 		class FeAntiTunnelProbeBuild_t  {
 		public:
-			PROPERTY(flWeight,float32 , 0x0);
-			PROPERTY(flActivationDistance,float32 , 0x4);
-			PROPERTY(flBias,float32 , 0x8);
-			PROPERTY(flCurvature,float32 , 0xc);
-			PROPERTY(nFlags,uint32_t , 0x10);
-			PROPERTY(nProbeNode,uint16_t , 0x14);
-			PROPERTY(targetNodes,GlobalTypes::CUtlVector< uint16 >, 0x18);
+			PROPERTY(flWeight,float32, 0x0);
+			PROPERTY(flActivationDistance,float32, 0x4);
+			PROPERTY(flBias,float32, 0x8);
+			PROPERTY(flCurvature,float32, 0xc);
+			PROPERTY(nFlags,uint32_t, 0x10);
+			PROPERTY(nProbeNode,uint16_t, 0x14);
+			NESTED_PROPERTY(targetNodes,GlobalTypes::CUtlVector< uint16 >, 0x18);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeAntiTunnelProbeBuild_t) == 0x30, "FeAntiTunnelProbeBuild_t size should be 0x30");

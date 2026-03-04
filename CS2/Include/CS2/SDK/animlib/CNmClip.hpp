@@ -10,19 +10,17 @@
 #endif
 
 
+#include <SDK/animlib/NmCompressionSettings_t.hpp>
+#include <SDK/animlib/NmFloatCurveCompressionSettings_t.hpp>
 #include <SDK/animlib/CNmSyncTrack.hpp>
 #include <SDK/animlib/CNmRootMotionData.hpp>
+#include <SDK/animlib/ModelSpaceSamplingChainLink_t.hpp>
 
 
 
 namespace CS2 {
 	namespace resourcesystem {
 		class InfoForResourceTypeCNmSkeleton;
-	}
-	namespace animlib {
-		class NmCompressionSettings_t;
-		class NmFloatCurveCompressionSettings_t;
-		class ModelSpaceSamplingChainLink_t;
 	}
 }
 
@@ -33,21 +31,21 @@ namespace CS2 {
 		class CNmClip  {
 		public:
 			PROPERTY(m_skeleton,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCNmSkeleton>, 0x0);
-			PROPERTY(m_nNumFrames,uint32_t , 0x8);
-			PROPERTY(m_flDuration,float32 , 0xc);
-			PROPERTY(m_compressedPoseData,GlobalTypes::CUtlBinaryBlock , 0x10);
-			PROPERTY(m_trackCompressionSettings,GlobalTypes::CUtlVector<animlib::NmCompressionSettings_t>, 0x20);
-			PROPERTY(m_compressedPoseOffsets,GlobalTypes::CUtlVector< uint32 >, 0x38);
-			PROPERTY(m_floatCurveIDs,GlobalTypes::CUtlVector<GlobalTypes::CGlobalSymbol>, 0x50);
-			PROPERTY(m_floatCurveDefs,GlobalTypes::CUtlVector<animlib::NmFloatCurveCompressionSettings_t>, 0x68);
-			PROPERTY(m_compressedFloatCurveData,GlobalTypes::CUtlVector< uint16 >, 0x80);
-			PROPERTY(m_compressedFloatCurveOffsets,GlobalTypes::CUtlVector< uint32 >, 0x98);
+			PROPERTY(m_nNumFrames,uint32_t, 0x8);
+			PROPERTY(m_flDuration,float32, 0xc);
+			PROPERTY(m_compressedPoseData,GlobalTypes::CUtlBinaryBlock, 0x10);
+			NESTED_PROPERTY(m_trackCompressionSettings,GlobalTypes::CUtlVector<animlib::NmCompressionSettings_t>, 0x20);
+			NESTED_PROPERTY(m_compressedPoseOffsets,GlobalTypes::CUtlVector< uint32 >, 0x38);
+			NESTED_PROPERTY(m_floatCurveIDs,GlobalTypes::CUtlVector<GlobalTypes::CGlobalSymbol>, 0x50);
+			NESTED_PROPERTY(m_floatCurveDefs,GlobalTypes::CUtlVector<animlib::NmFloatCurveCompressionSettings_t>, 0x68);
+			NESTED_PROPERTY(m_compressedFloatCurveData,GlobalTypes::CUtlVector< uint16 >, 0x80);
+			NESTED_PROPERTY(m_compressedFloatCurveOffsets,GlobalTypes::CUtlVector< uint32 >, 0x98);
 			PROPERTY(m_secondaryAnimations,GlobalTypes::CUtlVectorFixedGrowable<animlib::CNmClip*>, 0xd8);
-			PROPERTY(m_syncTrack,animlib::CNmSyncTrack , 0xf8);
-			PROPERTY(m_rootMotion,animlib::CNmRootMotionData , 0x1b0);
-			PROPERTY(m_bIsAdditive,bool , 0x200);
-			PROPERTY(m_modelSpaceSamplingChain,GlobalTypes::CUtlVector<animlib::CNmClip::ModelSpaceSamplingChainLink_t>, 0x208);
-			PROPERTY(m_modelSpaceBoneSamplingIndices,GlobalTypes::CUtlVector< int32 >, 0x220);
+			NESTED_PROPERTY(m_syncTrack,animlib::CNmSyncTrack, 0xf8);
+			NESTED_PROPERTY(m_rootMotion,animlib::CNmRootMotionData, 0x1b0);
+			PROPERTY(m_bIsAdditive,bool, 0x200);
+			NESTED_PROPERTY(m_modelSpaceSamplingChain,GlobalTypes::CUtlVector<animlib::ModelSpaceSamplingChainLink_t>, 0x208);
+			NESTED_PROPERTY(m_modelSpaceBoneSamplingIndices,GlobalTypes::CUtlVector< int32 >, 0x220);
 			S2_PAD(0x240);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmClip) == 0x240, "CNmClip size should be 0x240");

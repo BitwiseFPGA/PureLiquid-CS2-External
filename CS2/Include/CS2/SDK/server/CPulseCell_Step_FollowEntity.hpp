@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class CPulseCell_Step_FollowEntity : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_ParamBoneOrAttachName,GlobalTypes::CUtlString* , 0x48);
-			PROPERTY(m_ParamBoneOrAttachNameChild,GlobalTypes::CUtlString* , 0x50);
+			PROPERTY(m_ParamBoneOrAttachName,GlobalTypes::CUtlString*, 0x48);
+			PROPERTY(m_ParamBoneOrAttachNameChild,GlobalTypes::CUtlString*, 0x50);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CPulseCell_Step_FollowEntity) == 0x58, "CPulseCell_Step_FollowEntity size should be 0x58");

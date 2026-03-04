@@ -29,22 +29,22 @@ namespace CS2 {
 	namespace client {
 		class C_BaseCSGrenadeProjectile : public CS2::client::C_BaseGrenade {
 		public:
-			PROPERTY(m_vInitialPosition,GlobalTypes::Vector , 0x13a0);
-			PROPERTY(m_vInitialVelocity,GlobalTypes::Vector , 0x13ac);
-			PROPERTY(m_nBounces,int32_t , 0x13b8);
+			PROPERTY(m_vInitialPosition,GlobalTypes::Vector, 0x13a0);
+			PROPERTY(m_vInitialVelocity,GlobalTypes::Vector, 0x13ac);
+			PROPERTY(m_nBounces,int32_t, 0x13b8);
 			PROPERTY(m_nExplodeEffectIndex,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>, 0x13c0);
-			PROPERTY(m_nExplodeEffectTickBegin,int32_t , 0x13c8);
-			PROPERTY(m_vecExplodeEffectOrigin,GlobalTypes::Vector , 0x13cc);
-			PROPERTY(m_flSpawnTime,entity2::GameTime_t , 0x13d8);
-			PROPERTY(vecLastTrailLinePos,GlobalTypes::Vector , 0x13dc);
-			PROPERTY(flNextTrailLineTime,entity2::GameTime_t , 0x13e8);
-			PROPERTY(m_bExplodeEffectBegan,bool , 0x13ec);
-			PROPERTY(m_bCanCreateGrenadeTrail,bool , 0x13ed);
-			PROPERTY(m_nSnapshotTrajectoryEffectIndex,client::ParticleIndex_t , 0x13f0);
+			PROPERTY(m_nExplodeEffectTickBegin,int32_t, 0x13c8);
+			PROPERTY(m_vecExplodeEffectOrigin,GlobalTypes::Vector, 0x13cc);
+			NESTED_PROPERTY(m_flSpawnTime,entity2::GameTime_t, 0x13d8);
+			PROPERTY(vecLastTrailLinePos,GlobalTypes::Vector, 0x13dc);
+			NESTED_PROPERTY(flNextTrailLineTime,entity2::GameTime_t, 0x13e8);
+			PROPERTY(m_bExplodeEffectBegan,bool, 0x13ec);
+			PROPERTY(m_bCanCreateGrenadeTrail,bool, 0x13ed);
+			NESTED_PROPERTY(m_nSnapshotTrajectoryEffectIndex,client::ParticleIndex_t, 0x13f0);
 			PROPERTY(m_hSnapshotTrajectoryParticleSnapshot,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSnapshot>, 0x13f8);
-			PROPERTY(m_arrTrajectoryTrailPoints,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x1400);
-			PROPERTY(m_arrTrajectoryTrailPointCreationTimes,GlobalTypes::CUtlVector< float32 >, 0x1418);
-			PROPERTY(m_flTrajectoryTrailEffectCreationTime,float32 , 0x1430);
+			NESTED_PROPERTY(m_arrTrajectoryTrailPoints,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x1400);
+			NESTED_PROPERTY(m_arrTrajectoryTrailPointCreationTimes,GlobalTypes::CUtlVector< float32 >, 0x1418);
+			PROPERTY(m_flTrajectoryTrailEffectCreationTime,float32, 0x1430);
 			S2_PAD(0x98);
 		};
 		//static_assert(sizeof(CS2::client::C_BaseCSGrenadeProjectile) == 0x1438, "C_BaseCSGrenadeProjectile size should be 0x1438");

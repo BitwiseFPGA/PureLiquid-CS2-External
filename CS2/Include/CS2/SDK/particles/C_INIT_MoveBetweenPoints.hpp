@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_MoveBetweenPoints : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_flSpeedMin,particleslib::CPerParticleFloatInput , 0x1d8);
-			PROPERTY(m_flSpeedMax,particleslib::CPerParticleFloatInput , 0x348);
-			PROPERTY(m_flEndSpread,particleslib::CPerParticleFloatInput , 0x4b8);
-			PROPERTY(m_flStartOffset,particleslib::CPerParticleFloatInput , 0x628);
-			PROPERTY(m_flEndOffset,particleslib::CPerParticleFloatInput , 0x798);
-			PROPERTY(m_nEndControlPointNumber,int32_t , 0x908);
-			PROPERTY(m_bTrailBias,bool , 0x90c);
+			NESTED_PROPERTY(m_flSpeedMin,particleslib::CPerParticleFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_flSpeedMax,particleslib::CPerParticleFloatInput, 0x348);
+			NESTED_PROPERTY(m_flEndSpread,particleslib::CPerParticleFloatInput, 0x4b8);
+			NESTED_PROPERTY(m_flStartOffset,particleslib::CPerParticleFloatInput, 0x628);
+			NESTED_PROPERTY(m_flEndOffset,particleslib::CPerParticleFloatInput, 0x798);
+			PROPERTY(m_nEndControlPointNumber,int32_t, 0x908);
+			PROPERTY(m_bTrailBias,bool, 0x90c);
 			S2_PAD(0x738);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_MoveBetweenPoints) == 0x910, "C_INIT_MoveBetweenPoints size should be 0x910");

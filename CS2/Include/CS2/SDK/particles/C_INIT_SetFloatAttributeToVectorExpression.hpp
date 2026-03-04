@@ -26,12 +26,12 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_SetFloatAttributeToVectorExpression : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nExpression,particles::VectorFloatExpressionType_t , 0x1d8);
-			PROPERTY(m_vInput1,particleslib::CPerParticleVecInput , 0x1e0);
-			PROPERTY(m_vInput2,particleslib::CPerParticleVecInput , 0x898);
-			PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput , 0xf50);
-			PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t , 0x10c0);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x10c4);
+			PROPERTY(m_nExpression,particles::VectorFloatExpressionType_t, 0x1d8);
+			NESTED_PROPERTY(m_vInput1,particleslib::CPerParticleVecInput, 0x1e0);
+			NESTED_PROPERTY(m_vInput2,particleslib::CPerParticleVecInput, 0x898);
+			NESTED_PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput, 0xf50);
+			NESTED_PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t, 0x10c0);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x10c4);
 			S2_PAD(0xEF0);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_SetFloatAttributeToVectorExpression) == 0x10C8, "C_INIT_SetFloatAttributeToVectorExpression size should be 0x10C8");

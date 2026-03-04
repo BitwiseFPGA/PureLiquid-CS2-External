@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixFreeverbDesc_t  {
 		public:
-			PROPERTY(m_flRoomSize,float32 , 0x0);
-			PROPERTY(m_flDamp,float32 , 0x4);
-			PROPERTY(m_flWidth,float32 , 0x8);
-			PROPERTY(m_flLateReflections,float32 , 0xc);
+			PROPERTY(m_flRoomSize,float32, 0x0);
+			PROPERTY(m_flDamp,float32, 0x4);
+			PROPERTY(m_flWidth,float32, 0x8);
+			PROPERTY(m_flLateReflections,float32, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixFreeverbDesc_t) == 0x10, "VMixFreeverbDesc_t size should be 0x10");

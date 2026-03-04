@@ -26,8 +26,8 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerBase  {
 		public:
-			PROPERTY(m_vSound,soundsystem_voicecontainers::CVSound , 0x28);
-			PROPERTY(m_pEnvelopeAnalyzer,soundsystem_voicecontainers::CVoiceContainerAnalysisBase* , 0xa0);
+			NESTED_PROPERTY(m_vSound,soundsystem_voicecontainers::CVSound, 0x28);
+			PROPERTY(m_pEnvelopeAnalyzer,soundsystem_voicecontainers::CVoiceContainerAnalysisBase*, 0xa0);
 			S2_PAD(0xA8);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerBase) == 0xA8, "CVoiceContainerBase size should be 0xA8");

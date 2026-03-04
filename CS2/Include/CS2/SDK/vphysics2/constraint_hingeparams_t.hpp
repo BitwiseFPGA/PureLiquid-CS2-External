@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace vphysics2 {
 		class constraint_hingeparams_t  {
 		public:
-			PROPERTY(worldPosition,GlobalTypes::Vector , 0x0);
-			PROPERTY(worldAxisDirection,GlobalTypes::Vector , 0xc);
-			PROPERTY(hingeAxis,vphysics2::constraint_axislimit_t , 0x18);
-			PROPERTY(constraint,vphysics2::constraint_breakableparams_t , 0x28);
+			PROPERTY(worldPosition,GlobalTypes::Vector, 0x0);
+			PROPERTY(worldAxisDirection,GlobalTypes::Vector, 0xc);
+			NESTED_PROPERTY(hingeAxis,vphysics2::constraint_axislimit_t, 0x18);
+			NESTED_PROPERTY(constraint,vphysics2::constraint_breakableparams_t, 0x28);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::vphysics2::constraint_hingeparams_t) == 0x40, "constraint_hingeparams_t size should be 0x40");

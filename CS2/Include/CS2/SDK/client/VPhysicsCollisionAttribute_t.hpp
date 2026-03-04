@@ -20,17 +20,17 @@ namespace CS2 {
 	namespace client {
 		class VPhysicsCollisionAttribute_t  {
 		public:
-			PROPERTY(m_nInteractsAs,uint64_t , 0x8);
-			PROPERTY(m_nInteractsWith,uint64_t , 0x10);
-			PROPERTY(m_nInteractsExclude,uint64_t , 0x18);
-			PROPERTY(m_nEntityId,uint32_t , 0x20);
-			PROPERTY(m_nOwnerId,uint32_t , 0x24);
-			PROPERTY(m_nHierarchyId,uint16_t , 0x28);
-			PROPERTY(m_nDetailLayerMask,uint16_t , 0x2a);
-			PROPERTY(m_nDetailLayerMaskType,uint8_t , 0x2c);
-			PROPERTY(m_nTargetDetailLayer,uint8_t , 0x2d);
-			PROPERTY(m_nCollisionGroup,uint8_t , 0x2e);
-			PROPERTY(m_nCollisionFunctionMask,uint8_t , 0x2f);
+			PROPERTY(m_nInteractsAs,uint64_t, 0x8);
+			PROPERTY(m_nInteractsWith,uint64_t, 0x10);
+			PROPERTY(m_nInteractsExclude,uint64_t, 0x18);
+			PROPERTY(m_nEntityId,uint32_t, 0x20);
+			PROPERTY(m_nOwnerId,uint32_t, 0x24);
+			PROPERTY(m_nHierarchyId,uint16_t, 0x28);
+			PROPERTY(m_nDetailLayerMask,uint16_t, 0x2a);
+			PROPERTY(m_nDetailLayerMaskType,uint8_t, 0x2c);
+			PROPERTY(m_nTargetDetailLayer,uint8_t, 0x2d);
+			PROPERTY(m_nCollisionGroup,uint8_t, 0x2e);
+			PROPERTY(m_nCollisionFunctionMask,uint8_t, 0x2f);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::client::VPhysicsCollisionAttribute_t) == 0x30, "VPhysicsCollisionAttribute_t size should be 0x30");

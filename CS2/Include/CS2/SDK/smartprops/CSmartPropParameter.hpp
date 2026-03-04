@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropParameter  {
 		public:
-			PROPERTY(m_nElementID,int32_t , 0x8);
+			PROPERTY(m_nElementID,int32_t, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropParameter) == 0x10, "CSmartPropParameter size should be 0x10");

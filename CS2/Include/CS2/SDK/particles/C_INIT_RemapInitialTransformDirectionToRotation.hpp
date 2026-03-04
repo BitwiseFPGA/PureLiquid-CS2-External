@@ -23,10 +23,10 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_RemapInitialTransformDirectionToRotation : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0x1d8);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x240);
-			PROPERTY(m_flOffsetRot,float32 , 0x244);
-			PROPERTY(m_nComponent,int32_t , 0x248);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0x1d8);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x240);
+			PROPERTY(m_flOffsetRot,float32, 0x244);
+			PROPERTY(m_nComponent,int32_t, 0x248);
 			S2_PAD(0x78);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_RemapInitialTransformDirectionToRotation) == 0x250, "C_INIT_RemapInitialTransformDirectionToRotation size should be 0x250");

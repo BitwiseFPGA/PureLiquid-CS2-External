@@ -26,15 +26,15 @@ namespace CS2 {
 	namespace server {
 		class CFuncMonitor : public CS2::server::CFuncBrush {
 		public:
-			PROPERTY(m_targetCamera,GlobalTypes::CUtlString* , 0x750);
-			PROPERTY(m_nResolutionEnum,int32_t , 0x758);
-			PROPERTY(m_bRenderShadows,bool , 0x75c);
-			PROPERTY(m_bUseUniqueColorTarget,bool , 0x75d);
-			PROPERTY(m_brushModelName,GlobalTypes::CUtlString* , 0x760);
+			PROPERTY(m_targetCamera,GlobalTypes::CUtlString*, 0x750);
+			PROPERTY(m_nResolutionEnum,int32_t, 0x758);
+			PROPERTY(m_bRenderShadows,bool, 0x75c);
+			PROPERTY(m_bUseUniqueColorTarget,bool, 0x75d);
+			PROPERTY(m_brushModelName,GlobalTypes::CUtlString*, 0x760);
 			PROPERTY(m_hTargetCamera,GlobalTypes::CHandle<server::CBaseEntity>, 0x768);
-			PROPERTY(m_bEnabled,bool , 0x76c);
-			PROPERTY(m_bDraw3DSkybox,bool , 0x76d);
-			PROPERTY(m_bStartEnabled,bool , 0x76e);
+			PROPERTY(m_bEnabled,bool, 0x76c);
+			PROPERTY(m_bDraw3DSkybox,bool, 0x76d);
+			PROPERTY(m_bStartEnabled,bool, 0x76e);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::CFuncMonitor) == 0x770, "CFuncMonitor size should be 0x770");

@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class CSoundEventAABBEntity : public CS2::server::CSoundEventEntity {
 		public:
-			PROPERTY(m_vMins,GlobalTypes::Vector , 0x558);
-			PROPERTY(m_vMaxs,GlobalTypes::Vector , 0x564);
+			PROPERTY(m_vMins,GlobalTypes::Vector, 0x558);
+			PROPERTY(m_vMaxs,GlobalTypes::Vector, 0x564);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CSoundEventAABBEntity) == 0x570, "CSoundEventAABBEntity size should be 0x570");

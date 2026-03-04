@@ -23,9 +23,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_DirectionBetweenVecsToVec : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d0);
-			PROPERTY(m_vecPoint1,particleslib::CPerParticleVecInput , 0x1d8);
-			PROPERTY(m_vecPoint2,particleslib::CPerParticleVecInput , 0x890);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d0);
+			NESTED_PROPERTY(m_vecPoint1,particleslib::CPerParticleVecInput, 0x1d8);
+			NESTED_PROPERTY(m_vecPoint2,particleslib::CPerParticleVecInput, 0x890);
 			S2_PAD(0xD78);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_DirectionBetweenVecsToVec) == 0xF48, "C_OP_DirectionBetweenVecsToVec size should be 0xF48");

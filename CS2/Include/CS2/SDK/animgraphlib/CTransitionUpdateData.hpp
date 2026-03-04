@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CTransitionUpdateData  {
 		public:
-			PROPERTY(m_srcStateIndex,uint8_t , 0x0);
-			PROPERTY(m_destStateIndex,uint8_t , 0x1);
+			PROPERTY(m_srcStateIndex,uint8_t, 0x0);
+			PROPERTY(m_destStateIndex,uint8_t, 0x1);
 			S2_PAD(0x3);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CTransitionUpdateData) == 0x3, "CTransitionUpdateData size should be 0x3");

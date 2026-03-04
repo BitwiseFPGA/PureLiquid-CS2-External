@@ -14,6 +14,7 @@
 #include <SDK/entity2/GameTick_t.hpp>
 #include <SDK/client/C_fogplayerparams_t.hpp>
 #include <SDK/client/audioparams_t.hpp>
+#include <SDK/client/C_PostProcessingVolume.hpp>
 #include <SDK/client/fogparams_t.hpp>
 
 
@@ -33,26 +34,26 @@ namespace CS2 {
 	namespace client {
 		class CPlayer_CameraServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY(m_vecCsViewPunchAngle,GlobalTypes::QAngle , 0x48);
-			PROPERTY(m_nCsViewPunchAngleTick,entity2::GameTick_t , 0x54);
-			PROPERTY(m_flCsViewPunchAngleTickRatio,float32 , 0x58);
-			PROPERTY(m_PlayerFog,client::C_fogplayerparams_t , 0x60);
+			PROPERTY(m_vecCsViewPunchAngle,GlobalTypes::QAngle, 0x48);
+			NESTED_PROPERTY(m_nCsViewPunchAngleTick,entity2::GameTick_t, 0x54);
+			PROPERTY(m_flCsViewPunchAngleTickRatio,float32, 0x58);
+			NESTED_PROPERTY(m_PlayerFog,client::C_fogplayerparams_t, 0x60);
 			PROPERTY(m_hColorCorrectionCtrl,GlobalTypes::CHandle<client::C_ColorCorrection>, 0xa0);
 			PROPERTY(m_hViewEntity,GlobalTypes::CHandle<client::C_BaseEntity>, 0xa4);
 			PROPERTY(m_hTonemapController,GlobalTypes::CHandle<client::C_TonemapController2>, 0xa8);
-			PROPERTY(m_audio,client::audioparams_t , 0xb0);
+			NESTED_PROPERTY(m_audio,client::audioparams_t, 0xb0);
 			PROPERTY(m_PostProcessingVolumes,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_PostProcessingVolume>>, 0x128);
-			PROPERTY(m_flOldPlayerZ,float32 , 0x140);
-			PROPERTY(m_flOldPlayerViewOffsetZ,float32 , 0x144);
-			PROPERTY(m_CurrentFog,client::fogparams_t , 0x148);
+			PROPERTY(m_flOldPlayerZ,float32, 0x140);
+			PROPERTY(m_flOldPlayerViewOffsetZ,float32, 0x144);
+			NESTED_PROPERTY(m_CurrentFog,client::fogparams_t, 0x148);
 			PROPERTY(m_hOldFogController,GlobalTypes::CHandle<client::C_FogController>, 0x1b0);
-			PROPERTY_ARRAY(m_bOverrideFogColor,bool , 5 , 0x1b4);
-			PROPERTY_ARRAY(m_OverrideFogColor,GlobalTypes::Color , 5 , 0x1b9);
-			PROPERTY_ARRAY(m_bOverrideFogStartEnd,bool , 5 , 0x1cd);
-			PROPERTY_ARRAY(m_fOverrideFogStart,float32 , 5 , 0x1d4);
-			PROPERTY_ARRAY(m_fOverrideFogEnd,float32 , 5 , 0x1e8);
+			PROPERTY_ARRAY(m_bOverrideFogColor,bool, 5 , 0x1b4);
+			PROPERTY_ARRAY(m_OverrideFogColor,GlobalTypes::Color, 5 , 0x1b9);
+			PROPERTY_ARRAY(m_bOverrideFogStartEnd,bool, 5 , 0x1cd);
+			PROPERTY_ARRAY(m_fOverrideFogStart,float32, 5 , 0x1d4);
+			PROPERTY_ARRAY(m_fOverrideFogEnd,float32, 5 , 0x1e8);
 			PROPERTY(m_hActivePostProcessingVolume,GlobalTypes::CHandle<client::C_PostProcessingVolume>, 0x1fc);
-			PROPERTY(m_angDemoViewAngles,GlobalTypes::QAngle , 0x200);
+			PROPERTY(m_angDemoViewAngles,GlobalTypes::QAngle, 0x200);
 			S2_PAD(0x248);
 		};
 		//static_assert(sizeof(CS2::client::CPlayer_CameraServices) == 0x290, "CPlayer_CameraServices size should be 0x290");

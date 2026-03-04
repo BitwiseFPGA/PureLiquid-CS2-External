@@ -26,8 +26,8 @@ namespace CS2 {
 	namespace server {
 		class CInstructorEventEntity : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_iszName,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
-			PROPERTY(m_iszHintTargetEntity,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_iszName,GlobalTypes::CUtlSymbolLarge*, 0x4a8);
+			PROPERTY(m_iszHintTargetEntity,GlobalTypes::CUtlSymbolLarge*, 0x4b0);
 			PROPERTY(m_hTargetPlayer,GlobalTypes::CHandle<server::CBasePlayerPawn>, 0x4b8);
 			S2_PAD(0x18);
 		};

@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimFrameSegment  {
 		public:
-			PROPERTY(m_nUniqueFrameIndex,int32_t , 0x0);
-			PROPERTY(m_nLocalElementMasks,uint32_t , 0x4);
-			PROPERTY(m_nLocalChannel,int32_t , 0x8);
-			PROPERTY(m_container,GlobalTypes::CUtlBinaryBlock , 0x10);
+			PROPERTY(m_nUniqueFrameIndex,int32_t, 0x0);
+			PROPERTY(m_nLocalElementMasks,uint32_t, 0x4);
+			PROPERTY(m_nLocalChannel,int32_t, 0x8);
+			PROPERTY(m_container,GlobalTypes::CUtlBinaryBlock, 0x10);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimFrameSegment) == 0x20, "CAnimFrameSegment size should be 0x20");

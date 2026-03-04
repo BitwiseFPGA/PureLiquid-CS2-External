@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace pulse_system {
 		class CPulseTurtleGraphicsCursor : public CS2::pulse_runtime_lib::CPulseExecCursor {
 		public:
-			PROPERTY(m_Color,GlobalTypes::Color , 0xd0);
-			PROPERTY(m_vPos,GlobalTypes::Vector2D , 0xd4);
-			PROPERTY(m_flHeadingDeg,float32 , 0xdc);
-			PROPERTY(m_bPenUp,bool , 0xe0);
+			PROPERTY(m_Color,GlobalTypes::Color, 0xd0);
+			PROPERTY(m_vPos,GlobalTypes::Vector2D, 0xd4);
+			PROPERTY(m_flHeadingDeg,float32, 0xdc);
+			PROPERTY(m_bPenUp,bool, 0xe0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::pulse_system::CPulseTurtleGraphicsCursor) == 0xE8, "CPulseTurtleGraphicsCursor size should be 0xE8");

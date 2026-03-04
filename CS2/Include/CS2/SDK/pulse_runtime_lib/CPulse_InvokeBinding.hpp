@@ -23,11 +23,11 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulse_InvokeBinding  {
 		public:
-			PROPERTY(m_RegisterMap,pulse_runtime_lib::PulseRegisterMap_t , 0x0);
-			PROPERTY(m_FuncName,GlobalTypes::PulseSymbol_t , 0x30);
-			PROPERTY(m_nCellIndex,pulse_runtime_lib::PulseRuntimeCellIndex_t , 0x40);
-			PROPERTY(m_nSrcChunk,pulse_runtime_lib::PulseRuntimeChunkIndex_t , 0x44);
-			PROPERTY(m_nSrcInstruction,int32_t , 0x48);
+			NESTED_PROPERTY(m_RegisterMap,pulse_runtime_lib::PulseRegisterMap_t, 0x0);
+			PROPERTY(m_FuncName,GlobalTypes::PulseSymbol_t, 0x30);
+			NESTED_PROPERTY(m_nCellIndex,pulse_runtime_lib::PulseRuntimeCellIndex_t, 0x40);
+			NESTED_PROPERTY(m_nSrcChunk,pulse_runtime_lib::PulseRuntimeChunkIndex_t, 0x44);
+			PROPERTY(m_nSrcInstruction,int32_t, 0x48);
 			S2_PAD(0xB0);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulse_InvokeBinding) == 0xB0, "CPulse_InvokeBinding size should be 0xB0");

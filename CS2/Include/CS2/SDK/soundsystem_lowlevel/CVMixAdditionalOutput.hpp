@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixAdditionalOutput  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixAdditionalOutput) == 0x10, "CVMixAdditionalOutput size should be 0x10");

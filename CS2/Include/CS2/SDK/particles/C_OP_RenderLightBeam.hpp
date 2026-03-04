@@ -24,13 +24,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderLightBeam : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_vColorBlend,particleslib::CParticleCollectionVecInput , 0x220);
-			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t , 0x8d8);
-			PROPERTY(m_flBrightnessLumensPerMeter,particleslib::CParticleCollectionFloatInput , 0x8e0);
-			PROPERTY(m_bCastShadows,bool , 0xa50);
-			PROPERTY(m_flSkirt,particleslib::CParticleCollectionFloatInput , 0xa58);
-			PROPERTY(m_flRange,particleslib::CParticleCollectionFloatInput , 0xbc8);
-			PROPERTY(m_flThickness,particleslib::CParticleCollectionFloatInput , 0xd38);
+			NESTED_PROPERTY(m_vColorBlend,particleslib::CParticleCollectionVecInput, 0x220);
+			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t, 0x8d8);
+			NESTED_PROPERTY(m_flBrightnessLumensPerMeter,particleslib::CParticleCollectionFloatInput, 0x8e0);
+			PROPERTY(m_bCastShadows,bool, 0xa50);
+			NESTED_PROPERTY(m_flSkirt,particleslib::CParticleCollectionFloatInput, 0xa58);
+			NESTED_PROPERTY(m_flRange,particleslib::CParticleCollectionFloatInput, 0xbc8);
+			NESTED_PROPERTY(m_flThickness,particleslib::CParticleCollectionFloatInput, 0xd38);
 			S2_PAD(0xC88);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RenderLightBeam) == 0xEA8, "C_OP_RenderLightBeam size should be 0xEA8");

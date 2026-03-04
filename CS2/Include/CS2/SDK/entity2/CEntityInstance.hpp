@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace entity2 {
 		class CEntityInstance  {
 		public:
-			PROPERTY(m_iszPrivateVScripts,GlobalTypes::CUtlSymbolLarge* , 0x8);
-			PROPERTY(m_pEntity,entity2::CEntityIdentity* , 0x10);
-			PROPERTY(m_CScriptComponent,entity2::CScriptComponent* , 0x30);
+			PROPERTY(m_iszPrivateVScripts,GlobalTypes::CUtlSymbolLarge*, 0x8);
+			PROPERTY(m_pEntity,entity2::CEntityIdentity*, 0x10);
+			PROPERTY(m_CScriptComponent,entity2::CScriptComponent*, 0x30);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::entity2::CEntityInstance) == 0x38, "CEntityInstance size should be 0x38");

@@ -23,19 +23,19 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapCPtoVector : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nCPInput,int32_t , 0x1d0);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d4);
-			PROPERTY(m_nLocalSpaceCP,int32_t , 0x1d8);
-			PROPERTY(m_vInputMin,GlobalTypes::Vector , 0x1dc);
-			PROPERTY(m_vInputMax,GlobalTypes::Vector , 0x1e8);
-			PROPERTY(m_vOutputMin,GlobalTypes::Vector , 0x1f4);
-			PROPERTY(m_vOutputMax,GlobalTypes::Vector , 0x200);
-			PROPERTY(m_flStartTime,float32 , 0x20c);
-			PROPERTY(m_flEndTime,float32 , 0x210);
-			PROPERTY(m_flInterpRate,float32 , 0x214);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x218);
-			PROPERTY(m_bOffset,bool , 0x21c);
-			PROPERTY(m_bAccelerate,bool , 0x21d);
+			PROPERTY(m_nCPInput,int32_t, 0x1d0);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d4);
+			PROPERTY(m_nLocalSpaceCP,int32_t, 0x1d8);
+			PROPERTY(m_vInputMin,GlobalTypes::Vector, 0x1dc);
+			PROPERTY(m_vInputMax,GlobalTypes::Vector, 0x1e8);
+			PROPERTY(m_vOutputMin,GlobalTypes::Vector, 0x1f4);
+			PROPERTY(m_vOutputMax,GlobalTypes::Vector, 0x200);
+			PROPERTY(m_flStartTime,float32, 0x20c);
+			PROPERTY(m_flEndTime,float32, 0x210);
+			PROPERTY(m_flInterpRate,float32, 0x214);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x218);
+			PROPERTY(m_bOffset,bool, 0x21c);
+			PROPERTY(m_bAccelerate,bool, 0x21d);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapCPtoVector) == 0x220, "C_OP_RemapCPtoVector size should be 0x220");

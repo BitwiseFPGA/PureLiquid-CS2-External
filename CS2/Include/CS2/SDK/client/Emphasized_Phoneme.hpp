@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace client {
 		class Emphasized_Phoneme  {
 		public:
-			PROPERTY(m_sClassName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_flAmount,float32 , 0x18);
-			PROPERTY(m_bRequired,bool , 0x1c);
-			PROPERTY(m_bBasechecked,bool , 0x1d);
-			PROPERTY(m_bValid,bool , 0x1e);
+			PROPERTY(m_sClassName,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_flAmount,float32, 0x18);
+			PROPERTY(m_bRequired,bool, 0x1c);
+			PROPERTY(m_bBasechecked,bool, 0x1d);
+			PROPERTY(m_bValid,bool, 0x1e);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::Emphasized_Phoneme) == 0x20, "C_BaseFlex::Emphasized_Phoneme size should be 0x20");

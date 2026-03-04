@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace scenesystem {
 		class CSSDSEndFrameViewInfo  {
 		public:
-			PROPERTY(m_nViewId,uint64_t , 0x0);
-			PROPERTY(m_ViewName,GlobalTypes::CUtlString* , 0x8);
+			PROPERTY(m_nViewId,uint64_t, 0x0);
+			PROPERTY(m_ViewName,GlobalTypes::CUtlString*, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::scenesystem::CSSDSEndFrameViewInfo) == 0x10, "CSSDSEndFrameViewInfo size should be 0x10");

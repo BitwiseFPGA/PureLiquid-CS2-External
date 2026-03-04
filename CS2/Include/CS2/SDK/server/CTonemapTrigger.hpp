@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class CTonemapTrigger : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_tonemapControllerName,GlobalTypes::CUtlSymbolLarge* , 0x890);
-			PROPERTY(m_hTonemapController,GlobalTypes::CEntityHandle , 0x898);
+			PROPERTY(m_tonemapControllerName,GlobalTypes::CUtlSymbolLarge*, 0x890);
+			PROPERTY(m_hTonemapController,GlobalTypes::CEntityHandle, 0x898);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CTonemapTrigger) == 0x8A0, "CTonemapTrigger size should be 0x8A0");

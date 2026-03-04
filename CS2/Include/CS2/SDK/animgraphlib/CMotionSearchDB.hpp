@@ -12,14 +12,10 @@
 
 #include <SDK/animgraphlib/CMotionSearchNode.hpp>
 #include <SDK/animgraphlib/CProductQuantizer.hpp>
+#include <SDK/animgraphlib/MotionDBIndex.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class MotionDBIndex;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,9 +23,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CMotionSearchDB  {
 		public:
-			PROPERTY(m_rootNode,animgraphlib::CMotionSearchNode , 0x0);
-			PROPERTY(m_residualQuantizer,animgraphlib::CProductQuantizer , 0x80);
-			PROPERTY(m_codeIndices,GlobalTypes::CUtlVector<animgraphlib::MotionDBIndex>, 0xa0);
+			NESTED_PROPERTY(m_rootNode,animgraphlib::CMotionSearchNode, 0x0);
+			NESTED_PROPERTY(m_residualQuantizer,animgraphlib::CProductQuantizer, 0x80);
+			NESTED_PROPERTY(m_codeIndices,GlobalTypes::CUtlVector<animgraphlib::MotionDBIndex>, 0xa0);
 			S2_PAD(0xB8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CMotionSearchDB) == 0xB8, "CMotionSearchDB size should be 0xB8");

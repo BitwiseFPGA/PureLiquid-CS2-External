@@ -20,23 +20,23 @@ namespace CS2 {
 	namespace animationsystem {
 		class CCompressorGroup  {
 		public:
-			PROPERTY(m_nTotalElementCount,int32_t , 0x0);
-			PROPERTY(m_szChannelClass,GlobalTypes::CUtlVector<char*>, 0x8);
-			PROPERTY(m_szVariableName,GlobalTypes::CUtlVector<char*>, 0x20);
-			PROPERTY(m_nType,GlobalTypes::CUtlVector< fieldtype_t >, 0x38);
-			PROPERTY(m_nFlags,GlobalTypes::CUtlVector< int32 >, 0x50);
+			PROPERTY(m_nTotalElementCount,int32_t, 0x0);
+			NESTED_PROPERTY(m_szChannelClass,GlobalTypes::CUtlVector<char*>, 0x8);
+			NESTED_PROPERTY(m_szVariableName,GlobalTypes::CUtlVector<char*>, 0x20);
+			NESTED_PROPERTY(m_nType,GlobalTypes::CUtlVector< fieldtype_t >, 0x38);
+			NESTED_PROPERTY(m_nFlags,GlobalTypes::CUtlVector< int32 >, 0x50);
 			PROPERTY(m_szGrouping,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x68);
-			PROPERTY(m_nCompressorIndex,GlobalTypes::CUtlVector< int32 >, 0x80);
-			PROPERTY(m_szElementNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector>, 0x98);
-			PROPERTY(m_nElementUniqueID,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector>, 0xb0);
-			PROPERTY(m_nElementMask,GlobalTypes::CUtlVector< uint32 >, 0xc8);
-			PROPERTY(m_vectorCompressor,GlobalTypes::CUtlVector<�(S�::CCompressor*>, 0xf8);
-			PROPERTY(m_quaternionCompressor,GlobalTypes::CUtlVector<�(S�::CCompressor*>, 0x110);
-			PROPERTY(m_intCompressor,GlobalTypes::CUtlVector<�(S�::CCompressor*>, 0x128);
-			PROPERTY(m_boolCompressor,GlobalTypes::CUtlVector<�(S�::CCompressor*>, 0x140);
-			PROPERTY(m_colorCompressor,GlobalTypes::CUtlVector<�(S�::CCompressor*>, 0x158);
-			PROPERTY(m_vector2DCompressor,GlobalTypes::CUtlVector<�(S�::CCompressor*>, 0x170);
-			PROPERTY(m_vector4DCompressor,GlobalTypes::CUtlVector<�(S�::CCompressor*>, 0x188);
+			NESTED_PROPERTY(m_nCompressorIndex,GlobalTypes::CUtlVector< int32 >, 0x80);
+			NESTED_PROPERTY(m_szElementNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector>, 0x98);
+			NESTED_PROPERTY(m_nElementUniqueID,GlobalTypes::CUtlVector<GlobalTypes::CUtlVector>, 0xb0);
+			NESTED_PROPERTY(m_nElementMask,GlobalTypes::CUtlVector< uint32 >, 0xc8);
+			NESTED_PROPERTY(m_vectorCompressor,GlobalTypes::CUtlVector<�)��::CCompressor*>, 0xf8);
+			NESTED_PROPERTY(m_quaternionCompressor,GlobalTypes::CUtlVector<�)��::CCompressor*>, 0x110);
+			NESTED_PROPERTY(m_intCompressor,GlobalTypes::CUtlVector<�)��::CCompressor*>, 0x128);
+			NESTED_PROPERTY(m_boolCompressor,GlobalTypes::CUtlVector<�)��::CCompressor*>, 0x140);
+			NESTED_PROPERTY(m_colorCompressor,GlobalTypes::CUtlVector<�)��::CCompressor*>, 0x158);
+			NESTED_PROPERTY(m_vector2DCompressor,GlobalTypes::CUtlVector<�)��::CCompressor*>, 0x170);
+			NESTED_PROPERTY(m_vector4DCompressor,GlobalTypes::CUtlVector<�)��::CCompressor*>, 0x188);
 			S2_PAD(0x1A0);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CCompressorGroup) == 0x1A0, "CCompressorGroup size should be 0x1A0");

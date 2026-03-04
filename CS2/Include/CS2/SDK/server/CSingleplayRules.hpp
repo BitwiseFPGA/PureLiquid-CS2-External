@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CSingleplayRules : public CS2::server::CGameRules {
 		public:
-			PROPERTY(m_bSinglePlayerGameEnding,bool , 0xc0);
+			PROPERTY(m_bSinglePlayerGameEnding,bool, 0xd0);
 			S2_PAD(0x8);
 		};
-		//static_assert(sizeof(CS2::server::CSingleplayRules) == 0xC8, "CSingleplayRules size should be 0xC8");
+		//static_assert(sizeof(CS2::server::CSingleplayRules) == 0xD8, "CSingleplayRules size should be 0xD8");
 	}
 }

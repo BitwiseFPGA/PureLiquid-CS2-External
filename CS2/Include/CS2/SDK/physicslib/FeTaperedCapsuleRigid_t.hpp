@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace physicslib {
 		class FeTaperedCapsuleRigid_t  {
 		public:
-			PROPERTY_ARRAY(vSphere,GlobalTypes::fltx4 , 2 , 0x0);
-			PROPERTY(nNode,uint16_t , 0x20);
-			PROPERTY(nCollisionMask,uint16_t , 0x22);
-			PROPERTY(nVertexMapIndex,uint16_t , 0x24);
-			PROPERTY(nFlags,uint16_t , 0x26);
+			PROPERTY_ARRAY(vSphere,GlobalTypes::fltx4, 2 , 0x0);
+			PROPERTY(nNode,uint16_t, 0x20);
+			PROPERTY(nCollisionMask,uint16_t, 0x22);
+			PROPERTY(nVertexMapIndex,uint16_t, 0x24);
+			PROPERTY(nFlags,uint16_t, 0x26);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeTaperedCapsuleRigid_t) == 0x30, "FeTaperedCapsuleRigid_t size should be 0x30");

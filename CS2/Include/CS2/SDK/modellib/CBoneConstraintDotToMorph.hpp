@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace modellib {
 		class CBoneConstraintDotToMorph : public CS2::modellib::CBoneConstraintBase {
 		public:
-			PROPERTY(m_sBoneName,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_sTargetBoneName,GlobalTypes::CUtlString* , 0x28);
-			PROPERTY(m_sMorphChannelName,GlobalTypes::CUtlString* , 0x30);
-			PROPERTY_ARRAY(m_flRemap,float32 , 4 , 0x38);
+			PROPERTY(m_sBoneName,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_sTargetBoneName,GlobalTypes::CUtlString*, 0x28);
+			PROPERTY(m_sMorphChannelName,GlobalTypes::CUtlString*, 0x30);
+			PROPERTY_ARRAY(m_flRemap,float32, 4 , 0x38);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::modellib::CBoneConstraintDotToMorph) == 0x58, "CBoneConstraintDotToMorph size should be 0x58");

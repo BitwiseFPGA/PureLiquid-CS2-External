@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class TagSpan_t  {
 		public:
-			PROPERTY(m_tagIndex,int32_t , 0x0);
-			PROPERTY(m_startCycle,float32 , 0x4);
-			PROPERTY(m_endCycle,float32 , 0x8);
+			PROPERTY(m_tagIndex,int32_t, 0x0);
+			PROPERTY(m_startCycle,float32, 0x4);
+			PROPERTY(m_endCycle,float32, 0x8);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::TagSpan_t) == 0xC, "TagSpan_t size should be 0xC");

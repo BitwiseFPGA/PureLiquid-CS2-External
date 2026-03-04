@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace resourcefile {
 		class CExampleSchemaVData_Monomorphic  {
 		public:
-			PROPERTY(m_nExample1,int32_t , 0x0);
-			PROPERTY(m_nExample2,int32_t , 0x4);
+			PROPERTY(m_nExample1,int32_t, 0x0);
+			PROPERTY(m_nExample2,int32_t, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::resourcefile::CExampleSchemaVData_Monomorphic) == 0x8, "CExampleSchemaVData_Monomorphic size should be 0x8");

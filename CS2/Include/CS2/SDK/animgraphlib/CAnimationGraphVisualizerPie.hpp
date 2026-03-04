@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimationGraphVisualizerPie : public CS2::animgraphlib::CAnimationGraphVisualizerPrimitiveBase {
 		public:
-			PROPERTY(m_vWsCenter,GlobalTypes::VectorAligned , 0x40);
-			PROPERTY(m_vWsStart,GlobalTypes::VectorAligned , 0x50);
-			PROPERTY(m_vWsEnd,GlobalTypes::VectorAligned , 0x60);
-			PROPERTY(m_Color,GlobalTypes::Color , 0x70);
+			PROPERTY(m_vWsCenter,GlobalTypes::VectorAligned, 0x40);
+			PROPERTY(m_vWsStart,GlobalTypes::VectorAligned, 0x50);
+			PROPERTY(m_vWsEnd,GlobalTypes::VectorAligned, 0x60);
+			PROPERTY(m_Color,GlobalTypes::Color, 0x70);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAnimationGraphVisualizerPie) == 0x80, "CAnimationGraphVisualizerPie size should be 0x80");

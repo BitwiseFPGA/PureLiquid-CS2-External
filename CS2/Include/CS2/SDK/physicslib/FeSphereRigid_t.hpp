@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace physicslib {
 		class FeSphereRigid_t  {
 		public:
-			PROPERTY(vSphere,GlobalTypes::fltx4 , 0x0);
-			PROPERTY(nNode,uint16_t , 0x10);
-			PROPERTY(nCollisionMask,uint16_t , 0x12);
-			PROPERTY(nVertexMapIndex,uint16_t , 0x14);
-			PROPERTY(nFlags,uint16_t , 0x16);
+			PROPERTY(vSphere,GlobalTypes::fltx4, 0x0);
+			PROPERTY(nNode,uint16_t, 0x10);
+			PROPERTY(nCollisionMask,uint16_t, 0x12);
+			PROPERTY(nVertexMapIndex,uint16_t, 0x14);
+			PROPERTY(nFlags,uint16_t, 0x16);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeSphereRigid_t) == 0x20, "FeSphereRigid_t size should be 0x20");

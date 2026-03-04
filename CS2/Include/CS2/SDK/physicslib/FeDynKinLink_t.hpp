@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace physicslib {
 		class FeDynKinLink_t  {
 		public:
-			PROPERTY(m_nParent,uint16_t , 0x0);
-			PROPERTY(m_nChild,uint16_t , 0x2);
+			PROPERTY(m_nParent,uint16_t, 0x0);
+			PROPERTY(m_nChild,uint16_t, 0x2);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeDynKinLink_t) == 0x4, "FeDynKinLink_t size should be 0x4");

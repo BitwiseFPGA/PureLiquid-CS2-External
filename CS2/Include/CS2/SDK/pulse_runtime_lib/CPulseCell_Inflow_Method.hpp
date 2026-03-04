@@ -11,14 +11,10 @@
 
 
 #include <SDK/pulse_runtime_lib/CPulseCell_Inflow_BaseEntrypoint.hpp>
+#include <SDK/pulse_runtime_lib/CPulseRuntimeMethodArg.hpp>
 
 
 
-namespace CS2 {
-	namespace pulse_runtime_lib {
-		class CPulseRuntimeMethodArg;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,10 +22,10 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Inflow_Method : public CS2::pulse_runtime_lib::CPulseCell_Inflow_BaseEntrypoint {
 		public:
-			PROPERTY(m_MethodName,GlobalTypes::PulseSymbol_t , 0x80);
-			PROPERTY(m_Description,GlobalTypes::CUtlString* , 0x90);
-			PROPERTY(m_bIsPublic,bool , 0x98);
-			PROPERTY(m_ReturnType,GlobalTypes::CPulseValueFullType , 0xa0);
+			PROPERTY(m_MethodName,GlobalTypes::PulseSymbol_t, 0x80);
+			PROPERTY(m_Description,GlobalTypes::CUtlString*, 0x90);
+			PROPERTY(m_bIsPublic,bool, 0x98);
+			PROPERTY(m_ReturnType,GlobalTypes::CPulseValueFullType, 0xa0);
 			PROPERTY(m_Args,GlobalTypes::CUtlLeanVector<pulse_runtime_lib::CPulseRuntimeMethodArg>, 0xb8);
 			S2_PAD(0x48);
 		};

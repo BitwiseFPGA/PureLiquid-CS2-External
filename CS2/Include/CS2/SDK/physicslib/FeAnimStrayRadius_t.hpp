@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeAnimStrayRadius_t  {
 		public:
-			PROPERTY_ARRAY(nNode,uint16_t , 2 , 0x0);
-			PROPERTY(flMaxDist,float32 , 0x4);
-			PROPERTY(flRelaxationFactor,float32 , 0x8);
+			PROPERTY_ARRAY(nNode,uint16_t, 2 , 0x0);
+			PROPERTY(flMaxDist,float32, 0x4);
+			PROPERTY(flRelaxationFactor,float32, 0x8);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeAnimStrayRadius_t) == 0xC, "FeAnimStrayRadius_t size should be 0xC");

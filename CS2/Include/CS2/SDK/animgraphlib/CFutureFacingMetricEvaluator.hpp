@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CFutureFacingMetricEvaluator : public CS2::animgraphlib::CMotionMetricEvaluator {
 		public:
-			PROPERTY(m_flDistance,float32 , 0x50);
-			PROPERTY(m_flTime,float32 , 0x54);
+			PROPERTY(m_flDistance,float32, 0x50);
+			PROPERTY(m_flTime,float32, 0x54);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CFutureFacingMetricEvaluator) == 0x58, "CFutureFacingMetricEvaluator size should be 0x58");

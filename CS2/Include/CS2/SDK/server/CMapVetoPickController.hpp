@@ -21,25 +21,25 @@ namespace CS2 {
 	namespace server {
 		class CMapVetoPickController : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_bPlayedIntroVcd,bool , 0x4a8);
-			PROPERTY(m_bNeedToPlayFiveSecondsRemaining,bool , 0x4a9);
-			PROPERTY(m_dblPreMatchDraftSequenceTime,float64 , 0x4c8);
-			PROPERTY(m_bPreMatchDraftStateChanged,bool , 0x4d0);
-			PROPERTY(m_nDraftType,int32_t , 0x4d4);
-			PROPERTY(m_nTeamWinningCoinToss,int32_t , 0x4d8);
-			PROPERTY_ARRAY(m_nTeamWithFirstChoice,int32_t , 64 , 0x4dc);
-			PROPERTY_ARRAY(m_nVoteMapIdsList,int32_t , 7 , 0x5dc);
-			PROPERTY_ARRAY(m_nAccountIDs,int32_t , 64 , 0x5f8);
-			PROPERTY_ARRAY(m_nMapId0,int32_t , 64 , 0x6f8);
-			PROPERTY_ARRAY(m_nMapId1,int32_t , 64 , 0x7f8);
-			PROPERTY_ARRAY(m_nMapId2,int32_t , 64 , 0x8f8);
-			PROPERTY_ARRAY(m_nMapId3,int32_t , 64 , 0x9f8);
-			PROPERTY_ARRAY(m_nMapId4,int32_t , 64 , 0xaf8);
-			PROPERTY_ARRAY(m_nMapId5,int32_t , 64 , 0xbf8);
-			PROPERTY_ARRAY(m_nStartingSide0,int32_t , 64 , 0xcf8);
-			PROPERTY(m_nCurrentPhase,int32_t , 0xdf8);
-			PROPERTY(m_nPhaseStartTick,int32_t , 0xdfc);
-			PROPERTY(m_nPhaseDurationTicks,int32_t , 0xe00);
+			PROPERTY(m_bPlayedIntroVcd,bool, 0x4a8);
+			PROPERTY(m_bNeedToPlayFiveSecondsRemaining,bool, 0x4a9);
+			PROPERTY(m_dblPreMatchDraftSequenceTime,float64, 0x4c8);
+			PROPERTY(m_bPreMatchDraftStateChanged,bool, 0x4d0);
+			PROPERTY(m_nDraftType,int32_t, 0x4d4);
+			PROPERTY(m_nTeamWinningCoinToss,int32_t, 0x4d8);
+			PROPERTY_ARRAY(m_nTeamWithFirstChoice,int32_t, 64 , 0x4dc);
+			PROPERTY_ARRAY(m_nVoteMapIdsList,int32_t, 7 , 0x5dc);
+			PROPERTY_ARRAY(m_nAccountIDs,int32_t, 64 , 0x5f8);
+			PROPERTY_ARRAY(m_nMapId0,int32_t, 64 , 0x6f8);
+			PROPERTY_ARRAY(m_nMapId1,int32_t, 64 , 0x7f8);
+			PROPERTY_ARRAY(m_nMapId2,int32_t, 64 , 0x8f8);
+			PROPERTY_ARRAY(m_nMapId3,int32_t, 64 , 0x9f8);
+			PROPERTY_ARRAY(m_nMapId4,int32_t, 64 , 0xaf8);
+			PROPERTY_ARRAY(m_nMapId5,int32_t, 64 , 0xbf8);
+			PROPERTY_ARRAY(m_nStartingSide0,int32_t, 64 , 0xcf8);
+			PROPERTY(m_nCurrentPhase,int32_t, 0xdf8);
+			PROPERTY(m_nPhaseStartTick,int32_t, 0xdfc);
+			PROPERTY(m_nPhaseDurationTicks,int32_t, 0xe00);
 			PROPERTY(m_OnMapVetoed,GlobalTypes::CEntityOutputTemplate< CUtlSymbolLarge, CUtlSymbolLarge >*, 0xe08);
 			PROPERTY(m_OnMapPicked,GlobalTypes::CEntityOutputTemplate< CUtlSymbolLarge, CUtlSymbolLarge >*, 0xe28);
 			PROPERTY(m_OnSidesPicked,GlobalTypes::CEntityOutputTemplate< int32, int32 >, 0xe48);

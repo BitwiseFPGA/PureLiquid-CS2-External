@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_WaitForCursorsWithTag : public CS2::pulse_runtime_lib::CPulseCell_WaitForCursorsWithTagBase {
 		public:
-			PROPERTY(m_bTagSelfWhenComplete,bool , 0x98);
-			PROPERTY(m_nDesiredKillPriority,pulse_runtime_lib::PulseCursorCancelPriority_t , 0x9c);
+			PROPERTY(m_bTagSelfWhenComplete,bool, 0x98);
+			PROPERTY(m_nDesiredKillPriority,pulse_runtime_lib::PulseCursorCancelPriority_t, 0x9c);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_WaitForCursorsWithTag) == 0xA0, "CPulseCell_WaitForCursorsWithTag size should be 0xA0");

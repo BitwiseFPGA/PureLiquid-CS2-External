@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace smartprops {
 		class MaterialGroupChoice_t  {
 		public:
-			PROPERTY(m_MaterialGroupName,GlobalTypes::CSmartPropAttributeMaterialGroup , 0x0);
-			PROPERTY(m_flWeight,GlobalTypes::CSmartPropAttributeFloat , 0x40);
+			PROPERTY(m_MaterialGroupName,GlobalTypes::CSmartPropAttributeMaterialGroup, 0x0);
+			PROPERTY(m_flWeight,GlobalTypes::CSmartPropAttributeFloat, 0x40);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::smartprops::MaterialGroupChoice_t) == 0x80, "MaterialGroupChoice_t size should be 0x80");

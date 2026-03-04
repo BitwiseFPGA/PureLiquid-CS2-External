@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CAudioEmphasisSample  {
 		public:
-			PROPERTY(m_flTime,float32 , 0x0);
-			PROPERTY(m_flValue,float32 , 0x4);
+			PROPERTY(m_flTime,float32, 0x0);
+			PROPERTY(m_flValue,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CAudioEmphasisSample) == 0x8, "CAudioEmphasisSample size should be 0x8");

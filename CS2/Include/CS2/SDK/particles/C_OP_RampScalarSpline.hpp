@@ -22,16 +22,16 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RampScalarSpline : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_RateMin,float32 , 0x1d0);
-			PROPERTY(m_RateMax,float32 , 0x1d4);
-			PROPERTY(m_flStartTime_min,float32 , 0x1d8);
-			PROPERTY(m_flStartTime_max,float32 , 0x1dc);
-			PROPERTY(m_flEndTime_min,float32 , 0x1e0);
-			PROPERTY(m_flEndTime_max,float32 , 0x1e4);
-			PROPERTY(m_flBias,float32 , 0x1e8);
-			PROPERTY(m_nField,particles::ParticleAttributeIndex_t , 0x210);
-			PROPERTY(m_bProportionalOp,bool , 0x214);
-			PROPERTY(m_bEaseOut,bool , 0x215);
+			PROPERTY(m_RateMin,float32, 0x1d0);
+			PROPERTY(m_RateMax,float32, 0x1d4);
+			PROPERTY(m_flStartTime_min,float32, 0x1d8);
+			PROPERTY(m_flStartTime_max,float32, 0x1dc);
+			PROPERTY(m_flEndTime_min,float32, 0x1e0);
+			PROPERTY(m_flEndTime_max,float32, 0x1e4);
+			PROPERTY(m_flBias,float32, 0x1e8);
+			NESTED_PROPERTY(m_nField,particles::ParticleAttributeIndex_t, 0x210);
+			PROPERTY(m_bProportionalOp,bool, 0x214);
+			PROPERTY(m_bEaseOut,bool, 0x215);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RampScalarSpline) == 0x220, "C_OP_RampScalarSpline size should be 0x220");

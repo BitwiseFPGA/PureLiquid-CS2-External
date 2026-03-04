@@ -28,9 +28,9 @@ namespace CS2 {
 		class CCSPlayer_ActionTrackingServices : public CS2::client::CPlayerPawnComponent {
 		public:
 			PROPERTY(m_hLastWeaponBeforeC4AutoSwitch,GlobalTypes::CHandle<client::C_BasePlayerWeapon>, 0x48);
-			PROPERTY(m_bIsRescuing,bool , 0x4c);
-			PROPERTY(m_weaponPurchasesThisMatch,client::WeaponPurchaseTracker_t , 0x50);
-			PROPERTY(m_weaponPurchasesThisRound,client::WeaponPurchaseTracker_t , 0xc0);
+			PROPERTY(m_bIsRescuing,bool, 0x4c);
+			NESTED_PROPERTY(m_weaponPurchasesThisMatch,client::WeaponPurchaseTracker_t, 0x50);
+			NESTED_PROPERTY(m_weaponPurchasesThisRound,client::WeaponPurchaseTracker_t, 0xc0);
 			S2_PAD(0xE8);
 		};
 		//static_assert(sizeof(CS2::client::CCSPlayer_ActionTrackingServices) == 0x130, "CCSPlayer_ActionTrackingServices size should be 0x130");

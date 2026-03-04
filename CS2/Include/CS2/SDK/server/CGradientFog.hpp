@@ -27,21 +27,21 @@ namespace CS2 {
 		class CGradientFog : public CS2::server::CBaseEntity {
 		public:
 			PROPERTY(m_hGradientFogTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x4a8);
-			PROPERTY(m_flFogStartDistance,float32 , 0x4b0);
-			PROPERTY(m_flFogEndDistance,float32 , 0x4b4);
-			PROPERTY(m_bHeightFogEnabled,bool , 0x4b8);
-			PROPERTY(m_flFogStartHeight,float32 , 0x4bc);
-			PROPERTY(m_flFogEndHeight,float32 , 0x4c0);
-			PROPERTY(m_flFarZ,float32 , 0x4c4);
-			PROPERTY(m_flFogMaxOpacity,float32 , 0x4c8);
-			PROPERTY(m_flFogFalloffExponent,float32 , 0x4cc);
-			PROPERTY(m_flFogVerticalExponent,float32 , 0x4d0);
-			PROPERTY(m_fogColor,GlobalTypes::Color , 0x4d4);
-			PROPERTY(m_flFogStrength,float32 , 0x4d8);
-			PROPERTY(m_flFadeTime,float32 , 0x4dc);
-			PROPERTY(m_bStartDisabled,bool , 0x4e0);
-			PROPERTY(m_bIsEnabled,bool , 0x4e1);
-			PROPERTY(m_bGradientFogNeedsTextures,bool , 0x4e2);
+			PROPERTY(m_flFogStartDistance,float32, 0x4b0);
+			PROPERTY(m_flFogEndDistance,float32, 0x4b4);
+			PROPERTY(m_bHeightFogEnabled,bool, 0x4b8);
+			PROPERTY(m_flFogStartHeight,float32, 0x4bc);
+			PROPERTY(m_flFogEndHeight,float32, 0x4c0);
+			PROPERTY(m_flFarZ,float32, 0x4c4);
+			PROPERTY(m_flFogMaxOpacity,float32, 0x4c8);
+			PROPERTY(m_flFogFalloffExponent,float32, 0x4cc);
+			PROPERTY(m_flFogVerticalExponent,float32, 0x4d0);
+			PROPERTY(m_fogColor,GlobalTypes::Color, 0x4d4);
+			PROPERTY(m_flFogStrength,float32, 0x4d8);
+			PROPERTY(m_flFadeTime,float32, 0x4dc);
+			PROPERTY(m_bStartDisabled,bool, 0x4e0);
+			PROPERTY(m_bIsEnabled,bool, 0x4e1);
+			PROPERTY(m_bGradientFogNeedsTextures,bool, 0x4e2);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::server::CGradientFog) == 0x4E8, "CGradientFog size should be 0x4E8");

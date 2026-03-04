@@ -27,14 +27,14 @@ namespace CS2 {
 	namespace client {
 		class inv_image_data_t  {
 		public:
-			PROPERTY(map,client::inv_image_map_t , 0x0);
-			PROPERTY(item,client::inv_image_item_t , 0x10);
-			PROPERTY(camera,client::inv_image_camera_t , 0x30);
-			PROPERTY(lightsun,client::inv_image_light_sun_t , 0x64);
-			PROPERTY(lightfill,client::inv_image_light_fill_t , 0x80);
-			PROPERTY(light0,client::inv_image_light_barn_t , 0x9c);
-			PROPERTY(light1,client::inv_image_light_barn_t , 0xbc);
-			PROPERTY(clearcolor,client::inv_image_clearcolor_t , 0xdc);
+			NESTED_PROPERTY(map,client::inv_image_map_t, 0x0);
+			NESTED_PROPERTY(item,client::inv_image_item_t, 0x10);
+			NESTED_PROPERTY(camera,client::inv_image_camera_t, 0x30);
+			NESTED_PROPERTY(lightsun,client::inv_image_light_sun_t, 0x64);
+			NESTED_PROPERTY(lightfill,client::inv_image_light_fill_t, 0x80);
+			NESTED_PROPERTY(light0,client::inv_image_light_barn_t, 0x9c);
+			NESTED_PROPERTY(light1,client::inv_image_light_barn_t, 0xbc);
+			NESTED_PROPERTY(clearcolor,client::inv_image_clearcolor_t, 0xdc);
 			S2_PAD(0xE8);
 		};
 		//static_assert(sizeof(CS2::client::inv_image_data_t) == 0xE8, "inv_image_data_t size should be 0xE8");

@@ -22,10 +22,10 @@ namespace CS2 {
 		class CEnvGlobal : public CS2::server::CLogicalEntity {
 		public:
 			PROPERTY(m_outCounter,GlobalTypes::CEntityOutputTemplate< int32, int32 >, 0x4a8);
-			PROPERTY(m_globalstate,GlobalTypes::CUtlSymbolLarge* , 0x4c8);
-			PROPERTY(m_triggermode,int32_t , 0x4d0);
-			PROPERTY(m_initialstate,int32_t , 0x4d4);
-			PROPERTY(m_counter,int32_t , 0x4d8);
+			PROPERTY(m_globalstate,GlobalTypes::CUtlSymbolLarge*, 0x4c8);
+			PROPERTY(m_triggermode,int32_t, 0x4d0);
+			PROPERTY(m_initialstate,int32_t, 0x4d4);
+			PROPERTY(m_counter,int32_t, 0x4d8);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::server::CEnvGlobal) == 0x4E0, "CEnvGlobal size should be 0x4E0");

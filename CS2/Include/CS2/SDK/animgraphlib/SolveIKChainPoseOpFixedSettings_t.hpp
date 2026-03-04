@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/animgraphlib/ChainToSolveData_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class ChainToSolveData_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class SolveIKChainPoseOpFixedSettings_t  {
 		public:
-			PROPERTY(m_ChainsToSolveData,GlobalTypes::CUtlVector<animgraphlib::ChainToSolveData_t>, 0x0);
+			NESTED_PROPERTY(m_ChainsToSolveData,GlobalTypes::CUtlVector<animgraphlib::ChainToSolveData_t>, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::SolveIKChainPoseOpFixedSettings_t) == 0x18, "SolveIKChainPoseOpFixedSettings_t size should be 0x18");

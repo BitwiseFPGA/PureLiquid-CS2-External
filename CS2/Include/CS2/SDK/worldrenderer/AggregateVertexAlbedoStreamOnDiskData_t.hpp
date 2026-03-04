@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace worldrenderer {
 		class AggregateVertexAlbedoStreamOnDiskData_t  {
 		public:
-			PROPERTY(m_BufferData,GlobalTypes::CUtlBinaryBlock , 0x0);
+			PROPERTY(m_BufferData,GlobalTypes::CUtlBinaryBlock, 0x0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::AggregateVertexAlbedoStreamOnDiskData_t) == 0x10, "AggregateVertexAlbedoStreamOnDiskData_t size should be 0x10");

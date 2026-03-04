@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/resourcesystem/InfoForResourceTypeIMaterial2.hpp>
 
 
 
-namespace CS2 {
-	namespace resourcesystem {
-		class InfoForResourceTypeIMaterial2;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,11 +22,11 @@ namespace CS2 {
 		class DecalGroupOption_t  {
 		public:
 			PROPERTY(m_hMaterial,GlobalTypes::CStrongHandleCopyable<resourcesystem::InfoForResourceTypeIMaterial2>, 0x0);
-			PROPERTY(m_sSequenceName,GlobalTypes::CGlobalSymbol , 0x8);
-			PROPERTY(m_flProbability,float32 , 0x10);
-			PROPERTY(m_bEnableAngleBetweenNormalAndGravityRange,bool , 0x14);
-			PROPERTY(m_flMinAngleBetweenNormalAndGravity,float32 , 0x18);
-			PROPERTY(m_flMaxAngleBetweenNormalAndGravity,float32 , 0x1c);
+			PROPERTY(m_sSequenceName,GlobalTypes::CGlobalSymbol, 0x8);
+			PROPERTY(m_flProbability,float32, 0x10);
+			PROPERTY(m_bEnableAngleBetweenNormalAndGravityRange,bool, 0x14);
+			PROPERTY(m_flMinAngleBetweenNormalAndGravity,float32, 0x18);
+			PROPERTY(m_flMaxAngleBetweenNormalAndGravity,float32, 0x1c);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::DecalGroupOption_t) == 0x20, "DecalGroupOption_t size should be 0x20");

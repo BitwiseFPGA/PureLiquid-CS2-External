@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class TimelineEvent_t  {
 		public:
-			PROPERTY(m_flTimeFromPrevious,float32 , 0x0);
-			PROPERTY(m_EventOutflow,pulse_runtime_lib::CPulse_OutflowConnection , 0x8);
+			PROPERTY(m_flTimeFromPrevious,float32, 0x0);
+			NESTED_PROPERTY(m_EventOutflow,pulse_runtime_lib::CPulse_OutflowConnection, 0x8);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::TimelineEvent_t) == 0x50, "CPulseCell_Timeline::TimelineEvent_t size should be 0x50");

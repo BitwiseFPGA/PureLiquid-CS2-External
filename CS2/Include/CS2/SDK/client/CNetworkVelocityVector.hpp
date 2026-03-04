@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace client {
 		class CNetworkVelocityVector  {
 		public:
-			PROPERTY(m_vecX,GlobalTypes::CNetworkedQuantizedFloat , 0x10);
-			PROPERTY(m_vecY,GlobalTypes::CNetworkedQuantizedFloat , 0x18);
-			PROPERTY(m_vecZ,GlobalTypes::CNetworkedQuantizedFloat , 0x20);
+			PROPERTY(m_vecX,GlobalTypes::CNetworkedQuantizedFloat, 0x10);
+			PROPERTY(m_vecY,GlobalTypes::CNetworkedQuantizedFloat, 0x18);
+			PROPERTY(m_vecZ,GlobalTypes::CNetworkedQuantizedFloat, 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::client::CNetworkVelocityVector) == 0x28, "CNetworkVelocityVector size should be 0x28");

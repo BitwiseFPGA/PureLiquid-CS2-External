@@ -26,13 +26,13 @@ namespace CS2 {
 		class CModelState  {
 		public:
 			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0xa0);
-			PROPERTY(m_ModelName,GlobalTypes::CUtlSymbolLarge* , 0xa8);
-			PROPERTY(m_bClientClothCreationSuppressed,bool , 0x179);
-			PROPERTY(m_MeshGroupMask,uint64_t , 0x220);
+			PROPERTY(m_ModelName,GlobalTypes::CUtlSymbolLarge*, 0xa8);
+			PROPERTY(m_bClientClothCreationSuppressed,bool, 0x179);
+			PROPERTY(m_MeshGroupMask,uint64_t, 0x220);
 			PROPERTY(m_nBodyGroupChoices,GlobalTypes::C_NetworkUtlVectorBase< int32 >, 0x270);
-			PROPERTY(m_nIdealMotionType,int8_t , 0x2ba);
-			PROPERTY(m_nForceLOD,int8_t , 0x2bb);
-			PROPERTY(m_nClothUpdateFlags,int8_t , 0x2bc);
+			PROPERTY(m_nIdealMotionType,int8_t, 0x2ba);
+			PROPERTY(m_nForceLOD,int8_t, 0x2bb);
+			PROPERTY(m_nClothUpdateFlags,int8_t, 0x2bc);
 			S2_PAD(0x2D0);
 		};
 		//static_assert(sizeof(CS2::client::CModelState) == 0x2D0, "CModelState size should be 0x2D0");

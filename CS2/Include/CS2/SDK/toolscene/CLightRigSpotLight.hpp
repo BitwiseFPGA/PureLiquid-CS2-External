@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace toolscene {
 		class CLightRigSpotLight : public CS2::toolscene::CLightRigLight {
 		public:
-			PROPERTY(m_flOuterConeAngle,float32 , 0x40);
-			PROPERTY(m_flInnerConeAngle,float32 , 0x44);
-			PROPERTY(m_bCastShadows,bool , 0x48);
+			PROPERTY(m_flOuterConeAngle,float32, 0x40);
+			PROPERTY(m_flInnerConeAngle,float32, 0x44);
+			PROPERTY(m_bCastShadows,bool, 0x48);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::toolscene::CLightRigSpotLight) == 0x4C, "CLightRigSpotLight size should be 0x4C");

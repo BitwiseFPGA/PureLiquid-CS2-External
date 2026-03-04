@@ -25,9 +25,9 @@ namespace CS2 {
 	namespace modellib {
 		class CModelConfigList  {
 		public:
-			PROPERTY(m_bHideMaterialGroupInTools,bool , 0x0);
-			PROPERTY(m_bHideRenderColorInTools,bool , 0x1);
-			PROPERTY(m_Configs,GlobalTypes::CUtlVector<modellib::CModelConfig*>, 0x8);
+			PROPERTY(m_bHideMaterialGroupInTools,bool, 0x0);
+			PROPERTY(m_bHideRenderColorInTools,bool, 0x1);
+			NESTED_PROPERTY(m_Configs,GlobalTypes::CUtlVector<modellib::CModelConfig*>, 0x8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::modellib::CModelConfigList) == 0x20, "CModelConfigList size should be 0x20");

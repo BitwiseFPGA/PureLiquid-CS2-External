@@ -26,8 +26,8 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_RandomModelSequence : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY_ARRAY(m_ActivityName,char , 256 , 0x1d8);
-			PROPERTY_ARRAY(m_SequenceName,char , 256 , 0x2d8);
+			PROPERTY_ARRAY(m_ActivityName,char, 256 , 0x1d8);
+			PROPERTY_ARRAY(m_SequenceName,char, 256 , 0x2d8);
 			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0x3d8);
 			S2_PAD(0x208);
 		};

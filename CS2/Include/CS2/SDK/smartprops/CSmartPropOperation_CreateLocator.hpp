@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_CreateLocator : public CS2::smartprops::CSmartPropTransformOperation {
 		public:
-			PROPERTY(m_LocatorName,GlobalTypes::CUtlString* , 0x50);
-			PROPERTY(m_vOffset,GlobalTypes::CSmartPropAttributeVector , 0x58);
-			PROPERTY(m_flDisplayScale,GlobalTypes::CSmartPropAttributeFloat , 0x98);
-			PROPERTY(m_bConfigurable,GlobalTypes::CSmartPropAttributeBool , 0xd8);
-			PROPERTY(m_bAllowTranslation,GlobalTypes::CSmartPropAttributeBool , 0x118);
-			PROPERTY(m_bAllowRotation,GlobalTypes::CSmartPropAttributeBool , 0x158);
-			PROPERTY(m_bAllowScale,GlobalTypes::CSmartPropAttributeBool , 0x198);
+			PROPERTY(m_LocatorName,GlobalTypes::CUtlString*, 0x50);
+			PROPERTY(m_vOffset,GlobalTypes::CSmartPropAttributeVector, 0x58);
+			PROPERTY(m_flDisplayScale,GlobalTypes::CSmartPropAttributeFloat, 0x98);
+			PROPERTY(m_bConfigurable,GlobalTypes::CSmartPropAttributeBool, 0xd8);
+			PROPERTY(m_bAllowTranslation,GlobalTypes::CSmartPropAttributeBool, 0x118);
+			PROPERTY(m_bAllowRotation,GlobalTypes::CSmartPropAttributeBool, 0x158);
+			PROPERTY(m_bAllowScale,GlobalTypes::CSmartPropAttributeBool, 0x198);
 			S2_PAD(0x188);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_CreateLocator) == 0x1D8, "CSmartPropOperation_CreateLocator size should be 0x1D8");

@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_TraceToPoint : public CS2::smartprops::CSmartPropOperation_Trace {
 		public:
-			PROPERTY(m_TargetPoint,GlobalTypes::CSmartPropAttributeVector , 0x350);
-			PROPERTY(m_TargetPointSpace,smartprops::CSmartPropAttributeCoordinateSpace , 0x390);
-			PROPERTY(m_bTraceAway,GlobalTypes::CSmartPropAttributeBool , 0x3d0);
-			PROPERTY(m_flTraceLength,GlobalTypes::CSmartPropAttributeFloat , 0x410);
+			PROPERTY(m_TargetPoint,GlobalTypes::CSmartPropAttributeVector, 0x350);
+			NESTED_PROPERTY(m_TargetPointSpace,smartprops::CSmartPropAttributeCoordinateSpace, 0x390);
+			PROPERTY(m_bTraceAway,GlobalTypes::CSmartPropAttributeBool, 0x3d0);
+			PROPERTY(m_flTraceLength,GlobalTypes::CSmartPropAttributeFloat, 0x410);
 			S2_PAD(0x100);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_TraceToPoint) == 0x450, "CSmartPropOperation_TraceToPoint size should be 0x450");

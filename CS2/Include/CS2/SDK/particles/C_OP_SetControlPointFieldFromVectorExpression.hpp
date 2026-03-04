@@ -25,13 +25,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetControlPointFieldFromVectorExpression : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nExpression,particles::VectorFloatExpressionType_t , 0x1d8);
-			PROPERTY(m_vecInput1,particleslib::CParticleCollectionVecInput , 0x1e0);
-			PROPERTY(m_vecInput2,particleslib::CParticleCollectionVecInput , 0x898);
-			PROPERTY(m_flLerp,particleslib::CPerParticleFloatInput , 0xf50);
-			PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput , 0x10c0);
-			PROPERTY(m_nOutputCP,int32_t , 0x1230);
-			PROPERTY(m_nOutVectorField,int32_t , 0x1234);
+			PROPERTY(m_nExpression,particles::VectorFloatExpressionType_t, 0x1d8);
+			NESTED_PROPERTY(m_vecInput1,particleslib::CParticleCollectionVecInput, 0x1e0);
+			NESTED_PROPERTY(m_vecInput2,particleslib::CParticleCollectionVecInput, 0x898);
+			NESTED_PROPERTY(m_flLerp,particleslib::CPerParticleFloatInput, 0xf50);
+			NESTED_PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput, 0x10c0);
+			PROPERTY(m_nOutputCP,int32_t, 0x1230);
+			PROPERTY(m_nOutVectorField,int32_t, 0x1234);
 			S2_PAD(0x1060);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetControlPointFieldFromVectorExpression) == 0x1238, "C_OP_SetControlPointFieldFromVectorExpression size should be 0x1238");

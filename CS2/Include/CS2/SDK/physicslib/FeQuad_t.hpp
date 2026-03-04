@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeQuad_t  {
 		public:
-			PROPERTY_ARRAY(nNode,uint16_t , 4 , 0x0);
-			PROPERTY(flSlack,float32 , 0x8);
-			PROPERTY_ARRAY(vShape,GlobalTypes::Vector4D , 4 , 0xc);
+			PROPERTY_ARRAY(nNode,uint16_t, 4 , 0x0);
+			PROPERTY(flSlack,float32, 0x8);
+			PROPERTY_ARRAY(vShape,GlobalTypes::Vector4D, 4 , 0xc);
 			S2_PAD(0x4C);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeQuad_t) == 0x4C, "FeQuad_t size should be 0x4C");

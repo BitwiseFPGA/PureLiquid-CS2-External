@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAudioAnimTag : public CS2::animgraphlib::CAnimTagBase {
 		public:
-			PROPERTY(m_clipName,GlobalTypes::CUtlString* , 0x58);
-			PROPERTY(m_attachmentName,GlobalTypes::CUtlString* , 0x60);
-			PROPERTY(m_flVolume,float32 , 0x68);
-			PROPERTY(m_bStopWhenTagEnds,bool , 0x6c);
-			PROPERTY(m_bStopWhenGraphEnds,bool , 0x6d);
-			PROPERTY(m_bPlayOnServer,bool , 0x6e);
-			PROPERTY(m_bPlayOnClient,bool , 0x6f);
+			PROPERTY(m_clipName,GlobalTypes::CUtlString*, 0x58);
+			PROPERTY(m_attachmentName,GlobalTypes::CUtlString*, 0x60);
+			PROPERTY(m_flVolume,float32, 0x68);
+			PROPERTY(m_bStopWhenTagEnds,bool, 0x6c);
+			PROPERTY(m_bStopWhenGraphEnds,bool, 0x6d);
+			PROPERTY(m_bPlayOnServer,bool, 0x6e);
+			PROPERTY(m_bPlayOnClient,bool, 0x6f);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAudioAnimTag) == 0x70, "CAudioAnimTag size should be 0x70");

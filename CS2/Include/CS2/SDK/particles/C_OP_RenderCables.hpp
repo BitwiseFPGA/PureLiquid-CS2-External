@@ -16,16 +16,14 @@
 #include <SDK/particles/ParticleColorBlendType_t.hpp>
 #include <SDK/particles/TextureRepetitionMode_t.hpp>
 #include <SDK/particleslib/CParticleTransformInput.hpp>
+#include <SDK/particles/FloatInputMaterialVariable_t.hpp>
+#include <SDK/particles/VecInputMaterialVariable_t.hpp>
 
 
 
 namespace CS2 {
 	namespace resourcesystem {
 		class InfoForResourceTypeIMaterial2;
-	}
-	namespace particles {
-		class FloatInputMaterialVariable_t;
-		class VecInputMaterialVariable_t;
 	}
 }
 
@@ -35,27 +33,27 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderCables : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_flRadiusScale,particleslib::CParticleCollectionFloatInput , 0x220);
-			PROPERTY(m_flAlphaScale,particleslib::CParticleCollectionFloatInput , 0x390);
-			PROPERTY(m_vecColorScale,particleslib::CParticleCollectionVecInput , 0x500);
-			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t , 0xbb8);
+			NESTED_PROPERTY(m_flRadiusScale,particleslib::CParticleCollectionFloatInput, 0x220);
+			NESTED_PROPERTY(m_flAlphaScale,particleslib::CParticleCollectionFloatInput, 0x390);
+			NESTED_PROPERTY(m_vecColorScale,particleslib::CParticleCollectionVecInput, 0x500);
+			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t, 0xbb8);
 			PROPERTY(m_hMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0xbc0);
-			PROPERTY(m_nTextureRepetitionMode,particles::TextureRepetitionMode_t , 0xbc8);
-			PROPERTY(m_flTextureRepeatsPerSegment,particleslib::CParticleCollectionFloatInput , 0xbd0);
-			PROPERTY(m_flTextureRepeatsCircumference,particleslib::CParticleCollectionFloatInput , 0xd40);
-			PROPERTY(m_flColorMapOffsetV,particleslib::CParticleCollectionFloatInput , 0xeb0);
-			PROPERTY(m_flColorMapOffsetU,particleslib::CParticleCollectionFloatInput , 0x1020);
-			PROPERTY(m_flNormalMapOffsetV,particleslib::CParticleCollectionFloatInput , 0x1190);
-			PROPERTY(m_flNormalMapOffsetU,particleslib::CParticleCollectionFloatInput , 0x1300);
-			PROPERTY(m_bDrawCableCaps,bool , 0x1470);
-			PROPERTY(m_flCapRoundness,float32 , 0x1474);
-			PROPERTY(m_flCapOffsetAmount,float32 , 0x1478);
-			PROPERTY(m_flTessScale,float32 , 0x147c);
-			PROPERTY(m_nMinTesselation,int32_t , 0x1480);
-			PROPERTY(m_nMaxTesselation,int32_t , 0x1484);
-			PROPERTY(m_nRoundness,int32_t , 0x1488);
-			PROPERTY(m_nForceRoundnessFixed,bool , 0x148c);
-			PROPERTY(m_LightingTransform,particleslib::CParticleTransformInput , 0x1490);
+			PROPERTY(m_nTextureRepetitionMode,particles::TextureRepetitionMode_t, 0xbc8);
+			NESTED_PROPERTY(m_flTextureRepeatsPerSegment,particleslib::CParticleCollectionFloatInput, 0xbd0);
+			NESTED_PROPERTY(m_flTextureRepeatsCircumference,particleslib::CParticleCollectionFloatInput, 0xd40);
+			NESTED_PROPERTY(m_flColorMapOffsetV,particleslib::CParticleCollectionFloatInput, 0xeb0);
+			NESTED_PROPERTY(m_flColorMapOffsetU,particleslib::CParticleCollectionFloatInput, 0x1020);
+			NESTED_PROPERTY(m_flNormalMapOffsetV,particleslib::CParticleCollectionFloatInput, 0x1190);
+			NESTED_PROPERTY(m_flNormalMapOffsetU,particleslib::CParticleCollectionFloatInput, 0x1300);
+			PROPERTY(m_bDrawCableCaps,bool, 0x1470);
+			PROPERTY(m_flCapRoundness,float32, 0x1474);
+			PROPERTY(m_flCapOffsetAmount,float32, 0x1478);
+			PROPERTY(m_flTessScale,float32, 0x147c);
+			PROPERTY(m_nMinTesselation,int32_t, 0x1480);
+			PROPERTY(m_nMaxTesselation,int32_t, 0x1484);
+			PROPERTY(m_nRoundness,int32_t, 0x1488);
+			PROPERTY(m_nForceRoundnessFixed,bool, 0x148c);
+			NESTED_PROPERTY(m_LightingTransform,particleslib::CParticleTransformInput, 0x1490);
 			PROPERTY(m_MaterialFloatVars,GlobalTypes::CUtlLeanVector<particles::FloatInputMaterialVariable_t>, 0x14f8);
 			PROPERTY(m_MaterialVecVars,GlobalTypes::CUtlLeanVector<particles::VecInputMaterialVariable_t>, 0x1518);
 			S2_PAD(0x1318);

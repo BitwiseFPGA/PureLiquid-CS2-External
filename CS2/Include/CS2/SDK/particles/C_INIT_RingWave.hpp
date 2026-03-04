@@ -24,17 +24,17 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_RingWave : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0x1d8);
-			PROPERTY(m_flParticlesPerOrbit,particleslib::CParticleCollectionFloatInput , 0x240);
-			PROPERTY(m_flInitialRadius,particleslib::CPerParticleFloatInput , 0x3b0);
-			PROPERTY(m_flThickness,particleslib::CPerParticleFloatInput , 0x520);
-			PROPERTY(m_flInitialSpeedMin,particleslib::CPerParticleFloatInput , 0x690);
-			PROPERTY(m_flInitialSpeedMax,particleslib::CPerParticleFloatInput , 0x800);
-			PROPERTY(m_flRoll,particleslib::CPerParticleFloatInput , 0x970);
-			PROPERTY(m_flPitch,particleslib::CPerParticleFloatInput , 0xae0);
-			PROPERTY(m_flYaw,particleslib::CPerParticleFloatInput , 0xc50);
-			PROPERTY(m_bEvenDistribution,bool , 0xdc0);
-			PROPERTY(m_bXYVelocityOnly,bool , 0xdc1);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0x1d8);
+			NESTED_PROPERTY(m_flParticlesPerOrbit,particleslib::CParticleCollectionFloatInput, 0x240);
+			NESTED_PROPERTY(m_flInitialRadius,particleslib::CPerParticleFloatInput, 0x3b0);
+			NESTED_PROPERTY(m_flThickness,particleslib::CPerParticleFloatInput, 0x520);
+			NESTED_PROPERTY(m_flInitialSpeedMin,particleslib::CPerParticleFloatInput, 0x690);
+			NESTED_PROPERTY(m_flInitialSpeedMax,particleslib::CPerParticleFloatInput, 0x800);
+			NESTED_PROPERTY(m_flRoll,particleslib::CPerParticleFloatInput, 0x970);
+			NESTED_PROPERTY(m_flPitch,particleslib::CPerParticleFloatInput, 0xae0);
+			NESTED_PROPERTY(m_flYaw,particleslib::CPerParticleFloatInput, 0xc50);
+			PROPERTY(m_bEvenDistribution,bool, 0xdc0);
+			PROPERTY(m_bXYVelocityOnly,bool, 0xdc1);
 			S2_PAD(0xBF0);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_RingWave) == 0xDC8, "C_INIT_RingWave size should be 0xDC8");

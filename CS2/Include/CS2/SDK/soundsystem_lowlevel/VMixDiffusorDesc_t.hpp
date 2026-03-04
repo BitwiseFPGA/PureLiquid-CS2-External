@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixDiffusorDesc_t  {
 		public:
-			PROPERTY(m_flSize,float32 , 0x0);
-			PROPERTY(m_flComplexity,float32 , 0x4);
-			PROPERTY(m_flFeedback,float32 , 0x8);
-			PROPERTY(m_flOutputGain,float32 , 0xc);
+			PROPERTY(m_flSize,float32, 0x0);
+			PROPERTY(m_flComplexity,float32, 0x4);
+			PROPERTY(m_flFeedback,float32, 0x8);
+			PROPERTY(m_flOutputGain,float32, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixDiffusorDesc_t) == 0x10, "VMixDiffusorDesc_t size should be 0x10");

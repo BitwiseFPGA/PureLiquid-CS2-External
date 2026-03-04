@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/pulse_runtime_lib/DynamicOutflow_t.hpp>
 
 
 
-namespace CS2 {
-	namespace pulse_runtime_lib {
-		class DynamicOutflow_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,7 +21,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class PulseNodeDynamicOutflows_t  {
 		public:
-			PROPERTY(m_Outflows,server::CUtlVector<pulse_runtime_lib::PulseNodeDynamicOutflows_t::DynamicOutflow_t>, 0x0);
+			NESTED_PROPERTY(m_Outflows,server::CUtlVector<pulse_runtime_lib::DynamicOutflow_t>, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::PulseNodeDynamicOutflows_t) == 0x18, "PulseNodeDynamicOutflows_t size should be 0x18");

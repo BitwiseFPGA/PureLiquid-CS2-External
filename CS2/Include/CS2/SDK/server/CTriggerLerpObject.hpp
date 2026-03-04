@@ -12,6 +12,7 @@
 
 #include <SDK/server/CBaseTrigger.hpp>
 #include <SDK/modellib/AttachmentHandle_t.hpp>
+#include <SDK/server/lerpdata_t.hpp>
 #include <SDK/entity2/CEntityIOOutput.hpp>
 
 
@@ -19,7 +20,6 @@
 namespace CS2 {
 	namespace server {
 		class CBaseEntity;
-		class lerpdata_t;
 	}
 }
 
@@ -29,22 +29,22 @@ namespace CS2 {
 	namespace server {
 		class CTriggerLerpObject : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_iszLerpTarget,GlobalTypes::CUtlSymbolLarge* , 0x890);
+			PROPERTY(m_iszLerpTarget,GlobalTypes::CUtlSymbolLarge*, 0x890);
 			PROPERTY(m_hLerpTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x898);
-			PROPERTY(m_iszLerpTargetAttachment,GlobalTypes::CUtlSymbolLarge* , 0x8a0);
-			PROPERTY(m_hLerpTargetAttachment,modellib::AttachmentHandle_t , 0x8a8);
-			PROPERTY(m_flLerpDuration,float32 , 0x8ac);
-			PROPERTY(m_bAttachedEntityWasParented,bool , 0x8b0);
-			PROPERTY(m_bLerpRestoreMoveType,bool , 0x8b1);
-			PROPERTY(m_bSingleLerpObject,bool , 0x8b2);
-			PROPERTY(m_vecLerpingObjects,GlobalTypes::CUtlVector<server::lerpdata_t>, 0x8b8);
-			PROPERTY(m_iszLerpEffect,GlobalTypes::CUtlSymbolLarge* , 0x8d0);
-			PROPERTY(m_iszLerpSound,GlobalTypes::CUtlSymbolLarge* , 0x8d8);
-			PROPERTY(m_bAttachTouchingObject,bool , 0x8e0);
+			PROPERTY(m_iszLerpTargetAttachment,GlobalTypes::CUtlSymbolLarge*, 0x8a0);
+			NESTED_PROPERTY(m_hLerpTargetAttachment,modellib::AttachmentHandle_t, 0x8a8);
+			PROPERTY(m_flLerpDuration,float32, 0x8ac);
+			PROPERTY(m_bAttachedEntityWasParented,bool, 0x8b0);
+			PROPERTY(m_bLerpRestoreMoveType,bool, 0x8b1);
+			PROPERTY(m_bSingleLerpObject,bool, 0x8b2);
+			NESTED_PROPERTY(m_vecLerpingObjects,GlobalTypes::CUtlVector<server::lerpdata_t>, 0x8b8);
+			PROPERTY(m_iszLerpEffect,GlobalTypes::CUtlSymbolLarge*, 0x8d0);
+			PROPERTY(m_iszLerpSound,GlobalTypes::CUtlSymbolLarge*, 0x8d8);
+			PROPERTY(m_bAttachTouchingObject,bool, 0x8e0);
 			PROPERTY(m_hEntityToWaitForDisconnect,GlobalTypes::CHandle<server::CBaseEntity>, 0x8e4);
-			PROPERTY(m_OnLerpStarted,entity2::CEntityIOOutput , 0x8e8);
-			PROPERTY(m_OnLerpFinished,entity2::CEntityIOOutput , 0x900);
-			PROPERTY(m_OnDetached,entity2::CEntityIOOutput , 0x918);
+			NESTED_PROPERTY(m_OnLerpStarted,entity2::CEntityIOOutput, 0x8e8);
+			NESTED_PROPERTY(m_OnLerpFinished,entity2::CEntityIOOutput, 0x900);
+			NESTED_PROPERTY(m_OnDetached,entity2::CEntityIOOutput, 0x918);
 			S2_PAD(0xA0);
 		};
 		//static_assert(sizeof(CS2::server::CTriggerLerpObject) == 0x930, "CTriggerLerpObject size should be 0x930");

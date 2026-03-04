@@ -11,14 +11,10 @@
 
 
 #include <SDK/soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.hpp>
+#include <SDK/soundsystem_voicecontainers/CTone.hpp>
 
 
 
-namespace CS2 {
-	namespace soundsystem_voicecontainers {
-		class CTone;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,7 +22,7 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerStaticAdditiveSynth : public CS2::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator {
 		public:
-			PROPERTY(m_tones,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth::CTone>, 0xb8);
+			NESTED_PROPERTY(m_tones,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CTone>, 0xb8);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth) == 0xE8, "CVoiceContainerStaticAdditiveSynth size should be 0xE8");

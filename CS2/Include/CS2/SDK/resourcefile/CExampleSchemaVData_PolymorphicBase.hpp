@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace resourcefile {
 		class CExampleSchemaVData_PolymorphicBase  {
 		public:
-			PROPERTY(m_nBase,int32_t , 0x8);
+			PROPERTY(m_nBase,int32_t, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::resourcefile::CExampleSchemaVData_PolymorphicBase) == 0x10, "CExampleSchemaVData_PolymorphicBase size should be 0x10");

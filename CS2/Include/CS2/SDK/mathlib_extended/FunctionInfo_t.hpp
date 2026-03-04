@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace mathlib_extended {
 		class FunctionInfo_t  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_nameToken,GlobalTypes::CUtlStringToken* , 0x10);
-			PROPERTY(m_nParamCount,int32_t , 0x14);
-			PROPERTY(m_nIndex,mathlib_extended::FuseFunctionIndex_t , 0x18);
-			PROPERTY(m_bIsPure,bool , 0x1a);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x8);
+			PROPERTY(m_nameToken,GlobalTypes::CUtlStringToken*, 0x10);
+			PROPERTY(m_nParamCount,int32_t, 0x14);
+			NESTED_PROPERTY(m_nIndex,mathlib_extended::FuseFunctionIndex_t, 0x18);
+			PROPERTY(m_bIsPure,bool, 0x1a);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::mathlib_extended::FunctionInfo_t) == 0x20, "FunctionInfo_t size should be 0x20");

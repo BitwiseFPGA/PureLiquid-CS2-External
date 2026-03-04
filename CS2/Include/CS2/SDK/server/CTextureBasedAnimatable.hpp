@@ -26,14 +26,14 @@ namespace CS2 {
 	namespace server {
 		class CTextureBasedAnimatable : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_bLoop,bool , 0x730);
-			PROPERTY(m_flFPS,float32 , 0x734);
+			PROPERTY(m_bLoop,bool, 0x730);
+			PROPERTY(m_flFPS,float32, 0x734);
 			PROPERTY(m_hPositionKeys,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x738);
 			PROPERTY(m_hRotationKeys,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x740);
-			PROPERTY(m_vAnimationBoundsMin,GlobalTypes::Vector , 0x748);
-			PROPERTY(m_vAnimationBoundsMax,GlobalTypes::Vector , 0x754);
-			PROPERTY(m_flStartTime,float32 , 0x760);
-			PROPERTY(m_flStartFrame,float32 , 0x764);
+			PROPERTY(m_vAnimationBoundsMin,GlobalTypes::Vector, 0x748);
+			PROPERTY(m_vAnimationBoundsMax,GlobalTypes::Vector, 0x754);
+			PROPERTY(m_flStartTime,float32, 0x760);
+			PROPERTY(m_flStartFrame,float32, 0x764);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::server::CTextureBasedAnimatable) == 0x768, "CTextureBasedAnimatable size should be 0x768");

@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class CNetworkTransmitComponent  {
 		public:
-			PROPERTY(m_nTransmitStateOwnedCounter,uint8_t , 0x184);
+			PROPERTY(m_nTransmitStateOwnedCounter,uint8_t, 0x184);
 			S2_PAD(0x1D0);
 		};
 		//static_assert(sizeof(CS2::client::CNetworkTransmitComponent) == 0x1D0, "CNetworkTransmitComponent size should be 0x1D0");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CPhysTorque : public CS2::server::CPhysForce {
 		public:
-			PROPERTY(m_axis,GlobalTypes::VectorWS , 0x508);
+			PROPERTY(m_axis,GlobalTypes::VectorWS, 0x508);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CPhysTorque) == 0x518, "CPhysTorque size should be 0x518");

@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CJiggleBoneUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_opFixedData,animgraphlib::JiggleBoneSettingsList_t , 0x70);
+			NESTED_PROPERTY(m_opFixedData,animgraphlib::JiggleBoneSettingsList_t, 0x70);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CJiggleBoneUpdateNode) == 0x90, "CJiggleBoneUpdateNode size should be 0x90");

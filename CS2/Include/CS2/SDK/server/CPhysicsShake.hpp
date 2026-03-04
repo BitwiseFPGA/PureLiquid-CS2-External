@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace server {
 		class CPhysicsShake  {
 		public:
-			PROPERTY(m_force,GlobalTypes::Vector , 0x8);
+			PROPERTY(m_force,GlobalTypes::Vector, 0x8);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CPhysicsShake) == 0x18, "CPhysicsShake size should be 0x18");

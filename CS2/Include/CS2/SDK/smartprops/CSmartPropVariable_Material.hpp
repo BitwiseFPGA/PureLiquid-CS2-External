@@ -11,6 +11,7 @@
 
 
 #include <SDK/smartprops/CSmartPropVariable.hpp>
+#include <SDK/resourcesystem/InfoForResourceTypeIMaterial2.hpp>
 
 
 

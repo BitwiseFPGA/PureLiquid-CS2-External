@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/animlib/TransitionDefinition_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animlib {
-		class TransitionDefinition_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,9 +21,9 @@ namespace CS2 {
 	namespace animlib {
 		class StateDefinition_t  {
 		public:
-			PROPERTY(m_nStateNodeIdx,int16_t , 0x0);
-			PROPERTY(m_nEntryConditionNodeIdx,int16_t , 0x2);
-			PROPERTY(m_transitionDefinitions,GlobalTypes::CUtlLeanVectorFixedGrowable<animlib::CNmStateMachineNode::TransitionDefinition_t>, 0x8);
+			PROPERTY(m_nStateNodeIdx,int16_t, 0x0);
+			PROPERTY(m_nEntryConditionNodeIdx,int16_t, 0x2);
+			PROPERTY(m_transitionDefinitions,GlobalTypes::CUtlLeanVectorFixedGrowable<animlib::TransitionDefinition_t>, 0x8);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::animlib::StateDefinition_t) == 0x38, "CNmStateMachineNode::StateDefinition_t size should be 0x38");

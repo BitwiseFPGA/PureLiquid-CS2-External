@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FeStiffHingeBuild_t  {
 		public:
-			PROPERTY(flMaxAngle,float32 , 0x0);
-			PROPERTY(flStrength,float32 , 0x4);
-			PROPERTY_ARRAY(flMotionBias,float32 , 3 , 0x8);
-			PROPERTY_ARRAY(nNode,uint16_t , 3 , 0x14);
+			PROPERTY(flMaxAngle,float32, 0x0);
+			PROPERTY(flStrength,float32, 0x4);
+			PROPERTY_ARRAY(flMotionBias,float32, 3 , 0x8);
+			PROPERTY_ARRAY(nNode,uint16_t, 3 , 0x14);
 			S2_PAD(0x1C);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeStiffHingeBuild_t) == 0x1C, "FeStiffHingeBuild_t size should be 0x1C");

@@ -24,15 +24,15 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_VectorFieldSnapshot : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nControlPointNumber,int32_t , 0x1d0);
-			PROPERTY(m_nAttributeToWrite,particles::ParticleAttributeIndex_t , 0x1d4);
-			PROPERTY(m_nLocalSpaceCP,int32_t , 0x1d8);
-			PROPERTY(m_flInterpolation,particleslib::CPerParticleFloatInput , 0x1e0);
-			PROPERTY(m_vecScale,particleslib::CPerParticleVecInput , 0x350);
-			PROPERTY(m_flBoundaryDampening,float32 , 0xa08);
-			PROPERTY(m_bSetVelocity,bool , 0xa0c);
-			PROPERTY(m_bLockToSurface,bool , 0xa0d);
-			PROPERTY(m_flGridSpacing,float32 , 0xa10);
+			PROPERTY(m_nControlPointNumber,int32_t, 0x1d0);
+			NESTED_PROPERTY(m_nAttributeToWrite,particles::ParticleAttributeIndex_t, 0x1d4);
+			PROPERTY(m_nLocalSpaceCP,int32_t, 0x1d8);
+			NESTED_PROPERTY(m_flInterpolation,particleslib::CPerParticleFloatInput, 0x1e0);
+			NESTED_PROPERTY(m_vecScale,particleslib::CPerParticleVecInput, 0x350);
+			PROPERTY(m_flBoundaryDampening,float32, 0xa08);
+			PROPERTY(m_bSetVelocity,bool, 0xa0c);
+			PROPERTY(m_bLockToSurface,bool, 0xa0d);
+			PROPERTY(m_flGridSpacing,float32, 0xa10);
 			S2_PAD(0x848);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_VectorFieldSnapshot) == 0xA18, "C_OP_VectorFieldSnapshot size should be 0xA18");

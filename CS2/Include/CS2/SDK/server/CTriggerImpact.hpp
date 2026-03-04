@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CTriggerImpact : public CS2::server::CTriggerMultiple {
 		public:
-			PROPERTY(m_flMagnitude,float32 , 0x8a8);
-			PROPERTY(m_flNoise,float32 , 0x8ac);
-			PROPERTY(m_flViewkick,float32 , 0x8b0);
+			PROPERTY(m_flMagnitude,float32, 0x8a8);
+			PROPERTY(m_flNoise,float32, 0x8ac);
+			PROPERTY(m_flViewkick,float32, 0x8b0);
 			PROPERTY(m_pOutputForce,GlobalTypes::CEntityOutputTemplate< Vector, Vector >, 0x8b8);
 			S2_PAD(0x38);
 		};

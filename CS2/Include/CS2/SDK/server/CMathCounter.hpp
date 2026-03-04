@@ -22,17 +22,17 @@ namespace CS2 {
 	namespace server {
 		class CMathCounter : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_flMin,float32 , 0x4a8);
-			PROPERTY(m_flMax,float32 , 0x4ac);
-			PROPERTY(m_bHitMin,bool , 0x4b0);
-			PROPERTY(m_bHitMax,bool , 0x4b1);
-			PROPERTY(m_bDisabled,bool , 0x4b2);
+			PROPERTY(m_flMin,float32, 0x4a8);
+			PROPERTY(m_flMax,float32, 0x4ac);
+			PROPERTY(m_bHitMin,bool, 0x4b0);
+			PROPERTY(m_bHitMax,bool, 0x4b1);
+			PROPERTY(m_bDisabled,bool, 0x4b2);
 			PROPERTY(m_OutValue,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4b8);
 			PROPERTY(m_OnGetValue,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4d8);
-			PROPERTY(m_OnHitMin,entity2::CEntityIOOutput , 0x4f8);
-			PROPERTY(m_OnHitMax,entity2::CEntityIOOutput , 0x510);
-			PROPERTY(m_OnChangedFromMin,entity2::CEntityIOOutput , 0x528);
-			PROPERTY(m_OnChangedFromMax,entity2::CEntityIOOutput , 0x540);
+			NESTED_PROPERTY(m_OnHitMin,entity2::CEntityIOOutput, 0x4f8);
+			NESTED_PROPERTY(m_OnHitMax,entity2::CEntityIOOutput, 0x510);
+			NESTED_PROPERTY(m_OnChangedFromMin,entity2::CEntityIOOutput, 0x528);
+			NESTED_PROPERTY(m_OnChangedFromMax,entity2::CEntityIOOutput, 0x540);
 			S2_PAD(0xB0);
 		};
 		//static_assert(sizeof(CS2::server::CMathCounter) == 0x558, "CMathCounter size should be 0x558");

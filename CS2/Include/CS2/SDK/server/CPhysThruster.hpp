@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CPhysThruster : public CS2::server::CPhysForce {
 		public:
-			PROPERTY(m_localOrigin,GlobalTypes::Vector , 0x508);
+			PROPERTY(m_localOrigin,GlobalTypes::Vector, 0x508);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CPhysThruster) == 0x518, "CPhysThruster size should be 0x518");

@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_ChooseRandomChildrenInGroup : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nChildGroupID,int32_t , 0x1d8);
-			PROPERTY(m_flNumberOfChildren,particleslib::CParticleCollectionFloatInput , 0x1e0);
+			PROPERTY(m_nChildGroupID,int32_t, 0x1d8);
+			NESTED_PROPERTY(m_flNumberOfChildren,particleslib::CParticleCollectionFloatInput, 0x1e0);
 			S2_PAD(0x178);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_ChooseRandomChildrenInGroup) == 0x350, "C_OP_ChooseRandomChildrenInGroup size should be 0x350");

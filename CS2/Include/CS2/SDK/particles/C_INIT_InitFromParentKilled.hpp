@@ -23,8 +23,8 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_InitFromParentKilled : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nAttributeToCopy,particles::ParticleAttributeIndex_t , 0x1d8);
-			PROPERTY(m_nEventType,particles::EventTypeSelection_t , 0x1dc);
+			NESTED_PROPERTY(m_nAttributeToCopy,particles::ParticleAttributeIndex_t, 0x1d8);
+			PROPERTY(m_nEventType,particles::EventTypeSelection_t, 0x1dc);
 			S2_PAD(0x88);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_InitFromParentKilled) == 0x260, "C_INIT_InitFromParentKilled size should be 0x260");

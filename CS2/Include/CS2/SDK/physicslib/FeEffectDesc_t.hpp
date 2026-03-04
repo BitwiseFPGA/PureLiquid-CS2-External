@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FeEffectDesc_t  {
 		public:
-			PROPERTY(sName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(nNameHash,uint32_t , 0x8);
-			PROPERTY(nType,int32_t , 0xc);
-			PROPERTY(m_Params,GlobalTypes::KeyValues3 , 0x10);
+			PROPERTY(sName,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(nNameHash,uint32_t, 0x8);
+			PROPERTY(nType,int32_t, 0xc);
+			PROPERTY(m_Params,GlobalTypes::KeyValues3, 0x10);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeEffectDesc_t) == 0x20, "FeEffectDesc_t size should be 0x20");

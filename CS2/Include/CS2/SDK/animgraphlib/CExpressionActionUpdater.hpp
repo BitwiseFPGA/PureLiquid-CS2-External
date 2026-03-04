@@ -24,9 +24,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CExpressionActionUpdater : public CS2::animgraphlib::CAnimActionUpdater {
 		public:
-			PROPERTY(m_hParam,animgraphlib::CAnimParamHandle , 0x18);
-			PROPERTY(m_eParamType,animgraphlib::AnimParamType_t , 0x1a);
-			PROPERTY(m_hScript,modellib::AnimScriptHandle , 0x1c);
+			NESTED_PROPERTY(m_hParam,animgraphlib::CAnimParamHandle, 0x18);
+			PROPERTY(m_eParamType,animgraphlib::AnimParamType_t, 0x1a);
+			NESTED_PROPERTY(m_hScript,modellib::AnimScriptHandle, 0x1c);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CExpressionActionUpdater) == 0x20, "CExpressionActionUpdater size should be 0x20");

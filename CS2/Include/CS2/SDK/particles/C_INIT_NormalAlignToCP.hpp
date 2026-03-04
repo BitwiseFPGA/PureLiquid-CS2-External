@@ -23,8 +23,8 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_NormalAlignToCP : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_transformInput,particleslib::CParticleTransformInput , 0x1d8);
-			PROPERTY(m_nControlPointAxis,particles::ParticleControlPointAxis_t , 0x240);
+			NESTED_PROPERTY(m_transformInput,particleslib::CParticleTransformInput, 0x1d8);
+			PROPERTY(m_nControlPointAxis,particles::ParticleControlPointAxis_t, 0x240);
 			S2_PAD(0x70);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_NormalAlignToCP) == 0x248, "C_INIT_NormalAlignToCP size should be 0x248");

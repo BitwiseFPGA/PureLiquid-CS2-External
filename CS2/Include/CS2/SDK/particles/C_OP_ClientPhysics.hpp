@@ -24,19 +24,19 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_ClientPhysics : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_strPhysicsType,GlobalTypes::CUtlString* , 0x220);
-			PROPERTY(m_bStartAsleep,bool , 0x228);
-			PROPERTY(m_flPlayerWakeRadius,particleslib::CParticleCollectionFloatInput , 0x230);
-			PROPERTY(m_flVehicleWakeRadius,particleslib::CParticleCollectionFloatInput , 0x3a0);
-			PROPERTY(m_bUseHighQualitySimulation,bool , 0x510);
-			PROPERTY(m_nMaxParticleCount,int32_t , 0x514);
-			PROPERTY(m_bRespectExclusionVolumes,bool , 0x518);
-			PROPERTY(m_bKillParticles,bool , 0x519);
-			PROPERTY(m_bDeleteSim,bool , 0x51a);
-			PROPERTY(m_nControlPoint,int32_t , 0x51c);
-			PROPERTY(m_nForcedSimId,int32_t , 0x520);
-			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t , 0x524);
-			PROPERTY(m_nForcedStatusEffects,particles::ParticleAttrBoxFlags_t , 0x528);
+			PROPERTY(m_strPhysicsType,GlobalTypes::CUtlString*, 0x220);
+			PROPERTY(m_bStartAsleep,bool, 0x228);
+			NESTED_PROPERTY(m_flPlayerWakeRadius,particleslib::CParticleCollectionFloatInput, 0x230);
+			NESTED_PROPERTY(m_flVehicleWakeRadius,particleslib::CParticleCollectionFloatInput, 0x3a0);
+			PROPERTY(m_bUseHighQualitySimulation,bool, 0x510);
+			PROPERTY(m_nMaxParticleCount,int32_t, 0x514);
+			PROPERTY(m_bRespectExclusionVolumes,bool, 0x518);
+			PROPERTY(m_bKillParticles,bool, 0x519);
+			PROPERTY(m_bDeleteSim,bool, 0x51a);
+			PROPERTY(m_nControlPoint,int32_t, 0x51c);
+			PROPERTY(m_nForcedSimId,int32_t, 0x520);
+			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t, 0x524);
+			PROPERTY(m_nForcedStatusEffects,particles::ParticleAttrBoxFlags_t, 0x528);
 			S2_PAD(0x310);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_ClientPhysics) == 0x530, "C_OP_ClientPhysics size should be 0x530");

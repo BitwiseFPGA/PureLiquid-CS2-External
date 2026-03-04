@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class GameAmmoTypeInfo_t : public CS2::client::AmmoTypeInfo_t {
 		public:
-			PROPERTY(m_nBuySize,int32_t , 0x38);
-			PROPERTY(m_nCost,int32_t , 0x3c);
+			PROPERTY(m_nBuySize,int32_t, 0x38);
+			PROPERTY(m_nCost,int32_t, 0x3c);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::GameAmmoTypeInfo_t) == 0x50, "GameAmmoTypeInfo_t size should be 0x50");

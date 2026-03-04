@@ -23,19 +23,19 @@ namespace CS2 {
 	namespace client {
 		class C_BaseCSGrenade : public CS2::client::C_CSWeaponBase {
 		public:
-			PROPERTY(m_bClientPredictDelete,bool , 0x1f40);
-			PROPERTY(m_bRedraw,bool , 0x1f41);
-			PROPERTY(m_bIsHeldByPlayer,bool , 0x1f42);
-			PROPERTY(m_bPinPulled,bool , 0x1f43);
-			PROPERTY(m_bJumpThrow,bool , 0x1f44);
-			PROPERTY(m_bThrowAnimating,bool , 0x1f45);
-			PROPERTY(m_fThrowTime,entity2::GameTime_t , 0x1f48);
-			PROPERTY(m_flThrowStrength,float32 , 0x1f50);
-			PROPERTY(m_fDropTime,entity2::GameTime_t , 0x1fc8);
-			PROPERTY(m_fPinPullTime,entity2::GameTime_t , 0x1fcc);
-			PROPERTY(m_bJustPulledPin,bool , 0x1fd0);
-			PROPERTY(m_nNextHoldTick,entity2::GameTick_t , 0x1fd4);
-			PROPERTY(m_flNextHoldFrac,float32 , 0x1fd8);
+			PROPERTY(m_bClientPredictDelete,bool, 0x1f40);
+			PROPERTY(m_bRedraw,bool, 0x1f41);
+			PROPERTY(m_bIsHeldByPlayer,bool, 0x1f42);
+			PROPERTY(m_bPinPulled,bool, 0x1f43);
+			PROPERTY(m_bJumpThrow,bool, 0x1f44);
+			PROPERTY(m_bThrowAnimating,bool, 0x1f45);
+			NESTED_PROPERTY(m_fThrowTime,entity2::GameTime_t, 0x1f48);
+			PROPERTY(m_flThrowStrength,float32, 0x1f50);
+			NESTED_PROPERTY(m_fDropTime,entity2::GameTime_t, 0x1fc8);
+			NESTED_PROPERTY(m_fPinPullTime,entity2::GameTime_t, 0x1fcc);
+			PROPERTY(m_bJustPulledPin,bool, 0x1fd0);
+			NESTED_PROPERTY(m_nNextHoldTick,entity2::GameTick_t, 0x1fd4);
+			PROPERTY(m_flNextHoldFrac,float32, 0x1fd8);
 			PROPERTY(m_hSwitchToWeaponAfterThrow,GlobalTypes::CHandle<client::C_CSWeaponBase>, 0x1fdc);
 			S2_PAD(0xC0);
 		};

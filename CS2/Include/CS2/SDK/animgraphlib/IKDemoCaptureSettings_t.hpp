@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class IKDemoCaptureSettings_t  {
 		public:
-			PROPERTY(m_parentBoneName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_eMode,animgraphlib::IKChannelMode , 0x8);
-			PROPERTY(m_ikChainName,GlobalTypes::CUtlString* , 0x10);
-			PROPERTY(m_oneBoneStart,GlobalTypes::CUtlString* , 0x18);
-			PROPERTY(m_oneBoneEnd,GlobalTypes::CUtlString* , 0x20);
+			PROPERTY(m_parentBoneName,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_eMode,animgraphlib::IKChannelMode, 0x8);
+			PROPERTY(m_ikChainName,GlobalTypes::CUtlString*, 0x10);
+			PROPERTY(m_oneBoneStart,GlobalTypes::CUtlString*, 0x18);
+			PROPERTY(m_oneBoneEnd,GlobalTypes::CUtlString*, 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::IKDemoCaptureSettings_t) == 0x28, "IKDemoCaptureSettings_t size should be 0x28");

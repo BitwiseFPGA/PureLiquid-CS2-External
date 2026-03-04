@@ -11,14 +11,10 @@
 
 
 #include <SDK/modellib/CBoneConstraintBase.hpp>
+#include <SDK/modellib/Input_t.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class Input_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,11 +22,11 @@ namespace CS2 {
 	namespace modellib {
 		class CBoneConstraintPoseSpaceMorph : public CS2::modellib::CBoneConstraintBase {
 		public:
-			PROPERTY(m_sBoneName,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_sAttachmentName,GlobalTypes::CUtlString* , 0x28);
+			PROPERTY(m_sBoneName,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_sAttachmentName,GlobalTypes::CUtlString*, 0x28);
 			PROPERTY(m_outputMorph,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x30);
-			PROPERTY(m_inputList,GlobalTypes::CUtlVector<modellib::CBoneConstraintPoseSpaceMorph::Input_t>, 0x48);
-			PROPERTY(m_bClamp,bool , 0x60);
+			NESTED_PROPERTY(m_inputList,GlobalTypes::CUtlVector<modellib::Input_t>, 0x48);
+			PROPERTY(m_bClamp,bool, 0x60);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::modellib::CBoneConstraintPoseSpaceMorph) == 0xA0, "CBoneConstraintPoseSpaceMorph size should be 0xA0");

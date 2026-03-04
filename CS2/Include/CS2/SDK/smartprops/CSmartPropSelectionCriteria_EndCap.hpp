@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropSelectionCriteria_EndCap : public CS2::smartprops::CSmartPropSelectionCriteria {
 		public:
-			PROPERTY(m_bStart,GlobalTypes::CSmartPropAttributeBool , 0x48);
-			PROPERTY(m_bEnd,GlobalTypes::CSmartPropAttributeBool , 0x88);
+			PROPERTY(m_bStart,GlobalTypes::CSmartPropAttributeBool, 0x48);
+			PROPERTY(m_bEnd,GlobalTypes::CSmartPropAttributeBool, 0x88);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropSelectionCriteria_EndCap) == 0xC8, "CSmartPropSelectionCriteria_EndCap size should be 0xC8");

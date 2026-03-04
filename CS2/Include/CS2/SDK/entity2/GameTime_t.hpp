@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace entity2 {
 		class GameTime_t  {
 		public:
-			PROPERTY(m_Value,float32 , 0x0);
+			PROPERTY(m_Value,float32, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::entity2::GameTime_t) == 0x4, "GameTime_t size should be 0x4");

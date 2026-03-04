@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace client {
 		class TimedEvent  {
 		public:
-			PROPERTY(m_TimeBetweenEvents,float32 , 0x0);
-			PROPERTY(m_fNextEvent,float32 , 0x4);
+			PROPERTY(m_TimeBetweenEvents,float32, 0x0);
+			PROPERTY(m_fNextEvent,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::TimedEvent) == 0x8, "TimedEvent size should be 0x8");

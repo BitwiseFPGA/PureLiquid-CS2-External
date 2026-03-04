@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayerController_InGameMoneyServices : public CS2::client::CPlayerControllerComponent {
 		public:
-			PROPERTY(m_bReceivesMoneyNextRound,bool , 0x40);
-			PROPERTY(m_iMoneyEarnedForNextRound,int32_t , 0x44);
-			PROPERTY(m_iAccount,int32_t , 0x48);
-			PROPERTY(m_iStartAccount,int32_t , 0x4c);
-			PROPERTY(m_iTotalCashSpent,int32_t , 0x50);
-			PROPERTY(m_iCashSpentThisRound,int32_t , 0x54);
+			PROPERTY(m_bReceivesMoneyNextRound,bool, 0x40);
+			PROPERTY(m_iMoneyEarnedForNextRound,int32_t, 0x44);
+			PROPERTY(m_iAccount,int32_t, 0x48);
+			PROPERTY(m_iStartAccount,int32_t, 0x4c);
+			PROPERTY(m_iTotalCashSpent,int32_t, 0x50);
+			PROPERTY(m_iCashSpentThisRound,int32_t, 0x54);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CCSPlayerController_InGameMoneyServices) == 0x58, "CCSPlayerController_InGameMoneyServices size should be 0x58");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace pulse_system {
 		class CPulseGraphInstance_TestDomain_Derived : public CS2::pulse_system::CPulseGraphInstance_TestDomain {
 		public:
-			PROPERTY(m_nInstanceValueX,int32_t , 0x160);
+			PROPERTY(m_nInstanceValueX,int32_t, 0x160);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::pulse_system::CPulseGraphInstance_TestDomain_Derived) == 0x168, "CPulseGraphInstance_TestDomain_Derived size should be 0x168");

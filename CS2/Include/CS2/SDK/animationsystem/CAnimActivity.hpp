@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimActivity  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_nActivity,int32_t , 0x10);
-			PROPERTY(m_nFlags,int32_t , 0x14);
-			PROPERTY(m_nWeight,int32_t , 0x18);
+			PROPERTY(m_name,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_nActivity,int32_t, 0x10);
+			PROPERTY(m_nFlags,int32_t, 0x14);
+			PROPERTY(m_nWeight,int32_t, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimActivity) == 0x20, "CAnimActivity size should be 0x20");

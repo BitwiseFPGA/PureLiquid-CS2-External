@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/RenderSkeletonBone_t.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class RenderSkeletonBone_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,8 +22,8 @@ namespace CS2 {
 		class CRenderSkeleton  {
 		public:
 			NESTED_PROPERTY(m_bones,GlobalTypes::CUtlVector<modellib::RenderSkeletonBone_t>, 0x0);
-			PROPERTY(m_boneParents,GlobalTypes::CUtlVector< int32 >, 0x30);
-			PROPERTY(m_nBoneWeightCount,int32_t , 0x48);
+			NESTED_PROPERTY(m_boneParents,GlobalTypes::CUtlVector< int32 >, 0x30);
+			PROPERTY(m_nBoneWeightCount,int32_t, 0x48);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::modellib::CRenderSkeleton) == 0x50, "CRenderSkeleton size should be 0x50");

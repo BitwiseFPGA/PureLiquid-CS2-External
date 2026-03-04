@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RampScalarLinearSimple : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_Rate,float32 , 0x1d0);
-			PROPERTY(m_flStartTime,float32 , 0x1d4);
-			PROPERTY(m_flEndTime,float32 , 0x1d8);
-			PROPERTY(m_nField,particles::ParticleAttributeIndex_t , 0x200);
+			PROPERTY(m_Rate,float32, 0x1d0);
+			PROPERTY(m_flStartTime,float32, 0x1d4);
+			PROPERTY(m_flEndTime,float32, 0x1d8);
+			NESTED_PROPERTY(m_nField,particles::ParticleAttributeIndex_t, 0x200);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RampScalarLinearSimple) == 0x210, "C_OP_RampScalarLinearSimple size should be 0x210");

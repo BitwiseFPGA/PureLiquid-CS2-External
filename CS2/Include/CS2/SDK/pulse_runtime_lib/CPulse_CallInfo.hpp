@@ -23,12 +23,12 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulse_CallInfo  {
 		public:
-			PROPERTY(m_PortName,GlobalTypes::PulseSymbol_t , 0x0);
-			PROPERTY(m_nEditorNodeID,pulse_runtime_lib::PulseDocNodeID_t , 0x10);
-			PROPERTY(m_RegisterMap,pulse_runtime_lib::PulseRegisterMap_t , 0x18);
-			PROPERTY(m_CallMethodID,pulse_runtime_lib::PulseDocNodeID_t , 0x48);
-			PROPERTY(m_nSrcChunk,pulse_runtime_lib::PulseRuntimeChunkIndex_t , 0x4c);
-			PROPERTY(m_nSrcInstruction,int32_t , 0x50);
+			PROPERTY(m_PortName,GlobalTypes::PulseSymbol_t, 0x0);
+			NESTED_PROPERTY(m_nEditorNodeID,pulse_runtime_lib::PulseDocNodeID_t, 0x10);
+			NESTED_PROPERTY(m_RegisterMap,pulse_runtime_lib::PulseRegisterMap_t, 0x18);
+			NESTED_PROPERTY(m_CallMethodID,pulse_runtime_lib::PulseDocNodeID_t, 0x48);
+			NESTED_PROPERTY(m_nSrcChunk,pulse_runtime_lib::PulseRuntimeChunkIndex_t, 0x4c);
+			PROPERTY(m_nSrcInstruction,int32_t, 0x50);
 			S2_PAD(0x58);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulse_CallInfo) == 0x58, "CPulse_CallInfo size should be 0x58");

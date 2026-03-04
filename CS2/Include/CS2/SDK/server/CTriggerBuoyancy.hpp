@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace server {
 		class CTriggerBuoyancy : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_BuoyancyHelper,server::CBuoyancyHelper , 0x890);
-			PROPERTY(m_flFluidDensity,float32 , 0x9a8);
+			NESTED_PROPERTY(m_BuoyancyHelper,server::CBuoyancyHelper, 0x890);
+			PROPERTY(m_flFluidDensity,float32, 0x9a8);
 			S2_PAD(0x120);
 		};
 		//static_assert(sizeof(CS2::server::CTriggerBuoyancy) == 0x9B0, "CTriggerBuoyancy size should be 0x9B0");

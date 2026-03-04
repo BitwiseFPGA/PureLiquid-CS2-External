@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_WaitForCursorsWithTagBase : public CS2::pulse_runtime_lib::CPulseCell_BaseYieldingInflow {
 		public:
-			PROPERTY(m_nCursorsAllowedToWait,int32_t , 0x48);
-			PROPERTY(m_WaitComplete,pulse_runtime_lib::CPulse_ResumePoint , 0x50);
+			PROPERTY(m_nCursorsAllowedToWait,int32_t, 0x48);
+			NESTED_PROPERTY(m_WaitComplete,pulse_runtime_lib::CPulse_ResumePoint, 0x50);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_WaitForCursorsWithTagBase) == 0x98, "CPulseCell_WaitForCursorsWithTagBase size should be 0x98");

@@ -11,6 +11,7 @@
 
 
 #include <SDK/server/CLogicalEntity.hpp>
+#include <SDK/server/CBaseEntity.hpp>
 #include <SDK/entity2/CEntityIOOutput.hpp>
 
 
@@ -22,10 +23,10 @@ namespace CS2 {
 	namespace server {
 		class CLogicBranch : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_bInValue,bool , 0x4a8);
-			PROPERTY(m_Listeners,server::CUtlVector<GlobalTypes::CHandle<server::CBaseEntity>>, 0x4b0);
-			PROPERTY(m_OnTrue,entity2::CEntityIOOutput , 0x4c8);
-			PROPERTY(m_OnFalse,entity2::CEntityIOOutput , 0x4e0);
+			PROPERTY(m_bInValue,bool, 0x4a8);
+			NESTED_PROPERTY(m_Listeners,server::CUtlVector<GlobalTypes::CHandle<server::CBaseEntity>>, 0x4b0);
+			NESTED_PROPERTY(m_OnTrue,entity2::CEntityIOOutput, 0x4c8);
+			NESTED_PROPERTY(m_OnFalse,entity2::CEntityIOOutput, 0x4e0);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::server::CLogicBranch) == 0x4F8, "CLogicBranch size should be 0x4F8");

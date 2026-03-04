@@ -23,13 +23,13 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CHarmonic  {
 		public:
-			PROPERTY(m_nWaveform,soundsystem_voicecontainers::EWaveform , 0x0);
-			PROPERTY(m_nFundamental,soundsystem_voicecontainers::EMidiNote , 0x1);
-			PROPERTY(m_nOctave,int32_t , 0x4);
-			PROPERTY(m_flCents,float32 , 0x8);
-			PROPERTY(m_flPhase,float32 , 0xc);
-			PROPERTY(m_curve,GlobalTypes::CPiecewiseCurve , 0x10);
-			PROPERTY(m_volumeScaling,soundsystem_voicecontainers::CGainScalePerInstance , 0x50);
+			PROPERTY(m_nWaveform,soundsystem_voicecontainers::EWaveform, 0x0);
+			PROPERTY(m_nFundamental,soundsystem_voicecontainers::EMidiNote, 0x1);
+			PROPERTY(m_nOctave,int32_t, 0x4);
+			PROPERTY(m_flCents,float32, 0x8);
+			PROPERTY(m_flPhase,float32, 0xc);
+			PROPERTY(m_curve,GlobalTypes::CPiecewiseCurve, 0x10);
+			NESTED_PROPERTY(m_volumeScaling,soundsystem_voicecontainers::CGainScalePerInstance, 0x50);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CHarmonic) == 0x68, "CVoiceContainerStaticAdditiveSynth::CHarmonic size should be 0x68");

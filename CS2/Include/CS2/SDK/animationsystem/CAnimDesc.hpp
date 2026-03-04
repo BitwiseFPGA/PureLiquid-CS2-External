@@ -12,18 +12,14 @@
 
 #include <SDK/animationsystem/CAnimDesc_Flag.hpp>
 #include <SDK/animationsystem/CAnimEncodedFrames.hpp>
+#include <SDK/animationsystem/CAnimMovement.hpp>
+#include <SDK/animationsystem/CAnimEventDefinition.hpp>
+#include <SDK/animationsystem/CAnimActivity.hpp>
+#include <SDK/animationsystem/CAnimLocalHierarchy.hpp>
 #include <SDK/animationsystem/CAnimSequenceParams.hpp>
 
 
 
-namespace CS2 {
-	namespace animationsystem {
-		class CAnimMovement;
-		class CAnimEventDefinition;
-		class CAnimActivity;
-		class CAnimLocalHierarchy;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -31,21 +27,21 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimDesc  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_flags,animationsystem::CAnimDesc_Flag , 0x10);
-			PROPERTY(fps,float32 , 0x18);
-			PROPERTY(m_Data,animationsystem::CAnimEncodedFrames , 0x20);
-			PROPERTY(m_movementArray,GlobalTypes::CUtlVector<animationsystem::CAnimMovement>, 0xf8);
-			PROPERTY(m_xInitialOffset,GlobalTypes::CTransform , 0x110);
-			PROPERTY(m_eventArray,GlobalTypes::CUtlVector<animationsystem::CAnimEventDefinition>, 0x130);
-			PROPERTY(m_activityArray,GlobalTypes::CUtlVector<animationsystem::CAnimActivity>, 0x148);
-			PROPERTY(m_hierarchyArray,GlobalTypes::CUtlVector<animationsystem::CAnimLocalHierarchy>, 0x160);
-			PROPERTY(framestalltime,float32 , 0x178);
-			PROPERTY(m_vecRootMin,GlobalTypes::Vector , 0x17c);
-			PROPERTY(m_vecRootMax,GlobalTypes::Vector , 0x188);
-			PROPERTY(m_vecBoneWorldMin,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x198);
-			PROPERTY(m_vecBoneWorldMax,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x1b0);
-			PROPERTY(m_sequenceParams,animationsystem::CAnimSequenceParams , 0x1c8);
+			PROPERTY(m_name,GlobalTypes::CBufferString, 0x0);
+			NESTED_PROPERTY(m_flags,animationsystem::CAnimDesc_Flag, 0x10);
+			PROPERTY(fps,float32, 0x18);
+			NESTED_PROPERTY(m_Data,animationsystem::CAnimEncodedFrames, 0x20);
+			NESTED_PROPERTY(m_movementArray,GlobalTypes::CUtlVector<animationsystem::CAnimMovement>, 0xf8);
+			PROPERTY(m_xInitialOffset,GlobalTypes::CTransform, 0x110);
+			NESTED_PROPERTY(m_eventArray,GlobalTypes::CUtlVector<animationsystem::CAnimEventDefinition>, 0x130);
+			NESTED_PROPERTY(m_activityArray,GlobalTypes::CUtlVector<animationsystem::CAnimActivity>, 0x148);
+			NESTED_PROPERTY(m_hierarchyArray,GlobalTypes::CUtlVector<animationsystem::CAnimLocalHierarchy>, 0x160);
+			PROPERTY(framestalltime,float32, 0x178);
+			PROPERTY(m_vecRootMin,GlobalTypes::Vector, 0x17c);
+			PROPERTY(m_vecRootMax,GlobalTypes::Vector, 0x188);
+			NESTED_PROPERTY(m_vecBoneWorldMin,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x198);
+			NESTED_PROPERTY(m_vecBoneWorldMax,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x1b0);
+			NESTED_PROPERTY(m_sequenceParams,animationsystem::CAnimSequenceParams, 0x1c8);
 			S2_PAD(0x1D0);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimDesc) == 0x1D0, "CAnimDesc size should be 0x1D0");

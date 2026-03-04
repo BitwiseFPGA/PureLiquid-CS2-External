@@ -28,23 +28,23 @@ namespace CS2 {
 	namespace client {
 		class CBaseAnimGraph : public CS2::client::C_BaseModelEntity {
 		public:
-			PROPERTY(m_graphControllerManager,client::CAnimGraphControllerManager , 0xe88);
-			PROPERTY(m_pMainGraphController,client::CAnimGraphControllerBase* , 0xf38);
-			PROPERTY(m_bInitiallyPopulateInterpHistory,bool , 0xf40);
-			PROPERTY(m_bSuppressAnimEventSounds,bool , 0xf42);
-			PROPERTY(m_bAnimGraphUpdateEnabled,bool , 0xf50);
-			PROPERTY(m_flMaxSlopeDistance,float32 , 0xf54);
-			PROPERTY(m_vLastSlopeCheckPos,GlobalTypes::VectorWS , 0xf58);
-			PROPERTY(m_nAnimGraphUpdateId,uint32_t , 0xf64);
-			PROPERTY(m_bAnimationUpdateScheduled,bool , 0xf68);
-			PROPERTY(m_vecForce,GlobalTypes::Vector , 0xf6c);
-			PROPERTY(m_nForceBone,int32_t , 0xf78);
-			PROPERTY(m_pClientsideRagdoll,client::CBaseAnimGraph* , 0xf80);
-			PROPERTY(m_bBuiltRagdoll,bool , 0xf88);
-			PROPERTY(m_RagdollPose,client::PhysicsRagdollPose_t , 0xfa0);
-			PROPERTY(m_bRagdollEnabled,bool , 0xfe8);
-			PROPERTY(m_bRagdollClientSide,bool , 0xfe9);
-			PROPERTY(m_bHasAnimatedMaterialAttributes,bool , 0xff8);
+			NESTED_PROPERTY(m_graphControllerManager,client::CAnimGraphControllerManager, 0xe88);
+			PROPERTY(m_pMainGraphController,client::CAnimGraphControllerBase*, 0xf38);
+			PROPERTY(m_bInitiallyPopulateInterpHistory,bool, 0xf40);
+			PROPERTY(m_bSuppressAnimEventSounds,bool, 0xf42);
+			PROPERTY(m_bAnimGraphUpdateEnabled,bool, 0xf50);
+			PROPERTY(m_flMaxSlopeDistance,float32, 0xf54);
+			PROPERTY(m_vLastSlopeCheckPos,GlobalTypes::VectorWS, 0xf58);
+			PROPERTY(m_nAnimGraphUpdateId,uint32_t, 0xf64);
+			PROPERTY(m_bAnimationUpdateScheduled,bool, 0xf68);
+			PROPERTY(m_vecForce,GlobalTypes::Vector, 0xf6c);
+			PROPERTY(m_nForceBone,int32_t, 0xf78);
+			PROPERTY(m_pClientsideRagdoll,client::CBaseAnimGraph*, 0xf80);
+			PROPERTY(m_bBuiltRagdoll,bool, 0xf88);
+			NESTED_PROPERTY(m_RagdollPose,client::PhysicsRagdollPose_t, 0xfa0);
+			PROPERTY(m_bRagdollEnabled,bool, 0xfe8);
+			PROPERTY(m_bRagdollClientSide,bool, 0xfe9);
+			PROPERTY(m_bHasAnimatedMaterialAttributes,bool, 0xff8);
 			S2_PAD(0x2E0);
 		};
 		//static_assert(sizeof(CS2::client::CBaseAnimGraph) == 0x1168, "CBaseAnimGraph size should be 0x1168");

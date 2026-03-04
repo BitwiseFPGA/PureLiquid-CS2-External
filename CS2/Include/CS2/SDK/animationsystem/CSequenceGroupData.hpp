@@ -10,20 +10,16 @@
 #endif
 
 
+#include <SDK/animationsystem/CSeqS1SeqDesc.hpp>
+#include <SDK/animationsystem/CSeqSynthAnimDesc.hpp>
+#include <SDK/animationsystem/CSeqCmdSeqDesc.hpp>
+#include <SDK/animationsystem/CSeqBoneMaskList.hpp>
+#include <SDK/animationsystem/CSeqScaleSet.hpp>
+#include <SDK/animationsystem/CSeqPoseParamDesc.hpp>
+#include <SDK/animationsystem/CSeqIKLock.hpp>
 
 
 
-namespace CS2 {
-	namespace animationsystem {
-		class CSeqS1SeqDesc;
-		class CSeqSynthAnimDesc;
-		class CSeqCmdSeqDesc;
-		class CSeqBoneMaskList;
-		class CSeqScaleSet;
-		class CSeqPoseParamDesc;
-		class CSeqIKLock;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -31,20 +27,20 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSequenceGroupData  {
 		public:
-			PROPERTY(m_sName,GlobalTypes::CBufferString , 0x10);
-			PROPERTY(m_nFlags,uint32_t , 0x20);
-			PROPERTY(m_localSequenceNameArray,GlobalTypes::CUtlVector<GlobalTypes::CBufferString>, 0x28);
-			PROPERTY(m_localS1SeqDescArray,GlobalTypes::CUtlVector<animationsystem::CSeqS1SeqDesc>, 0x40);
-			PROPERTY(m_localMultiSeqDescArray,GlobalTypes::CUtlVector<animationsystem::CSeqS1SeqDesc>, 0x58);
-			PROPERTY(m_localSynthAnimDescArray,GlobalTypes::CUtlVector<animationsystem::CSeqSynthAnimDesc>, 0x70);
-			PROPERTY(m_localCmdSeqDescArray,GlobalTypes::CUtlVector<animationsystem::CSeqCmdSeqDesc>, 0x88);
-			PROPERTY(m_localBoneMaskArray,GlobalTypes::CUtlVector<animationsystem::CSeqBoneMaskList>, 0xa0);
-			PROPERTY(m_localScaleSetArray,GlobalTypes::CUtlVector<animationsystem::CSeqScaleSet>, 0xb8);
-			PROPERTY(m_localBoneNameArray,GlobalTypes::CUtlVector<GlobalTypes::CBufferString>, 0xd0);
-			PROPERTY(m_localNodeName,GlobalTypes::CBufferString , 0xe8);
-			PROPERTY(m_localPoseParamArray,GlobalTypes::CUtlVector<animationsystem::CSeqPoseParamDesc>, 0xf8);
-			PROPERTY(m_keyValues,GlobalTypes::KeyValues3 , 0x110);
-			PROPERTY(m_localIKAutoplayLockArray,GlobalTypes::CUtlVector<animationsystem::CSeqIKLock>, 0x120);
+			PROPERTY(m_sName,GlobalTypes::CBufferString, 0x10);
+			PROPERTY(m_nFlags,uint32_t, 0x20);
+			NESTED_PROPERTY(m_localSequenceNameArray,GlobalTypes::CUtlVector<GlobalTypes::CBufferString>, 0x28);
+			NESTED_PROPERTY(m_localS1SeqDescArray,GlobalTypes::CUtlVector<animationsystem::CSeqS1SeqDesc>, 0x40);
+			NESTED_PROPERTY(m_localMultiSeqDescArray,GlobalTypes::CUtlVector<animationsystem::CSeqS1SeqDesc>, 0x58);
+			NESTED_PROPERTY(m_localSynthAnimDescArray,GlobalTypes::CUtlVector<animationsystem::CSeqSynthAnimDesc>, 0x70);
+			NESTED_PROPERTY(m_localCmdSeqDescArray,GlobalTypes::CUtlVector<animationsystem::CSeqCmdSeqDesc>, 0x88);
+			NESTED_PROPERTY(m_localBoneMaskArray,GlobalTypes::CUtlVector<animationsystem::CSeqBoneMaskList>, 0xa0);
+			NESTED_PROPERTY(m_localScaleSetArray,GlobalTypes::CUtlVector<animationsystem::CSeqScaleSet>, 0xb8);
+			NESTED_PROPERTY(m_localBoneNameArray,GlobalTypes::CUtlVector<GlobalTypes::CBufferString>, 0xd0);
+			PROPERTY(m_localNodeName,GlobalTypes::CBufferString, 0xe8);
+			NESTED_PROPERTY(m_localPoseParamArray,GlobalTypes::CUtlVector<animationsystem::CSeqPoseParamDesc>, 0xf8);
+			PROPERTY(m_keyValues,GlobalTypes::KeyValues3, 0x110);
+			NESTED_PROPERTY(m_localIKAutoplayLockArray,GlobalTypes::CUtlVector<animationsystem::CSeqIKLock>, 0x120);
 			S2_PAD(0x138);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSequenceGroupData) == 0x138, "CSequenceGroupData size should be 0x138");

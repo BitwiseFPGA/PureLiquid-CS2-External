@@ -11,6 +11,9 @@
 
 
 #include <SDK/toolscene/LightRigType_t.hpp>
+#include <SDK/toolscene/CLightRigSunLight.hpp>
+#include <SDK/toolscene/CLightRigPointLight.hpp>
+#include <SDK/toolscene/CLightRigSpotLight.hpp>
 #include <SDK/toolscene/CLightRigBackground.hpp>
 #include <SDK/toolscene/CLightRigGrid.hpp>
 #include <SDK/toolscene/CLightRigExposure.hpp>
@@ -20,13 +23,6 @@
 
 
 
-namespace CS2 {
-	namespace toolscene {
-		class CLightRigSunLight;
-		class CLightRigPointLight;
-		class CLightRigSpotLight;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -34,16 +30,16 @@ namespace CS2 {
 	namespace toolscene {
 		class CToolSceneLightRig  {
 		public:
-			PROPERTY(m_nRigType,toolscene::LightRigType_t , 0x8);
-			PROPERTY(m_Suns,GlobalTypes::CUtlVector<toolscene::CLightRigSunLight>, 0x10);
-			PROPERTY(m_PointLights,GlobalTypes::CUtlVector<toolscene::CLightRigPointLight>, 0x28);
-			PROPERTY(m_SpotLights,GlobalTypes::CUtlVector<toolscene::CLightRigSpotLight>, 0x40);
-			PROPERTY(m_Background,toolscene::CLightRigBackground , 0x58);
-			PROPERTY(m_Grid,toolscene::CLightRigGrid , 0x5d);
-			PROPERTY(m_Exposure,toolscene::CLightRigExposure , 0x64);
-			PROPERTY(m_PostProcessing,toolscene::CLightRigPostProcessing , 0x70);
-			PROPERTY(m_Sky,toolscene::CLightRigSky , 0x78);
-			PROPERTY(m_BackgroundMap,toolscene::CLightRigVMap , 0x80);
+			PROPERTY(m_nRigType,toolscene::LightRigType_t, 0x8);
+			NESTED_PROPERTY(m_Suns,GlobalTypes::CUtlVector<toolscene::CLightRigSunLight>, 0x10);
+			NESTED_PROPERTY(m_PointLights,GlobalTypes::CUtlVector<toolscene::CLightRigPointLight>, 0x28);
+			NESTED_PROPERTY(m_SpotLights,GlobalTypes::CUtlVector<toolscene::CLightRigSpotLight>, 0x40);
+			NESTED_PROPERTY(m_Background,toolscene::CLightRigBackground, 0x58);
+			NESTED_PROPERTY(m_Grid,toolscene::CLightRigGrid, 0x5d);
+			NESTED_PROPERTY(m_Exposure,toolscene::CLightRigExposure, 0x64);
+			NESTED_PROPERTY(m_PostProcessing,toolscene::CLightRigPostProcessing, 0x70);
+			NESTED_PROPERTY(m_Sky,toolscene::CLightRigSky, 0x78);
+			NESTED_PROPERTY(m_BackgroundMap,toolscene::CLightRigVMap, 0x80);
 			S2_PAD(0x168);
 		};
 		//static_assert(sizeof(CS2::toolscene::CToolSceneLightRig) == 0x168, "CToolSceneLightRig size should be 0x168");

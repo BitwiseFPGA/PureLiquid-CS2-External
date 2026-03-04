@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_SetOrientation : public CS2::smartprops::CSmartPropTransformOperation {
 		public:
-			PROPERTY(m_vForwardVector,GlobalTypes::CSmartPropAttributeVector , 0x50);
-			PROPERTY(m_ForwardDirectionSpace,smartprops::CSmartPropAttributeCoordinateSpace , 0x90);
-			PROPERTY(m_vUpVector,GlobalTypes::CSmartPropAttributeVector , 0xd0);
-			PROPERTY(m_UpDirectionSpace,smartprops::CSmartPropAttributeCoordinateSpace , 0x110);
-			PROPERTY(m_bPrioritizeUp,GlobalTypes::CSmartPropAttributeBool , 0x150);
+			PROPERTY(m_vForwardVector,GlobalTypes::CSmartPropAttributeVector, 0x50);
+			NESTED_PROPERTY(m_ForwardDirectionSpace,smartprops::CSmartPropAttributeCoordinateSpace, 0x90);
+			PROPERTY(m_vUpVector,GlobalTypes::CSmartPropAttributeVector, 0xd0);
+			NESTED_PROPERTY(m_UpDirectionSpace,smartprops::CSmartPropAttributeCoordinateSpace, 0x110);
+			PROPERTY(m_bPrioritizeUp,GlobalTypes::CSmartPropAttributeBool, 0x150);
 			S2_PAD(0x140);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_SetOrientation) == 0x190, "CSmartPropOperation_SetOrientation size should be 0x190");

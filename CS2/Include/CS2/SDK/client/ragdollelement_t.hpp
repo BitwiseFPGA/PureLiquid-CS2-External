@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace client {
 		class ragdollelement_t  {
 		public:
-			PROPERTY(originParentSpace,GlobalTypes::Vector , 0x0);
-			PROPERTY(parentIndex,int32_t , 0x20);
-			PROPERTY(m_flRadius,float32 , 0x24);
-			PROPERTY(m_nHeight,int32_t , 0x28);
+			PROPERTY(originParentSpace,GlobalTypes::Vector, 0x0);
+			PROPERTY(parentIndex,int32_t, 0x20);
+			PROPERTY(m_flRadius,float32, 0x24);
+			PROPERTY(m_nHeight,int32_t, 0x28);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::client::ragdollelement_t) == 0x30, "ragdollelement_t size should be 0x30");

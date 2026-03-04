@@ -20,16 +20,16 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixVocoderDesc_t  {
 		public:
-			PROPERTY(m_nBandCount,int32_t , 0x0);
-			PROPERTY(m_flBandwidth,float32 , 0x4);
-			PROPERTY(m_fldBModGain,float32 , 0x8);
-			PROPERTY(m_flFreqRangeStart,float32 , 0xc);
-			PROPERTY(m_flFreqRangeEnd,float32 , 0x10);
-			PROPERTY(m_fldBUnvoicedGain,float32 , 0x14);
-			PROPERTY(m_flAttackTimeMS,float32 , 0x18);
-			PROPERTY(m_flReleaseTimeMS,float32 , 0x1c);
-			PROPERTY(m_nDebugBand,int32_t , 0x20);
-			PROPERTY(m_bPeakMode,bool , 0x24);
+			PROPERTY(m_nBandCount,int32_t, 0x0);
+			PROPERTY(m_flBandwidth,float32, 0x4);
+			PROPERTY(m_fldBModGain,float32, 0x8);
+			PROPERTY(m_flFreqRangeStart,float32, 0xc);
+			PROPERTY(m_flFreqRangeEnd,float32, 0x10);
+			PROPERTY(m_fldBUnvoicedGain,float32, 0x14);
+			PROPERTY(m_flAttackTimeMS,float32, 0x18);
+			PROPERTY(m_flReleaseTimeMS,float32, 0x1c);
+			PROPERTY(m_nDebugBand,int32_t, 0x20);
+			PROPERTY(m_bPeakMode,bool, 0x24);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixVocoderDesc_t) == 0x28, "VMixVocoderDesc_t size should be 0x28");

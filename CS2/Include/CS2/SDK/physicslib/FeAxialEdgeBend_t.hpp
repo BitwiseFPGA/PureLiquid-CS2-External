@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace physicslib {
 		class FeAxialEdgeBend_t  {
 		public:
-			PROPERTY(te,float32 , 0x0);
-			PROPERTY(tv,float32 , 0x4);
-			PROPERTY(flDist,float32 , 0x8);
-			PROPERTY_ARRAY(flWeight,float32 , 4 , 0xc);
-			PROPERTY_ARRAY(nNode,uint16_t , 6 , 0x1c);
+			PROPERTY(te,float32, 0x0);
+			PROPERTY(tv,float32, 0x4);
+			PROPERTY(flDist,float32, 0x8);
+			PROPERTY_ARRAY(flWeight,float32, 4 , 0xc);
+			PROPERTY_ARRAY(nNode,uint16_t, 6 , 0x1c);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeAxialEdgeBend_t) == 0x28, "FeAxialEdgeBend_t size should be 0x28");

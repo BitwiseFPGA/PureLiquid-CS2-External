@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace client {
 		class inv_image_light_fill_t  {
 		public:
-			PROPERTY(color,GlobalTypes::Vector , 0x0);
-			PROPERTY(angle,GlobalTypes::QAngle , 0xc);
-			PROPERTY(brightness,float32 , 0x18);
+			PROPERTY(color,GlobalTypes::Vector, 0x0);
+			PROPERTY(angle,GlobalTypes::QAngle, 0xc);
+			PROPERTY(brightness,float32, 0x18);
 			S2_PAD(0x1C);
 		};
 		//static_assert(sizeof(CS2::client::inv_image_light_fill_t) == 0x1C, "inv_image_light_fill_t size should be 0x1C");

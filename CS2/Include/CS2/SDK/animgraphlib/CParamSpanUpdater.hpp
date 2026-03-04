@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/animgraphlib/ParamSpan_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class ParamSpan_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CParamSpanUpdater  {
 		public:
-			PROPERTY(m_spans,GlobalTypes::CUtlVector<animgraphlib::ParamSpan_t>, 0x0);
+			NESTED_PROPERTY(m_spans,GlobalTypes::CUtlVector<animgraphlib::ParamSpan_t>, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CParamSpanUpdater) == 0x18, "CParamSpanUpdater size should be 0x18");

@@ -29,10 +29,10 @@ namespace CS2 {
 		public:
 			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0x1d8);
 			PROPERTY(m_names,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x1e0);
-			PROPERTY(m_bShuffle,bool , 0x1f8);
-			PROPERTY(m_bLinear,bool , 0x1f9);
-			PROPERTY(m_bModelFromRenderer,bool , 0x1fa);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1fc);
+			PROPERTY(m_bShuffle,bool, 0x1f8);
+			PROPERTY(m_bLinear,bool, 0x1f9);
+			PROPERTY(m_bModelFromRenderer,bool, 0x1fa);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1fc);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_RandomNamedModelElement) == 0x200, "C_INIT_RandomNamedModelElement size should be 0x200");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Inflow_EventHandler : public CS2::pulse_runtime_lib::CPulseCell_Inflow_BaseEntrypoint {
 		public:
-			PROPERTY(m_EventName,GlobalTypes::PulseSymbol_t , 0x80);
+			PROPERTY(m_EventName,GlobalTypes::PulseSymbol_t, 0x80);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Inflow_EventHandler) == 0x90, "CPulseCell_Inflow_EventHandler size should be 0x90");

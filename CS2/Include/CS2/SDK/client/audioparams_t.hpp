@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace client {
 		class audioparams_t  {
 		public:
-			PROPERTY_ARRAY(localSound,GlobalTypes::Vector , 8 , 0x8);
-			PROPERTY(soundscapeIndex,int32_t , 0x68);
-			PROPERTY(localBits,uint8_t , 0x6c);
-			PROPERTY(soundscapeEntityListIndex,int32_t , 0x70);
-			PROPERTY(soundEventHash,uint32_t , 0x74);
+			PROPERTY_ARRAY(localSound,GlobalTypes::Vector, 8 , 0x8);
+			PROPERTY(soundscapeIndex,int32_t, 0x68);
+			PROPERTY(localBits,uint8_t, 0x6c);
+			PROPERTY(soundscapeEntityListIndex,int32_t, 0x70);
+			PROPERTY(soundEventHash,uint32_t, 0x74);
 			S2_PAD(0x78);
 		};
 		//static_assert(sizeof(CS2::client::audioparams_t) == 0x78, "audioparams_t size should be 0x78");

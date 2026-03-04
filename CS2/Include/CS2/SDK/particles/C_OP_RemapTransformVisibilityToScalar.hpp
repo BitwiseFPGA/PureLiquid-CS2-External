@@ -24,14 +24,14 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapTransformVisibilityToScalar : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x1d0);
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0x1d8);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x240);
-			PROPERTY(m_flInputMin,float32 , 0x244);
-			PROPERTY(m_flInputMax,float32 , 0x248);
-			PROPERTY(m_flOutputMin,float32 , 0x24c);
-			PROPERTY(m_flOutputMax,float32 , 0x250);
-			PROPERTY(m_flRadius,float32 , 0x254);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x1d0);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0x1d8);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x240);
+			PROPERTY(m_flInputMin,float32, 0x244);
+			PROPERTY(m_flInputMax,float32, 0x248);
+			PROPERTY(m_flOutputMin,float32, 0x24c);
+			PROPERTY(m_flOutputMax,float32, 0x250);
+			PROPERTY(m_flRadius,float32, 0x254);
 			S2_PAD(0x88);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapTransformVisibilityToScalar) == 0x258, "C_OP_RemapTransformVisibilityToScalar size should be 0x258");

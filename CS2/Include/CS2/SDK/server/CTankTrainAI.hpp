@@ -29,11 +29,11 @@ namespace CS2 {
 		public:
 			PROPERTY(m_hTrain,GlobalTypes::CHandle<server::CFuncTrackTrain>, 0x4a8);
 			PROPERTY(m_hTargetEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4ac);
-			PROPERTY(m_soundPlaying,int32_t , 0x4b0);
-			PROPERTY(m_startSoundName,GlobalTypes::CUtlSymbolLarge* , 0x4c8);
-			PROPERTY(m_engineSoundName,GlobalTypes::CUtlSymbolLarge* , 0x4d0);
-			PROPERTY(m_movementSoundName,GlobalTypes::CUtlSymbolLarge* , 0x4d8);
-			PROPERTY(m_targetEntityName,GlobalTypes::CUtlSymbolLarge* , 0x4e0);
+			PROPERTY(m_soundPlaying,int32_t, 0x4b0);
+			PROPERTY(m_startSoundName,GlobalTypes::CUtlSymbolLarge*, 0x4c8);
+			PROPERTY(m_engineSoundName,GlobalTypes::CUtlSymbolLarge*, 0x4d0);
+			PROPERTY(m_movementSoundName,GlobalTypes::CUtlSymbolLarge*, 0x4d8);
+			PROPERTY(m_targetEntityName,GlobalTypes::CUtlSymbolLarge*, 0x4e0);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::server::CTankTrainAI) == 0x4E8, "CTankTrainAI size should be 0x4E8");

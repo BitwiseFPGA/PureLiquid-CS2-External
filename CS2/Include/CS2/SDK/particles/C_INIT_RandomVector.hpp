@@ -23,10 +23,10 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_RandomVector : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_vecMin,GlobalTypes::Vector , 0x1d8);
-			PROPERTY(m_vecMax,GlobalTypes::Vector , 0x1e4);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1f0);
-			PROPERTY(m_randomnessParameters,particles::CRandomNumberGeneratorParameters , 0x1f4);
+			PROPERTY(m_vecMin,GlobalTypes::Vector, 0x1d8);
+			PROPERTY(m_vecMax,GlobalTypes::Vector, 0x1e4);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1f0);
+			NESTED_PROPERTY(m_randomnessParameters,particles::CRandomNumberGeneratorParameters, 0x1f4);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_RandomVector) == 0x200, "C_INIT_RandomVector size should be 0x200");

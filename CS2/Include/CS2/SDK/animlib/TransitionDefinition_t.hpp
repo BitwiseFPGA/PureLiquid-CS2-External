@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace animlib {
 		class TransitionDefinition_t  {
 		public:
-			PROPERTY(m_nTargetStateIdx,int16_t , 0x0);
-			PROPERTY(m_nConditionNodeIdx,int16_t , 0x2);
-			PROPERTY(m_nTransitionNodeIdx,int16_t , 0x4);
-			PROPERTY(m_bCanBeForced,bool , 0x6);
+			PROPERTY(m_nTargetStateIdx,int16_t, 0x0);
+			PROPERTY(m_nConditionNodeIdx,int16_t, 0x2);
+			PROPERTY(m_nTransitionNodeIdx,int16_t, 0x4);
+			PROPERTY(m_bCanBeForced,bool, 0x6);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animlib::TransitionDefinition_t) == 0x8, "CNmStateMachineNode::TransitionDefinition_t size should be 0x8");

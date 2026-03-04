@@ -22,17 +22,17 @@ namespace CS2 {
 	namespace server {
 		class CMathRemap : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_flInMin,float32 , 0x4a8);
-			PROPERTY(m_flInMax,float32 , 0x4ac);
-			PROPERTY(m_flOut1,float32 , 0x4b0);
-			PROPERTY(m_flOut2,float32 , 0x4b4);
-			PROPERTY(m_flOldInValue,float32 , 0x4b8);
-			PROPERTY(m_bEnabled,bool , 0x4bc);
+			PROPERTY(m_flInMin,float32, 0x4a8);
+			PROPERTY(m_flInMax,float32, 0x4ac);
+			PROPERTY(m_flOut1,float32, 0x4b0);
+			PROPERTY(m_flOut2,float32, 0x4b4);
+			PROPERTY(m_flOldInValue,float32, 0x4b8);
+			PROPERTY(m_bEnabled,bool, 0x4bc);
 			PROPERTY(m_OutValue,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4c0);
-			PROPERTY(m_OnRoseAboveMin,entity2::CEntityIOOutput , 0x4e0);
-			PROPERTY(m_OnRoseAboveMax,entity2::CEntityIOOutput , 0x4f8);
-			PROPERTY(m_OnFellBelowMin,entity2::CEntityIOOutput , 0x510);
-			PROPERTY(m_OnFellBelowMax,entity2::CEntityIOOutput , 0x528);
+			NESTED_PROPERTY(m_OnRoseAboveMin,entity2::CEntityIOOutput, 0x4e0);
+			NESTED_PROPERTY(m_OnRoseAboveMax,entity2::CEntityIOOutput, 0x4f8);
+			NESTED_PROPERTY(m_OnFellBelowMin,entity2::CEntityIOOutput, 0x510);
+			NESTED_PROPERTY(m_OnFellBelowMax,entity2::CEntityIOOutput, 0x528);
 			S2_PAD(0x98);
 		};
 		//static_assert(sizeof(CS2::server::CMathRemap) == 0x540, "CMathRemap size should be 0x540");

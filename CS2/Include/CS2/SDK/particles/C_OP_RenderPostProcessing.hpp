@@ -28,9 +28,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderPostProcessing : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_flPostProcessStrength,particleslib::CPerParticleFloatInput , 0x220);
+			NESTED_PROPERTY(m_flPostProcessStrength,particleslib::CPerParticleFloatInput, 0x220);
 			PROPERTY(m_hPostTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCPostProcessingResource>, 0x390);
-			PROPERTY(m_nPriority,particles::ParticlePostProcessPriorityGroup_t , 0x398);
+			PROPERTY(m_nPriority,particles::ParticlePostProcessPriorityGroup_t, 0x398);
 			S2_PAD(0x180);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RenderPostProcessing) == 0x3A0, "C_OP_RenderPostProcessing size should be 0x3A0");

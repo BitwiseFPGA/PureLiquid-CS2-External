@@ -27,18 +27,18 @@ namespace CS2 {
 	namespace worldrenderer {
 		class SceneObject_t  {
 		public:
-			PROPERTY(m_nObjectID,uint32_t , 0x0);
-			PROPERTY_ARRAY(m_vTransform,GlobalTypes::Vector4D , 3 , 0x4);
-			PROPERTY(m_flFadeStartDistance,float32 , 0x34);
-			PROPERTY(m_flFadeEndDistance,float32 , 0x38);
-			PROPERTY(m_vTintColor,GlobalTypes::Vector4D , 0x3c);
-			PROPERTY(m_skin,GlobalTypes::CUtlString* , 0x50);
-			PROPERTY(m_nObjectTypeFlags,worldrenderer::ObjectTypeFlags_t , 0x58);
-			PROPERTY(m_vLightingOrigin,GlobalTypes::Vector , 0x5c);
-			PROPERTY(m_nOverlayRenderOrder,int16_t , 0x68);
-			PROPERTY(m_nLODOverride,int16_t , 0x6a);
-			PROPERTY(m_nCubeMapPrecomputedHandshake,int32_t , 0x6c);
-			PROPERTY(m_nLightProbeVolumePrecomputedHandshake,int32_t , 0x70);
+			PROPERTY(m_nObjectID,uint32_t, 0x0);
+			PROPERTY_ARRAY(m_vTransform,GlobalTypes::Vector4D, 3 , 0x4);
+			PROPERTY(m_flFadeStartDistance,float32, 0x34);
+			PROPERTY(m_flFadeEndDistance,float32, 0x38);
+			PROPERTY(m_vTintColor,GlobalTypes::Vector4D, 0x3c);
+			PROPERTY(m_skin,GlobalTypes::CUtlString*, 0x50);
+			PROPERTY(m_nObjectTypeFlags,worldrenderer::ObjectTypeFlags_t, 0x58);
+			PROPERTY(m_vLightingOrigin,GlobalTypes::Vector, 0x5c);
+			PROPERTY(m_nOverlayRenderOrder,int16_t, 0x68);
+			PROPERTY(m_nLODOverride,int16_t, 0x6a);
+			PROPERTY(m_nCubeMapPrecomputedHandshake,int32_t, 0x6c);
+			PROPERTY(m_nLightProbeVolumePrecomputedHandshake,int32_t, 0x70);
 			PROPERTY(m_renderableModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0x78);
 			PROPERTY(m_renderable,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCRenderMesh>, 0x80);
 			S2_PAD(0x88);

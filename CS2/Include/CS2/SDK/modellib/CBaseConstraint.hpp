@@ -11,15 +11,11 @@
 
 
 #include <SDK/modellib/CBoneConstraintBase.hpp>
+#include <SDK/modellib/CConstraintSlave.hpp>
+#include <SDK/modellib/CConstraintTarget.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class CConstraintSlave;
-		class CConstraintTarget;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,10 +23,10 @@ namespace CS2 {
 	namespace modellib {
 		class CBaseConstraint : public CS2::modellib::CBoneConstraintBase {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_vUpVector,GlobalTypes::Vector , 0x28);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_vUpVector,GlobalTypes::Vector, 0x28);
 			PROPERTY(m_slaves,GlobalTypes::CUtlLeanVector<modellib::CConstraintSlave>, 0x38);
-			PROPERTY(m_targets,GlobalTypes::CUtlVector<modellib::CConstraintTarget>, 0x48);
+			NESTED_PROPERTY(m_targets,GlobalTypes::CUtlVector<modellib::CConstraintTarget>, 0x48);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::modellib::CBaseConstraint) == 0x60, "CBaseConstraint size should be 0x60");

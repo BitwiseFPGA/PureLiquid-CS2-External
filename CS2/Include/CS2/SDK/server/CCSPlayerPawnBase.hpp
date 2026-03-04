@@ -30,20 +30,20 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayerPawnBase : public CS2::server::CBasePlayerPawn {
 		public:
-			PROPERTY(m_CTouchExpansionComponent,server::CTouchExpansionComponent , 0xd30);
-			PROPERTY(m_pPingServices,server::CCSPlayer_PingServices* , 0xd80);
-			PROPERTY(m_blindUntilTime,entity2::GameTime_t , 0xd88);
-			PROPERTY(m_blindStartTime,entity2::GameTime_t , 0xd8c);
-			PROPERTY(m_iPlayerState,client::CSPlayerState , 0xd90);
-			PROPERTY(m_bRespawning,bool , 0xe40);
-			PROPERTY(m_bHasMovedSinceSpawn,bool , 0xe41);
-			PROPERTY(m_iNumSpawns,int32_t , 0xe44);
-			PROPERTY(m_flIdleTimeSinceLastAction,float32 , 0xe4c);
-			PROPERTY(m_fNextRadarUpdateTime,float32 , 0xe50);
-			PROPERTY(m_flFlashDuration,float32 , 0xe54);
-			PROPERTY(m_flFlashMaxAlpha,float32 , 0xe58);
-			PROPERTY(m_flProgressBarStartTime,float32 , 0xe5c);
-			PROPERTY(m_iProgressBarDuration,int32_t , 0xe60);
+			NESTED_PROPERTY(m_CTouchExpansionComponent,server::CTouchExpansionComponent, 0xd30);
+			PROPERTY(m_pPingServices,server::CCSPlayer_PingServices*, 0xd80);
+			NESTED_PROPERTY(m_blindUntilTime,entity2::GameTime_t, 0xd88);
+			NESTED_PROPERTY(m_blindStartTime,entity2::GameTime_t, 0xd8c);
+			PROPERTY(m_iPlayerState,client::CSPlayerState, 0xd90);
+			PROPERTY(m_bRespawning,bool, 0xe40);
+			PROPERTY(m_bHasMovedSinceSpawn,bool, 0xe41);
+			PROPERTY(m_iNumSpawns,int32_t, 0xe44);
+			PROPERTY(m_flIdleTimeSinceLastAction,float32, 0xe4c);
+			PROPERTY(m_fNextRadarUpdateTime,float32, 0xe50);
+			PROPERTY(m_flFlashDuration,float32, 0xe54);
+			PROPERTY(m_flFlashMaxAlpha,float32, 0xe58);
+			PROPERTY(m_flProgressBarStartTime,float32, 0xe5c);
+			PROPERTY(m_iProgressBarDuration,int32_t, 0xe60);
 			PROPERTY(m_hOriginalController,GlobalTypes::CHandle<server::CCSPlayerController>, 0xe64);
 			S2_PAD(0x150);
 		};

@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace server {
 		class CMotorController  {
 		public:
-			PROPERTY(m_speed,float32 , 0x8);
-			PROPERTY(m_maxTorque,float32 , 0xc);
-			PROPERTY(m_axis,GlobalTypes::VectorWS , 0x10);
-			PROPERTY(m_inertiaFactor,float32 , 0x1c);
+			PROPERTY(m_speed,float32, 0x8);
+			PROPERTY(m_maxTorque,float32, 0xc);
+			PROPERTY(m_axis,GlobalTypes::VectorWS, 0x10);
+			PROPERTY(m_inertiaFactor,float32, 0x1c);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::CMotorController) == 0x20, "CMotorController size should be 0x20");

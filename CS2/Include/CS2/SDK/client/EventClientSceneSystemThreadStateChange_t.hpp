@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class EventClientSceneSystemThreadStateChange_t  {
 		public:
-			PROPERTY(m_bThreadsActive,bool , 0x0);
+			PROPERTY(m_bThreadsActive,bool, 0x0);
 			S2_PAD(0x1);
 		};
 		//static_assert(sizeof(CS2::client::EventClientSceneSystemThreadStateChange_t) == 0x1, "EventClientSceneSystemThreadStateChange_t size should be 0x1");

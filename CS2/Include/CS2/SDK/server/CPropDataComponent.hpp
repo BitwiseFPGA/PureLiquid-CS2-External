@@ -21,16 +21,16 @@ namespace CS2 {
 	namespace server {
 		class CPropDataComponent : public CS2::entity2::CEntityComponent {
 		public:
-			PROPERTY(m_flDmgModBullet,float32 , 0x10);
-			PROPERTY(m_flDmgModClub,float32 , 0x14);
-			PROPERTY(m_flDmgModExplosive,float32 , 0x18);
-			PROPERTY(m_flDmgModFire,float32 , 0x1c);
-			PROPERTY(m_iszPhysicsDamageTableName,GlobalTypes::CUtlSymbolLarge* , 0x20);
-			PROPERTY(m_iszBasePropData,GlobalTypes::CUtlSymbolLarge* , 0x28);
-			PROPERTY(m_nInteractions,int32_t , 0x30);
-			PROPERTY(m_bSpawnMotionDisabled,bool , 0x34);
-			PROPERTY(m_nDisableTakePhysicsDamageSpawnFlag,int32_t , 0x38);
-			PROPERTY(m_nMotionDisabledSpawnFlag,int32_t , 0x3c);
+			PROPERTY(m_flDmgModBullet,float32, 0x10);
+			PROPERTY(m_flDmgModClub,float32, 0x14);
+			PROPERTY(m_flDmgModExplosive,float32, 0x18);
+			PROPERTY(m_flDmgModFire,float32, 0x1c);
+			PROPERTY(m_iszPhysicsDamageTableName,GlobalTypes::CUtlSymbolLarge*, 0x20);
+			PROPERTY(m_iszBasePropData,GlobalTypes::CUtlSymbolLarge*, 0x28);
+			PROPERTY(m_nInteractions,int32_t, 0x30);
+			PROPERTY(m_bSpawnMotionDisabled,bool, 0x34);
+			PROPERTY(m_nDisableTakePhysicsDamageSpawnFlag,int32_t, 0x38);
+			PROPERTY(m_nMotionDisabledSpawnFlag,int32_t, 0x3c);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::server::CPropDataComponent) == 0x40, "CPropDataComponent size should be 0x40");

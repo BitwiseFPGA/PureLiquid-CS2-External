@@ -26,10 +26,10 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerTapePlayer : public CS2::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator {
 		public:
-			PROPERTY(m_bShouldWraparound,bool , 0xb8);
+			PROPERTY(m_bShouldWraparound,bool, 0xb8);
 			PROPERTY(m_sourceAudio,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCVoiceContainerBase>, 0xc0);
-			PROPERTY(m_flTapeSpeedAttackTime,float32 , 0xc8);
-			PROPERTY(m_flTapeSpeedReleaseTime,float32 , 0xcc);
+			PROPERTY(m_flTapeSpeedAttackTime,float32, 0xc8);
+			PROPERTY(m_flTapeSpeedReleaseTime,float32, 0xcc);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerTapePlayer) == 0xF8, "CVoiceContainerTapePlayer size should be 0xF8");

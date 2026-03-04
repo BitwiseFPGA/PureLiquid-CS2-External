@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropVariable_RadiusPlacementMode : public CS2::smartprops::CSmartPropVariable {
 		public:
-			PROPERTY(m_DefaultValue,smartprops::SmartPropRadiusPlacementMode_t , 0x38);
+			PROPERTY(m_DefaultValue,smartprops::SmartPropRadiusPlacementMode_t, 0x38);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable_RadiusPlacementMode) == 0x40, "CSmartPropVariable_RadiusPlacementMode size should be 0x40");

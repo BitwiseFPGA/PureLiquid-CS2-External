@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixUtilityDesc_t  {
 		public:
-			PROPERTY(m_nOp,soundsystem_lowlevel::VMixChannelOperation_t , 0x0);
-			PROPERTY(m_flInputPan,float32 , 0x4);
-			PROPERTY(m_flOutputBalance,float32 , 0x8);
-			PROPERTY(m_fldbOutputGain,float32 , 0xc);
-			PROPERTY(m_bBassMono,bool , 0x10);
-			PROPERTY(m_flBassFreq,float32 , 0x14);
+			PROPERTY(m_nOp,soundsystem_lowlevel::VMixChannelOperation_t, 0x0);
+			PROPERTY(m_flInputPan,float32, 0x4);
+			PROPERTY(m_flOutputBalance,float32, 0x8);
+			PROPERTY(m_fldbOutputGain,float32, 0xc);
+			PROPERTY(m_bBassMono,bool, 0x10);
+			PROPERTY(m_flBassFreq,float32, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixUtilityDesc_t) == 0x18, "VMixUtilityDesc_t size should be 0x18");

@@ -20,14 +20,14 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqPoseSetting  {
 		public:
-			PROPERTY(m_sPoseParameter,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_sAttachment,GlobalTypes::CBufferString , 0x10);
-			PROPERTY(m_sReferenceSequence,GlobalTypes::CBufferString , 0x20);
-			PROPERTY(m_flValue,float32 , 0x30);
-			PROPERTY(m_bX,bool , 0x34);
-			PROPERTY(m_bY,bool , 0x35);
-			PROPERTY(m_bZ,bool , 0x36);
-			PROPERTY(m_eType,int32_t , 0x38);
+			PROPERTY(m_sPoseParameter,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_sAttachment,GlobalTypes::CBufferString, 0x10);
+			PROPERTY(m_sReferenceSequence,GlobalTypes::CBufferString, 0x20);
+			PROPERTY(m_flValue,float32, 0x30);
+			PROPERTY(m_bX,bool, 0x34);
+			PROPERTY(m_bY,bool, 0x35);
+			PROPERTY(m_bZ,bool, 0x36);
+			PROPERTY(m_eType,int32_t, 0x38);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqPoseSetting) == 0x40, "CSeqPoseSetting size should be 0x40");

@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace animlib {
 		class CNmEvent  {
 		public:
-			PROPERTY(m_flStartTime,animlib::NmPercent_t , 0x8);
-			PROPERTY(m_flDuration,animlib::NmPercent_t , 0xc);
-			PROPERTY(m_syncID,GlobalTypes::CGlobalSymbol , 0x10);
-			PROPERTY(m_bClientOnly,bool , 0x18);
+			NESTED_PROPERTY(m_flStartTime,animlib::NmPercent_t, 0x8);
+			NESTED_PROPERTY(m_flDuration,animlib::NmPercent_t, 0xc);
+			PROPERTY(m_syncID,GlobalTypes::CGlobalSymbol, 0x10);
+			PROPERTY(m_bClientOnly,bool, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmEvent) == 0x20, "CNmEvent size should be 0x20");

@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace particles {
 		class MaterialVariable_t  {
 		public:
-			PROPERTY(m_strVariable,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_nVariableField,particles::ParticleAttributeIndex_t , 0x8);
-			PROPERTY(m_flScale,float32 , 0xc);
+			PROPERTY(m_strVariable,GlobalTypes::CUtlString*, 0x0);
+			NESTED_PROPERTY(m_nVariableField,particles::ParticleAttributeIndex_t, 0x8);
+			PROPERTY(m_flScale,float32, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::particles::MaterialVariable_t) == 0x10, "MaterialVariable_t size should be 0x10");

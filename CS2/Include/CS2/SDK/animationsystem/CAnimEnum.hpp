@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimEnum  {
 		public:
-			PROPERTY(m_value,uint8_t , 0x0);
+			PROPERTY(m_value,uint8_t, 0x0);
 			S2_PAD(0x1);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimEnum) == 0x1, "CAnimEnum size should be 0x1");

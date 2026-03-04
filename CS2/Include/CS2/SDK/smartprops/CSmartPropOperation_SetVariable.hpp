@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_SetVariable : public CS2::smartprops::CSmartPropOperation {
 		public:
-			PROPERTY(m_VariableValue,GlobalTypes::CSmartPropAttributeVariableValue , 0x50);
+			PROPERTY(m_VariableValue,GlobalTypes::CSmartPropAttributeVariableValue, 0x50);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_SetVariable) == 0x90, "CSmartPropOperation_SetVariable size should be 0x90");

@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/CFootStride.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class CFootStride;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,9 +21,9 @@ namespace CS2 {
 	namespace modellib {
 		class CFootMotion  {
 		public:
-			PROPERTY(m_strides,GlobalTypes::CUtlVector<modellib::CFootStride>, 0x0);
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x18);
-			PROPERTY(m_bAdditive,bool , 0x20);
+			NESTED_PROPERTY(m_strides,GlobalTypes::CUtlVector<modellib::CFootStride>, 0x0);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x18);
+			PROPERTY(m_bAdditive,bool, 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::modellib::CFootMotion) == 0x28, "CFootMotion size should be 0x28");

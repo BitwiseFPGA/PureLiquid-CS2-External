@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace client {
 		class C_PlayerVisibility : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_flVisibilityStrength,float32 , 0x608);
-			PROPERTY(m_flFogDistanceMultiplier,float32 , 0x60c);
-			PROPERTY(m_flFogMaxDensityMultiplier,float32 , 0x610);
-			PROPERTY(m_flFadeTime,float32 , 0x614);
-			PROPERTY(m_bStartDisabled,bool , 0x618);
-			PROPERTY(m_bIsEnabled,bool , 0x619);
+			PROPERTY(m_flVisibilityStrength,float32, 0x608);
+			PROPERTY(m_flFogDistanceMultiplier,float32, 0x60c);
+			PROPERTY(m_flFogMaxDensityMultiplier,float32, 0x610);
+			PROPERTY(m_flFadeTime,float32, 0x614);
+			PROPERTY(m_bStartDisabled,bool, 0x618);
+			PROPERTY(m_bIsEnabled,bool, 0x619);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::client::C_PlayerVisibility) == 0x638, "C_PlayerVisibility size should be 0x638");

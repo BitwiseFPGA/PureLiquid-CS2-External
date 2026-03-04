@@ -23,19 +23,19 @@ namespace CS2 {
 	namespace server {
 		class CFuncMoveLinear : public CS2::server::CBaseToggle {
 		public:
-			PROPERTY(m_authoredPosition,server::MoveLinearAuthoredPos_t , 0x7b0);
-			PROPERTY(m_angMoveEntitySpace,GlobalTypes::QAngle , 0x7b4);
-			PROPERTY(m_vecMoveDirParentSpace,GlobalTypes::Vector , 0x7c0);
-			PROPERTY(m_soundStart,GlobalTypes::CUtlSymbolLarge* , 0x7d0);
-			PROPERTY(m_soundStop,GlobalTypes::CUtlSymbolLarge* , 0x7d8);
-			PROPERTY(m_currentSound,GlobalTypes::CUtlSymbolLarge* , 0x7e0);
-			PROPERTY(m_flBlockDamage,float32 , 0x7e8);
-			PROPERTY(m_flStartPosition,float32 , 0x7ec);
-			PROPERTY(m_OnFullyOpen,entity2::CEntityIOOutput , 0x7f8);
-			PROPERTY(m_OnFullyClosed,entity2::CEntityIOOutput , 0x810);
-			PROPERTY(m_bCreateMovableNavMesh,bool , 0x828);
-			PROPERTY(m_bAllowMovableNavMeshDockingOnEntireEntity,bool , 0x829);
-			PROPERTY(m_bCreateNavObstacle,bool , 0x82a);
+			PROPERTY(m_authoredPosition,server::MoveLinearAuthoredPos_t, 0x7b0);
+			PROPERTY(m_angMoveEntitySpace,GlobalTypes::QAngle, 0x7b4);
+			PROPERTY(m_vecMoveDirParentSpace,GlobalTypes::Vector, 0x7c0);
+			PROPERTY(m_soundStart,GlobalTypes::CUtlSymbolLarge*, 0x7d0);
+			PROPERTY(m_soundStop,GlobalTypes::CUtlSymbolLarge*, 0x7d8);
+			PROPERTY(m_currentSound,GlobalTypes::CUtlSymbolLarge*, 0x7e0);
+			PROPERTY(m_flBlockDamage,float32, 0x7e8);
+			PROPERTY(m_flStartPosition,float32, 0x7ec);
+			NESTED_PROPERTY(m_OnFullyOpen,entity2::CEntityIOOutput, 0x7f8);
+			NESTED_PROPERTY(m_OnFullyClosed,entity2::CEntityIOOutput, 0x810);
+			PROPERTY(m_bCreateMovableNavMesh,bool, 0x828);
+			PROPERTY(m_bAllowMovableNavMeshDockingOnEntireEntity,bool, 0x829);
+			PROPERTY(m_bCreateNavObstacle,bool, 0x82a);
 			S2_PAD(0x88);
 		};
 		//static_assert(sizeof(CS2::server::CFuncMoveLinear) == 0x838, "CFuncMoveLinear size should be 0x838");

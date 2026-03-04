@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace animlib {
 		class CNmBoneWeightList  {
 		public:
-			PROPERTY(m_skeletonName,GlobalTypes::CResourceName , 0x0);
-			PROPERTY(m_boneIDs,GlobalTypes::CUtlVector<GlobalTypes::CGlobalSymbol>, 0xe0);
-			PROPERTY(m_weights,GlobalTypes::CUtlVector< float32 >, 0xf8);
+			PROPERTY(m_skeletonName,GlobalTypes::CResourceName, 0x0);
+			NESTED_PROPERTY(m_boneIDs,GlobalTypes::CUtlVector<GlobalTypes::CGlobalSymbol>, 0xe0);
+			NESTED_PROPERTY(m_weights,GlobalTypes::CUtlVector< float32 >, 0xf8);
 			S2_PAD(0x110);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmBoneWeightList) == 0x110, "CNmBoneWeightList size should be 0x110");

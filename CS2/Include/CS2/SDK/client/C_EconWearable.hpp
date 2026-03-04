@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class C_EconWearable : public CS2::client::C_EconEntity {
 		public:
-			PROPERTY(m_nForceSkin,int32_t , 0x18c0);
-			PROPERTY(m_bAlwaysAllow,bool , 0x18c4);
+			PROPERTY(m_nForceSkin,int32_t, 0x18c0);
+			PROPERTY(m_bAlwaysAllow,bool, 0x18c4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::C_EconWearable) == 0x18C8, "C_EconWearable size should be 0x18C8");

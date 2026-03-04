@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace pulse_system {
 		class CursorState_t  {
 		public:
-			PROPERTY(nTestStep,int32_t , 0x0);
+			PROPERTY(nTestStep,int32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::pulse_system::CursorState_t) == 0x4, "CPulseCell_Test_MultiOutflow_WithParams_Yielding::CursorState_t size should be 0x4");

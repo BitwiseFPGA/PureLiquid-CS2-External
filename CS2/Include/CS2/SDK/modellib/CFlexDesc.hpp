@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace modellib {
 		class CFlexDesc  {
 		public:
-			PROPERTY(m_szFacs,GlobalTypes::CUtlString* , 0x0);
+			PROPERTY(m_szFacs,GlobalTypes::CUtlString*, 0x0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::modellib::CFlexDesc) == 0x8, "CFlexDesc size should be 0x8");

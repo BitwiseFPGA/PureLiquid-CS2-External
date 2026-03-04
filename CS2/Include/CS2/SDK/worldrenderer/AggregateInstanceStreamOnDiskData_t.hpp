@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace worldrenderer {
 		class AggregateInstanceStreamOnDiskData_t  {
 		public:
-			PROPERTY(m_DecodedSize,uint32_t , 0x0);
-			PROPERTY(m_BufferData,GlobalTypes::CUtlBinaryBlock , 0x8);
+			PROPERTY(m_DecodedSize,uint32_t, 0x0);
+			PROPERTY(m_BufferData,GlobalTypes::CUtlBinaryBlock, 0x8);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::AggregateInstanceStreamOnDiskData_t) == 0x18, "AggregateInstanceStreamOnDiskData_t size should be 0x18");

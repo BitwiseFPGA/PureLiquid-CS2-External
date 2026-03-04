@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace animlib {
 		class NmPercent_t  {
 		public:
-			PROPERTY(m_flValue,float32 , 0x0);
+			PROPERTY(m_flValue,float32, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::animlib::NmPercent_t) == 0x4, "NmPercent_t size should be 0x4");

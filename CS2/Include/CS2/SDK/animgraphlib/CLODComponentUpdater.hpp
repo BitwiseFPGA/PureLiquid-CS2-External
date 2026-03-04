@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CLODComponentUpdater : public CS2::animgraphlib::CAnimComponentUpdater {
 		public:
-			PROPERTY(m_nServerLOD,int32_t , 0x30);
+			PROPERTY(m_nServerLOD,int32_t, 0x30);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CLODComponentUpdater) == 0x38, "CLODComponentUpdater size should be 0x38");

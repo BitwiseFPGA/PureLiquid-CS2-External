@@ -25,9 +25,9 @@ namespace CS2 {
 	namespace client {
 		class ResponseParams  {
 		public:
-			PROPERTY(odds,int16_t , 0x10);
-			PROPERTY(flags,int16_t , 0x12);
-			PROPERTY(m_pFollowup,client::ResponseFollowup* , 0x18);
+			PROPERTY(odds,int16_t, 0x10);
+			PROPERTY(flags,int16_t, 0x12);
+			PROPERTY(m_pFollowup,client::ResponseFollowup*, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::ResponseParams) == 0x20, "ResponseParams size should be 0x20");

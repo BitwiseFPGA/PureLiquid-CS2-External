@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace particles {
 		class FloatInputMaterialVariable_t  {
 		public:
-			PROPERTY(m_strVariable,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_flInput,particleslib::CParticleCollectionFloatInput , 0x8);
+			PROPERTY(m_strVariable,GlobalTypes::CUtlString*, 0x0);
+			NESTED_PROPERTY(m_flInput,particleslib::CParticleCollectionFloatInput, 0x8);
 			S2_PAD(0x178);
 		};
 		//static_assert(sizeof(CS2::particles::FloatInputMaterialVariable_t) == 0x178, "FloatInputMaterialVariable_t size should be 0x178");

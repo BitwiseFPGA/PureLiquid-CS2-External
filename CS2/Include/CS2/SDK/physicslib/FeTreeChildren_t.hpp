@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace physicslib {
 		class FeTreeChildren_t  {
 		public:
-			PROPERTY_ARRAY(nChild,uint16_t , 2 , 0x0);
+			PROPERTY_ARRAY(nChild,uint16_t, 2 , 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeTreeChildren_t) == 0x4, "FeTreeChildren_t size should be 0x4");

@@ -23,13 +23,13 @@ namespace CS2 {
 	namespace animlib {
 		class CNmSoundEvent : public CS2::animlib::CNmEvent {
 		public:
-			PROPERTY(m_relevance,animlib::CNmEventRelevance_t , 0x20);
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x28);
-			PROPERTY(m_position,animlib::Position_t , 0x30);
-			PROPERTY(m_attachmentName,GlobalTypes::CUtlString* , 0x38);
-			PROPERTY(m_tags,GlobalTypes::CUtlString* , 0x40);
-			PROPERTY(m_bContinuePlayingSoundAtDurationEnd,bool , 0x48);
-			PROPERTY(m_flDurationInterruptionThreshold,float32 , 0x4c);
+			PROPERTY(m_relevance,animlib::CNmEventRelevance_t, 0x20);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x28);
+			PROPERTY(m_position,animlib::Position_t, 0x30);
+			PROPERTY(m_attachmentName,GlobalTypes::CUtlString*, 0x38);
+			PROPERTY(m_tags,GlobalTypes::CUtlString*, 0x40);
+			PROPERTY(m_bContinuePlayingSoundAtDurationEnd,bool, 0x48);
+			PROPERTY(m_flDurationInterruptionThreshold,float32, 0x4c);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmSoundEvent) == 0x50, "CNmSoundEvent size should be 0x50");

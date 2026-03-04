@@ -10,15 +10,11 @@
 #endif
 
 
+#include <SDK/animlib/NmBoneMaskSetDefinition_t.hpp>
+#include <SDK/animlib/SecondarySkeleton_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animlib {
-		class NmBoneMaskSetDefinition_t;
-		class SecondarySkeleton_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,15 +22,15 @@ namespace CS2 {
 	namespace animlib {
 		class CNmSkeleton  {
 		public:
-			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol , 0x0);
+			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol, 0x0);
 			PROPERTY(m_boneIDs,GlobalTypes::CUtlLeanVector<GlobalTypes::CGlobalSymbol>, 0x8);
-			PROPERTY(m_parentIndices,GlobalTypes::CUtlVector< int32 >, 0x18);
-			PROPERTY(m_parentSpaceReferencePose,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x30);
-			PROPERTY(m_modelSpaceReferencePose,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x48);
-			PROPERTY(m_numBonesToSampleAtLowLOD,int32_t , 0x60);
+			NESTED_PROPERTY(m_parentIndices,GlobalTypes::CUtlVector< int32 >, 0x18);
+			NESTED_PROPERTY(m_parentSpaceReferencePose,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x30);
+			NESTED_PROPERTY(m_modelSpaceReferencePose,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x48);
+			PROPERTY(m_numBonesToSampleAtLowLOD,int32_t, 0x60);
 			PROPERTY(m_maskDefinitions,GlobalTypes::CUtlLeanVector<animlib::NmBoneMaskSetDefinition_t>, 0x88);
-			PROPERTY(m_secondarySkeletons,GlobalTypes::CUtlLeanVector<animlib::CNmSkeleton::SecondarySkeleton_t>, 0xa8);
-			PROPERTY(m_bIsPropSkeleton,bool , 0xb8);
+			PROPERTY(m_secondarySkeletons,GlobalTypes::CUtlLeanVector<animlib::SecondarySkeleton_t>, 0xa8);
+			PROPERTY(m_bIsPropSkeleton,bool, 0xb8);
 			S2_PAD(0xC0);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmSkeleton) == 0xC0, "CNmSkeleton size should be 0xC0");

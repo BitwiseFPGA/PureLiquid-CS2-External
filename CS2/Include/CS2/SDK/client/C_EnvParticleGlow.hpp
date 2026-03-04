@@ -26,10 +26,10 @@ namespace CS2 {
 	namespace client {
 		class C_EnvParticleGlow : public CS2::client::C_ParticleSystem {
 		public:
-			PROPERTY(m_flAlphaScale,float32 , 0x1438);
-			PROPERTY(m_flRadiusScale,float32 , 0x143c);
-			PROPERTY(m_flSelfIllumScale,float32 , 0x1440);
-			PROPERTY(m_ColorTint,GlobalTypes::Color , 0x1444);
+			PROPERTY(m_flAlphaScale,float32, 0x1438);
+			PROPERTY(m_flRadiusScale,float32, 0x143c);
+			PROPERTY(m_flSelfIllumScale,float32, 0x1440);
+			PROPERTY(m_ColorTint,GlobalTypes::Color, 0x1444);
 			PROPERTY(m_hTextureOverride,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x1448);
 			S2_PAD(0x18);
 		};

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CFilterMassGreater : public CS2::server::CBaseFilter {
 		public:
-			PROPERTY(m_fFilterMass,float32 , 0x4e0);
+			PROPERTY(m_fFilterMass,float32, 0x4e0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::CFilterMassGreater) == 0x4E8, "CFilterMassGreater size should be 0x4E8");

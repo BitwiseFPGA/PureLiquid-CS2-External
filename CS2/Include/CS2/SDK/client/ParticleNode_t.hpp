@@ -28,12 +28,12 @@ namespace CS2 {
 		class ParticleNode_t  {
 		public:
 			PROPERTY(m_hEntity,GlobalTypes::CHandle<client::C_BaseEntity>, 0x0);
-			PROPERTY(m_iIndex,client::ParticleIndex_t , 0x4);
-			PROPERTY(m_flStartTime,entity2::GameTime_t , 0x8);
-			PROPERTY(m_flGrowthDuration,float32 , 0xc);
-			PROPERTY(m_vecGrowthOrigin,GlobalTypes::Vector , 0x10);
-			PROPERTY(m_flEndcapTime,float32 , 0x1c);
-			PROPERTY(m_bMarkedForDelete,bool , 0x20);
+			NESTED_PROPERTY(m_iIndex,client::ParticleIndex_t, 0x4);
+			NESTED_PROPERTY(m_flStartTime,entity2::GameTime_t, 0x8);
+			PROPERTY(m_flGrowthDuration,float32, 0xc);
+			PROPERTY(m_vecGrowthOrigin,GlobalTypes::Vector, 0x10);
+			PROPERTY(m_flEndcapTime,float32, 0x1c);
+			PROPERTY(m_bMarkedForDelete,bool, 0x20);
 			S2_PAD(0x24);
 		};
 		//static_assert(sizeof(CS2::client::ParticleNode_t) == 0x24, "ParticleNode_t size should be 0x24");

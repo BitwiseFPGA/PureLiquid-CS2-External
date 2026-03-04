@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapDistanceToLineSegmentToScalar : public CS2::particles::C_OP_RemapDistanceToLineSegmentBase {
 		public:
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1e8);
-			PROPERTY(m_flMinOutputValue,float32 , 0x1ec);
-			PROPERTY(m_flMaxOutputValue,float32 , 0x1f0);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1e8);
+			PROPERTY(m_flMinOutputValue,float32, 0x1ec);
+			PROPERTY(m_flMaxOutputValue,float32, 0x1f0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapDistanceToLineSegmentToScalar) == 0x1F8, "C_OP_RemapDistanceToLineSegmentToScalar size should be 0x1F8");

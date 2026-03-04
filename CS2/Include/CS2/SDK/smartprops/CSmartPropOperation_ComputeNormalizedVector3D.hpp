@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_ComputeNormalizedVector3D : public CS2::smartprops::CSmartPropOperation {
 		public:
-			PROPERTY(m_OutputVariableName,GlobalTypes::CUtlString* , 0x50);
-			PROPERTY(m_InputVector,GlobalTypes::CSmartPropAttributeVector , 0x58);
+			PROPERTY(m_OutputVariableName,GlobalTypes::CUtlString*, 0x50);
+			PROPERTY(m_InputVector,GlobalTypes::CSmartPropAttributeVector, 0x58);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_ComputeNormalizedVector3D) == 0x98, "CSmartPropOperation_ComputeNormalizedVector3D size should be 0x98");

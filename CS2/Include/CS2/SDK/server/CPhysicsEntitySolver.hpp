@@ -29,8 +29,8 @@ namespace CS2 {
 		public:
 			PROPERTY(m_hMovingEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c0);
 			PROPERTY(m_hPhysicsBlocker,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c4);
-			PROPERTY(m_separationDuration,float32 , 0x4c8);
-			PROPERTY(m_cancelTime,entity2::GameTime_t , 0x4cc);
+			PROPERTY(m_separationDuration,float32, 0x4c8);
+			NESTED_PROPERTY(m_cancelTime,entity2::GameTime_t, 0x4cc);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::server::CPhysicsEntitySolver) == 0x4D0, "CPhysicsEntitySolver size should be 0x4D0");

@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace modellib {
 		class CAnimFoot  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_vBallOffset,GlobalTypes::Vector , 0x8);
-			PROPERTY(m_vHeelOffset,GlobalTypes::Vector , 0x14);
-			PROPERTY(m_ankleBoneIndex,int32_t , 0x20);
-			PROPERTY(m_toeBoneIndex,int32_t , 0x24);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_vBallOffset,GlobalTypes::Vector, 0x8);
+			PROPERTY(m_vHeelOffset,GlobalTypes::Vector, 0x14);
+			PROPERTY(m_ankleBoneIndex,int32_t, 0x20);
+			PROPERTY(m_toeBoneIndex,int32_t, 0x24);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::modellib::CAnimFoot) == 0x28, "CAnimFoot size should be 0x28");

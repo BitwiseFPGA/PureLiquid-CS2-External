@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace client {
 		class CSoundEnvelope  {
 		public:
-			PROPERTY(m_current,float32 , 0x0);
-			PROPERTY(m_target,float32 , 0x4);
-			PROPERTY(m_rate,float32 , 0x8);
-			PROPERTY(m_forceupdate,bool , 0xc);
+			PROPERTY(m_current,float32, 0x0);
+			PROPERTY(m_target,float32, 0x4);
+			PROPERTY(m_rate,float32, 0x8);
+			PROPERTY(m_forceupdate,bool, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::CSoundEnvelope) == 0x10, "CSoundEnvelope size should be 0x10");

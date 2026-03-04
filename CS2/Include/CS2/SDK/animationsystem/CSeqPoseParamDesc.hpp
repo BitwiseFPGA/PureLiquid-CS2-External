@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqPoseParamDesc  {
 		public:
-			PROPERTY(m_sName,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_flStart,float32 , 0x10);
-			PROPERTY(m_flEnd,float32 , 0x14);
-			PROPERTY(m_flLoop,float32 , 0x18);
-			PROPERTY(m_bLooping,bool , 0x1c);
+			PROPERTY(m_sName,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_flStart,float32, 0x10);
+			PROPERTY(m_flEnd,float32, 0x14);
+			PROPERTY(m_flLoop,float32, 0x18);
+			PROPERTY(m_bLooping,bool, 0x1c);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqPoseParamDesc) == 0x20, "CSeqPoseParamDesc size should be 0x20");

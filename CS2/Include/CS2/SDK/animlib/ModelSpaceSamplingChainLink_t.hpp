@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace animlib {
 		class ModelSpaceSamplingChainLink_t  {
 		public:
-			PROPERTY(m_nBoneIdx,int32_t , 0x0);
-			PROPERTY(m_nParentBoneIdx,int32_t , 0x4);
-			PROPERTY(m_nParentChainLinkIdx,int32_t , 0x8);
+			PROPERTY(m_nBoneIdx,int32_t, 0x0);
+			PROPERTY(m_nParentBoneIdx,int32_t, 0x4);
+			PROPERTY(m_nParentChainLinkIdx,int32_t, 0x8);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::animlib::ModelSpaceSamplingChainLink_t) == 0xC, "CNmClip::ModelSpaceSamplingChainLink_t size should be 0xC");

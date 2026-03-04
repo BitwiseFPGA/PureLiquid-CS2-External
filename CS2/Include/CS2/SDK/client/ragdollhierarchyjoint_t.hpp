@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace client {
 		class ragdollhierarchyjoint_t  {
 		public:
-			PROPERTY(parentIndex,int32_t , 0x0);
-			PROPERTY(childIndex,int32_t , 0x4);
+			PROPERTY(parentIndex,int32_t, 0x0);
+			PROPERTY(childIndex,int32_t, 0x4);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::ragdollhierarchyjoint_t) == 0x10, "ragdollhierarchyjoint_t size should be 0x10");

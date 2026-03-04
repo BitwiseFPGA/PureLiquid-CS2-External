@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeBuildSphereRigid_t : public CS2::physicslib::FeSphereRigid_t {
 		public:
-			PROPERTY(m_nPriority,int32_t , 0x20);
-			PROPERTY(m_nVertexMapHash,uint32_t , 0x24);
-			PROPERTY(m_nAntitunnelGroupBits,uint32_t , 0x28);
+			PROPERTY(m_nPriority,int32_t, 0x20);
+			PROPERTY(m_nVertexMapHash,uint32_t, 0x24);
+			PROPERTY(m_nAntitunnelGroupBits,uint32_t, 0x28);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeBuildSphereRigid_t) == 0x30, "FeBuildSphereRigid_t size should be 0x30");

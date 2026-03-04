@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace toolscene {
 		class CLightRigGrid  {
 		public:
-			PROPERTY(m_bEnabled,bool , 0x0);
-			PROPERTY(m_Color,GlobalTypes::Color , 0x1);
+			PROPERTY(m_bEnabled,bool, 0x0);
+			PROPERTY(m_Color,GlobalTypes::Color, 0x1);
 			S2_PAD(0x5);
 		};
 		//static_assert(sizeof(CS2::toolscene::CLightRigGrid) == 0x5, "CLightRigGrid size should be 0x5");

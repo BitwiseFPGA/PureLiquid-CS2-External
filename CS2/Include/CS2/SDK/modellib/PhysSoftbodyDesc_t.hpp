@@ -10,16 +10,12 @@
 #endif
 
 
+#include <SDK/physicslib/RnSoftbodyParticle_t.hpp>
+#include <SDK/physicslib/RnSoftbodySpring_t.hpp>
+#include <SDK/physicslib/RnSoftbodyCapsule_t.hpp>
 
 
 
-namespace CS2 {
-	namespace physicslib {
-		class RnSoftbodyParticle_t;
-		class RnSoftbodySpring_t;
-		class RnSoftbodyCapsule_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,11 +23,11 @@ namespace CS2 {
 	namespace modellib {
 		class PhysSoftbodyDesc_t  {
 		public:
-			PROPERTY(m_ParticleBoneHash,GlobalTypes::CUtlVector< uint32 >, 0x0);
-			PROPERTY(m_Particles,GlobalTypes::CUtlVector<physicslib::RnSoftbodyParticle_t>, 0x18);
-			PROPERTY(m_Springs,GlobalTypes::CUtlVector<physicslib::RnSoftbodySpring_t>, 0x30);
-			PROPERTY(m_Capsules,GlobalTypes::CUtlVector<physicslib::RnSoftbodyCapsule_t>, 0x48);
-			PROPERTY(m_InitPose,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x60);
+			NESTED_PROPERTY(m_ParticleBoneHash,GlobalTypes::CUtlVector< uint32 >, 0x0);
+			NESTED_PROPERTY(m_Particles,GlobalTypes::CUtlVector<physicslib::RnSoftbodyParticle_t>, 0x18);
+			NESTED_PROPERTY(m_Springs,GlobalTypes::CUtlVector<physicslib::RnSoftbodySpring_t>, 0x30);
+			NESTED_PROPERTY(m_Capsules,GlobalTypes::CUtlVector<physicslib::RnSoftbodyCapsule_t>, 0x48);
+			NESTED_PROPERTY(m_InitPose,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x60);
 			PROPERTY(m_ParticleBoneName,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x78);
 			S2_PAD(0x90);
 		};

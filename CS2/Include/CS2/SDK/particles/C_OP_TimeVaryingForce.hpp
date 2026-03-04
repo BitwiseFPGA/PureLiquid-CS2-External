@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_TimeVaryingForce : public CS2::particles::CParticleFunctionForce {
 		public:
-			PROPERTY(m_flStartLerpTime,float32 , 0x1e0);
-			PROPERTY(m_StartingForce,GlobalTypes::Vector , 0x1e4);
-			PROPERTY(m_flEndLerpTime,float32 , 0x1f0);
-			PROPERTY(m_EndingForce,GlobalTypes::Vector , 0x1f4);
+			PROPERTY(m_flStartLerpTime,float32, 0x1e0);
+			PROPERTY(m_StartingForce,GlobalTypes::Vector, 0x1e4);
+			PROPERTY(m_flEndLerpTime,float32, 0x1f0);
+			PROPERTY(m_EndingForce,GlobalTypes::Vector, 0x1f4);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_TimeVaryingForce) == 0x200, "C_OP_TimeVaryingForce size should be 0x200");

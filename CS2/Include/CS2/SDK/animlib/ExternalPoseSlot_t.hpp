@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animlib {
 		class ExternalPoseSlot_t  {
 		public:
-			PROPERTY(m_nNodeIdx,int16_t , 0x0);
-			PROPERTY(m_slotID,GlobalTypes::CGlobalSymbol , 0x8);
+			PROPERTY(m_nNodeIdx,int16_t, 0x0);
+			PROPERTY(m_slotID,GlobalTypes::CGlobalSymbol, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animlib::ExternalPoseSlot_t) == 0x10, "CNmGraphDefinition::ExternalPoseSlot_t size should be 0x10");

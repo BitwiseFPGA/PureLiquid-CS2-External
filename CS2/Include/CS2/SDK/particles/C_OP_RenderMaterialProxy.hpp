@@ -12,6 +12,7 @@
 
 #include <SDK/particles/CParticleFunctionRenderer.hpp>
 #include <SDK/particles/MaterialProxyType_t.hpp>
+#include <SDK/particles/MaterialVariable_t.hpp>
 #include <SDK/particleslib/CParticleCollectionFloatInput.hpp>
 #include <SDK/particleslib/CParticleCollectionVecInput.hpp>
 #include <SDK/particleslib/CPerParticleFloatInput.hpp>
@@ -20,9 +21,6 @@
 
 
 namespace CS2 {
-	namespace particles {
-		class MaterialVariable_t;
-	}
 	namespace resourcesystem {
 		class InfoForResourceTypeIMaterial2;
 	}
@@ -34,14 +32,14 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderMaterialProxy : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_nMaterialControlPoint,int32_t , 0x220);
-			PROPERTY(m_nProxyType,particles::MaterialProxyType_t , 0x224);
-			PROPERTY(m_MaterialVars,GlobalTypes::CUtlVector<particles::MaterialVariable_t>, 0x228);
+			PROPERTY(m_nMaterialControlPoint,int32_t, 0x220);
+			PROPERTY(m_nProxyType,particles::MaterialProxyType_t, 0x224);
+			NESTED_PROPERTY(m_MaterialVars,GlobalTypes::CUtlVector<particles::MaterialVariable_t>, 0x228);
 			PROPERTY(m_hOverrideMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x240);
-			PROPERTY(m_flMaterialOverrideEnabled,particleslib::CParticleCollectionFloatInput , 0x248);
-			PROPERTY(m_vecColorScale,particleslib::CParticleCollectionVecInput , 0x3b8);
-			PROPERTY(m_flAlpha,particleslib::CPerParticleFloatInput , 0xa70);
-			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t , 0xbe0);
+			NESTED_PROPERTY(m_flMaterialOverrideEnabled,particleslib::CParticleCollectionFloatInput, 0x248);
+			NESTED_PROPERTY(m_vecColorScale,particleslib::CParticleCollectionVecInput, 0x3b8);
+			NESTED_PROPERTY(m_flAlpha,particleslib::CPerParticleFloatInput, 0xa70);
+			PROPERTY(m_nColorBlendType,particles::ParticleColorBlendType_t, 0xbe0);
 			S2_PAD(0x9E0);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RenderMaterialProxy) == 0xC00, "C_OP_RenderMaterialProxy size should be 0xC00");

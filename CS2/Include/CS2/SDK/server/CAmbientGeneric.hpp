@@ -28,16 +28,16 @@ namespace CS2 {
 	namespace server {
 		class CAmbientGeneric : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_radius,float32 , 0x4a8);
-			PROPERTY(m_flMaxRadius,float32 , 0x4ac);
-			PROPERTY(m_iSoundLevel,client::soundlevel_t , 0x4b0);
-			PROPERTY(m_dpv,server::dynpitchvol_t , 0x4b4);
-			PROPERTY(m_fActive,bool , 0x518);
-			PROPERTY(m_fLooping,bool , 0x519);
-			PROPERTY(m_iszSound,GlobalTypes::CUtlSymbolLarge* , 0x520);
-			PROPERTY(m_sSourceEntName,GlobalTypes::CUtlSymbolLarge* , 0x528);
+			PROPERTY(m_radius,float32, 0x4a8);
+			PROPERTY(m_flMaxRadius,float32, 0x4ac);
+			PROPERTY(m_iSoundLevel,client::soundlevel_t, 0x4b0);
+			NESTED_PROPERTY(m_dpv,server::dynpitchvol_t, 0x4b4);
+			PROPERTY(m_fActive,bool, 0x518);
+			PROPERTY(m_fLooping,bool, 0x519);
+			PROPERTY(m_iszSound,GlobalTypes::CUtlSymbolLarge*, 0x520);
+			PROPERTY(m_sSourceEntName,GlobalTypes::CUtlSymbolLarge*, 0x528);
 			PROPERTY(m_hSoundSource,GlobalTypes::CHandle<server::CBaseEntity>, 0x530);
-			PROPERTY(m_nSoundSourceEntIndex,GlobalTypes::CEntityIndex , 0x534);
+			PROPERTY(m_nSoundSourceEntIndex,GlobalTypes::CEntityIndex, 0x534);
 			S2_PAD(0xA8);
 		};
 		//static_assert(sizeof(CS2::server::CAmbientGeneric) == 0x550, "CAmbientGeneric size should be 0x550");

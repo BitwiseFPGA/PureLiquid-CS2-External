@@ -11,6 +11,7 @@
 
 
 #include <SDK/server/CLogicalEntity.hpp>
+#include <SDK/server/CLightEntity.hpp>
 
 
 
@@ -21,14 +22,14 @@ namespace CS2 {
 	namespace server {
 		class CMultiLightProxy : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_iszLightNameFilter,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
-			PROPERTY(m_iszLightClassFilter,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
-			PROPERTY(m_flLightRadiusFilter,float32 , 0x4b8);
-			PROPERTY(m_flBrightnessDelta,float32 , 0x4bc);
-			PROPERTY(m_bPerformScreenFade,bool , 0x4c0);
-			PROPERTY(m_flTargetBrightnessMultiplier,float32 , 0x4c4);
-			PROPERTY(m_flCurrentBrightnessMultiplier,float32 , 0x4c8);
-			PROPERTY(m_vecLights,server::CUtlVector<GlobalTypes::CHandle<server::CLightEntity>>, 0x4d0);
+			PROPERTY(m_iszLightNameFilter,GlobalTypes::CUtlSymbolLarge*, 0x4a8);
+			PROPERTY(m_iszLightClassFilter,GlobalTypes::CUtlSymbolLarge*, 0x4b0);
+			PROPERTY(m_flLightRadiusFilter,float32, 0x4b8);
+			PROPERTY(m_flBrightnessDelta,float32, 0x4bc);
+			PROPERTY(m_bPerformScreenFade,bool, 0x4c0);
+			PROPERTY(m_flTargetBrightnessMultiplier,float32, 0x4c4);
+			PROPERTY(m_flCurrentBrightnessMultiplier,float32, 0x4c8);
+			NESTED_PROPERTY(m_vecLights,server::CUtlVector<GlobalTypes::CHandle<server::CLightEntity>>, 0x4d0);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::server::CMultiLightProxy) == 0x4E8, "CMultiLightProxy size should be 0x4E8");

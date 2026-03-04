@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace particles {
 		class CollisionGroupContext_t  {
 		public:
-			PROPERTY(m_nCollisionGroupNumber,int32_t , 0x0);
+			PROPERTY(m_nCollisionGroupNumber,int32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::particles::CollisionGroupContext_t) == 0x4, "CollisionGroupContext_t size should be 0x4");

@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace modellib {
 		class Camera_t  {
 		public:
-			PROPERTY(m_tmCamera,GlobalTypes::CTransform , 0x0);
-			PROPERTY(m_flTime,float32 , 0x20);
+			PROPERTY(m_tmCamera,GlobalTypes::CTransform, 0x0);
+			PROPERTY(m_flTime,float32, 0x20);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::modellib::Camera_t) == 0x30, "SkeletonAnimCapture_t::Camera_t size should be 0x30");

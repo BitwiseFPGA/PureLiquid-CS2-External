@@ -20,13 +20,13 @@ namespace CS2 {
 	namespace modellib {
 		class RenderHairStrandInfo_t  {
 		public:
-			PROPERTY_ARRAY(m_nGuideHairIndices_nSurfaceTriIndex,uint32_t , 2 , 0x0);
-			PROPERTY_ARRAY(m_vGuideBary_vBaseBary,uint16_t , 4 , 0x8);
-			PROPERTY_ARRAY(m_vRootOffset_flLengthScale,uint16_t , 4 , 0x10);
-			PROPERTY_ARRAY(m_nPackedBaseUv,uint16_t , 2 , 0x18);
-			PROPERTY(m_nPackedSurfaceNormalOs,uint32_t , 0x1c);
-			PROPERTY(m_nPackedSurfaceTangentOs,uint32_t , 0x20);
-			PROPERTY(m_nDataOffset_Segments,uint32_t , 0x24);
+			PROPERTY_ARRAY(m_nGuideHairIndices_nSurfaceTriIndex,uint32_t, 2 , 0x0);
+			PROPERTY_ARRAY(m_vGuideBary_vBaseBary,uint16_t, 4 , 0x8);
+			PROPERTY_ARRAY(m_vRootOffset_flLengthScale,uint16_t, 4 , 0x10);
+			PROPERTY_ARRAY(m_nPackedBaseUv,uint16_t, 2 , 0x18);
+			PROPERTY(m_nPackedSurfaceNormalOs,uint32_t, 0x1c);
+			PROPERTY(m_nPackedSurfaceTangentOs,uint32_t, 0x20);
+			PROPERTY(m_nDataOffset_Segments,uint32_t, 0x24);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::modellib::RenderHairStrandInfo_t) == 0x28, "RenderHairStrandInfo_t size should be 0x28");

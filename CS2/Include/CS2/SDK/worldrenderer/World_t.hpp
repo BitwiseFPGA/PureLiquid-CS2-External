@@ -11,16 +11,12 @@
 
 
 #include <SDK/worldrenderer/WorldBuilderParams_t.hpp>
+#include <SDK/worldrenderer/NodeData_t.hpp>
 #include <SDK/worldrenderer/BakedLightingInfo_t.hpp>
 #include <SDK/resourcesystem/InfoForResourceTypeCEntityLump.hpp>
 
 
 
-namespace CS2 {
-	namespace worldrenderer {
-		class NodeData_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -28,10 +24,10 @@ namespace CS2 {
 	namespace worldrenderer {
 		class World_t  {
 		public:
-			PROPERTY(m_builderParams,worldrenderer::WorldBuilderParams_t , 0x0);
-			PROPERTY(m_worldNodes,GlobalTypes::CUtlVector<worldrenderer::NodeData_t>, 0x60);
-			PROPERTY(m_worldLightingInfo,worldrenderer::BakedLightingInfo_t , 0x78);
-			PROPERTY(m_entityLumps,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandleCopyable<resourcesystem::InfoForResourceTypeCEntityLump>>, 0xc0);
+			NESTED_PROPERTY(m_builderParams,worldrenderer::WorldBuilderParams_t, 0x0);
+			NESTED_PROPERTY(m_worldNodes,GlobalTypes::CUtlVector<worldrenderer::NodeData_t>, 0x60);
+			NESTED_PROPERTY(m_worldLightingInfo,worldrenderer::BakedLightingInfo_t, 0x78);
+			NESTED_PROPERTY(m_entityLumps,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandleCopyable<resourcesystem::InfoForResourceTypeCEntityLump>>, 0xc0);
 			S2_PAD(0xD8);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::World_t) == 0xD8, "World_t size should be 0xD8");

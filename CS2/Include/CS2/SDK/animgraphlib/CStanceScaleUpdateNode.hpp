@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CStanceScaleUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_hParam,animgraphlib::CAnimParamHandle , 0x70);
+			NESTED_PROPERTY(m_hParam,animgraphlib::CAnimParamHandle, 0x70);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CStanceScaleUpdateNode) == 0x78, "CStanceScaleUpdateNode size should be 0x78");

@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetControlPointFieldToWater : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nSourceCP,int32_t , 0x1d8);
-			PROPERTY(m_nDestCP,int32_t , 0x1dc);
-			PROPERTY(m_nCPField,int32_t , 0x1e0);
+			PROPERTY(m_nSourceCP,int32_t, 0x1d8);
+			PROPERTY(m_nDestCP,int32_t, 0x1dc);
+			PROPERTY(m_nCPField,int32_t, 0x1e0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetControlPointFieldToWater) == 0x1E8, "C_OP_SetControlPointFieldToWater size should be 0x1E8");

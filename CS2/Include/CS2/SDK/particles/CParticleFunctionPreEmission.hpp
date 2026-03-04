@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace particles {
 		class CParticleFunctionPreEmission : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_bRunOnce,bool , 0x1d0);
+			PROPERTY(m_bRunOnce,bool, 0x1d0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::particles::CParticleFunctionPreEmission) == 0x1D8, "CParticleFunctionPreEmission size should be 0x1D8");

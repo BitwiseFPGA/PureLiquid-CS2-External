@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CInfoPlayerStart : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x4a8);
-			PROPERTY(m_bIsMaster,bool , 0x4a9);
-			PROPERTY(m_pPawnSubclass,GlobalTypes::CGlobalSymbol , 0x4b0);
+			PROPERTY(m_bDisabled,bool, 0x4a8);
+			PROPERTY(m_bIsMaster,bool, 0x4a9);
+			PROPERTY(m_pPawnSubclass,GlobalTypes::CGlobalSymbol, 0x4b0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CInfoPlayerStart) == 0x4B8, "CInfoPlayerStart size should be 0x4B8");

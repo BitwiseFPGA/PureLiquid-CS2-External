@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CStateNodeTransitionData  {
 		public:
-			PROPERTY(m_curve,animgraphlib::CBlendCurve , 0x0);
+			NESTED_PROPERTY(m_curve,animgraphlib::CBlendCurve, 0x0);
 			PROPERTY(m_blendDuration,GlobalTypes::CAnimValue< float32 >, 0x8);
 			PROPERTY(m_resetCycleValue,GlobalTypes::CAnimValue< float32 >, 0x10);
 			S2_PAD(0x1C);

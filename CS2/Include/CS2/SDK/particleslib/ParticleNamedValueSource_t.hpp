@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace particleslib {
 		class ParticleNamedValueSource_t  {
 		public:
-			PROPERTY(m_Name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_IsPublic,bool , 0x8);
-			PROPERTY(m_ValueType,GlobalTypes::CPulseValueFullType , 0x10);
-			PROPERTY(m_DefaultConfig,particleslib::ParticleNamedValueConfiguration_t , 0x28);
+			PROPERTY(m_Name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_IsPublic,bool, 0x8);
+			PROPERTY(m_ValueType,GlobalTypes::CPulseValueFullType, 0x10);
+			NESTED_PROPERTY(m_DefaultConfig,particleslib::ParticleNamedValueConfiguration_t, 0x28);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::particleslib::ParticleNamedValueSource_t) == 0x60, "ParticleNamedValueSource_t size should be 0x60");

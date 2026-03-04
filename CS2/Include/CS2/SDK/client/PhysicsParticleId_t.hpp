@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class PhysicsParticleId_t  {
 		public:
-			PROPERTY(m_Value,uint32_t , 0x0);
+			PROPERTY(m_Value,uint32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::client::PhysicsParticleId_t) == 0x4, "PhysicsParticleId_t size should be 0x4");

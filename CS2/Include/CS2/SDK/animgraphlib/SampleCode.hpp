@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class SampleCode  {
 		public:
-			PROPERTY_ARRAY(m_subCode,uint8_t , 8 , 0x0);
+			PROPERTY_ARRAY(m_subCode,uint8_t, 8 , 0x0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::SampleCode) == 0x8, "SampleCode size should be 0x8");

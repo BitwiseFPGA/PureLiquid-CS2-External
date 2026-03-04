@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Base  {
 		public:
-			PROPERTY(m_nEditorNodeID,pulse_runtime_lib::PulseDocNodeID_t , 0x8);
+			NESTED_PROPERTY(m_nEditorNodeID,pulse_runtime_lib::PulseDocNodeID_t, 0x8);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Base) == 0x48, "CPulseCell_Base size should be 0x48");

@@ -23,10 +23,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetSingleControlPointPosition : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_bSetOnce,bool , 0x1d8);
-			PROPERTY(m_nCP1,int32_t , 0x1dc);
-			PROPERTY(m_vecCP1Pos,particleslib::CParticleCollectionVecInput , 0x1e0);
-			PROPERTY(m_transformInput,particleslib::CParticleTransformInput , 0x898);
+			PROPERTY(m_bSetOnce,bool, 0x1d8);
+			PROPERTY(m_nCP1,int32_t, 0x1dc);
+			NESTED_PROPERTY(m_vecCP1Pos,particleslib::CParticleCollectionVecInput, 0x1e0);
+			NESTED_PROPERTY(m_transformInput,particleslib::CParticleTransformInput, 0x898);
 			S2_PAD(0x728);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetSingleControlPointPosition) == 0x900, "C_OP_SetSingleControlPointPosition size should be 0x900");

@@ -26,7 +26,7 @@ namespace CS2 {
 		class CRopeOverlapHit  {
 		public:
 			PROPERTY(m_hEntity,GlobalTypes::CHandle<client::C_BaseEntity>, 0x0);
-			PROPERTY(m_vecOverlappingLinks,GlobalTypes::CUtlVector< int32 >, 0x8);
+			NESTED_PROPERTY(m_vecOverlappingLinks,GlobalTypes::CUtlVector< int32 >, 0x8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::CRopeOverlapHit) == 0x20, "CRopeOverlapHit size should be 0x20");

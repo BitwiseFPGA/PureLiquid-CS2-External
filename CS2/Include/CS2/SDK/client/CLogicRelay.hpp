@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace client {
 		class CLogicRelay : public CS2::client::CLogicalEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x608);
-			PROPERTY(m_bWaitForRefire,bool , 0x609);
-			PROPERTY(m_bTriggerOnce,bool , 0x60a);
-			PROPERTY(m_bFastRetrigger,bool , 0x60b);
-			PROPERTY(m_bPassthoughCaller,bool , 0x60c);
+			PROPERTY(m_bDisabled,bool, 0x608);
+			PROPERTY(m_bWaitForRefire,bool, 0x609);
+			PROPERTY(m_bTriggerOnce,bool, 0x60a);
+			PROPERTY(m_bFastRetrigger,bool, 0x60b);
+			PROPERTY(m_bPassthoughCaller,bool, 0x60c);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::CLogicRelay) == 0x610, "CLogicRelay size should be 0x610");

@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeFitWeight_t  {
 		public:
-			PROPERTY(flWeight,float32 , 0x0);
-			PROPERTY(nNode,uint16_t , 0x4);
-			PROPERTY(nDummy,uint16_t , 0x6);
+			PROPERTY(flWeight,float32, 0x0);
+			PROPERTY(nNode,uint16_t, 0x4);
+			PROPERTY(nDummy,uint16_t, 0x6);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeFitWeight_t) == 0x8, "FeFitWeight_t size should be 0x8");

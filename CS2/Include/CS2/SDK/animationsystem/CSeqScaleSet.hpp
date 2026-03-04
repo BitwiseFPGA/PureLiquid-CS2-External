@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqScaleSet  {
 		public:
-			PROPERTY(m_sName,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_bRootOffset,bool , 0x10);
-			PROPERTY(m_vRootOffset,GlobalTypes::Vector , 0x14);
-			PROPERTY(m_nLocalBoneArray,GlobalTypes::CUtlVector< int16 >, 0x20);
-			PROPERTY(m_flBoneScaleArray,GlobalTypes::CUtlVector< float32 >, 0x38);
+			PROPERTY(m_sName,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_bRootOffset,bool, 0x10);
+			PROPERTY(m_vRootOffset,GlobalTypes::Vector, 0x14);
+			NESTED_PROPERTY(m_nLocalBoneArray,GlobalTypes::CUtlVector< int16 >, 0x20);
+			NESTED_PROPERTY(m_flBoneScaleArray,GlobalTypes::CUtlVector< float32 >, 0x38);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqScaleSet) == 0x50, "CSeqScaleSet size should be 0x50");

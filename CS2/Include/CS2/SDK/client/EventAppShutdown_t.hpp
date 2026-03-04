@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class EventAppShutdown_t  {
 		public:
-			PROPERTY(m_nDummy0,int32_t , 0x0);
+			PROPERTY(m_nDummy0,int32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::client::EventAppShutdown_t) == 0x4, "EventAppShutdown_t size should be 0x4");

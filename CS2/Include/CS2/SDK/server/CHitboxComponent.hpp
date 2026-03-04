@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CHitboxComponent : public CS2::entity2::CEntityComponent {
 		public:
-			PROPERTY(m_flBoundsExpandRadius,float32 , 0x14);
+			PROPERTY(m_flBoundsExpandRadius,float32, 0x14);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CHitboxComponent) == 0x18, "CHitboxComponent size should be 0x18");

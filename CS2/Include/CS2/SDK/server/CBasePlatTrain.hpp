@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class CBasePlatTrain : public CS2::server::CBaseToggle {
 		public:
-			PROPERTY(m_NoiseMoving,GlobalTypes::CUtlSymbolLarge* , 0x7b0);
-			PROPERTY(m_NoiseArrived,GlobalTypes::CUtlSymbolLarge* , 0x7b8);
-			PROPERTY(m_volume,float32 , 0x7c8);
-			PROPERTY(m_flTWidth,float32 , 0x7cc);
-			PROPERTY(m_flTLength,float32 , 0x7d0);
+			PROPERTY(m_NoiseMoving,GlobalTypes::CUtlSymbolLarge*, 0x7b0);
+			PROPERTY(m_NoiseArrived,GlobalTypes::CUtlSymbolLarge*, 0x7b8);
+			PROPERTY(m_volume,float32, 0x7c8);
+			PROPERTY(m_flTWidth,float32, 0x7cc);
+			PROPERTY(m_flTLength,float32, 0x7d0);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::server::CBasePlatTrain) == 0x7D8, "CBasePlatTrain size should be 0x7D8");

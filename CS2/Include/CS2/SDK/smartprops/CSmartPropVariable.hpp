@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropVariable : public CS2::smartprops::CSmartPropParameter {
 		public:
-			PROPERTY(m_VariableName,GlobalTypes::CUtlString* , 0x10);
-			PROPERTY(m_bExposeAsParameter,bool , 0x18);
-			PROPERTY(m_DisplayName,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_HideExpression,GlobalTypes::CUtlString* , 0x28);
-			PROPERTY(m_ReadOnlyExpression,GlobalTypes::CUtlString* , 0x30);
+			PROPERTY(m_VariableName,GlobalTypes::CUtlString*, 0x10);
+			PROPERTY(m_bExposeAsParameter,bool, 0x18);
+			PROPERTY(m_DisplayName,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_HideExpression,GlobalTypes::CUtlString*, 0x28);
+			PROPERTY(m_ReadOnlyExpression,GlobalTypes::CUtlString*, 0x30);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable) == 0x38, "CSmartPropVariable size should be 0x38");

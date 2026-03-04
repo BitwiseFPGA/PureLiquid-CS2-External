@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace server {
 		class CSmoothFunc  {
 		public:
-			PROPERTY(m_flSmoothAmplitude,float32 , 0x8);
-			PROPERTY(m_flSmoothBias,float32 , 0xc);
-			PROPERTY(m_flSmoothDuration,float32 , 0x10);
-			PROPERTY(m_flSmoothRemainingTime,float32 , 0x14);
-			PROPERTY(m_nSmoothDir,int32_t , 0x18);
+			PROPERTY(m_flSmoothAmplitude,float32, 0x8);
+			PROPERTY(m_flSmoothBias,float32, 0xc);
+			PROPERTY(m_flSmoothDuration,float32, 0x10);
+			PROPERTY(m_flSmoothRemainingTime,float32, 0x14);
+			PROPERTY(m_nSmoothDir,int32_t, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::CSmoothFunc) == 0x20, "CSmoothFunc size should be 0x20");

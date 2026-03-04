@@ -22,15 +22,15 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_MaintainEmitter : public CS2::particles::CParticleFunctionEmitter {
 		public:
-			PROPERTY(m_nParticlesToMaintain,particleslib::CParticleCollectionFloatInput , 0x1d8);
-			PROPERTY(m_flStartTime,float32 , 0x348);
-			PROPERTY(m_flEmissionDuration,particleslib::CParticleCollectionFloatInput , 0x350);
-			PROPERTY(m_flEmissionRate,float32 , 0x4c0);
-			PROPERTY(m_nSnapshotControlPoint,int32_t , 0x4c4);
-			PROPERTY(m_strSnapshotSubset,GlobalTypes::CUtlString* , 0x4c8);
-			PROPERTY(m_bEmitInstantaneously,bool , 0x4d0);
-			PROPERTY(m_bFinalEmitOnStop,bool , 0x4d1);
-			PROPERTY(m_flScale,particleslib::CParticleCollectionFloatInput , 0x4d8);
+			NESTED_PROPERTY(m_nParticlesToMaintain,particleslib::CParticleCollectionFloatInput, 0x1d8);
+			PROPERTY(m_flStartTime,float32, 0x348);
+			NESTED_PROPERTY(m_flEmissionDuration,particleslib::CParticleCollectionFloatInput, 0x350);
+			PROPERTY(m_flEmissionRate,float32, 0x4c0);
+			PROPERTY(m_nSnapshotControlPoint,int32_t, 0x4c4);
+			PROPERTY(m_strSnapshotSubset,GlobalTypes::CUtlString*, 0x4c8);
+			PROPERTY(m_bEmitInstantaneously,bool, 0x4d0);
+			PROPERTY(m_bFinalEmitOnStop,bool, 0x4d1);
+			NESTED_PROPERTY(m_flScale,particleslib::CParticleCollectionFloatInput, 0x4d8);
 			S2_PAD(0x470);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_MaintainEmitter) == 0x648, "C_OP_MaintainEmitter size should be 0x648");

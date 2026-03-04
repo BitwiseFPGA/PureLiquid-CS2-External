@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/soundsystem/SosEditItemInfo_t.hpp>
 
 
 
-namespace CS2 {
-	namespace soundsystem {
-		class SosEditItemInfo_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,7 +21,7 @@ namespace CS2 {
 	namespace soundsystem {
 		class SelectedEditItemInfo_t  {
 		public:
-			PROPERTY(m_EditItems,GlobalTypes::CUtlVector<soundsystem::SosEditItemInfo_t>, 0x0);
+			NESTED_PROPERTY(m_EditItems,GlobalTypes::CUtlVector<soundsystem::SosEditItemInfo_t>, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::soundsystem::SelectedEditItemInfo_t) == 0x18, "SelectedEditItemInfo_t size should be 0x18");

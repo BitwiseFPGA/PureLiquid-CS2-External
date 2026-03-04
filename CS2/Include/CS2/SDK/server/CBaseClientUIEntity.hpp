@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CBaseClientUIEntity : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_bEnabled,bool , 0x730);
-			PROPERTY(m_DialogXMLName,GlobalTypes::CUtlSymbolLarge* , 0x738);
-			PROPERTY(m_PanelClassName,GlobalTypes::CUtlSymbolLarge* , 0x740);
-			PROPERTY(m_PanelID,GlobalTypes::CUtlSymbolLarge* , 0x748);
+			PROPERTY(m_bEnabled,bool, 0x730);
+			PROPERTY(m_DialogXMLName,GlobalTypes::CUtlSymbolLarge*, 0x738);
+			PROPERTY(m_PanelClassName,GlobalTypes::CUtlSymbolLarge*, 0x740);
+			PROPERTY(m_PanelID,GlobalTypes::CUtlSymbolLarge*, 0x748);
 			PROPERTY(m_CustomOutput0,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x750);
 			PROPERTY(m_CustomOutput1,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x770);
 			PROPERTY(m_CustomOutput2,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x790);

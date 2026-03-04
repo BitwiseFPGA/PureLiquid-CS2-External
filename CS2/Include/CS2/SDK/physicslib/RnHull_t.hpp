@@ -11,15 +11,15 @@
 
 
 #include <SDK/mathlib_extended/AABB_t.hpp>
+#include <SDK/physicslib/RnVertex_t.hpp>
+#include <SDK/physicslib/RnHalfEdge_t.hpp>
+#include <SDK/physicslib/RnFace_t.hpp>
+#include <SDK/physicslib/RnPlane_t.hpp>
 
 
 
 namespace CS2 {
 	namespace physicslib {
-		class RnVertex_t;
-		class RnHalfEdge_t;
-		class RnFace_t;
-		class RnPlane_t;
 		class CRegionSVM;
 	}
 }
@@ -30,20 +30,20 @@ namespace CS2 {
 	namespace physicslib {
 		class RnHull_t  {
 		public:
-			PROPERTY(m_vCentroid,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_flMaxAngularRadius,float32 , 0xc);
-			PROPERTY(m_Bounds,mathlib_extended::AABB_t , 0x10);
-			PROPERTY(m_vOrthographicAreas,GlobalTypes::Vector , 0x28);
-			PROPERTY(m_MassProperties,GlobalTypes::matrix3x4_t , 0x34);
-			PROPERTY(m_flVolume,float32 , 0x64);
-			PROPERTY(m_flSurfaceArea,float32 , 0x68);
-			PROPERTY(m_Vertices,GlobalTypes::CUtlVector<physicslib::RnVertex_t>, 0x70);
-			PROPERTY(m_VertexPositions,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x88);
-			PROPERTY(m_Edges,GlobalTypes::CUtlVector<physicslib::RnHalfEdge_t>, 0xa0);
-			PROPERTY(m_Faces,GlobalTypes::CUtlVector<physicslib::RnFace_t>, 0xb8);
-			PROPERTY(m_FacePlanes,GlobalTypes::CUtlVector<physicslib::RnPlane_t>, 0xd0);
-			PROPERTY(m_nFlags,uint32_t , 0xe8);
-			PROPERTY(m_pRegionSVM,physicslib::CRegionSVM* , 0xf0);
+			PROPERTY(m_vCentroid,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_flMaxAngularRadius,float32, 0xc);
+			NESTED_PROPERTY(m_Bounds,mathlib_extended::AABB_t, 0x10);
+			PROPERTY(m_vOrthographicAreas,GlobalTypes::Vector, 0x28);
+			PROPERTY(m_MassProperties,GlobalTypes::matrix3x4_t, 0x34);
+			PROPERTY(m_flVolume,float32, 0x64);
+			PROPERTY(m_flSurfaceArea,float32, 0x68);
+			NESTED_PROPERTY(m_Vertices,GlobalTypes::CUtlVector<physicslib::RnVertex_t>, 0x70);
+			NESTED_PROPERTY(m_VertexPositions,GlobalTypes::CUtlVector<GlobalTypes::Vector>, 0x88);
+			NESTED_PROPERTY(m_Edges,GlobalTypes::CUtlVector<physicslib::RnHalfEdge_t>, 0xa0);
+			NESTED_PROPERTY(m_Faces,GlobalTypes::CUtlVector<physicslib::RnFace_t>, 0xb8);
+			NESTED_PROPERTY(m_FacePlanes,GlobalTypes::CUtlVector<physicslib::RnPlane_t>, 0xd0);
+			PROPERTY(m_nFlags,uint32_t, 0xe8);
+			PROPERTY(m_pRegionSVM,physicslib::CRegionSVM*, 0xf0);
 			S2_PAD(0xF8);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnHull_t) == 0xF8, "RnHull_t size should be 0xF8");

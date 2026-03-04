@@ -23,8 +23,8 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_InitFloatCollection : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_InputValue,particleslib::CParticleCollectionFloatInput , 0x1d8);
-			PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t , 0x348);
+			NESTED_PROPERTY(m_InputValue,particleslib::CParticleCollectionFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t, 0x348);
 			S2_PAD(0x178);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_InitFloatCollection) == 0x350, "C_INIT_InitFloatCollection size should be 0x350");

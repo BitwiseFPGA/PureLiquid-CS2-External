@@ -11,14 +11,10 @@
 
 
 #include <SDK/animgraphlib/CLeafUpdateNode.hpp>
+#include <SDK/animgraphlib/CMotionGraph.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CMotionGraph;
-	}
-}
 
 
 using namespace GlobalTypes;

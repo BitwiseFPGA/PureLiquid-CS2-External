@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimUser  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_nType,int32_t , 0x10);
+			PROPERTY(m_name,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_nType,int32_t, 0x10);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimUser) == 0x18, "CAnimUser size should be 0x18");

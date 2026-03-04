@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeFitInfluence_t  {
 		public:
-			PROPERTY(nVertexNode,uint32_t , 0x0);
-			PROPERTY(flWeight,float32 , 0x4);
-			PROPERTY(nMatrixNode,uint32_t , 0x8);
+			PROPERTY(nVertexNode,uint32_t, 0x0);
+			PROPERTY(flWeight,float32, 0x4);
+			PROPERTY(nMatrixNode,uint32_t, 0x8);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeFitInfluence_t) == 0xC, "FeFitInfluence_t size should be 0xC");

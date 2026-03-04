@@ -20,14 +20,14 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimDesc_Flag  {
 		public:
-			PROPERTY(m_bLooping,bool , 0x0);
-			PROPERTY(m_bAllZeros,bool , 0x1);
-			PROPERTY(m_bHidden,bool , 0x2);
-			PROPERTY(m_bDelta,bool , 0x3);
-			PROPERTY(m_bLegacyWorldspace,bool , 0x4);
-			PROPERTY(m_bModelDoc,bool , 0x5);
-			PROPERTY(m_bImplicitSeqIgnoreDelta,bool , 0x6);
-			PROPERTY(m_bAnimGraphAdditive,bool , 0x7);
+			PROPERTY(m_bLooping,bool, 0x0);
+			PROPERTY(m_bAllZeros,bool, 0x1);
+			PROPERTY(m_bHidden,bool, 0x2);
+			PROPERTY(m_bDelta,bool, 0x3);
+			PROPERTY(m_bLegacyWorldspace,bool, 0x4);
+			PROPERTY(m_bModelDoc,bool, 0x5);
+			PROPERTY(m_bImplicitSeqIgnoreDelta,bool, 0x6);
+			PROPERTY(m_bAnimGraphAdditive,bool, 0x7);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimDesc_Flag) == 0x8, "CAnimDesc_Flag size should be 0x8");

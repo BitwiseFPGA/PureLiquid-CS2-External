@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixNameInputMeter : public CS2::soundsystem_lowlevel::CVMixInputBase {
 		public:
-			PROPERTY(m_nValueIndex,int32_t , 0x10);
+			PROPERTY(m_nValueIndex,int32_t, 0x10);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixNameInputMeter) == 0x18, "CVMixNameInputMeter size should be 0x18");

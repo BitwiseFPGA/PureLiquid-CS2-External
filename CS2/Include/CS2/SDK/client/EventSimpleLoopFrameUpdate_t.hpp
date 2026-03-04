@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace client {
 		class EventSimpleLoopFrameUpdate_t  {
 		public:
-			PROPERTY(m_LoopState,client::EngineLoopState_t , 0x0);
-			PROPERTY(m_flRealTime,float32 , 0x28);
-			PROPERTY(m_flFrameTime,float32 , 0x2c);
+			NESTED_PROPERTY(m_LoopState,client::EngineLoopState_t, 0x0);
+			PROPERTY(m_flRealTime,float32, 0x28);
+			PROPERTY(m_flFrameTime,float32, 0x2c);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::client::EventSimpleLoopFrameUpdate_t) == 0x30, "EventSimpleLoopFrameUpdate_t size should be 0x30");

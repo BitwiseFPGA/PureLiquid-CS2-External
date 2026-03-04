@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace pulse_system {
 		class CPulseCell_Test_MultiOutflow_WithParams : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_Out1,pulse_runtime_lib::SignatureOutflow_Continue , 0x48);
-			PROPERTY(m_Out2,pulse_runtime_lib::SignatureOutflow_Continue , 0x90);
+			NESTED_PROPERTY(m_Out1,pulse_runtime_lib::SignatureOutflow_Continue, 0x48);
+			NESTED_PROPERTY(m_Out2,pulse_runtime_lib::SignatureOutflow_Continue, 0x90);
 			S2_PAD(0x90);
 		};
 		//static_assert(sizeof(CS2::pulse_system::CPulseCell_Test_MultiOutflow_WithParams) == 0xD8, "CPulseCell_Test_MultiOutflow_WithParams size should be 0xD8");

@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace server {
 		class CHintMessageQueue  {
 		public:
-			PROPERTY(m_tmMessageEnd,float32 , 0x0);
-			PROPERTY(m_messages,GlobalTypes::CUtlVector<server::CHintMessage*>, 0x8);
-			PROPERTY(m_pPlayerController,server::CBasePlayerController* , 0x20);
+			PROPERTY(m_tmMessageEnd,float32, 0x0);
+			NESTED_PROPERTY(m_messages,GlobalTypes::CUtlVector<server::CHintMessage*>, 0x8);
+			PROPERTY(m_pPlayerController,server::CBasePlayerController*, 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::server::CHintMessageQueue) == 0x28, "CHintMessageQueue size should be 0x28");

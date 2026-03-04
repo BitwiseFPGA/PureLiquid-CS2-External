@@ -24,13 +24,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_InheritFromParentParticlesV2 : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_flScale,particleslib::CPerParticleFloatInput , 0x1d0);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x340);
-			PROPERTY(m_nIncrement,particleslib::CPerParticleFloatInput , 0x348);
-			PROPERTY(m_bRandomDistribution,bool , 0x4b8);
-			PROPERTY(m_bReverse,bool , 0x4b9);
-			PROPERTY(m_nMissingParentBehavior,particles::MissingParentInheritBehavior_t , 0x4bc);
-			PROPERTY(m_flInterpolation,particleslib::CPerParticleFloatInput , 0x4c0);
+			NESTED_PROPERTY(m_flScale,particleslib::CPerParticleFloatInput, 0x1d0);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x340);
+			NESTED_PROPERTY(m_nIncrement,particleslib::CPerParticleFloatInput, 0x348);
+			PROPERTY(m_bRandomDistribution,bool, 0x4b8);
+			PROPERTY(m_bReverse,bool, 0x4b9);
+			PROPERTY(m_nMissingParentBehavior,particles::MissingParentInheritBehavior_t, 0x4bc);
+			NESTED_PROPERTY(m_flInterpolation,particleslib::CPerParticleFloatInput, 0x4c0);
 			S2_PAD(0x460);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_InheritFromParentParticlesV2) == 0x630, "C_OP_InheritFromParentParticlesV2 size should be 0x630");

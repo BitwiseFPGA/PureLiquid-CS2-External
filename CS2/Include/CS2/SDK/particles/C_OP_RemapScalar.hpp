@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapScalar : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nFieldInput,particles::ParticleAttributeIndex_t , 0x1d0);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d4);
-			PROPERTY(m_flInputMin,float32 , 0x1d8);
-			PROPERTY(m_flInputMax,float32 , 0x1dc);
-			PROPERTY(m_flOutputMin,float32 , 0x1e0);
-			PROPERTY(m_flOutputMax,float32 , 0x1e4);
-			PROPERTY(m_bOldCode,bool , 0x1e8);
+			NESTED_PROPERTY(m_nFieldInput,particles::ParticleAttributeIndex_t, 0x1d0);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d4);
+			PROPERTY(m_flInputMin,float32, 0x1d8);
+			PROPERTY(m_flInputMax,float32, 0x1dc);
+			PROPERTY(m_flOutputMin,float32, 0x1e0);
+			PROPERTY(m_flOutputMax,float32, 0x1e4);
+			PROPERTY(m_bOldCode,bool, 0x1e8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapScalar) == 0x1F0, "C_OP_RemapScalar size should be 0x1F0");

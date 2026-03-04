@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropModifier  {
 		public:
-			PROPERTY(m_bEnabled,GlobalTypes::CSmartPropAttributeBool , 0x8);
+			PROPERTY(m_bEnabled,GlobalTypes::CSmartPropAttributeBool, 0x8);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropModifier) == 0x50, "CSmartPropModifier size should be 0x50");

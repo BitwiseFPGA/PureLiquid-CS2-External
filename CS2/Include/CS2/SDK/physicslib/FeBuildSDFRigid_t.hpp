@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeBuildSDFRigid_t : public CS2::physicslib::FeSDFRigid_t {
 		public:
-			PROPERTY(m_nPriority,int32_t , 0x50);
-			PROPERTY(m_nVertexMapHash,uint32_t , 0x54);
-			PROPERTY(m_nAntitunnelGroupBits,uint32_t , 0x58);
+			PROPERTY(m_nPriority,int32_t, 0x50);
+			PROPERTY(m_nVertexMapHash,uint32_t, 0x54);
+			PROPERTY(m_nAntitunnelGroupBits,uint32_t, 0x58);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeBuildSDFRigid_t) == 0x60, "FeBuildSDFRigid_t size should be 0x60");

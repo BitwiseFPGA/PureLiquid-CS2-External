@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeCtrlOffset_t  {
 		public:
-			PROPERTY(vOffset,GlobalTypes::Vector , 0x0);
-			PROPERTY(nCtrlParent,uint16_t , 0xc);
-			PROPERTY(nCtrlChild,uint16_t , 0xe);
+			PROPERTY(vOffset,GlobalTypes::Vector, 0x0);
+			PROPERTY(nCtrlParent,uint16_t, 0xc);
+			PROPERTY(nCtrlChild,uint16_t, 0xe);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeCtrlOffset_t) == 0x10, "FeCtrlOffset_t size should be 0x10");

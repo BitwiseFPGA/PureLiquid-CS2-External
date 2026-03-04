@@ -11,6 +11,7 @@
 
 
 #include <SDK/client/ModelConfigHandle_t.hpp>
+#include <SDK/server/CBaseModelEntity.hpp>
 
 
 
@@ -21,8 +22,8 @@ namespace CS2 {
 	namespace server {
 		class ActiveModelConfig_t  {
 		public:
-			PROPERTY(m_Handle,client::ModelConfigHandle_t , 0x30);
-			PROPERTY(m_Name,GlobalTypes::CUtlSymbolLarge* , 0x38);
+			NESTED_PROPERTY(m_Handle,client::ModelConfigHandle_t, 0x30);
+			PROPERTY(m_Name,GlobalTypes::CUtlSymbolLarge*, 0x38);
 			PROPERTY(m_AssociatedEntities,server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CBaseModelEntity>>, 0x40);
 			PROPERTY(m_AssociatedEntityNames,GlobalTypes::CNetworkUtlVectorBase<GlobalTypes::CUtlSymbolLarge>, 0x58);
 			S2_PAD(0x70);

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace client {
 		class CPulseCell_Step_EntFire : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_Input,GlobalTypes::CUtlString* , 0x48);
+			PROPERTY(m_Input,GlobalTypes::CUtlString*, 0x48);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::CPulseCell_Step_EntFire) == 0x50, "CPulseCell_Step_EntFire size should be 0x50");

@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CRagdollPropAttached : public CS2::server::CRagdollProp {
 		public:
-			PROPERTY(m_boneIndexAttached,uint32_t , 0xb70);
-			PROPERTY(m_ragdollAttachedObjectIndex,uint32_t , 0xb74);
-			PROPERTY(m_attachmentPointBoneSpace,GlobalTypes::Vector , 0xb78);
-			PROPERTY(m_attachmentPointRagdollSpace,GlobalTypes::Vector , 0xb84);
-			PROPERTY(m_bShouldDetach,bool , 0xb90);
-			PROPERTY(m_bShouldDeleteAttachedActivationRecord,bool , 0xba0);
+			PROPERTY(m_boneIndexAttached,uint32_t, 0xb70);
+			PROPERTY(m_ragdollAttachedObjectIndex,uint32_t, 0xb74);
+			PROPERTY(m_attachmentPointBoneSpace,GlobalTypes::Vector, 0xb78);
+			PROPERTY(m_attachmentPointRagdollSpace,GlobalTypes::Vector, 0xb84);
+			PROPERTY(m_bShouldDetach,bool, 0xb90);
+			PROPERTY(m_bShouldDeleteAttachedActivationRecord,bool, 0xba0);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::server::CRagdollPropAttached) == 0xBB0, "CRagdollPropAttached size should be 0xBB0");

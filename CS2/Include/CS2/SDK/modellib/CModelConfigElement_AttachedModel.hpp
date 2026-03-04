@@ -27,19 +27,19 @@ namespace CS2 {
 	namespace modellib {
 		class CModelConfigElement_AttachedModel : public CS2::modellib::CModelConfigElement {
 		public:
-			PROPERTY(m_InstanceName,GlobalTypes::CUtlString* , 0x48);
-			PROPERTY(m_EntityClass,GlobalTypes::CUtlString* , 0x50);
+			PROPERTY(m_InstanceName,GlobalTypes::CUtlString*, 0x48);
+			PROPERTY(m_EntityClass,GlobalTypes::CUtlString*, 0x50);
 			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0x58);
-			PROPERTY(m_vOffset,GlobalTypes::Vector , 0x60);
-			PROPERTY(m_aAngOffset,GlobalTypes::QAngle , 0x6c);
-			PROPERTY(m_AttachmentName,GlobalTypes::CUtlString* , 0x78);
-			PROPERTY(m_LocalAttachmentOffsetName,GlobalTypes::CUtlString* , 0x80);
-			PROPERTY(m_AttachmentType,modellib::ModelConfigAttachmentType_t , 0x88);
-			PROPERTY(m_bBoneMergeFlex,bool , 0x8c);
-			PROPERTY(m_bUserSpecifiedColor,bool , 0x8d);
-			PROPERTY(m_bUserSpecifiedMaterialGroup,bool , 0x8e);
-			PROPERTY(m_BodygroupOnOtherModels,GlobalTypes::CUtlString* , 0x90);
-			PROPERTY(m_MaterialGroupOnOtherModels,GlobalTypes::CUtlString* , 0x98);
+			PROPERTY(m_vOffset,GlobalTypes::Vector, 0x60);
+			PROPERTY(m_aAngOffset,GlobalTypes::QAngle, 0x6c);
+			PROPERTY(m_AttachmentName,GlobalTypes::CUtlString*, 0x78);
+			PROPERTY(m_LocalAttachmentOffsetName,GlobalTypes::CUtlString*, 0x80);
+			PROPERTY(m_AttachmentType,modellib::ModelConfigAttachmentType_t, 0x88);
+			PROPERTY(m_bBoneMergeFlex,bool, 0x8c);
+			PROPERTY(m_bUserSpecifiedColor,bool, 0x8d);
+			PROPERTY(m_bUserSpecifiedMaterialGroup,bool, 0x8e);
+			PROPERTY(m_BodygroupOnOtherModels,GlobalTypes::CUtlString*, 0x90);
+			PROPERTY(m_MaterialGroupOnOtherModels,GlobalTypes::CUtlString*, 0x98);
 			S2_PAD(0xA0);
 		};
 		//static_assert(sizeof(CS2::modellib::CModelConfigElement_AttachedModel) == 0xE8, "CModelConfigElement_AttachedModel size should be 0xE8");

@@ -22,14 +22,14 @@ namespace CS2 {
 	namespace server {
 		class CTestPulseIO : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_OnVariantVoid,entity2::CEntityIOOutput , 0x4a8);
+			NESTED_PROPERTY(m_OnVariantVoid,entity2::CEntityIOOutput, 0x4a8);
 			PROPERTY(m_OnVariantBool,GlobalTypes::CEntityOutputTemplate< bool, bool >, 0x4c0);
 			PROPERTY(m_OnVariantInt,GlobalTypes::CEntityOutputTemplate< int32, int32 >, 0x4e0);
 			PROPERTY(m_OnVariantFloat,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x500);
 			PROPERTY(m_OnVariantString,GlobalTypes::CEntityOutputTemplate< CUtlSymbolLarge, CUtlSymbolLarge >*, 0x520);
 			PROPERTY(m_OnVariantColor,GlobalTypes::CEntityOutputTemplate< Color, Color >, 0x540);
 			PROPERTY(m_OnVariantVector,GlobalTypes::CEntityOutputTemplate< Vector, Vector >, 0x560);
-			PROPERTY(m_bAllowEmptyInputs,bool , 0x588);
+			PROPERTY(m_bAllowEmptyInputs,bool, 0x588);
 			S2_PAD(0xE8);
 		};
 		//static_assert(sizeof(CS2::server::CTestPulseIO) == 0x590, "CTestPulseIO size should be 0x590");

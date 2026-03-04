@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class EventClientPollNetworking_t  {
 		public:
-			PROPERTY(m_nTickCount,int32_t , 0x0);
+			PROPERTY(m_nTickCount,int32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::client::EventClientPollNetworking_t) == 0x4, "EventClientPollNetworking_t size should be 0x4");

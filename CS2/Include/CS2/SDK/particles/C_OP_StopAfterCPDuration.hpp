@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_StopAfterCPDuration : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_flDuration,particleslib::CParticleCollectionFloatInput , 0x1d8);
-			PROPERTY(m_bDestroyImmediately,bool , 0x348);
-			PROPERTY(m_bPlayEndCap,bool , 0x349);
+			NESTED_PROPERTY(m_flDuration,particleslib::CParticleCollectionFloatInput, 0x1d8);
+			PROPERTY(m_bDestroyImmediately,bool, 0x348);
+			PROPERTY(m_bPlayEndCap,bool, 0x349);
 			S2_PAD(0x178);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_StopAfterCPDuration) == 0x350, "C_OP_StopAfterCPDuration size should be 0x350");

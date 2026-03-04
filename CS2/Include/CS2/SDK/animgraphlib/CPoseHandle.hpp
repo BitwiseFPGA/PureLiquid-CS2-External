@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CPoseHandle  {
 		public:
-			PROPERTY(m_nIndex,uint16_t , 0x0);
-			PROPERTY(m_eType,animgraphlib::PoseType_t , 0x2);
+			PROPERTY(m_nIndex,uint16_t, 0x0);
+			PROPERTY(m_eType,animgraphlib::PoseType_t, 0x2);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CPoseHandle) == 0x4, "CPoseHandle size should be 0x4");

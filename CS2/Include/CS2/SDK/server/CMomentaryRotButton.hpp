@@ -23,19 +23,19 @@ namespace CS2 {
 		class CMomentaryRotButton : public CS2::server::CRotButton {
 		public:
 			PROPERTY(m_Position,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x8b0);
-			PROPERTY(m_OnUnpressed,entity2::CEntityIOOutput , 0x8d0);
-			PROPERTY(m_OnFullyOpen,entity2::CEntityIOOutput , 0x8e8);
-			PROPERTY(m_OnFullyClosed,entity2::CEntityIOOutput , 0x900);
-			PROPERTY(m_OnReachedPosition,entity2::CEntityIOOutput , 0x918);
-			PROPERTY(m_lastUsed,int32_t , 0x930);
-			PROPERTY(m_start,GlobalTypes::QAngle , 0x934);
-			PROPERTY(m_end,GlobalTypes::QAngle , 0x940);
-			PROPERTY(m_IdealYaw,float32 , 0x94c);
-			PROPERTY(m_sNoise,GlobalTypes::CUtlSymbolLarge* , 0x950);
-			PROPERTY(m_bUpdateTarget,bool , 0x958);
-			PROPERTY(m_direction,int32_t , 0x95c);
-			PROPERTY(m_returnSpeed,float32 , 0x960);
-			PROPERTY(m_flStartPosition,float32 , 0x964);
+			NESTED_PROPERTY(m_OnUnpressed,entity2::CEntityIOOutput, 0x8d0);
+			NESTED_PROPERTY(m_OnFullyOpen,entity2::CEntityIOOutput, 0x8e8);
+			NESTED_PROPERTY(m_OnFullyClosed,entity2::CEntityIOOutput, 0x900);
+			NESTED_PROPERTY(m_OnReachedPosition,entity2::CEntityIOOutput, 0x918);
+			PROPERTY(m_lastUsed,int32_t, 0x930);
+			PROPERTY(m_start,GlobalTypes::QAngle, 0x934);
+			PROPERTY(m_end,GlobalTypes::QAngle, 0x940);
+			PROPERTY(m_IdealYaw,float32, 0x94c);
+			PROPERTY(m_sNoise,GlobalTypes::CUtlSymbolLarge*, 0x950);
+			PROPERTY(m_bUpdateTarget,bool, 0x958);
+			PROPERTY(m_direction,int32_t, 0x95c);
+			PROPERTY(m_returnSpeed,float32, 0x960);
+			PROPERTY(m_flStartPosition,float32, 0x964);
 			S2_PAD(0xB8);
 		};
 		//static_assert(sizeof(CS2::server::CMomentaryRotButton) == 0x968, "CMomentaryRotButton size should be 0x968");

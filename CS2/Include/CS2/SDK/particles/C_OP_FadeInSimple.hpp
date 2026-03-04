@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_FadeInSimple : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_flFadeInTime,float32 , 0x1d0);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d4);
+			PROPERTY(m_flFadeInTime,float32, 0x1d0);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_FadeInSimple) == 0x1D8, "C_OP_FadeInSimple size should be 0x1D8");

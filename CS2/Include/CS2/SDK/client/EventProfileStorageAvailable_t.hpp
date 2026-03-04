@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class EventProfileStorageAvailable_t  {
 		public:
-			PROPERTY(m_nSplitScreenSlot,GlobalTypes::CSplitScreenSlot , 0x0);
+			PROPERTY(m_nSplitScreenSlot,GlobalTypes::CSplitScreenSlot, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::client::EventProfileStorageAvailable_t) == 0x4, "EventProfileStorageAvailable_t size should be 0x4");

@@ -24,19 +24,19 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CFollowPathUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_flBlendOutTime,float32 , 0x74);
-			PROPERTY(m_bBlockNonPathMovement,bool , 0x78);
-			PROPERTY(m_bStopFeetAtGoal,bool , 0x79);
-			PROPERTY(m_bScaleSpeed,bool , 0x7a);
-			PROPERTY(m_flScale,float32 , 0x7c);
-			PROPERTY(m_flMinAngle,float32 , 0x80);
-			PROPERTY(m_flMaxAngle,float32 , 0x84);
-			PROPERTY(m_flSpeedScaleBlending,float32 , 0x88);
-			PROPERTY(m_turnDamping,animgraphlib::CAnimInputDamping , 0x90);
-			PROPERTY(m_facingTarget,animgraphlib::AnimValueSource , 0xa8);
-			PROPERTY(m_hParam,animgraphlib::CAnimParamHandle , 0xac);
-			PROPERTY(m_flTurnToFaceOffset,float32 , 0xb0);
-			PROPERTY(m_bTurnToFace,bool , 0xb4);
+			PROPERTY(m_flBlendOutTime,float32, 0x74);
+			PROPERTY(m_bBlockNonPathMovement,bool, 0x78);
+			PROPERTY(m_bStopFeetAtGoal,bool, 0x79);
+			PROPERTY(m_bScaleSpeed,bool, 0x7a);
+			PROPERTY(m_flScale,float32, 0x7c);
+			PROPERTY(m_flMinAngle,float32, 0x80);
+			PROPERTY(m_flMaxAngle,float32, 0x84);
+			PROPERTY(m_flSpeedScaleBlending,float32, 0x88);
+			NESTED_PROPERTY(m_turnDamping,animgraphlib::CAnimInputDamping, 0x90);
+			PROPERTY(m_facingTarget,animgraphlib::AnimValueSource, 0xa8);
+			NESTED_PROPERTY(m_hParam,animgraphlib::CAnimParamHandle, 0xac);
+			PROPERTY(m_flTurnToFaceOffset,float32, 0xb0);
+			PROPERTY(m_bTurnToFace,bool, 0xb4);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CFollowPathUpdateNode) == 0xB8, "CFollowPathUpdateNode size should be 0xB8");

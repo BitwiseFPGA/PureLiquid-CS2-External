@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CCachedPose  {
 		public:
-			PROPERTY(m_transforms,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x8);
-			PROPERTY(m_morphWeights,GlobalTypes::CUtlVector< float32 >, 0x20);
-			PROPERTY(m_hSequence,animationsystem::HSequence , 0x38);
-			PROPERTY(m_flCycle,float32 , 0x3c);
+			NESTED_PROPERTY(m_transforms,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x8);
+			NESTED_PROPERTY(m_morphWeights,GlobalTypes::CUtlVector< float32 >, 0x20);
+			NESTED_PROPERTY(m_hSequence,animationsystem::HSequence, 0x38);
+			PROPERTY(m_flCycle,float32, 0x3c);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CCachedPose) == 0x40, "CCachedPose size should be 0x40");

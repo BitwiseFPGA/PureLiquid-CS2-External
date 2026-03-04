@@ -11,6 +11,7 @@
 
 
 #include <SDK/client/CPlayerPawnComponent.hpp>
+#include <SDK/server/CBasePlayerWeapon.hpp>
 
 
 
@@ -24,8 +25,8 @@ namespace CS2 {
 			PROPERTY(m_hMyWeapons,server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CBasePlayerWeapon>>, 0x48);
 			PROPERTY(m_hActiveWeapon,GlobalTypes::CHandle<server::CBasePlayerWeapon>, 0x60);
 			PROPERTY(m_hLastWeapon,GlobalTypes::CHandle<server::CBasePlayerWeapon>, 0x64);
-			PROPERTY_ARRAY(m_iAmmo,uint16_t , 32 , 0x68);
-			PROPERTY(m_bPreventWeaponPickup,bool , 0xa8);
+			PROPERTY_ARRAY(m_iAmmo,uint16_t, 32 , 0x68);
+			PROPERTY(m_bPreventWeaponPickup,bool, 0xa8);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::server::CPlayer_WeaponServices) == 0xB0, "CPlayer_WeaponServices size should be 0xB0");

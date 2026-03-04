@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace client {
 		class CSMatchStats_t : public CS2::client::CSPerRoundStats_t {
 		public:
-			PROPERTY(m_iEnemy5Ks,int32_t , 0x68);
-			PROPERTY(m_iEnemy4Ks,int32_t , 0x6c);
-			PROPERTY(m_iEnemy3Ks,int32_t , 0x70);
-			PROPERTY(m_iEnemyKnifeKills,int32_t , 0x74);
-			PROPERTY(m_iEnemyTaserKills,int32_t , 0x78);
+			PROPERTY(m_iEnemy5Ks,int32_t, 0x68);
+			PROPERTY(m_iEnemy4Ks,int32_t, 0x6c);
+			PROPERTY(m_iEnemy3Ks,int32_t, 0x70);
+			PROPERTY(m_iEnemyKnifeKills,int32_t, 0x74);
+			PROPERTY(m_iEnemyTaserKills,int32_t, 0x78);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::CSMatchStats_t) == 0x80, "CSMatchStats_t size should be 0x80");

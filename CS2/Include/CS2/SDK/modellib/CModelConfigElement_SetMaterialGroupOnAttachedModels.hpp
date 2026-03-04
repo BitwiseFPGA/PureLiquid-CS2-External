@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace modellib {
 		class CModelConfigElement_SetMaterialGroupOnAttachedModels : public CS2::modellib::CModelConfigElement {
 		public:
-			PROPERTY(m_MaterialGroupName,GlobalTypes::CUtlString* , 0x48);
+			PROPERTY(m_MaterialGroupName,GlobalTypes::CUtlString*, 0x48);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::modellib::CModelConfigElement_SetMaterialGroupOnAttachedModels) == 0x50, "CModelConfigElement_SetMaterialGroupOnAttachedModels size should be 0x50");

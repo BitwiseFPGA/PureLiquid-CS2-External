@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace vphysics2 {
 		class vphysics_save_cphysicsbody_t : public CS2::physicslib::RnBodyDesc_t {
 		public:
-			PROPERTY(m_nOldPointer,uint64_t , 0xe0);
+			PROPERTY(m_nOldPointer,uint64_t, 0xe0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::vphysics2::vphysics_save_cphysicsbody_t) == 0xE8, "vphysics_save_cphysicsbody_t size should be 0xE8");

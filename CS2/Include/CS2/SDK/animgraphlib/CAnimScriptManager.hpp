@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/animgraphlib/ScriptInfo_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class ScriptInfo_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimScriptManager  {
 		public:
-			PROPERTY(m_scriptInfo,GlobalTypes::CUtlVector<animgraphlib::ScriptInfo_t>, 0x10);
+			NESTED_PROPERTY(m_scriptInfo,GlobalTypes::CUtlVector<animgraphlib::ScriptInfo_t>, 0x10);
 			S2_PAD(0x1A0);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAnimScriptManager) == 0x1A0, "CAnimScriptManager size should be 0x1A0");

@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class inv_image_clearcolor_t  {
 		public:
-			PROPERTY(color,GlobalTypes::Vector , 0x0);
+			PROPERTY(color,GlobalTypes::Vector, 0x0);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::client::inv_image_clearcolor_t) == 0xC, "inv_image_clearcolor_t size should be 0xC");

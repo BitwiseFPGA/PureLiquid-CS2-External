@@ -23,11 +23,11 @@ namespace CS2 {
 	namespace client {
 		class AmmoTypeInfo_t  {
 		public:
-			PROPERTY(m_nMaxCarry,int32_t , 0x10);
-			PROPERTY(m_nSplashSize,tier2::CRangeInt , 0x1c);
-			PROPERTY(m_nFlags,client::AmmoFlags_t , 0x24);
-			PROPERTY(m_flMass,float32 , 0x28);
-			PROPERTY(m_flSpeed,tier2::CRangeFloat , 0x2c);
+			PROPERTY(m_nMaxCarry,int32_t, 0x10);
+			NESTED_PROPERTY(m_nSplashSize,tier2::CRangeInt, 0x1c);
+			PROPERTY(m_nFlags,client::AmmoFlags_t, 0x24);
+			PROPERTY(m_flMass,float32, 0x28);
+			NESTED_PROPERTY(m_flSpeed,tier2::CRangeFloat, 0x2c);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::client::AmmoTypeInfo_t) == 0x38, "AmmoTypeInfo_t size should be 0x38");

@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixUtilityProcessorDesc : public CS2::soundsystem_lowlevel::CVMixBaseProcessorDesc {
 		public:
-			PROPERTY(m_desc,soundsystem_lowlevel::VMixUtilityDesc_t , 0x20);
+			NESTED_PROPERTY(m_desc,soundsystem_lowlevel::VMixUtilityDesc_t, 0x20);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixUtilityProcessorDesc) == 0x38, "CVMixUtilityProcessorDesc size should be 0x38");

@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixCurveHeader  {
 		public:
-			PROPERTY(m_nControlPointCount,uint32_t , 0x0);
-			PROPERTY(m_nControlPointStart,uint32_t , 0x4);
+			PROPERTY(m_nControlPointCount,uint32_t, 0x0);
+			PROPERTY(m_nControlPointStart,uint32_t, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixCurveHeader) == 0x8, "CVMixCurveHeader size should be 0x8");

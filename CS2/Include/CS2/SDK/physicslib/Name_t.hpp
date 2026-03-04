@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace physicslib {
 		class Name_t  {
 		public:
-			PROPERTY(m_nNameToken,GlobalTypes::CUtlStringToken* , 0x0);
-			PROPERTY(m_sNameString,GlobalTypes::CUtlString* , 0x8);
+			PROPERTY(m_nNameToken,GlobalTypes::CUtlStringToken*, 0x0);
+			PROPERTY(m_sNameString,GlobalTypes::CUtlString*, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::Name_t) == 0x10, "CollisionDetailLayerInfo_t::Name_t size should be 0x10");

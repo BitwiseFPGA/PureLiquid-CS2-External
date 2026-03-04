@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace server {
 		class CLogicDistanceAutosave : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_iszTargetEntity,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
-			PROPERTY(m_flDistanceToPlayer,float32 , 0x4b0);
-			PROPERTY(m_bForceNewLevelUnit,bool , 0x4b4);
-			PROPERTY(m_bCheckCough,bool , 0x4b5);
-			PROPERTY(m_bThinkDangerous,bool , 0x4b6);
-			PROPERTY(m_flDangerousTime,float32 , 0x4b8);
+			PROPERTY(m_iszTargetEntity,GlobalTypes::CUtlSymbolLarge*, 0x4a8);
+			PROPERTY(m_flDistanceToPlayer,float32, 0x4b0);
+			PROPERTY(m_bForceNewLevelUnit,bool, 0x4b4);
+			PROPERTY(m_bCheckCough,bool, 0x4b5);
+			PROPERTY(m_bThinkDangerous,bool, 0x4b6);
+			PROPERTY(m_flDangerousTime,float32, 0x4b8);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CLogicDistanceAutosave) == 0x4C0, "CLogicDistanceAutosave size should be 0x4C0");

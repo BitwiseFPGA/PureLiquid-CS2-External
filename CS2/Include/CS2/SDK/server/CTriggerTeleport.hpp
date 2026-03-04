@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CTriggerTeleport : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_iLandmark,GlobalTypes::CUtlSymbolLarge* , 0x890);
-			PROPERTY(m_bUseLandmarkAngles,bool , 0x898);
-			PROPERTY(m_bMirrorPlayer,bool , 0x899);
-			PROPERTY(m_bCheckDestIfClearForPlayer,bool , 0x89a);
+			PROPERTY(m_iLandmark,GlobalTypes::CUtlSymbolLarge*, 0x890);
+			PROPERTY(m_bUseLandmarkAngles,bool, 0x898);
+			PROPERTY(m_bMirrorPlayer,bool, 0x899);
+			PROPERTY(m_bCheckDestIfClearForPlayer,bool, 0x89a);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CTriggerTeleport) == 0x8A0, "CTriggerTeleport size should be 0x8A0");

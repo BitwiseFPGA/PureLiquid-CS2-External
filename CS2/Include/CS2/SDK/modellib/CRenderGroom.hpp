@@ -10,17 +10,11 @@
 #endif
 
 
+#include <SDK/modellib/RenderHairStrandInfo_t.hpp>
+#include <SDK/resourcesystem/InfoForResourceTypeIMaterial2.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class RenderHairStrandInfo_t;
-	}
-	namespace resourcesystem {
-		class InfoForResourceTypeIMaterial2;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -28,20 +22,20 @@ namespace CS2 {
 	namespace modellib {
 		class CRenderGroom  {
 		public:
-			PROPERTY(m_hairs,GlobalTypes::CUtlVector<modellib::RenderHairStrandInfo_t>, 0x0);
-			PROPERTY(m_hairPositionOffsets,GlobalTypes::CUtlVector< uint32 >, 0x18);
+			NESTED_PROPERTY(m_hairs,GlobalTypes::CUtlVector<modellib::RenderHairStrandInfo_t>, 0x0);
+			NESTED_PROPERTY(m_hairPositionOffsets,GlobalTypes::CUtlVector< uint32 >, 0x18);
 			PROPERTY(m_hSimParamsMat,GlobalTypes::CStrongHandleCopyable<resourcesystem::InfoForResourceTypeIMaterial2>, 0x40);
-			PROPERTY(m_strandSegmentCountHist,GlobalTypes::CUtlVector< int32 >, 0x48);
-			PROPERTY(m_nMaxSegmentsPerHairStrand,int32_t , 0x78);
-			PROPERTY(m_nGuideHairCount,int32_t , 0x7c);
-			PROPERTY(m_nHairCount,int32_t , 0x80);
-			PROPERTY(m_nTotalVertexCount,int32_t , 0x84);
-			PROPERTY(m_nTotalSegmentCount,int32_t , 0x88);
-			PROPERTY(m_nGroomGroupID,int32_t , 0x8c);
-			PROPERTY(m_nAttachBoneIdx,int32_t , 0x90);
-			PROPERTY(m_nAttachMeshIdx,int32_t , 0x94);
-			PROPERTY(m_nAttachMeshDrawCallIdx,int32_t , 0x98);
-			PROPERTY(m_bEnableSimulation,bool , 0x9c);
+			NESTED_PROPERTY(m_strandSegmentCountHist,GlobalTypes::CUtlVector< int32 >, 0x48);
+			PROPERTY(m_nMaxSegmentsPerHairStrand,int32_t, 0x78);
+			PROPERTY(m_nGuideHairCount,int32_t, 0x7c);
+			PROPERTY(m_nHairCount,int32_t, 0x80);
+			PROPERTY(m_nTotalVertexCount,int32_t, 0x84);
+			PROPERTY(m_nTotalSegmentCount,int32_t, 0x88);
+			PROPERTY(m_nGroomGroupID,int32_t, 0x8c);
+			PROPERTY(m_nAttachBoneIdx,int32_t, 0x90);
+			PROPERTY(m_nAttachMeshIdx,int32_t, 0x94);
+			PROPERTY(m_nAttachMeshDrawCallIdx,int32_t, 0x98);
+			PROPERTY(m_bEnableSimulation,bool, 0x9c);
 			S2_PAD(0xA0);
 		};
 		//static_assert(sizeof(CS2::modellib::CRenderGroom) == 0xA0, "CRenderGroom size should be 0xA0");

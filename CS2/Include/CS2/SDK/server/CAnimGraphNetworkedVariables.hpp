@@ -40,10 +40,10 @@ namespace CS2 {
 			PROPERTY(m_OwnerOnlyPredNetVectorVariables,GlobalTypes::CNetworkUtlVectorBase<GlobalTypes::Vector>, 0x1a0);
 			PROPERTY(m_OwnerOnlyPredNetQuaternionVariables,GlobalTypes::CNetworkUtlVectorBase<GlobalTypes::Quaternion>, 0x1b8);
 			PROPERTY(m_OwnerOnlyPredNetGlobalSymbolVariables,GlobalTypes::CNetworkUtlVectorBase<GlobalTypes::CGlobalSymbol>, 0x1d0);
-			PROPERTY(m_nBoolVariablesCount,int32_t , 0x1e8);
-			PROPERTY(m_nOwnerOnlyBoolVariablesCount,int32_t , 0x1ec);
-			PROPERTY(m_nRandomSeedOffset,int32_t , 0x1f0);
-			PROPERTY(m_flLastTeleportTime,float32 , 0x1f4);
+			PROPERTY(m_nBoolVariablesCount,int32_t, 0x1e8);
+			PROPERTY(m_nOwnerOnlyBoolVariablesCount,int32_t, 0x1ec);
+			PROPERTY(m_nRandomSeedOffset,int32_t, 0x1f0);
+			PROPERTY(m_flLastTeleportTime,float32, 0x1f4);
 			S2_PAD(0x208);
 		};
 		//static_assert(sizeof(CS2::server::CAnimGraphNetworkedVariables) == 0x208, "CAnimGraphNetworkedVariables size should be 0x208");

@@ -23,14 +23,14 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_InstantaneousEmitter : public CS2::particles::CParticleFunctionEmitter {
 		public:
-			PROPERTY(m_nParticlesToEmit,particleslib::CParticleCollectionFloatInput , 0x1d8);
-			PROPERTY(m_flStartTime,particleslib::CParticleCollectionFloatInput , 0x348);
-			PROPERTY(m_flInitFromKilledParentParticles,float32 , 0x4b8);
-			PROPERTY(m_nEventType,particles::EventTypeSelection_t , 0x4bc);
-			PROPERTY(m_flParentParticleScale,particleslib::CParticleCollectionFloatInput , 0x4c0);
-			PROPERTY(m_nMaxEmittedPerFrame,int32_t , 0x630);
-			PROPERTY(m_nSnapshotControlPoint,int32_t , 0x634);
-			PROPERTY(m_strSnapshotSubset,GlobalTypes::CUtlString* , 0x638);
+			NESTED_PROPERTY(m_nParticlesToEmit,particleslib::CParticleCollectionFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_flStartTime,particleslib::CParticleCollectionFloatInput, 0x348);
+			PROPERTY(m_flInitFromKilledParentParticles,float32, 0x4b8);
+			PROPERTY(m_nEventType,particles::EventTypeSelection_t, 0x4bc);
+			NESTED_PROPERTY(m_flParentParticleScale,particleslib::CParticleCollectionFloatInput, 0x4c0);
+			PROPERTY(m_nMaxEmittedPerFrame,int32_t, 0x630);
+			PROPERTY(m_nSnapshotControlPoint,int32_t, 0x634);
+			PROPERTY(m_strSnapshotSubset,GlobalTypes::CUtlString*, 0x638);
 			S2_PAD(0x468);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_InstantaneousEmitter) == 0x640, "C_OP_InstantaneousEmitter size should be 0x640");

@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_PositionWarpScalar : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_vecWarpMin,GlobalTypes::Vector , 0x1d8);
-			PROPERTY(m_vecWarpMax,GlobalTypes::Vector , 0x1e4);
-			PROPERTY(m_InputValue,particleslib::CPerParticleFloatInput , 0x1f0);
-			PROPERTY(m_flPrevPosScale,float32 , 0x360);
-			PROPERTY(m_nScaleControlPointNumber,int32_t , 0x364);
-			PROPERTY(m_nControlPointNumber,int32_t , 0x368);
+			PROPERTY(m_vecWarpMin,GlobalTypes::Vector, 0x1d8);
+			PROPERTY(m_vecWarpMax,GlobalTypes::Vector, 0x1e4);
+			NESTED_PROPERTY(m_InputValue,particleslib::CPerParticleFloatInput, 0x1f0);
+			PROPERTY(m_flPrevPosScale,float32, 0x360);
+			PROPERTY(m_nScaleControlPointNumber,int32_t, 0x364);
+			PROPERTY(m_nControlPointNumber,int32_t, 0x368);
 			S2_PAD(0x198);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_PositionWarpScalar) == 0x370, "C_INIT_PositionWarpScalar size should be 0x370");

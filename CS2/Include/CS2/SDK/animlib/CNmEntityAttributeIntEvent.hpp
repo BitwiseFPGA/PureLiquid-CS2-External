@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animlib {
 		class CNmEntityAttributeIntEvent : public CS2::animlib::CNmEntityAttributeEventBase {
 		public:
-			PROPERTY(m_nIntValue,int32_t , 0x38);
+			PROPERTY(m_nIntValue,int32_t, 0x38);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmEntityAttributeIntEvent) == 0x40, "CNmEntityAttributeIntEvent size should be 0x40");

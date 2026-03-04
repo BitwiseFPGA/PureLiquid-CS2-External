@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace server {
 		class CMessage : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_iszMessage,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
-			PROPERTY(m_MessageVolume,float32 , 0x4b0);
-			PROPERTY(m_MessageAttenuation,int32_t , 0x4b4);
-			PROPERTY(m_Radius,float32 , 0x4b8);
-			PROPERTY(m_sNoise,GlobalTypes::CUtlSymbolLarge* , 0x4c0);
-			PROPERTY(m_OnShowMessage,entity2::CEntityIOOutput , 0x4c8);
+			PROPERTY(m_iszMessage,GlobalTypes::CUtlSymbolLarge*, 0x4a8);
+			PROPERTY(m_MessageVolume,float32, 0x4b0);
+			PROPERTY(m_MessageAttenuation,int32_t, 0x4b4);
+			PROPERTY(m_Radius,float32, 0x4b8);
+			PROPERTY(m_sNoise,GlobalTypes::CUtlSymbolLarge*, 0x4c0);
+			NESTED_PROPERTY(m_OnShowMessage,entity2::CEntityIOOutput, 0x4c8);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::server::CMessage) == 0x4E0, "CMessage size should be 0x4E0");

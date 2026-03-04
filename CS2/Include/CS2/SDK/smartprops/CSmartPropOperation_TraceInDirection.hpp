@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_TraceInDirection : public CS2::smartprops::CSmartPropOperation_Trace {
 		public:
-			PROPERTY(m_vTraceDirection,GlobalTypes::CSmartPropAttributeVector , 0x350);
-			PROPERTY(m_DirectionSpace,smartprops::CSmartPropAttributeCoordinateSpace , 0x390);
-			PROPERTY(m_flTraceLength,GlobalTypes::CSmartPropAttributeFloat , 0x3d0);
+			PROPERTY(m_vTraceDirection,GlobalTypes::CSmartPropAttributeVector, 0x350);
+			NESTED_PROPERTY(m_DirectionSpace,smartprops::CSmartPropAttributeCoordinateSpace, 0x390);
+			PROPERTY(m_flTraceLength,GlobalTypes::CSmartPropAttributeFloat, 0x3d0);
 			S2_PAD(0xC0);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_TraceInDirection) == 0x410, "CSmartPropOperation_TraceInDirection size should be 0x410");

@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_LazyCullCompareFloat : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_flComparsion1,particleslib::CPerParticleFloatInput , 0x1d0);
-			PROPERTY(m_flComparsion2,particleslib::CPerParticleFloatInput , 0x340);
-			PROPERTY(m_flCullTime,particleslib::CPerParticleFloatInput , 0x4b0);
+			NESTED_PROPERTY(m_flComparsion1,particleslib::CPerParticleFloatInput, 0x1d0);
+			NESTED_PROPERTY(m_flComparsion2,particleslib::CPerParticleFloatInput, 0x340);
+			NESTED_PROPERTY(m_flCullTime,particleslib::CPerParticleFloatInput, 0x4b0);
 			S2_PAD(0x450);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_LazyCullCompareFloat) == 0x620, "C_OP_LazyCullCompareFloat size should be 0x620");

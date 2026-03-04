@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CTimeRemainingMetricEvaluator : public CS2::animgraphlib::CMotionMetricEvaluator {
 		public:
-			PROPERTY(m_bMatchByTimeRemaining,bool , 0x50);
-			PROPERTY(m_flMaxTimeRemaining,float32 , 0x54);
-			PROPERTY(m_bFilterByTimeRemaining,bool , 0x58);
-			PROPERTY(m_flMinTimeRemaining,float32 , 0x5c);
+			PROPERTY(m_bMatchByTimeRemaining,bool, 0x50);
+			PROPERTY(m_flMaxTimeRemaining,float32, 0x54);
+			PROPERTY(m_bFilterByTimeRemaining,bool, 0x58);
+			PROPERTY(m_flMinTimeRemaining,float32, 0x5c);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CTimeRemainingMetricEvaluator) == 0x60, "CTimeRemainingMetricEvaluator size should be 0x60");

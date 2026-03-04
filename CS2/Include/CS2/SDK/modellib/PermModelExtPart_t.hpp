@@ -25,9 +25,9 @@ namespace CS2 {
 	namespace modellib {
 		class PermModelExtPart_t  {
 		public:
-			PROPERTY(m_Transform,GlobalTypes::CTransform , 0x0);
-			PROPERTY(m_Name,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_nParent,int32_t , 0x28);
+			PROPERTY(m_Transform,GlobalTypes::CTransform, 0x0);
+			PROPERTY(m_Name,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_nParent,int32_t, 0x28);
 			PROPERTY(m_refModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0x30);
 			S2_PAD(0x40);
 		};

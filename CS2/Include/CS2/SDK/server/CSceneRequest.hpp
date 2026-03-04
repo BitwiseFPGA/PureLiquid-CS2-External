@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace server {
 		class CSceneRequest  {
 		public:
-			PROPERTY(m_szPayloadTypeName,GlobalTypes::CUtlSymbolLarge* , 0x0);
-			PROPERTY(m_uHandle,server::SceneRequestHandle_t , 0x8);
-			PROPERTY(m_state,server::ESceneRequestState_t , 0xc);
+			PROPERTY(m_szPayloadTypeName,GlobalTypes::CUtlSymbolLarge*, 0x0);
+			NESTED_PROPERTY(m_uHandle,server::SceneRequestHandle_t, 0x8);
+			PROPERTY(m_state,server::ESceneRequestState_t, 0xc);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::CSceneRequest) == 0x20, "CSceneRequest size should be 0x20");

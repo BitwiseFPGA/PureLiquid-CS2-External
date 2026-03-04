@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Value_Curve : public CS2::pulse_runtime_lib::CPulseCell_BaseValue {
 		public:
-			PROPERTY(m_Curve,GlobalTypes::CPiecewiseCurve , 0x48);
+			PROPERTY(m_Curve,GlobalTypes::CPiecewiseCurve, 0x48);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Value_Curve) == 0x88, "CPulseCell_Value_Curve size should be 0x88");

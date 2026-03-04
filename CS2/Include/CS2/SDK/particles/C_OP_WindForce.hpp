@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_WindForce : public CS2::particles::CParticleFunctionForce {
 		public:
-			PROPERTY(m_vForce,GlobalTypes::Vector , 0x1e0);
+			PROPERTY(m_vForce,GlobalTypes::Vector, 0x1e0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_WindForce) == 0x1F0, "C_OP_WindForce size should be 0x1F0");

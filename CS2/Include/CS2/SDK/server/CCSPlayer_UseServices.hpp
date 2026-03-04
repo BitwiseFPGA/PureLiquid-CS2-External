@@ -28,8 +28,8 @@ namespace CS2 {
 		class CCSPlayer_UseServices : public CS2::server::CPlayer_UseServices {
 		public:
 			PROPERTY(m_hLastKnownUseEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x48);
-			PROPERTY(m_flLastUseTimeStamp,entity2::GameTime_t , 0x4c);
-			PROPERTY(m_flTimeLastUsedWindow,entity2::GameTime_t , 0x50);
+			NESTED_PROPERTY(m_flLastUseTimeStamp,entity2::GameTime_t, 0x4c);
+			NESTED_PROPERTY(m_flTimeLastUsedWindow,entity2::GameTime_t, 0x50);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CCSPlayer_UseServices) == 0x58, "CCSPlayer_UseServices size should be 0x58");

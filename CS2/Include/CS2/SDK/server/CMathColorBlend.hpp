@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CMathColorBlend : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_flInMin,float32 , 0x4a8);
-			PROPERTY(m_flInMax,float32 , 0x4ac);
-			PROPERTY(m_OutColor1,GlobalTypes::Color , 0x4b0);
-			PROPERTY(m_OutColor2,GlobalTypes::Color , 0x4b4);
+			PROPERTY(m_flInMin,float32, 0x4a8);
+			PROPERTY(m_flInMax,float32, 0x4ac);
+			PROPERTY(m_OutColor1,GlobalTypes::Color, 0x4b0);
+			PROPERTY(m_OutColor2,GlobalTypes::Color, 0x4b4);
 			PROPERTY(m_OutValue,GlobalTypes::CEntityOutputTemplate< Color, Color >, 0x4b8);
 			S2_PAD(0x30);
 		};

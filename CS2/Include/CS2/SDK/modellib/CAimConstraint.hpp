@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace modellib {
 		class CAimConstraint : public CS2::modellib::CBaseConstraint {
 		public:
-			PROPERTY(m_qAimOffset,GlobalTypes::Quaternion , 0x60);
-			PROPERTY(m_nUpType,uint32_t , 0x70);
+			PROPERTY(m_qAimOffset,GlobalTypes::Quaternion, 0x60);
+			PROPERTY(m_nUpType,uint32_t, 0x70);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::modellib::CAimConstraint) == 0x80, "CAimConstraint size should be 0x80");

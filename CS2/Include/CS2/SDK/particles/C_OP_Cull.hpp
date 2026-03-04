@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_Cull : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_flCullPerc,float32 , 0x1d0);
-			PROPERTY(m_flCullStart,float32 , 0x1d4);
-			PROPERTY(m_flCullEnd,float32 , 0x1d8);
-			PROPERTY(m_flCullExp,float32 , 0x1dc);
+			PROPERTY(m_flCullPerc,float32, 0x1d0);
+			PROPERTY(m_flCullStart,float32, 0x1d4);
+			PROPERTY(m_flCullEnd,float32, 0x1d8);
+			PROPERTY(m_flCullExp,float32, 0x1dc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_Cull) == 0x1E0, "C_OP_Cull size should be 0x1E0");

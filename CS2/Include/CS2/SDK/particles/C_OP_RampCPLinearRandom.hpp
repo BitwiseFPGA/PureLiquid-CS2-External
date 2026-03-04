@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RampCPLinearRandom : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nOutControlPointNumber,int32_t , 0x1d8);
-			PROPERTY(m_vecRateMin,GlobalTypes::Vector , 0x1dc);
-			PROPERTY(m_vecRateMax,GlobalTypes::Vector , 0x1e8);
+			PROPERTY(m_nOutControlPointNumber,int32_t, 0x1d8);
+			PROPERTY(m_vecRateMin,GlobalTypes::Vector, 0x1dc);
+			PROPERTY(m_vecRateMax,GlobalTypes::Vector, 0x1e8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RampCPLinearRandom) == 0x1F8, "C_OP_RampCPLinearRandom size should be 0x1F8");

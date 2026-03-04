@@ -11,15 +11,11 @@
 
 
 #include <SDK/animgraphlib/CUnaryUpdateNode.hpp>
+#include <SDK/animgraphlib/CSolveIKTargetHandle_t.hpp>
 #include <SDK/animgraphlib/SolveIKChainPoseOpFixedSettings_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CSolveIKTargetHandle_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,8 +23,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CSolveIKChainUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_targetHandles,GlobalTypes::CUtlVector<animgraphlib::CSolveIKTargetHandle_t>, 0x70);
-			PROPERTY(m_opFixedData,animgraphlib::SolveIKChainPoseOpFixedSettings_t , 0x88);
+			NESTED_PROPERTY(m_targetHandles,GlobalTypes::CUtlVector<animgraphlib::CSolveIKTargetHandle_t>, 0x70);
+			NESTED_PROPERTY(m_opFixedData,animgraphlib::SolveIKChainPoseOpFixedSettings_t, 0x88);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CSolveIKChainUpdateNode) == 0xA8, "CSolveIKChainUpdateNode size should be 0xA8");

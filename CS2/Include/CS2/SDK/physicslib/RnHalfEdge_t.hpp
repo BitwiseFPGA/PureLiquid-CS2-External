@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class RnHalfEdge_t  {
 		public:
-			PROPERTY(m_nNext,uint8_t , 0x0);
-			PROPERTY(m_nTwin,uint8_t , 0x1);
-			PROPERTY(m_nOrigin,uint8_t , 0x2);
-			PROPERTY(m_nFace,uint8_t , 0x3);
+			PROPERTY(m_nNext,uint8_t, 0x0);
+			PROPERTY(m_nTwin,uint8_t, 0x1);
+			PROPERTY(m_nOrigin,uint8_t, 0x2);
+			PROPERTY(m_nFace,uint8_t, 0x3);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnHalfEdge_t) == 0x4, "RnHalfEdge_t size should be 0x4");

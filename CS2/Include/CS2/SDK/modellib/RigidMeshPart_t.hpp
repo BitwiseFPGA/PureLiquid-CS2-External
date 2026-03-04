@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace modellib {
 		class RigidMeshPart_t  {
 		public:
-			PROPERTY(m_nRigidBLASIndex,uint16_t , 0x0);
-			PROPERTY(m_nBoneIndex,int16_t , 0x2);
-			PROPERTY(m_nStartIndexOffset,uint32_t , 0x4);
-			PROPERTY(m_nPrimitiveCount,uint32_t , 0x8);
+			PROPERTY(m_nRigidBLASIndex,uint16_t, 0x0);
+			PROPERTY(m_nBoneIndex,int16_t, 0x2);
+			PROPERTY(m_nStartIndexOffset,uint32_t, 0x4);
+			PROPERTY(m_nPrimitiveCount,uint32_t, 0x8);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::modellib::RigidMeshPart_t) == 0xC, "CMaterialDrawDescriptor::RigidMeshPart_t size should be 0xC");

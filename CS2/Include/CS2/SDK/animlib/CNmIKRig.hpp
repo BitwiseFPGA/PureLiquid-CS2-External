@@ -10,16 +10,14 @@
 #endif
 
 
+#include <SDK/animlib/CNmIKBody.hpp>
+#include <SDK/animlib/CNmIKJoint.hpp>
 
 
 
 namespace CS2 {
 	namespace resourcesystem {
 		class InfoForResourceTypeCNmSkeleton;
-	}
-	namespace animlib {
-		class CNmIKBody;
-		class CNmIKJoint;
 	}
 }
 
@@ -30,8 +28,8 @@ namespace CS2 {
 		class CNmIKRig  {
 		public:
 			PROPERTY(m_skeleton,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCNmSkeleton>, 0x0);
-			PROPERTY(m_vecBodies,GlobalTypes::CUtlVector<animlib::CNmIKBody>, 0x8);
-			PROPERTY(m_vecJoints,GlobalTypes::CUtlVector<animlib::CNmIKJoint>, 0x20);
+			NESTED_PROPERTY(m_vecBodies,GlobalTypes::CUtlVector<animlib::CNmIKBody>, 0x8);
+			NESTED_PROPERTY(m_vecJoints,GlobalTypes::CUtlVector<animlib::CNmIKJoint>, 0x20);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmIKRig) == 0x38, "CNmIKRig size should be 0x38");

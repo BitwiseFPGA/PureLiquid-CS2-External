@@ -23,8 +23,8 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropPulse_PickOneSelector : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_HandleShape,smartprops::ConfigurationHandleShape_t , 0x48);
-			PROPERTY(m_OutflowList,pulse_runtime_lib::PulseSelectorOutflowList_t , 0x50);
+			PROPERTY(m_HandleShape,smartprops::ConfigurationHandleShape_t, 0x48);
+			NESTED_PROPERTY(m_OutflowList,pulse_runtime_lib::PulseSelectorOutflowList_t, 0x50);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropPulse_PickOneSelector) == 0x68, "CSmartPropPulse_PickOneSelector size should be 0x68");

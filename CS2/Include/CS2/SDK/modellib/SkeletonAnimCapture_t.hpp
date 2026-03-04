@@ -10,15 +10,11 @@
 #endif
 
 
+#include <SDK/modellib/Bone_t.hpp>
+#include <SDK/modellib/Frame_t.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class Bone_t;
-		class Frame_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,16 +22,16 @@ namespace CS2 {
 	namespace modellib {
 		class SkeletonAnimCapture_t  {
 		public:
-			PROPERTY(m_nEntIndex,GlobalTypes::CEntityIndex , 0x0);
-			PROPERTY(m_nEntParent,GlobalTypes::CEntityIndex , 0x4);
-			PROPERTY(m_ImportedCollision,GlobalTypes::CUtlVector<GlobalTypes::CEntityIndex>, 0x8);
-			PROPERTY(m_ModelName,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_CaptureName,GlobalTypes::CUtlString* , 0x28);
-			PROPERTY(m_ModelBindPose,GlobalTypes::CUtlVector<modellib::SkeletonAnimCapture_t::Bone_t>, 0x30);
-			PROPERTY(m_FeModelInitPose,GlobalTypes::CUtlVector<modellib::SkeletonAnimCapture_t::Bone_t>, 0x48);
-			PROPERTY(m_nFlexControllers,int32_t , 0x60);
-			PROPERTY(m_bPredicted,bool , 0x64);
-			PROPERTY(m_Frames,GlobalTypes::CUtlVector<modellib::SkeletonAnimCapture_t::Frame_t>, 0xa8);
+			PROPERTY(m_nEntIndex,GlobalTypes::CEntityIndex, 0x0);
+			PROPERTY(m_nEntParent,GlobalTypes::CEntityIndex, 0x4);
+			NESTED_PROPERTY(m_ImportedCollision,GlobalTypes::CUtlVector<GlobalTypes::CEntityIndex>, 0x8);
+			PROPERTY(m_ModelName,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_CaptureName,GlobalTypes::CUtlString*, 0x28);
+			NESTED_PROPERTY(m_ModelBindPose,GlobalTypes::CUtlVector<modellib::Bone_t>, 0x30);
+			NESTED_PROPERTY(m_FeModelInitPose,GlobalTypes::CUtlVector<modellib::Bone_t>, 0x48);
+			PROPERTY(m_nFlexControllers,int32_t, 0x60);
+			PROPERTY(m_bPredicted,bool, 0x64);
+			NESTED_PROPERTY(m_Frames,GlobalTypes::CUtlVector<modellib::Frame_t>, 0xa8);
 			S2_PAD(0xC0);
 		};
 		//static_assert(sizeof(CS2::modellib::SkeletonAnimCapture_t) == 0xC0, "SkeletonAnimCapture_t size should be 0xC0");

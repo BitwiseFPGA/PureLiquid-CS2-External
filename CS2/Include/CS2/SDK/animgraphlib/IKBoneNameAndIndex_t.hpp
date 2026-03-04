@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class IKBoneNameAndIndex_t  {
 		public:
-			PROPERTY(m_Name,GlobalTypes::CUtlString* , 0x0);
+			PROPERTY(m_Name,GlobalTypes::CUtlString*, 0x0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::IKBoneNameAndIndex_t) == 0x10, "IKBoneNameAndIndex_t size should be 0x10");

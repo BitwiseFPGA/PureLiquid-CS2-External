@@ -20,14 +20,14 @@ namespace CS2 {
 	namespace rendersystemdx11 {
 		class RsBlendStateDesc_t  {
 		public:
-			PROPERTY(m_srcBlendBits,uint32_t , 0x0);
-			PROPERTY(m_destBlendBits,uint32_t , 0x4);
-			PROPERTY(m_srcBlendAlphaBits,uint32_t , 0x8);
-			PROPERTY(m_destBlendAlphaBits,uint32_t , 0xc);
-			PROPERTY(m_renderTargetWriteMaskBits,uint32_t , 0x10);
-			PROPERTY(m_blendOpAlphaBits,uint32_t , 0x18);
-			PROPERTY(m_blendEnableBits,uint8_t , 0x1c);
-			PROPERTY(m_srgbWriteEnableBits,uint8_t , 0x1d);
+			PROPERTY(m_srcBlendBits,uint32_t, 0x0);
+			PROPERTY(m_destBlendBits,uint32_t, 0x4);
+			PROPERTY(m_srcBlendAlphaBits,uint32_t, 0x8);
+			PROPERTY(m_destBlendAlphaBits,uint32_t, 0xc);
+			PROPERTY(m_renderTargetWriteMaskBits,uint32_t, 0x10);
+			PROPERTY(m_blendOpAlphaBits,uint32_t, 0x18);
+			PROPERTY(m_blendEnableBits,uint8_t, 0x1c);
+			PROPERTY(m_srgbWriteEnableBits,uint8_t, 0x1d);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::rendersystemdx11::RsBlendStateDesc_t) == 0x20, "RsBlendStateDesc_t size should be 0x20");

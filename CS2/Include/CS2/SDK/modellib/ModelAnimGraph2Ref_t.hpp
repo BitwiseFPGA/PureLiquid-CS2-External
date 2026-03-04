@@ -25,7 +25,7 @@ namespace CS2 {
 	namespace modellib {
 		class ModelAnimGraph2Ref_t  {
 		public:
-			PROPERTY(m_sIdentifier,GlobalTypes::CUtlString* , 0x0);
+			PROPERTY(m_sIdentifier,GlobalTypes::CUtlString*, 0x0);
 			PROPERTY(m_hGraph,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCNmGraphDefinition>, 0x8);
 			S2_PAD(0x10);
 		};

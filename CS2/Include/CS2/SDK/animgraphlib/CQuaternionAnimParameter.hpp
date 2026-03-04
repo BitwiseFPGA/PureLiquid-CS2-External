@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CQuaternionAnimParameter : public CS2::animgraphlib::CConcreteAnimParameter {
 		public:
-			PROPERTY(m_defaultValue,GlobalTypes::Quaternion , 0x80);
-			PROPERTY(m_bInterpolate,bool , 0x90);
+			PROPERTY(m_defaultValue,GlobalTypes::Quaternion, 0x80);
+			PROPERTY(m_bInterpolate,bool, 0x90);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CQuaternionAnimParameter) == 0xA0, "CQuaternionAnimParameter size should be 0xA0");

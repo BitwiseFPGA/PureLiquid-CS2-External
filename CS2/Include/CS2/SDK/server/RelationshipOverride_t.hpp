@@ -28,7 +28,7 @@ namespace CS2 {
 		class RelationshipOverride_t : public CS2::server::Relationship_t {
 		public:
 			PROPERTY(entity,GlobalTypes::CHandle<server::CBaseEntity>, 0x8);
-			PROPERTY(classType,client::Class_T , 0xc);
+			PROPERTY(classType,client::Class_T, 0xc);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::RelationshipOverride_t) == 0x10, "RelationshipOverride_t size should be 0x10");

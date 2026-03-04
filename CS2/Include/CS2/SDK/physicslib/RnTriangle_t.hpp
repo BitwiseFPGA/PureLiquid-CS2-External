@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace physicslib {
 		class RnTriangle_t  {
 		public:
-			PROPERTY_ARRAY(m_nIndex,int32_t , 3 , 0x0);
+			PROPERTY_ARRAY(m_nIndex,int32_t, 3 , 0x0);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnTriangle_t) == 0xC, "RnTriangle_t size should be 0xC");

@@ -10,17 +10,13 @@
 #endif
 
 
+#include <SDK/physicslib/RnSphereDesc_t.hpp>
+#include <SDK/physicslib/RnCapsuleDesc_t.hpp>
+#include <SDK/physicslib/RnHullDesc_t.hpp>
+#include <SDK/physicslib/RnMeshDesc_t.hpp>
 
 
 
-namespace CS2 {
-	namespace physicslib {
-		class RnSphereDesc_t;
-		class RnCapsuleDesc_t;
-		class RnHullDesc_t;
-		class RnMeshDesc_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -28,11 +24,11 @@ namespace CS2 {
 	namespace modellib {
 		class VPhysics2ShapeDef_t  {
 		public:
-			PROPERTY(m_spheres,GlobalTypes::CUtlVector<physicslib::RnSphereDesc_t>, 0x0);
-			PROPERTY(m_capsules,GlobalTypes::CUtlVector<physicslib::RnCapsuleDesc_t>, 0x18);
-			PROPERTY(m_hulls,GlobalTypes::CUtlVector<physicslib::RnHullDesc_t>, 0x30);
-			PROPERTY(m_meshes,GlobalTypes::CUtlVector<physicslib::RnMeshDesc_t>, 0x48);
-			PROPERTY(m_CollisionAttributeIndices,GlobalTypes::CUtlVector< uint16 >, 0x60);
+			NESTED_PROPERTY(m_spheres,GlobalTypes::CUtlVector<physicslib::RnSphereDesc_t>, 0x0);
+			NESTED_PROPERTY(m_capsules,GlobalTypes::CUtlVector<physicslib::RnCapsuleDesc_t>, 0x18);
+			NESTED_PROPERTY(m_hulls,GlobalTypes::CUtlVector<physicslib::RnHullDesc_t>, 0x30);
+			NESTED_PROPERTY(m_meshes,GlobalTypes::CUtlVector<physicslib::RnMeshDesc_t>, 0x48);
+			NESTED_PROPERTY(m_CollisionAttributeIndices,GlobalTypes::CUtlVector< uint16 >, 0x60);
 			S2_PAD(0x78);
 		};
 		//static_assert(sizeof(CS2::modellib::VPhysics2ShapeDef_t) == 0x78, "VPhysics2ShapeDef_t size should be 0x78");

@@ -26,12 +26,12 @@ namespace CS2 {
 	namespace client {
 		class C_BulletHitModel : public CS2::client::CBaseAnimGraph {
 		public:
-			PROPERTY(m_matLocal,GlobalTypes::matrix3x4_t , 0x1168);
-			PROPERTY(m_iBoneIndex,int32_t , 0x1198);
+			PROPERTY(m_matLocal,GlobalTypes::matrix3x4_t, 0x1168);
+			PROPERTY(m_iBoneIndex,int32_t, 0x1198);
 			PROPERTY(m_hPlayerParent,GlobalTypes::CHandle<client::C_BaseEntity>, 0x119c);
-			PROPERTY(m_bIsHit,bool , 0x11a0);
-			PROPERTY(m_flTimeCreated,float32 , 0x11a4);
-			PROPERTY(m_vecStartPos,GlobalTypes::Vector , 0x11a8);
+			PROPERTY(m_bIsHit,bool, 0x11a0);
+			PROPERTY(m_flTimeCreated,float32, 0x11a4);
+			PROPERTY(m_vecStartPos,GlobalTypes::Vector, 0x11a8);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::client::C_BulletHitModel) == 0x11B8, "C_BulletHitModel size should be 0x11B8");

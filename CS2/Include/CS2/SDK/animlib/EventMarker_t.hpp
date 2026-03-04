@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animlib {
 		class EventMarker_t  {
 		public:
-			PROPERTY(m_startTime,animlib::NmPercent_t , 0x0);
-			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol , 0x8);
+			NESTED_PROPERTY(m_startTime,animlib::NmPercent_t, 0x0);
+			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animlib::EventMarker_t) == 0x10, "CNmSyncTrack::EventMarker_t size should be 0x10");

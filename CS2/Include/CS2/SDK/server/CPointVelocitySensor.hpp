@@ -27,10 +27,10 @@ namespace CS2 {
 		class CPointVelocitySensor : public CS2::server::CPointEntity {
 		public:
 			PROPERTY(m_hTargetEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x4a8);
-			PROPERTY(m_vecAxis,GlobalTypes::Vector , 0x4ac);
-			PROPERTY(m_bEnabled,bool , 0x4b8);
-			PROPERTY(m_fPrevVelocity,float32 , 0x4bc);
-			PROPERTY(m_flAvgInterval,float32 , 0x4c0);
+			PROPERTY(m_vecAxis,GlobalTypes::Vector, 0x4ac);
+			PROPERTY(m_bEnabled,bool, 0x4b8);
+			PROPERTY(m_fPrevVelocity,float32, 0x4bc);
+			PROPERTY(m_flAvgInterval,float32, 0x4c0);
 			PROPERTY(m_Velocity,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4c8);
 			S2_PAD(0x40);
 		};

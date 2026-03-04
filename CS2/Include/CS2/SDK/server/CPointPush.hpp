@@ -26,12 +26,12 @@ namespace CS2 {
 	namespace server {
 		class CPointPush : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_bEnabled,bool , 0x4a8);
-			PROPERTY(m_flMagnitude,float32 , 0x4ac);
-			PROPERTY(m_flRadius,float32 , 0x4b0);
-			PROPERTY(m_flInnerRadius,float32 , 0x4b4);
-			PROPERTY(m_flConeOfInfluence,float32 , 0x4b8);
-			PROPERTY(m_iszFilterName,GlobalTypes::CUtlSymbolLarge* , 0x4c0);
+			PROPERTY(m_bEnabled,bool, 0x4a8);
+			PROPERTY(m_flMagnitude,float32, 0x4ac);
+			PROPERTY(m_flRadius,float32, 0x4b0);
+			PROPERTY(m_flInnerRadius,float32, 0x4b4);
+			PROPERTY(m_flConeOfInfluence,float32, 0x4b8);
+			PROPERTY(m_iszFilterName,GlobalTypes::CUtlSymbolLarge*, 0x4c0);
 			PROPERTY(m_hFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x4c8);
 			S2_PAD(0x28);
 		};

@@ -21,14 +21,14 @@ namespace CS2 {
 	namespace soundsystem {
 		class CSosGroupActionMemberCountEnvelopeSchema : public CS2::soundsystem::CSosGroupActionSchema {
 		public:
-			PROPERTY(m_nBaseCount,int32_t , 0x8);
-			PROPERTY(m_nTargetCount,int32_t , 0xc);
-			PROPERTY(m_flBaseValue,float32 , 0x10);
-			PROPERTY(m_flTargetValue,float32 , 0x14);
-			PROPERTY(m_flAttack,float32 , 0x18);
-			PROPERTY(m_flDecay,float32 , 0x1c);
-			PROPERTY(m_resultVarName,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_bSaveToGroup,bool , 0x28);
+			PROPERTY(m_nBaseCount,int32_t, 0x8);
+			PROPERTY(m_nTargetCount,int32_t, 0xc);
+			PROPERTY(m_flBaseValue,float32, 0x10);
+			PROPERTY(m_flTargetValue,float32, 0x14);
+			PROPERTY(m_flAttack,float32, 0x18);
+			PROPERTY(m_flDecay,float32, 0x1c);
+			PROPERTY(m_resultVarName,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_bSaveToGroup,bool, 0x28);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::soundsystem::CSosGroupActionMemberCountEnvelopeSchema) == 0x30, "CSosGroupActionMemberCountEnvelopeSchema size should be 0x30");

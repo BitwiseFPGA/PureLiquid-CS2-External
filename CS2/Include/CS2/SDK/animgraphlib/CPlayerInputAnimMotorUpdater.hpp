@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CPlayerInputAnimMotorUpdater : public CS2::animgraphlib::CAnimMotorUpdaterBase {
 		public:
-			PROPERTY(m_sampleTimes,GlobalTypes::CUtlVector< float32 >, 0x20);
-			PROPERTY(m_flSpringConstant,float32 , 0x3c);
-			PROPERTY(m_flAnticipationDistance,float32 , 0x40);
-			PROPERTY(m_hAnticipationPosParam,animgraphlib::CAnimParamHandle , 0x44);
-			PROPERTY(m_hAnticipationHeadingParam,animgraphlib::CAnimParamHandle , 0x46);
-			PROPERTY(m_bUseAcceleration,bool , 0x48);
+			NESTED_PROPERTY(m_sampleTimes,GlobalTypes::CUtlVector< float32 >, 0x20);
+			PROPERTY(m_flSpringConstant,float32, 0x3c);
+			PROPERTY(m_flAnticipationDistance,float32, 0x40);
+			NESTED_PROPERTY(m_hAnticipationPosParam,animgraphlib::CAnimParamHandle, 0x44);
+			NESTED_PROPERTY(m_hAnticipationHeadingParam,animgraphlib::CAnimParamHandle, 0x46);
+			PROPERTY(m_bUseAcceleration,bool, 0x48);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CPlayerInputAnimMotorUpdater) == 0x50, "CPlayerInputAnimMotorUpdater size should be 0x50");

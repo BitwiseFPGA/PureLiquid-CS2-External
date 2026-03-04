@@ -11,15 +11,11 @@
 
 
 #include <SDK/modellib/AnimScriptHandle.hpp>
+#include <SDK/animgraphlib/CStateActionUpdater.hpp>
 #include <SDK/modellib/AnimStateID.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CStateActionUpdater;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,11 +23,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CStateUpdateData  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_hScript,modellib::AnimScriptHandle , 0x8);
-			PROPERTY(m_transitionIndices,GlobalTypes::CUtlVector< int32 >, 0x10);
-			PROPERTY(m_actions,GlobalTypes::CUtlVector<animgraphlib::CStateActionUpdater>, 0x28);
-			PROPERTY(m_stateID,modellib::AnimStateID , 0x40);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			NESTED_PROPERTY(m_hScript,modellib::AnimScriptHandle, 0x8);
+			NESTED_PROPERTY(m_transitionIndices,GlobalTypes::CUtlVector< int32 >, 0x10);
+			NESTED_PROPERTY(m_actions,GlobalTypes::CUtlVector<animgraphlib::CStateActionUpdater>, 0x28);
+			NESTED_PROPERTY(m_stateID,modellib::AnimStateID, 0x40);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CStateUpdateData) == 0x48, "CStateUpdateData size should be 0x48");

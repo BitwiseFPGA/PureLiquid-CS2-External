@@ -23,12 +23,12 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropElement_ModelEntity : public CS2::smartprops::CSmartPropElement {
 		public:
-			PROPERTY(m_sModelName,GlobalTypes::CSmartPropAttributeModelName , 0x88);
-			PROPERTY(m_MaterialGroupName,GlobalTypes::CSmartPropAttributeMaterialGroup , 0xc8);
-			PROPERTY(m_bCastShadows,GlobalTypes::CSmartPropAttributeBool , 0x108);
-			PROPERTY(m_bForceStatic,GlobalTypes::CSmartPropAttributeBool , 0x148);
-			PROPERTY(m_nDeformableAttachmentMode,smartprops::SmartPropDeformableAttachMode_t , 0x188);
-			PROPERTY(m_nDeformableOrientationMode,smartprops::SmartPropDeformableOrientMode_t , 0x18c);
+			PROPERTY(m_sModelName,GlobalTypes::CSmartPropAttributeModelName, 0x88);
+			PROPERTY(m_MaterialGroupName,GlobalTypes::CSmartPropAttributeMaterialGroup, 0xc8);
+			PROPERTY(m_bCastShadows,GlobalTypes::CSmartPropAttributeBool, 0x108);
+			PROPERTY(m_bForceStatic,GlobalTypes::CSmartPropAttributeBool, 0x148);
+			PROPERTY(m_nDeformableAttachmentMode,smartprops::SmartPropDeformableAttachMode_t, 0x188);
+			PROPERTY(m_nDeformableOrientationMode,smartprops::SmartPropDeformableOrientMode_t, 0x18c);
 			S2_PAD(0x108);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropElement_ModelEntity) == 0x190, "CSmartPropElement_ModelEntity size should be 0x190");

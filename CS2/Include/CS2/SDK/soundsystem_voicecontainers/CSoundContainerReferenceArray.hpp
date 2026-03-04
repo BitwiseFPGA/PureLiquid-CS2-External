@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CSoundContainerReferenceArray  {
 		public:
-			PROPERTY(m_bUseReference,bool , 0x0);
-			PROPERTY(m_sounds,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCVoiceContainerBase>>, 0x8);
-			PROPERTY(m_pSounds,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CVoiceContainerBase*>, 0x20);
+			PROPERTY(m_bUseReference,bool, 0x0);
+			NESTED_PROPERTY(m_sounds,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCVoiceContainerBase>>, 0x8);
+			NESTED_PROPERTY(m_pSounds,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CVoiceContainerBase*>, 0x20);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CSoundContainerReferenceArray) == 0x38, "CSoundContainerReferenceArray size should be 0x38");

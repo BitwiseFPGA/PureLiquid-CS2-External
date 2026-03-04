@@ -20,14 +20,14 @@ namespace CS2 {
 	namespace physicslib {
 		class RnBlendVertex_t  {
 		public:
-			PROPERTY(m_nWeight0,uint16_t , 0x0);
-			PROPERTY(m_nIndex0,uint16_t , 0x2);
-			PROPERTY(m_nWeight1,uint16_t , 0x4);
-			PROPERTY(m_nIndex1,uint16_t , 0x6);
-			PROPERTY(m_nWeight2,uint16_t , 0x8);
-			PROPERTY(m_nIndex2,uint16_t , 0xa);
-			PROPERTY(m_nFlags,uint16_t , 0xc);
-			PROPERTY(m_nTargetIndex,uint16_t , 0xe);
+			PROPERTY(m_nWeight0,uint16_t, 0x0);
+			PROPERTY(m_nIndex0,uint16_t, 0x2);
+			PROPERTY(m_nWeight1,uint16_t, 0x4);
+			PROPERTY(m_nIndex1,uint16_t, 0x6);
+			PROPERTY(m_nWeight2,uint16_t, 0x8);
+			PROPERTY(m_nIndex2,uint16_t, 0xa);
+			PROPERTY(m_nFlags,uint16_t, 0xc);
+			PROPERTY(m_nTargetIndex,uint16_t, 0xe);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnBlendVertex_t) == 0x10, "RnBlendVertex_t size should be 0x10");

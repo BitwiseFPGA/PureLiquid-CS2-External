@@ -24,10 +24,10 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_InlineNodeSkipSelector : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_nFlowNodeID,pulse_runtime_lib::PulseDocNodeID_t , 0x48);
-			PROPERTY(m_bAnd,bool , 0x4c);
-			PROPERTY(m_PassOutflow,pulse_runtime_lib::PulseSelectorOutflowList_t , 0x50);
-			PROPERTY(m_FailOutflow,pulse_runtime_lib::CPulse_OutflowConnection , 0x68);
+			NESTED_PROPERTY(m_nFlowNodeID,pulse_runtime_lib::PulseDocNodeID_t, 0x48);
+			PROPERTY(m_bAnd,bool, 0x4c);
+			NESTED_PROPERTY(m_PassOutflow,pulse_runtime_lib::PulseSelectorOutflowList_t, 0x50);
+			NESTED_PROPERTY(m_FailOutflow,pulse_runtime_lib::CPulse_OutflowConnection, 0x68);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_InlineNodeSkipSelector) == 0xB0, "CPulseCell_InlineNodeSkipSelector size should be 0xB0");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropPulse_CreateLocator : public CS2::smartprops::CSmartPropPulse_BaseQueryableFlow {
 		public:
-			PROPERTY(m_LocatorName,GlobalTypes::CUtlString* , 0x48);
+			PROPERTY(m_LocatorName,GlobalTypes::CUtlString*, 0x48);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropPulse_CreateLocator) == 0x50, "CSmartPropPulse_CreateLocator size should be 0x50");

@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace pulse_system {
 		class CPulseCell_ExampleSelector : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_OutflowList,pulse_runtime_lib::PulseSelectorOutflowList_t , 0x48);
+			NESTED_PROPERTY(m_OutflowList,pulse_runtime_lib::PulseSelectorOutflowList_t, 0x48);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::pulse_system::CPulseCell_ExampleSelector) == 0x60, "CPulseCell_ExampleSelector size should be 0x60");

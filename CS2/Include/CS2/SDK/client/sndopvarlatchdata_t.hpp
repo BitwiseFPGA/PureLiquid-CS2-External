@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace client {
 		class sndopvarlatchdata_t  {
 		public:
-			PROPERTY(m_iszStack,GlobalTypes::CUtlSymbolLarge* , 0x8);
-			PROPERTY(m_iszOperator,GlobalTypes::CUtlSymbolLarge* , 0x10);
-			PROPERTY(m_iszOpvar,GlobalTypes::CUtlSymbolLarge* , 0x18);
-			PROPERTY(m_flVal,float32 , 0x20);
-			PROPERTY(m_vPos,GlobalTypes::Vector , 0x24);
+			PROPERTY(m_iszStack,GlobalTypes::CUtlSymbolLarge*, 0x8);
+			PROPERTY(m_iszOperator,GlobalTypes::CUtlSymbolLarge*, 0x10);
+			PROPERTY(m_iszOpvar,GlobalTypes::CUtlSymbolLarge*, 0x18);
+			PROPERTY(m_flVal,float32, 0x20);
+			PROPERTY(m_vPos,GlobalTypes::Vector, 0x24);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::client::sndopvarlatchdata_t) == 0x30, "sndopvarlatchdata_t size should be 0x30");

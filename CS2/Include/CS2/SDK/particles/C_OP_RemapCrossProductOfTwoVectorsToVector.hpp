@@ -23,10 +23,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapCrossProductOfTwoVectorsToVector : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_InputVec1,particleslib::CPerParticleVecInput , 0x1d0);
-			PROPERTY(m_InputVec2,particleslib::CPerParticleVecInput , 0x888);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0xf40);
-			PROPERTY(m_bNormalize,bool , 0xf44);
+			NESTED_PROPERTY(m_InputVec1,particleslib::CPerParticleVecInput, 0x1d0);
+			NESTED_PROPERTY(m_InputVec2,particleslib::CPerParticleVecInput, 0x888);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0xf40);
+			PROPERTY(m_bNormalize,bool, 0xf44);
 			S2_PAD(0xD78);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapCrossProductOfTwoVectorsToVector) == 0xF48, "C_OP_RemapCrossProductOfTwoVectorsToVector size should be 0xF48");

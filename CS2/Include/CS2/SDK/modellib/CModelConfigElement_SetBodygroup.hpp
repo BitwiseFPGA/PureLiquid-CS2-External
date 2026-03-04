@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace modellib {
 		class CModelConfigElement_SetBodygroup : public CS2::modellib::CModelConfigElement {
 		public:
-			PROPERTY(m_GroupName,GlobalTypes::CGlobalSymbol , 0x48);
-			PROPERTY(m_nChoice,int32_t , 0x50);
+			PROPERTY(m_GroupName,GlobalTypes::CGlobalSymbol, 0x48);
+			PROPERTY(m_nChoice,int32_t, 0x50);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::modellib::CModelConfigElement_SetBodygroup) == 0x58, "CModelConfigElement_SetBodygroup size should be 0x58");

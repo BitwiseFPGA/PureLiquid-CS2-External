@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderClientPhysicsImpulse : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_flRadius,particleslib::CPerParticleFloatInput , 0x220);
-			PROPERTY(m_flMagnitude,particleslib::CPerParticleFloatInput , 0x390);
-			PROPERTY(m_nSimIdFilter,int32_t , 0x500);
+			NESTED_PROPERTY(m_flRadius,particleslib::CPerParticleFloatInput, 0x220);
+			NESTED_PROPERTY(m_flMagnitude,particleslib::CPerParticleFloatInput, 0x390);
+			PROPERTY(m_nSimIdFilter,int32_t, 0x500);
 			S2_PAD(0x2E8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RenderClientPhysicsImpulse) == 0x508, "C_OP_RenderClientPhysicsImpulse size should be 0x508");

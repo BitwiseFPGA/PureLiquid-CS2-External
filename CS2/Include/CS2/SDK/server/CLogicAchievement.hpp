@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace server {
 		class CLogicAchievement : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x4a8);
-			PROPERTY(m_iszAchievementEventID,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
-			PROPERTY(m_OnFired,entity2::CEntityIOOutput , 0x4b8);
+			PROPERTY(m_bDisabled,bool, 0x4a8);
+			PROPERTY(m_iszAchievementEventID,GlobalTypes::CUtlSymbolLarge*, 0x4b0);
+			NESTED_PROPERTY(m_OnFired,entity2::CEntityIOOutput, 0x4b8);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::server::CLogicAchievement) == 0x4D0, "CLogicAchievement size should be 0x4D0");

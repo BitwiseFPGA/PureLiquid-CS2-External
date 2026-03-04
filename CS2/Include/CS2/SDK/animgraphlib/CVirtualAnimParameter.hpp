@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CVirtualAnimParameter : public CS2::animgraphlib::CAnimParameterBase {
 		public:
-			PROPERTY(m_expressionString,GlobalTypes::CUtlString* , 0x70);
-			PROPERTY(m_eParamType,animgraphlib::AnimParamType_t , 0x78);
+			PROPERTY(m_expressionString,GlobalTypes::CUtlString*, 0x70);
+			PROPERTY(m_eParamType,animgraphlib::AnimParamType_t, 0x78);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CVirtualAnimParameter) == 0x80, "CVirtualAnimParameter size should be 0x80");

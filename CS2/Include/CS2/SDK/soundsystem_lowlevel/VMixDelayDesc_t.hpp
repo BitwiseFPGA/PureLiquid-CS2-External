@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixDelayDesc_t  {
 		public:
-			PROPERTY(m_feedbackFilter,soundsystem_lowlevel::VMixFilterDesc_t , 0x0);
-			PROPERTY(m_bEnableFilter,bool , 0x10);
-			PROPERTY(m_flDelay,float32 , 0x14);
-			PROPERTY(m_flDirectGain,float32 , 0x18);
-			PROPERTY(m_flDelayGain,float32 , 0x1c);
-			PROPERTY(m_flFeedbackGain,float32 , 0x20);
-			PROPERTY(m_flWidth,float32 , 0x24);
+			NESTED_PROPERTY(m_feedbackFilter,soundsystem_lowlevel::VMixFilterDesc_t, 0x0);
+			PROPERTY(m_bEnableFilter,bool, 0x10);
+			PROPERTY(m_flDelay,float32, 0x14);
+			PROPERTY(m_flDirectGain,float32, 0x18);
+			PROPERTY(m_flDelayGain,float32, 0x1c);
+			PROPERTY(m_flFeedbackGain,float32, 0x20);
+			PROPERTY(m_flWidth,float32, 0x24);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixDelayDesc_t) == 0x28, "VMixDelayDesc_t size should be 0x28");

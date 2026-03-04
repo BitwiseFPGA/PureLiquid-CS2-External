@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulse_InstructionDebug  {
 		public:
-			PROPERTY(m_nFlowNodeID,pulse_runtime_lib::PulseDocNodeID_t , 0x0);
-			PROPERTY(m_nValueNodeID,pulse_runtime_lib::PulseDocNodeID_t , 0x4);
-			PROPERTY(m_SequencePointName,GlobalTypes::CGlobalSymbol , 0x8);
+			NESTED_PROPERTY(m_nFlowNodeID,pulse_runtime_lib::PulseDocNodeID_t, 0x0);
+			NESTED_PROPERTY(m_nValueNodeID,pulse_runtime_lib::PulseDocNodeID_t, 0x4);
+			PROPERTY(m_SequencePointName,GlobalTypes::CGlobalSymbol, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulse_InstructionDebug) == 0x10, "CPulse_InstructionDebug size should be 0x10");

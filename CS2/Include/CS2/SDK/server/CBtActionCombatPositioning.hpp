@@ -22,10 +22,10 @@ namespace CS2 {
 	namespace server {
 		class CBtActionCombatPositioning : public CS2::server::CBtNode {
 		public:
-			PROPERTY(m_szSensorInputKey,GlobalTypes::CUtlString* , 0x68);
-			PROPERTY(m_szIsAttackingKey,GlobalTypes::CUtlString* , 0x80);
-			PROPERTY(m_ActionTimer,server::CountdownTimer , 0x88);
-			PROPERTY(m_bCrouching,bool , 0xa0);
+			PROPERTY(m_szSensorInputKey,GlobalTypes::CUtlString*, 0x68);
+			PROPERTY(m_szIsAttackingKey,GlobalTypes::CUtlString*, 0x80);
+			NESTED_PROPERTY(m_ActionTimer,server::CountdownTimer, 0x88);
+			PROPERTY(m_bCrouching,bool, 0xa0);
 			S2_PAD(0x58);
 		};
 		//static_assert(sizeof(CS2::server::CBtActionCombatPositioning) == 0xB0, "CBtActionCombatPositioning size should be 0xB0");

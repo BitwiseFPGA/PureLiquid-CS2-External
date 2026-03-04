@@ -24,11 +24,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class IKTargetSettings_t  {
 		public:
-			PROPERTY(m_TargetSource,animgraphlib::IKTargetSource , 0x0);
-			PROPERTY(m_Bone,animgraphlib::IKBoneNameAndIndex_t , 0x8);
-			PROPERTY(m_AnimgraphParameterNamePosition,modellib::AnimParamID , 0x18);
-			PROPERTY(m_AnimgraphParameterNameOrientation,modellib::AnimParamID , 0x1c);
-			PROPERTY(m_TargetCoordSystem,animgraphlib::IKTargetCoordinateSystem , 0x20);
+			PROPERTY(m_TargetSource,animgraphlib::IKTargetSource, 0x0);
+			NESTED_PROPERTY(m_Bone,animgraphlib::IKBoneNameAndIndex_t, 0x8);
+			NESTED_PROPERTY(m_AnimgraphParameterNamePosition,modellib::AnimParamID, 0x18);
+			NESTED_PROPERTY(m_AnimgraphParameterNameOrientation,modellib::AnimParamID, 0x1c);
+			PROPERTY(m_TargetCoordSystem,animgraphlib::IKTargetCoordinateSystem, 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::IKTargetSettings_t) == 0x28, "IKTargetSettings_t size should be 0x28");

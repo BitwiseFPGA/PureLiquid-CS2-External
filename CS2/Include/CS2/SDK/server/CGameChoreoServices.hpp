@@ -32,9 +32,9 @@ namespace CS2 {
 		public:
 			PROPERTY(m_hOwner,GlobalTypes::CHandle<server::CBaseAnimGraph>, 0x8);
 			PROPERTY(m_hScriptedSequence,GlobalTypes::CHandle<server::CScriptedSequence>, 0xc);
-			PROPERTY(m_scriptState,client::ScriptState_t , 0x10);
-			PROPERTY(m_choreoState,client::ChoreoState_t , 0x14);
-			PROPERTY(m_flTimeStartedState,entity2::GameTime_t , 0x18);
+			PROPERTY(m_scriptState,client::ScriptState_t, 0x10);
+			PROPERTY(m_choreoState,client::ChoreoState_t, 0x14);
+			NESTED_PROPERTY(m_flTimeStartedState,entity2::GameTime_t, 0x18);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CGameChoreoServices) == 0x20, "CGameChoreoServices size should be 0x20");

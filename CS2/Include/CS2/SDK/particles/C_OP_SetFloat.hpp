@@ -24,10 +24,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetFloat : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_InputValue,particleslib::CPerParticleFloatInput , 0x1d0);
-			PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t , 0x340);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x344);
-			PROPERTY(m_Lerp,particleslib::CPerParticleFloatInput , 0x348);
+			NESTED_PROPERTY(m_InputValue,particleslib::CPerParticleFloatInput, 0x1d0);
+			NESTED_PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t, 0x340);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x344);
+			NESTED_PROPERTY(m_Lerp,particleslib::CPerParticleFloatInput, 0x348);
 			S2_PAD(0x310);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetFloat) == 0x4E0, "C_OP_SetFloat size should be 0x4E0");

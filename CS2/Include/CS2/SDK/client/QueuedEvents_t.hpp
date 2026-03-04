@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class QueuedEvents_t  {
 		public:
-			PROPERTY(starttime,float32 , 0x0);
+			PROPERTY(starttime,float32, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::QueuedEvents_t) == 0x18, "C_SceneEntity::QueuedEvents_t size should be 0x18");

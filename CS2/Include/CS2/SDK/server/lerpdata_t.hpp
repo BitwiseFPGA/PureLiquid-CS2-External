@@ -29,11 +29,11 @@ namespace CS2 {
 		class lerpdata_t  {
 		public:
 			PROPERTY(m_hEnt,GlobalTypes::CHandle<server::CBaseEntity>, 0x0);
-			PROPERTY(m_MoveType,client::MoveType_t , 0x4);
-			PROPERTY(m_flStartTime,entity2::GameTime_t , 0x8);
-			PROPERTY(m_vecStartOrigin,GlobalTypes::Vector , 0xc);
-			PROPERTY(m_qStartRot,GlobalTypes::Quaternion , 0x20);
-			PROPERTY(m_nFXIndex,client::ParticleIndex_t , 0x30);
+			PROPERTY(m_MoveType,client::MoveType_t, 0x4);
+			NESTED_PROPERTY(m_flStartTime,entity2::GameTime_t, 0x8);
+			PROPERTY(m_vecStartOrigin,GlobalTypes::Vector, 0xc);
+			PROPERTY(m_qStartRot,GlobalTypes::Quaternion, 0x20);
+			NESTED_PROPERTY(m_nFXIndex,client::ParticleIndex_t, 0x30);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::server::lerpdata_t) == 0x50, "lerpdata_t size should be 0x50");

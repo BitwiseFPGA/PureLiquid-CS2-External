@@ -23,11 +23,11 @@ namespace CS2 {
 	namespace soundsystem {
 		class CSosGroupActionLimitSchema : public CS2::soundsystem::CSosGroupActionSchema {
 		public:
-			PROPERTY(m_nMaxCount,int32_t , 0x8);
-			PROPERTY(m_nStopType,soundsystem::SosActionStopType_t , 0xc);
-			PROPERTY(m_nSortType,soundsystem::SosActionLimitSortType_t , 0x10);
-			PROPERTY(m_bStopImmediate,bool , 0x14);
-			PROPERTY(m_bCountStopped,bool , 0x15);
+			PROPERTY(m_nMaxCount,int32_t, 0x8);
+			PROPERTY(m_nStopType,soundsystem::SosActionStopType_t, 0xc);
+			PROPERTY(m_nSortType,soundsystem::SosActionLimitSortType_t, 0x10);
+			PROPERTY(m_bStopImmediate,bool, 0x14);
+			PROPERTY(m_bCountStopped,bool, 0x15);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::soundsystem::CSosGroupActionLimitSchema) == 0x18, "CSosGroupActionLimitSchema size should be 0x18");

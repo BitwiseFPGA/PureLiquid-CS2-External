@@ -25,11 +25,11 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetVec : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_InputValue,particleslib::CPerParticleVecInput , 0x1d0);
-			PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t , 0x888);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x88c);
-			PROPERTY(m_Lerp,particleslib::CPerParticleFloatInput , 0x890);
-			PROPERTY(m_bNormalizedOutput,bool , 0xa00);
+			NESTED_PROPERTY(m_InputValue,particleslib::CPerParticleVecInput, 0x1d0);
+			NESTED_PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t, 0x888);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x88c);
+			NESTED_PROPERTY(m_Lerp,particleslib::CPerParticleFloatInput, 0x890);
+			PROPERTY(m_bNormalizedOutput,bool, 0xa00);
 			S2_PAD(0x838);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetVec) == 0xA08, "C_OP_SetVec size should be 0xA08");

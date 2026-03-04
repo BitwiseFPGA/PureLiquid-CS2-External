@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace server {
 		class CGameText : public CS2::server::CRulePointEntity {
 		public:
-			PROPERTY(m_iszMessage,GlobalTypes::CUtlSymbolLarge* , 0x740);
-			PROPERTY(m_textParms,client::hudtextparms_t , 0x748);
+			PROPERTY(m_iszMessage,GlobalTypes::CUtlSymbolLarge*, 0x740);
+			NESTED_PROPERTY(m_textParms,client::hudtextparms_t, 0x748);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::CGameText) == 0x760, "CGameText size should be 0x760");

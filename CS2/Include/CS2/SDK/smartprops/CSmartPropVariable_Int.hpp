@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropVariable_Int : public CS2::smartprops::CSmartPropVariable {
 		public:
-			PROPERTY(m_DefaultValue,int32_t , 0x38);
-			PROPERTY(m_nParamaterMinValue,int32_t , 0x3c);
-			PROPERTY(m_nParamaterMaxValue,int32_t , 0x40);
+			PROPERTY(m_DefaultValue,int32_t, 0x38);
+			PROPERTY(m_nParamaterMinValue,int32_t, 0x3c);
+			PROPERTY(m_nParamaterMaxValue,int32_t, 0x40);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable_Int) == 0x48, "CSmartPropVariable_Int size should be 0x48");

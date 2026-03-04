@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropMaterialReplacement  {
 		public:
-			PROPERTY(m_OriginalMaterial,GlobalTypes::CSmartPropAttributeMaterialName , 0x0);
-			PROPERTY(m_ReplacementMaterial,GlobalTypes::CSmartPropAttributeMaterialName , 0x40);
+			PROPERTY(m_OriginalMaterial,GlobalTypes::CSmartPropAttributeMaterialName, 0x0);
+			PROPERTY(m_ReplacementMaterial,GlobalTypes::CSmartPropAttributeMaterialName, 0x40);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropMaterialReplacement) == 0x80, "CSmartPropMaterialReplacement size should be 0x80");

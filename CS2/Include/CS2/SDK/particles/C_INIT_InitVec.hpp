@@ -24,11 +24,11 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_InitVec : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_InputValue,particleslib::CPerParticleVecInput , 0x1d8);
-			PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t , 0x890);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x894);
-			PROPERTY(m_bNormalizedOutput,bool , 0x898);
-			PROPERTY(m_bWritePreviousPosition,bool , 0x899);
+			NESTED_PROPERTY(m_InputValue,particleslib::CPerParticleVecInput, 0x1d8);
+			NESTED_PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t, 0x890);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x894);
+			PROPERTY(m_bNormalizedOutput,bool, 0x898);
+			PROPERTY(m_bWritePreviousPosition,bool, 0x899);
 			S2_PAD(0x6C8);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_InitVec) == 0x8A0, "C_INIT_InitVec size should be 0x8A0");

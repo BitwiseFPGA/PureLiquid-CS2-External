@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace soundsystem {
 		class CSosGroupActionSoundeventPrioritySchema : public CS2::soundsystem::CSosGroupActionSchema {
 		public:
-			PROPERTY(m_priorityValue,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_priorityVolumeScalar,GlobalTypes::CUtlString* , 0x10);
-			PROPERTY(m_priorityContributeButDontRead,GlobalTypes::CUtlString* , 0x18);
-			PROPERTY(m_bPriorityReadButDontContribute,GlobalTypes::CUtlString* , 0x20);
+			PROPERTY(m_priorityValue,GlobalTypes::CUtlString*, 0x8);
+			PROPERTY(m_priorityVolumeScalar,GlobalTypes::CUtlString*, 0x10);
+			PROPERTY(m_priorityContributeButDontRead,GlobalTypes::CUtlString*, 0x18);
+			PROPERTY(m_bPriorityReadButDontContribute,GlobalTypes::CUtlString*, 0x20);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::soundsystem::CSosGroupActionSoundeventPrioritySchema) == 0x38, "CSosGroupActionSoundeventPrioritySchema size should be 0x38");

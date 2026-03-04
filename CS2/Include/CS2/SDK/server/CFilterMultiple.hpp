@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace server {
 		class CFilterMultiple : public CS2::server::CBaseFilter {
 		public:
-			PROPERTY(m_nFilterType,client::filter_t , 0x4e0);
-			PROPERTY_ARRAY(m_iFilterName,GlobalTypes::CUtlSymbolLarge* , 10 , 0x4e8);
+			PROPERTY(m_nFilterType,client::filter_t, 0x4e0);
+			PROPERTY_ARRAY(m_iFilterName,GlobalTypes::CUtlSymbolLarge*, 10 , 0x4e8);
 			PROPERTY_ARRAY(m_hFilter,server::CHandle< CBaseEntity >, 10 , 0x538);
 			S2_PAD(0x80);
 		};

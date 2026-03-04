@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FeWorldCollisionParams_t  {
 		public:
-			PROPERTY(flWorldFriction,float32 , 0x0);
-			PROPERTY(flGroundFriction,float32 , 0x4);
-			PROPERTY(nListBegin,uint16_t , 0x8);
-			PROPERTY(nListEnd,uint16_t , 0xa);
+			PROPERTY(flWorldFriction,float32, 0x0);
+			PROPERTY(flGroundFriction,float32, 0x4);
+			PROPERTY(nListBegin,uint16_t, 0x8);
+			PROPERTY(nListEnd,uint16_t, 0xa);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeWorldCollisionParams_t) == 0xC, "FeWorldCollisionParams_t size should be 0xC");

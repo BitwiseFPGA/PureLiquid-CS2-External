@@ -22,16 +22,16 @@ namespace CS2 {
 	namespace server {
 		class ConstraintSoundInfo  {
 		public:
-			PROPERTY(m_vSampler,server::VelocitySampler , 0x8);
-			PROPERTY(m_soundProfile,server::SimpleConstraintSoundProfile , 0x20);
-			PROPERTY(m_forwardAxis,GlobalTypes::Vector , 0x40);
-			PROPERTY(m_iszTravelSoundFwd,GlobalTypes::CUtlSymbolLarge* , 0x50);
-			PROPERTY(m_iszTravelSoundBack,GlobalTypes::CUtlSymbolLarge* , 0x58);
-			PROPERTY(m_iszReversalSoundSmall,GlobalTypes::CUtlSymbolLarge* , 0x78);
-			PROPERTY(m_iszReversalSoundMedium,GlobalTypes::CUtlSymbolLarge* , 0x80);
-			PROPERTY(m_iszReversalSoundLarge,GlobalTypes::CUtlSymbolLarge* , 0x88);
-			PROPERTY(m_bPlayTravelSound,bool , 0x90);
-			PROPERTY(m_bPlayReversalSound,bool , 0x91);
+			NESTED_PROPERTY(m_vSampler,server::VelocitySampler, 0x8);
+			NESTED_PROPERTY(m_soundProfile,server::SimpleConstraintSoundProfile, 0x20);
+			PROPERTY(m_forwardAxis,GlobalTypes::Vector, 0x40);
+			PROPERTY(m_iszTravelSoundFwd,GlobalTypes::CUtlSymbolLarge*, 0x50);
+			PROPERTY(m_iszTravelSoundBack,GlobalTypes::CUtlSymbolLarge*, 0x58);
+			PROPERTY(m_iszReversalSoundSmall,GlobalTypes::CUtlSymbolLarge*, 0x78);
+			PROPERTY(m_iszReversalSoundMedium,GlobalTypes::CUtlSymbolLarge*, 0x80);
+			PROPERTY(m_iszReversalSoundLarge,GlobalTypes::CUtlSymbolLarge*, 0x88);
+			PROPERTY(m_bPlayTravelSound,bool, 0x90);
+			PROPERTY(m_bPlayReversalSound,bool, 0x91);
 			S2_PAD(0x98);
 		};
 		//static_assert(sizeof(CS2::server::ConstraintSoundInfo) == 0x98, "ConstraintSoundInfo size should be 0x98");

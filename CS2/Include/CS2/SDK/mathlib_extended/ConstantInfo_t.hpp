@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace mathlib_extended {
 		class ConstantInfo_t  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_nameToken,GlobalTypes::CUtlStringToken* , 0x8);
-			PROPERTY(m_flValue,float32 , 0xc);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_nameToken,GlobalTypes::CUtlStringToken*, 0x8);
+			PROPERTY(m_flValue,float32, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::mathlib_extended::ConstantInfo_t) == 0x10, "ConstantInfo_t size should be 0x10");

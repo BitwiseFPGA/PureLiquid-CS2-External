@@ -12,20 +12,14 @@
 
 #include <SDK/animationsystem/CSeqSeqDescFlag.hpp>
 #include <SDK/animationsystem/CSeqMultiFetch.hpp>
+#include <SDK/animationsystem/CSeqAutoLayer.hpp>
+#include <SDK/animationsystem/CSeqIKLock.hpp>
 #include <SDK/animationsystem/CSeqTransition.hpp>
+#include <SDK/animationsystem/CAnimActivity.hpp>
+#include <SDK/modellib/CFootMotion.hpp>
 
 
 
-namespace CS2 {
-	namespace animationsystem {
-		class CSeqAutoLayer;
-		class CSeqIKLock;
-		class CAnimActivity;
-	}
-	namespace modellib {
-		class CFootMotion;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -33,17 +27,17 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqS1SeqDesc  {
 		public:
-			PROPERTY(m_sName,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_flags,animationsystem::CSeqSeqDescFlag , 0x10);
-			PROPERTY(m_fetch,animationsystem::CSeqMultiFetch , 0x20);
-			PROPERTY(m_nLocalWeightlist,int32_t , 0x90);
-			PROPERTY(m_autoLayerArray,GlobalTypes::CUtlVector<animationsystem::CSeqAutoLayer>, 0x98);
-			PROPERTY(m_IKLockArray,GlobalTypes::CUtlVector<animationsystem::CSeqIKLock>, 0xb0);
-			PROPERTY(m_transition,animationsystem::CSeqTransition , 0xc8);
-			PROPERTY(m_SequenceKeys,GlobalTypes::KeyValues3 , 0xd0);
-			PROPERTY(m_LegacyKeyValueText,GlobalTypes::CBufferString , 0xe0);
-			PROPERTY(m_activityArray,GlobalTypes::CUtlVector<animationsystem::CAnimActivity>, 0xf0);
-			PROPERTY(m_footMotion,GlobalTypes::CUtlVector<modellib::CFootMotion>, 0x108);
+			PROPERTY(m_sName,GlobalTypes::CBufferString, 0x0);
+			NESTED_PROPERTY(m_flags,animationsystem::CSeqSeqDescFlag, 0x10);
+			NESTED_PROPERTY(m_fetch,animationsystem::CSeqMultiFetch, 0x20);
+			PROPERTY(m_nLocalWeightlist,int32_t, 0x90);
+			NESTED_PROPERTY(m_autoLayerArray,GlobalTypes::CUtlVector<animationsystem::CSeqAutoLayer>, 0x98);
+			NESTED_PROPERTY(m_IKLockArray,GlobalTypes::CUtlVector<animationsystem::CSeqIKLock>, 0xb0);
+			NESTED_PROPERTY(m_transition,animationsystem::CSeqTransition, 0xc8);
+			PROPERTY(m_SequenceKeys,GlobalTypes::KeyValues3, 0xd0);
+			PROPERTY(m_LegacyKeyValueText,GlobalTypes::CBufferString, 0xe0);
+			NESTED_PROPERTY(m_activityArray,GlobalTypes::CUtlVector<animationsystem::CAnimActivity>, 0xf0);
+			NESTED_PROPERTY(m_footMotion,GlobalTypes::CUtlVector<modellib::CFootMotion>, 0x108);
 			S2_PAD(0x120);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqS1SeqDesc) == 0x120, "CSeqS1SeqDesc size should be 0x120");

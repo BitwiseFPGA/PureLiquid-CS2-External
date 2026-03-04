@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace physicslib {
 		class VertexPositionNormal_t  {
 		public:
-			PROPERTY(m_vPosition,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_vNormal,GlobalTypes::Vector , 0xc);
+			PROPERTY(m_vPosition,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_vNormal,GlobalTypes::Vector, 0xc);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::physicslib::VertexPositionNormal_t) == 0x18, "VertexPositionNormal_t size should be 0x18");

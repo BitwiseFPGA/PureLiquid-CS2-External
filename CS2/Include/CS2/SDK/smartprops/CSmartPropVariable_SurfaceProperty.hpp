@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropVariable_SurfaceProperty : public CS2::smartprops::CSmartPropVariable {
 		public:
-			PROPERTY(m_DefaultValue,GlobalTypes::CUtlString* , 0x38);
+			PROPERTY(m_DefaultValue,GlobalTypes::CUtlString*, 0x38);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable_SurfaceProperty) == 0x40, "CSmartPropVariable_SurfaceProperty size should be 0x40");

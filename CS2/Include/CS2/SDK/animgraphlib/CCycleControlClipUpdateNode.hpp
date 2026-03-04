@@ -11,17 +11,13 @@
 
 
 #include <SDK/animgraphlib/CLeafUpdateNode.hpp>
+#include <SDK/animgraphlib/TagSpan_t.hpp>
 #include <SDK/animationsystem/HSequence.hpp>
 #include <SDK/animgraphlib/AnimValueSource.hpp>
 #include <SDK/animgraphlib/CAnimParamHandle.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class TagSpan_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -29,12 +25,12 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CCycleControlClipUpdateNode : public CS2::animgraphlib::CLeafUpdateNode {
 		public:
-			PROPERTY(m_tags,GlobalTypes::CUtlVector<animgraphlib::TagSpan_t>, 0x60);
-			PROPERTY(m_hSequence,animationsystem::HSequence , 0x7c);
-			PROPERTY(m_duration,float32 , 0x80);
-			PROPERTY(m_valueSource,animgraphlib::AnimValueSource , 0x84);
-			PROPERTY(m_paramIndex,animgraphlib::CAnimParamHandle , 0x88);
-			PROPERTY(m_bLockWhenWaning,bool , 0x8a);
+			NESTED_PROPERTY(m_tags,GlobalTypes::CUtlVector<animgraphlib::TagSpan_t>, 0x60);
+			NESTED_PROPERTY(m_hSequence,animationsystem::HSequence, 0x7c);
+			PROPERTY(m_duration,float32, 0x80);
+			PROPERTY(m_valueSource,animgraphlib::AnimValueSource, 0x84);
+			NESTED_PROPERTY(m_paramIndex,animgraphlib::CAnimParamHandle, 0x88);
+			PROPERTY(m_bLockWhenWaning,bool, 0x8a);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CCycleControlClipUpdateNode) == 0x90, "CCycleControlClipUpdateNode size should be 0x90");

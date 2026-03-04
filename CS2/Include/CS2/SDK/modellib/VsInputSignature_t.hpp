@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/VsInputSignatureElement_t.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class VsInputSignatureElement_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace modellib {
 		class VsInputSignature_t  {
 		public:
-			PROPERTY(m_elems,GlobalTypes::CUtlVector<modellib::VsInputSignatureElement_t>, 0x0);
-			PROPERTY(m_depth_elems,GlobalTypes::CUtlVector<modellib::VsInputSignatureElement_t>, 0x18);
+			NESTED_PROPERTY(m_elems,GlobalTypes::CUtlVector<modellib::VsInputSignatureElement_t>, 0x0);
+			NESTED_PROPERTY(m_depth_elems,GlobalTypes::CUtlVector<modellib::VsInputSignatureElement_t>, 0x18);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::modellib::VsInputSignature_t) == 0x30, "VsInputSignature_t size should be 0x30");

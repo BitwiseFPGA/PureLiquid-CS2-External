@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_MaterialTint : public CS2::smartprops::CSmartPropOperation {
 		public:
-			PROPERTY(m_Material,GlobalTypes::CSmartPropAttributeMaterialName , 0x50);
-			PROPERTY(m_SelectionMode,smartprops::CSmartPropAttributeColorSelectionMode , 0x90);
-			PROPERTY(m_Color,GlobalTypes::CSmartPropAttributeColor , 0xd0);
-			PROPERTY(m_Gradient,GlobalTypes::CColorGradient , 0x110);
-			PROPERTY(m_ColorPosition,GlobalTypes::CSmartPropAttributeFloat , 0x128);
+			PROPERTY(m_Material,GlobalTypes::CSmartPropAttributeMaterialName, 0x50);
+			NESTED_PROPERTY(m_SelectionMode,smartprops::CSmartPropAttributeColorSelectionMode, 0x90);
+			PROPERTY(m_Color,GlobalTypes::CSmartPropAttributeColor, 0xd0);
+			PROPERTY(m_Gradient,GlobalTypes::CColorGradient, 0x110);
+			PROPERTY(m_ColorPosition,GlobalTypes::CSmartPropAttributeFloat, 0x128);
 			S2_PAD(0x118);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_MaterialTint) == 0x168, "CSmartPropOperation_MaterialTint size should be 0x168");

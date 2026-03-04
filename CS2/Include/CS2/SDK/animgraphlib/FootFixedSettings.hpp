@@ -21,16 +21,16 @@ namespace CS2 {
 	namespace animgraphlib {
 		class FootFixedSettings  {
 		public:
-			PROPERTY(m_traceSettings,animgraphlib::TraceSettings_t , 0x0);
-			PROPERTY(m_vFootBaseBindPosePositionMS,GlobalTypes::VectorAligned , 0x10);
-			PROPERTY(m_flFootBaseLength,float32 , 0x20);
-			PROPERTY(m_flMaxRotationLeft,float32 , 0x24);
-			PROPERTY(m_flMaxRotationRight,float32 , 0x28);
-			PROPERTY(m_footstepLandedTagIndex,int32_t , 0x2c);
-			PROPERTY(m_bEnableTracing,bool , 0x30);
-			PROPERTY(m_flTraceAngleBlend,float32 , 0x34);
-			PROPERTY(m_nDisableTagIndex,int32_t , 0x38);
-			PROPERTY(m_nFootIndex,int32_t , 0x3c);
+			NESTED_PROPERTY(m_traceSettings,animgraphlib::TraceSettings_t, 0x0);
+			PROPERTY(m_vFootBaseBindPosePositionMS,GlobalTypes::VectorAligned, 0x10);
+			PROPERTY(m_flFootBaseLength,float32, 0x20);
+			PROPERTY(m_flMaxRotationLeft,float32, 0x24);
+			PROPERTY(m_flMaxRotationRight,float32, 0x28);
+			PROPERTY(m_footstepLandedTagIndex,int32_t, 0x2c);
+			PROPERTY(m_bEnableTracing,bool, 0x30);
+			PROPERTY(m_flTraceAngleBlend,float32, 0x34);
+			PROPERTY(m_nDisableTagIndex,int32_t, 0x38);
+			PROPERTY(m_nFootIndex,int32_t, 0x3c);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::FootFixedSettings) == 0x40, "FootFixedSettings size should be 0x40");

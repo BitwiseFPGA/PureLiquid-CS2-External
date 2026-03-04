@@ -30,11 +30,11 @@ namespace CS2 {
 		public:
 			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0x1d8);
 			PROPERTY(m_names,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x1e0);
-			PROPERTY(m_values,GlobalTypes::CUtlVector< float32 >, 0x1f8);
-			PROPERTY(m_nFieldInput,particles::ParticleAttributeIndex_t , 0x210);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x214);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x218);
-			PROPERTY(m_bModelFromRenderer,bool , 0x21c);
+			NESTED_PROPERTY(m_values,GlobalTypes::CUtlVector< float32 >, 0x1f8);
+			NESTED_PROPERTY(m_nFieldInput,particles::ParticleAttributeIndex_t, 0x210);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x214);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x218);
+			PROPERTY(m_bModelFromRenderer,bool, 0x21c);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_RemapNamedModelElementToScalar) == 0x220, "C_INIT_RemapNamedModelElementToScalar size should be 0x220");

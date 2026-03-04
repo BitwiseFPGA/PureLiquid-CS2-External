@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CPairedSequenceUpdateNode : public CS2::animgraphlib::CSequenceUpdateNodeBase {
 		public:
-			PROPERTY(m_sPairedSequenceRole,GlobalTypes::CGlobalSymbol , 0x78);
+			PROPERTY(m_sPairedSequenceRole,GlobalTypes::CGlobalSymbol, 0x78);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CPairedSequenceUpdateNode) == 0x88, "CPairedSequenceUpdateNode size should be 0x88");

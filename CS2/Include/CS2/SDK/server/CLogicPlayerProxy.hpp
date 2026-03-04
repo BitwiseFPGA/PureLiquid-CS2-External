@@ -27,9 +27,9 @@ namespace CS2 {
 	namespace server {
 		class CLogicPlayerProxy : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_PlayerHasAmmo,entity2::CEntityIOOutput , 0x4a8);
-			PROPERTY(m_PlayerHasNoAmmo,entity2::CEntityIOOutput , 0x4c0);
-			PROPERTY(m_PlayerDied,entity2::CEntityIOOutput , 0x4d8);
+			NESTED_PROPERTY(m_PlayerHasAmmo,entity2::CEntityIOOutput, 0x4a8);
+			NESTED_PROPERTY(m_PlayerHasNoAmmo,entity2::CEntityIOOutput, 0x4c0);
+			NESTED_PROPERTY(m_PlayerDied,entity2::CEntityIOOutput, 0x4d8);
 			PROPERTY(m_RequestedPlayerHealth,GlobalTypes::CEntityOutputTemplate< int32, int32 >, 0x4f0);
 			PROPERTY(m_hPlayer,GlobalTypes::CHandle<server::CBaseEntity>, 0x510);
 			S2_PAD(0x70);

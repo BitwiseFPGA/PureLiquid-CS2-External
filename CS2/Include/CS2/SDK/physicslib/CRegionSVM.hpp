@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/physicslib/RnPlane_t.hpp>
 
 
 
-namespace CS2 {
-	namespace physicslib {
-		class RnPlane_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace physicslib {
 		class CRegionSVM  {
 		public:
-			PROPERTY(m_Planes,GlobalTypes::CUtlVector<physicslib::RnPlane_t>, 0x0);
-			PROPERTY(m_Nodes,GlobalTypes::CUtlVector< uint32 >, 0x18);
+			NESTED_PROPERTY(m_Planes,GlobalTypes::CUtlVector<physicslib::RnPlane_t>, 0x0);
+			NESTED_PROPERTY(m_Nodes,GlobalTypes::CUtlVector< uint32 >, 0x18);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::physicslib::CRegionSVM) == 0x30, "CRegionSVM size should be 0x30");

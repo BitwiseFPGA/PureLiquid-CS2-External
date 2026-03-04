@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/scenesystem/CSSDSEndFrameViewInfo.hpp>
 
 
 
-namespace CS2 {
-	namespace scenesystem {
-		class CSSDSEndFrameViewInfo;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,7 +21,7 @@ namespace CS2 {
 	namespace scenesystem {
 		class CSSDSMsg_EndFrame  {
 		public:
-			PROPERTY(m_Views,GlobalTypes::CUtlVector<scenesystem::CSSDSEndFrameViewInfo>, 0x0);
+			NESTED_PROPERTY(m_Views,GlobalTypes::CUtlVector<scenesystem::CSSDSEndFrameViewInfo>, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::scenesystem::CSSDSMsg_EndFrame) == 0x18, "CSSDSMsg_EndFrame size should be 0x18");

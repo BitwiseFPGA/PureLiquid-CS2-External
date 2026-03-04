@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace animlib {
 		class CNmIKEffector  {
 		public:
-			PROPERTY(m_nBodyIndex,int32_t , 0x0);
-			PROPERTY(m_bEnabled,bool , 0x4);
-			PROPERTY(m_vTargetPosition,GlobalTypes::Vector , 0x8);
-			PROPERTY(m_qTargetOrientation,GlobalTypes::Quaternion , 0x20);
-			PROPERTY(m_flWeight,float32 , 0x30);
+			PROPERTY(m_nBodyIndex,int32_t, 0x0);
+			PROPERTY(m_bEnabled,bool, 0x4);
+			PROPERTY(m_vTargetPosition,GlobalTypes::Vector, 0x8);
+			PROPERTY(m_qTargetOrientation,GlobalTypes::Quaternion, 0x20);
+			PROPERTY(m_flWeight,float32, 0x30);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmIKEffector) == 0x40, "CNmIKEffector size should be 0x40");

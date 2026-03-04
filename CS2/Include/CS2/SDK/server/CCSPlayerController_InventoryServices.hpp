@@ -12,14 +12,10 @@
 
 #include <SDK/client/CPlayerControllerComponent.hpp>
 #include <SDK/client/MedalRank_t.hpp>
+#include <SDK/server/ServerAuthoritativeWeaponSlot_t.hpp>
 
 
 
-namespace CS2 {
-	namespace server {
-		class ServerAuthoritativeWeaponSlot_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,15 +23,15 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayerController_InventoryServices : public CS2::client::CPlayerControllerComponent {
 		public:
-			PROPERTY(m_unMusicID,uint16_t , 0x40);
-			PROPERTY_ARRAY(m_rank,client::MedalRank_t , 6 , 0x44);
-			PROPERTY(m_nPersonaDataPublicLevel,int32_t , 0x5c);
-			PROPERTY(m_nPersonaDataPublicCommendsLeader,int32_t , 0x60);
-			PROPERTY(m_nPersonaDataPublicCommendsTeacher,int32_t , 0x64);
-			PROPERTY(m_nPersonaDataPublicCommendsFriendly,int32_t , 0x68);
-			PROPERTY(m_nPersonaDataXpTrailLevel,int32_t , 0x6c);
-			PROPERTY_ARRAY(m_unEquippedPlayerSprayIDs,uint32_t , 1 , 0xf48);
-			PROPERTY(m_unCurrentLoadoutHash,uint64_t , 0xf50);
+			PROPERTY(m_unMusicID,uint16_t, 0x40);
+			PROPERTY_ARRAY(m_rank,client::MedalRank_t, 6 , 0x44);
+			PROPERTY(m_nPersonaDataPublicLevel,int32_t, 0x5c);
+			PROPERTY(m_nPersonaDataPublicCommendsLeader,int32_t, 0x60);
+			PROPERTY(m_nPersonaDataPublicCommendsTeacher,int32_t, 0x64);
+			PROPERTY(m_nPersonaDataPublicCommendsFriendly,int32_t, 0x68);
+			PROPERTY(m_nPersonaDataXpTrailLevel,int32_t, 0x6c);
+			PROPERTY_ARRAY(m_unEquippedPlayerSprayIDs,uint32_t, 1 , 0xf48);
+			PROPERTY(m_unCurrentLoadoutHash,uint64_t, 0xf50);
 			PROPERTY(m_vecServerAuthoritativeWeaponSlots,server::CUtlVectorEmbeddedNetworkVar<server::ServerAuthoritativeWeaponSlot_t>, 0xf58);
 			S2_PAD(0xFA0);
 		};

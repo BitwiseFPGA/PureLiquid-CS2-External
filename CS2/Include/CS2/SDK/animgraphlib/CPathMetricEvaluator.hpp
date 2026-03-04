@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CPathMetricEvaluator : public CS2::animgraphlib::CMotionMetricEvaluator {
 		public:
-			PROPERTY(m_pathTimeSamples,GlobalTypes::CUtlVector< float32 >, 0x50);
-			PROPERTY(m_flDistance,float32 , 0x68);
-			PROPERTY(m_bExtrapolateMovement,bool , 0x6c);
-			PROPERTY(m_flMinExtrapolationSpeed,float32 , 0x70);
+			NESTED_PROPERTY(m_pathTimeSamples,GlobalTypes::CUtlVector< float32 >, 0x50);
+			PROPERTY(m_flDistance,float32, 0x68);
+			PROPERTY(m_bExtrapolateMovement,bool, 0x6c);
+			PROPERTY(m_flMinExtrapolationSpeed,float32, 0x70);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CPathMetricEvaluator) == 0x78, "CPathMetricEvaluator size should be 0x78");

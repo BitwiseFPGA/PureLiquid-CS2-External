@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace physicslib {
 		class FeSimdNodeBase_t  {
 		public:
-			PROPERTY_ARRAY(nNode,uint16_t , 4 , 0x0);
-			PROPERTY_ARRAY(nNodeX0,uint16_t , 4 , 0x8);
-			PROPERTY_ARRAY(nNodeX1,uint16_t , 4 , 0x10);
-			PROPERTY_ARRAY(nNodeY0,uint16_t , 4 , 0x18);
-			PROPERTY_ARRAY(nNodeY1,uint16_t , 4 , 0x20);
-			PROPERTY_ARRAY(nDummy,uint16_t , 4 , 0x28);
-			PROPERTY(qAdjust,mathlib_extended::FourQuaternions , 0x30);
+			PROPERTY_ARRAY(nNode,uint16_t, 4 , 0x0);
+			PROPERTY_ARRAY(nNodeX0,uint16_t, 4 , 0x8);
+			PROPERTY_ARRAY(nNodeX1,uint16_t, 4 , 0x10);
+			PROPERTY_ARRAY(nNodeY0,uint16_t, 4 , 0x18);
+			PROPERTY_ARRAY(nNodeY1,uint16_t, 4 , 0x20);
+			PROPERTY_ARRAY(nDummy,uint16_t, 4 , 0x28);
+			NESTED_PROPERTY(qAdjust,mathlib_extended::FourQuaternions, 0x30);
 			S2_PAD(0x70);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeSimdNodeBase_t) == 0x70, "FeSimdNodeBase_t size should be 0x70");

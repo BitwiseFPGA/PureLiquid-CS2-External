@@ -23,8 +23,8 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_InitVecCollection : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_InputValue,particleslib::CParticleCollectionVecInput , 0x1d8);
-			PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t , 0x890);
+			NESTED_PROPERTY(m_InputValue,particleslib::CParticleCollectionVecInput, 0x1d8);
+			NESTED_PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t, 0x890);
 			S2_PAD(0x6C0);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_InitVecCollection) == 0x898, "C_INIT_InitVecCollection size should be 0x898");

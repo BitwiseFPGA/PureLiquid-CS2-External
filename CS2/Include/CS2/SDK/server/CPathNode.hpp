@@ -26,11 +26,11 @@ namespace CS2 {
 	namespace server {
 		class CPathNode : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_vInTangentLocal,GlobalTypes::Vector , 0x4a8);
-			PROPERTY(m_vOutTangentLocal,GlobalTypes::Vector , 0x4b4);
-			PROPERTY(m_strParentPathUniqueID,GlobalTypes::CUtlString* , 0x4c0);
-			PROPERTY(m_strPathNodeParameter,GlobalTypes::CUtlString* , 0x4c8);
-			PROPERTY(m_xWSPrevParent,GlobalTypes::CTransform , 0x4d0);
+			PROPERTY(m_vInTangentLocal,GlobalTypes::Vector, 0x4a8);
+			PROPERTY(m_vOutTangentLocal,GlobalTypes::Vector, 0x4b4);
+			PROPERTY(m_strParentPathUniqueID,GlobalTypes::CUtlString*, 0x4c0);
+			PROPERTY(m_strPathNodeParameter,GlobalTypes::CUtlString*, 0x4c8);
+			PROPERTY(m_xWSPrevParent,GlobalTypes::CTransform, 0x4d0);
 			PROPERTY(m_hPath,GlobalTypes::CHandle<server::CPathWithDynamicNodes>, 0x4f0);
 			S2_PAD(0x58);
 		};

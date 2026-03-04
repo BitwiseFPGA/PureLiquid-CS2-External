@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerDecayingSineWave : public CS2::soundsystem_voicecontainers::CVoiceContainerGenerator {
 		public:
-			PROPERTY(m_flFrequency,float32 , 0xa8);
-			PROPERTY(m_flDecayTime,float32 , 0xac);
+			PROPERTY(m_flFrequency,float32, 0xa8);
+			PROPERTY(m_flDecayTime,float32, 0xac);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerDecayingSineWave) == 0xB0, "CVoiceContainerDecayingSineWave size should be 0xB0");

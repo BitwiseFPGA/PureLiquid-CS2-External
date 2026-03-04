@@ -20,15 +20,15 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqCmdLayer  {
 		public:
-			PROPERTY(m_cmd,int16_t , 0x0);
-			PROPERTY(m_nLocalReference,int16_t , 0x2);
-			PROPERTY(m_nLocalBonemask,int16_t , 0x4);
-			PROPERTY(m_nDstResult,int16_t , 0x6);
-			PROPERTY(m_nSrcResult,int16_t , 0x8);
-			PROPERTY(m_bSpline,bool , 0xa);
-			PROPERTY(m_flVar1,float32 , 0xc);
-			PROPERTY(m_flVar2,float32 , 0x10);
-			PROPERTY(m_nLineNumber,int16_t , 0x14);
+			PROPERTY(m_cmd,int16_t, 0x0);
+			PROPERTY(m_nLocalReference,int16_t, 0x2);
+			PROPERTY(m_nLocalBonemask,int16_t, 0x4);
+			PROPERTY(m_nDstResult,int16_t, 0x6);
+			PROPERTY(m_nSrcResult,int16_t, 0x8);
+			PROPERTY(m_bSpline,bool, 0xa);
+			PROPERTY(m_flVar1,float32, 0xc);
+			PROPERTY(m_flVar2,float32, 0x10);
+			PROPERTY(m_nLineNumber,int16_t, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqCmdLayer) == 0x18, "CSeqCmdLayer size should be 0x18");

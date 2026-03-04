@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace vphysics2 {
 		class constraint_axislimit_t  {
 		public:
-			PROPERTY(flMinRotation,float32 , 0x0);
-			PROPERTY(flMaxRotation,float32 , 0x4);
-			PROPERTY(flMotorTargetAngSpeed,float32 , 0x8);
-			PROPERTY(flMotorMaxTorque,float32 , 0xc);
+			PROPERTY(flMinRotation,float32, 0x0);
+			PROPERTY(flMaxRotation,float32, 0x4);
+			PROPERTY(flMotorTargetAngSpeed,float32, 0x8);
+			PROPERTY(flMotorMaxTorque,float32, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::vphysics2::constraint_axislimit_t) == 0x10, "constraint_axislimit_t size should be 0x10");

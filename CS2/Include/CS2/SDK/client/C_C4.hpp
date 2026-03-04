@@ -25,16 +25,16 @@ namespace CS2 {
 	namespace client {
 		class C_C4 : public CS2::client::C_CSWeaponBase {
 		public:
-			PROPERTY(m_activeLightParticleIndex,client::ParticleIndex_t , 0x1f40);
-			PROPERTY(m_eActiveLightEffect,client::C4LightEffect_t , 0x1f44);
-			PROPERTY(m_bStartedArming,bool , 0x1f48);
-			PROPERTY(m_fArmedTime,entity2::GameTime_t , 0x1f4c);
-			PROPERTY(m_bBombPlacedAnimation,bool , 0x1f50);
-			PROPERTY(m_bIsPlantingViaUse,bool , 0x1f51);
-			PROPERTY(m_entitySpottedState,client::EntitySpottedState_t , 0x1f58);
-			PROPERTY(m_nSpotRules,int32_t , 0x1f70);
-			PROPERTY_ARRAY(m_bPlayedArmingBeeps,bool , 7 , 0x1f74);
-			PROPERTY(m_bBombPlanted,bool , 0x1f7b);
+			NESTED_PROPERTY(m_activeLightParticleIndex,client::ParticleIndex_t, 0x1f40);
+			PROPERTY(m_eActiveLightEffect,client::C4LightEffect_t, 0x1f44);
+			PROPERTY(m_bStartedArming,bool, 0x1f48);
+			NESTED_PROPERTY(m_fArmedTime,entity2::GameTime_t, 0x1f4c);
+			PROPERTY(m_bBombPlacedAnimation,bool, 0x1f50);
+			PROPERTY(m_bIsPlantingViaUse,bool, 0x1f51);
+			NESTED_PROPERTY(m_entitySpottedState,client::EntitySpottedState_t, 0x1f58);
+			PROPERTY(m_nSpotRules,int32_t, 0x1f70);
+			PROPERTY_ARRAY(m_bPlayedArmingBeeps,bool, 7 , 0x1f74);
+			PROPERTY(m_bBombPlanted,bool, 0x1f7b);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::client::C_C4) == 0x1F80, "C_C4 size should be 0x1F80");

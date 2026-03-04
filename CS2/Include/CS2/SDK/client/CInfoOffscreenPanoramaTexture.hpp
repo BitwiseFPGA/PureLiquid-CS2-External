@@ -11,6 +11,7 @@
 
 
 #include <SDK/client/C_PointEntity.hpp>
+#include <SDK/client/C_BaseModelEntity.hpp>
 
 
 
@@ -21,18 +22,18 @@ namespace CS2 {
 	namespace client {
 		class CInfoOffscreenPanoramaTexture : public CS2::client::C_PointEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x608);
-			PROPERTY(m_nResolutionX,int32_t , 0x60c);
-			PROPERTY(m_nResolutionY,int32_t , 0x610);
-			PROPERTY(m_szPanelType,GlobalTypes::CUtlSymbolLarge* , 0x618);
-			PROPERTY(m_szLayoutFileName,GlobalTypes::CUtlSymbolLarge* , 0x620);
-			PROPERTY(m_RenderAttrName,GlobalTypes::CUtlSymbolLarge* , 0x628);
+			PROPERTY(m_bDisabled,bool, 0x608);
+			PROPERTY(m_nResolutionX,int32_t, 0x60c);
+			PROPERTY(m_nResolutionY,int32_t, 0x610);
+			PROPERTY(m_szPanelType,GlobalTypes::CUtlSymbolLarge*, 0x618);
+			PROPERTY(m_szLayoutFileName,GlobalTypes::CUtlSymbolLarge*, 0x620);
+			PROPERTY(m_RenderAttrName,GlobalTypes::CUtlSymbolLarge*, 0x628);
 			PROPERTY(m_TargetEntities,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_BaseModelEntity>>, 0x630);
-			PROPERTY(m_nTargetChangeCount,int32_t , 0x648);
+			PROPERTY(m_nTargetChangeCount,int32_t, 0x648);
 			PROPERTY(m_vecCSSClasses,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CUtlSymbolLarge>, 0x650);
-			PROPERTY(m_szTargetsName,GlobalTypes::CUtlSymbolLarge* , 0x668);
-			PROPERTY(m_AdditionalTargetEntities,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::C_BaseModelEntity>>, 0x670);
-			PROPERTY(m_bCheckCSSClasses,bool , 0x7e8);
+			PROPERTY(m_szTargetsName,GlobalTypes::CUtlSymbolLarge*, 0x668);
+			NESTED_PROPERTY(m_AdditionalTargetEntities,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::C_BaseModelEntity>>, 0x670);
+			PROPERTY(m_bCheckCSSClasses,bool, 0x7e8);
 			S2_PAD(0x208);
 		};
 		//static_assert(sizeof(CS2::client::CInfoOffscreenPanoramaTexture) == 0x810, "CInfoOffscreenPanoramaTexture size should be 0x810");

@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace server {
 		class CCommentaryAuto : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_OnCommentaryNewGame,entity2::CEntityIOOutput , 0x4a8);
-			PROPERTY(m_OnCommentaryMidGame,entity2::CEntityIOOutput , 0x4c0);
-			PROPERTY(m_OnCommentaryMultiplayerSpawn,entity2::CEntityIOOutput , 0x4d8);
+			NESTED_PROPERTY(m_OnCommentaryNewGame,entity2::CEntityIOOutput, 0x4a8);
+			NESTED_PROPERTY(m_OnCommentaryMidGame,entity2::CEntityIOOutput, 0x4c0);
+			NESTED_PROPERTY(m_OnCommentaryMultiplayerSpawn,entity2::CEntityIOOutput, 0x4d8);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::server::CCommentaryAuto) == 0x4F0, "CCommentaryAuto size should be 0x4F0");

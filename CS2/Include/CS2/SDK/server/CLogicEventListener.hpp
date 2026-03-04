@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CLogicEventListener : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_strEventName,GlobalTypes::CUtlString* , 0x4b8);
-			PROPERTY(m_bIsEnabled,bool , 0x4c0);
-			PROPERTY(m_nTeam,int32_t , 0x4c4);
+			PROPERTY(m_strEventName,GlobalTypes::CUtlString*, 0x4b8);
+			PROPERTY(m_bIsEnabled,bool, 0x4c0);
+			PROPERTY(m_nTeam,int32_t, 0x4c4);
 			PROPERTY(m_OnEventFired,GlobalTypes::CEntityOutputTemplate< CUtlString, char* >*, 0x4c8);
 			S2_PAD(0x40);
 		};

@@ -24,11 +24,11 @@ namespace CS2 {
 		class CBaseFlex : public CS2::server::CBaseAnimGraph {
 		public:
 			PROPERTY(m_flexWeight,GlobalTypes::CNetworkUtlVectorBase< float32 >, 0xa20);
-			PROPERTY(m_vLookTargetPosition,GlobalTypes::VectorWS , 0xa38);
-			PROPERTY(m_flAllowResponsesEndTime,entity2::GameTime_t , 0xa98);
-			PROPERTY(m_flLastFlexAnimationTime,entity2::GameTime_t , 0xa9c);
-			PROPERTY(m_nNextSceneEventId,client::SceneEventId_t , 0xaa0);
-			PROPERTY(m_bUpdateLayerPriorities,bool , 0xaa4);
+			PROPERTY(m_vLookTargetPosition,GlobalTypes::VectorWS, 0xa38);
+			NESTED_PROPERTY(m_flAllowResponsesEndTime,entity2::GameTime_t, 0xa98);
+			NESTED_PROPERTY(m_flLastFlexAnimationTime,entity2::GameTime_t, 0xa9c);
+			NESTED_PROPERTY(m_nNextSceneEventId,client::SceneEventId_t, 0xaa0);
+			PROPERTY(m_bUpdateLayerPriorities,bool, 0xaa4);
 			S2_PAD(0x90);
 		};
 		//static_assert(sizeof(CS2::server::CBaseFlex) == 0xAB0, "CBaseFlex size should be 0xAB0");

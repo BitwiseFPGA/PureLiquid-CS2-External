@@ -10,16 +10,12 @@
 #endif
 
 
+#include <SDK/mathlib_extended/ConstantInfo_t.hpp>
+#include <SDK/mathlib_extended/VariableInfo_t.hpp>
+#include <SDK/mathlib_extended/FunctionInfo_t.hpp>
 
 
 
-namespace CS2 {
-	namespace mathlib_extended {
-		class ConstantInfo_t;
-		class VariableInfo_t;
-		class FunctionInfo_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,9 +23,9 @@ namespace CS2 {
 	namespace mathlib_extended {
 		class CFuseSymbolTable  {
 		public:
-			PROPERTY(m_constants,GlobalTypes::CUtlVector<mathlib_extended::ConstantInfo_t>, 0x0);
-			PROPERTY(m_variables,GlobalTypes::CUtlVector<mathlib_extended::VariableInfo_t>, 0x18);
-			PROPERTY(m_functions,GlobalTypes::CUtlVector<mathlib_extended::FunctionInfo_t>, 0x30);
+			NESTED_PROPERTY(m_constants,GlobalTypes::CUtlVector<mathlib_extended::ConstantInfo_t>, 0x0);
+			NESTED_PROPERTY(m_variables,GlobalTypes::CUtlVector<mathlib_extended::VariableInfo_t>, 0x18);
+			NESTED_PROPERTY(m_functions,GlobalTypes::CUtlVector<mathlib_extended::FunctionInfo_t>, 0x30);
 			PROPERTY(m_constantMap,GlobalTypes::CUtlHashtable< CUtlStringToken, int32 >*, 0x48);
 			PROPERTY(m_variableMap,GlobalTypes::CUtlHashtable< CUtlStringToken, int32 >*, 0x68);
 			PROPERTY(m_functionMap,GlobalTypes::CUtlHashtable< CUtlStringToken, int32 >*, 0x88);

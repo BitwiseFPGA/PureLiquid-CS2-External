@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace modellib {
 		class CTwistConstraint : public CS2::modellib::CBaseConstraint {
 		public:
-			PROPERTY(m_bInverse,bool , 0x60);
-			PROPERTY(m_qParentBindRotation,GlobalTypes::Quaternion , 0x70);
-			PROPERTY(m_qChildBindRotation,GlobalTypes::Quaternion , 0x80);
+			PROPERTY(m_bInverse,bool, 0x60);
+			PROPERTY(m_qParentBindRotation,GlobalTypes::Quaternion, 0x70);
+			PROPERTY(m_qChildBindRotation,GlobalTypes::Quaternion, 0x80);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::modellib::CTwistConstraint) == 0x90, "CTwistConstraint size should be 0x90");

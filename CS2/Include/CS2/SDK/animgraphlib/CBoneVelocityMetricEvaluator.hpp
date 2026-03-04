@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CBoneVelocityMetricEvaluator : public CS2::animgraphlib::CMotionMetricEvaluator {
 		public:
-			PROPERTY(m_nBoneIndex,int32_t , 0x50);
+			PROPERTY(m_nBoneIndex,int32_t, 0x50);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CBoneVelocityMetricEvaluator) == 0x58, "CBoneVelocityMetricEvaluator size should be 0x58");

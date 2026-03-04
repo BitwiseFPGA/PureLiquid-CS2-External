@@ -27,12 +27,12 @@ namespace CS2 {
 		public:
 			PROPERTY(m_source,GlobalTypes::CHandle<server::CBaseEntity>, 0x0);
 			PROPERTY(m_target,GlobalTypes::CHandle<server::CBaseEntity>, 0x4);
-			PROPERTY(m_nHullIdx,int32_t , 0x8);
-			PROPERTY(m_vSourceAnchorPos,GlobalTypes::Vector , 0xc);
-			PROPERTY(m_vTargetAnchorPos,GlobalTypes::Vector , 0x18);
-			PROPERTY(m_nAreaSrc,uint32_t , 0x24);
-			PROPERTY(m_nAreaDst,uint32_t , 0x28);
-			PROPERTY(m_bAttached,bool , 0x2c);
+			PROPERTY(m_nHullIdx,int32_t, 0x8);
+			PROPERTY(m_vSourceAnchorPos,GlobalTypes::Vector, 0xc);
+			PROPERTY(m_vTargetAnchorPos,GlobalTypes::Vector, 0x18);
+			PROPERTY(m_nAreaSrc,uint32_t, 0x24);
+			PROPERTY(m_nAreaDst,uint32_t, 0x28);
+			PROPERTY(m_bAttached,bool, 0x2c);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::server::DynamicVolumeDef_t) == 0x30, "DynamicVolumeDef_t size should be 0x30");

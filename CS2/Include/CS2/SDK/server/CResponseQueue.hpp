@@ -25,7 +25,7 @@ namespace CS2 {
 	namespace server {
 		class CResponseQueue  {
 		public:
-			PROPERTY(m_ExpresserTargets,GlobalTypes::CUtlVector<server::CAI_Expresser*>, 0x38);
+			NESTED_PROPERTY(m_ExpresserTargets,GlobalTypes::CUtlVector<server::CAI_Expresser*>, 0x38);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::server::CResponseQueue) == 0x50, "CResponseQueue size should be 0x50");

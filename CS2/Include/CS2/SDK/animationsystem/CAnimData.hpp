@@ -10,16 +10,12 @@
 #endif
 
 
+#include <SDK/animationsystem/CAnimDesc.hpp>
+#include <SDK/animationsystem/CAnimDecoder.hpp>
+#include <SDK/animationsystem/CAnimFrameSegment.hpp>
 
 
 
-namespace CS2 {
-	namespace animationsystem {
-		class CAnimDesc;
-		class CAnimDecoder;
-		class CAnimFrameSegment;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,11 +23,11 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimData  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CBufferString , 0x10);
-			PROPERTY(m_animArray,GlobalTypes::CUtlVector<animationsystem::CAnimDesc>, 0x20);
-			PROPERTY(m_decoderArray,GlobalTypes::CUtlVector<animationsystem::CAnimDecoder>, 0x38);
-			PROPERTY(m_nMaxUniqueFrameIndex,int32_t , 0x50);
-			PROPERTY(m_segmentArray,GlobalTypes::CUtlVector<animationsystem::CAnimFrameSegment>, 0x58);
+			PROPERTY(m_name,GlobalTypes::CBufferString, 0x10);
+			NESTED_PROPERTY(m_animArray,GlobalTypes::CUtlVector<animationsystem::CAnimDesc>, 0x20);
+			NESTED_PROPERTY(m_decoderArray,GlobalTypes::CUtlVector<animationsystem::CAnimDecoder>, 0x38);
+			PROPERTY(m_nMaxUniqueFrameIndex,int32_t, 0x50);
+			NESTED_PROPERTY(m_segmentArray,GlobalTypes::CUtlVector<animationsystem::CAnimFrameSegment>, 0x58);
 			S2_PAD(0x70);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimData) == 0x70, "CAnimData size should be 0x70");

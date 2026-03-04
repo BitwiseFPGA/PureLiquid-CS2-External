@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CCSGameModeRules  {
 		public:
-			PROPERTY(__m_pChainEntity,entity2::CNetworkVarChainer , 0x8);
+			NESTED_PROPERTY(__m_pChainEntity,entity2::CNetworkVarChainer, 0x8);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::server::CCSGameModeRules) == 0x30, "CCSGameModeRules size should be 0x30");

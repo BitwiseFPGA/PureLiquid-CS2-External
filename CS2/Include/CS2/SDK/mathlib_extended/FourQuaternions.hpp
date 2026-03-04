@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace mathlib_extended {
 		class FourQuaternions  {
 		public:
-			PROPERTY(x,GlobalTypes::fltx4 , 0x0);
-			PROPERTY(y,GlobalTypes::fltx4 , 0x10);
-			PROPERTY(z,GlobalTypes::fltx4 , 0x20);
-			PROPERTY(w,GlobalTypes::fltx4 , 0x30);
+			PROPERTY(x,GlobalTypes::fltx4, 0x0);
+			PROPERTY(y,GlobalTypes::fltx4, 0x10);
+			PROPERTY(z,GlobalTypes::fltx4, 0x20);
+			PROPERTY(w,GlobalTypes::fltx4, 0x30);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::mathlib_extended::FourQuaternions) == 0x40, "FourQuaternions size should be 0x40");

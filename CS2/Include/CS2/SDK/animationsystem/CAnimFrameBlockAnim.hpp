@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimFrameBlockAnim  {
 		public:
-			PROPERTY(m_nStartFrame,int32_t , 0x0);
-			PROPERTY(m_nEndFrame,int32_t , 0x4);
-			PROPERTY(m_segmentIndexArray,GlobalTypes::CUtlVector< int32 >, 0x8);
+			PROPERTY(m_nStartFrame,int32_t, 0x0);
+			PROPERTY(m_nEndFrame,int32_t, 0x4);
+			NESTED_PROPERTY(m_segmentIndexArray,GlobalTypes::CUtlVector< int32 >, 0x8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimFrameBlockAnim) == 0x20, "CAnimFrameBlockAnim size should be 0x20");

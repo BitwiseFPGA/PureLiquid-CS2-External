@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animlib {
 		class NmSyncTrackTime_t  {
 		public:
-			PROPERTY(m_nEventIdx,int32_t , 0x0);
-			PROPERTY(m_percentageThrough,animlib::NmPercent_t , 0x4);
+			PROPERTY(m_nEventIdx,int32_t, 0x0);
+			NESTED_PROPERTY(m_percentageThrough,animlib::NmPercent_t, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animlib::NmSyncTrackTime_t) == 0x8, "NmSyncTrackTime_t size should be 0x8");

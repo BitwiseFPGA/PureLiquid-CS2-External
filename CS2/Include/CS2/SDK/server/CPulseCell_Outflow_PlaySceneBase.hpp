@@ -12,14 +12,10 @@
 
 #include <SDK/pulse_runtime_lib/CPulseCell_BaseYieldingInflow.hpp>
 #include <SDK/pulse_runtime_lib/CPulse_ResumePoint.hpp>
+#include <SDK/pulse_runtime_lib/CPulse_OutflowConnection.hpp>
 
 
 
-namespace CS2 {
-	namespace pulse_runtime_lib {
-		class CPulse_OutflowConnection;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,9 +23,9 @@ namespace CS2 {
 	namespace server {
 		class CPulseCell_Outflow_PlaySceneBase : public CS2::pulse_runtime_lib::CPulseCell_BaseYieldingInflow {
 		public:
-			PROPERTY(m_OnFinished,pulse_runtime_lib::CPulse_ResumePoint , 0x48);
-			PROPERTY(m_OnCanceled,pulse_runtime_lib::CPulse_ResumePoint , 0x90);
-			PROPERTY(m_Triggers,server::CUtlVector<pulse_runtime_lib::CPulse_OutflowConnection>, 0xd8);
+			NESTED_PROPERTY(m_OnFinished,pulse_runtime_lib::CPulse_ResumePoint, 0x48);
+			NESTED_PROPERTY(m_OnCanceled,pulse_runtime_lib::CPulse_ResumePoint, 0x90);
+			NESTED_PROPERTY(m_Triggers,server::CUtlVector<pulse_runtime_lib::CPulse_OutflowConnection>, 0xd8);
 			S2_PAD(0xA8);
 		};
 		//static_assert(sizeof(CS2::server::CPulseCell_Outflow_PlaySceneBase) == 0xF0, "CPulseCell_Outflow_PlaySceneBase size should be 0xF0");

@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace server {
 		class CIronSightController  {
 		public:
-			PROPERTY(m_bIronSightAvailable,bool , 0x8);
-			PROPERTY(m_flIronSightAmount,float32 , 0xc);
-			PROPERTY(m_flIronSightAmountGained,float32 , 0x10);
-			PROPERTY(m_flIronSightAmountBiased,float32 , 0x14);
+			PROPERTY(m_bIronSightAvailable,bool, 0x8);
+			PROPERTY(m_flIronSightAmount,float32, 0xc);
+			PROPERTY(m_flIronSightAmountGained,float32, 0x10);
+			PROPERTY(m_flIronSightAmountBiased,float32, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CIronSightController) == 0x18, "CIronSightController size should be 0x18");

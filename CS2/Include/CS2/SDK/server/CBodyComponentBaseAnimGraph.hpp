@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace server {
 		class CBodyComponentBaseAnimGraph : public CS2::server::CBodyComponentSkeletonInstance {
 		public:
-			PROPERTY(m_animationController,server::CBaseAnimGraphController , 0x4b0);
+			NESTED_PROPERTY(m_animationController,server::CBaseAnimGraphController, 0x4b0);
 			S2_PAD(0x860);
 		};
 		//static_assert(sizeof(CS2::server::CBodyComponentBaseAnimGraph) == 0xD10, "CBodyComponentBaseAnimGraph size should be 0xD10");

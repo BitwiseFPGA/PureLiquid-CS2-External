@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetToCP : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nControlPointNumber,int32_t , 0x1d0);
-			PROPERTY(m_vecOffset,GlobalTypes::Vector , 0x1d4);
-			PROPERTY(m_bOffsetLocal,bool , 0x1e0);
+			PROPERTY(m_nControlPointNumber,int32_t, 0x1d0);
+			PROPERTY(m_vecOffset,GlobalTypes::Vector, 0x1d4);
+			PROPERTY(m_bOffsetLocal,bool, 0x1e0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetToCP) == 0x1E8, "C_OP_SetToCP size should be 0x1E8");

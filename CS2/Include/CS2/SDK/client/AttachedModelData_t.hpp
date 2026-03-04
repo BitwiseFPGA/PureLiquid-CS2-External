@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class AttachedModelData_t  {
 		public:
-			PROPERTY(m_iModelDisplayFlags,int32_t , 0x0);
+			PROPERTY(m_iModelDisplayFlags,int32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::client::AttachedModelData_t) == 0x4, "C_EconEntity::AttachedModelData_t size should be 0x4");

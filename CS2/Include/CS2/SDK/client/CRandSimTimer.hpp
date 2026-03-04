@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class CRandSimTimer : public CS2::client::CSimpleSimTimer {
 		public:
-			PROPERTY(m_flMinInterval,float32 , 0x8);
-			PROPERTY(m_flMaxInterval,float32 , 0xc);
+			PROPERTY(m_flMinInterval,float32, 0x8);
+			PROPERTY(m_flMaxInterval,float32, 0xc);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::CRandSimTimer) == 0x10, "CRandSimTimer size should be 0x10");

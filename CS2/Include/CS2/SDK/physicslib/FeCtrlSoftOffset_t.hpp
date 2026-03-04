@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FeCtrlSoftOffset_t  {
 		public:
-			PROPERTY(nCtrlParent,uint16_t , 0x0);
-			PROPERTY(nCtrlChild,uint16_t , 0x2);
-			PROPERTY(vOffset,GlobalTypes::Vector , 0x4);
-			PROPERTY(flAlpha,float32 , 0x10);
+			PROPERTY(nCtrlParent,uint16_t, 0x0);
+			PROPERTY(nCtrlChild,uint16_t, 0x2);
+			PROPERTY(vOffset,GlobalTypes::Vector, 0x4);
+			PROPERTY(flAlpha,float32, 0x10);
 			S2_PAD(0x14);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeCtrlSoftOffset_t) == 0x14, "FeCtrlSoftOffset_t size should be 0x14");

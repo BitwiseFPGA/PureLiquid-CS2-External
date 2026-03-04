@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapDirectionToCPToVector : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nCP,int32_t , 0x1d0);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d4);
-			PROPERTY(m_flScale,float32 , 0x1d8);
-			PROPERTY(m_flOffsetRot,float32 , 0x1dc);
-			PROPERTY(m_vecOffsetAxis,GlobalTypes::Vector , 0x1e0);
-			PROPERTY(m_bNormalize,bool , 0x1ec);
-			PROPERTY(m_nFieldStrength,particles::ParticleAttributeIndex_t , 0x1f0);
+			PROPERTY(m_nCP,int32_t, 0x1d0);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d4);
+			PROPERTY(m_flScale,float32, 0x1d8);
+			PROPERTY(m_flOffsetRot,float32, 0x1dc);
+			PROPERTY(m_vecOffsetAxis,GlobalTypes::Vector, 0x1e0);
+			PROPERTY(m_bNormalize,bool, 0x1ec);
+			NESTED_PROPERTY(m_nFieldStrength,particles::ParticleAttributeIndex_t, 0x1f0);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapDirectionToCPToVector) == 0x1F8, "C_OP_RemapDirectionToCPToVector size should be 0x1F8");

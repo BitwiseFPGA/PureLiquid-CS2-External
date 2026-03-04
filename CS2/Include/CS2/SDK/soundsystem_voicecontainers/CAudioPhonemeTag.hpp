@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CAudioPhonemeTag  {
 		public:
-			PROPERTY(m_flStartTime,float32 , 0x0);
-			PROPERTY(m_flEndTime,float32 , 0x4);
-			PROPERTY(m_nPhonemeCode,int32_t , 0x8);
+			PROPERTY(m_flStartTime,float32, 0x0);
+			PROPERTY(m_flEndTime,float32, 0x4);
+			PROPERTY(m_nPhonemeCode,int32_t, 0x8);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CAudioPhonemeTag) == 0xC, "CAudioPhonemeTag size should be 0xC");

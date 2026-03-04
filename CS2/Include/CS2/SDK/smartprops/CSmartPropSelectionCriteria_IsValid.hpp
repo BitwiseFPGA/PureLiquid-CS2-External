@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropSelectionCriteria_IsValid : public CS2::smartprops::CSmartPropSelectionCriteria {
 		public:
-			PROPERTY(m_Expression,GlobalTypes::CUtlString* , 0x48);
+			PROPERTY(m_Expression,GlobalTypes::CUtlString*, 0x48);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropSelectionCriteria_IsValid) == 0x50, "CSmartPropSelectionCriteria_IsValid size should be 0x50");

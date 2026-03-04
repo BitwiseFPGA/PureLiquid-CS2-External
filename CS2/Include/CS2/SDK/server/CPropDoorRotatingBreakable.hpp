@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CPropDoorRotatingBreakable : public CS2::server::CPropDoorRotating {
 		public:
-			PROPERTY(m_bBreakable,bool , 0xef0);
-			PROPERTY(m_isAbleToCloseAreaPortals,bool , 0xef1);
-			PROPERTY(m_currentDamageState,int32_t , 0xef4);
+			PROPERTY(m_bBreakable,bool, 0xef0);
+			PROPERTY(m_isAbleToCloseAreaPortals,bool, 0xef1);
+			PROPERTY(m_currentDamageState,int32_t, 0xef4);
 			PROPERTY(m_damageStates,GlobalTypes::CUtlVector<GlobalTypes::CUtlSymbolLarge>, 0xef8);
 			S2_PAD(0x20);
 		};

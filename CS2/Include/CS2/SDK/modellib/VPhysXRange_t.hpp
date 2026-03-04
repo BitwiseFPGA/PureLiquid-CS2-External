@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace modellib {
 		class VPhysXRange_t  {
 		public:
-			PROPERTY(m_flMin,float32 , 0x0);
-			PROPERTY(m_flMax,float32 , 0x4);
+			PROPERTY(m_flMin,float32, 0x0);
+			PROPERTY(m_flMax,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::modellib::VPhysXRange_t) == 0x8, "VPhysXRange_t size should be 0x8");

@@ -20,13 +20,13 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimMovement  {
 		public:
-			PROPERTY(endframe,int32_t , 0x0);
-			PROPERTY(motionflags,int32_t , 0x4);
-			PROPERTY(v0,float32 , 0x8);
-			PROPERTY(v1,float32 , 0xc);
-			PROPERTY(angle,float32 , 0x10);
-			PROPERTY(vector,GlobalTypes::Vector , 0x14);
-			PROPERTY(position,GlobalTypes::Vector , 0x20);
+			PROPERTY(endframe,int32_t, 0x0);
+			PROPERTY(motionflags,int32_t, 0x4);
+			PROPERTY(v0,float32, 0x8);
+			PROPERTY(v1,float32, 0xc);
+			PROPERTY(angle,float32, 0x10);
+			PROPERTY(vector,GlobalTypes::Vector, 0x14);
+			PROPERTY(position,GlobalTypes::Vector, 0x20);
 			S2_PAD(0x2C);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimMovement) == 0x2C, "CAnimMovement size should be 0x2C");

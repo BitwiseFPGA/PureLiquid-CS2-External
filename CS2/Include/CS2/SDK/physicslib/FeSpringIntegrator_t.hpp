@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace physicslib {
 		class FeSpringIntegrator_t  {
 		public:
-			PROPERTY_ARRAY(nNode,uint16_t , 2 , 0x0);
-			PROPERTY(flSpringRestLength,float32 , 0x4);
-			PROPERTY(flSpringConstant,float32 , 0x8);
-			PROPERTY(flSpringDamping,float32 , 0xc);
-			PROPERTY(flNodeWeight0,float32 , 0x10);
+			PROPERTY_ARRAY(nNode,uint16_t, 2 , 0x0);
+			PROPERTY(flSpringRestLength,float32, 0x4);
+			PROPERTY(flSpringConstant,float32, 0x8);
+			PROPERTY(flSpringDamping,float32, 0xc);
+			PROPERTY(flNodeWeight0,float32, 0x10);
 			S2_PAD(0x14);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeSpringIntegrator_t) == 0x14, "FeSpringIntegrator_t size should be 0x14");

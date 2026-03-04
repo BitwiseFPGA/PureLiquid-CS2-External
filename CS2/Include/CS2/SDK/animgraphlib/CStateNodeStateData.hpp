@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CStateNodeStateData  {
 		public:
-			PROPERTY(m_pChild,animgraphlib::CAnimUpdateNodeRef , 0x0);
+			NESTED_PROPERTY(m_pChild,animgraphlib::CAnimUpdateNodeRef, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CStateNodeStateData) == 0x18, "CStateNodeStateData size should be 0x18");

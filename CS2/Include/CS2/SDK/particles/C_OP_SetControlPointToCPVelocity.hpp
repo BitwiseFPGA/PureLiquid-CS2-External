@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetControlPointToCPVelocity : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nCPInput,int32_t , 0x1d8);
-			PROPERTY(m_nCPOutputVel,int32_t , 0x1dc);
-			PROPERTY(m_bNormalize,bool , 0x1e0);
-			PROPERTY(m_nCPOutputMag,int32_t , 0x1e4);
-			PROPERTY(m_nCPField,int32_t , 0x1e8);
-			PROPERTY(m_vecComparisonVelocity,particleslib::CParticleCollectionVecInput , 0x1f0);
+			PROPERTY(m_nCPInput,int32_t, 0x1d8);
+			PROPERTY(m_nCPOutputVel,int32_t, 0x1dc);
+			PROPERTY(m_bNormalize,bool, 0x1e0);
+			PROPERTY(m_nCPOutputMag,int32_t, 0x1e4);
+			PROPERTY(m_nCPField,int32_t, 0x1e8);
+			NESTED_PROPERTY(m_vecComparisonVelocity,particleslib::CParticleCollectionVecInput, 0x1f0);
 			S2_PAD(0x6D0);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetControlPointToCPVelocity) == 0x8A8, "C_OP_SetControlPointToCPVelocity size should be 0x8A8");

@@ -22,15 +22,15 @@ namespace CS2 {
 	namespace modellib {
 		class CFootCycleDefinition  {
 		public:
-			PROPERTY(m_vStancePositionMS,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_vMidpointPositionMS,GlobalTypes::Vector , 0xc);
-			PROPERTY(m_flStanceDirectionMS,float32 , 0x18);
-			PROPERTY(m_vToStrideStartPos,GlobalTypes::Vector , 0x1c);
-			PROPERTY(m_stanceCycle,modellib::CAnimCycle , 0x28);
-			PROPERTY(m_footLiftCycle,modellib::CFootCycle , 0x2c);
-			PROPERTY(m_footOffCycle,modellib::CFootCycle , 0x30);
-			PROPERTY(m_footStrikeCycle,modellib::CFootCycle , 0x34);
-			PROPERTY(m_footLandCycle,modellib::CFootCycle , 0x38);
+			PROPERTY(m_vStancePositionMS,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_vMidpointPositionMS,GlobalTypes::Vector, 0xc);
+			PROPERTY(m_flStanceDirectionMS,float32, 0x18);
+			PROPERTY(m_vToStrideStartPos,GlobalTypes::Vector, 0x1c);
+			NESTED_PROPERTY(m_stanceCycle,modellib::CAnimCycle, 0x28);
+			NESTED_PROPERTY(m_footLiftCycle,modellib::CFootCycle, 0x2c);
+			NESTED_PROPERTY(m_footOffCycle,modellib::CFootCycle, 0x30);
+			NESTED_PROPERTY(m_footStrikeCycle,modellib::CFootCycle, 0x34);
+			NESTED_PROPERTY(m_footLandCycle,modellib::CFootCycle, 0x38);
 			S2_PAD(0x3C);
 		};
 		//static_assert(sizeof(CS2::modellib::CFootCycleDefinition) == 0x3C, "CFootCycleDefinition size should be 0x3C");

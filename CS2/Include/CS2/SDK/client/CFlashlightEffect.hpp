@@ -25,19 +25,19 @@ namespace CS2 {
 	namespace client {
 		class CFlashlightEffect  {
 		public:
-			PROPERTY(m_bIsOn,bool , 0x10);
-			PROPERTY(m_bMuzzleFlashEnabled,bool , 0x20);
-			PROPERTY(m_flMuzzleFlashBrightness,float32 , 0x24);
-			PROPERTY(m_quatMuzzleFlashOrientation,GlobalTypes::Quaternion , 0x30);
-			PROPERTY(m_vecMuzzleFlashOrigin,GlobalTypes::Vector , 0x40);
-			PROPERTY(m_flFov,float32 , 0x4c);
-			PROPERTY(m_flFarZ,float32 , 0x50);
-			PROPERTY(m_flLinearAtten,float32 , 0x54);
-			PROPERTY(m_bCastsShadows,bool , 0x58);
-			PROPERTY(m_flCurrentPullBackDist,float32 , 0x5c);
+			PROPERTY(m_bIsOn,bool, 0x10);
+			PROPERTY(m_bMuzzleFlashEnabled,bool, 0x20);
+			PROPERTY(m_flMuzzleFlashBrightness,float32, 0x24);
+			PROPERTY(m_quatMuzzleFlashOrientation,GlobalTypes::Quaternion, 0x30);
+			PROPERTY(m_vecMuzzleFlashOrigin,GlobalTypes::Vector, 0x40);
+			PROPERTY(m_flFov,float32, 0x4c);
+			PROPERTY(m_flFarZ,float32, 0x50);
+			PROPERTY(m_flLinearAtten,float32, 0x54);
+			PROPERTY(m_bCastsShadows,bool, 0x58);
+			PROPERTY(m_flCurrentPullBackDist,float32, 0x5c);
 			PROPERTY(m_FlashlightTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x60);
 			PROPERTY(m_MuzzleFlashTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x68);
-			PROPERTY_ARRAY(m_textureName,char , 64 , 0x70);
+			PROPERTY_ARRAY(m_textureName,char, 64 , 0x70);
 			S2_PAD(0x2E0);
 		};
 		//static_assert(sizeof(CS2::client::CFlashlightEffect) == 0x2E0, "CFlashlightEffect size should be 0x2E0");

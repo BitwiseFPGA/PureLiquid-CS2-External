@@ -20,13 +20,13 @@ namespace CS2 {
 	namespace physicslib {
 		class FeNodeBase_t  {
 		public:
-			PROPERTY(nNode,uint16_t , 0x0);
-			PROPERTY_ARRAY(nDummy,uint16_t , 3 , 0x2);
-			PROPERTY(nNodeX0,uint16_t , 0x8);
-			PROPERTY(nNodeX1,uint16_t , 0xa);
-			PROPERTY(nNodeY0,uint16_t , 0xc);
-			PROPERTY(nNodeY1,uint16_t , 0xe);
-			PROPERTY(qAdjust,GlobalTypes::QuaternionStorage , 0x10);
+			PROPERTY(nNode,uint16_t, 0x0);
+			PROPERTY_ARRAY(nDummy,uint16_t, 3 , 0x2);
+			PROPERTY(nNodeX0,uint16_t, 0x8);
+			PROPERTY(nNodeX1,uint16_t, 0xa);
+			PROPERTY(nNodeY0,uint16_t, 0xc);
+			PROPERTY(nNodeY1,uint16_t, 0xe);
+			PROPERTY(qAdjust,GlobalTypes::QuaternionStorage, 0x10);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeNodeBase_t) == 0x20, "FeNodeBase_t size should be 0x20");

@@ -10,9 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/CSceneObjectData.hpp>
 #include <SDK/modellib/CRenderSkeleton.hpp>
 #include <SDK/modellib/DynamicMeshDeformParams_t.hpp>
-#include <SDK/modellib/CSceneObjectData.hpp>
+
 
 
 namespace CS2 {
@@ -30,11 +31,11 @@ namespace CS2 {
 		public:
 			PROPERTY(m_sceneObjects,GlobalTypes::CUtlLeanVectorFixedGrowable<modellib::CSceneObjectData>, 0x10);
 			PROPERTY(m_constraints,GlobalTypes::CUtlLeanVector<modellib::CBaseConstraint*>, 0xb8);
-			NESTED_PROPERTY(m_skeleton,modellib::CRenderSkeleton , 0xc8);
-			PROPERTY(m_bUseUV2ForCharting,bool , 0x1d4);
-			PROPERTY(m_bEmbeddedMapMesh,bool , 0x1d5);
-			PROPERTY(m_meshDeformParams,modellib::DynamicMeshDeformParams_t , 0x1f8);
-			PROPERTY(m_pGroomData,modellib::CRenderGroom* , 0x208);
+			NESTED_PROPERTY(m_skeleton,modellib::CRenderSkeleton, 0xc8);
+			PROPERTY(m_bUseUV2ForCharting,bool, 0x1d4);
+			PROPERTY(m_bEmbeddedMapMesh,bool, 0x1d5);
+			NESTED_PROPERTY(m_meshDeformParams,modellib::DynamicMeshDeformParams_t, 0x1f8);
+			PROPERTY(m_pGroomData,modellib::CRenderGroom*, 0x208);
 			S2_PAD(0x210);
 		};
 		//static_assert(sizeof(CS2::modellib::CRenderMesh) == 0x210, "CRenderMesh size should be 0x210");

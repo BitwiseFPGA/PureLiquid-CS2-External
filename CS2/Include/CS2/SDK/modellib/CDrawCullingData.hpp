@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace modellib {
 		class CDrawCullingData  {
 		public:
-			PROPERTY_ARRAY(m_ConeAxis,int8_t , 3 , 0x0);
-			PROPERTY(m_ConeCutoff,int8_t , 0x3);
+			PROPERTY_ARRAY(m_ConeAxis,int8_t, 3 , 0x0);
+			PROPERTY(m_ConeCutoff,int8_t, 0x3);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::modellib::CDrawCullingData) == 0x4, "CDrawCullingData size should be 0x4");

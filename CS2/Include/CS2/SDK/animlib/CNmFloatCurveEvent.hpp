@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animlib {
 		class CNmFloatCurveEvent : public CS2::animlib::CNmEvent {
 		public:
-			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol , 0x20);
-			PROPERTY(m_curve,GlobalTypes::CPiecewiseCurve , 0x28);
+			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol, 0x20);
+			PROPERTY(m_curve,GlobalTypes::CPiecewiseCurve, 0x28);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmFloatCurveEvent) == 0x68, "CNmFloatCurveEvent size should be 0x68");

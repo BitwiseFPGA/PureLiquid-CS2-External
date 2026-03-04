@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CEnvSoundscapeProxy : public CS2::server::CEnvSoundscape {
 		public:
-			PROPERTY(m_MainSoundscapeName,GlobalTypes::CUtlSymbolLarge* , 0x538);
+			PROPERTY(m_MainSoundscapeName,GlobalTypes::CUtlSymbolLarge*, 0x538);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::CEnvSoundscapeProxy) == 0x540, "CEnvSoundscapeProxy size should be 0x540");

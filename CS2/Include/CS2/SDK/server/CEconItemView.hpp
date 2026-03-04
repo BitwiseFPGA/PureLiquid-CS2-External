@@ -22,19 +22,19 @@ namespace CS2 {
 	namespace server {
 		class CEconItemView : public CS2::client::IEconItemInterface {
 		public:
-			PROPERTY(m_iItemDefinitionIndex,uint16_t , 0x38);
-			PROPERTY(m_iEntityQuality,int32_t , 0x3c);
-			PROPERTY(m_iEntityLevel,uint32_t , 0x40);
-			PROPERTY(m_iItemID,uint64_t , 0x48);
-			PROPERTY(m_iItemIDHigh,uint32_t , 0x50);
-			PROPERTY(m_iItemIDLow,uint32_t , 0x54);
-			PROPERTY(m_iAccountID,uint32_t , 0x58);
-			PROPERTY(m_iInventoryPosition,uint32_t , 0x5c);
-			PROPERTY(m_bInitialized,bool , 0x68);
-			PROPERTY(m_AttributeList,server::CAttributeList , 0x70);
-			PROPERTY(m_NetworkedDynamicAttributes,server::CAttributeList , 0xe8);
-			PROPERTY_ARRAY(m_szCustomName,char , 161 , 0x160);
-			PROPERTY_ARRAY(m_szCustomNameOverride,char , 161 , 0x201);
+			PROPERTY(m_iItemDefinitionIndex,uint16_t, 0x38);
+			PROPERTY(m_iEntityQuality,int32_t, 0x3c);
+			PROPERTY(m_iEntityLevel,uint32_t, 0x40);
+			PROPERTY(m_iItemID,uint64_t, 0x48);
+			PROPERTY(m_iItemIDHigh,uint32_t, 0x50);
+			PROPERTY(m_iItemIDLow,uint32_t, 0x54);
+			PROPERTY(m_iAccountID,uint32_t, 0x58);
+			PROPERTY(m_iInventoryPosition,uint32_t, 0x5c);
+			PROPERTY(m_bInitialized,bool, 0x68);
+			NESTED_PROPERTY(m_AttributeList,server::CAttributeList, 0x70);
+			NESTED_PROPERTY(m_NetworkedDynamicAttributes,server::CAttributeList, 0xe8);
+			PROPERTY_ARRAY(m_szCustomName,char, 161 , 0x160);
+			PROPERTY_ARRAY(m_szCustomNameOverride,char, 161 , 0x201);
 			S2_PAD(0x2A0);
 		};
 		//static_assert(sizeof(CS2::server::CEconItemView) == 0x2A8, "CEconItemView size should be 0x2A8");

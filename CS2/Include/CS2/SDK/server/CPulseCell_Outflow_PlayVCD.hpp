@@ -28,8 +28,8 @@ namespace CS2 {
 		class CPulseCell_Outflow_PlayVCD : public CS2::server::CPulseCell_Outflow_PlaySceneBase {
 		public:
 			PROPERTY(m_hChoreoScene,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCChoreoSceneResource>, 0xf0);
-			PROPERTY(m_OnPaused,pulse_runtime_lib::CPulse_OutflowConnection , 0xf8);
-			PROPERTY(m_OnResumed,pulse_runtime_lib::CPulse_OutflowConnection , 0x140);
+			NESTED_PROPERTY(m_OnPaused,pulse_runtime_lib::CPulse_OutflowConnection, 0xf8);
+			NESTED_PROPERTY(m_OnResumed,pulse_runtime_lib::CPulse_OutflowConnection, 0x140);
 			S2_PAD(0x98);
 		};
 		//static_assert(sizeof(CS2::server::CPulseCell_Outflow_PlayVCD) == 0x188, "CPulseCell_Outflow_PlayVCD size should be 0x188");

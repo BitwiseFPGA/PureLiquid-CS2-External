@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace server {
 		class CBodyComponentPoint : public CS2::server::CBodyComponent {
 		public:
-			PROPERTY(m_sceneNode,server::CGameSceneNode , 0x80);
+			NESTED_PROPERTY(m_sceneNode,server::CGameSceneNode, 0x80);
 			S2_PAD(0x138);
 		};
 		//static_assert(sizeof(CS2::server::CBodyComponentPoint) == 0x1B0, "CBodyComponentPoint size should be 0x1B0");

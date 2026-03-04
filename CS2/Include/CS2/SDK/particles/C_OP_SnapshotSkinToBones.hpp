@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SnapshotSkinToBones : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_bTransformNormals,bool , 0x1d0);
-			PROPERTY(m_bTransformRadii,bool , 0x1d1);
-			PROPERTY(m_nControlPointNumber,int32_t , 0x1d4);
-			PROPERTY(m_flLifeTimeFadeStart,float32 , 0x1d8);
-			PROPERTY(m_flLifeTimeFadeEnd,float32 , 0x1dc);
-			PROPERTY(m_flJumpThreshold,float32 , 0x1e0);
-			PROPERTY(m_flPrevPosScale,float32 , 0x1e4);
+			PROPERTY(m_bTransformNormals,bool, 0x1d0);
+			PROPERTY(m_bTransformRadii,bool, 0x1d1);
+			PROPERTY(m_nControlPointNumber,int32_t, 0x1d4);
+			PROPERTY(m_flLifeTimeFadeStart,float32, 0x1d8);
+			PROPERTY(m_flLifeTimeFadeEnd,float32, 0x1dc);
+			PROPERTY(m_flJumpThreshold,float32, 0x1e0);
+			PROPERTY(m_flPrevPosScale,float32, 0x1e4);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SnapshotSkinToBones) == 0x1E8, "C_OP_SnapshotSkinToBones size should be 0x1E8");

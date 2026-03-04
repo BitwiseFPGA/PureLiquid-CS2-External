@@ -11,14 +11,10 @@
 
 
 #include <SDK/resourcesystem/InfoForResourceTypeCEntityLump.hpp>
+#include <SDK/worldrenderer/EntityKeyValueData_t.hpp>
 
 
 
-namespace CS2 {
-	namespace worldrenderer {
-		class EntityKeyValueData_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,8 +22,8 @@ namespace CS2 {
 	namespace worldrenderer {
 		class PermEntityLumpData_t  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_childLumps,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandleCopyable<resourcesystem::InfoForResourceTypeCEntityLump>>, 0x10);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x8);
+			NESTED_PROPERTY(m_childLumps,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandleCopyable<resourcesystem::InfoForResourceTypeCEntityLump>>, 0x10);
 			PROPERTY(m_entityKeyValues,GlobalTypes::CUtlLeanVector<worldrenderer::EntityKeyValueData_t>, 0x28);
 			S2_PAD(0x38);
 		};

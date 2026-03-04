@@ -24,12 +24,12 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_PositionOffset : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_OffsetMin,particleslib::CPerParticleVecInput , 0x1d8);
-			PROPERTY(m_OffsetMax,particleslib::CPerParticleVecInput , 0x890);
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0xf48);
-			PROPERTY(m_bLocalCoords,bool , 0xfb0);
-			PROPERTY(m_bProportional,bool , 0xfb1);
-			PROPERTY(m_randomnessParameters,particles::CRandomNumberGeneratorParameters , 0xfb4);
+			NESTED_PROPERTY(m_OffsetMin,particleslib::CPerParticleVecInput, 0x1d8);
+			NESTED_PROPERTY(m_OffsetMax,particleslib::CPerParticleVecInput, 0x890);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0xf48);
+			PROPERTY(m_bLocalCoords,bool, 0xfb0);
+			PROPERTY(m_bProportional,bool, 0xfb1);
+			NESTED_PROPERTY(m_randomnessParameters,particles::CRandomNumberGeneratorParameters, 0xfb4);
 			S2_PAD(0xDE8);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_PositionOffset) == 0xFC0, "C_INIT_PositionOffset size should be 0xFC0");

@@ -20,12 +20,12 @@ namespace CS2 {
 	namespace modellib {
 		class CConstraintTarget  {
 		public:
-			PROPERTY(m_qOffset,GlobalTypes::Quaternion , 0x20);
-			PROPERTY(m_vOffset,GlobalTypes::Vector , 0x30);
-			PROPERTY(m_nBoneHash,uint32_t , 0x3c);
-			PROPERTY(m_sName,GlobalTypes::CUtlString* , 0x40);
-			PROPERTY(m_flWeight,float32 , 0x48);
-			PROPERTY(m_bIsAttachment,bool , 0x59);
+			PROPERTY(m_qOffset,GlobalTypes::Quaternion, 0x20);
+			PROPERTY(m_vOffset,GlobalTypes::Vector, 0x30);
+			PROPERTY(m_nBoneHash,uint32_t, 0x3c);
+			PROPERTY(m_sName,GlobalTypes::CUtlString*, 0x40);
+			PROPERTY(m_flWeight,float32, 0x48);
+			PROPERTY(m_bIsAttachment,bool, 0x59);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::modellib::CConstraintTarget) == 0x60, "CConstraintTarget size should be 0x60");

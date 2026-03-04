@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FeNodeIntegrator_t  {
 		public:
-			PROPERTY(flPointDamping,float32 , 0x0);
-			PROPERTY(flAnimationForceAttraction,float32 , 0x4);
-			PROPERTY(flAnimationVertexAttraction,float32 , 0x8);
-			PROPERTY(flGravity,float32 , 0xc);
+			PROPERTY(flPointDamping,float32, 0x0);
+			PROPERTY(flAnimationForceAttraction,float32, 0x4);
+			PROPERTY(flAnimationVertexAttraction,float32, 0x8);
+			PROPERTY(flGravity,float32, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeNodeIntegrator_t) == 0x10, "FeNodeIntegrator_t size should be 0x10");

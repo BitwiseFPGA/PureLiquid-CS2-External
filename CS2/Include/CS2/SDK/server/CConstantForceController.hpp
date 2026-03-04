@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace server {
 		class CConstantForceController  {
 		public:
-			PROPERTY(m_linear,GlobalTypes::Vector , 0xc);
-			PROPERTY(m_angular,GlobalTypes::RotationVector , 0x18);
-			PROPERTY(m_linearSave,GlobalTypes::Vector , 0x24);
-			PROPERTY(m_angularSave,GlobalTypes::RotationVector , 0x30);
+			PROPERTY(m_linear,GlobalTypes::Vector, 0xc);
+			PROPERTY(m_angular,GlobalTypes::RotationVector, 0x18);
+			PROPERTY(m_linearSave,GlobalTypes::Vector, 0x24);
+			PROPERTY(m_angularSave,GlobalTypes::RotationVector, 0x30);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::server::CConstantForceController) == 0x40, "CConstantForceController size should be 0x40");

@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class Relationship_t  {
 		public:
-			PROPERTY(disposition,client::Disposition_t , 0x0);
-			PROPERTY(priority,int32_t , 0x4);
+			PROPERTY(disposition,client::Disposition_t, 0x0);
+			PROPERTY(priority,int32_t, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::Relationship_t) == 0x8, "Relationship_t size should be 0x8");

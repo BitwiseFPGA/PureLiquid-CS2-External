@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace physicslib {
 		class RnCapsule_t  {
 		public:
-			PROPERTY_ARRAY(m_vCenter,GlobalTypes::Vector , 2 , 0x0);
-			PROPERTY(m_flRadius,float32 , 0x18);
+			PROPERTY_ARRAY(m_vCenter,GlobalTypes::Vector, 2 , 0x0);
+			PROPERTY(m_flRadius,float32, 0x18);
 			S2_PAD(0x1C);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnCapsule_t) == 0x1C, "RnCapsule_t size should be 0x1C");

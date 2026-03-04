@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_VelocityDecay : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_flMinVelocity,float32 , 0x1d0);
+			PROPERTY(m_flMinVelocity,float32, 0x1d0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_VelocityDecay) == 0x1D8, "C_OP_VelocityDecay size should be 0x1D8");

@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerBlender : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
 		public:
-			PROPERTY(m_firstSound,soundsystem_voicecontainers::CSoundContainerReference , 0xa8);
-			PROPERTY(m_secondSound,soundsystem_voicecontainers::CSoundContainerReference , 0xc0);
-			PROPERTY(m_flBlendFactor,float32 , 0xd8);
+			NESTED_PROPERTY(m_firstSound,soundsystem_voicecontainers::CSoundContainerReference, 0xa8);
+			NESTED_PROPERTY(m_secondSound,soundsystem_voicecontainers::CSoundContainerReference, 0xc0);
+			PROPERTY(m_flBlendFactor,float32, 0xd8);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerBlender) == 0xE0, "CVoiceContainerBlender size should be 0xE0");

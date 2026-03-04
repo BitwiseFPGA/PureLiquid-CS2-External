@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimDecoder  {
 		public:
-			PROPERTY(m_szName,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_nVersion,int32_t , 0x10);
-			PROPERTY(m_nType,int32_t , 0x14);
+			PROPERTY(m_szName,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_nVersion,int32_t, 0x10);
+			PROPERTY(m_nType,int32_t, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimDecoder) == 0x18, "CAnimDecoder size should be 0x18");

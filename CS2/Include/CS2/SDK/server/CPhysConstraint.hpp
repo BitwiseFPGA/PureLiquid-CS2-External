@@ -27,19 +27,19 @@ namespace CS2 {
 	namespace server {
 		class CPhysConstraint : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_nameAttach1,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
-			PROPERTY(m_nameAttach2,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
+			PROPERTY(m_nameAttach1,GlobalTypes::CUtlSymbolLarge*, 0x4b0);
+			PROPERTY(m_nameAttach2,GlobalTypes::CUtlSymbolLarge*, 0x4b8);
 			PROPERTY(m_hAttach1,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c0);
 			PROPERTY(m_hAttach2,GlobalTypes::CHandle<server::CBaseEntity>, 0x4c4);
-			PROPERTY(m_nameAttachment1,GlobalTypes::CUtlSymbolLarge* , 0x4c8);
-			PROPERTY(m_nameAttachment2,GlobalTypes::CUtlSymbolLarge* , 0x4d0);
-			PROPERTY(m_breakSound,GlobalTypes::CUtlSymbolLarge* , 0x4d8);
-			PROPERTY(m_forceLimit,float32 , 0x4e0);
-			PROPERTY(m_torqueLimit,float32 , 0x4e4);
-			PROPERTY(m_minTeleportDistance,float32 , 0x4e8);
-			PROPERTY(m_bSnapObjectPositions,bool , 0x4ec);
-			PROPERTY(m_bTreatEntity1AsInfiniteMass,bool , 0x4ed);
-			PROPERTY(m_OnBreak,entity2::CEntityIOOutput , 0x4f0);
+			PROPERTY(m_nameAttachment1,GlobalTypes::CUtlSymbolLarge*, 0x4c8);
+			PROPERTY(m_nameAttachment2,GlobalTypes::CUtlSymbolLarge*, 0x4d0);
+			PROPERTY(m_breakSound,GlobalTypes::CUtlSymbolLarge*, 0x4d8);
+			PROPERTY(m_forceLimit,float32, 0x4e0);
+			PROPERTY(m_torqueLimit,float32, 0x4e4);
+			PROPERTY(m_minTeleportDistance,float32, 0x4e8);
+			PROPERTY(m_bSnapObjectPositions,bool, 0x4ec);
+			PROPERTY(m_bTreatEntity1AsInfiniteMass,bool, 0x4ed);
+			NESTED_PROPERTY(m_OnBreak,entity2::CEntityIOOutput, 0x4f0);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::server::CPhysConstraint) == 0x508, "CPhysConstraint size should be 0x508");

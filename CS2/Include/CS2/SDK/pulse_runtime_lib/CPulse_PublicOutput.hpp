@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/pulse_runtime_lib/CPulseRuntimeMethodArg.hpp>
 
 
 
-namespace CS2 {
-	namespace pulse_runtime_lib {
-		class CPulseRuntimeMethodArg;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulse_PublicOutput  {
 		public:
-			PROPERTY(m_Name,GlobalTypes::PulseSymbol_t , 0x0);
-			PROPERTY(m_Description,GlobalTypes::CUtlString* , 0x10);
+			PROPERTY(m_Name,GlobalTypes::PulseSymbol_t, 0x0);
+			PROPERTY(m_Description,GlobalTypes::CUtlString*, 0x10);
 			PROPERTY(m_Args,GlobalTypes::CUtlLeanVector<pulse_runtime_lib::CPulseRuntimeMethodArg>, 0x18);
 			S2_PAD(0x28);
 		};

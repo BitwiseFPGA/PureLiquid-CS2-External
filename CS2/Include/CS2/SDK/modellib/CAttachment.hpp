@@ -20,14 +20,14 @@ namespace CS2 {
 	namespace modellib {
 		class CAttachment  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY_ARRAY(m_influenceNames,GlobalTypes::CUtlString* , 3 , 0x8);
-			PROPERTY_ARRAY(m_vInfluenceRotations,GlobalTypes::Quaternion , 3 , 0x20);
-			PROPERTY_ARRAY(m_vInfluenceOffsets,GlobalTypes::Vector , 3 , 0x50);
-			PROPERTY_ARRAY(m_influenceWeights,float32 , 3 , 0x74);
-			PROPERTY_ARRAY(m_bInfluenceRootTransform,bool , 3 , 0x80);
-			PROPERTY(m_nInfluences,uint8_t , 0x83);
-			PROPERTY(m_bIgnoreRotation,bool , 0x84);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY_ARRAY(m_influenceNames,GlobalTypes::CUtlString*, 3 , 0x8);
+			PROPERTY_ARRAY(m_vInfluenceRotations,GlobalTypes::Quaternion, 3 , 0x20);
+			PROPERTY_ARRAY(m_vInfluenceOffsets,GlobalTypes::Vector, 3 , 0x50);
+			PROPERTY_ARRAY(m_influenceWeights,float32, 3 , 0x74);
+			PROPERTY_ARRAY(m_bInfluenceRootTransform,bool, 3 , 0x80);
+			PROPERTY(m_nInfluences,uint8_t, 0x83);
+			PROPERTY(m_bIgnoreRotation,bool, 0x84);
 			S2_PAD(0x90);
 		};
 		//static_assert(sizeof(CS2::modellib::CAttachment) == 0x90, "CAttachment size should be 0x90");

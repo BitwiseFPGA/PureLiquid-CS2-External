@@ -24,12 +24,12 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_CreateSequentialPathV2 : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_fMaxDistance,particleslib::CPerParticleFloatInput , 0x1d8);
-			PROPERTY(m_flNumToAssign,particleslib::CParticleCollectionFloatInput , 0x348);
-			PROPERTY(m_bLoop,bool , 0x4b8);
-			PROPERTY(m_bCPPairs,bool , 0x4b9);
-			PROPERTY(m_bSaveOffset,bool , 0x4ba);
-			PROPERTY(m_PathParams,particles::CPathParameters , 0x4c0);
+			NESTED_PROPERTY(m_fMaxDistance,particleslib::CPerParticleFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_flNumToAssign,particleslib::CParticleCollectionFloatInput, 0x348);
+			PROPERTY(m_bLoop,bool, 0x4b8);
+			PROPERTY(m_bCPPairs,bool, 0x4b9);
+			PROPERTY(m_bSaveOffset,bool, 0x4ba);
+			NESTED_PROPERTY(m_PathParams,particles::CPathParameters, 0x4c0);
 			S2_PAD(0x338);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_CreateSequentialPathV2) == 0x510, "C_INIT_CreateSequentialPathV2 size should be 0x510");

@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace modellib {
 		class AnimNodeOutputID  {
 		public:
-			PROPERTY(m_id,uint32_t , 0x0);
+			PROPERTY(m_id,uint32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::modellib::AnimNodeOutputID) == 0x4, "AnimNodeOutputID size should be 0x4");

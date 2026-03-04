@@ -10,12 +10,12 @@
 #endif
 
 
+#include <SDK/server/CEconItemAttribute.hpp>
 
 
 
 namespace CS2 {
 	namespace server {
-		class CEconItemAttribute;
 		class CAttributeManager;
 	}
 }
@@ -27,7 +27,7 @@ namespace CS2 {
 		class CAttributeList  {
 		public:
 			PROPERTY(m_Attributes,server::CUtlVectorEmbeddedNetworkVar<server::CEconItemAttribute>, 0x8);
-			PROPERTY(m_pManager,server::CAttributeManager* , 0x70);
+			PROPERTY(m_pManager,server::CAttributeManager*, 0x70);
 			S2_PAD(0x78);
 		};
 		//static_assert(sizeof(CS2::server::CAttributeList) == 0x78, "CAttributeList size should be 0x78");

@@ -26,15 +26,15 @@ namespace CS2 {
 	namespace server {
 		class CPathParticleRope : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_bStartActive,bool , 0x4b0);
-			PROPERTY(m_flMaxSimulationTime,float32 , 0x4b4);
-			PROPERTY(m_iszEffectName,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
+			PROPERTY(m_bStartActive,bool, 0x4b0);
+			PROPERTY(m_flMaxSimulationTime,float32, 0x4b4);
+			PROPERTY(m_iszEffectName,GlobalTypes::CUtlSymbolLarge*, 0x4b8);
 			PROPERTY(m_PathNodes_Name,GlobalTypes::CUtlVector<GlobalTypes::CUtlSymbolLarge>, 0x4c0);
-			PROPERTY(m_flParticleSpacing,float32 , 0x4d8);
-			PROPERTY(m_flSlack,float32 , 0x4dc);
-			PROPERTY(m_flRadius,float32 , 0x4e0);
-			PROPERTY(m_ColorTint,GlobalTypes::Color , 0x4e4);
-			PROPERTY(m_nEffectState,int32_t , 0x4e8);
+			PROPERTY(m_flParticleSpacing,float32, 0x4d8);
+			PROPERTY(m_flSlack,float32, 0x4dc);
+			PROPERTY(m_flRadius,float32, 0x4e0);
+			PROPERTY(m_ColorTint,GlobalTypes::Color, 0x4e4);
+			PROPERTY(m_nEffectState,int32_t, 0x4e8);
 			PROPERTY(m_iEffectIndex,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>, 0x4f0);
 			PROPERTY(m_PathNodes_Position,GlobalTypes::CNetworkUtlVectorBase<GlobalTypes::Vector>, 0x4f8);
 			PROPERTY(m_PathNodes_TangentIn,GlobalTypes::CNetworkUtlVectorBase<GlobalTypes::Vector>, 0x510);

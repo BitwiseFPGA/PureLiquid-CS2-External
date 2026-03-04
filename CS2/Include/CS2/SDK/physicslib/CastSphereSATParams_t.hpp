@@ -25,12 +25,12 @@ namespace CS2 {
 	namespace physicslib {
 		class CastSphereSATParams_t  {
 		public:
-			PROPERTY(m_vRayStart,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_vRayDelta,GlobalTypes::Vector , 0xc);
-			PROPERTY(m_flRadius,float32 , 0x18);
-			PROPERTY(m_flMaxFraction,float32 , 0x1c);
-			PROPERTY(m_flScale,float32 , 0x20);
-			PROPERTY(m_pHull,physicslib::RnHull_t* , 0x28);
+			PROPERTY(m_vRayStart,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_vRayDelta,GlobalTypes::Vector, 0xc);
+			PROPERTY(m_flRadius,float32, 0x18);
+			PROPERTY(m_flMaxFraction,float32, 0x1c);
+			PROPERTY(m_flScale,float32, 0x20);
+			PROPERTY(m_pHull,physicslib::RnHull_t*, 0x28);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::physicslib::CastSphereSATParams_t) == 0x30, "CastSphereSATParams_t size should be 0x30");

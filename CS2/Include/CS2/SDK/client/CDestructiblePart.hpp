@@ -11,14 +11,10 @@
 
 
 #include <SDK/client/HitGroup_t.hpp>
+#include <SDK/client/CDestructiblePart_DamageLevel.hpp>
 
 
 
-namespace CS2 {
-	namespace client {
-		class CDestructiblePart_DamageLevel;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,13 +22,13 @@ namespace CS2 {
 	namespace client {
 		class CDestructiblePart  {
 		public:
-			PROPERTY(m_DebugName,GlobalTypes::CGlobalSymbol , 0x0);
-			PROPERTY(m_nHitGroup,client::HitGroup_t , 0x8);
-			PROPERTY(m_bDisableHitGroupWhenDestroyed,bool , 0xc);
-			PROPERTY(m_nOtherHitgroupsToDestroyWhenFullyDestructed,GlobalTypes::CUtlVector< HitGroup_t >, 0x10);
-			PROPERTY(m_bOnlyDestroyWhenGibbing,bool , 0x28);
-			PROPERTY(m_sBodyGroupName,GlobalTypes::CGlobalSymbol , 0x30);
-			PROPERTY(m_DamageLevels,GlobalTypes::CUtlVector<client::CDestructiblePart_DamageLevel>, 0x38);
+			PROPERTY(m_DebugName,GlobalTypes::CGlobalSymbol, 0x0);
+			PROPERTY(m_nHitGroup,client::HitGroup_t, 0x8);
+			PROPERTY(m_bDisableHitGroupWhenDestroyed,bool, 0xc);
+			NESTED_PROPERTY(m_nOtherHitgroupsToDestroyWhenFullyDestructed,GlobalTypes::CUtlVector< HitGroup_t >, 0x10);
+			PROPERTY(m_bOnlyDestroyWhenGibbing,bool, 0x28);
+			PROPERTY(m_sBodyGroupName,GlobalTypes::CGlobalSymbol, 0x30);
+			NESTED_PROPERTY(m_DamageLevels,GlobalTypes::CUtlVector<client::CDestructiblePart_DamageLevel>, 0x38);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::client::CDestructiblePart) == 0x50, "CDestructiblePart size should be 0x50");

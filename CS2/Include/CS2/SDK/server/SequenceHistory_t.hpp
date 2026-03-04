@@ -23,12 +23,12 @@ namespace CS2 {
 	namespace server {
 		class SequenceHistory_t  {
 		public:
-			PROPERTY(m_hSequence,animationsystem::HSequence , 0x0);
-			PROPERTY(m_flSeqStartTime,entity2::GameTime_t , 0x4);
-			PROPERTY(m_flSeqFixedCycle,float32 , 0x8);
-			PROPERTY(m_nSeqLoopMode,client::AnimLoopMode_t , 0xc);
-			PROPERTY(m_flPlaybackRate,float32 , 0x10);
-			PROPERTY(m_flCyclesPerSecond,float32 , 0x14);
+			NESTED_PROPERTY(m_hSequence,animationsystem::HSequence, 0x0);
+			NESTED_PROPERTY(m_flSeqStartTime,entity2::GameTime_t, 0x4);
+			PROPERTY(m_flSeqFixedCycle,float32, 0x8);
+			PROPERTY(m_nSeqLoopMode,client::AnimLoopMode_t, 0xc);
+			PROPERTY(m_flPlaybackRate,float32, 0x10);
+			PROPERTY(m_flCyclesPerSecond,float32, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::SequenceHistory_t) == 0x18, "SequenceHistory_t size should be 0x18");

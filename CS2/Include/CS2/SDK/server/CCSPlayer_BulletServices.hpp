@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayer_BulletServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY(m_totalHitsOnServer,int32_t , 0x48);
+			PROPERTY(m_totalHitsOnServer,int32_t, 0x48);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::server::CCSPlayer_BulletServices) == 0x70, "CCSPlayer_BulletServices size should be 0x70");

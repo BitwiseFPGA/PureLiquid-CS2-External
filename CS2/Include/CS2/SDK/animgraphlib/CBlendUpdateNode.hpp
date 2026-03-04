@@ -11,6 +11,7 @@
 
 
 #include <SDK/animgraphlib/CAnimUpdateNodeBase.hpp>
+#include <SDK/animgraphlib/CAnimUpdateNodeRef.hpp>
 #include <SDK/animgraphlib/AnimValueSource.hpp>
 #include <SDK/animgraphlib/LinearRootMotionBlendMode_t.hpp>
 #include <SDK/animgraphlib/CAnimParamHandle.hpp>
@@ -19,11 +20,6 @@
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CAnimUpdateNodeRef;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -31,19 +27,19 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CBlendUpdateNode : public CS2::animgraphlib::CAnimUpdateNodeBase {
 		public:
-			PROPERTY(m_children,GlobalTypes::CUtlVector<animgraphlib::CAnimUpdateNodeRef>, 0x60);
-			PROPERTY(m_sortedOrder,GlobalTypes::CUtlVector< uint8 >, 0x78);
-			PROPERTY(m_targetValues,GlobalTypes::CUtlVector< float32 >, 0x90);
-			PROPERTY(m_blendValueSource,animgraphlib::AnimValueSource , 0xac);
-			PROPERTY(m_eLinearRootMotionBlendMode,animgraphlib::LinearRootMotionBlendMode_t , 0xb0);
-			PROPERTY(m_paramIndex,animgraphlib::CAnimParamHandle , 0xb4);
-			PROPERTY(m_damping,animgraphlib::CAnimInputDamping , 0xb8);
-			PROPERTY(m_blendKeyType,animgraphlib::BlendKeyType , 0xd0);
-			PROPERTY(m_bLockBlendOnReset,bool , 0xd4);
-			PROPERTY(m_bSyncCycles,bool , 0xd5);
-			PROPERTY(m_bLoop,bool , 0xd6);
-			PROPERTY(m_bLockWhenWaning,bool , 0xd7);
-			PROPERTY(m_bIsAngle,bool , 0xd8);
+			NESTED_PROPERTY(m_children,GlobalTypes::CUtlVector<animgraphlib::CAnimUpdateNodeRef>, 0x60);
+			NESTED_PROPERTY(m_sortedOrder,GlobalTypes::CUtlVector< uint8 >, 0x78);
+			NESTED_PROPERTY(m_targetValues,GlobalTypes::CUtlVector< float32 >, 0x90);
+			PROPERTY(m_blendValueSource,animgraphlib::AnimValueSource, 0xac);
+			PROPERTY(m_eLinearRootMotionBlendMode,animgraphlib::LinearRootMotionBlendMode_t, 0xb0);
+			NESTED_PROPERTY(m_paramIndex,animgraphlib::CAnimParamHandle, 0xb4);
+			NESTED_PROPERTY(m_damping,animgraphlib::CAnimInputDamping, 0xb8);
+			PROPERTY(m_blendKeyType,animgraphlib::BlendKeyType, 0xd0);
+			PROPERTY(m_bLockBlendOnReset,bool, 0xd4);
+			PROPERTY(m_bSyncCycles,bool, 0xd5);
+			PROPERTY(m_bLoop,bool, 0xd6);
+			PROPERTY(m_bLockWhenWaning,bool, 0xd7);
+			PROPERTY(m_bIsAngle,bool, 0xd8);
 			S2_PAD(0x88);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CBlendUpdateNode) == 0xE0, "CBlendUpdateNode size should be 0xE0");

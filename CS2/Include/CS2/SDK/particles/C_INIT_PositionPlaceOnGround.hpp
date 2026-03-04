@@ -25,21 +25,21 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_PositionPlaceOnGround : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_flOffset,particleslib::CPerParticleFloatInput , 0x1d8);
-			PROPERTY(m_flMaxTraceLength,particleslib::CPerParticleFloatInput , 0x348);
-			PROPERTY_ARRAY(m_CollisionGroupName,char , 128 , 0x4b8);
-			PROPERTY(m_nTraceSet,particles::ParticleTraceSet_t , 0x538);
-			PROPERTY(m_nTraceMissBehavior,particles::ParticleTraceMissBehavior_t , 0x548);
-			PROPERTY(m_bIncludeWater,bool , 0x54c);
-			PROPERTY(m_bSetNormal,bool , 0x54d);
-			PROPERTY(m_nAttribute,particles::ParticleAttributeIndex_t , 0x550);
-			PROPERTY(m_bSetPXYZOnly,bool , 0x554);
-			PROPERTY(m_bTraceAlongNormal,bool , 0x555);
-			PROPERTY(m_nTraceDirectionAttribute,particles::ParticleAttributeIndex_t , 0x558);
-			PROPERTY(m_bOffsetonColOnly,bool , 0x55c);
-			PROPERTY(m_flOffsetByRadiusFactor,float32 , 0x560);
-			PROPERTY(m_nPreserveOffsetCP,int32_t , 0x564);
-			PROPERTY(m_nIgnoreCP,int32_t , 0x568);
+			NESTED_PROPERTY(m_flOffset,particleslib::CPerParticleFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_flMaxTraceLength,particleslib::CPerParticleFloatInput, 0x348);
+			PROPERTY_ARRAY(m_CollisionGroupName,char, 128 , 0x4b8);
+			PROPERTY(m_nTraceSet,particles::ParticleTraceSet_t, 0x538);
+			PROPERTY(m_nTraceMissBehavior,particles::ParticleTraceMissBehavior_t, 0x548);
+			PROPERTY(m_bIncludeWater,bool, 0x54c);
+			PROPERTY(m_bSetNormal,bool, 0x54d);
+			NESTED_PROPERTY(m_nAttribute,particles::ParticleAttributeIndex_t, 0x550);
+			PROPERTY(m_bSetPXYZOnly,bool, 0x554);
+			PROPERTY(m_bTraceAlongNormal,bool, 0x555);
+			NESTED_PROPERTY(m_nTraceDirectionAttribute,particles::ParticleAttributeIndex_t, 0x558);
+			PROPERTY(m_bOffsetonColOnly,bool, 0x55c);
+			PROPERTY(m_flOffsetByRadiusFactor,float32, 0x560);
+			PROPERTY(m_nPreserveOffsetCP,int32_t, 0x564);
+			PROPERTY(m_nIgnoreCP,int32_t, 0x568);
 			S2_PAD(0x398);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_PositionPlaceOnGround) == 0x570, "C_INIT_PositionPlaceOnGround size should be 0x570");

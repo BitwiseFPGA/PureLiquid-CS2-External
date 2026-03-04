@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace modellib {
 		class CPhysSurfacePropertiesVehicle  {
 		public:
-			PROPERTY(m_wheelDrag,float32 , 0x0);
-			PROPERTY(m_wheelFrictionScale,float32 , 0x4);
+			PROPERTY(m_wheelDrag,float32, 0x0);
+			PROPERTY(m_wheelFrictionScale,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::modellib::CPhysSurfacePropertiesVehicle) == 0x8, "CPhysSurfacePropertiesVehicle size should be 0x8");

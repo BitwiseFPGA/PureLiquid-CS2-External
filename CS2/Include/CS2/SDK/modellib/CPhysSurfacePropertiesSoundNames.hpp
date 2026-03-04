@@ -20,18 +20,18 @@ namespace CS2 {
 	namespace modellib {
 		class CPhysSurfacePropertiesSoundNames  {
 		public:
-			PROPERTY(m_impactSoft,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_impactHard,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_scrapeSmooth,GlobalTypes::CUtlString* , 0x10);
-			PROPERTY(m_scrapeRough,GlobalTypes::CUtlString* , 0x18);
-			PROPERTY(m_bulletImpact,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_rolling,GlobalTypes::CUtlString* , 0x28);
-			PROPERTY(m_break,GlobalTypes::CUtlString* , 0x30);
-			PROPERTY(m_strain,GlobalTypes::CUtlString* , 0x38);
-			PROPERTY(m_meleeImpact,GlobalTypes::CUtlString* , 0x40);
-			PROPERTY(m_pushOff,GlobalTypes::CUtlString* , 0x48);
-			PROPERTY(m_skidStop,GlobalTypes::CUtlString* , 0x50);
-			PROPERTY(m_resonant,GlobalTypes::CUtlString* , 0x58);
+			PROPERTY(m_impactSoft,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_impactHard,GlobalTypes::CUtlString*, 0x8);
+			PROPERTY(m_scrapeSmooth,GlobalTypes::CUtlString*, 0x10);
+			PROPERTY(m_scrapeRough,GlobalTypes::CUtlString*, 0x18);
+			PROPERTY(m_bulletImpact,GlobalTypes::CUtlString*, 0x20);
+			PROPERTY(m_rolling,GlobalTypes::CUtlString*, 0x28);
+			PROPERTY(m_break,GlobalTypes::CUtlString*, 0x30);
+			PROPERTY(m_strain,GlobalTypes::CUtlString*, 0x38);
+			PROPERTY(m_meleeImpact,GlobalTypes::CUtlString*, 0x40);
+			PROPERTY(m_pushOff,GlobalTypes::CUtlString*, 0x48);
+			PROPERTY(m_skidStop,GlobalTypes::CUtlString*, 0x50);
+			PROPERTY(m_resonant,GlobalTypes::CUtlString*, 0x58);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::modellib::CPhysSurfacePropertiesSoundNames) == 0x60, "CPhysSurfacePropertiesSoundNames size should be 0x60");

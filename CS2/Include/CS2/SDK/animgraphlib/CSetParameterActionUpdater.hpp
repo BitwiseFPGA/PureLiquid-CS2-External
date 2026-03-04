@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CSetParameterActionUpdater : public CS2::animgraphlib::CAnimActionUpdater {
 		public:
-			PROPERTY(m_hParam,animgraphlib::CAnimParamHandle , 0x18);
-			PROPERTY(m_value,GlobalTypes::CAnimVariant , 0x1a);
+			NESTED_PROPERTY(m_hParam,animgraphlib::CAnimParamHandle, 0x18);
+			PROPERTY(m_value,GlobalTypes::CAnimVariant, 0x1a);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CSetParameterActionUpdater) == 0x30, "CSetParameterActionUpdater size should be 0x30");

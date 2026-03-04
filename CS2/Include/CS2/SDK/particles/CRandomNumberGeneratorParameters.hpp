@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace particles {
 		class CRandomNumberGeneratorParameters  {
 		public:
-			PROPERTY(m_bDistributeEvenly,bool , 0x0);
-			PROPERTY(m_nSeed,int32_t , 0x4);
+			PROPERTY(m_bDistributeEvenly,bool, 0x0);
+			PROPERTY(m_nSeed,int32_t, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::particles::CRandomNumberGeneratorParameters) == 0x8, "CRandomNumberGeneratorParameters size should be 0x8");

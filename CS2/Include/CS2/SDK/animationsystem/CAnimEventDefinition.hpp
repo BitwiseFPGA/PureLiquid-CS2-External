@@ -20,13 +20,13 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimEventDefinition  {
 		public:
-			PROPERTY(m_nFrame,int32_t , 0x8);
-			PROPERTY(m_nEndFrame,int32_t , 0xc);
-			PROPERTY(m_flCycle,float32 , 0x10);
-			PROPERTY(m_flDuration,float32 , 0x14);
-			PROPERTY(m_EventData,GlobalTypes::KeyValues3 , 0x18);
-			PROPERTY(m_sLegacyOptions,GlobalTypes::CBufferString , 0x28);
-			PROPERTY(m_sEventName,GlobalTypes::CGlobalSymbol , 0x38);
+			PROPERTY(m_nFrame,int32_t, 0x8);
+			PROPERTY(m_nEndFrame,int32_t, 0xc);
+			PROPERTY(m_flCycle,float32, 0x10);
+			PROPERTY(m_flDuration,float32, 0x14);
+			PROPERTY(m_EventData,GlobalTypes::KeyValues3, 0x18);
+			PROPERTY(m_sLegacyOptions,GlobalTypes::CBufferString, 0x28);
+			PROPERTY(m_sEventName,GlobalTypes::CGlobalSymbol, 0x38);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimEventDefinition) == 0x40, "CAnimEventDefinition size should be 0x40");

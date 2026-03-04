@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FeNodeWindBase_t  {
 		public:
-			PROPERTY(nNodeX0,uint16_t , 0x0);
-			PROPERTY(nNodeX1,uint16_t , 0x2);
-			PROPERTY(nNodeY0,uint16_t , 0x4);
-			PROPERTY(nNodeY1,uint16_t , 0x6);
+			PROPERTY(nNodeX0,uint16_t, 0x0);
+			PROPERTY(nNodeX1,uint16_t, 0x2);
+			PROPERTY(nNodeY0,uint16_t, 0x4);
+			PROPERTY(nNodeY1,uint16_t, 0x6);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeNodeWindBase_t) == 0x8, "FeNodeWindBase_t size should be 0x8");

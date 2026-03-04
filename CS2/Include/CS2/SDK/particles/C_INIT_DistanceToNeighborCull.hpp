@@ -24,13 +24,13 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_DistanceToNeighborCull : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_flDistance,particleslib::CPerParticleFloatInput , 0x1d8);
-			PROPERTY(m_bIncludeRadii,bool , 0x348);
-			PROPERTY(m_flLifespanOverlap,particleslib::CPerParticleFloatInput , 0x350);
-			PROPERTY(m_nFieldModify,particles::ParticleAttributeIndex_t , 0x4c0);
-			PROPERTY(m_flModify,particleslib::CPerParticleFloatInput , 0x4c8);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x638);
-			PROPERTY(m_bUseNeighbor,bool , 0x63c);
+			NESTED_PROPERTY(m_flDistance,particleslib::CPerParticleFloatInput, 0x1d8);
+			PROPERTY(m_bIncludeRadii,bool, 0x348);
+			NESTED_PROPERTY(m_flLifespanOverlap,particleslib::CPerParticleFloatInput, 0x350);
+			NESTED_PROPERTY(m_nFieldModify,particles::ParticleAttributeIndex_t, 0x4c0);
+			NESTED_PROPERTY(m_flModify,particleslib::CPerParticleFloatInput, 0x4c8);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x638);
+			PROPERTY(m_bUseNeighbor,bool, 0x63c);
 			S2_PAD(0x468);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_DistanceToNeighborCull) == 0x640, "C_INIT_DistanceToNeighborCull size should be 0x640");

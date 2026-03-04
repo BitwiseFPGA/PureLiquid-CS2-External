@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace server {
 		class CTriggerActiveWeaponDetect : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_OnTouchedActiveWeapon,entity2::CEntityIOOutput , 0x890);
-			PROPERTY(m_iszWeaponClassName,GlobalTypes::CUtlSymbolLarge* , 0x8a8);
+			NESTED_PROPERTY(m_OnTouchedActiveWeapon,entity2::CEntityIOOutput, 0x890);
+			PROPERTY(m_iszWeaponClassName,GlobalTypes::CUtlSymbolLarge*, 0x8a8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::CTriggerActiveWeaponDetect) == 0x8B0, "CTriggerActiveWeaponDetect size should be 0x8B0");

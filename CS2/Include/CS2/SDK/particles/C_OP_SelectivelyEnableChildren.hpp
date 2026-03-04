@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SelectivelyEnableChildren : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nChildGroupID,particleslib::CParticleCollectionFloatInput , 0x1d8);
-			PROPERTY(m_nFirstChild,particleslib::CParticleCollectionFloatInput , 0x348);
-			PROPERTY(m_nNumChildrenToEnable,particleslib::CParticleCollectionFloatInput , 0x4b8);
-			PROPERTY(m_bPlayEndcapOnStop,bool , 0x628);
-			PROPERTY(m_bDestroyImmediately,bool , 0x629);
+			NESTED_PROPERTY(m_nChildGroupID,particleslib::CParticleCollectionFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_nFirstChild,particleslib::CParticleCollectionFloatInput, 0x348);
+			NESTED_PROPERTY(m_nNumChildrenToEnable,particleslib::CParticleCollectionFloatInput, 0x4b8);
+			PROPERTY(m_bPlayEndcapOnStop,bool, 0x628);
+			PROPERTY(m_bDestroyImmediately,bool, 0x629);
 			S2_PAD(0x458);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SelectivelyEnableChildren) == 0x630, "C_OP_SelectivelyEnableChildren size should be 0x630");

@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class locksound_t  {
 		public:
-			PROPERTY(sLockedSound,GlobalTypes::CUtlSymbolLarge* , 0x8);
-			PROPERTY(sUnlockedSound,GlobalTypes::CUtlSymbolLarge* , 0x10);
-			PROPERTY(flwaitSound,entity2::GameTime_t , 0x18);
+			PROPERTY(sLockedSound,GlobalTypes::CUtlSymbolLarge*, 0x8);
+			PROPERTY(sUnlockedSound,GlobalTypes::CUtlSymbolLarge*, 0x10);
+			NESTED_PROPERTY(flwaitSound,entity2::GameTime_t, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::locksound_t) == 0x20, "locksound_t size should be 0x20");

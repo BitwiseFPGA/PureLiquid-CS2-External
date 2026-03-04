@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CToggleComponentActionUpdater : public CS2::animgraphlib::CAnimActionUpdater {
 		public:
-			PROPERTY(m_componentID,modellib::AnimComponentID , 0x18);
-			PROPERTY(m_bSetEnabled,bool , 0x1c);
+			NESTED_PROPERTY(m_componentID,modellib::AnimComponentID, 0x18);
+			PROPERTY(m_bSetEnabled,bool, 0x1c);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CToggleComponentActionUpdater) == 0x20, "CToggleComponentActionUpdater size should be 0x20");

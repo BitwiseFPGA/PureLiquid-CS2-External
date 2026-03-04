@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeFollowNode_t  {
 		public:
-			PROPERTY(nParentNode,uint16_t , 0x0);
-			PROPERTY(nChildNode,uint16_t , 0x2);
-			PROPERTY(flWeight,float32 , 0x4);
+			PROPERTY(nParentNode,uint16_t, 0x0);
+			PROPERTY(nChildNode,uint16_t, 0x2);
+			PROPERTY(flWeight,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeFollowNode_t) == 0x8, "FeFollowNode_t size should be 0x8");

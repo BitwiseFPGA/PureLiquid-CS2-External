@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FeKelagerBend2_t  {
 		public:
-			PROPERTY_ARRAY(flWeight,float32 , 3 , 0x0);
-			PROPERTY(flHeight0,float32 , 0xc);
-			PROPERTY_ARRAY(nNode,uint16_t , 3 , 0x10);
-			PROPERTY(nReserved,uint16_t , 0x16);
+			PROPERTY_ARRAY(flWeight,float32, 3 , 0x0);
+			PROPERTY(flHeight0,float32, 0xc);
+			PROPERTY_ARRAY(nNode,uint16_t, 3 , 0x10);
+			PROPERTY(nReserved,uint16_t, 0x16);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeKelagerBend2_t) == 0x18, "FeKelagerBend2_t size should be 0x18");

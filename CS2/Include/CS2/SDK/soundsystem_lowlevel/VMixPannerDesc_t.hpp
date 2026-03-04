@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixPannerDesc_t  {
 		public:
-			PROPERTY(m_type,soundsystem_lowlevel::VMixPannerType_t , 0x0);
-			PROPERTY(m_flStrength,float32 , 0x4);
+			PROPERTY(m_type,soundsystem_lowlevel::VMixPannerType_t, 0x0);
+			PROPERTY(m_flStrength,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixPannerDesc_t) == 0x8, "VMixPannerDesc_t size should be 0x8");

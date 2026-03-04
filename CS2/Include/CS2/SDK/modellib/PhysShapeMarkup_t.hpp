@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace modellib {
 		class PhysShapeMarkup_t  {
 		public:
-			PROPERTY(m_nBodyInAggregate,int32_t , 0x0);
-			PROPERTY(m_nShapeInBody,int32_t , 0x4);
-			PROPERTY(m_sHitGroup,GlobalTypes::CGlobalSymbol , 0x8);
+			PROPERTY(m_nBodyInAggregate,int32_t, 0x0);
+			PROPERTY(m_nShapeInBody,int32_t, 0x4);
+			PROPERTY(m_sHitGroup,GlobalTypes::CGlobalSymbol, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::modellib::PhysShapeMarkup_t) == 0x10, "PhysShapeMarkup_t size should be 0x10");

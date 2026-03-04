@@ -27,19 +27,19 @@ namespace CS2 {
 	namespace server {
 		class CPhysMotor : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_nameAttach,GlobalTypes::CUtlSymbolLarge* , 0x4a8);
-			PROPERTY(m_nameAnchor,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
+			PROPERTY(m_nameAttach,GlobalTypes::CUtlSymbolLarge*, 0x4a8);
+			PROPERTY(m_nameAnchor,GlobalTypes::CUtlSymbolLarge*, 0x4b0);
 			PROPERTY(m_hAttachedObject,GlobalTypes::CHandle<server::CBaseEntity>, 0x4b8);
 			PROPERTY(m_hAnchorObject,GlobalTypes::CHandle<server::CBaseEntity>, 0x4bc);
-			PROPERTY(m_spinUp,float32 , 0x4c0);
-			PROPERTY(m_spinDown,float32 , 0x4c4);
-			PROPERTY(m_flMotorFriction,float32 , 0x4c8);
-			PROPERTY(m_additionalAcceleration,float32 , 0x4cc);
-			PROPERTY(m_angularAcceleration,float32 , 0x4d0);
-			PROPERTY(m_flTorqueScale,float32 , 0x4d4);
-			PROPERTY(m_flTargetSpeed,float32 , 0x4d8);
-			PROPERTY(m_flSpeedWhenSpinUpOrSpinDownStarted,float32 , 0x4dc);
-			PROPERTY(m_motor,server::CMotorController , 0x4f0);
+			PROPERTY(m_spinUp,float32, 0x4c0);
+			PROPERTY(m_spinDown,float32, 0x4c4);
+			PROPERTY(m_flMotorFriction,float32, 0x4c8);
+			PROPERTY(m_additionalAcceleration,float32, 0x4cc);
+			PROPERTY(m_angularAcceleration,float32, 0x4d0);
+			PROPERTY(m_flTorqueScale,float32, 0x4d4);
+			PROPERTY(m_flTargetSpeed,float32, 0x4d8);
+			PROPERTY(m_flSpeedWhenSpinUpOrSpinDownStarted,float32, 0x4dc);
+			NESTED_PROPERTY(m_motor,server::CMotorController, 0x4f0);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::server::CPhysMotor) == 0x510, "CPhysMotor size should be 0x510");

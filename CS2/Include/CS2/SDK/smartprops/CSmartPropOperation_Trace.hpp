@@ -23,18 +23,18 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_Trace : public CS2::smartprops::CSmartPropTransformOperation {
 		public:
-			PROPERTY(m_Origin,GlobalTypes::CSmartPropAttributeVector , 0x50);
-			PROPERTY(m_OriginSpace,smartprops::CSmartPropAttributeCoordinateSpace , 0x90);
-			PROPERTY(m_flOriginOffset,GlobalTypes::CSmartPropAttributeFloat , 0xd0);
-			PROPERTY(m_flSurfaceUpInfluence,GlobalTypes::CSmartPropAttributeFloat , 0x110);
-			PROPERTY(m_nNoHitResult,smartprops::CSmartPropAttributeTraceNoHit , 0x150);
-			PROPERTY(m_bIgnoreToolMaterials,GlobalTypes::CSmartPropAttributeBool , 0x190);
-			PROPERTY(m_bIgnoreSky,GlobalTypes::CSmartPropAttributeBool , 0x1d0);
-			PROPERTY(m_bIgnoreNoDraw,GlobalTypes::CSmartPropAttributeBool , 0x210);
-			PROPERTY(m_bIgnoreTranslucent,GlobalTypes::CSmartPropAttributeBool , 0x250);
-			PROPERTY(m_bIgnoreModels,GlobalTypes::CSmartPropAttributeBool , 0x290);
-			PROPERTY(m_bIgnoreEntities,GlobalTypes::CSmartPropAttributeBool , 0x2d0);
-			PROPERTY(m_bIgnoreCables,GlobalTypes::CSmartPropAttributeBool , 0x310);
+			PROPERTY(m_Origin,GlobalTypes::CSmartPropAttributeVector, 0x50);
+			NESTED_PROPERTY(m_OriginSpace,smartprops::CSmartPropAttributeCoordinateSpace, 0x90);
+			PROPERTY(m_flOriginOffset,GlobalTypes::CSmartPropAttributeFloat, 0xd0);
+			PROPERTY(m_flSurfaceUpInfluence,GlobalTypes::CSmartPropAttributeFloat, 0x110);
+			NESTED_PROPERTY(m_nNoHitResult,smartprops::CSmartPropAttributeTraceNoHit, 0x150);
+			PROPERTY(m_bIgnoreToolMaterials,GlobalTypes::CSmartPropAttributeBool, 0x190);
+			PROPERTY(m_bIgnoreSky,GlobalTypes::CSmartPropAttributeBool, 0x1d0);
+			PROPERTY(m_bIgnoreNoDraw,GlobalTypes::CSmartPropAttributeBool, 0x210);
+			PROPERTY(m_bIgnoreTranslucent,GlobalTypes::CSmartPropAttributeBool, 0x250);
+			PROPERTY(m_bIgnoreModels,GlobalTypes::CSmartPropAttributeBool, 0x290);
+			PROPERTY(m_bIgnoreEntities,GlobalTypes::CSmartPropAttributeBool, 0x2d0);
+			PROPERTY(m_bIgnoreCables,GlobalTypes::CSmartPropAttributeBool, 0x310);
 			S2_PAD(0x300);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_Trace) == 0x350, "CSmartPropOperation_Trace size should be 0x350");

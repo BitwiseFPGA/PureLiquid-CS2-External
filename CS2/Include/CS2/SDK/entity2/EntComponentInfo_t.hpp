@@ -25,13 +25,13 @@ namespace CS2 {
 	namespace entity2 {
 		class EntComponentInfo_t  {
 		public:
-			PROPERTY(m_pName,char* , 0x0);
-			PROPERTY(m_pCPPClassname,char* , 0x8);
-			PROPERTY(m_pNetworkDataReferencedDescription,char* , 0x10);
-			PROPERTY(m_pNetworkDataReferencedPtrPropDescription,char* , 0x18);
-			PROPERTY(m_nRuntimeIndex,int32_t , 0x20);
-			PROPERTY(m_nFlags,uint32_t , 0x24);
-			PROPERTY(m_pBaseClassComponentHelper,entity2::CEntityComponentHelper* , 0x60);
+			PROPERTY(m_pName,char*, 0x0);
+			PROPERTY(m_pCPPClassname,char*, 0x8);
+			PROPERTY(m_pNetworkDataReferencedDescription,char*, 0x10);
+			PROPERTY(m_pNetworkDataReferencedPtrPropDescription,char*, 0x18);
+			PROPERTY(m_nRuntimeIndex,int32_t, 0x20);
+			PROPERTY(m_nFlags,uint32_t, 0x24);
+			PROPERTY(m_pBaseClassComponentHelper,entity2::CEntityComponentHelper*, 0x60);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::entity2::EntComponentInfo_t) == 0x68, "EntComponentInfo_t size should be 0x68");

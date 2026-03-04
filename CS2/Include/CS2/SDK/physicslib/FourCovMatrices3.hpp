@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FourCovMatrices3  {
 		public:
-			PROPERTY(m_vDiag,GlobalTypes::FourVectors , 0x0);
-			PROPERTY(m_flXY,GlobalTypes::fltx4 , 0x30);
-			PROPERTY(m_flXZ,GlobalTypes::fltx4 , 0x40);
-			PROPERTY(m_flYZ,GlobalTypes::fltx4 , 0x50);
+			PROPERTY(m_vDiag,GlobalTypes::FourVectors, 0x0);
+			PROPERTY(m_flXY,GlobalTypes::fltx4, 0x30);
+			PROPERTY(m_flXZ,GlobalTypes::fltx4, 0x40);
+			PROPERTY(m_flYZ,GlobalTypes::fltx4, 0x50);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::physicslib::FourCovMatrices3) == 0x60, "FourCovMatrices3 size should be 0x60");

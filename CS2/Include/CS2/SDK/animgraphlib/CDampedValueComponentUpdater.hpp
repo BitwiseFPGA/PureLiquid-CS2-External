@@ -11,14 +11,10 @@
 
 
 #include <SDK/animgraphlib/CAnimComponentUpdater.hpp>
+#include <SDK/animgraphlib/CDampedValueUpdateItem.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CDampedValueUpdateItem;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,7 +22,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CDampedValueComponentUpdater : public CS2::animgraphlib::CAnimComponentUpdater {
 		public:
-			PROPERTY(m_items,GlobalTypes::CUtlVector<animgraphlib::CDampedValueUpdateItem>, 0x30);
+			NESTED_PROPERTY(m_items,GlobalTypes::CUtlVector<animgraphlib::CDampedValueUpdateItem>, 0x30);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CDampedValueComponentUpdater) == 0x48, "CDampedValueComponentUpdater size should be 0x48");

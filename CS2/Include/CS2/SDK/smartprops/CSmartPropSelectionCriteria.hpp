@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropSelectionCriteria  {
 		public:
-			PROPERTY(m_bEnabled,GlobalTypes::CSmartPropAttributeBool , 0x8);
+			PROPERTY(m_bEnabled,GlobalTypes::CSmartPropAttributeBool, 0x8);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropSelectionCriteria) == 0x48, "CSmartPropSelectionCriteria size should be 0x48");

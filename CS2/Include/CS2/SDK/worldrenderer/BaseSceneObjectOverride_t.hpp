@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace worldrenderer {
 		class BaseSceneObjectOverride_t  {
 		public:
-			PROPERTY(m_nSceneObjectIndex,uint32_t , 0x0);
+			PROPERTY(m_nSceneObjectIndex,uint32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::BaseSceneObjectOverride_t) == 0x4, "BaseSceneObjectOverride_t size should be 0x4");

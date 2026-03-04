@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class Criteria_t  {
 		public:
-			PROPERTY(m_bLimitCountPasses,bool , 0x0);
+			PROPERTY(m_bLimitCountPasses,bool, 0x0);
 			S2_PAD(0x1);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::Criteria_t) == 0x1, "CPulseCell_LimitCount::Criteria_t size should be 0x1");

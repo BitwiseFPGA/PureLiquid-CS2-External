@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace client {
 		class EventClientPostOutput_t  {
 		public:
-			PROPERTY(m_LoopState,client::EngineLoopState_t , 0x0);
-			PROPERTY(m_flRenderTime,float64 , 0x28);
-			PROPERTY(m_flRenderFrameTime,float32 , 0x30);
-			PROPERTY(m_flRenderFrameTimeUnbounded,float32 , 0x34);
-			PROPERTY(m_bRenderOnly,bool , 0x38);
+			NESTED_PROPERTY(m_LoopState,client::EngineLoopState_t, 0x0);
+			PROPERTY(m_flRenderTime,float64, 0x28);
+			PROPERTY(m_flRenderFrameTime,float32, 0x30);
+			PROPERTY(m_flRenderFrameTimeUnbounded,float32, 0x34);
+			PROPERTY(m_bRenderOnly,bool, 0x38);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::client::EventClientPostOutput_t) == 0x40, "EventClientPostOutput_t size should be 0x40");

@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class CSkillInt  {
 		public:
-			PROPERTY_ARRAY(m_pValue,int32_t , 4 , 0x0);
+			PROPERTY_ARRAY(m_pValue,int32_t, 4 , 0x0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::CSkillInt) == 0x10, "CSkillInt size should be 0x10");

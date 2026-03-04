@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/animgraphlib/CVectorQuantizer.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CVectorQuantizer;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CProductQuantizer  {
 		public:
-			PROPERTY(m_subQuantizers,GlobalTypes::CUtlVector<animgraphlib::CVectorQuantizer>, 0x0);
-			PROPERTY(m_nDimensions,int32_t , 0x18);
+			NESTED_PROPERTY(m_subQuantizers,GlobalTypes::CUtlVector<animgraphlib::CVectorQuantizer>, 0x0);
+			PROPERTY(m_nDimensions,int32_t, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CProductQuantizer) == 0x20, "CProductQuantizer size should be 0x20");

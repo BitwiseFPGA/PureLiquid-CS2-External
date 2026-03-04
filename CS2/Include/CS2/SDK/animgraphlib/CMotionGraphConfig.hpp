@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CMotionGraphConfig  {
 		public:
-			PROPERTY_ARRAY(m_paramValues,float32 , 4 , 0x0);
-			PROPERTY(m_flDuration,float32 , 0x10);
-			PROPERTY(m_nMotionIndex,animgraphlib::MotionIndex , 0x14);
-			PROPERTY(m_nSampleStart,int32_t , 0x18);
-			PROPERTY(m_nSampleCount,int32_t , 0x1c);
+			PROPERTY_ARRAY(m_paramValues,float32, 4 , 0x0);
+			PROPERTY(m_flDuration,float32, 0x10);
+			NESTED_PROPERTY(m_nMotionIndex,animgraphlib::MotionIndex, 0x14);
+			PROPERTY(m_nSampleStart,int32_t, 0x18);
+			PROPERTY(m_nSampleCount,int32_t, 0x1c);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CMotionGraphConfig) == 0x20, "CMotionGraphConfig size should be 0x20");

@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace client {
 		class inv_image_item_t  {
 		public:
-			PROPERTY(position,GlobalTypes::Vector , 0x0);
-			PROPERTY(angle,GlobalTypes::QAngle , 0xc);
-			PROPERTY(pose_sequence,GlobalTypes::CUtlString* , 0x18);
+			PROPERTY(position,GlobalTypes::Vector, 0x0);
+			PROPERTY(angle,GlobalTypes::QAngle, 0xc);
+			PROPERTY(pose_sequence,GlobalTypes::CUtlString*, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::inv_image_item_t) == 0x20, "inv_image_item_t size should be 0x20");

@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace server {
 		class CMarkupVolumeTagged_Nav : public CS2::server::CMarkupVolumeTagged {
 		public:
-			PROPERTY(m_nScopes,server::NavScopeFlags_t , 0x770);
+			PROPERTY(m_nScopes,server::NavScopeFlags_t, 0x770);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::CMarkupVolumeTagged_Nav) == 0x778, "CMarkupVolumeTagged_Nav size should be 0x778");

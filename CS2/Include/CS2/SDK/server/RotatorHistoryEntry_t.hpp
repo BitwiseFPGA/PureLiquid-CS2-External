@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class RotatorHistoryEntry_t  {
 		public:
-			PROPERTY(qInvChange,GlobalTypes::Quaternion , 0x0);
-			PROPERTY(flTimeRotationStart,entity2::GameTime_t , 0x10);
+			PROPERTY(qInvChange,GlobalTypes::Quaternion, 0x0);
+			NESTED_PROPERTY(flTimeRotationStart,entity2::GameTime_t, 0x10);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::server::RotatorHistoryEntry_t) == 0x20, "RotatorHistoryEntry_t size should be 0x20");

@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixGraphDescData  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_nGraphOutputChannels,int32_t , 0x8);
-			PROPERTY(m_bIsMainGraph,bool , 0xc);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_nGraphOutputChannels,int32_t, 0x8);
+			PROPERTY(m_bIsMainGraph,bool, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixGraphDescData) == 0x10, "CVMixGraphDescData size should be 0x10");

@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerRealtimeFMSineWave : public CS2::soundsystem_voicecontainers::CVoiceContainerGenerator {
 		public:
-			PROPERTY(m_flCarrierFrequency,float32 , 0xa8);
-			PROPERTY(m_flModulatorFrequency,float32 , 0xac);
-			PROPERTY(m_flModulatorAmount,float32 , 0xb0);
+			PROPERTY(m_flCarrierFrequency,float32, 0xa8);
+			PROPERTY(m_flModulatorFrequency,float32, 0xac);
+			PROPERTY(m_flModulatorAmount,float32, 0xb0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerRealtimeFMSineWave) == 0xB8, "CVoiceContainerRealtimeFMSineWave size should be 0xB8");

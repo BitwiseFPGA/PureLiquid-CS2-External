@@ -27,7 +27,7 @@ namespace CS2 {
 	namespace server {
 		class CCSPlayer_PingServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY_ARRAY(m_flPlayerPingTokens,entity2::GameTime_t , 5 , 0x48);
+			PROPERTY_ARRAY(m_flPlayerPingTokens,entity2::GameTime_t, 5 , 0x48);
 			PROPERTY(m_hPlayerPing,GlobalTypes::CHandle<server::CPlayerPing>, 0x5c);
 			S2_PAD(0x18);
 		};

@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CSequenceUpdateNodeBase : public CS2::animgraphlib::CLeafUpdateNode {
 		public:
-			PROPERTY(m_playbackSpeed,float32 , 0x6c);
-			PROPERTY(m_bLoop,bool , 0x70);
+			PROPERTY(m_playbackSpeed,float32, 0x6c);
+			PROPERTY(m_bLoop,bool, 0x70);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CSequenceUpdateNodeBase) == 0x78, "CSequenceUpdateNodeBase size should be 0x78");

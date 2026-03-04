@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace client {
 		class CInterpolatedValue  {
 		public:
-			PROPERTY(m_flStartTime,float32 , 0x0);
-			PROPERTY(m_flEndTime,float32 , 0x4);
-			PROPERTY(m_flStartValue,float32 , 0x8);
-			PROPERTY(m_flEndValue,float32 , 0xc);
-			PROPERTY(m_nInterpType,int32_t , 0x10);
+			PROPERTY(m_flStartTime,float32, 0x0);
+			PROPERTY(m_flEndTime,float32, 0x4);
+			PROPERTY(m_flStartValue,float32, 0x8);
+			PROPERTY(m_flEndValue,float32, 0xc);
+			PROPERTY(m_nInterpType,int32_t, 0x10);
 			S2_PAD(0x14);
 		};
 		//static_assert(sizeof(CS2::client::CInterpolatedValue) == 0x14, "CInterpolatedValue size should be 0x14");

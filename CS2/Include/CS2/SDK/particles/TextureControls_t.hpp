@@ -22,22 +22,22 @@ namespace CS2 {
 	namespace particles {
 		class TextureControls_t  {
 		public:
-			PROPERTY(m_flFinalTextureScaleU,particleslib::CParticleCollectionRendererFloatInput , 0x0);
-			PROPERTY(m_flFinalTextureScaleV,particleslib::CParticleCollectionRendererFloatInput , 0x170);
-			PROPERTY(m_flFinalTextureOffsetU,particleslib::CParticleCollectionRendererFloatInput , 0x2e0);
-			PROPERTY(m_flFinalTextureOffsetV,particleslib::CParticleCollectionRendererFloatInput , 0x450);
-			PROPERTY(m_flFinalTextureUVRotation,particleslib::CParticleCollectionRendererFloatInput , 0x5c0);
-			PROPERTY(m_flZoomScale,particleslib::CParticleCollectionRendererFloatInput , 0x730);
-			PROPERTY(m_flDistortion,particleslib::CParticleCollectionRendererFloatInput , 0x8a0);
-			PROPERTY(m_bRandomizeOffsets,bool , 0xa10);
-			PROPERTY(m_bClampUVs,bool , 0xa11);
-			PROPERTY(m_nPerParticleBlend,particles::SpriteCardPerParticleScale_t , 0xa14);
-			PROPERTY(m_nPerParticleScale,particles::SpriteCardPerParticleScale_t , 0xa18);
-			PROPERTY(m_nPerParticleOffsetU,particles::SpriteCardPerParticleScale_t , 0xa1c);
-			PROPERTY(m_nPerParticleOffsetV,particles::SpriteCardPerParticleScale_t , 0xa20);
-			PROPERTY(m_nPerParticleRotation,particles::SpriteCardPerParticleScale_t , 0xa24);
-			PROPERTY(m_nPerParticleZoom,particles::SpriteCardPerParticleScale_t , 0xa28);
-			PROPERTY(m_nPerParticleDistortion,particles::SpriteCardPerParticleScale_t , 0xa2c);
+			NESTED_PROPERTY(m_flFinalTextureScaleU,particleslib::CParticleCollectionRendererFloatInput, 0x0);
+			NESTED_PROPERTY(m_flFinalTextureScaleV,particleslib::CParticleCollectionRendererFloatInput, 0x170);
+			NESTED_PROPERTY(m_flFinalTextureOffsetU,particleslib::CParticleCollectionRendererFloatInput, 0x2e0);
+			NESTED_PROPERTY(m_flFinalTextureOffsetV,particleslib::CParticleCollectionRendererFloatInput, 0x450);
+			NESTED_PROPERTY(m_flFinalTextureUVRotation,particleslib::CParticleCollectionRendererFloatInput, 0x5c0);
+			NESTED_PROPERTY(m_flZoomScale,particleslib::CParticleCollectionRendererFloatInput, 0x730);
+			NESTED_PROPERTY(m_flDistortion,particleslib::CParticleCollectionRendererFloatInput, 0x8a0);
+			PROPERTY(m_bRandomizeOffsets,bool, 0xa10);
+			PROPERTY(m_bClampUVs,bool, 0xa11);
+			PROPERTY(m_nPerParticleBlend,particles::SpriteCardPerParticleScale_t, 0xa14);
+			PROPERTY(m_nPerParticleScale,particles::SpriteCardPerParticleScale_t, 0xa18);
+			PROPERTY(m_nPerParticleOffsetU,particles::SpriteCardPerParticleScale_t, 0xa1c);
+			PROPERTY(m_nPerParticleOffsetV,particles::SpriteCardPerParticleScale_t, 0xa20);
+			PROPERTY(m_nPerParticleRotation,particles::SpriteCardPerParticleScale_t, 0xa24);
+			PROPERTY(m_nPerParticleZoom,particles::SpriteCardPerParticleScale_t, 0xa28);
+			PROPERTY(m_nPerParticleDistortion,particles::SpriteCardPerParticleScale_t, 0xa2c);
 			S2_PAD(0xA30);
 		};
 		//static_assert(sizeof(CS2::particles::TextureControls_t) == 0xA30, "TextureControls_t size should be 0xA30");

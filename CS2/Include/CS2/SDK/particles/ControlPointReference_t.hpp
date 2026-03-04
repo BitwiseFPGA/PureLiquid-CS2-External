@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace particles {
 		class ControlPointReference_t  {
 		public:
-			PROPERTY(m_controlPointNameString,int32_t , 0x0);
-			PROPERTY(m_vOffsetFromControlPoint,GlobalTypes::Vector , 0x4);
-			PROPERTY(m_bOffsetInLocalSpace,bool , 0x10);
+			PROPERTY(m_controlPointNameString,int32_t, 0x0);
+			PROPERTY(m_vOffsetFromControlPoint,GlobalTypes::Vector, 0x4);
+			PROPERTY(m_bOffsetInLocalSpace,bool, 0x10);
 			S2_PAD(0x14);
 		};
 		//static_assert(sizeof(CS2::particles::ControlPointReference_t) == 0x14, "ControlPointReference_t size should be 0x14");

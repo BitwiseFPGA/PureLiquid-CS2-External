@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace entity2 {
 		class CScriptComponent : public CS2::entity2::CEntityComponent {
 		public:
-			PROPERTY(m_scriptClassName,GlobalTypes::CUtlSymbolLarge* , 0x30);
+			PROPERTY(m_scriptClassName,GlobalTypes::CUtlSymbolLarge*, 0x30);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::entity2::CScriptComponent) == 0x38, "CScriptComponent size should be 0x38");

@@ -21,14 +21,14 @@ namespace CS2 {
 	namespace modellib {
 		class CNPCPhysicsHull  {
 		public:
-			PROPERTY(m_sName,GlobalTypes::CGlobalSymbol , 0x0);
-			PROPERTY(m_eType,modellib::NPCPhysicsHullType_t , 0x8);
-			PROPERTY(m_flCapsuleHeight,float32 , 0xc);
-			PROPERTY(m_flCapsuleRadius,float32 , 0x10);
-			PROPERTY(m_vCapsuleCenter1,GlobalTypes::Vector , 0x14);
-			PROPERTY(m_vCapsuleCenter2,GlobalTypes::Vector , 0x20);
-			PROPERTY(m_flGroundBoxHeight,float32 , 0x2c);
-			PROPERTY(m_flGroundBoxWidth,float32 , 0x30);
+			PROPERTY(m_sName,GlobalTypes::CGlobalSymbol, 0x0);
+			PROPERTY(m_eType,modellib::NPCPhysicsHullType_t, 0x8);
+			PROPERTY(m_flCapsuleHeight,float32, 0xc);
+			PROPERTY(m_flCapsuleRadius,float32, 0x10);
+			PROPERTY(m_vCapsuleCenter1,GlobalTypes::Vector, 0x14);
+			PROPERTY(m_vCapsuleCenter2,GlobalTypes::Vector, 0x20);
+			PROPERTY(m_flGroundBoxHeight,float32, 0x2c);
+			PROPERTY(m_flGroundBoxWidth,float32, 0x30);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::modellib::CNPCPhysicsHull) == 0x38, "CNPCPhysicsHull size should be 0x38");

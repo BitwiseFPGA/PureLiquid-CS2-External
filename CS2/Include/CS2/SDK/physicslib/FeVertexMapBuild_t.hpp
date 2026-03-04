@@ -20,12 +20,12 @@ namespace CS2 {
 	namespace physicslib {
 		class FeVertexMapBuild_t  {
 		public:
-			PROPERTY(m_VertexMapName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_nNameHash,uint32_t , 0x8);
-			PROPERTY(m_Color,GlobalTypes::Color , 0xc);
-			PROPERTY(m_flVolumetricSolveStrength,float32 , 0x10);
-			PROPERTY(m_nScaleSourceNode,int32_t , 0x14);
-			PROPERTY(m_Weights,GlobalTypes::CUtlVector< float32 >, 0x18);
+			PROPERTY(m_VertexMapName,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_nNameHash,uint32_t, 0x8);
+			PROPERTY(m_Color,GlobalTypes::Color, 0xc);
+			PROPERTY(m_flVolumetricSolveStrength,float32, 0x10);
+			PROPERTY(m_nScaleSourceNode,int32_t, 0x14);
+			NESTED_PROPERTY(m_Weights,GlobalTypes::CUtlVector< float32 >, 0x18);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeVertexMapBuild_t) == 0x30, "FeVertexMapBuild_t size should be 0x30");

@@ -11,15 +11,11 @@
 
 
 #include <SDK/server/CSoundOpvarSetPointEntity.hpp>
+#include <SDK/server/SoundOpvarTraceResult_t.hpp>
+#include <SDK/server/AutoRoomDoorwayPairs_t.hpp>
 
 
 
-namespace CS2 {
-	namespace server {
-		class SoundOpvarTraceResult_t;
-		class AutoRoomDoorwayPairs_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,11 +23,11 @@ namespace CS2 {
 	namespace server {
 		class CSoundOpvarSetAutoRoomEntity : public CS2::server::CSoundOpvarSetPointEntity {
 		public:
-			PROPERTY(m_traceResults,GlobalTypes::CUtlVector<server::SoundOpvarTraceResult_t>, 0x640);
-			PROPERTY(m_doorwayPairs,GlobalTypes::CUtlVector<server::AutoRoomDoorwayPairs_t>, 0x658);
-			PROPERTY(m_flSize,float32 , 0x670);
-			PROPERTY(m_flHeightTolerance,float32 , 0x674);
-			PROPERTY(m_flSizeSqr,float32 , 0x678);
+			NESTED_PROPERTY(m_traceResults,GlobalTypes::CUtlVector<server::SoundOpvarTraceResult_t>, 0x640);
+			NESTED_PROPERTY(m_doorwayPairs,GlobalTypes::CUtlVector<server::AutoRoomDoorwayPairs_t>, 0x658);
+			PROPERTY(m_flSize,float32, 0x670);
+			PROPERTY(m_flHeightTolerance,float32, 0x674);
+			PROPERTY(m_flSizeSqr,float32, 0x678);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::server::CSoundOpvarSetAutoRoomEntity) == 0x680, "CSoundOpvarSetAutoRoomEntity size should be 0x680");

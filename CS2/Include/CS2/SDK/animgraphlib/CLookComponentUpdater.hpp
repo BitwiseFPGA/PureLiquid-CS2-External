@@ -22,15 +22,15 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CLookComponentUpdater : public CS2::animgraphlib::CAnimComponentUpdater {
 		public:
-			PROPERTY(m_hLookHeading,animgraphlib::CAnimParamHandle , 0x34);
-			PROPERTY(m_hLookHeadingNormalized,animgraphlib::CAnimParamHandle , 0x36);
-			PROPERTY(m_hLookHeadingVelocity,animgraphlib::CAnimParamHandle , 0x38);
-			PROPERTY(m_hLookPitch,animgraphlib::CAnimParamHandle , 0x3a);
-			PROPERTY(m_hLookDistance,animgraphlib::CAnimParamHandle , 0x3c);
-			PROPERTY(m_hLookDirection,animgraphlib::CAnimParamHandle , 0x3e);
-			PROPERTY(m_hLookTarget,animgraphlib::CAnimParamHandle , 0x40);
-			PROPERTY(m_hLookTargetWorldSpace,animgraphlib::CAnimParamHandle , 0x42);
-			PROPERTY(m_bNetworkLookTarget,bool , 0x44);
+			NESTED_PROPERTY(m_hLookHeading,animgraphlib::CAnimParamHandle, 0x34);
+			NESTED_PROPERTY(m_hLookHeadingNormalized,animgraphlib::CAnimParamHandle, 0x36);
+			NESTED_PROPERTY(m_hLookHeadingVelocity,animgraphlib::CAnimParamHandle, 0x38);
+			NESTED_PROPERTY(m_hLookPitch,animgraphlib::CAnimParamHandle, 0x3a);
+			NESTED_PROPERTY(m_hLookDistance,animgraphlib::CAnimParamHandle, 0x3c);
+			NESTED_PROPERTY(m_hLookDirection,animgraphlib::CAnimParamHandle, 0x3e);
+			NESTED_PROPERTY(m_hLookTarget,animgraphlib::CAnimParamHandle, 0x40);
+			NESTED_PROPERTY(m_hLookTargetWorldSpace,animgraphlib::CAnimParamHandle, 0x42);
+			PROPERTY(m_bNetworkLookTarget,bool, 0x44);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CLookComponentUpdater) == 0x48, "CLookComponentUpdater size should be 0x48");

@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CMotionMetricEvaluator  {
 		public:
-			PROPERTY(m_means,GlobalTypes::CUtlVector< float32 >, 0x18);
-			PROPERTY(m_standardDeviations,GlobalTypes::CUtlVector< float32 >, 0x30);
-			PROPERTY(m_flWeight,float32 , 0x48);
-			PROPERTY(m_nDimensionStartIndex,int32_t , 0x4c);
+			NESTED_PROPERTY(m_means,GlobalTypes::CUtlVector< float32 >, 0x18);
+			NESTED_PROPERTY(m_standardDeviations,GlobalTypes::CUtlVector< float32 >, 0x30);
+			PROPERTY(m_flWeight,float32, 0x48);
+			PROPERTY(m_nDimensionStartIndex,int32_t, 0x4c);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CMotionMetricEvaluator) == 0x50, "CMotionMetricEvaluator size should be 0x50");

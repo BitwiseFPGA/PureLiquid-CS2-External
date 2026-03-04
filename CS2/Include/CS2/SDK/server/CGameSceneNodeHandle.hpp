@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace server {
 		class CGameSceneNodeHandle  {
 		public:
-			PROPERTY(m_hOwner,GlobalTypes::CEntityHandle , 0x8);
-			PROPERTY(m_name,GlobalTypes::CUtlStringToken* , 0xc);
+			PROPERTY(m_hOwner,GlobalTypes::CEntityHandle, 0x8);
+			PROPERTY(m_name,GlobalTypes::CUtlStringToken*, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CGameSceneNodeHandle) == 0x10, "CGameSceneNodeHandle size should be 0x10");

@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace animlib {
 		class TimedEvent_t  {
 		public:
-			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol , 0x0);
-			PROPERTY(m_flTimeValueSeconds,float32 , 0x8);
-			PROPERTY(m_comparisionOperator,animlib::Comparison_t , 0xc);
+			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol, 0x0);
+			PROPERTY(m_flTimeValueSeconds,float32, 0x8);
+			PROPERTY(m_comparisionOperator,animlib::Comparison_t, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animlib::TimedEvent_t) == 0x10, "CNmStateNode::TimedEvent_t size should be 0x10");

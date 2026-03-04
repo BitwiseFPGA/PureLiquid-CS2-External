@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class EventAdvanceTick_t : public CS2::client::EventSimulate_t {
 		public:
-			PROPERTY(m_nCurrentTick,int32_t , 0x30);
-			PROPERTY(m_nCurrentTickThisFrame,int32_t , 0x34);
-			PROPERTY(m_nTotalTicksThisFrame,int32_t , 0x38);
-			PROPERTY(m_nTotalTicks,int32_t , 0x3c);
+			PROPERTY(m_nCurrentTick,int32_t, 0x30);
+			PROPERTY(m_nCurrentTickThisFrame,int32_t, 0x34);
+			PROPERTY(m_nTotalTicksThisFrame,int32_t, 0x38);
+			PROPERTY(m_nTotalTicks,int32_t, 0x3c);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::EventAdvanceTick_t) == 0x40, "EventAdvanceTick_t size should be 0x40");

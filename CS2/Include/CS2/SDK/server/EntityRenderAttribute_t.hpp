@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace server {
 		class EntityRenderAttribute_t  {
 		public:
-			PROPERTY(m_ID,GlobalTypes::CUtlStringToken* , 0x30);
-			PROPERTY(m_Values,GlobalTypes::Vector4D , 0x34);
+			PROPERTY(m_ID,GlobalTypes::CUtlStringToken*, 0x30);
+			PROPERTY(m_Values,GlobalTypes::Vector4D, 0x34);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::server::EntityRenderAttribute_t) == 0x48, "EntityRenderAttribute_t size should be 0x48");

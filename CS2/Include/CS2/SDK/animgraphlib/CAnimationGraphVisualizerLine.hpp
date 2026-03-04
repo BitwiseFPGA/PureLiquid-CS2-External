@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimationGraphVisualizerLine : public CS2::animgraphlib::CAnimationGraphVisualizerPrimitiveBase {
 		public:
-			PROPERTY(m_vWsPositionStart,GlobalTypes::VectorAligned , 0x40);
-			PROPERTY(m_vWsPositionEnd,GlobalTypes::VectorAligned , 0x50);
-			PROPERTY(m_Color,GlobalTypes::Color , 0x60);
+			PROPERTY(m_vWsPositionStart,GlobalTypes::VectorAligned, 0x40);
+			PROPERTY(m_vWsPositionEnd,GlobalTypes::VectorAligned, 0x50);
+			PROPERTY(m_Color,GlobalTypes::Color, 0x60);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAnimationGraphVisualizerLine) == 0x70, "CAnimationGraphVisualizerLine size should be 0x70");

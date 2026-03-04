@@ -22,14 +22,14 @@ namespace CS2 {
 	namespace client {
 		class CInfoWorldLayer : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_pOutputOnEntitiesSpawned,entity2::CEntityIOOutput , 0x608);
-			PROPERTY(m_worldName,GlobalTypes::CUtlSymbolLarge* , 0x620);
-			PROPERTY(m_layerName,GlobalTypes::CUtlSymbolLarge* , 0x628);
-			PROPERTY(m_bWorldLayerVisible,bool , 0x630);
-			PROPERTY(m_bEntitiesSpawned,bool , 0x631);
-			PROPERTY(m_bCreateAsChildSpawnGroup,bool , 0x632);
-			PROPERTY(m_hLayerSpawnGroup,uint32_t , 0x634);
-			PROPERTY(m_bWorldLayerActuallyVisible,bool , 0x638);
+			NESTED_PROPERTY(m_pOutputOnEntitiesSpawned,entity2::CEntityIOOutput, 0x608);
+			PROPERTY(m_worldName,GlobalTypes::CUtlSymbolLarge*, 0x620);
+			PROPERTY(m_layerName,GlobalTypes::CUtlSymbolLarge*, 0x628);
+			PROPERTY(m_bWorldLayerVisible,bool, 0x630);
+			PROPERTY(m_bEntitiesSpawned,bool, 0x631);
+			PROPERTY(m_bCreateAsChildSpawnGroup,bool, 0x632);
+			PROPERTY(m_hLayerSpawnGroup,uint32_t, 0x634);
+			PROPERTY(m_bWorldLayerActuallyVisible,bool, 0x638);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::client::CInfoWorldLayer) == 0x640, "CInfoWorldLayer size should be 0x640");

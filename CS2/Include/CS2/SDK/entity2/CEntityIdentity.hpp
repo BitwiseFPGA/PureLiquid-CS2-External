@@ -26,18 +26,18 @@ namespace CS2 {
 	namespace entity2 {
 		class CEntityIdentity  {
 		public:
-			PROPERTY(m_nameStringableIndex,int32_t , 0x14);
-			PROPERTY(m_name,GlobalTypes::CUtlSymbolLarge* , 0x18);
-			PROPERTY(m_designerName,GlobalTypes::CUtlSymbolLarge* , 0x20);
-			PROPERTY(m_flags,uint32_t , 0x30);
-			PROPERTY(m_worldGroupId,GlobalTypes::WorldGroupId_t , 0x38);
-			PROPERTY(m_fDataObjectTypes,uint32_t , 0x3c);
-			PROPERTY(m_PathIndex,networksystem::ChangeAccessorFieldPathIndex_t , 0x40);
-			PROPERTY(m_pAttributes,entity2::CEntityAttributeTable* , 0x48);
-			PROPERTY(m_pPrev,entity2::CEntityIdentity* , 0x50);
-			PROPERTY(m_pNext,entity2::CEntityIdentity* , 0x58);
-			PROPERTY(m_pPrevByClass,entity2::CEntityIdentity* , 0x60);
-			PROPERTY(m_pNextByClass,entity2::CEntityIdentity* , 0x68);
+			PROPERTY(m_nameStringableIndex,int32_t, 0x14);
+			PROPERTY(m_name,GlobalTypes::CUtlSymbolLarge*, 0x18);
+			PROPERTY(m_designerName,GlobalTypes::CUtlSymbolLarge*, 0x20);
+			PROPERTY(m_flags,uint32_t, 0x30);
+			PROPERTY(m_worldGroupId,GlobalTypes::WorldGroupId_t, 0x38);
+			PROPERTY(m_fDataObjectTypes,uint32_t, 0x3c);
+			NESTED_PROPERTY(m_PathIndex,networksystem::ChangeAccessorFieldPathIndex_t, 0x40);
+			PROPERTY(m_pAttributes,entity2::CEntityAttributeTable*, 0x48);
+			PROPERTY(m_pPrev,entity2::CEntityIdentity*, 0x50);
+			PROPERTY(m_pNext,entity2::CEntityIdentity*, 0x58);
+			PROPERTY(m_pPrevByClass,entity2::CEntityIdentity*, 0x60);
+			PROPERTY(m_pNextByClass,entity2::CEntityIdentity*, 0x68);
 			S2_PAD(0x70);
 		};
 		//static_assert(sizeof(CS2::entity2::CEntityIdentity) == 0x70, "CEntityIdentity size should be 0x70");

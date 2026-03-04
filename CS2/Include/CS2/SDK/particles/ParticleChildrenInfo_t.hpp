@@ -27,10 +27,10 @@ namespace CS2 {
 		class ParticleChildrenInfo_t  {
 		public:
 			PROPERTY(m_ChildRef,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>, 0x0);
-			PROPERTY(m_flDelay,float32 , 0x8);
-			PROPERTY(m_bEndCap,bool , 0xc);
-			PROPERTY(m_bDisableChild,bool , 0xd);
-			PROPERTY(m_nDetailLevel,particles::ParticleDetailLevel_t , 0x10);
+			PROPERTY(m_flDelay,float32, 0x8);
+			PROPERTY(m_bEndCap,bool, 0xc);
+			PROPERTY(m_bDisableChild,bool, 0xd);
+			PROPERTY(m_nDetailLevel,particles::ParticleDetailLevel_t, 0x10);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::particles::ParticleChildrenInfo_t) == 0x20, "ParticleChildrenInfo_t size should be 0x20");

@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace navlib {
 		class Extent  {
 		public:
-			PROPERTY(lo,GlobalTypes::VectorWS , 0x0);
-			PROPERTY(hi,GlobalTypes::VectorWS , 0xc);
+			PROPERTY(lo,GlobalTypes::VectorWS, 0x0);
+			PROPERTY(hi,GlobalTypes::VectorWS, 0xc);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::navlib::Extent) == 0x18, "Extent size should be 0x18");

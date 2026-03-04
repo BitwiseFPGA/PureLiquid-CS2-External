@@ -10,6 +10,11 @@
 #endif
 
 
+#include <SDK/pulse_runtime_lib/CPulse_Variable.hpp>
+#include <SDK/pulse_runtime_lib/CPulse_PublicOutput.hpp>
+#include <SDK/pulse_runtime_lib/CPulse_Constant.hpp>
+#include <SDK/pulse_runtime_lib/CPulse_DomainValue.hpp>
+#include <SDK/pulse_runtime_lib/CPulse_BlackboardReference.hpp>
 
 
 
@@ -17,13 +22,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulse_Chunk;
 		class CPulseCell_Base;
-		class CPulse_Variable;
-		class CPulse_PublicOutput;
 		class CPulse_InvokeBinding;
 		class CPulse_CallInfo;
-		class CPulse_Constant;
-		class CPulse_DomainValue;
-		class CPulse_BlackboardReference;
 		class CPulse_OutputConnection;
 	}
 }
@@ -34,20 +34,20 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseGraphDef  {
 		public:
-			PROPERTY(m_DomainIdentifier,GlobalTypes::PulseSymbol_t , 0x8);
-			PROPERTY(m_DomainSubType,GlobalTypes::CPulseValueFullType , 0x18);
-			PROPERTY(m_ParentMapName,GlobalTypes::PulseSymbol_t , 0x30);
-			PROPERTY(m_ParentXmlName,GlobalTypes::PulseSymbol_t , 0x40);
-			PROPERTY(m_Chunks,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_Chunk*>, 0x50);
-			PROPERTY(m_Cells,server::CUtlVector<pulse_runtime_lib::CPulseCell_Base*>, 0x68);
-			PROPERTY(m_Vars,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_Variable>, 0x80);
-			PROPERTY(m_PublicOutputs,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_PublicOutput>, 0x98);
-			PROPERTY(m_InvokeBindings,server::CUtlVector<pulse_runtime_lib::CPulse_InvokeBinding*>, 0xb0);
-			PROPERTY(m_CallInfos,server::CUtlVector<pulse_runtime_lib::CPulse_CallInfo*>, 0xc8);
-			PROPERTY(m_Constants,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_Constant>, 0xe0);
-			PROPERTY(m_DomainValues,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_DomainValue>, 0xf8);
-			PROPERTY(m_BlackboardReferences,server::CUtlVector<pulse_runtime_lib::CPulse_BlackboardReference>, 0x110);
-			PROPERTY(m_OutputConnections,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_OutputConnection*>, 0x128);
+			PROPERTY(m_DomainIdentifier,GlobalTypes::PulseSymbol_t, 0x8);
+			PROPERTY(m_DomainSubType,GlobalTypes::CPulseValueFullType, 0x18);
+			PROPERTY(m_ParentMapName,GlobalTypes::PulseSymbol_t, 0x30);
+			PROPERTY(m_ParentXmlName,GlobalTypes::PulseSymbol_t, 0x40);
+			NESTED_PROPERTY(m_Chunks,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_Chunk*>, 0x50);
+			NESTED_PROPERTY(m_Cells,server::CUtlVector<pulse_runtime_lib::CPulseCell_Base*>, 0x68);
+			NESTED_PROPERTY(m_Vars,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_Variable>, 0x80);
+			NESTED_PROPERTY(m_PublicOutputs,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_PublicOutput>, 0x98);
+			NESTED_PROPERTY(m_InvokeBindings,server::CUtlVector<pulse_runtime_lib::CPulse_InvokeBinding*>, 0xb0);
+			NESTED_PROPERTY(m_CallInfos,server::CUtlVector<pulse_runtime_lib::CPulse_CallInfo*>, 0xc8);
+			NESTED_PROPERTY(m_Constants,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_Constant>, 0xe0);
+			NESTED_PROPERTY(m_DomainValues,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_DomainValue>, 0xf8);
+			NESTED_PROPERTY(m_BlackboardReferences,server::CUtlVector<pulse_runtime_lib::CPulse_BlackboardReference>, 0x110);
+			NESTED_PROPERTY(m_OutputConnections,GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_OutputConnection*>, 0x128);
 			S2_PAD(0x198);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseGraphDef) == 0x198, "CPulseGraphDef size should be 0x198");

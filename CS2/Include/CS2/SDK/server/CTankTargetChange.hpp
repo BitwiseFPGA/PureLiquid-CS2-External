@@ -11,14 +11,10 @@
 
 
 #include <SDK/server/CPointEntity.hpp>
+#include <SDK/entity2/CVariantDefaultAllocator.hpp>
 
 
 
-namespace CS2 {
-	namespace entity2 {
-		class CVariantDefaultAllocator;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,7 +23,7 @@ namespace CS2 {
 		class CTankTargetChange : public CS2::server::CPointEntity {
 		public:
 			PROPERTY(m_newTarget,GlobalTypes::CVariantBase<entity2::CVariantDefaultAllocator>, 0x4a8);
-			PROPERTY(m_newTargetName,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
+			PROPERTY(m_newTargetName,GlobalTypes::CUtlSymbolLarge*, 0x4b8);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CTankTargetChange) == 0x4C0, "CTankTargetChange size should be 0x4C0");

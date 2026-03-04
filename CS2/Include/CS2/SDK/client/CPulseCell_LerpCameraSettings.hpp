@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace client {
 		class CPulseCell_LerpCameraSettings : public CS2::pulse_runtime_lib::CPulseCell_BaseLerp {
 		public:
-			PROPERTY(m_flSeconds,float32 , 0x90);
-			PROPERTY(m_Start,client::PointCameraSettings_t , 0x94);
-			PROPERTY(m_End,client::PointCameraSettings_t , 0xa4);
+			PROPERTY(m_flSeconds,float32, 0x90);
+			NESTED_PROPERTY(m_Start,client::PointCameraSettings_t, 0x94);
+			NESTED_PROPERTY(m_End,client::PointCameraSettings_t, 0xa4);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::client::CPulseCell_LerpCameraSettings) == 0xB8, "CPulseCell_LerpCameraSettings size should be 0xB8");

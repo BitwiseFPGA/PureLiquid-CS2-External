@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class CEnvDetailController : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_flFadeStartDist,float32 , 0x4a8);
-			PROPERTY(m_flFadeEndDist,float32 , 0x4ac);
+			PROPERTY(m_flFadeStartDist,float32, 0x4a8);
+			PROPERTY(m_flFadeEndDist,float32, 0x4ac);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::CEnvDetailController) == 0x4B0, "CEnvDetailController size should be 0x4B0");

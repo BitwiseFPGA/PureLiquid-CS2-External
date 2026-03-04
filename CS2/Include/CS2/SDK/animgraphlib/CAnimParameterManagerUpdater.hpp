@@ -11,14 +11,10 @@
 
 
 #include <SDK/animgraphlib/CAnimParameterBase.hpp>
+#include <SDK/animgraphlib/CAnimParamHandle.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CAnimParamHandle;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,11 +22,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimParameterManagerUpdater  {
 		public:
-			PROPERTY(m_parameters,GlobalTypes::CUtlVector<GlobalTypes::CSmartPtr<animgraphlib::CAnimParameterBase>>, 0x18);
+			NESTED_PROPERTY(m_parameters,GlobalTypes::CUtlVector<GlobalTypes::CSmartPtr<animgraphlib::CAnimParameterBase>>, 0x18);
 			PROPERTY(m_idToIndexMap,GlobalTypes::CUtlHashtable< AnimParamID, int32 >, 0x30);
 			PROPERTY(m_nameToIndexMap,GlobalTypes::CUtlHashtable< CUtlString, int32 >*, 0x50);
-			PROPERTY(m_indexToHandle,GlobalTypes::CUtlVector<animgraphlib::CAnimParamHandle>, 0x70);
-			PROPERTY(m_autoResetParams,GlobalTypes::CUtlVector<std::pair< CAnimParamHandle, CAnimVariant >>, 0x88);
+			NESTED_PROPERTY(m_indexToHandle,GlobalTypes::CUtlVector<animgraphlib::CAnimParamHandle>, 0x70);
+			NESTED_PROPERTY(m_autoResetParams,GlobalTypes::CUtlVector<std::pair< CAnimParamHandle, CAnimVariant >>, 0x88);
 			PROPERTY(m_autoResetMap,GlobalTypes::CUtlHashtable< CAnimParamHandle, int16 >, 0xa0);
 			S2_PAD(0x100);
 		};

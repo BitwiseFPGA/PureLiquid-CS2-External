@@ -25,10 +25,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_ScreenSpaceRotateTowardTarget : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_vecTargetPosition,particleslib::CPerParticleVecInput , 0x1d0);
-			PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput , 0x888);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x9f8);
-			PROPERTY(m_flScreenEdgeAlignmentDistance,particleslib::CPerParticleFloatInput , 0xa00);
+			NESTED_PROPERTY(m_vecTargetPosition,particleslib::CPerParticleVecInput, 0x1d0);
+			NESTED_PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput, 0x888);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x9f8);
+			NESTED_PROPERTY(m_flScreenEdgeAlignmentDistance,particleslib::CPerParticleFloatInput, 0xa00);
 			S2_PAD(0x9A0);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_ScreenSpaceRotateTowardTarget) == 0xB70, "C_OP_ScreenSpaceRotateTowardTarget size should be 0xB70");

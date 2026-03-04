@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace modellib {
 		class CFootStride  {
 		public:
-			PROPERTY(m_definition,modellib::CFootCycleDefinition , 0x0);
-			PROPERTY(m_trajectories,modellib::CFootTrajectories , 0x40);
+			NESTED_PROPERTY(m_definition,modellib::CFootCycleDefinition, 0x0);
+			NESTED_PROPERTY(m_trajectories,modellib::CFootTrajectories, 0x40);
 			S2_PAD(0x58);
 		};
 		//static_assert(sizeof(CS2::modellib::CFootStride) == 0x58, "CFootStride size should be 0x58");

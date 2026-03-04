@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace server {
 		class CShatterGlassShardPhysics : public CS2::server::CPhysicsProp {
 		public:
-			PROPERTY(m_bDebris,bool , 0xce0);
-			PROPERTY(m_hParentShard,uint32_t , 0xce4);
-			PROPERTY(m_ShardDesc,server::shard_model_desc_t , 0xce8);
+			PROPERTY(m_bDebris,bool, 0xce0);
+			PROPERTY(m_hParentShard,uint32_t, 0xce4);
+			NESTED_PROPERTY(m_ShardDesc,server::shard_model_desc_t, 0xce8);
 			S2_PAD(0x90);
 		};
 		//static_assert(sizeof(CS2::server::CShatterGlassShardPhysics) == 0xD70, "CShatterGlassShardPhysics size should be 0xD70");

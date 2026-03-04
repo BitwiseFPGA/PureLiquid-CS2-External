@@ -26,11 +26,11 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerGranulator : public CS2::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator {
 		public:
-			PROPERTY(m_flGrainLength,float32 , 0xb8);
-			PROPERTY(m_flGrainCrossfadeAmount,float32 , 0xbc);
-			PROPERTY(m_flStartJitter,float32 , 0xc0);
-			PROPERTY(m_flPlaybackJitter,float32 , 0xc4);
-			PROPERTY(m_bShouldWraparound,bool , 0xc8);
+			PROPERTY(m_flGrainLength,float32, 0xb8);
+			PROPERTY(m_flGrainCrossfadeAmount,float32, 0xbc);
+			PROPERTY(m_flStartJitter,float32, 0xc0);
+			PROPERTY(m_flPlaybackJitter,float32, 0xc4);
+			PROPERTY(m_bShouldWraparound,bool, 0xc8);
 			PROPERTY(m_sourceAudio,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCVoiceContainerBase>, 0xd0);
 			S2_PAD(0xD8);
 		};

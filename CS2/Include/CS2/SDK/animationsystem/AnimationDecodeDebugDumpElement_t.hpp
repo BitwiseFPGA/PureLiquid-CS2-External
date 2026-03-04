@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animationsystem {
 		class AnimationDecodeDebugDumpElement_t  {
 		public:
-			PROPERTY(m_nEntityIndex,int32_t , 0x0);
-			PROPERTY(m_modelName,GlobalTypes::CUtlString* , 0x8);
+			PROPERTY(m_nEntityIndex,int32_t, 0x0);
+			PROPERTY(m_modelName,GlobalTypes::CUtlString*, 0x8);
 			PROPERTY(m_poseParams,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x10);
 			PROPERTY(m_decodeOps,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x28);
 			PROPERTY(m_internalOps,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x40);

@@ -20,13 +20,13 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimBone  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_parent,int32_t , 0x10);
-			PROPERTY(m_pos,GlobalTypes::Vector , 0x14);
-			PROPERTY(m_quat,GlobalTypes::QuaternionStorage , 0x20);
-			PROPERTY(m_scale,float32 , 0x30);
-			PROPERTY(m_qAlignment,GlobalTypes::QuaternionStorage , 0x34);
-			PROPERTY(m_flags,int32_t , 0x44);
+			PROPERTY(m_name,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_parent,int32_t, 0x10);
+			PROPERTY(m_pos,GlobalTypes::Vector, 0x14);
+			PROPERTY(m_quat,GlobalTypes::QuaternionStorage, 0x20);
+			PROPERTY(m_scale,float32, 0x30);
+			PROPERTY(m_qAlignment,GlobalTypes::QuaternionStorage, 0x34);
+			PROPERTY(m_flags,int32_t, 0x44);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimBone) == 0x48, "CAnimBone size should be 0x48");

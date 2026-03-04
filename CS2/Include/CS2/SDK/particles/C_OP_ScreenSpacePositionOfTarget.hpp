@@ -25,11 +25,11 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_ScreenSpacePositionOfTarget : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_vecTargetPosition,particleslib::CPerParticleVecInput , 0x1d0);
-			PROPERTY(m_bOututBehindness,bool , 0x888);
-			PROPERTY(m_nBehindFieldOutput,particles::ParticleAttributeIndex_t , 0x88c);
-			PROPERTY(m_flBehindOutputRemap,particleslib::CParticleRemapFloatInput , 0x890);
-			PROPERTY(m_nBehindSetMethod,particles::ParticleSetMethod_t , 0xa00);
+			NESTED_PROPERTY(m_vecTargetPosition,particleslib::CPerParticleVecInput, 0x1d0);
+			PROPERTY(m_bOututBehindness,bool, 0x888);
+			NESTED_PROPERTY(m_nBehindFieldOutput,particles::ParticleAttributeIndex_t, 0x88c);
+			NESTED_PROPERTY(m_flBehindOutputRemap,particleslib::CParticleRemapFloatInput, 0x890);
+			PROPERTY(m_nBehindSetMethod,particles::ParticleSetMethod_t, 0xa00);
 			S2_PAD(0x838);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_ScreenSpacePositionOfTarget) == 0xA08, "C_OP_ScreenSpacePositionOfTarget size should be 0xA08");

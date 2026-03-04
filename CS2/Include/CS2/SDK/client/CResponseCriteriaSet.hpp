@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace client {
 		class CResponseCriteriaSet  {
 		public:
-			PROPERTY(m_nNumPrefixedContexts,int32_t , 0x30);
-			PROPERTY(m_bOverrideOnAppend,bool , 0x34);
+			PROPERTY(m_nNumPrefixedContexts,int32_t, 0x30);
+			PROPERTY(m_bOverrideOnAppend,bool, 0x34);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::client::CResponseCriteriaSet) == 0x38, "CResponseCriteriaSet size should be 0x38");

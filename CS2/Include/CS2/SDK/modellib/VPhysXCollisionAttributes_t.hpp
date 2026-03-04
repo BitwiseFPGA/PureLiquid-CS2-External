@@ -20,13 +20,13 @@ namespace CS2 {
 	namespace modellib {
 		class VPhysXCollisionAttributes_t  {
 		public:
-			PROPERTY(m_nIncludeDetailLayerCount,int32_t , 0x0);
-			PROPERTY(m_CollisionGroup,uint32_t , 0x4);
-			PROPERTY(m_InteractAs,GlobalTypes::CUtlVector< uint32 >, 0x8);
-			PROPERTY(m_InteractWith,GlobalTypes::CUtlVector< uint32 >, 0x20);
-			PROPERTY(m_InteractExclude,GlobalTypes::CUtlVector< uint32 >, 0x38);
-			PROPERTY(m_DetailLayers,GlobalTypes::CUtlVector< uint32 >, 0x50);
-			PROPERTY(m_CollisionGroupString,GlobalTypes::CUtlString* , 0x68);
+			PROPERTY(m_nIncludeDetailLayerCount,int32_t, 0x0);
+			PROPERTY(m_CollisionGroup,uint32_t, 0x4);
+			NESTED_PROPERTY(m_InteractAs,GlobalTypes::CUtlVector< uint32 >, 0x8);
+			NESTED_PROPERTY(m_InteractWith,GlobalTypes::CUtlVector< uint32 >, 0x20);
+			NESTED_PROPERTY(m_InteractExclude,GlobalTypes::CUtlVector< uint32 >, 0x38);
+			NESTED_PROPERTY(m_DetailLayers,GlobalTypes::CUtlVector< uint32 >, 0x50);
+			PROPERTY(m_CollisionGroupString,GlobalTypes::CUtlString*, 0x68);
 			PROPERTY(m_InteractAsStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x70);
 			PROPERTY(m_InteractWithStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x88);
 			PROPERTY(m_InteractExcludeStrings,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0xa0);

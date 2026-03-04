@@ -27,15 +27,15 @@ namespace CS2 {
 	namespace client {
 		class CTriggerFan : public CS2::client::C_BaseTrigger {
 		public:
-			PROPERTY(m_vFanOriginOffset,GlobalTypes::Vector , 0xf58);
-			PROPERTY(m_vDirection,GlobalTypes::Vector , 0xf64);
-			PROPERTY(m_bPushTowardsInfoTarget,bool , 0xf70);
-			PROPERTY(m_bPushAwayFromInfoTarget,bool , 0xf71);
-			PROPERTY(m_qNoiseDelta,GlobalTypes::Quaternion , 0xf80);
+			PROPERTY(m_vFanOriginOffset,GlobalTypes::Vector, 0xf58);
+			PROPERTY(m_vDirection,GlobalTypes::Vector, 0xf64);
+			PROPERTY(m_bPushTowardsInfoTarget,bool, 0xf70);
+			PROPERTY(m_bPushAwayFromInfoTarget,bool, 0xf71);
+			PROPERTY(m_qNoiseDelta,GlobalTypes::Quaternion, 0xf80);
 			PROPERTY(m_hInfoFan,GlobalTypes::CHandle<client::CInfoFan>, 0xf90);
-			PROPERTY(m_flForce,float32 , 0xf94);
-			PROPERTY(m_bFalloff,bool , 0xf98);
-			PROPERTY(m_RampTimer,client::CountdownTimer , 0xfa0);
+			PROPERTY(m_flForce,float32, 0xf94);
+			PROPERTY(m_bFalloff,bool, 0xf98);
+			NESTED_PROPERTY(m_RampTimer,client::CountdownTimer, 0xfa0);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::client::CTriggerFan) == 0xFC0, "CTriggerFan size should be 0xFC0");

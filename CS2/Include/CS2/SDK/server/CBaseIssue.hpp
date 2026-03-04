@@ -25,12 +25,12 @@ namespace CS2 {
 	namespace server {
 		class CBaseIssue  {
 		public:
-			PROPERTY_ARRAY(m_szTypeString,char , 64 , 0x20);
-			PROPERTY_ARRAY(m_szDetailsString,char , 260 , 0x60);
-			PROPERTY(m_iNumYesVotes,int32_t , 0x164);
-			PROPERTY(m_iNumNoVotes,int32_t , 0x168);
-			PROPERTY(m_iNumPotentialVotes,int32_t , 0x16c);
-			PROPERTY(m_pVoteController,server::CVoteController* , 0x170);
+			PROPERTY_ARRAY(m_szTypeString,char, 64 , 0x20);
+			PROPERTY_ARRAY(m_szDetailsString,char, 260 , 0x60);
+			PROPERTY(m_iNumYesVotes,int32_t, 0x164);
+			PROPERTY(m_iNumNoVotes,int32_t, 0x168);
+			PROPERTY(m_iNumPotentialVotes,int32_t, 0x16c);
+			PROPERTY(m_pVoteController,server::CVoteController*, 0x170);
 			S2_PAD(0x178);
 		};
 		//static_assert(sizeof(CS2::server::CBaseIssue) == 0x178, "CBaseIssue size should be 0x178");

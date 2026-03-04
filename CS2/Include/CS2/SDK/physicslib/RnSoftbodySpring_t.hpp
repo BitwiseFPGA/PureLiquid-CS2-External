@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace physicslib {
 		class RnSoftbodySpring_t  {
 		public:
-			PROPERTY_ARRAY(m_nParticle,uint16_t , 2 , 0x0);
-			PROPERTY(m_flLength,float32 , 0x4);
+			PROPERTY_ARRAY(m_nParticle,uint16_t, 2 , 0x0);
+			PROPERTY(m_flLength,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnSoftbodySpring_t) == 0x8, "RnSoftbodySpring_t size should be 0x8");

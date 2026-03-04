@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace smartprops {
 		class ColorChoice_t  {
 		public:
-			PROPERTY(m_Color,GlobalTypes::CSmartPropAttributeColor , 0x0);
-			PROPERTY(m_flWeight,GlobalTypes::CSmartPropAttributeFloat , 0x40);
+			PROPERTY(m_Color,GlobalTypes::CSmartPropAttributeColor, 0x0);
+			PROPERTY(m_flWeight,GlobalTypes::CSmartPropAttributeFloat, 0x40);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::smartprops::ColorChoice_t) == 0x80, "ColorChoice_t size should be 0x80");

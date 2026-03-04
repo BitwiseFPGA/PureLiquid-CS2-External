@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace animlib {
 		class CNmTransitionEvent : public CS2::animlib::CNmEvent {
 		public:
-			PROPERTY(m_rule,animlib::NmTransitionRule_t , 0x20);
-			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol , 0x28);
+			PROPERTY(m_rule,animlib::NmTransitionRule_t, 0x20);
+			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol, 0x28);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmTransitionEvent) == 0x30, "CNmTransitionEvent size should be 0x30");

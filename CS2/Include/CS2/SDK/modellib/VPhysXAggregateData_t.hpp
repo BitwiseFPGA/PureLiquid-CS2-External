@@ -10,17 +10,15 @@
 #endif
 
 
+#include <SDK/modellib/VPhysXBodyPart_t.hpp>
+#include <SDK/modellib/PhysShapeMarkup_t.hpp>
+#include <SDK/modellib/VPhysXConstraint2_t.hpp>
+#include <SDK/modellib/VPhysXJoint_t.hpp>
+#include <SDK/modellib/VPhysXCollisionAttributes_t.hpp>
 
 
 
 namespace CS2 {
-	namespace modellib {
-		class VPhysXBodyPart_t;
-		class PhysShapeMarkup_t;
-		class VPhysXConstraint2_t;
-		class VPhysXJoint_t;
-		class VPhysXCollisionAttributes_t;
-	}
 	namespace physicslib {
 		class PhysFeModelDesc_t;
 	}
@@ -32,23 +30,23 @@ namespace CS2 {
 	namespace modellib {
 		class VPhysXAggregateData_t  {
 		public:
-			PROPERTY(m_nFlags,uint16_t , 0x0);
-			PROPERTY(m_nRefCounter,uint16_t , 0x2);
-			PROPERTY(m_bonesHash,GlobalTypes::CUtlVector< uint32 >, 0x8);
+			PROPERTY(m_nFlags,uint16_t, 0x0);
+			PROPERTY(m_nRefCounter,uint16_t, 0x2);
+			NESTED_PROPERTY(m_bonesHash,GlobalTypes::CUtlVector< uint32 >, 0x8);
 			PROPERTY(m_boneNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x20);
-			PROPERTY(m_indexNames,GlobalTypes::CUtlVector< uint16 >, 0x38);
-			PROPERTY(m_indexHash,GlobalTypes::CUtlVector< uint16 >, 0x50);
-			PROPERTY(m_bindPose,GlobalTypes::CUtlVector<GlobalTypes::matrix3x4a_t>, 0x68);
-			PROPERTY(m_parts,GlobalTypes::CUtlVector<modellib::VPhysXBodyPart_t>, 0x80);
-			PROPERTY(m_shapeMarkups,GlobalTypes::CUtlVector<modellib::PhysShapeMarkup_t>, 0x98);
-			PROPERTY(m_constraints2,GlobalTypes::CUtlVector<modellib::VPhysXConstraint2_t>, 0xb0);
-			PROPERTY(m_joints,GlobalTypes::CUtlVector<modellib::VPhysXJoint_t>, 0xc8);
-			PROPERTY(m_pFeModel,physicslib::PhysFeModelDesc_t* , 0xe0);
-			PROPERTY(m_boneParents,GlobalTypes::CUtlVector< uint16 >, 0xe8);
-			PROPERTY(m_surfacePropertyHashes,GlobalTypes::CUtlVector< uint32 >, 0x100);
-			PROPERTY(m_collisionAttributes,GlobalTypes::CUtlVector<modellib::VPhysXCollisionAttributes_t>, 0x118);
+			NESTED_PROPERTY(m_indexNames,GlobalTypes::CUtlVector< uint16 >, 0x38);
+			NESTED_PROPERTY(m_indexHash,GlobalTypes::CUtlVector< uint16 >, 0x50);
+			NESTED_PROPERTY(m_bindPose,GlobalTypes::CUtlVector<GlobalTypes::matrix3x4a_t>, 0x68);
+			NESTED_PROPERTY(m_parts,GlobalTypes::CUtlVector<modellib::VPhysXBodyPart_t>, 0x80);
+			NESTED_PROPERTY(m_shapeMarkups,GlobalTypes::CUtlVector<modellib::PhysShapeMarkup_t>, 0x98);
+			NESTED_PROPERTY(m_constraints2,GlobalTypes::CUtlVector<modellib::VPhysXConstraint2_t>, 0xb0);
+			NESTED_PROPERTY(m_joints,GlobalTypes::CUtlVector<modellib::VPhysXJoint_t>, 0xc8);
+			PROPERTY(m_pFeModel,physicslib::PhysFeModelDesc_t*, 0xe0);
+			NESTED_PROPERTY(m_boneParents,GlobalTypes::CUtlVector< uint16 >, 0xe8);
+			NESTED_PROPERTY(m_surfacePropertyHashes,GlobalTypes::CUtlVector< uint32 >, 0x100);
+			NESTED_PROPERTY(m_collisionAttributes,GlobalTypes::CUtlVector<modellib::VPhysXCollisionAttributes_t>, 0x118);
 			PROPERTY(m_debugPartNames,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x130);
-			PROPERTY(m_embeddedKeyvalues,GlobalTypes::CUtlString* , 0x148);
+			PROPERTY(m_embeddedKeyvalues,GlobalTypes::CUtlString*, 0x148);
 			S2_PAD(0x150);
 		};
 		//static_assert(sizeof(CS2::modellib::VPhysXAggregateData_t) == 0x150, "VPhysXAggregateData_t size should be 0x150");

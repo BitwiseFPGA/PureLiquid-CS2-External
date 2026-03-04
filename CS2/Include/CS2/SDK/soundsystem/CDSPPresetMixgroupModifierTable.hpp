@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/soundsystem/CDspPresetModifierList.hpp>
 
 
 
-namespace CS2 {
-	namespace soundsystem {
-		class CDspPresetModifierList;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,7 +21,7 @@ namespace CS2 {
 	namespace soundsystem {
 		class CDSPPresetMixgroupModifierTable  {
 		public:
-			PROPERTY(m_table,GlobalTypes::CUtlVector<soundsystem::CDspPresetModifierList>, 0x0);
+			NESTED_PROPERTY(m_table,GlobalTypes::CUtlVector<soundsystem::CDspPresetModifierList>, 0x0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::soundsystem::CDSPPresetMixgroupModifierTable) == 0x18, "CDSPPresetMixgroupModifierTable size should be 0x18");

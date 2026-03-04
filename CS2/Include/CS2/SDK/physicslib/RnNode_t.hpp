@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class RnNode_t  {
 		public:
-			PROPERTY(m_vMin,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_nChildren,uint32_t , 0xc);
-			PROPERTY(m_vMax,GlobalTypes::Vector , 0x10);
-			PROPERTY(m_nTriangleOffset,uint32_t , 0x1c);
+			PROPERTY(m_vMin,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_nChildren,uint32_t, 0xc);
+			PROPERTY(m_vMax,GlobalTypes::Vector, 0x10);
+			PROPERTY(m_nTriangleOffset,uint32_t, 0x1c);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnNode_t) == 0x20, "RnNode_t size should be 0x20");

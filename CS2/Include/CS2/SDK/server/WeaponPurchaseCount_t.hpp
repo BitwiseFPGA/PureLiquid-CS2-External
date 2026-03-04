@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace server {
 		class WeaponPurchaseCount_t  {
 		public:
-			PROPERTY(m_nItemDefIndex,uint16_t , 0x30);
-			PROPERTY(m_nCount,uint16_t , 0x32);
+			PROPERTY(m_nItemDefIndex,uint16_t, 0x30);
+			PROPERTY(m_nCount,uint16_t, 0x32);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::server::WeaponPurchaseCount_t) == 0x38, "WeaponPurchaseCount_t size should be 0x38");

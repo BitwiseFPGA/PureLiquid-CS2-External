@@ -25,7 +25,7 @@ namespace CS2 {
 	namespace client {
 		class CTakeDamageSummaryScopeGuard  {
 		public:
-			PROPERTY(m_vecSummaries,GlobalTypes::CUtlVector<client::SummaryTakeDamageInfo_t*>, 0x8);
+			NESTED_PROPERTY(m_vecSummaries,GlobalTypes::CUtlVector<client::SummaryTakeDamageInfo_t*>, 0x8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::CTakeDamageSummaryScopeGuard) == 0x20, "CTakeDamageSummaryScopeGuard size should be 0x20");

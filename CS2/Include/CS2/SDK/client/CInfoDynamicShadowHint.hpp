@@ -26,10 +26,10 @@ namespace CS2 {
 	namespace client {
 		class CInfoDynamicShadowHint : public CS2::client::C_PointEntity {
 		public:
-			PROPERTY(m_bDisabled,bool , 0x608);
-			PROPERTY(m_flRange,float32 , 0x60c);
-			PROPERTY(m_nImportance,int32_t , 0x610);
-			PROPERTY(m_nLightChoice,int32_t , 0x614);
+			PROPERTY(m_bDisabled,bool, 0x608);
+			PROPERTY(m_flRange,float32, 0x60c);
+			PROPERTY(m_nImportance,int32_t, 0x610);
+			PROPERTY(m_nLightChoice,int32_t, 0x614);
 			PROPERTY(m_hLight,GlobalTypes::CHandle<client::C_BaseEntity>, 0x618);
 			S2_PAD(0x18);
 		};

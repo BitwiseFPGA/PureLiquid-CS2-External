@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_LerpEndCapVector : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d0);
-			PROPERTY(m_vecOutput,GlobalTypes::Vector , 0x1d4);
-			PROPERTY(m_flLerpTime,float32 , 0x1e0);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d0);
+			PROPERTY(m_vecOutput,GlobalTypes::Vector, 0x1d4);
+			PROPERTY(m_flLerpTime,float32, 0x1e0);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_LerpEndCapVector) == 0x1E8, "C_OP_LerpEndCapVector size should be 0x1E8");

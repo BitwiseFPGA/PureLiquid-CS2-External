@@ -21,15 +21,15 @@ namespace CS2 {
 	namespace client {
 		class C_EnvWindVolume : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_bActive,bool , 0x608);
-			PROPERTY(m_vBoxMins,GlobalTypes::Vector , 0x60c);
-			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector , 0x618);
-			PROPERTY(m_bStartDisabled,bool , 0x624);
-			PROPERTY(m_nShape,int32_t , 0x628);
-			PROPERTY(m_fWindSpeedMultiplier,float32 , 0x62c);
-			PROPERTY(m_fWindTurbulenceMultiplier,float32 , 0x630);
-			PROPERTY(m_fWindSpeedVariationMultiplier,float32 , 0x634);
-			PROPERTY(m_fWindDirectionVariationMultiplier,float32 , 0x638);
+			PROPERTY(m_bActive,bool, 0x608);
+			PROPERTY(m_vBoxMins,GlobalTypes::Vector, 0x60c);
+			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector, 0x618);
+			PROPERTY(m_bStartDisabled,bool, 0x624);
+			PROPERTY(m_nShape,int32_t, 0x628);
+			PROPERTY(m_fWindSpeedMultiplier,float32, 0x62c);
+			PROPERTY(m_fWindTurbulenceMultiplier,float32, 0x630);
+			PROPERTY(m_fWindSpeedVariationMultiplier,float32, 0x634);
+			PROPERTY(m_fWindDirectionVariationMultiplier,float32, 0x638);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::client::C_EnvWindVolume) == 0x640, "C_EnvWindVolume size should be 0x640");

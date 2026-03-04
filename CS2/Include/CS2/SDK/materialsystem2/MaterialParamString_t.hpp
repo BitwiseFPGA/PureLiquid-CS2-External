@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace materialsystem2 {
 		class MaterialParamString_t : public CS2::materialsystem2::MaterialParam_t {
 		public:
-			PROPERTY(m_value,GlobalTypes::CUtlString* , 0x8);
+			PROPERTY(m_value,GlobalTypes::CUtlString*, 0x8);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::materialsystem2::MaterialParamString_t) == 0x10, "MaterialParamString_t size should be 0x10");

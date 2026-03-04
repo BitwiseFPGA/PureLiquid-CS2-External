@@ -23,8 +23,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_PickBestOutflowSelector : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_nCheckType,pulse_runtime_lib::PulseBestOutflowRules_t , 0x48);
-			PROPERTY(m_OutflowList,pulse_runtime_lib::PulseSelectorOutflowList_t , 0x50);
+			PROPERTY(m_nCheckType,pulse_runtime_lib::PulseBestOutflowRules_t, 0x48);
+			NESTED_PROPERTY(m_OutflowList,pulse_runtime_lib::PulseSelectorOutflowList_t, 0x50);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_PickBestOutflowSelector) == 0x68, "CPulseCell_PickBestOutflowSelector size should be 0x68");

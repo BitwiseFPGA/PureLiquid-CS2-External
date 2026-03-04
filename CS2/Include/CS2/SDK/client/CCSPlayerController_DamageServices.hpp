@@ -11,14 +11,10 @@
 
 
 #include <SDK/client/CPlayerControllerComponent.hpp>
+#include <SDK/client/CDamageRecord.hpp>
 
 
 
-namespace CS2 {
-	namespace client {
-		class CDamageRecord;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,7 +22,7 @@ namespace CS2 {
 	namespace client {
 		class CCSPlayerController_DamageServices : public CS2::client::CPlayerControllerComponent {
 		public:
-			PROPERTY(m_nSendUpdate,int32_t , 0x40);
+			PROPERTY(m_nSendUpdate,int32_t, 0x40);
 			PROPERTY(m_DamageList,GlobalTypes::C_UtlVectorEmbeddedNetworkVar<client::CDamageRecord>, 0x48);
 			S2_PAD(0x70);
 		};

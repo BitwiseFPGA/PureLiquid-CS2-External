@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CBlendCurve  {
 		public:
-			PROPERTY(m_flControlPoint1,float32 , 0x0);
-			PROPERTY(m_flControlPoint2,float32 , 0x4);
+			PROPERTY(m_flControlPoint1,float32, 0x0);
+			PROPERTY(m_flControlPoint2,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CBlendCurve) == 0x8, "CBlendCurve size should be 0x8");

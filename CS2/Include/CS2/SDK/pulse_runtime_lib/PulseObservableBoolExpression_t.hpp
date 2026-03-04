@@ -11,15 +11,11 @@
 
 
 #include <SDK/pulse_runtime_lib/CPulse_OutflowConnection.hpp>
+#include <SDK/pulse_runtime_lib/PulseRuntimeVarIndex_t.hpp>
+#include <SDK/pulse_runtime_lib/PulseRuntimeBlackboardReferenceIndex_t.hpp>
 
 
 
-namespace CS2 {
-	namespace pulse_runtime_lib {
-		class PulseRuntimeVarIndex_t;
-		class PulseRuntimeBlackboardReferenceIndex_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,9 +23,9 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class PulseObservableBoolExpression_t  {
 		public:
-			PROPERTY(m_EvaluateConnection,pulse_runtime_lib::CPulse_OutflowConnection , 0x0);
-			PROPERTY(m_DependentObservableVars,GlobalTypes::CUtlVector<pulse_runtime_lib::PulseRuntimeVarIndex_t>, 0x48);
-			PROPERTY(m_DependentObservableBlackboardReferences,GlobalTypes::CUtlVector<pulse_runtime_lib::PulseRuntimeBlackboardReferenceIndex_t>, 0x60);
+			NESTED_PROPERTY(m_EvaluateConnection,pulse_runtime_lib::CPulse_OutflowConnection, 0x0);
+			NESTED_PROPERTY(m_DependentObservableVars,GlobalTypes::CUtlVector<pulse_runtime_lib::PulseRuntimeVarIndex_t>, 0x48);
+			NESTED_PROPERTY(m_DependentObservableBlackboardReferences,GlobalTypes::CUtlVector<pulse_runtime_lib::PulseRuntimeBlackboardReferenceIndex_t>, 0x60);
 			S2_PAD(0x78);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::PulseObservableBoolExpression_t) == 0x78, "PulseObservableBoolExpression_t size should be 0x78");

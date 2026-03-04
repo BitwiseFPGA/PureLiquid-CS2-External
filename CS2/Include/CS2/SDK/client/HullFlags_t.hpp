@@ -20,16 +20,16 @@ namespace CS2 {
 	namespace client {
 		class HullFlags_t  {
 		public:
-			PROPERTY(m_bHull_Human,bool , 0x0);
-			PROPERTY(m_bHull_SmallCentered,bool , 0x1);
-			PROPERTY(m_bHull_WideHuman,bool , 0x2);
-			PROPERTY(m_bHull_Tiny,bool , 0x3);
-			PROPERTY(m_bHull_Medium,bool , 0x4);
-			PROPERTY(m_bHull_TinyCentered,bool , 0x5);
-			PROPERTY(m_bHull_Large,bool , 0x6);
-			PROPERTY(m_bHull_LargeCentered,bool , 0x7);
-			PROPERTY(m_bHull_MediumTall,bool , 0x8);
-			PROPERTY(m_bHull_Small,bool , 0x9);
+			PROPERTY(m_bHull_Human,bool, 0x0);
+			PROPERTY(m_bHull_SmallCentered,bool, 0x1);
+			PROPERTY(m_bHull_WideHuman,bool, 0x2);
+			PROPERTY(m_bHull_Tiny,bool, 0x3);
+			PROPERTY(m_bHull_Medium,bool, 0x4);
+			PROPERTY(m_bHull_TinyCentered,bool, 0x5);
+			PROPERTY(m_bHull_Large,bool, 0x6);
+			PROPERTY(m_bHull_LargeCentered,bool, 0x7);
+			PROPERTY(m_bHull_MediumTall,bool, 0x8);
+			PROPERTY(m_bHull_Small,bool, 0x9);
 			S2_PAD(0xA);
 		};
 		//static_assert(sizeof(CS2::client::HullFlags_t) == 0xA, "HullFlags_t size should be 0xA");

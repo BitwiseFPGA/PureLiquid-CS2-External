@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FeHingeLimitBuild_t  {
 		public:
-			PROPERTY_ARRAY(nNode,uint16_t , 6 , 0x0);
-			PROPERTY(nFlags,uint32_t , 0xc);
-			PROPERTY(flLimitCW,float32 , 0x10);
-			PROPERTY(flLimitCCW,float32 , 0x14);
+			PROPERTY_ARRAY(nNode,uint16_t, 6 , 0x0);
+			PROPERTY(nFlags,uint32_t, 0xc);
+			PROPERTY(flLimitCW,float32, 0x10);
+			PROPERTY(flLimitCCW,float32, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeHingeLimitBuild_t) == 0x18, "FeHingeLimitBuild_t size should be 0x18");

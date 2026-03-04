@@ -21,14 +21,14 @@ namespace CS2 {
 	namespace server {
 		class CSoundOpvarSetEntity : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_iszStackName,GlobalTypes::CUtlSymbolLarge* , 0x4c0);
-			PROPERTY(m_iszOperatorName,GlobalTypes::CUtlSymbolLarge* , 0x4c8);
-			PROPERTY(m_iszOpvarName,GlobalTypes::CUtlSymbolLarge* , 0x4d0);
-			PROPERTY(m_nOpvarType,int32_t , 0x4d8);
-			PROPERTY(m_nOpvarIndex,int32_t , 0x4dc);
-			PROPERTY(m_flOpvarValue,float32 , 0x4e0);
-			PROPERTY(m_OpvarValueString,GlobalTypes::CUtlSymbolLarge* , 0x4e8);
-			PROPERTY(m_bSetOnSpawn,bool , 0x4f0);
+			PROPERTY(m_iszStackName,GlobalTypes::CUtlSymbolLarge*, 0x4c0);
+			PROPERTY(m_iszOperatorName,GlobalTypes::CUtlSymbolLarge*, 0x4c8);
+			PROPERTY(m_iszOpvarName,GlobalTypes::CUtlSymbolLarge*, 0x4d0);
+			PROPERTY(m_nOpvarType,int32_t, 0x4d8);
+			PROPERTY(m_nOpvarIndex,int32_t, 0x4dc);
+			PROPERTY(m_flOpvarValue,float32, 0x4e0);
+			PROPERTY(m_OpvarValueString,GlobalTypes::CUtlSymbolLarge*, 0x4e8);
+			PROPERTY(m_bSetOnSpawn,bool, 0x4f0);
 			S2_PAD(0x58);
 		};
 		//static_assert(sizeof(CS2::server::CSoundOpvarSetEntity) == 0x500, "CSoundOpvarSetEntity size should be 0x500");

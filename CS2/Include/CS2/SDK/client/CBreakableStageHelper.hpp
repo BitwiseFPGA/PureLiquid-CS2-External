@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace client {
 		class CBreakableStageHelper  {
 		public:
-			PROPERTY(m_nCurrentStage,int32_t , 0x8);
-			PROPERTY(m_nStageCount,int32_t , 0xc);
+			PROPERTY(m_nCurrentStage,int32_t, 0x8);
+			PROPERTY(m_nStageCount,int32_t, 0xc);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::CBreakableStageHelper) == 0x18, "CBreakableStageHelper size should be 0x18");

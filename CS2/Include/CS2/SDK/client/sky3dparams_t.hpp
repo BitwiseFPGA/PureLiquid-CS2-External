@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace client {
 		class sky3dparams_t  {
 		public:
-			PROPERTY(scale,int16_t , 0x8);
-			PROPERTY(origin,GlobalTypes::Vector , 0xc);
-			PROPERTY(bClip3DSkyBoxNearToWorldFar,bool , 0x18);
-			PROPERTY(flClip3DSkyBoxNearToWorldFarOffset,float32 , 0x1c);
-			PROPERTY(fog,client::fogparams_t , 0x20);
-			PROPERTY(m_nWorldGroupID,GlobalTypes::WorldGroupId_t , 0x88);
+			PROPERTY(scale,int16_t, 0x8);
+			PROPERTY(origin,GlobalTypes::Vector, 0xc);
+			PROPERTY(bClip3DSkyBoxNearToWorldFar,bool, 0x18);
+			PROPERTY(flClip3DSkyBoxNearToWorldFarOffset,float32, 0x1c);
+			NESTED_PROPERTY(fog,client::fogparams_t, 0x20);
+			PROPERTY(m_nWorldGroupID,GlobalTypes::WorldGroupId_t, 0x88);
 			S2_PAD(0x90);
 		};
 		//static_assert(sizeof(CS2::client::sky3dparams_t) == 0x90, "sky3dparams_t size should be 0x90");

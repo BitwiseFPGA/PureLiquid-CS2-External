@@ -11,6 +11,7 @@
 
 
 #include <SDK/smartprops/CSmartPropVariable.hpp>
+#include <SDK/resourcesystem/InfoForResourceTypeCModel.hpp>
 
 
 
@@ -22,7 +23,7 @@ namespace CS2 {
 		class CSmartPropVariable_MaterialGroup : public CS2::smartprops::CSmartPropVariable {
 		public:
 			PROPERTY(m_sModelName,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCModel>>, 0x38);
-			PROPERTY(m_DefaultValue,GlobalTypes::CModelMaterialGroupName , 0x118);
+			PROPERTY(m_DefaultValue,GlobalTypes::CModelMaterialGroupName, 0x118);
 			S2_PAD(0xE8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable_MaterialGroup) == 0x120, "CSmartPropVariable_MaterialGroup size should be 0x120");

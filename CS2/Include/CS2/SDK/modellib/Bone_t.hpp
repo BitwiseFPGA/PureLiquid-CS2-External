@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace modellib {
 		class Bone_t  {
 		public:
-			PROPERTY(m_Name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_BindPose,GlobalTypes::CTransform , 0x10);
-			PROPERTY(m_nParent,int32_t , 0x30);
+			PROPERTY(m_Name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_BindPose,GlobalTypes::CTransform, 0x10);
+			PROPERTY(m_nParent,int32_t, 0x30);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::modellib::Bone_t) == 0x40, "SkeletonAnimCapture_t::Bone_t size should be 0x40");

@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapTransformToVelocity : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0x1d0);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0x1d0);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapTransformToVelocity) == 0x238, "C_OP_RemapTransformToVelocity size should be 0x238");

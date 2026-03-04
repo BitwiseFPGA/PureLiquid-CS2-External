@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace modellib {
 		class SheetSequenceIntegerId_t  {
 		public:
-			PROPERTY(m_Value,uint32_t , 0x0);
+			PROPERTY(m_Value,uint32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::modellib::SheetSequenceIntegerId_t) == 0x4, "SheetSequenceIntegerId_t size should be 0x4");

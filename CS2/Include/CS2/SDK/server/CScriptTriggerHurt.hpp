@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CScriptTriggerHurt : public CS2::server::CTriggerHurt {
 		public:
-			PROPERTY(m_vExtent,GlobalTypes::Vector , 0x910);
+			PROPERTY(m_vExtent,GlobalTypes::Vector, 0x910);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CScriptTriggerHurt) == 0x920, "CScriptTriggerHurt size should be 0x920");

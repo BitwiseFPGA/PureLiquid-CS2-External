@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace client {
 		class C_SoundEventSphereEntity : public CS2::client::C_SoundEventEntity {
 		public:
-			PROPERTY(m_flRadius,float32 , 0x6b8);
+			PROPERTY(m_flRadius,float32, 0x6b8);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::C_SoundEventSphereEntity) == 0x6C0, "C_SoundEventSphereEntity size should be 0x6C0");

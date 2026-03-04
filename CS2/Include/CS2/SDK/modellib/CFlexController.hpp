@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace modellib {
 		class CFlexController  {
 		public:
-			PROPERTY(m_szName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_szType,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(min,float32 , 0x10);
-			PROPERTY(max,float32 , 0x14);
+			PROPERTY(m_szName,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_szType,GlobalTypes::CUtlString*, 0x8);
+			PROPERTY(min,float32, 0x10);
+			PROPERTY(max,float32, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::modellib::CFlexController) == 0x18, "CFlexController size should be 0x18");

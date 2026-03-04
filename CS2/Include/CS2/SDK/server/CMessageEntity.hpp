@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace server {
 		class CMessageEntity : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_radius,int32_t , 0x4a8);
-			PROPERTY(m_messageText,GlobalTypes::CUtlSymbolLarge* , 0x4b0);
-			PROPERTY(m_drawText,bool , 0x4b8);
-			PROPERTY(m_bDeveloperOnly,bool , 0x4b9);
-			PROPERTY(m_bEnabled,bool , 0x4ba);
+			PROPERTY(m_radius,int32_t, 0x4a8);
+			PROPERTY(m_messageText,GlobalTypes::CUtlSymbolLarge*, 0x4b0);
+			PROPERTY(m_drawText,bool, 0x4b8);
+			PROPERTY(m_bDeveloperOnly,bool, 0x4b9);
+			PROPERTY(m_bEnabled,bool, 0x4ba);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CMessageEntity) == 0x4C0, "CMessageEntity size should be 0x4C0");

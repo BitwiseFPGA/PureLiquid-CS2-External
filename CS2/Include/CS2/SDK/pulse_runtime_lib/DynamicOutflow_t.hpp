@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class DynamicOutflow_t  {
 		public:
-			PROPERTY(m_OutflowID,GlobalTypes::CGlobalSymbol , 0x0);
-			PROPERTY(m_Connection,pulse_runtime_lib::CPulse_OutflowConnection , 0x8);
+			PROPERTY(m_OutflowID,GlobalTypes::CGlobalSymbol, 0x0);
+			NESTED_PROPERTY(m_Connection,pulse_runtime_lib::CPulse_OutflowConnection, 0x8);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::DynamicOutflow_t) == 0x50, "PulseNodeDynamicOutflows_t::DynamicOutflow_t size should be 0x50");

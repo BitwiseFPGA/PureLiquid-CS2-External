@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace physicslib {
 		class FeRigidColliderIndices_t  {
 		public:
-			PROPERTY(m_nTaperedCapsuleRigidIndex,uint16_t , 0x0);
-			PROPERTY(m_nSphereRigidIndex,uint16_t , 0x2);
-			PROPERTY(m_nBoxRigidIndex,uint16_t , 0x4);
-			PROPERTY(m_nSDFRigidIndex,uint16_t , 0x6);
-			PROPERTY(m_nCollisionPlaneIndex,uint16_t , 0x8);
+			PROPERTY(m_nTaperedCapsuleRigidIndex,uint16_t, 0x0);
+			PROPERTY(m_nSphereRigidIndex,uint16_t, 0x2);
+			PROPERTY(m_nBoxRigidIndex,uint16_t, 0x4);
+			PROPERTY(m_nSDFRigidIndex,uint16_t, 0x6);
+			PROPERTY(m_nCollisionPlaneIndex,uint16_t, 0x8);
 			S2_PAD(0xA);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeRigidColliderIndices_t) == 0xA, "FeRigidColliderIndices_t size should be 0xA");

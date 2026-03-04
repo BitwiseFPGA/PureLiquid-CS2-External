@@ -21,15 +21,15 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerShapedNoise : public CS2::soundsystem_voicecontainers::CVoiceContainerGenerator {
 		public:
-			PROPERTY(m_bUseCurveForFrequency,bool , 0xa8);
-			PROPERTY(m_flFrequency,float32 , 0xac);
-			PROPERTY(m_frequencySweep,GlobalTypes::CPiecewiseCurve , 0xb0);
-			PROPERTY(m_bUseCurveForResonance,bool , 0xf0);
-			PROPERTY(m_flResonance,float32 , 0xf4);
-			PROPERTY(m_resonanceSweep,GlobalTypes::CPiecewiseCurve , 0xf8);
-			PROPERTY(m_bUseCurveForAmplitude,bool , 0x138);
-			PROPERTY(m_flGainInDecibels,float32 , 0x13c);
-			PROPERTY(m_gainSweep,GlobalTypes::CPiecewiseCurve , 0x140);
+			PROPERTY(m_bUseCurveForFrequency,bool, 0xa8);
+			PROPERTY(m_flFrequency,float32, 0xac);
+			PROPERTY(m_frequencySweep,GlobalTypes::CPiecewiseCurve, 0xb0);
+			PROPERTY(m_bUseCurveForResonance,bool, 0xf0);
+			PROPERTY(m_flResonance,float32, 0xf4);
+			PROPERTY(m_resonanceSweep,GlobalTypes::CPiecewiseCurve, 0xf8);
+			PROPERTY(m_bUseCurveForAmplitude,bool, 0x138);
+			PROPERTY(m_flGainInDecibels,float32, 0x13c);
+			PROPERTY(m_gainSweep,GlobalTypes::CPiecewiseCurve, 0x140);
 			S2_PAD(0xD8);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerShapedNoise) == 0x180, "CVoiceContainerShapedNoise size should be 0x180");

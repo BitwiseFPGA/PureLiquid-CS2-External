@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animlib {
 		class Condition_t  {
 		public:
-			PROPERTY(m_eventID,GlobalTypes::CGlobalSymbol , 0x0);
-			PROPERTY(m_eventTypeCondition,animlib::NmGraphEventTypeCondition_t , 0x8);
+			PROPERTY(m_eventID,GlobalTypes::CGlobalSymbol, 0x0);
+			PROPERTY(m_eventTypeCondition,animlib::NmGraphEventTypeCondition_t, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animlib::Condition_t) == 0x10, "CNmGraphEventConditionNode::Condition_t size should be 0x10");

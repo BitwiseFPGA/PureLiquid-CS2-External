@@ -24,13 +24,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_CurlNoiseForce : public CS2::particles::CParticleFunctionForce {
 		public:
-			PROPERTY(m_nNoiseType,particles::ParticleDirectionNoiseType_t , 0x1e0);
-			PROPERTY(m_vecNoiseFreq,particleslib::CPerParticleVecInput , 0x1e8);
-			PROPERTY(m_vecNoiseScale,particleslib::CPerParticleVecInput , 0x8a0);
-			PROPERTY(m_vecOffset,particleslib::CPerParticleVecInput , 0xf58);
-			PROPERTY(m_vecOffsetRate,particleslib::CPerParticleVecInput , 0x1610);
-			PROPERTY(m_flWorleySeed,particleslib::CPerParticleFloatInput , 0x1cc8);
-			PROPERTY(m_flWorleyJitter,particleslib::CPerParticleFloatInput , 0x1e38);
+			PROPERTY(m_nNoiseType,particles::ParticleDirectionNoiseType_t, 0x1e0);
+			NESTED_PROPERTY(m_vecNoiseFreq,particleslib::CPerParticleVecInput, 0x1e8);
+			NESTED_PROPERTY(m_vecNoiseScale,particleslib::CPerParticleVecInput, 0x8a0);
+			NESTED_PROPERTY(m_vecOffset,particleslib::CPerParticleVecInput, 0xf58);
+			NESTED_PROPERTY(m_vecOffsetRate,particleslib::CPerParticleVecInput, 0x1610);
+			NESTED_PROPERTY(m_flWorleySeed,particleslib::CPerParticleFloatInput, 0x1cc8);
+			NESTED_PROPERTY(m_flWorleyJitter,particleslib::CPerParticleFloatInput, 0x1e38);
 			S2_PAD(0x1DC8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_CurlNoiseForce) == 0x1FA8, "C_OP_CurlNoiseForce size should be 0x1FA8");

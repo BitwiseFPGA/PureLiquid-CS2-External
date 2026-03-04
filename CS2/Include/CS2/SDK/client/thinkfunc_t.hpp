@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class thinkfunc_t  {
 		public:
-			PROPERTY(m_hFn,GlobalTypes::HSCRIPT , 0x8);
-			PROPERTY(m_nContext,GlobalTypes::CUtlStringToken* , 0x10);
-			PROPERTY(m_nNextThinkTick,entity2::GameTick_t , 0x14);
-			PROPERTY(m_nLastThinkTick,entity2::GameTick_t , 0x18);
+			PROPERTY(m_hFn,GlobalTypes::HSCRIPT, 0x8);
+			PROPERTY(m_nContext,GlobalTypes::CUtlStringToken*, 0x10);
+			NESTED_PROPERTY(m_nNextThinkTick,entity2::GameTick_t, 0x14);
+			NESTED_PROPERTY(m_nLastThinkTick,entity2::GameTick_t, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::thinkfunc_t) == 0x20, "thinkfunc_t size should be 0x20");

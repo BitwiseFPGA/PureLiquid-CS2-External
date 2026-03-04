@@ -22,14 +22,14 @@ namespace CS2 {
 	namespace client {
 		class C_CSGO_TeamPreviewCharacterPosition : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_nVariant,int32_t , 0x608);
-			PROPERTY(m_nRandom,int32_t , 0x60c);
-			PROPERTY(m_nOrdinal,int32_t , 0x610);
-			PROPERTY(m_sWeaponName,GlobalTypes::CUtlString* , 0x618);
-			PROPERTY(m_xuid,uint64_t , 0x620);
-			PROPERTY(m_agentItem,client::C_EconItemView , 0x628);
-			PROPERTY(m_glovesItem,client::C_EconItemView , 0xa98);
-			PROPERTY(m_weaponItem,client::C_EconItemView , 0xf08);
+			PROPERTY(m_nVariant,int32_t, 0x608);
+			PROPERTY(m_nRandom,int32_t, 0x60c);
+			PROPERTY(m_nOrdinal,int32_t, 0x610);
+			PROPERTY(m_sWeaponName,GlobalTypes::CUtlString*, 0x618);
+			PROPERTY(m_xuid,uint64_t, 0x620);
+			NESTED_PROPERTY(m_agentItem,client::C_EconItemView, 0x628);
+			NESTED_PROPERTY(m_glovesItem,client::C_EconItemView, 0xa98);
+			NESTED_PROPERTY(m_weaponItem,client::C_EconItemView, 0xf08);
 			S2_PAD(0xDA0);
 		};
 		//static_assert(sizeof(CS2::client::C_CSGO_TeamPreviewCharacterPosition) == 0x13A8, "C_CSGO_TeamPreviewCharacterPosition size should be 0x13A8");

@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace smartprops {
 		class Criteria_t  {
 		public:
-			PROPERTY(m_flLength,float32 , 0x0);
-			PROPERTY(m_bAllowScale,bool , 0x4);
-			PROPERTY(m_flMinLength,float32 , 0x8);
-			PROPERTY(m_flMaxLength,float32 , 0xc);
+			PROPERTY(m_flLength,float32, 0x0);
+			PROPERTY(m_bAllowScale,bool, 0x4);
+			PROPERTY(m_flMinLength,float32, 0x8);
+			PROPERTY(m_flMaxLength,float32, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::smartprops::Criteria_t) == 0x10, "CSmartPropPulse_SelectionLinearLength::Criteria_t size should be 0x10");

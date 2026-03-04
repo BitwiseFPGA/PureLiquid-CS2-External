@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace client {
 		class CDefinition : public CS2::animlib::CDefinition {
 		public:
-			PROPERTY(m_nEnabledNodeIdx,int16_t , 0x18);
-			PROPERTY(m_nLockLeftHandNodeIdx,int16_t , 0x1a);
-			PROPERTY(m_flBlendTimeSeconds,float32 , 0x1c);
+			PROPERTY(m_nEnabledNodeIdx,int16_t, 0x18);
+			PROPERTY(m_nLockLeftHandNodeIdx,int16_t, 0x1a);
+			PROPERTY(m_flBlendTimeSeconds,float32, 0x1c);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::CDefinition) == 0x20, "CNmSnapWeaponNode::CDefinition size should be 0x20");

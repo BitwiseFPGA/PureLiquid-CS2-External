@@ -20,11 +20,11 @@ namespace CS2 {
 	namespace client {
 		class RagdollCreationParams_t  {
 		public:
-			PROPERTY(m_vForce,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_nForceBone,int32_t , 0xc);
-			PROPERTY(m_bForceCurrentWorldTransform,bool , 0x10);
-			PROPERTY(m_bUseLRURetirement,bool , 0x11);
-			PROPERTY(m_nHealthToGrant,int32_t , 0x14);
+			PROPERTY(m_vForce,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_nForceBone,int32_t, 0xc);
+			PROPERTY(m_bForceCurrentWorldTransform,bool, 0x10);
+			PROPERTY(m_bUseLRURetirement,bool, 0x11);
+			PROPERTY(m_nHealthToGrant,int32_t, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::RagdollCreationParams_t) == 0x18, "RagdollCreationParams_t size should be 0x18");

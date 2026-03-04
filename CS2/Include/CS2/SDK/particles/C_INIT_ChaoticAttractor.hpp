@@ -21,15 +21,15 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_ChaoticAttractor : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_flAParm,float32 , 0x1d8);
-			PROPERTY(m_flBParm,float32 , 0x1dc);
-			PROPERTY(m_flCParm,float32 , 0x1e0);
-			PROPERTY(m_flDParm,float32 , 0x1e4);
-			PROPERTY(m_flScale,float32 , 0x1e8);
-			PROPERTY(m_flSpeedMin,float32 , 0x1ec);
-			PROPERTY(m_flSpeedMax,float32 , 0x1f0);
-			PROPERTY(m_nBaseCP,int32_t , 0x1f4);
-			PROPERTY(m_bUniformSpeed,bool , 0x1f8);
+			PROPERTY(m_flAParm,float32, 0x1d8);
+			PROPERTY(m_flBParm,float32, 0x1dc);
+			PROPERTY(m_flCParm,float32, 0x1e0);
+			PROPERTY(m_flDParm,float32, 0x1e4);
+			PROPERTY(m_flScale,float32, 0x1e8);
+			PROPERTY(m_flSpeedMin,float32, 0x1ec);
+			PROPERTY(m_flSpeedMax,float32, 0x1f0);
+			PROPERTY(m_nBaseCP,int32_t, 0x1f4);
+			PROPERTY(m_bUniformSpeed,bool, 0x1f8);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_ChaoticAttractor) == 0x200, "C_INIT_ChaoticAttractor size should be 0x200");

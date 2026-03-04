@@ -25,11 +25,11 @@ namespace CS2 {
 	namespace server {
 		class CRetakeGameRules  {
 		public:
-			PROPERTY(m_nMatchSeed,int32_t , 0x138);
-			PROPERTY(m_bBlockersPresent,bool , 0x13c);
-			PROPERTY(m_bRoundInProgress,bool , 0x13d);
-			PROPERTY(m_iFirstSecondHalfRound,int32_t , 0x140);
-			PROPERTY(m_iBombSite,int32_t , 0x144);
+			PROPERTY(m_nMatchSeed,int32_t, 0x138);
+			PROPERTY(m_bBlockersPresent,bool, 0x13c);
+			PROPERTY(m_bRoundInProgress,bool, 0x13d);
+			PROPERTY(m_iFirstSecondHalfRound,int32_t, 0x140);
+			PROPERTY(m_iBombSite,int32_t, 0x144);
 			PROPERTY(m_hBombPlanter,GlobalTypes::CHandle<server::CCSPlayerPawn>, 0x148);
 			S2_PAD(0x1F0);
 		};

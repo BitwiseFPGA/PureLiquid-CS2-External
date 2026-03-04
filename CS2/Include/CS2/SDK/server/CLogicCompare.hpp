@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class CLogicCompare : public CS2::server::CLogicalEntity {
 		public:
-			PROPERTY(m_flInValue,float32 , 0x4a8);
-			PROPERTY(m_flCompareValue,float32 , 0x4ac);
+			PROPERTY(m_flInValue,float32, 0x4a8);
+			PROPERTY(m_flCompareValue,float32, 0x4ac);
 			PROPERTY(m_OnLessThan,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4b0);
 			PROPERTY(m_OnEqualTo,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4d0);
 			PROPERTY(m_OnNotEqualTo,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x4f0);

@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace modellib {
 		class RTProxyDrawDescriptor_t  {
 		public:
-			PROPERTY(m_drawDesc,modellib::CMaterialDrawDescriptor , 0x0);
-			PROPERTY(m_mWorldFromLocal,GlobalTypes::matrix3x4_t , 0x108);
-			PROPERTY(m_nVertexAlbedoFormat,modellib::VertexAlbedoFormat_t , 0x138);
-			PROPERTY(m_nVertexAlbedoVB,int8_t , 0x139);
-			PROPERTY(m_nVertexAlbedoOffset,uint16_t , 0x13a);
-			PROPERTY(m_nVertexAlbedoStride,uint16_t , 0x13c);
+			NESTED_PROPERTY(m_drawDesc,modellib::CMaterialDrawDescriptor, 0x0);
+			PROPERTY(m_mWorldFromLocal,GlobalTypes::matrix3x4_t, 0x108);
+			PROPERTY(m_nVertexAlbedoFormat,modellib::VertexAlbedoFormat_t, 0x138);
+			PROPERTY(m_nVertexAlbedoVB,int8_t, 0x139);
+			PROPERTY(m_nVertexAlbedoOffset,uint16_t, 0x13a);
+			PROPERTY(m_nVertexAlbedoStride,uint16_t, 0x13c);
 			S2_PAD(0x140);
 		};
 		//static_assert(sizeof(CS2::modellib::RTProxyDrawDescriptor_t) == 0x140, "CSceneObjectData::RTProxyDrawDescriptor_t size should be 0x140");

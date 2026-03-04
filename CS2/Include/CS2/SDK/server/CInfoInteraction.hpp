@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CInfoInteraction : public CS2::server::CPointEntity {
 		public:
-			PROPERTY_ARRAY(m_strSlotEntityName,GlobalTypes::CUtlSymbolLarge* , 8 , 0x4a8);
-			PROPERTY(m_strInteractVData,GlobalTypes::CUtlSymbolLarge* , 0x4e8);
-			PROPERTY(m_flInteractRadius,float32 , 0x4f0);
+			PROPERTY_ARRAY(m_strSlotEntityName,GlobalTypes::CUtlSymbolLarge*, 8 , 0x4a8);
+			PROPERTY(m_strInteractVData,GlobalTypes::CUtlSymbolLarge*, 0x4e8);
+			PROPERTY(m_flInteractRadius,float32, 0x4f0);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::server::CInfoInteraction) == 0x4F8, "CInfoInteraction size should be 0x4F8");

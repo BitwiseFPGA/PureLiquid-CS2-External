@@ -12,14 +12,10 @@
 
 #include <SDK/animationsystem/CSeqSeqDescFlag.hpp>
 #include <SDK/animationsystem/CSeqTransition.hpp>
+#include <SDK/animationsystem/CAnimActivity.hpp>
 
 
 
-namespace CS2 {
-	namespace animationsystem {
-		class CAnimActivity;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,12 +23,12 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqSynthAnimDesc  {
 		public:
-			PROPERTY(m_sName,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_flags,animationsystem::CSeqSeqDescFlag , 0x10);
-			PROPERTY(m_transition,animationsystem::CSeqTransition , 0x1c);
-			PROPERTY(m_nLocalBaseReference,int16_t , 0x24);
-			PROPERTY(m_nLocalBoneMask,int16_t , 0x26);
-			PROPERTY(m_activityArray,GlobalTypes::CUtlVector<animationsystem::CAnimActivity>, 0x28);
+			PROPERTY(m_sName,GlobalTypes::CBufferString, 0x0);
+			NESTED_PROPERTY(m_flags,animationsystem::CSeqSeqDescFlag, 0x10);
+			NESTED_PROPERTY(m_transition,animationsystem::CSeqTransition, 0x1c);
+			PROPERTY(m_nLocalBaseReference,int16_t, 0x24);
+			PROPERTY(m_nLocalBoneMask,int16_t, 0x26);
+			NESTED_PROPERTY(m_activityArray,GlobalTypes::CUtlVector<animationsystem::CAnimActivity>, 0x28);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqSynthAnimDesc) == 0x40, "CSeqSynthAnimDesc size should be 0x40");

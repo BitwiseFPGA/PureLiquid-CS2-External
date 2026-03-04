@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace client {
 		class C_BaseDoor : public CS2::client::C_BaseToggle {
 		public:
-			PROPERTY(m_bIsUsable,bool , 0xe88);
+			PROPERTY(m_bIsUsable,bool, 0xe88);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::C_BaseDoor) == 0xE90, "C_BaseDoor size should be 0xE90");

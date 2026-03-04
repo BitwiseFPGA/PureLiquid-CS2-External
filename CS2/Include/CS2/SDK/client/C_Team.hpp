@@ -11,6 +11,8 @@
 
 
 #include <SDK/client/C_BaseEntity.hpp>
+#include <SDK/client/CBasePlayerController.hpp>
+#include <SDK/client/C_BasePlayerPawn.hpp>
 
 
 
@@ -23,8 +25,8 @@ namespace CS2 {
 		public:
 			PROPERTY(m_aPlayerControllers,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::CBasePlayerController>>, 0x608);
 			PROPERTY(m_aPlayers,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CHandle<client::C_BasePlayerPawn>>, 0x620);
-			PROPERTY(m_iScore,int32_t , 0x638);
-			PROPERTY_ARRAY(m_szTeamname,char , 129 , 0x63c);
+			PROPERTY(m_iScore,int32_t, 0x638);
+			PROPERTY_ARRAY(m_szTeamname,char, 129 , 0x63c);
 			S2_PAD(0xB8);
 		};
 		//static_assert(sizeof(CS2::client::C_Team) == 0x6C0, "C_Team size should be 0x6C0");

@@ -10,56 +10,52 @@
 #endif
 
 
+#include <SDK/physicslib/FeNodeBase_t.hpp>
+#include <SDK/physicslib/FeSimdNodeBase_t.hpp>
+#include <SDK/physicslib/FeQuad_t.hpp>
+#include <SDK/physicslib/FeSimdQuad_t.hpp>
+#include <SDK/physicslib/FeSimdTri_t.hpp>
+#include <SDK/physicslib/FeSimdRodConstraint_t.hpp>
+#include <SDK/physicslib/FeSimdRodConstraintAnim_t.hpp>
+#include <SDK/physicslib/FeRodConstraint_t.hpp>
+#include <SDK/physicslib/FeTwistConstraint_t.hpp>
+#include <SDK/physicslib/FeHingeLimit_t.hpp>
+#include <SDK/physicslib/FeDynKinLink_t.hpp>
+#include <SDK/physicslib/FeAntiTunnelProbe_t.hpp>
+#include <SDK/physicslib/FeNodeStrayBox_t.hpp>
+#include <SDK/physicslib/FeAxialEdgeBend_t.hpp>
+#include <SDK/physicslib/FeCtrlOffset_t.hpp>
+#include <SDK/physicslib/FeCtrlOsOffset_t.hpp>
+#include <SDK/physicslib/FeFollowNode_t.hpp>
+#include <SDK/physicslib/FeCollisionPlane_t.hpp>
+#include <SDK/physicslib/FeNodeIntegrator_t.hpp>
+#include <SDK/physicslib/FeSpringIntegrator_t.hpp>
+#include <SDK/physicslib/FeSimdSpringIntegrator_t.hpp>
+#include <SDK/physicslib/FeWorldCollisionParams_t.hpp>
+#include <SDK/physicslib/FeTaperedCapsuleStretch_t.hpp>
+#include <SDK/physicslib/FeTaperedCapsuleRigid_t.hpp>
+#include <SDK/physicslib/FeSphereRigid_t.hpp>
+#include <SDK/physicslib/FeTreeChildren_t.hpp>
+#include <SDK/physicslib/FeFitMatrix_t.hpp>
+#include <SDK/physicslib/FeFitWeight_t.hpp>
+#include <SDK/physicslib/FeNodeReverseOffset_t.hpp>
+#include <SDK/physicslib/FeAnimStrayRadius_t.hpp>
+#include <SDK/physicslib/FeSimdAnimStrayRadius_t.hpp>
+#include <SDK/physicslib/FeKelagerBend2_t.hpp>
+#include <SDK/physicslib/FeCtrlSoftOffset_t.hpp>
+#include <SDK/physicslib/CFeIndexedJiggleBone.hpp>
+#include <SDK/physicslib/FeTri_t.hpp>
+#include <SDK/physicslib/FeSDFRigid_t.hpp>
+#include <SDK/physicslib/FeBoxRigid_t.hpp>
+#include <SDK/physicslib/FeRigidColliderIndices_t.hpp>
+#include <SDK/physicslib/FeMorphLayerDepr_t.hpp>
+#include <SDK/physicslib/FeVertexMapDesc_t.hpp>
+#include <SDK/physicslib/FeEffectDesc_t.hpp>
+#include <SDK/physicslib/FeNodeWindBase_t.hpp>
+#include <SDK/physicslib/FeModelSelfCollisionLayer_t.hpp>
 
 
 
-namespace CS2 {
-	namespace physicslib {
-		class FeNodeBase_t;
-		class FeSimdNodeBase_t;
-		class FeQuad_t;
-		class FeSimdQuad_t;
-		class FeSimdTri_t;
-		class FeSimdRodConstraint_t;
-		class FeSimdRodConstraintAnim_t;
-		class FeRodConstraint_t;
-		class FeTwistConstraint_t;
-		class FeHingeLimit_t;
-		class FeDynKinLink_t;
-		class FeAntiTunnelProbe_t;
-		class FeNodeStrayBox_t;
-		class FeAxialEdgeBend_t;
-		class FeCtrlOffset_t;
-		class FeCtrlOsOffset_t;
-		class FeFollowNode_t;
-		class FeCollisionPlane_t;
-		class FeNodeIntegrator_t;
-		class FeSpringIntegrator_t;
-		class FeSimdSpringIntegrator_t;
-		class FeWorldCollisionParams_t;
-		class FeTaperedCapsuleStretch_t;
-		class FeTaperedCapsuleRigid_t;
-		class FeSphereRigid_t;
-		class FeTreeChildren_t;
-		class FeFitMatrix_t;
-		class FeFitWeight_t;
-		class FeNodeReverseOffset_t;
-		class FeAnimStrayRadius_t;
-		class FeSimdAnimStrayRadius_t;
-		class FeKelagerBend2_t;
-		class FeCtrlSoftOffset_t;
-		class CFeIndexedJiggleBone;
-		class FeTri_t;
-		class FeSDFRigid_t;
-		class FeBoxRigid_t;
-		class FeRigidColliderIndices_t;
-		class FeMorphLayerDepr_t;
-		class FeVertexMapDesc_t;
-		class FeEffectDesc_t;
-		class FeNodeWindBase_t;
-		class FeModelSelfCollisionLayer_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -67,116 +63,116 @@ namespace CS2 {
 	namespace physicslib {
 		class PhysFeModelDesc_t  {
 		public:
-			PROPERTY(m_CtrlHash,GlobalTypes::CUtlVector< uint32 >, 0x0);
+			NESTED_PROPERTY(m_CtrlHash,GlobalTypes::CUtlVector< uint32 >, 0x0);
 			PROPERTY(m_CtrlName,GlobalTypes::CUtlVector<GlobalTypes::CUtlString>, 0x18);
-			PROPERTY(m_nStaticNodeFlags,uint32_t , 0x30);
-			PROPERTY(m_nDynamicNodeFlags,uint32_t , 0x34);
-			PROPERTY(m_flLocalForce,float32 , 0x38);
-			PROPERTY(m_flLocalRotation,float32 , 0x3c);
-			PROPERTY(m_nNodeCount,uint16_t , 0x40);
-			PROPERTY(m_nStaticNodes,uint16_t , 0x42);
-			PROPERTY(m_nRotLockStaticNodes,uint16_t , 0x44);
-			PROPERTY(m_nFirstPositionDrivenNode,uint16_t , 0x46);
-			PROPERTY(m_nSimdTriCount1,uint16_t , 0x48);
-			PROPERTY(m_nSimdTriCount2,uint16_t , 0x4a);
-			PROPERTY(m_nSimdQuadCount1,uint16_t , 0x4c);
-			PROPERTY(m_nSimdQuadCount2,uint16_t , 0x4e);
-			PROPERTY(m_nQuadCount1,uint16_t , 0x50);
-			PROPERTY(m_nQuadCount2,uint16_t , 0x52);
-			PROPERTY(m_nTreeDepth,uint16_t , 0x54);
-			PROPERTY(m_nNodeBaseJiggleboneDependsCount,uint16_t , 0x56);
-			PROPERTY(m_nRopeCount,uint16_t , 0x58);
-			PROPERTY(m_Ropes,GlobalTypes::CUtlVector< uint16 >, 0x60);
-			PROPERTY(m_NodeBases,GlobalTypes::CUtlVector<physicslib::FeNodeBase_t>, 0x78);
-			PROPERTY(m_SimdNodeBases,GlobalTypes::CUtlVector<physicslib::FeSimdNodeBase_t>, 0x90);
-			PROPERTY(m_Quads,GlobalTypes::CUtlVector<physicslib::FeQuad_t>, 0xa8);
-			PROPERTY(m_SimdQuads,GlobalTypes::CUtlVector<physicslib::FeSimdQuad_t>, 0xc0);
-			PROPERTY(m_SimdTris,GlobalTypes::CUtlVector<physicslib::FeSimdTri_t>, 0xd8);
-			PROPERTY(m_SimdRods,GlobalTypes::CUtlVector<physicslib::FeSimdRodConstraint_t>, 0xf0);
-			PROPERTY(m_SimdRodsAnim,GlobalTypes::CUtlVector<physicslib::FeSimdRodConstraintAnim_t>, 0x108);
-			PROPERTY(m_InitPose,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x120);
-			PROPERTY(m_Rods,GlobalTypes::CUtlVector<physicslib::FeRodConstraint_t>, 0x138);
-			PROPERTY(m_Twists,GlobalTypes::CUtlVector<physicslib::FeTwistConstraint_t>, 0x150);
-			PROPERTY(m_HingeLimits,GlobalTypes::CUtlVector<physicslib::FeHingeLimit_t>, 0x168);
-			PROPERTY(m_AntiTunnelBytecode,GlobalTypes::CUtlVector< uint32 >, 0x180);
-			PROPERTY(m_DynKinLinks,GlobalTypes::CUtlVector<physicslib::FeDynKinLink_t>, 0x198);
-			PROPERTY(m_AntiTunnelProbes,GlobalTypes::CUtlVector<physicslib::FeAntiTunnelProbe_t>, 0x1b0);
-			PROPERTY(m_AntiTunnelTargetNodes,GlobalTypes::CUtlVector< uint16 >, 0x1c8);
-			PROPERTY(m_NodeStrayBoxes,GlobalTypes::CUtlVector<physicslib::FeNodeStrayBox_t>, 0x1e0);
-			PROPERTY(m_AxialEdges,GlobalTypes::CUtlVector<physicslib::FeAxialEdgeBend_t>, 0x1f8);
-			PROPERTY(m_NodeInvMasses,GlobalTypes::CUtlVector< float32 >, 0x210);
-			PROPERTY(m_CtrlOffsets,GlobalTypes::CUtlVector<physicslib::FeCtrlOffset_t>, 0x228);
-			PROPERTY(m_CtrlOsOffsets,GlobalTypes::CUtlVector<physicslib::FeCtrlOsOffset_t>, 0x240);
-			PROPERTY(m_FollowNodes,GlobalTypes::CUtlVector<physicslib::FeFollowNode_t>, 0x258);
-			PROPERTY(m_CollisionPlanes,GlobalTypes::CUtlVector<physicslib::FeCollisionPlane_t>, 0x270);
-			PROPERTY(m_NodeIntegrator,GlobalTypes::CUtlVector<physicslib::FeNodeIntegrator_t>, 0x288);
-			PROPERTY(m_SpringIntegrator,GlobalTypes::CUtlVector<physicslib::FeSpringIntegrator_t>, 0x2a0);
-			PROPERTY(m_SimdSpringIntegrator,GlobalTypes::CUtlVector<physicslib::FeSimdSpringIntegrator_t>, 0x2b8);
-			PROPERTY(m_WorldCollisionParams,GlobalTypes::CUtlVector<physicslib::FeWorldCollisionParams_t>, 0x2d0);
-			PROPERTY(m_LegacyStretchForce,GlobalTypes::CUtlVector< float32 >, 0x2e8);
-			PROPERTY(m_NodeCollisionRadii,GlobalTypes::CUtlVector< float32 >, 0x300);
-			PROPERTY(m_DynNodeFriction,GlobalTypes::CUtlVector< float32 >, 0x318);
-			PROPERTY(m_LocalRotation,GlobalTypes::CUtlVector< float32 >, 0x330);
-			PROPERTY(m_LocalForce,GlobalTypes::CUtlVector< float32 >, 0x348);
-			PROPERTY(m_TaperedCapsuleStretches,GlobalTypes::CUtlVector<physicslib::FeTaperedCapsuleStretch_t>, 0x360);
-			PROPERTY(m_TaperedCapsuleRigids,GlobalTypes::CUtlVector<physicslib::FeTaperedCapsuleRigid_t>, 0x378);
-			PROPERTY(m_SphereRigids,GlobalTypes::CUtlVector<physicslib::FeSphereRigid_t>, 0x390);
-			PROPERTY(m_WorldCollisionNodes,GlobalTypes::CUtlVector< uint16 >, 0x3a8);
-			PROPERTY(m_TreeParents,GlobalTypes::CUtlVector< uint16 >, 0x3c0);
-			PROPERTY(m_TreeCollisionMasks,GlobalTypes::CUtlVector< uint16 >, 0x3d8);
-			PROPERTY(m_TreeChildren,GlobalTypes::CUtlVector<physicslib::FeTreeChildren_t>, 0x3f0);
-			PROPERTY(m_FreeNodes,GlobalTypes::CUtlVector< uint16 >, 0x408);
-			PROPERTY(m_FitMatrices,GlobalTypes::CUtlVector<physicslib::FeFitMatrix_t>, 0x420);
-			PROPERTY(m_FitWeights,GlobalTypes::CUtlVector<physicslib::FeFitWeight_t>, 0x438);
-			PROPERTY(m_ReverseOffsets,GlobalTypes::CUtlVector<physicslib::FeNodeReverseOffset_t>, 0x450);
-			PROPERTY(m_AnimStrayRadii,GlobalTypes::CUtlVector<physicslib::FeAnimStrayRadius_t>, 0x468);
-			PROPERTY(m_SimdAnimStrayRadii,GlobalTypes::CUtlVector<physicslib::FeSimdAnimStrayRadius_t>, 0x480);
-			PROPERTY(m_KelagerBends,GlobalTypes::CUtlVector<physicslib::FeKelagerBend2_t>, 0x498);
-			PROPERTY(m_CtrlSoftOffsets,GlobalTypes::CUtlVector<physicslib::FeCtrlSoftOffset_t>, 0x4b0);
-			PROPERTY(m_JiggleBones,GlobalTypes::CUtlVector<physicslib::CFeIndexedJiggleBone>, 0x4c8);
-			PROPERTY(m_SourceElems,GlobalTypes::CUtlVector< uint16 >, 0x4e0);
-			PROPERTY(m_GoalDampedSpringIntegrators,GlobalTypes::CUtlVector< uint32 >, 0x4f8);
-			PROPERTY(m_Tris,GlobalTypes::CUtlVector<physicslib::FeTri_t>, 0x510);
-			PROPERTY(m_nTriCount1,uint16_t , 0x528);
-			PROPERTY(m_nTriCount2,uint16_t , 0x52a);
-			PROPERTY(m_nReservedUint8,uint8_t , 0x52c);
-			PROPERTY(m_nExtraPressureIterations,uint8_t , 0x52d);
-			PROPERTY(m_nExtraGoalIterations,uint8_t , 0x52e);
-			PROPERTY(m_nExtraIterations,uint8_t , 0x52f);
-			PROPERTY(m_SDFRigids,GlobalTypes::CUtlVector<physicslib::FeSDFRigid_t>, 0x530);
-			PROPERTY(m_BoxRigids,GlobalTypes::CUtlVector<physicslib::FeBoxRigid_t>, 0x548);
-			PROPERTY(m_DynNodeVertexSet,GlobalTypes::CUtlVector< uint8 >, 0x560);
-			PROPERTY(m_VertexSetNames,GlobalTypes::CUtlVector< uint32 >, 0x578);
-			PROPERTY(m_RigidColliderPriorities,GlobalTypes::CUtlVector<physicslib::FeRigidColliderIndices_t>, 0x590);
-			PROPERTY(m_MorphLayers,GlobalTypes::CUtlVector<physicslib::FeMorphLayerDepr_t>, 0x5a8);
-			PROPERTY(m_MorphSetData,GlobalTypes::CUtlVector< uint8 >, 0x5c0);
-			PROPERTY(m_VertexMaps,GlobalTypes::CUtlVector<physicslib::FeVertexMapDesc_t>, 0x5d8);
-			PROPERTY(m_VertexMapValues,GlobalTypes::CUtlVector< uint8 >, 0x5f0);
-			PROPERTY(m_Effects,GlobalTypes::CUtlVector<physicslib::FeEffectDesc_t>, 0x608);
-			PROPERTY(m_LockToParent,GlobalTypes::CUtlVector<physicslib::FeCtrlOffset_t>, 0x620);
-			PROPERTY(m_LockToGoal,GlobalTypes::CUtlVector< uint16 >, 0x638);
-			PROPERTY(m_SkelParents,GlobalTypes::CUtlVector< int16 >, 0x650);
-			PROPERTY(m_DynNodeWindBases,GlobalTypes::CUtlVector<physicslib::FeNodeWindBase_t>, 0x668);
-			PROPERTY(m_SelfCollisionLayers,GlobalTypes::CUtlVector<physicslib::FeModelSelfCollisionLayer_t>, 0x680);
-			PROPERTY(m_flInternalPressure,float32 , 0x698);
-			PROPERTY(m_flDefaultTimeDilation,float32 , 0x69c);
-			PROPERTY(m_flWindage,float32 , 0x6a0);
-			PROPERTY(m_flWindDrag,float32 , 0x6a4);
-			PROPERTY(m_flDefaultSurfaceStretch,float32 , 0x6a8);
-			PROPERTY(m_flDefaultThreadStretch,float32 , 0x6ac);
-			PROPERTY(m_flDefaultGravityScale,float32 , 0x6b0);
-			PROPERTY(m_flDefaultVelAirDrag,float32 , 0x6b4);
-			PROPERTY(m_flDefaultExpAirDrag,float32 , 0x6b8);
-			PROPERTY(m_flDefaultVelQuadAirDrag,float32 , 0x6bc);
-			PROPERTY(m_flDefaultExpQuadAirDrag,float32 , 0x6c0);
-			PROPERTY(m_flRodVelocitySmoothRate,float32 , 0x6c4);
-			PROPERTY(m_flQuadVelocitySmoothRate,float32 , 0x6c8);
-			PROPERTY(m_flAddWorldCollisionRadius,float32 , 0x6cc);
-			PROPERTY(m_flDefaultVolumetricSolveAmount,float32 , 0x6d0);
-			PROPERTY(m_flMotionSmoothCDT,float32 , 0x6d4);
-			PROPERTY(m_flLocalDrag1,float32 , 0x6d8);
-			PROPERTY(m_nRodVelocitySmoothIterations,uint16_t , 0x6dc);
-			PROPERTY(m_nQuadVelocitySmoothIterations,uint16_t , 0x6de);
+			PROPERTY(m_nStaticNodeFlags,uint32_t, 0x30);
+			PROPERTY(m_nDynamicNodeFlags,uint32_t, 0x34);
+			PROPERTY(m_flLocalForce,float32, 0x38);
+			PROPERTY(m_flLocalRotation,float32, 0x3c);
+			PROPERTY(m_nNodeCount,uint16_t, 0x40);
+			PROPERTY(m_nStaticNodes,uint16_t, 0x42);
+			PROPERTY(m_nRotLockStaticNodes,uint16_t, 0x44);
+			PROPERTY(m_nFirstPositionDrivenNode,uint16_t, 0x46);
+			PROPERTY(m_nSimdTriCount1,uint16_t, 0x48);
+			PROPERTY(m_nSimdTriCount2,uint16_t, 0x4a);
+			PROPERTY(m_nSimdQuadCount1,uint16_t, 0x4c);
+			PROPERTY(m_nSimdQuadCount2,uint16_t, 0x4e);
+			PROPERTY(m_nQuadCount1,uint16_t, 0x50);
+			PROPERTY(m_nQuadCount2,uint16_t, 0x52);
+			PROPERTY(m_nTreeDepth,uint16_t, 0x54);
+			PROPERTY(m_nNodeBaseJiggleboneDependsCount,uint16_t, 0x56);
+			PROPERTY(m_nRopeCount,uint16_t, 0x58);
+			NESTED_PROPERTY(m_Ropes,GlobalTypes::CUtlVector< uint16 >, 0x60);
+			NESTED_PROPERTY(m_NodeBases,GlobalTypes::CUtlVector<physicslib::FeNodeBase_t>, 0x78);
+			NESTED_PROPERTY(m_SimdNodeBases,GlobalTypes::CUtlVector<physicslib::FeSimdNodeBase_t>, 0x90);
+			NESTED_PROPERTY(m_Quads,GlobalTypes::CUtlVector<physicslib::FeQuad_t>, 0xa8);
+			NESTED_PROPERTY(m_SimdQuads,GlobalTypes::CUtlVector<physicslib::FeSimdQuad_t>, 0xc0);
+			NESTED_PROPERTY(m_SimdTris,GlobalTypes::CUtlVector<physicslib::FeSimdTri_t>, 0xd8);
+			NESTED_PROPERTY(m_SimdRods,GlobalTypes::CUtlVector<physicslib::FeSimdRodConstraint_t>, 0xf0);
+			NESTED_PROPERTY(m_SimdRodsAnim,GlobalTypes::CUtlVector<physicslib::FeSimdRodConstraintAnim_t>, 0x108);
+			NESTED_PROPERTY(m_InitPose,GlobalTypes::CUtlVector<GlobalTypes::CTransform>, 0x120);
+			NESTED_PROPERTY(m_Rods,GlobalTypes::CUtlVector<physicslib::FeRodConstraint_t>, 0x138);
+			NESTED_PROPERTY(m_Twists,GlobalTypes::CUtlVector<physicslib::FeTwistConstraint_t>, 0x150);
+			NESTED_PROPERTY(m_HingeLimits,GlobalTypes::CUtlVector<physicslib::FeHingeLimit_t>, 0x168);
+			NESTED_PROPERTY(m_AntiTunnelBytecode,GlobalTypes::CUtlVector< uint32 >, 0x180);
+			NESTED_PROPERTY(m_DynKinLinks,GlobalTypes::CUtlVector<physicslib::FeDynKinLink_t>, 0x198);
+			NESTED_PROPERTY(m_AntiTunnelProbes,GlobalTypes::CUtlVector<physicslib::FeAntiTunnelProbe_t>, 0x1b0);
+			NESTED_PROPERTY(m_AntiTunnelTargetNodes,GlobalTypes::CUtlVector< uint16 >, 0x1c8);
+			NESTED_PROPERTY(m_NodeStrayBoxes,GlobalTypes::CUtlVector<physicslib::FeNodeStrayBox_t>, 0x1e0);
+			NESTED_PROPERTY(m_AxialEdges,GlobalTypes::CUtlVector<physicslib::FeAxialEdgeBend_t>, 0x1f8);
+			NESTED_PROPERTY(m_NodeInvMasses,GlobalTypes::CUtlVector< float32 >, 0x210);
+			NESTED_PROPERTY(m_CtrlOffsets,GlobalTypes::CUtlVector<physicslib::FeCtrlOffset_t>, 0x228);
+			NESTED_PROPERTY(m_CtrlOsOffsets,GlobalTypes::CUtlVector<physicslib::FeCtrlOsOffset_t>, 0x240);
+			NESTED_PROPERTY(m_FollowNodes,GlobalTypes::CUtlVector<physicslib::FeFollowNode_t>, 0x258);
+			NESTED_PROPERTY(m_CollisionPlanes,GlobalTypes::CUtlVector<physicslib::FeCollisionPlane_t>, 0x270);
+			NESTED_PROPERTY(m_NodeIntegrator,GlobalTypes::CUtlVector<physicslib::FeNodeIntegrator_t>, 0x288);
+			NESTED_PROPERTY(m_SpringIntegrator,GlobalTypes::CUtlVector<physicslib::FeSpringIntegrator_t>, 0x2a0);
+			NESTED_PROPERTY(m_SimdSpringIntegrator,GlobalTypes::CUtlVector<physicslib::FeSimdSpringIntegrator_t>, 0x2b8);
+			NESTED_PROPERTY(m_WorldCollisionParams,GlobalTypes::CUtlVector<physicslib::FeWorldCollisionParams_t>, 0x2d0);
+			NESTED_PROPERTY(m_LegacyStretchForce,GlobalTypes::CUtlVector< float32 >, 0x2e8);
+			NESTED_PROPERTY(m_NodeCollisionRadii,GlobalTypes::CUtlVector< float32 >, 0x300);
+			NESTED_PROPERTY(m_DynNodeFriction,GlobalTypes::CUtlVector< float32 >, 0x318);
+			NESTED_PROPERTY(m_LocalRotation,GlobalTypes::CUtlVector< float32 >, 0x330);
+			NESTED_PROPERTY(m_LocalForce,GlobalTypes::CUtlVector< float32 >, 0x348);
+			NESTED_PROPERTY(m_TaperedCapsuleStretches,GlobalTypes::CUtlVector<physicslib::FeTaperedCapsuleStretch_t>, 0x360);
+			NESTED_PROPERTY(m_TaperedCapsuleRigids,GlobalTypes::CUtlVector<physicslib::FeTaperedCapsuleRigid_t>, 0x378);
+			NESTED_PROPERTY(m_SphereRigids,GlobalTypes::CUtlVector<physicslib::FeSphereRigid_t>, 0x390);
+			NESTED_PROPERTY(m_WorldCollisionNodes,GlobalTypes::CUtlVector< uint16 >, 0x3a8);
+			NESTED_PROPERTY(m_TreeParents,GlobalTypes::CUtlVector< uint16 >, 0x3c0);
+			NESTED_PROPERTY(m_TreeCollisionMasks,GlobalTypes::CUtlVector< uint16 >, 0x3d8);
+			NESTED_PROPERTY(m_TreeChildren,GlobalTypes::CUtlVector<physicslib::FeTreeChildren_t>, 0x3f0);
+			NESTED_PROPERTY(m_FreeNodes,GlobalTypes::CUtlVector< uint16 >, 0x408);
+			NESTED_PROPERTY(m_FitMatrices,GlobalTypes::CUtlVector<physicslib::FeFitMatrix_t>, 0x420);
+			NESTED_PROPERTY(m_FitWeights,GlobalTypes::CUtlVector<physicslib::FeFitWeight_t>, 0x438);
+			NESTED_PROPERTY(m_ReverseOffsets,GlobalTypes::CUtlVector<physicslib::FeNodeReverseOffset_t>, 0x450);
+			NESTED_PROPERTY(m_AnimStrayRadii,GlobalTypes::CUtlVector<physicslib::FeAnimStrayRadius_t>, 0x468);
+			NESTED_PROPERTY(m_SimdAnimStrayRadii,GlobalTypes::CUtlVector<physicslib::FeSimdAnimStrayRadius_t>, 0x480);
+			NESTED_PROPERTY(m_KelagerBends,GlobalTypes::CUtlVector<physicslib::FeKelagerBend2_t>, 0x498);
+			NESTED_PROPERTY(m_CtrlSoftOffsets,GlobalTypes::CUtlVector<physicslib::FeCtrlSoftOffset_t>, 0x4b0);
+			NESTED_PROPERTY(m_JiggleBones,GlobalTypes::CUtlVector<physicslib::CFeIndexedJiggleBone>, 0x4c8);
+			NESTED_PROPERTY(m_SourceElems,GlobalTypes::CUtlVector< uint16 >, 0x4e0);
+			NESTED_PROPERTY(m_GoalDampedSpringIntegrators,GlobalTypes::CUtlVector< uint32 >, 0x4f8);
+			NESTED_PROPERTY(m_Tris,GlobalTypes::CUtlVector<physicslib::FeTri_t>, 0x510);
+			PROPERTY(m_nTriCount1,uint16_t, 0x528);
+			PROPERTY(m_nTriCount2,uint16_t, 0x52a);
+			PROPERTY(m_nReservedUint8,uint8_t, 0x52c);
+			PROPERTY(m_nExtraPressureIterations,uint8_t, 0x52d);
+			PROPERTY(m_nExtraGoalIterations,uint8_t, 0x52e);
+			PROPERTY(m_nExtraIterations,uint8_t, 0x52f);
+			NESTED_PROPERTY(m_SDFRigids,GlobalTypes::CUtlVector<physicslib::FeSDFRigid_t>, 0x530);
+			NESTED_PROPERTY(m_BoxRigids,GlobalTypes::CUtlVector<physicslib::FeBoxRigid_t>, 0x548);
+			NESTED_PROPERTY(m_DynNodeVertexSet,GlobalTypes::CUtlVector< uint8 >, 0x560);
+			NESTED_PROPERTY(m_VertexSetNames,GlobalTypes::CUtlVector< uint32 >, 0x578);
+			NESTED_PROPERTY(m_RigidColliderPriorities,GlobalTypes::CUtlVector<physicslib::FeRigidColliderIndices_t>, 0x590);
+			NESTED_PROPERTY(m_MorphLayers,GlobalTypes::CUtlVector<physicslib::FeMorphLayerDepr_t>, 0x5a8);
+			NESTED_PROPERTY(m_MorphSetData,GlobalTypes::CUtlVector< uint8 >, 0x5c0);
+			NESTED_PROPERTY(m_VertexMaps,GlobalTypes::CUtlVector<physicslib::FeVertexMapDesc_t>, 0x5d8);
+			NESTED_PROPERTY(m_VertexMapValues,GlobalTypes::CUtlVector< uint8 >, 0x5f0);
+			NESTED_PROPERTY(m_Effects,GlobalTypes::CUtlVector<physicslib::FeEffectDesc_t>, 0x608);
+			NESTED_PROPERTY(m_LockToParent,GlobalTypes::CUtlVector<physicslib::FeCtrlOffset_t>, 0x620);
+			NESTED_PROPERTY(m_LockToGoal,GlobalTypes::CUtlVector< uint16 >, 0x638);
+			NESTED_PROPERTY(m_SkelParents,GlobalTypes::CUtlVector< int16 >, 0x650);
+			NESTED_PROPERTY(m_DynNodeWindBases,GlobalTypes::CUtlVector<physicslib::FeNodeWindBase_t>, 0x668);
+			NESTED_PROPERTY(m_SelfCollisionLayers,GlobalTypes::CUtlVector<physicslib::FeModelSelfCollisionLayer_t>, 0x680);
+			PROPERTY(m_flInternalPressure,float32, 0x698);
+			PROPERTY(m_flDefaultTimeDilation,float32, 0x69c);
+			PROPERTY(m_flWindage,float32, 0x6a0);
+			PROPERTY(m_flWindDrag,float32, 0x6a4);
+			PROPERTY(m_flDefaultSurfaceStretch,float32, 0x6a8);
+			PROPERTY(m_flDefaultThreadStretch,float32, 0x6ac);
+			PROPERTY(m_flDefaultGravityScale,float32, 0x6b0);
+			PROPERTY(m_flDefaultVelAirDrag,float32, 0x6b4);
+			PROPERTY(m_flDefaultExpAirDrag,float32, 0x6b8);
+			PROPERTY(m_flDefaultVelQuadAirDrag,float32, 0x6bc);
+			PROPERTY(m_flDefaultExpQuadAirDrag,float32, 0x6c0);
+			PROPERTY(m_flRodVelocitySmoothRate,float32, 0x6c4);
+			PROPERTY(m_flQuadVelocitySmoothRate,float32, 0x6c8);
+			PROPERTY(m_flAddWorldCollisionRadius,float32, 0x6cc);
+			PROPERTY(m_flDefaultVolumetricSolveAmount,float32, 0x6d0);
+			PROPERTY(m_flMotionSmoothCDT,float32, 0x6d4);
+			PROPERTY(m_flLocalDrag1,float32, 0x6d8);
+			PROPERTY(m_nRodVelocitySmoothIterations,uint16_t, 0x6dc);
+			PROPERTY(m_nQuadVelocitySmoothIterations,uint16_t, 0x6de);
 			S2_PAD(0x6E0);
 		};
 		//static_assert(sizeof(CS2::physicslib::PhysFeModelDesc_t) == 0x6E0, "PhysFeModelDesc_t size should be 0x6E0");

@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_ConstrainLineLength : public CS2::particles::CParticleFunctionConstraint {
 		public:
-			PROPERTY(m_flMinDistance,float32 , 0x1d0);
-			PROPERTY(m_flMaxDistance,float32 , 0x1d4);
+			PROPERTY(m_flMinDistance,float32, 0x1d0);
+			PROPERTY(m_flMaxDistance,float32, 0x1d4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_ConstrainLineLength) == 0x1D8, "C_OP_ConstrainLineLength size should be 0x1D8");

@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace modellib {
 		class RenderSkeletonBone_t  {
 		public:
-			PROPERTY(m_boneName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_parentName,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_invBindPose,GlobalTypes::matrix3x4_t , 0x10);
-			PROPERTY(m_bbox,modellib::SkeletonBoneBounds_t , 0x40);
-			PROPERTY(m_flSphereRadius,float32 , 0x58);
+			PROPERTY(m_boneName,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_parentName,GlobalTypes::CUtlString*, 0x8);
+			PROPERTY(m_invBindPose,GlobalTypes::matrix3x4_t, 0x10);
+			NESTED_PROPERTY(m_bbox,modellib::SkeletonBoneBounds_t, 0x40);
+			PROPERTY(m_flSphereRadius,float32, 0x58);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::modellib::RenderSkeletonBone_t) == 0x60, "RenderSkeletonBone_t size should be 0x60");

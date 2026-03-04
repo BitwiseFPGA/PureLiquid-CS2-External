@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAddUpdateNode : public CS2::animgraphlib::CBinaryUpdateNode {
 		public:
-			PROPERTY(m_footMotionTiming,animgraphlib::BinaryNodeChildOption , 0x94);
-			PROPERTY(m_bApplyToFootMotion,bool , 0x98);
-			PROPERTY(m_bApplyChannelsSeparately,bool , 0x99);
-			PROPERTY(m_bUseModelSpace,bool , 0x9a);
-			PROPERTY(m_bApplyScale,bool , 0x9b);
+			PROPERTY(m_footMotionTiming,animgraphlib::BinaryNodeChildOption, 0x94);
+			PROPERTY(m_bApplyToFootMotion,bool, 0x98);
+			PROPERTY(m_bApplyChannelsSeparately,bool, 0x99);
+			PROPERTY(m_bUseModelSpace,bool, 0x9a);
+			PROPERTY(m_bApplyScale,bool, 0x9b);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAddUpdateNode) == 0xA0, "CAddUpdateNode size should be 0xA0");

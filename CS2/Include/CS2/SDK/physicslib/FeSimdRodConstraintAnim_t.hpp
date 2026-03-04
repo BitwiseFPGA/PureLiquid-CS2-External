@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace physicslib {
 		class FeSimdRodConstraintAnim_t  {
 		public:
-			PROPERTY_ARRAY(nNode,uint16_t , 4 , 0x0);
-			PROPERTY(f4Weight0,GlobalTypes::fltx4 , 0x10);
-			PROPERTY(f4RelaxationFactor,GlobalTypes::fltx4 , 0x20);
+			PROPERTY_ARRAY(nNode,uint16_t, 4 , 0x0);
+			PROPERTY(f4Weight0,GlobalTypes::fltx4, 0x10);
+			PROPERTY(f4RelaxationFactor,GlobalTypes::fltx4, 0x20);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeSimdRodConstraintAnim_t) == 0x30, "FeSimdRodConstraintAnim_t size should be 0x30");

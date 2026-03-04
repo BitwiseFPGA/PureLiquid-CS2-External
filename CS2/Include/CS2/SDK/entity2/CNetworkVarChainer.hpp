@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace entity2 {
 		class CNetworkVarChainer  {
 		public:
-			PROPERTY(m_PathIndex,networksystem::ChangeAccessorFieldPathIndex_t , 0x20);
+			NESTED_PROPERTY(m_PathIndex,networksystem::ChangeAccessorFieldPathIndex_t, 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::entity2::CNetworkVarChainer) == 0x28, "CNetworkVarChainer size should be 0x28");

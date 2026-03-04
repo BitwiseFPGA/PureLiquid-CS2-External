@@ -26,8 +26,8 @@ namespace CS2 {
 	namespace client {
 		class CDestructiblePartsComponent  {
 		public:
-			PROPERTY(__m_pChainEntity,entity2::CNetworkVarChainer , 0x0);
-			PROPERTY(m_vecDamageTakenByHitGroup,GlobalTypes::CUtlVector< uint16 >, 0x48);
+			NESTED_PROPERTY(__m_pChainEntity,entity2::CNetworkVarChainer, 0x0);
+			NESTED_PROPERTY(m_vecDamageTakenByHitGroup,GlobalTypes::CUtlVector< uint16 >, 0x48);
 			PROPERTY(m_hOwner,GlobalTypes::CHandle<client::C_BaseModelEntity>, 0x60);
 			S2_PAD(0x70);
 		};

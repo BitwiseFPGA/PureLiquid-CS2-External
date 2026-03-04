@@ -24,15 +24,15 @@ namespace CS2 {
 	namespace modellib {
 		class CPhysSurfaceProperties  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_nameHash,uint32_t , 0x8);
-			PROPERTY(m_baseNameHash,uint32_t , 0xc);
-			PROPERTY(m_bHidden,bool , 0x18);
-			PROPERTY(m_description,GlobalTypes::CUtlString* , 0x20);
-			PROPERTY(m_physics,modellib::CPhysSurfacePropertiesPhysics , 0x28);
-			PROPERTY(m_vehicleParams,modellib::CPhysSurfacePropertiesVehicle , 0x40);
-			PROPERTY(m_audioSounds,modellib::CPhysSurfacePropertiesSoundNames , 0x48);
-			PROPERTY(m_audioParams,modellib::CPhysSurfacePropertiesAudio , 0xa8);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_nameHash,uint32_t, 0x8);
+			PROPERTY(m_baseNameHash,uint32_t, 0xc);
+			PROPERTY(m_bHidden,bool, 0x18);
+			PROPERTY(m_description,GlobalTypes::CUtlString*, 0x20);
+			NESTED_PROPERTY(m_physics,modellib::CPhysSurfacePropertiesPhysics, 0x28);
+			NESTED_PROPERTY(m_vehicleParams,modellib::CPhysSurfacePropertiesVehicle, 0x40);
+			NESTED_PROPERTY(m_audioSounds,modellib::CPhysSurfacePropertiesSoundNames, 0x48);
+			NESTED_PROPERTY(m_audioParams,modellib::CPhysSurfacePropertiesAudio, 0xa8);
 			S2_PAD(0xC8);
 		};
 		//static_assert(sizeof(CS2::modellib::CPhysSurfaceProperties) == 0xC8, "CPhysSurfaceProperties size should be 0xC8");

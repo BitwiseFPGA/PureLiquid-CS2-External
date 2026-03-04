@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace particles {
 		class ParticlePreviewBodyGroup_t  {
 		public:
-			PROPERTY(m_bodyGroupName,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_nValue,int32_t , 0x8);
+			PROPERTY(m_bodyGroupName,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_nValue,int32_t, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::particles::ParticlePreviewBodyGroup_t) == 0x10, "ParticlePreviewBodyGroup_t size should be 0x10");

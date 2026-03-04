@@ -10,6 +10,7 @@
 #endif
 
 
+#include <SDK/worldrenderer/InfoForResourceTypeVMapResourceData_t.hpp>
 
 
 
@@ -21,8 +22,8 @@ namespace CS2 {
 		class CLightRigVMap  {
 		public:
 			PROPERTY(m_MapName,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<worldrenderer::InfoForResourceTypeVMapResourceData_t>>, 0x0);
-			PROPERTY(m_bRender3DSkybox,bool , 0xe0);
-			PROPERTY(m_bParticlesTraceAgainstMap,bool , 0xe1);
+			PROPERTY(m_bRender3DSkybox,bool, 0xe0);
+			PROPERTY(m_bParticlesTraceAgainstMap,bool, 0xe1);
 			S2_PAD(0xE8);
 		};
 		//static_assert(sizeof(CS2::toolscene::CLightRigVMap) == 0xE8, "CLightRigVMap size should be 0xE8");

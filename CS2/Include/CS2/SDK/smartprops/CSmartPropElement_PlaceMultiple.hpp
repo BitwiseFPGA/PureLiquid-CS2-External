@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropElement_PlaceMultiple : public CS2::smartprops::CSmartPropElement_Group {
 		public:
-			PROPERTY(m_nCount,GlobalTypes::CSmartPropAttributeInt , 0xa0);
-			PROPERTY(m_Expression,GlobalTypes::CUtlString* , 0xe0);
+			PROPERTY(m_nCount,GlobalTypes::CSmartPropAttributeInt, 0xa0);
+			PROPERTY(m_Expression,GlobalTypes::CUtlString*, 0xe0);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropElement_PlaceMultiple) == 0xE8, "CSmartPropElement_PlaceMultiple size should be 0xE8");

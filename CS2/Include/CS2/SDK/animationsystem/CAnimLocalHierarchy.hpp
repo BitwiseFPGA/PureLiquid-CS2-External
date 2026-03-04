@@ -20,12 +20,12 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimLocalHierarchy  {
 		public:
-			PROPERTY(m_sBone,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(m_sNewParent,GlobalTypes::CBufferString , 0x10);
-			PROPERTY(m_nStartFrame,int32_t , 0x20);
-			PROPERTY(m_nPeakFrame,int32_t , 0x24);
-			PROPERTY(m_nTailFrame,int32_t , 0x28);
-			PROPERTY(m_nEndFrame,int32_t , 0x2c);
+			PROPERTY(m_sBone,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(m_sNewParent,GlobalTypes::CBufferString, 0x10);
+			PROPERTY(m_nStartFrame,int32_t, 0x20);
+			PROPERTY(m_nPeakFrame,int32_t, 0x24);
+			PROPERTY(m_nTailFrame,int32_t, 0x28);
+			PROPERTY(m_nEndFrame,int32_t, 0x2c);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimLocalHierarchy) == 0x30, "CAnimLocalHierarchy size should be 0x30");

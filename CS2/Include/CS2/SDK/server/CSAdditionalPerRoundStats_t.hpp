@@ -20,17 +20,17 @@ namespace CS2 {
 	namespace server {
 		class CSAdditionalPerRoundStats_t  {
 		public:
-			PROPERTY(m_numChickensKilled,int32_t , 0x0);
-			PROPERTY(m_killsWhileBlind,int32_t , 0x4);
-			PROPERTY(m_bombCarrierkills,int32_t , 0x8);
-			PROPERTY(m_flBurnDamageInflicted,float32 , 0xc);
-			PROPERTY(m_flBlastDamageInflicted,float32 , 0x10);
-			PROPERTY(m_iDinks,int32_t , 0x14);
-			PROPERTY(m_bFreshStartThisRound,bool , 0x18);
-			PROPERTY(m_bBombPlantedAndAlive,bool , 0x19);
-			PROPERTY(m_nDefuseStarts,int32_t , 0x1c);
-			PROPERTY(m_nHostagePickUps,int32_t , 0x20);
-			PROPERTY(m_numTeammatesFlashed,int32_t , 0x24);
+			PROPERTY(m_numChickensKilled,int32_t, 0x0);
+			PROPERTY(m_killsWhileBlind,int32_t, 0x4);
+			PROPERTY(m_bombCarrierkills,int32_t, 0x8);
+			PROPERTY(m_flBurnDamageInflicted,float32, 0xc);
+			PROPERTY(m_flBlastDamageInflicted,float32, 0x10);
+			PROPERTY(m_iDinks,int32_t, 0x14);
+			PROPERTY(m_bFreshStartThisRound,bool, 0x18);
+			PROPERTY(m_bBombPlantedAndAlive,bool, 0x19);
+			PROPERTY(m_nDefuseStarts,int32_t, 0x1c);
+			PROPERTY(m_nHostagePickUps,int32_t, 0x20);
+			PROPERTY(m_numTeammatesFlashed,int32_t, 0x24);
 			S2_PAD(0xF0);
 		};
 		//static_assert(sizeof(CS2::server::CSAdditionalPerRoundStats_t) == 0xF0, "CSAdditionalPerRoundStats_t size should be 0xF0");

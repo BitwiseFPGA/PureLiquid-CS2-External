@@ -27,11 +27,11 @@ namespace CS2 {
 		class CInstancedSceneEntity : public CS2::server::CSceneEntity {
 		public:
 			PROPERTY(m_hOwner,GlobalTypes::CHandle<server::CBaseEntity>, 0x730);
-			PROPERTY(m_bHadOwner,bool , 0x734);
-			PROPERTY(m_flPostSpeakDelay,float32 , 0x738);
-			PROPERTY(m_flPreDelay,float32 , 0x73c);
-			PROPERTY(m_bIsBackground,bool , 0x740);
-			PROPERTY(m_bRemoveOnCompletion,bool , 0x741);
+			PROPERTY(m_bHadOwner,bool, 0x734);
+			PROPERTY(m_flPostSpeakDelay,float32, 0x738);
+			PROPERTY(m_flPreDelay,float32, 0x73c);
+			PROPERTY(m_bIsBackground,bool, 0x740);
+			PROPERTY(m_bRemoveOnCompletion,bool, 0x741);
 			PROPERTY(m_hTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x744);
 			S2_PAD(0x18);
 		};

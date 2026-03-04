@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class CSoundEventParameter : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_iszParamName,GlobalTypes::CUtlSymbolLarge* , 0x4c0);
-			PROPERTY(m_flFloatValue,float32 , 0x4c8);
+			PROPERTY(m_iszParamName,GlobalTypes::CUtlSymbolLarge*, 0x4c0);
+			PROPERTY(m_flFloatValue,float32, 0x4c8);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::server::CSoundEventParameter) == 0x4D0, "CSoundEventParameter size should be 0x4D0");

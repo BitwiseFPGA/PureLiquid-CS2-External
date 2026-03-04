@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace modellib {
 		class CCycleBase  {
 		public:
-			PROPERTY(m_flCycle,float32 , 0x0);
+			PROPERTY(m_flCycle,float32, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::modellib::CCycleBase) == 0x4, "CCycleBase size should be 0x4");

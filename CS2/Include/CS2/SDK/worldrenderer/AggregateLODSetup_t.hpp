@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace worldrenderer {
 		class AggregateLODSetup_t  {
 		public:
-			PROPERTY(m_vLODOrigin,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_fMaxObjectScale,float32 , 0xc);
-			PROPERTY(m_fSwitchDistances,GlobalTypes::CUtlVector< float32 >, 0x10);
+			PROPERTY(m_vLODOrigin,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_fMaxObjectScale,float32, 0xc);
+			NESTED_PROPERTY(m_fSwitchDistances,GlobalTypes::CUtlVector< float32 >, 0x10);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::AggregateLODSetup_t) == 0x28, "AggregateLODSetup_t size should be 0x28");

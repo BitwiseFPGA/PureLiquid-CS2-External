@@ -11,17 +11,13 @@
 
 
 #include <SDK/animgraphlib/CAnimUpdateNodeBase.hpp>
+#include <SDK/animgraphlib/CAnimUpdateNodeRef.hpp>
 #include <SDK/animgraphlib/ChoiceMethod.hpp>
 #include <SDK/animgraphlib/ChoiceChangeMethod.hpp>
 #include <SDK/animgraphlib/ChoiceBlendMethod.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CAnimUpdateNodeRef;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -29,16 +25,16 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CChoiceUpdateNode : public CS2::animgraphlib::CAnimUpdateNodeBase {
 		public:
-			PROPERTY(m_children,GlobalTypes::CUtlVector<animgraphlib::CAnimUpdateNodeRef>, 0x60);
-			PROPERTY(m_weights,GlobalTypes::CUtlVector< float32 >, 0x78);
-			PROPERTY(m_blendTimes,GlobalTypes::CUtlVector< float32 >, 0x90);
-			PROPERTY(m_choiceMethod,animgraphlib::ChoiceMethod , 0xa8);
-			PROPERTY(m_choiceChangeMethod,animgraphlib::ChoiceChangeMethod , 0xac);
-			PROPERTY(m_blendMethod,animgraphlib::ChoiceBlendMethod , 0xb0);
-			PROPERTY(m_blendTime,float32 , 0xb4);
-			PROPERTY(m_bCrossFade,bool , 0xb8);
-			PROPERTY(m_bResetChosen,bool , 0xb9);
-			PROPERTY(m_bDontResetSameSelection,bool , 0xba);
+			NESTED_PROPERTY(m_children,GlobalTypes::CUtlVector<animgraphlib::CAnimUpdateNodeRef>, 0x60);
+			NESTED_PROPERTY(m_weights,GlobalTypes::CUtlVector< float32 >, 0x78);
+			NESTED_PROPERTY(m_blendTimes,GlobalTypes::CUtlVector< float32 >, 0x90);
+			PROPERTY(m_choiceMethod,animgraphlib::ChoiceMethod, 0xa8);
+			PROPERTY(m_choiceChangeMethod,animgraphlib::ChoiceChangeMethod, 0xac);
+			PROPERTY(m_blendMethod,animgraphlib::ChoiceBlendMethod, 0xb0);
+			PROPERTY(m_blendTime,float32, 0xb4);
+			PROPERTY(m_bCrossFade,bool, 0xb8);
+			PROPERTY(m_bResetChosen,bool, 0xb9);
+			PROPERTY(m_bDontResetSameSelection,bool, 0xba);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CChoiceUpdateNode) == 0xC0, "CChoiceUpdateNode size should be 0xC0");

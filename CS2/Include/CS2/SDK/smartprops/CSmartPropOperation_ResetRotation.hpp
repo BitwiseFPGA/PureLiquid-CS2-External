@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_ResetRotation : public CS2::smartprops::CSmartPropTransformOperation {
 		public:
-			PROPERTY(m_bIgnoreObjectRotation,GlobalTypes::CSmartPropAttributeBool , 0x50);
-			PROPERTY(m_bResetPitch,GlobalTypes::CSmartPropAttributeBool , 0x90);
-			PROPERTY(m_bResetYaw,GlobalTypes::CSmartPropAttributeBool , 0xd0);
-			PROPERTY(m_bResetRoll,GlobalTypes::CSmartPropAttributeBool , 0x110);
+			PROPERTY(m_bIgnoreObjectRotation,GlobalTypes::CSmartPropAttributeBool, 0x50);
+			PROPERTY(m_bResetPitch,GlobalTypes::CSmartPropAttributeBool, 0x90);
+			PROPERTY(m_bResetYaw,GlobalTypes::CSmartPropAttributeBool, 0xd0);
+			PROPERTY(m_bResetRoll,GlobalTypes::CSmartPropAttributeBool, 0x110);
 			S2_PAD(0x100);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_ResetRotation) == 0x150, "CSmartPropOperation_ResetRotation size should be 0x150");

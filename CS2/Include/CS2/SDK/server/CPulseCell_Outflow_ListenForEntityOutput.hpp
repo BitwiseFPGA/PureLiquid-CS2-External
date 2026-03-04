@@ -23,11 +23,11 @@ namespace CS2 {
 	namespace server {
 		class CPulseCell_Outflow_ListenForEntityOutput : public CS2::pulse_runtime_lib::CPulseCell_BaseYieldingInflow {
 		public:
-			PROPERTY(m_OnFired,pulse_runtime_lib::SignatureOutflow_Resume , 0x48);
-			PROPERTY(m_OnCanceled,pulse_runtime_lib::CPulse_ResumePoint , 0x90);
-			PROPERTY(m_strEntityOutput,GlobalTypes::CGlobalSymbol , 0xd8);
-			PROPERTY(m_strEntityOutputParam,GlobalTypes::CUtlString* , 0xe0);
-			PROPERTY(m_bListenUntilCanceled,bool , 0xe8);
+			NESTED_PROPERTY(m_OnFired,pulse_runtime_lib::SignatureOutflow_Resume, 0x48);
+			NESTED_PROPERTY(m_OnCanceled,pulse_runtime_lib::CPulse_ResumePoint, 0x90);
+			PROPERTY(m_strEntityOutput,GlobalTypes::CGlobalSymbol, 0xd8);
+			PROPERTY(m_strEntityOutputParam,GlobalTypes::CUtlString*, 0xe0);
+			PROPERTY(m_bListenUntilCanceled,bool, 0xe8);
 			S2_PAD(0xA8);
 		};
 		//static_assert(sizeof(CS2::server::CPulseCell_Outflow_ListenForEntityOutput) == 0xF0, "CPulseCell_Outflow_ListenForEntityOutput size should be 0xF0");

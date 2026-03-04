@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class CSkillFloat  {
 		public:
-			PROPERTY_ARRAY(m_pValue,float32 , 4 , 0x0);
+			PROPERTY_ARRAY(m_pValue,float32, 4 , 0x0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::CSkillFloat) == 0x10, "CSkillFloat size should be 0x10");

@@ -11,14 +11,10 @@
 
 
 #include <SDK/client/C_SoundEventEntity.hpp>
+#include <SDK/client/SoundeventPathCornerPairNetworked_t.hpp>
 
 
 
-namespace CS2 {
-	namespace client {
-		class SoundeventPathCornerPairNetworked_t;
-	}
-}
 
 
 using namespace GlobalTypes;

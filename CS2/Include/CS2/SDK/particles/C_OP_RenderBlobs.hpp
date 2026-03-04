@@ -12,13 +12,11 @@
 
 #include <SDK/particles/CParticleFunctionRenderer.hpp>
 #include <SDK/particleslib/CParticleCollectionRendererFloatInput.hpp>
+#include <SDK/particles/MaterialVariable_t.hpp>
 
 
 
 namespace CS2 {
-	namespace particles {
-		class MaterialVariable_t;
-	}
 	namespace resourcesystem {
 		class InfoForResourceTypeIMaterial2;
 	}
@@ -30,13 +28,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RenderBlobs : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_cubeWidth,particleslib::CParticleCollectionRendererFloatInput , 0x220);
-			PROPERTY(m_cutoffRadius,particleslib::CParticleCollectionRendererFloatInput , 0x390);
-			PROPERTY(m_renderRadius,particleslib::CParticleCollectionRendererFloatInput , 0x500);
-			PROPERTY(m_nVertexCountKb,uint32_t , 0x670);
-			PROPERTY(m_nIndexCountKb,uint32_t , 0x674);
-			PROPERTY(m_nScaleCP,int32_t , 0x678);
-			PROPERTY(m_MaterialVars,GlobalTypes::CUtlVector<particles::MaterialVariable_t>, 0x680);
+			NESTED_PROPERTY(m_cubeWidth,particleslib::CParticleCollectionRendererFloatInput, 0x220);
+			NESTED_PROPERTY(m_cutoffRadius,particleslib::CParticleCollectionRendererFloatInput, 0x390);
+			NESTED_PROPERTY(m_renderRadius,particleslib::CParticleCollectionRendererFloatInput, 0x500);
+			PROPERTY(m_nVertexCountKb,uint32_t, 0x670);
+			PROPERTY(m_nIndexCountKb,uint32_t, 0x674);
+			PROPERTY(m_nScaleCP,int32_t, 0x678);
+			NESTED_PROPERTY(m_MaterialVars,GlobalTypes::CUtlVector<particles::MaterialVariable_t>, 0x680);
 			PROPERTY(m_hMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x6b0);
 			S2_PAD(0x498);
 		};

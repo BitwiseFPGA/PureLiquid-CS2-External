@@ -23,11 +23,11 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_ReadFromNeighboringParticle : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nFieldInput,particles::ParticleAttributeIndex_t , 0x1d0);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d4);
-			PROPERTY(m_nIncrement,int32_t , 0x1d8);
-			PROPERTY(m_DistanceCheck,particleslib::CPerParticleFloatInput , 0x1e0);
-			PROPERTY(m_flInterpolation,particleslib::CPerParticleFloatInput , 0x350);
+			NESTED_PROPERTY(m_nFieldInput,particles::ParticleAttributeIndex_t, 0x1d0);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d4);
+			PROPERTY(m_nIncrement,int32_t, 0x1d8);
+			NESTED_PROPERTY(m_DistanceCheck,particleslib::CPerParticleFloatInput, 0x1e0);
+			NESTED_PROPERTY(m_flInterpolation,particleslib::CPerParticleFloatInput, 0x350);
 			S2_PAD(0x2F0);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_ReadFromNeighboringParticle) == 0x4C0, "C_OP_ReadFromNeighboringParticle size should be 0x4C0");

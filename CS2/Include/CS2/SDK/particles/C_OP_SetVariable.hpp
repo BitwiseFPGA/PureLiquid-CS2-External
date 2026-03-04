@@ -25,12 +25,12 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetVariable : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_variableReference,particleslib::CParticleVariableRef , 0x1d8);
-			PROPERTY(m_transformInput,particleslib::CParticleTransformInput , 0x228);
-			PROPERTY(m_positionOffset,GlobalTypes::Vector , 0x290);
-			PROPERTY(m_rotationOffset,GlobalTypes::QAngle , 0x29c);
-			PROPERTY(m_vecInput,particleslib::CParticleCollectionVecInput , 0x2a8);
-			PROPERTY(m_floatInput,particleslib::CParticleCollectionFloatInput , 0x960);
+			NESTED_PROPERTY(m_variableReference,particleslib::CParticleVariableRef, 0x1d8);
+			NESTED_PROPERTY(m_transformInput,particleslib::CParticleTransformInput, 0x228);
+			PROPERTY(m_positionOffset,GlobalTypes::Vector, 0x290);
+			PROPERTY(m_rotationOffset,GlobalTypes::QAngle, 0x29c);
+			NESTED_PROPERTY(m_vecInput,particleslib::CParticleCollectionVecInput, 0x2a8);
+			NESTED_PROPERTY(m_floatInput,particleslib::CParticleCollectionFloatInput, 0x960);
 			S2_PAD(0x8F8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetVariable) == 0xAD0, "C_OP_SetVariable size should be 0xAD0");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_Scale : public CS2::smartprops::CSmartPropTransformOperation {
 		public:
-			PROPERTY(m_flScale,GlobalTypes::CSmartPropAttributeFloat , 0x50);
+			PROPERTY(m_flScale,GlobalTypes::CSmartPropAttributeFloat, 0x50);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_Scale) == 0x90, "CSmartPropOperation_Scale size should be 0x90");

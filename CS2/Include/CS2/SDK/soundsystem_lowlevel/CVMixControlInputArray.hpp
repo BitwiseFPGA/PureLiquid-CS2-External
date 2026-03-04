@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixControlInputArray : public CS2::soundsystem_lowlevel::CVMixInputBase {
 		public:
-			PROPERTY(m_nArrayIndex,int32_t , 0x10);
+			PROPERTY(m_nArrayIndex,int32_t, 0x10);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixControlInputArray) == 0x18, "CVMixControlInputArray size should be 0x18");

@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace worldrenderer {
 		class RTProxyInstanceInfo_t  {
 		public:
-			PROPERTY(m_nFlags,worldrenderer::RTProxyInstanceFlags_t , 0x0);
-			PROPERTY(m_albedoFormat,modellib::VertexAlbedoFormat_t , 0x1);
-			PROPERTY(m_nBLASCount,uint16_t , 0x2);
-			PROPERTY(m_nBLASIndex,uint32_t , 0x4);
-			PROPERTY(m_nVertexAlbedoByteOffset,uint32_t , 0x8);
-			PROPERTY(m_mWorldFromLocal,GlobalTypes::matrix3x4_t , 0xc);
+			PROPERTY(m_nFlags,worldrenderer::RTProxyInstanceFlags_t, 0x0);
+			PROPERTY(m_albedoFormat,modellib::VertexAlbedoFormat_t, 0x1);
+			PROPERTY(m_nBLASCount,uint16_t, 0x2);
+			PROPERTY(m_nBLASIndex,uint32_t, 0x4);
+			PROPERTY(m_nVertexAlbedoByteOffset,uint32_t, 0x8);
+			PROPERTY(m_mWorldFromLocal,GlobalTypes::matrix3x4_t, 0xc);
 			S2_PAD(0x3C);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::RTProxyInstanceInfo_t) == 0x3C, "RTProxyInstanceInfo_t size should be 0x3C");

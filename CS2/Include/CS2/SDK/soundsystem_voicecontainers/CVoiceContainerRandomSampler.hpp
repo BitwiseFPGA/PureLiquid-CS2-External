@@ -22,12 +22,12 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerRandomSampler : public CS2::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator {
 		public:
-			PROPERTY(m_flAmplitude,float32 , 0xb8);
-			PROPERTY(m_flAmplitudeJitter,float32 , 0xbc);
-			PROPERTY(m_flTimeJitter,float32 , 0xc0);
-			PROPERTY(m_flMaxLength,float32 , 0xc4);
-			PROPERTY(m_nNumDelayVariations,int32_t , 0xc8);
-			PROPERTY(m_grainResources,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCVoiceContainerBase>>, 0xd0);
+			PROPERTY(m_flAmplitude,float32, 0xb8);
+			PROPERTY(m_flAmplitudeJitter,float32, 0xbc);
+			PROPERTY(m_flTimeJitter,float32, 0xc0);
+			PROPERTY(m_flMaxLength,float32, 0xc4);
+			PROPERTY(m_nNumDelayVariations,int32_t, 0xc8);
+			NESTED_PROPERTY(m_grainResources,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCVoiceContainerBase>>, 0xd0);
 			S2_PAD(0x128);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerRandomSampler) == 0x1E0, "CVoiceContainerRandomSampler size should be 0x1E0");

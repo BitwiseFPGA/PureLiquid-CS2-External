@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class CInButtonState  {
 		public:
-			PROPERTY_ARRAY(m_pButtonStates,uint64_t , 3 , 0x8);
+			PROPERTY_ARRAY(m_pButtonStates,uint64_t, 3 , 0x8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::client::CInButtonState) == 0x20, "CInButtonState size should be 0x20");

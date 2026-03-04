@@ -10,15 +10,11 @@
 #endif
 
 
+#include <SDK/client/ragdollelement_t.hpp>
+#include <SDK/client/ragdollhierarchyjoint_t.hpp>
 
 
 
-namespace CS2 {
-	namespace client {
-		class ragdollelement_t;
-		class ragdollhierarchyjoint_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,11 +22,11 @@ namespace CS2 {
 	namespace client {
 		class ragdoll_t  {
 		public:
-			PROPERTY(list,GlobalTypes::CUtlVector<client::ragdollelement_t>, 0x0);
-			PROPERTY(hierarchyJoints,GlobalTypes::CUtlVector<client::ragdollhierarchyjoint_t>, 0x18);
-			PROPERTY(boneIndex,GlobalTypes::CUtlVector< int32 >, 0x30);
-			PROPERTY(allowStretch,bool , 0x48);
-			PROPERTY(unused,bool , 0x49);
+			NESTED_PROPERTY(list,GlobalTypes::CUtlVector<client::ragdollelement_t>, 0x0);
+			NESTED_PROPERTY(hierarchyJoints,GlobalTypes::CUtlVector<client::ragdollhierarchyjoint_t>, 0x18);
+			NESTED_PROPERTY(boneIndex,GlobalTypes::CUtlVector< int32 >, 0x30);
+			PROPERTY(allowStretch,bool, 0x48);
+			PROPERTY(unused,bool, 0x49);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::client::ragdoll_t) == 0x50, "ragdoll_t size should be 0x50");

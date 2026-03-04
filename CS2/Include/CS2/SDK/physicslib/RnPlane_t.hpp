@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace physicslib {
 		class RnPlane_t  {
 		public:
-			PROPERTY(m_vNormal,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_flOffset,float32 , 0xc);
+			PROPERTY(m_vNormal,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_flOffset,float32, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::RnPlane_t) == 0x10, "RnPlane_t size should be 0x10");

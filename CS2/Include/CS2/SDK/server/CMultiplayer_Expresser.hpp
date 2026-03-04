@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CMultiplayer_Expresser : public CS2::server::CAI_ExpresserWithFollowup {
 		public:
-			PROPERTY(m_bAllowMultipleScenes,bool , 0xa0);
+			PROPERTY(m_bAllowMultipleScenes,bool, 0xa0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::CMultiplayer_Expresser) == 0xA8, "CMultiplayer_Expresser size should be 0xA8");

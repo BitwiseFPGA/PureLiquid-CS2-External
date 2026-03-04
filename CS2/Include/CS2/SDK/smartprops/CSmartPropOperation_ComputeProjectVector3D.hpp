@@ -22,13 +22,13 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_ComputeProjectVector3D : public CS2::smartprops::CSmartPropOperation {
 		public:
-			PROPERTY(m_OutputVariableName,GlobalTypes::CUtlString* , 0x50);
-			PROPERTY(m_OutputCoordinateSpace,smartprops::CSmartPropAttributeCoordinateSpace , 0x58);
-			PROPERTY(m_InputVectorA,GlobalTypes::CSmartPropAttributeVector , 0x98);
-			PROPERTY(m_CoordinateSpaceA,smartprops::CSmartPropAttributeCoordinateSpace , 0xd8);
-			PROPERTY(m_InputVectorB,GlobalTypes::CSmartPropAttributeVector , 0x118);
-			PROPERTY(m_CoordinateSpaceB,smartprops::CSmartPropAttributeCoordinateSpace , 0x158);
-			PROPERTY(m_bPlane,GlobalTypes::CSmartPropAttributeBool , 0x198);
+			PROPERTY(m_OutputVariableName,GlobalTypes::CUtlString*, 0x50);
+			NESTED_PROPERTY(m_OutputCoordinateSpace,smartprops::CSmartPropAttributeCoordinateSpace, 0x58);
+			PROPERTY(m_InputVectorA,GlobalTypes::CSmartPropAttributeVector, 0x98);
+			NESTED_PROPERTY(m_CoordinateSpaceA,smartprops::CSmartPropAttributeCoordinateSpace, 0xd8);
+			PROPERTY(m_InputVectorB,GlobalTypes::CSmartPropAttributeVector, 0x118);
+			NESTED_PROPERTY(m_CoordinateSpaceB,smartprops::CSmartPropAttributeCoordinateSpace, 0x158);
+			PROPERTY(m_bPlane,GlobalTypes::CSmartPropAttributeBool, 0x198);
 			S2_PAD(0x188);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_ComputeProjectVector3D) == 0x1D8, "CSmartPropOperation_ComputeProjectVector3D size should be 0x1D8");

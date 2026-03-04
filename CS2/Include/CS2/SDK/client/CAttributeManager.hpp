@@ -12,14 +12,10 @@
 
 #include <SDK/client/C_BaseEntity.hpp>
 #include <SDK/client/attributeprovidertypes_t.hpp>
+#include <SDK/client/cached_attribute_float_t.hpp>
 
 
 
-namespace CS2 {
-	namespace client {
-		class cached_attribute_float_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,12 +23,12 @@ namespace CS2 {
 	namespace client {
 		class CAttributeManager  {
 		public:
-			PROPERTY(m_Providers,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::C_BaseEntity>>, 0x8);
-			PROPERTY(m_iReapplyProvisionParity,int32_t , 0x20);
+			NESTED_PROPERTY(m_Providers,GlobalTypes::CUtlVector<GlobalTypes::CHandle<client::C_BaseEntity>>, 0x8);
+			PROPERTY(m_iReapplyProvisionParity,int32_t, 0x20);
 			PROPERTY(m_hOuter,GlobalTypes::CHandle<client::C_BaseEntity>, 0x24);
-			PROPERTY(m_bPreventLoopback,bool , 0x28);
-			PROPERTY(m_ProviderType,client::attributeprovidertypes_t , 0x2c);
-			PROPERTY(m_CachedResults,GlobalTypes::CUtlVector<client::cached_attribute_float_t>, 0x30);
+			PROPERTY(m_bPreventLoopback,bool, 0x28);
+			PROPERTY(m_ProviderType,client::attributeprovidertypes_t, 0x2c);
+			NESTED_PROPERTY(m_CachedResults,GlobalTypes::CUtlVector<client::cached_attribute_float_t>, 0x30);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::client::CAttributeManager) == 0x50, "CAttributeManager size should be 0x50");

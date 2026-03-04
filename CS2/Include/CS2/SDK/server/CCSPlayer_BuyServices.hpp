@@ -11,14 +11,10 @@
 
 
 #include <SDK/client/CPlayerPawnComponent.hpp>
+#include <SDK/server/SellbackPurchaseEntry_t.hpp>
 
 
 
-namespace CS2 {
-	namespace server {
-		class SellbackPurchaseEntry_t;
-	}
-}
 
 
 using namespace GlobalTypes;

@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace server {
 		class CScriptItem : public CS2::server::CItem {
 		public:
-			PROPERTY(m_MoveTypeOverride,client::MoveType_t , 0xac0);
+			PROPERTY(m_MoveTypeOverride,client::MoveType_t, 0xac0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::CScriptItem) == 0xAD0, "CScriptItem size should be 0xAD0");

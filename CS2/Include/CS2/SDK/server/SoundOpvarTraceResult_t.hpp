@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace server {
 		class SoundOpvarTraceResult_t  {
 		public:
-			PROPERTY(vPos,GlobalTypes::Vector , 0x0);
-			PROPERTY(bDidHit,bool , 0xc);
-			PROPERTY(flDistSqrToCenter,float32 , 0x10);
+			PROPERTY(vPos,GlobalTypes::Vector, 0x0);
+			PROPERTY(bDidHit,bool, 0xc);
+			PROPERTY(flDistSqrToCenter,float32, 0x10);
 			S2_PAD(0x14);
 		};
 		//static_assert(sizeof(CS2::server::SoundOpvarTraceResult_t) == 0x14, "SoundOpvarTraceResult_t size should be 0x14");

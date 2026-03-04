@@ -25,9 +25,9 @@ namespace CS2 {
 	namespace server {
 		class NetworkedLoadoutSlot_t  {
 		public:
-			PROPERTY(pItem,server::CEconItemView* , 0x0);
-			PROPERTY(team,uint16_t , 0x8);
-			PROPERTY(slot,uint16_t , 0xa);
+			PROPERTY(pItem,server::CEconItemView*, 0x0);
+			PROPERTY(team,uint16_t, 0x8);
+			PROPERTY(slot,uint16_t, 0xa);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::NetworkedLoadoutSlot_t) == 0x10, "CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t size should be 0x10");

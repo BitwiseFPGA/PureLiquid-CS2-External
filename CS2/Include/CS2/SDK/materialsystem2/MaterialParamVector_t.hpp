@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace materialsystem2 {
 		class MaterialParamVector_t : public CS2::materialsystem2::MaterialParam_t {
 		public:
-			PROPERTY(m_value,GlobalTypes::Vector4D , 0x8);
+			PROPERTY(m_value,GlobalTypes::Vector4D, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::materialsystem2::MaterialParamVector_t) == 0x18, "MaterialParamVector_t size should be 0x18");

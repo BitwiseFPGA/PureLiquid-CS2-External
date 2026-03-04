@@ -13,14 +13,10 @@
 #include <SDK/animgraphlib/CUnaryUpdateNode.hpp>
 #include <SDK/animgraphlib/FootPinningPoseOpFixedData_t.hpp>
 #include <SDK/animgraphlib/FootPinningTimingSource.hpp>
+#include <SDK/animgraphlib/CAnimParamHandle.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CAnimParamHandle;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -28,10 +24,10 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CFootPinningUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_poseOpFixedData,animgraphlib::FootPinningPoseOpFixedData_t , 0x78);
-			PROPERTY(m_eTimingSource,animgraphlib::FootPinningTimingSource , 0xa8);
-			PROPERTY(m_params,GlobalTypes::CUtlVector<animgraphlib::CAnimParamHandle>, 0xb0);
-			PROPERTY(m_bResetChild,bool , 0xc8);
+			NESTED_PROPERTY(m_poseOpFixedData,animgraphlib::FootPinningPoseOpFixedData_t, 0x78);
+			PROPERTY(m_eTimingSource,animgraphlib::FootPinningTimingSource, 0xa8);
+			NESTED_PROPERTY(m_params,GlobalTypes::CUtlVector<animgraphlib::CAnimParamHandle>, 0xb0);
+			PROPERTY(m_bResetChild,bool, 0xc8);
 			S2_PAD(0x60);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CFootPinningUpdateNode) == 0xD0, "CFootPinningUpdateNode size should be 0xD0");

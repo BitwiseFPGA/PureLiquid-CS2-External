@@ -11,15 +11,11 @@
 
 
 #include <SDK/animgraphlib/EDemoBoneSelectionMode.hpp>
+#include <SDK/animgraphlib/BoneDemoCaptureSettings_t.hpp>
+#include <SDK/animgraphlib/IKDemoCaptureSettings_t.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class BoneDemoCaptureSettings_t;
-		class IKDemoCaptureSettings_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,21 +23,21 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CAnimDemoCaptureSettings  {
 		public:
-			PROPERTY(m_vecErrorRangeSplineRotation,GlobalTypes::Vector2D , 0x0);
-			PROPERTY(m_vecErrorRangeSplineTranslation,GlobalTypes::Vector2D , 0x8);
-			PROPERTY(m_vecErrorRangeSplineScale,GlobalTypes::Vector2D , 0x10);
-			PROPERTY(m_flIkRotation_MaxSplineError,float32 , 0x18);
-			PROPERTY(m_flIkTranslation_MaxSplineError,float32 , 0x1c);
-			PROPERTY(m_vecErrorRangeQuantizationRotation,GlobalTypes::Vector2D , 0x20);
-			PROPERTY(m_vecErrorRangeQuantizationTranslation,GlobalTypes::Vector2D , 0x28);
-			PROPERTY(m_vecErrorRangeQuantizationScale,GlobalTypes::Vector2D , 0x30);
-			PROPERTY(m_flIkRotation_MaxQuantizationError,float32 , 0x38);
-			PROPERTY(m_flIkTranslation_MaxQuantizationError,float32 , 0x3c);
-			PROPERTY(m_baseSequence,GlobalTypes::CUtlString* , 0x40);
-			PROPERTY(m_nBaseSequenceFrame,int32_t , 0x48);
-			PROPERTY(m_boneSelectionMode,animgraphlib::EDemoBoneSelectionMode , 0x4c);
-			PROPERTY(m_bones,GlobalTypes::CUtlVector<animgraphlib::BoneDemoCaptureSettings_t>, 0x50);
-			PROPERTY(m_ikChains,GlobalTypes::CUtlVector<animgraphlib::IKDemoCaptureSettings_t>, 0x68);
+			PROPERTY(m_vecErrorRangeSplineRotation,GlobalTypes::Vector2D, 0x0);
+			PROPERTY(m_vecErrorRangeSplineTranslation,GlobalTypes::Vector2D, 0x8);
+			PROPERTY(m_vecErrorRangeSplineScale,GlobalTypes::Vector2D, 0x10);
+			PROPERTY(m_flIkRotation_MaxSplineError,float32, 0x18);
+			PROPERTY(m_flIkTranslation_MaxSplineError,float32, 0x1c);
+			PROPERTY(m_vecErrorRangeQuantizationRotation,GlobalTypes::Vector2D, 0x20);
+			PROPERTY(m_vecErrorRangeQuantizationTranslation,GlobalTypes::Vector2D, 0x28);
+			PROPERTY(m_vecErrorRangeQuantizationScale,GlobalTypes::Vector2D, 0x30);
+			PROPERTY(m_flIkRotation_MaxQuantizationError,float32, 0x38);
+			PROPERTY(m_flIkTranslation_MaxQuantizationError,float32, 0x3c);
+			PROPERTY(m_baseSequence,GlobalTypes::CUtlString*, 0x40);
+			PROPERTY(m_nBaseSequenceFrame,int32_t, 0x48);
+			PROPERTY(m_boneSelectionMode,animgraphlib::EDemoBoneSelectionMode, 0x4c);
+			NESTED_PROPERTY(m_bones,GlobalTypes::CUtlVector<animgraphlib::BoneDemoCaptureSettings_t>, 0x50);
+			NESTED_PROPERTY(m_ikChains,GlobalTypes::CUtlVector<animgraphlib::IKDemoCaptureSettings_t>, 0x68);
 			S2_PAD(0x80);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CAnimDemoCaptureSettings) == 0x80, "CAnimDemoCaptureSettings size should be 0x80");

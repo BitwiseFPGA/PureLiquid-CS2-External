@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace server {
 		class CRelativeLocation  {
 		public:
-			PROPERTY(m_Type,server::RelativeLocationType_t , 0x18);
-			PROPERTY(m_vRelativeOffset,GlobalTypes::Vector , 0x1c);
-			PROPERTY(m_vWorldSpacePos,GlobalTypes::VectorWS , 0x28);
+			PROPERTY(m_Type,server::RelativeLocationType_t, 0x18);
+			PROPERTY(m_vRelativeOffset,GlobalTypes::Vector, 0x1c);
+			PROPERTY(m_vWorldSpacePos,GlobalTypes::VectorWS, 0x28);
 			PROPERTY(m_hEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x34);
 			S2_PAD(0x38);
 		};

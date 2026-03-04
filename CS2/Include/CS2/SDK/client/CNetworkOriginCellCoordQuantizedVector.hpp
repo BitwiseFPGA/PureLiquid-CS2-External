@@ -20,13 +20,13 @@ namespace CS2 {
 	namespace client {
 		class CNetworkOriginCellCoordQuantizedVector  {
 		public:
-			PROPERTY(m_cellX,uint16_t , 0x10);
-			PROPERTY(m_cellY,uint16_t , 0x12);
-			PROPERTY(m_cellZ,uint16_t , 0x14);
-			PROPERTY(m_nOutsideWorld,uint16_t , 0x16);
-			PROPERTY(m_vecX,GlobalTypes::CNetworkedQuantizedFloat , 0x18);
-			PROPERTY(m_vecY,GlobalTypes::CNetworkedQuantizedFloat , 0x20);
-			PROPERTY(m_vecZ,GlobalTypes::CNetworkedQuantizedFloat , 0x28);
+			PROPERTY(m_cellX,uint16_t, 0x10);
+			PROPERTY(m_cellY,uint16_t, 0x12);
+			PROPERTY(m_cellZ,uint16_t, 0x14);
+			PROPERTY(m_nOutsideWorld,uint16_t, 0x16);
+			PROPERTY(m_vecX,GlobalTypes::CNetworkedQuantizedFloat, 0x18);
+			PROPERTY(m_vecY,GlobalTypes::CNetworkedQuantizedFloat, 0x20);
+			PROPERTY(m_vecZ,GlobalTypes::CNetworkedQuantizedFloat, 0x28);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::client::CNetworkOriginCellCoordQuantizedVector) == 0x30, "CNetworkOriginCellCoordQuantizedVector size should be 0x30");

@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/CFlexOp.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class CFlexOp;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,8 +21,8 @@ namespace CS2 {
 	namespace modellib {
 		class CFlexRule  {
 		public:
-			PROPERTY(m_nFlex,int32_t , 0x0);
-			PROPERTY(m_FlexOps,GlobalTypes::CUtlVector<modellib::CFlexOp>, 0x8);
+			PROPERTY(m_nFlex,int32_t, 0x0);
+			NESTED_PROPERTY(m_FlexOps,GlobalTypes::CUtlVector<modellib::CFlexOp>, 0x8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::modellib::CFlexRule) == 0x20, "CFlexRule size should be 0x20");

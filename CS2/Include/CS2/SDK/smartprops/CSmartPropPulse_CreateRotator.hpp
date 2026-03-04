@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropPulse_CreateRotator : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_Name,GlobalTypes::CUtlString* , 0x48);
+			PROPERTY(m_Name,GlobalTypes::CUtlString*, 0x48);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropPulse_CreateRotator) == 0x50, "CSmartPropPulse_CreateRotator size should be 0x50");

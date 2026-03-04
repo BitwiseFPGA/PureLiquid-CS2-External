@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace modellib {
 		class CMorphConstraint : public CS2::modellib::CBaseConstraint {
 		public:
-			PROPERTY(m_sTargetMorph,GlobalTypes::CUtlString* , 0x60);
-			PROPERTY(m_nSlaveChannel,int32_t , 0x68);
-			PROPERTY(m_flMin,float32 , 0x6c);
-			PROPERTY(m_flMax,float32 , 0x70);
+			PROPERTY(m_sTargetMorph,GlobalTypes::CUtlString*, 0x60);
+			PROPERTY(m_nSlaveChannel,int32_t, 0x68);
+			PROPERTY(m_flMin,float32, 0x6c);
+			PROPERTY(m_flMax,float32, 0x70);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::modellib::CMorphConstraint) == 0x80, "CMorphConstraint size should be 0x80");

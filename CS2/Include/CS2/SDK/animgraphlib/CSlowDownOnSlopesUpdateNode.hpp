@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CSlowDownOnSlopesUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_flSlowDownStrength,float32 , 0x70);
+			PROPERTY(m_flSlowDownStrength,float32, 0x70);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CSlowDownOnSlopesUpdateNode) == 0x78, "CSlowDownOnSlopesUpdateNode size should be 0x78");

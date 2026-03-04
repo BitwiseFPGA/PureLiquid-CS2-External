@@ -23,16 +23,16 @@ namespace CS2 {
 	namespace animlib {
 		class CNmTwoBoneIKTask : public CS2::animlib::CNmPoseTask {
 		public:
-			PROPERTY(m_nEffectorBoneIdx,int32_t , 0x58);
-			PROPERTY(m_nEffectorTargetBoneIdx,int32_t , 0x5c);
-			PROPERTY(m_targetTransform,GlobalTypes::CTransform , 0x60);
-			PROPERTY(m_effectorTarget,animlib::CNmTarget , 0x80);
-			PROPERTY(m_blendMode,animlib::NmIKBlendMode_t , 0xb0);
-			PROPERTY(m_flBlendWeight,float32 , 0xb4);
-			PROPERTY(m_bIsTargetInWorldSpace,bool , 0xb8);
-			PROPERTY(m_bIsRunningFromDeserializedData,bool , 0xb9);
-			PROPERTY(m_flReferencePoseTwistWeight,float32 , 0xbc);
-			PROPERTY(m_debugEffectorBoneID,GlobalTypes::CGlobalSymbol , 0xc0);
+			PROPERTY(m_nEffectorBoneIdx,int32_t, 0x58);
+			PROPERTY(m_nEffectorTargetBoneIdx,int32_t, 0x5c);
+			PROPERTY(m_targetTransform,GlobalTypes::CTransform, 0x60);
+			NESTED_PROPERTY(m_effectorTarget,animlib::CNmTarget, 0x80);
+			PROPERTY(m_blendMode,animlib::NmIKBlendMode_t, 0xb0);
+			PROPERTY(m_flBlendWeight,float32, 0xb4);
+			PROPERTY(m_bIsTargetInWorldSpace,bool, 0xb8);
+			PROPERTY(m_bIsRunningFromDeserializedData,bool, 0xb9);
+			PROPERTY(m_flReferencePoseTwistWeight,float32, 0xbc);
+			PROPERTY(m_debugEffectorBoneID,GlobalTypes::CGlobalSymbol, 0xc0);
 			S2_PAD(0x78);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmTwoBoneIKTask) == 0xD0, "CNmTwoBoneIKTask size should be 0xD0");

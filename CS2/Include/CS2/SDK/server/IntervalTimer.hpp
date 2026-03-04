@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class IntervalTimer  {
 		public:
-			PROPERTY(m_timestamp,entity2::GameTime_t , 0x8);
-			PROPERTY(m_nWorldGroupId,GlobalTypes::WorldGroupId_t , 0xc);
+			NESTED_PROPERTY(m_timestamp,entity2::GameTime_t, 0x8);
+			PROPERTY(m_nWorldGroupId,GlobalTypes::WorldGroupId_t, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::server::IntervalTimer) == 0x10, "IntervalTimer size should be 0x10");

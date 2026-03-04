@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class CInfoDynamicShadowHintBox : public CS2::client::CInfoDynamicShadowHint {
 		public:
-			PROPERTY(m_vBoxMins,GlobalTypes::Vector , 0x620);
-			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector , 0x62c);
+			PROPERTY(m_vBoxMins,GlobalTypes::Vector, 0x620);
+			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector, 0x62c);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::CInfoDynamicShadowHintBox) == 0x638, "CInfoDynamicShadowHintBox size should be 0x638");

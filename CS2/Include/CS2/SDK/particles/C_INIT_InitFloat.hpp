@@ -24,10 +24,10 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_InitFloat : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_InputValue,particleslib::CPerParticleFloatInput , 0x1d8);
-			PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t , 0x348);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x34c);
-			PROPERTY(m_InputStrength,particleslib::CPerParticleFloatInput , 0x350);
+			NESTED_PROPERTY(m_InputValue,particleslib::CPerParticleFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t, 0x348);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x34c);
+			NESTED_PROPERTY(m_InputStrength,particleslib::CPerParticleFloatInput, 0x350);
 			S2_PAD(0x2E8);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_InitFloat) == 0x4C0, "C_INIT_InitFloat size should be 0x4C0");

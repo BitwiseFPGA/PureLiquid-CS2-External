@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace pulse_system {
 		class CPulseCell_TestWaitWithCursorState : public CS2::pulse_runtime_lib::CPulseCell_BaseYieldingInflow {
 		public:
-			PROPERTY(m_WakeResume,pulse_runtime_lib::CPulse_ResumePoint , 0x48);
-			PROPERTY(m_WakeCancel,pulse_runtime_lib::CPulse_ResumePoint , 0x90);
-			PROPERTY(m_WakeFail,pulse_runtime_lib::CPulse_ResumePoint , 0xd8);
+			NESTED_PROPERTY(m_WakeResume,pulse_runtime_lib::CPulse_ResumePoint, 0x48);
+			NESTED_PROPERTY(m_WakeCancel,pulse_runtime_lib::CPulse_ResumePoint, 0x90);
+			NESTED_PROPERTY(m_WakeFail,pulse_runtime_lib::CPulse_ResumePoint, 0xd8);
 			S2_PAD(0xD8);
 		};
 		//static_assert(sizeof(CS2::pulse_system::CPulseCell_TestWaitWithCursorState) == 0x120, "CPulseCell_TestWaitWithCursorState size should be 0x120");

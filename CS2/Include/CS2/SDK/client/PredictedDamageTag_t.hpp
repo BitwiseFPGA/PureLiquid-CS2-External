@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace client {
 		class PredictedDamageTag_t  {
 		public:
-			PROPERTY(nTagTick,entity2::GameTick_t , 0x30);
-			PROPERTY(flFlinchModSmall,float32 , 0x34);
-			PROPERTY(flFlinchModLarge,float32 , 0x38);
-			PROPERTY(flFriendlyFireDamageReductionRatio,float32 , 0x3c);
+			NESTED_PROPERTY(nTagTick,entity2::GameTick_t, 0x30);
+			PROPERTY(flFlinchModSmall,float32, 0x34);
+			PROPERTY(flFlinchModLarge,float32, 0x38);
+			PROPERTY(flFriendlyFireDamageReductionRatio,float32, 0x3c);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::client::PredictedDamageTag_t) == 0x40, "PredictedDamageTag_t size should be 0x40");

@@ -25,21 +25,21 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_PositionLock : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0x1d0);
-			PROPERTY(m_flStartTime_min,float32 , 0x238);
-			PROPERTY(m_flStartTime_max,float32 , 0x23c);
-			PROPERTY(m_flStartTime_exp,float32 , 0x240);
-			PROPERTY(m_flEndTime_min,float32 , 0x244);
-			PROPERTY(m_flEndTime_max,float32 , 0x248);
-			PROPERTY(m_flEndTime_exp,float32 , 0x24c);
-			PROPERTY(m_flRange,float32 , 0x250);
-			PROPERTY(m_flRangeBias,particleslib::CParticleCollectionFloatInput , 0x258);
-			PROPERTY(m_flJumpThreshold,float32 , 0x3c8);
-			PROPERTY(m_flPrevPosScale,float32 , 0x3cc);
-			PROPERTY(m_bLockRot,bool , 0x3d0);
-			PROPERTY(m_vecScale,particleslib::CParticleCollectionVecInput , 0x3d8);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0xa90);
-			PROPERTY(m_nFieldOutputPrev,particles::ParticleAttributeIndex_t , 0xa94);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0x1d0);
+			PROPERTY(m_flStartTime_min,float32, 0x238);
+			PROPERTY(m_flStartTime_max,float32, 0x23c);
+			PROPERTY(m_flStartTime_exp,float32, 0x240);
+			PROPERTY(m_flEndTime_min,float32, 0x244);
+			PROPERTY(m_flEndTime_max,float32, 0x248);
+			PROPERTY(m_flEndTime_exp,float32, 0x24c);
+			PROPERTY(m_flRange,float32, 0x250);
+			NESTED_PROPERTY(m_flRangeBias,particleslib::CParticleCollectionFloatInput, 0x258);
+			PROPERTY(m_flJumpThreshold,float32, 0x3c8);
+			PROPERTY(m_flPrevPosScale,float32, 0x3cc);
+			PROPERTY(m_bLockRot,bool, 0x3d0);
+			NESTED_PROPERTY(m_vecScale,particleslib::CParticleCollectionVecInput, 0x3d8);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0xa90);
+			NESTED_PROPERTY(m_nFieldOutputPrev,particles::ParticleAttributeIndex_t, 0xa94);
 			S2_PAD(0x8C8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_PositionLock) == 0xA98, "C_OP_PositionLock size should be 0xA98");

@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/server/WeaponPurchaseCount_t.hpp>
 
 
 
-namespace CS2 {
-	namespace server {
-		class WeaponPurchaseCount_t;
-	}
-}
 
 
 using namespace GlobalTypes;

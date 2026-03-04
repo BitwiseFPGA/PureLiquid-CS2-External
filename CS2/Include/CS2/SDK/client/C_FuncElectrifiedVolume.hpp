@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace client {
 		class C_FuncElectrifiedVolume : public CS2::client::C_FuncBrush {
 		public:
-			PROPERTY(m_nAmbientEffect,client::ParticleIndex_t , 0xe88);
-			PROPERTY(m_EffectName,GlobalTypes::CUtlSymbolLarge* , 0xe90);
-			PROPERTY(m_bState,bool , 0xe98);
+			NESTED_PROPERTY(m_nAmbientEffect,client::ParticleIndex_t, 0xe88);
+			PROPERTY(m_EffectName,GlobalTypes::CUtlSymbolLarge*, 0xe90);
+			PROPERTY(m_bState,bool, 0xe98);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::C_FuncElectrifiedVolume) == 0xEA0, "C_FuncElectrifiedVolume size should be 0xEA0");

@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace physicslib {
 		class FourVectors2D  {
 		public:
-			PROPERTY(x,GlobalTypes::fltx4 , 0x0);
-			PROPERTY(y,GlobalTypes::fltx4 , 0x10);
+			PROPERTY(x,GlobalTypes::fltx4, 0x0);
+			PROPERTY(y,GlobalTypes::fltx4, 0x10);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::physicslib::FourVectors2D) == 0x20, "FourVectors2D size should be 0x20");

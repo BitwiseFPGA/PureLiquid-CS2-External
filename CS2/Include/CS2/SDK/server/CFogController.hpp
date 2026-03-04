@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace server {
 		class CFogController : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_fog,server::fogparams_t , 0x4a8);
-			PROPERTY(m_bUseAngles,bool , 0x510);
-			PROPERTY(m_iChangedVariables,int32_t , 0x514);
+			NESTED_PROPERTY(m_fog,server::fogparams_t, 0x4a8);
+			PROPERTY(m_bUseAngles,bool, 0x510);
+			PROPERTY(m_iChangedVariables,int32_t, 0x514);
 			S2_PAD(0x70);
 		};
 		//static_assert(sizeof(CS2::server::CFogController) == 0x518, "CFogController size should be 0x518");

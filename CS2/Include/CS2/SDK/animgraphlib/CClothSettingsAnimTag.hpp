@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CClothSettingsAnimTag : public CS2::animgraphlib::CAnimTagBase {
 		public:
-			PROPERTY(m_flStiffness,float32 , 0x58);
-			PROPERTY(m_flEaseIn,float32 , 0x5c);
-			PROPERTY(m_flEaseOut,float32 , 0x60);
-			PROPERTY(m_nVertexSet,GlobalTypes::CUtlString* , 0x68);
+			PROPERTY(m_flStiffness,float32, 0x58);
+			PROPERTY(m_flEaseIn,float32, 0x5c);
+			PROPERTY(m_flEaseOut,float32, 0x60);
+			PROPERTY(m_nVertexSet,GlobalTypes::CUtlString*, 0x68);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CClothSettingsAnimTag) == 0x70, "CClothSettingsAnimTag size should be 0x70");

@@ -23,13 +23,13 @@ namespace CS2 {
 	namespace particles {
 		class CBaseTrailRenderer : public CS2::particles::CBaseRendererSource2 {
 		public:
-			PROPERTY(m_nOrientationType,particles::ParticleOrientationChoiceList_t , 0x2de8);
-			PROPERTY(m_nOrientationControlPoint,int32_t , 0x2dec);
-			PROPERTY(m_flMinSize,float32 , 0x2df0);
-			PROPERTY(m_flMaxSize,float32 , 0x2df4);
-			PROPERTY(m_flStartFadeSize,particleslib::CParticleCollectionRendererFloatInput , 0x2df8);
-			PROPERTY(m_flEndFadeSize,particleslib::CParticleCollectionRendererFloatInput , 0x2f68);
-			PROPERTY(m_bClampV,bool , 0x30d8);
+			PROPERTY(m_nOrientationType,particles::ParticleOrientationChoiceList_t, 0x2de8);
+			PROPERTY(m_nOrientationControlPoint,int32_t, 0x2dec);
+			PROPERTY(m_flMinSize,float32, 0x2df0);
+			PROPERTY(m_flMaxSize,float32, 0x2df4);
+			NESTED_PROPERTY(m_flStartFadeSize,particleslib::CParticleCollectionRendererFloatInput, 0x2df8);
+			NESTED_PROPERTY(m_flEndFadeSize,particleslib::CParticleCollectionRendererFloatInput, 0x2f68);
+			PROPERTY(m_bClampV,bool, 0x30d8);
 			S2_PAD(0x2F8);
 		};
 		//static_assert(sizeof(CS2::particles::CBaseTrailRenderer) == 0x30E0, "CBaseTrailRenderer size should be 0x30E0");

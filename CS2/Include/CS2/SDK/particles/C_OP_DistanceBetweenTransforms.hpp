@@ -26,19 +26,19 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_DistanceBetweenTransforms : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d0);
-			PROPERTY(m_TransformStart,particleslib::CParticleTransformInput , 0x1d8);
-			PROPERTY(m_TransformEnd,particleslib::CParticleTransformInput , 0x240);
-			PROPERTY(m_flInputMin,particleslib::CPerParticleFloatInput , 0x2a8);
-			PROPERTY(m_flInputMax,particleslib::CPerParticleFloatInput , 0x418);
-			PROPERTY(m_flOutputMin,particleslib::CPerParticleFloatInput , 0x588);
-			PROPERTY(m_flOutputMax,particleslib::CPerParticleFloatInput , 0x6f8);
-			PROPERTY(m_flMaxTraceLength,float32 , 0x868);
-			PROPERTY(m_flLOSScale,float32 , 0x86c);
-			PROPERTY_ARRAY(m_CollisionGroupName,char , 128 , 0x870);
-			PROPERTY(m_nTraceSet,particles::ParticleTraceSet_t , 0x8f0);
-			PROPERTY(m_bLOS,bool , 0x8f4);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x8f8);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d0);
+			NESTED_PROPERTY(m_TransformStart,particleslib::CParticleTransformInput, 0x1d8);
+			NESTED_PROPERTY(m_TransformEnd,particleslib::CParticleTransformInput, 0x240);
+			NESTED_PROPERTY(m_flInputMin,particleslib::CPerParticleFloatInput, 0x2a8);
+			NESTED_PROPERTY(m_flInputMax,particleslib::CPerParticleFloatInput, 0x418);
+			NESTED_PROPERTY(m_flOutputMin,particleslib::CPerParticleFloatInput, 0x588);
+			NESTED_PROPERTY(m_flOutputMax,particleslib::CPerParticleFloatInput, 0x6f8);
+			PROPERTY(m_flMaxTraceLength,float32, 0x868);
+			PROPERTY(m_flLOSScale,float32, 0x86c);
+			PROPERTY_ARRAY(m_CollisionGroupName,char, 128 , 0x870);
+			PROPERTY(m_nTraceSet,particles::ParticleTraceSet_t, 0x8f0);
+			PROPERTY(m_bLOS,bool, 0x8f4);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x8f8);
 			S2_PAD(0x730);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_DistanceBetweenTransforms) == 0x900, "C_OP_DistanceBetweenTransforms size should be 0x900");

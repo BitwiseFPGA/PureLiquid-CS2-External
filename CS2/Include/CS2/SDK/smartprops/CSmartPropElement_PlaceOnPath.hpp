@@ -22,17 +22,17 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropElement_PlaceOnPath : public CS2::smartprops::CSmartPropElement_Group {
 		public:
-			PROPERTY(m_PathName,GlobalTypes::CUtlString* , 0xa0);
-			PROPERTY(m_flSpacing,GlobalTypes::CSmartPropAttributeFloat , 0xa8);
-			PROPERTY(m_flOffsetAlongPath,GlobalTypes::CSmartPropAttributeFloat , 0xe8);
-			PROPERTY(m_vPathOffset,GlobalTypes::CSmartPropAttributeVector2D , 0x128);
-			PROPERTY(m_PathSpace,smartprops::CSmartPropAttributeCoordinateSpace , 0x168);
-			PROPERTY(m_bUseFixedUpDirection,GlobalTypes::CSmartPropAttributeBool , 0x1a8);
-			PROPERTY(m_bUseProjectedDistance,GlobalTypes::CSmartPropAttributeBool , 0x1e8);
-			PROPERTY(m_vUpDirection,GlobalTypes::CSmartPropAttributeVector , 0x228);
-			PROPERTY(m_UpDirectionSpace,smartprops::CSmartPropAttributeCoordinateSpace , 0x268);
-			PROPERTY(m_DefaultPathInWorldSpace,GlobalTypes::CSmartPropAttributeBool , 0x2a8);
-			PROPERTY(m_DefaultPath,GlobalTypes::CUtlVector<GlobalTypes::CSmartPropAttributeVector>, 0x2e8);
+			PROPERTY(m_PathName,GlobalTypes::CUtlString*, 0xa0);
+			PROPERTY(m_flSpacing,GlobalTypes::CSmartPropAttributeFloat, 0xa8);
+			PROPERTY(m_flOffsetAlongPath,GlobalTypes::CSmartPropAttributeFloat, 0xe8);
+			PROPERTY(m_vPathOffset,GlobalTypes::CSmartPropAttributeVector2D, 0x128);
+			NESTED_PROPERTY(m_PathSpace,smartprops::CSmartPropAttributeCoordinateSpace, 0x168);
+			PROPERTY(m_bUseFixedUpDirection,GlobalTypes::CSmartPropAttributeBool, 0x1a8);
+			PROPERTY(m_bUseProjectedDistance,GlobalTypes::CSmartPropAttributeBool, 0x1e8);
+			PROPERTY(m_vUpDirection,GlobalTypes::CSmartPropAttributeVector, 0x228);
+			NESTED_PROPERTY(m_UpDirectionSpace,smartprops::CSmartPropAttributeCoordinateSpace, 0x268);
+			PROPERTY(m_DefaultPathInWorldSpace,GlobalTypes::CSmartPropAttributeBool, 0x2a8);
+			NESTED_PROPERTY(m_DefaultPath,GlobalTypes::CUtlVector<GlobalTypes::CSmartPropAttributeVector>, 0x2e8);
 			S2_PAD(0x260);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropElement_PlaceOnPath) == 0x300, "CSmartPropElement_PlaceOnPath size should be 0x300");

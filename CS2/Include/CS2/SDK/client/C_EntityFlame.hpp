@@ -23,7 +23,7 @@ namespace CS2 {
 		public:
 			PROPERTY(m_hEntAttached,GlobalTypes::CHandle<client::C_BaseEntity>, 0x608);
 			PROPERTY(m_hOldAttached,GlobalTypes::CHandle<client::C_BaseEntity>, 0x630);
-			PROPERTY(m_bCheapEffect,bool , 0x634);
+			PROPERTY(m_bCheapEffect,bool, 0x634);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::client::C_EntityFlame) == 0x650, "C_EntityFlame size should be 0x650");

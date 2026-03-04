@@ -11,14 +11,10 @@
 
 
 #include <SDK/modellib/CBaseConstraint.hpp>
+#include <SDK/modellib/Input_t.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class Input_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,7 +22,7 @@ namespace CS2 {
 	namespace modellib {
 		class CBoneConstraintPoseSpaceBone : public CS2::modellib::CBaseConstraint {
 		public:
-			PROPERTY(m_inputList,GlobalTypes::CUtlVector<modellib::CBoneConstraintPoseSpaceBone::Input_t>, 0x60);
+			NESTED_PROPERTY(m_inputList,GlobalTypes::CUtlVector<modellib::Input_t>, 0x60);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::modellib::CBoneConstraintPoseSpaceBone) == 0x88, "CBoneConstraintPoseSpaceBone size should be 0x88");

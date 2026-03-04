@@ -26,10 +26,10 @@ namespace CS2 {
 	namespace server {
 		class CEnvParticleGlow : public CS2::server::CParticleSystem {
 		public:
-			PROPERTY(m_flAlphaScale,float32 , 0xca8);
-			PROPERTY(m_flRadiusScale,float32 , 0xcac);
-			PROPERTY(m_flSelfIllumScale,float32 , 0xcb0);
-			PROPERTY(m_ColorTint,GlobalTypes::Color , 0xcb4);
+			PROPERTY(m_flAlphaScale,float32, 0xca8);
+			PROPERTY(m_flRadiusScale,float32, 0xcac);
+			PROPERTY(m_flSelfIllumScale,float32, 0xcb0);
+			PROPERTY(m_ColorTint,GlobalTypes::Color, 0xcb4);
 			PROPERTY(m_hTextureOverride,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0xcb8);
 			S2_PAD(0x18);
 		};

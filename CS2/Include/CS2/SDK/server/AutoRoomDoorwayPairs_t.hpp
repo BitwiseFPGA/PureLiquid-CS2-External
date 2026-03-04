@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace server {
 		class AutoRoomDoorwayPairs_t  {
 		public:
-			PROPERTY(vP1,GlobalTypes::Vector , 0x0);
-			PROPERTY(vP2,GlobalTypes::Vector , 0xc);
+			PROPERTY(vP1,GlobalTypes::Vector, 0x0);
+			PROPERTY(vP2,GlobalTypes::Vector, 0xc);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::AutoRoomDoorwayPairs_t) == 0x18, "AutoRoomDoorwayPairs_t size should be 0x18");

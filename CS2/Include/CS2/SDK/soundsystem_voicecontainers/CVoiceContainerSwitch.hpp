@@ -11,14 +11,10 @@
 
 
 #include <SDK/soundsystem_voicecontainers/CVoiceContainerBase.hpp>
+#include <SDK/soundsystem_voicecontainers/CSoundContainerReference.hpp>
 
 
 
-namespace CS2 {
-	namespace soundsystem_voicecontainers {
-		class CSoundContainerReference;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,7 +22,7 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerSwitch : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
 		public:
-			PROPERTY(m_soundsToPlay,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CSoundContainerReference>, 0xa8);
+			NESTED_PROPERTY(m_soundsToPlay,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CSoundContainerReference>, 0xa8);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerSwitch) == 0xC0, "CVoiceContainerSwitch size should be 0xC0");

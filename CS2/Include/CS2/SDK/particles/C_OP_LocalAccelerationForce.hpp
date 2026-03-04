@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_LocalAccelerationForce : public CS2::particles::CParticleFunctionForce {
 		public:
-			PROPERTY(m_nCP,int32_t , 0x1e0);
-			PROPERTY(m_nScaleCP,int32_t , 0x1e4);
-			PROPERTY(m_vecAccel,particleslib::CParticleCollectionVecInput , 0x1e8);
+			PROPERTY(m_nCP,int32_t, 0x1e0);
+			PROPERTY(m_nScaleCP,int32_t, 0x1e4);
+			NESTED_PROPERTY(m_vecAccel,particleslib::CParticleCollectionVecInput, 0x1e8);
 			S2_PAD(0x6C0);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_LocalAccelerationForce) == 0x8A0, "C_OP_LocalAccelerationForce size should be 0x8A0");

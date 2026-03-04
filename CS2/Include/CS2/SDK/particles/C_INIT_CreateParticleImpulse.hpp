@@ -24,11 +24,11 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_CreateParticleImpulse : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_InputRadius,particleslib::CPerParticleFloatInput , 0x1d8);
-			PROPERTY(m_InputMagnitude,particleslib::CPerParticleFloatInput , 0x348);
-			PROPERTY(m_nFalloffFunction,particles::ParticleFalloffFunction_t , 0x4b8);
-			PROPERTY(m_InputFalloffExp,particleslib::CPerParticleFloatInput , 0x4c0);
-			PROPERTY(m_nImpulseType,particles::ParticleImpulseType_t , 0x630);
+			NESTED_PROPERTY(m_InputRadius,particleslib::CPerParticleFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_InputMagnitude,particleslib::CPerParticleFloatInput, 0x348);
+			PROPERTY(m_nFalloffFunction,particles::ParticleFalloffFunction_t, 0x4b8);
+			NESTED_PROPERTY(m_InputFalloffExp,particleslib::CPerParticleFloatInput, 0x4c0);
+			PROPERTY(m_nImpulseType,particles::ParticleImpulseType_t, 0x630);
 			S2_PAD(0x460);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_CreateParticleImpulse) == 0x638, "C_INIT_CreateParticleImpulse size should be 0x638");

@@ -23,17 +23,17 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_ExternalWindForce : public CS2::particles::CParticleFunctionForce {
 		public:
-			PROPERTY(m_vecSamplePosition,particleslib::CPerParticleVecInput , 0x1e0);
-			PROPERTY(m_vecScale,particleslib::CPerParticleVecInput , 0x898);
-			PROPERTY(m_bSampleWind,bool , 0xf50);
-			PROPERTY(m_bSampleWater,bool , 0xf51);
-			PROPERTY(m_bDampenNearWaterPlane,bool , 0xf52);
-			PROPERTY(m_bSampleGravity,bool , 0xf53);
-			PROPERTY(m_vecGravityForce,particleslib::CPerParticleVecInput , 0xf58);
-			PROPERTY(m_bUseBasicMovementGravity,bool , 0x1610);
-			PROPERTY(m_flLocalGravityScale,particleslib::CPerParticleFloatInput , 0x1618);
-			PROPERTY(m_flLocalBuoyancyScale,particleslib::CPerParticleFloatInput , 0x1788);
-			PROPERTY(m_vecBuoyancyForce,particleslib::CPerParticleVecInput , 0x18f8);
+			NESTED_PROPERTY(m_vecSamplePosition,particleslib::CPerParticleVecInput, 0x1e0);
+			NESTED_PROPERTY(m_vecScale,particleslib::CPerParticleVecInput, 0x898);
+			PROPERTY(m_bSampleWind,bool, 0xf50);
+			PROPERTY(m_bSampleWater,bool, 0xf51);
+			PROPERTY(m_bDampenNearWaterPlane,bool, 0xf52);
+			PROPERTY(m_bSampleGravity,bool, 0xf53);
+			NESTED_PROPERTY(m_vecGravityForce,particleslib::CPerParticleVecInput, 0xf58);
+			PROPERTY(m_bUseBasicMovementGravity,bool, 0x1610);
+			NESTED_PROPERTY(m_flLocalGravityScale,particleslib::CPerParticleFloatInput, 0x1618);
+			NESTED_PROPERTY(m_flLocalBuoyancyScale,particleslib::CPerParticleFloatInput, 0x1788);
+			NESTED_PROPERTY(m_vecBuoyancyForce,particleslib::CPerParticleVecInput, 0x18f8);
 			S2_PAD(0x1DD0);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_ExternalWindForce) == 0x1FB0, "C_OP_ExternalWindForce size should be 0x1FB0");

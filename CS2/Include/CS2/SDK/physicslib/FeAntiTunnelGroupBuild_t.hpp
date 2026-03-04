@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace physicslib {
 		class FeAntiTunnelGroupBuild_t  {
 		public:
-			PROPERTY(m_nVertexMapHash,uint32_t , 0x0);
-			PROPERTY(m_nCollisionMask,uint32_t , 0x4);
+			PROPERTY(m_nVertexMapHash,uint32_t, 0x0);
+			PROPERTY(m_nCollisionMask,uint32_t, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeAntiTunnelGroupBuild_t) == 0x8, "FeAntiTunnelGroupBuild_t size should be 0x8");

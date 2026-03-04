@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class FeTaperedCapsuleStretch_t  {
 		public:
-			PROPERTY_ARRAY(nNode,uint16_t , 2 , 0x0);
-			PROPERTY(nCollisionMask,uint16_t , 0x4);
-			PROPERTY(nDummy,uint16_t , 0x6);
-			PROPERTY_ARRAY(flRadius,float32 , 2 , 0x8);
+			PROPERTY_ARRAY(nNode,uint16_t, 2 , 0x0);
+			PROPERTY(nCollisionMask,uint16_t, 0x4);
+			PROPERTY(nDummy,uint16_t, 0x6);
+			PROPERTY_ARRAY(flRadius,float32, 2 , 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeTaperedCapsuleStretch_t) == 0x10, "FeTaperedCapsuleStretch_t size should be 0x10");

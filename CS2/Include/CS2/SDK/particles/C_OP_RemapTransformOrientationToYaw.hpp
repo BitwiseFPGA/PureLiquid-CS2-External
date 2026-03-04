@@ -23,10 +23,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapTransformOrientationToYaw : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_TransformInput,particleslib::CParticleTransformInput , 0x1d0);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x238);
-			PROPERTY(m_flRotOffset,float32 , 0x23c);
-			PROPERTY(m_flSpinStrength,float32 , 0x240);
+			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0x1d0);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x238);
+			PROPERTY(m_flRotOffset,float32, 0x23c);
+			PROPERTY(m_flSpinStrength,float32, 0x240);
 			S2_PAD(0x78);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapTransformOrientationToYaw) == 0x248, "C_OP_RemapTransformOrientationToYaw size should be 0x248");

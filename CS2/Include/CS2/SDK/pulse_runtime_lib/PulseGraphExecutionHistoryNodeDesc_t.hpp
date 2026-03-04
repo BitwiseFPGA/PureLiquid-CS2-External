@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class PulseGraphExecutionHistoryNodeDesc_t  {
 		public:
-			PROPERTY(strCellDesc,GlobalTypes::CBufferString , 0x0);
-			PROPERTY(strBindingName,GlobalTypes::PulseSymbol_t , 0x10);
+			PROPERTY(strCellDesc,GlobalTypes::CBufferString, 0x0);
+			PROPERTY(strBindingName,GlobalTypes::PulseSymbol_t, 0x10);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::PulseGraphExecutionHistoryNodeDesc_t) == 0x20, "PulseGraphExecutionHistoryNodeDesc_t size should be 0x20");

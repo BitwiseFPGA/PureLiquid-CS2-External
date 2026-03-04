@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace particles {
 		class SequenceWeightedList_t  {
 		public:
-			PROPERTY(m_nSequence,int32_t , 0x0);
-			PROPERTY(m_flRelativeWeight,float32 , 0x4);
+			PROPERTY(m_nSequence,int32_t, 0x0);
+			PROPERTY(m_flRelativeWeight,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::particles::SequenceWeightedList_t) == 0x8, "SequenceWeightedList_t size should be 0x8");

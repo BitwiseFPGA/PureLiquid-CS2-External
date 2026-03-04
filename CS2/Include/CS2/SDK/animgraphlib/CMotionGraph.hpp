@@ -11,15 +11,11 @@
 
 
 #include <SDK/animgraphlib/CParamSpanUpdater.hpp>
+#include <SDK/animgraphlib/TagSpan_t.hpp>
+#include <SDK/animgraphlib/CMotionNode.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class TagSpan_t;
-		class CMotionNode;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,13 +23,13 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CMotionGraph  {
 		public:
-			PROPERTY(m_paramSpans,animgraphlib::CParamSpanUpdater , 0x10);
-			PROPERTY(m_tags,GlobalTypes::CUtlVector<animgraphlib::TagSpan_t>, 0x28);
+			NESTED_PROPERTY(m_paramSpans,animgraphlib::CParamSpanUpdater, 0x10);
+			NESTED_PROPERTY(m_tags,GlobalTypes::CUtlVector<animgraphlib::TagSpan_t>, 0x28);
 			PROPERTY(m_pRootNode,GlobalTypes::CSmartPtr<animgraphlib::CMotionNode>, 0x40);
-			PROPERTY(m_nParameterCount,int32_t , 0x48);
-			PROPERTY(m_nConfigStartIndex,int32_t , 0x4c);
-			PROPERTY(m_nConfigCount,int32_t , 0x50);
-			PROPERTY(m_bLoop,bool , 0x54);
+			PROPERTY(m_nParameterCount,int32_t, 0x48);
+			PROPERTY(m_nConfigStartIndex,int32_t, 0x4c);
+			PROPERTY(m_nConfigCount,int32_t, 0x50);
+			PROPERTY(m_bLoop,bool, 0x54);
 			S2_PAD(0x58);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CMotionGraph) == 0x58, "CMotionGraph size should be 0x58");

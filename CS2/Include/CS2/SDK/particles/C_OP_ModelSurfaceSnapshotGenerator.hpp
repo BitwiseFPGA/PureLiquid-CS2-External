@@ -23,16 +23,16 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_ModelSurfaceSnapshotGenerator : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nCPSnapshot,int32_t , 0x1d8);
-			PROPERTY(m_modelInput,particleslib::CParticleModelInput , 0x1e0);
-			PROPERTY(m_flRecalcRate,particleslib::CParticleCollectionFloatInput , 0x240);
-			PROPERTY(m_flUSpacing,particleslib::CParticleCollectionFloatInput , 0x3b0);
-			PROPERTY(m_flVSpacing,particleslib::CParticleCollectionFloatInput , 0x520);
-			PROPERTY(m_flSurfaceOffset,particleslib::CParticleCollectionFloatInput , 0x690);
-			PROPERTY(m_bSetNormal,bool , 0x800);
-			PROPERTY(m_bSetUp,bool , 0x801);
-			PROPERTY(m_bSetGravity,bool , 0x802);
-			PROPERTY(m_bSetUV,bool , 0x803);
+			PROPERTY(m_nCPSnapshot,int32_t, 0x1d8);
+			NESTED_PROPERTY(m_modelInput,particleslib::CParticleModelInput, 0x1e0);
+			NESTED_PROPERTY(m_flRecalcRate,particleslib::CParticleCollectionFloatInput, 0x240);
+			NESTED_PROPERTY(m_flUSpacing,particleslib::CParticleCollectionFloatInput, 0x3b0);
+			NESTED_PROPERTY(m_flVSpacing,particleslib::CParticleCollectionFloatInput, 0x520);
+			NESTED_PROPERTY(m_flSurfaceOffset,particleslib::CParticleCollectionFloatInput, 0x690);
+			PROPERTY(m_bSetNormal,bool, 0x800);
+			PROPERTY(m_bSetUp,bool, 0x801);
+			PROPERTY(m_bSetGravity,bool, 0x802);
+			PROPERTY(m_bSetUV,bool, 0x803);
 			S2_PAD(0x630);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_ModelSurfaceSnapshotGenerator) == 0x808, "C_OP_ModelSurfaceSnapshotGenerator size should be 0x808");

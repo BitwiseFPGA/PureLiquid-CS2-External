@@ -25,12 +25,12 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapAverageScalarValuetoCP : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nExpression,particles::SetStatisticExpressionType_t , 0x1d8);
-			PROPERTY(m_flDecimalPlaces,particleslib::CParticleCollectionFloatInput , 0x1e0);
-			PROPERTY(m_nOutControlPointNumber,int32_t , 0x350);
-			PROPERTY(m_nOutVectorField,int32_t , 0x354);
-			PROPERTY(m_nField,particles::ParticleAttributeIndex_t , 0x358);
-			PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput , 0x360);
+			PROPERTY(m_nExpression,particles::SetStatisticExpressionType_t, 0x1d8);
+			NESTED_PROPERTY(m_flDecimalPlaces,particleslib::CParticleCollectionFloatInput, 0x1e0);
+			PROPERTY(m_nOutControlPointNumber,int32_t, 0x350);
+			PROPERTY(m_nOutVectorField,int32_t, 0x354);
+			NESTED_PROPERTY(m_nField,particles::ParticleAttributeIndex_t, 0x358);
+			NESTED_PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput, 0x360);
 			S2_PAD(0x2F8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapAverageScalarValuetoCP) == 0x4D0, "C_OP_RemapAverageScalarValuetoCP size should be 0x4D0");

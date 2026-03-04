@@ -23,16 +23,16 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropElement_PlaceInSphere : public CS2::smartprops::CSmartPropElement_Group {
 		public:
-			PROPERTY(m_PlacementMode,smartprops::CSmartPropAttributeRadiusPlacementMode , 0xa0);
-			PROPERTY(m_DistributionMode,smartprops::CSmartPropAttributeDistributionMode , 0xe0);
-			PROPERTY(m_flRandomness,GlobalTypes::CSmartPropAttributeFloat , 0x120);
-			PROPERTY(m_vPlaneUpDirection,GlobalTypes::CSmartPropAttributeVector , 0x160);
-			PROPERTY(m_nCountMin,GlobalTypes::CSmartPropAttributeInt , 0x1a0);
-			PROPERTY(m_nCountMax,GlobalTypes::CSmartPropAttributeInt , 0x1e0);
-			PROPERTY(m_flPositionRadiusInner,GlobalTypes::CSmartPropAttributeFloat , 0x220);
-			PROPERTY(m_flPositionRadiusOuter,GlobalTypes::CSmartPropAttributeFloat , 0x260);
-			PROPERTY(m_bAlignOrientation,GlobalTypes::CSmartPropAttributeBool , 0x2a0);
-			PROPERTY(m_vAlignDirection,GlobalTypes::CSmartPropAttributeVector , 0x2e0);
+			NESTED_PROPERTY(m_PlacementMode,smartprops::CSmartPropAttributeRadiusPlacementMode, 0xa0);
+			NESTED_PROPERTY(m_DistributionMode,smartprops::CSmartPropAttributeDistributionMode, 0xe0);
+			PROPERTY(m_flRandomness,GlobalTypes::CSmartPropAttributeFloat, 0x120);
+			PROPERTY(m_vPlaneUpDirection,GlobalTypes::CSmartPropAttributeVector, 0x160);
+			PROPERTY(m_nCountMin,GlobalTypes::CSmartPropAttributeInt, 0x1a0);
+			PROPERTY(m_nCountMax,GlobalTypes::CSmartPropAttributeInt, 0x1e0);
+			PROPERTY(m_flPositionRadiusInner,GlobalTypes::CSmartPropAttributeFloat, 0x220);
+			PROPERTY(m_flPositionRadiusOuter,GlobalTypes::CSmartPropAttributeFloat, 0x260);
+			PROPERTY(m_bAlignOrientation,GlobalTypes::CSmartPropAttributeBool, 0x2a0);
+			PROPERTY(m_vAlignDirection,GlobalTypes::CSmartPropAttributeVector, 0x2e0);
 			S2_PAD(0x280);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropElement_PlaceInSphere) == 0x320, "CSmartPropElement_PlaceInSphere size should be 0x320");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropFilter_Expression : public CS2::smartprops::CSmartPropFilter {
 		public:
-			PROPERTY(m_Expression,GlobalTypes::CUtlString* , 0x50);
+			PROPERTY(m_Expression,GlobalTypes::CUtlString*, 0x50);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropFilter_Expression) == 0x58, "CSmartPropFilter_Expression size should be 0x58");

@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace pulse_system {
 		class CPulseCell_Outflow_TestExplicitYesNo : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			PROPERTY(m_Yes,pulse_runtime_lib::CPulse_OutflowConnection , 0x48);
-			PROPERTY(m_No,pulse_runtime_lib::CPulse_OutflowConnection , 0x90);
+			NESTED_PROPERTY(m_Yes,pulse_runtime_lib::CPulse_OutflowConnection, 0x48);
+			NESTED_PROPERTY(m_No,pulse_runtime_lib::CPulse_OutflowConnection, 0x90);
 			S2_PAD(0x90);
 		};
 		//static_assert(sizeof(CS2::pulse_system::CPulseCell_Outflow_TestExplicitYesNo) == 0xD8, "CPulseCell_Outflow_TestExplicitYesNo size should be 0xD8");

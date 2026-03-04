@@ -23,8 +23,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_WaitForObservable : public CS2::pulse_runtime_lib::CPulseCell_BaseYieldingInflow {
 		public:
-			PROPERTY(m_Condition,pulse_runtime_lib::PulseObservableBoolExpression_t , 0x48);
-			PROPERTY(m_OnTrue,pulse_runtime_lib::CPulse_ResumePoint , 0xc0);
+			NESTED_PROPERTY(m_Condition,pulse_runtime_lib::PulseObservableBoolExpression_t, 0x48);
+			NESTED_PROPERTY(m_OnTrue,pulse_runtime_lib::CPulse_ResumePoint, 0xc0);
 			S2_PAD(0xC0);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_WaitForObservable) == 0x108, "CPulseCell_WaitForObservable size should be 0x108");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropFilter_VariableValue : public CS2::smartprops::CSmartPropFilter {
 		public:
-			PROPERTY(m_VariableComparison,GlobalTypes::CSmartPropVariableComparison , 0x50);
+			PROPERTY(m_VariableComparison,GlobalTypes::CSmartPropVariableComparison, 0x50);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropFilter_VariableValue) == 0x70, "CSmartPropFilter_VariableValue size should be 0x70");

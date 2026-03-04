@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CPathHelperUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_flStoppingRadius,float32 , 0x70);
-			PROPERTY(m_flStoppingSpeedScale,float32 , 0x74);
+			PROPERTY(m_flStoppingRadius,float32, 0x70);
+			PROPERTY(m_flStoppingSpeedScale,float32, 0x74);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CPathHelperUpdateNode) == 0x78, "CPathHelperUpdateNode size should be 0x78");

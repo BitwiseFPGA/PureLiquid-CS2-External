@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animlib {
 		class NmBoneMaskSetDefinition_t  {
 		public:
-			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol , 0x0);
-			PROPERTY(m_primaryWeightList,animlib::CNmBoneWeightList , 0x8);
+			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol, 0x0);
+			NESTED_PROPERTY(m_primaryWeightList,animlib::CNmBoneWeightList, 0x8);
 			PROPERTY(m_secondaryWeightLists,GlobalTypes::CUtlLeanVector<animlib::CNmBoneWeightList>, 0x118);
 			S2_PAD(0x128);
 		};

@@ -26,7 +26,7 @@ namespace CS2 {
 	namespace client {
 		class C_LightEntity : public CS2::client::C_BaseModelEntity {
 		public:
-			PROPERTY(m_CLightComponent,client::CLightComponent* , 0xe88);
+			PROPERTY(m_CLightComponent,client::CLightComponent*, 0xe88);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::C_LightEntity) == 0xE90, "C_LightEntity size should be 0xE90");

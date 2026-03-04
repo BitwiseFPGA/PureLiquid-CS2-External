@@ -27,22 +27,22 @@ namespace CS2 {
 	namespace server {
 		class CBaseCSGrenadeProjectile : public CS2::server::CBaseGrenade {
 		public:
-			PROPERTY(m_vInitialPosition,GlobalTypes::Vector , 0xb40);
-			PROPERTY(m_vInitialVelocity,GlobalTypes::Vector , 0xb4c);
-			PROPERTY(m_nBounces,int32_t , 0xb58);
+			PROPERTY(m_vInitialPosition,GlobalTypes::Vector, 0xb40);
+			PROPERTY(m_vInitialVelocity,GlobalTypes::Vector, 0xb4c);
+			PROPERTY(m_nBounces,int32_t, 0xb58);
 			PROPERTY(m_nExplodeEffectIndex,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>, 0xb60);
-			PROPERTY(m_nExplodeEffectTickBegin,int32_t , 0xb68);
-			PROPERTY(m_vecExplodeEffectOrigin,GlobalTypes::Vector , 0xb6c);
-			PROPERTY(m_flSpawnTime,entity2::GameTime_t , 0xb78);
-			PROPERTY(m_unOGSExtraFlags,uint8_t , 0xb7c);
-			PROPERTY(m_bDetonationRecorded,bool , 0xb7d);
-			PROPERTY(m_nItemIndex,uint16_t , 0xb7e);
-			PROPERTY(m_vecOriginalSpawnLocation,GlobalTypes::Vector , 0xb80);
-			PROPERTY(m_flLastBounceSoundTime,entity2::GameTime_t , 0xb8c);
-			PROPERTY(m_vecGrenadeSpin,GlobalTypes::RotationVector , 0xb90);
-			PROPERTY(m_vecLastHitSurfaceNormal,GlobalTypes::Vector , 0xb9c);
-			PROPERTY(m_nTicksAtZeroVelocity,int32_t , 0xba8);
-			PROPERTY(m_bHasEverHitEnemy,bool , 0xbac);
+			PROPERTY(m_nExplodeEffectTickBegin,int32_t, 0xb68);
+			PROPERTY(m_vecExplodeEffectOrigin,GlobalTypes::Vector, 0xb6c);
+			NESTED_PROPERTY(m_flSpawnTime,entity2::GameTime_t, 0xb78);
+			PROPERTY(m_unOGSExtraFlags,uint8_t, 0xb7c);
+			PROPERTY(m_bDetonationRecorded,bool, 0xb7d);
+			PROPERTY(m_nItemIndex,uint16_t, 0xb7e);
+			PROPERTY(m_vecOriginalSpawnLocation,GlobalTypes::Vector, 0xb80);
+			NESTED_PROPERTY(m_flLastBounceSoundTime,entity2::GameTime_t, 0xb8c);
+			PROPERTY(m_vecGrenadeSpin,GlobalTypes::RotationVector, 0xb90);
+			PROPERTY(m_vecLastHitSurfaceNormal,GlobalTypes::Vector, 0xb9c);
+			PROPERTY(m_nTicksAtZeroVelocity,int32_t, 0xba8);
+			PROPERTY(m_bHasEverHitEnemy,bool, 0xbac);
 			S2_PAD(0x70);
 		};
 		//static_assert(sizeof(CS2::server::CBaseCSGrenadeProjectile) == 0xBB0, "CBaseCSGrenadeProjectile size should be 0xBB0");

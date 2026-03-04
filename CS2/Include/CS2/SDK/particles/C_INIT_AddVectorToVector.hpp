@@ -23,12 +23,12 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_AddVectorToVector : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_vecScale,GlobalTypes::Vector , 0x1d8);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1e4);
-			PROPERTY(m_nFieldInput,particles::ParticleAttributeIndex_t , 0x1e8);
-			PROPERTY(m_vOffsetMin,GlobalTypes::Vector , 0x1ec);
-			PROPERTY(m_vOffsetMax,GlobalTypes::Vector , 0x1f8);
-			PROPERTY(m_randomnessParameters,particles::CRandomNumberGeneratorParameters , 0x204);
+			PROPERTY(m_vecScale,GlobalTypes::Vector, 0x1d8);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1e4);
+			NESTED_PROPERTY(m_nFieldInput,particles::ParticleAttributeIndex_t, 0x1e8);
+			PROPERTY(m_vOffsetMin,GlobalTypes::Vector, 0x1ec);
+			PROPERTY(m_vOffsetMax,GlobalTypes::Vector, 0x1f8);
+			NESTED_PROPERTY(m_randomnessParameters,particles::CRandomNumberGeneratorParameters, 0x204);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_AddVectorToVector) == 0x210, "C_INIT_AddVectorToVector size should be 0x210");

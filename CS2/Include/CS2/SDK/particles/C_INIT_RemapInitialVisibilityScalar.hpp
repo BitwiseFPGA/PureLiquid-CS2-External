@@ -22,11 +22,11 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_RemapInitialVisibilityScalar : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1dc);
-			PROPERTY(m_flInputMin,float32 , 0x1e0);
-			PROPERTY(m_flInputMax,float32 , 0x1e4);
-			PROPERTY(m_flOutputMin,float32 , 0x1e8);
-			PROPERTY(m_flOutputMax,float32 , 0x1ec);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1dc);
+			PROPERTY(m_flInputMin,float32, 0x1e0);
+			PROPERTY(m_flInputMax,float32, 0x1e4);
+			PROPERTY(m_flOutputMin,float32, 0x1e8);
+			PROPERTY(m_flOutputMax,float32, 0x1ec);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_RemapInitialVisibilityScalar) == 0x1F0, "C_INIT_RemapInitialVisibilityScalar size should be 0x1F0");

@@ -28,14 +28,14 @@ namespace CS2 {
 	namespace animationsystem {
 		class CAnimationGroup  {
 		public:
-			PROPERTY(m_nFlags,uint32_t , 0x10);
-			PROPERTY(m_name,GlobalTypes::CBufferString , 0x18);
-			PROPERTY(m_localHAnimArray_Handle,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCAnimData>>, 0x60);
-			PROPERTY(m_includedGroupArray_Handle,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCAnimationGroup>>, 0x78);
+			PROPERTY(m_nFlags,uint32_t, 0x10);
+			PROPERTY(m_name,GlobalTypes::CBufferString, 0x18);
+			NESTED_PROPERTY(m_localHAnimArray_Handle,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCAnimData>>, 0x60);
+			NESTED_PROPERTY(m_includedGroupArray_Handle,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCAnimationGroup>>, 0x78);
 			PROPERTY(m_directHSeqGroup_Handle,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCSequenceGroupData>, 0x90);
-			PROPERTY(m_decodeKey,animationsystem::CAnimKeyData , 0x98);
-			PROPERTY(m_szScripts,GlobalTypes::CUtlVector<GlobalTypes::CBufferString>, 0x110);
-			PROPERTY(m_AdditionalExtRefs,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandleVoid>, 0x128);
+			NESTED_PROPERTY(m_decodeKey,animationsystem::CAnimKeyData, 0x98);
+			NESTED_PROPERTY(m_szScripts,GlobalTypes::CUtlVector<GlobalTypes::CBufferString>, 0x110);
+			NESTED_PROPERTY(m_AdditionalExtRefs,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandleVoid>, 0x128);
 			S2_PAD(0x148);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CAnimationGroup) == 0x148, "CAnimationGroup size should be 0x148");

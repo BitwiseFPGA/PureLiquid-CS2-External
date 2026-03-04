@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixDualCompressorDesc_t  {
 		public:
-			PROPERTY(m_flRMSTimeMS,float32 , 0x0);
-			PROPERTY(m_fldbKneeWidth,float32 , 0x4);
-			PROPERTY(m_flWetMix,float32 , 0x8);
-			PROPERTY(m_bPeakMode,bool , 0xc);
-			PROPERTY(m_bandDesc,soundsystem_lowlevel::VMixDynamicsBand_t , 0x10);
+			PROPERTY(m_flRMSTimeMS,float32, 0x0);
+			PROPERTY(m_fldbKneeWidth,float32, 0x4);
+			PROPERTY(m_flWetMix,float32, 0x8);
+			PROPERTY(m_bPeakMode,bool, 0xc);
+			NESTED_PROPERTY(m_bandDesc,soundsystem_lowlevel::VMixDynamicsBand_t, 0x10);
 			S2_PAD(0x34);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixDualCompressorDesc_t) == 0x34, "VMixDualCompressorDesc_t size should be 0x34");

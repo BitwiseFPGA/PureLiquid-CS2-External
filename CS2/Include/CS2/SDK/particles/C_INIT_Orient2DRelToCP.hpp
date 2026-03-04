@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_Orient2DRelToCP : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nCP,int32_t , 0x1d8);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1dc);
-			PROPERTY(m_flRotOffset,float32 , 0x1e0);
+			PROPERTY(m_nCP,int32_t, 0x1d8);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1dc);
+			PROPERTY(m_flRotOffset,float32, 0x1e0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_Orient2DRelToCP) == 0x1E8, "C_INIT_Orient2DRelToCP size should be 0x1E8");

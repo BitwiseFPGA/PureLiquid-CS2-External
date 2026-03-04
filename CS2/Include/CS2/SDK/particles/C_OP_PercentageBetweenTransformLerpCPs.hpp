@@ -24,18 +24,18 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_PercentageBetweenTransformLerpCPs : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d0);
-			PROPERTY(m_flInputMin,float32 , 0x1d4);
-			PROPERTY(m_flInputMax,float32 , 0x1d8);
-			PROPERTY(m_TransformStart,particleslib::CParticleTransformInput , 0x1e0);
-			PROPERTY(m_TransformEnd,particleslib::CParticleTransformInput , 0x248);
-			PROPERTY(m_nOutputStartCP,int32_t , 0x2b0);
-			PROPERTY(m_nOutputStartField,int32_t , 0x2b4);
-			PROPERTY(m_nOutputEndCP,int32_t , 0x2b8);
-			PROPERTY(m_nOutputEndField,int32_t , 0x2bc);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x2c0);
-			PROPERTY(m_bActiveRange,bool , 0x2c4);
-			PROPERTY(m_bRadialCheck,bool , 0x2c5);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d0);
+			PROPERTY(m_flInputMin,float32, 0x1d4);
+			PROPERTY(m_flInputMax,float32, 0x1d8);
+			NESTED_PROPERTY(m_TransformStart,particleslib::CParticleTransformInput, 0x1e0);
+			NESTED_PROPERTY(m_TransformEnd,particleslib::CParticleTransformInput, 0x248);
+			PROPERTY(m_nOutputStartCP,int32_t, 0x2b0);
+			PROPERTY(m_nOutputStartField,int32_t, 0x2b4);
+			PROPERTY(m_nOutputEndCP,int32_t, 0x2b8);
+			PROPERTY(m_nOutputEndField,int32_t, 0x2bc);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x2c0);
+			PROPERTY(m_bActiveRange,bool, 0x2c4);
+			PROPERTY(m_bRadialCheck,bool, 0x2c5);
 			S2_PAD(0xF8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_PercentageBetweenTransformLerpCPs) == 0x2C8, "C_OP_PercentageBetweenTransformLerpCPs size should be 0x2C8");

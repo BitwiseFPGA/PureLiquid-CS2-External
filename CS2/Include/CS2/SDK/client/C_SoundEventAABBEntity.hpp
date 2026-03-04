@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class C_SoundEventAABBEntity : public CS2::client::C_SoundEventEntity {
 		public:
-			PROPERTY(m_vMins,GlobalTypes::Vector , 0x6b8);
-			PROPERTY(m_vMaxs,GlobalTypes::Vector , 0x6c4);
+			PROPERTY(m_vMins,GlobalTypes::Vector, 0x6b8);
+			PROPERTY(m_vMaxs,GlobalTypes::Vector, 0x6c4);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::C_SoundEventAABBEntity) == 0x6D0, "C_SoundEventAABBEntity size should be 0x6D0");

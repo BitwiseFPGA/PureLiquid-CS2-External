@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_SetControlPointFromObjectScale : public CS2::particles::CParticleFunctionPreEmission {
 		public:
-			PROPERTY(m_nCPInput,int32_t , 0x1d8);
-			PROPERTY(m_nCPOutput,int32_t , 0x1dc);
+			PROPERTY(m_nCPInput,int32_t, 0x1d8);
+			PROPERTY(m_nCPOutput,int32_t, 0x1dc);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_SetControlPointFromObjectScale) == 0x1E0, "C_OP_SetControlPointFromObjectScale size should be 0x1E0");

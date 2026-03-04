@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class C_KeychainModule : public CS2::client::C_CS2WeaponModuleBase {
 		public:
-			PROPERTY(m_nKeychainDefID,uint32_t , 0x1170);
-			PROPERTY(m_nKeychainSeed,uint32_t , 0x1174);
+			PROPERTY(m_nKeychainDefID,uint32_t, 0x1170);
+			PROPERTY(m_nKeychainSeed,uint32_t, 0x1174);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::C_KeychainModule) == 0x1178, "C_KeychainModule size should be 0x1178");

@@ -23,14 +23,14 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_InitialSequenceFromModel : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nControlPointNumber,int32_t , 0x1d8);
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1dc);
-			PROPERTY(m_nFieldOutputAnim,particles::ParticleAttributeIndex_t , 0x1e0);
-			PROPERTY(m_flInputMin,float32 , 0x1e4);
-			PROPERTY(m_flInputMax,float32 , 0x1e8);
-			PROPERTY(m_flOutputMin,float32 , 0x1ec);
-			PROPERTY(m_flOutputMax,float32 , 0x1f0);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x1f4);
+			PROPERTY(m_nControlPointNumber,int32_t, 0x1d8);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1dc);
+			NESTED_PROPERTY(m_nFieldOutputAnim,particles::ParticleAttributeIndex_t, 0x1e0);
+			PROPERTY(m_flInputMin,float32, 0x1e4);
+			PROPERTY(m_flInputMax,float32, 0x1e8);
+			PROPERTY(m_flOutputMin,float32, 0x1ec);
+			PROPERTY(m_flOutputMax,float32, 0x1f0);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x1f4);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_InitialSequenceFromModel) == 0x1F8, "C_INIT_InitialSequenceFromModel size should be 0x1F8");

@@ -26,10 +26,10 @@ namespace CS2 {
 	namespace worldrenderer {
 		class MaterialOverride_t : public CS2::worldrenderer::BaseSceneObjectOverride_t {
 		public:
-			PROPERTY(m_nSubSceneObject,uint32_t , 0x4);
-			PROPERTY(m_nDrawCallIndex,uint32_t , 0x8);
+			PROPERTY(m_nSubSceneObject,uint32_t, 0x4);
+			PROPERTY(m_nDrawCallIndex,uint32_t, 0x8);
 			PROPERTY(m_pMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x10);
-			PROPERTY(m_vLinearTintColor,GlobalTypes::Vector , 0x18);
+			PROPERTY(m_vLinearTintColor,GlobalTypes::Vector, 0x18);
 			S2_PAD(0x24);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::MaterialOverride_t) == 0x28, "MaterialOverride_t size should be 0x28");

@@ -11,14 +11,10 @@
 
 
 #include <SDK/animgraphlib/CUnaryUpdateNode.hpp>
+#include <SDK/animgraphlib/FootStepTrigger.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class FootStepTrigger;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,8 +22,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CFootStepTriggerUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_triggers,GlobalTypes::CUtlVector<animgraphlib::FootStepTrigger>, 0x70);
-			PROPERTY(m_flTolerance,float32 , 0x8c);
+			NESTED_PROPERTY(m_triggers,GlobalTypes::CUtlVector<animgraphlib::FootStepTrigger>, 0x70);
+			PROPERTY(m_flTolerance,float32, 0x8c);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CFootStepTriggerUpdateNode) == 0x90, "CFootStepTriggerUpdateNode size should be 0x90");

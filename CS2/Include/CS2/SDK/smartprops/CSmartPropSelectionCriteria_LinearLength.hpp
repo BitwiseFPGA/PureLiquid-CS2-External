@@ -21,10 +21,10 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropSelectionCriteria_LinearLength : public CS2::smartprops::CSmartPropSelectionCriteria {
 		public:
-			PROPERTY(m_flLength,GlobalTypes::CSmartPropAttributeFloat , 0x48);
-			PROPERTY(m_bAllowScale,GlobalTypes::CSmartPropAttributeBool , 0x88);
-			PROPERTY(m_flMinLength,GlobalTypes::CSmartPropAttributeFloat , 0xc8);
-			PROPERTY(m_flMaxLength,GlobalTypes::CSmartPropAttributeFloat , 0x108);
+			PROPERTY(m_flLength,GlobalTypes::CSmartPropAttributeFloat, 0x48);
+			PROPERTY(m_bAllowScale,GlobalTypes::CSmartPropAttributeBool, 0x88);
+			PROPERTY(m_flMinLength,GlobalTypes::CSmartPropAttributeFloat, 0xc8);
+			PROPERTY(m_flMaxLength,GlobalTypes::CSmartPropAttributeFloat, 0x108);
 			S2_PAD(0x100);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropSelectionCriteria_LinearLength) == 0x148, "CSmartPropSelectionCriteria_LinearLength size should be 0x148");

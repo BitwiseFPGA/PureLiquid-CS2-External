@@ -27,9 +27,9 @@ namespace CS2 {
 		class CPulse_BlackboardReference  {
 		public:
 			PROPERTY(m_hBlackboardResource,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIPulseGraphDef>, 0x0);
-			PROPERTY(m_BlackboardResource,GlobalTypes::PulseSymbol_t , 0x8);
-			PROPERTY(m_nNodeID,pulse_runtime_lib::PulseDocNodeID_t , 0x18);
-			PROPERTY(m_NodeName,GlobalTypes::CGlobalSymbol , 0x20);
+			PROPERTY(m_BlackboardResource,GlobalTypes::PulseSymbol_t, 0x8);
+			NESTED_PROPERTY(m_nNodeID,pulse_runtime_lib::PulseDocNodeID_t, 0x18);
+			PROPERTY(m_NodeName,GlobalTypes::CGlobalSymbol, 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulse_BlackboardReference) == 0x28, "CPulse_BlackboardReference size should be 0x28");

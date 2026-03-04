@@ -22,14 +22,14 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixAutoFilterDesc_t  {
 		public:
-			PROPERTY(m_flEnvelopeAmount,float32 , 0x0);
-			PROPERTY(m_flAttackTimeMS,float32 , 0x4);
-			PROPERTY(m_flReleaseTimeMS,float32 , 0x8);
-			PROPERTY(m_filter,soundsystem_lowlevel::VMixFilterDesc_t , 0xc);
-			PROPERTY(m_flLFOAmount,float32 , 0x1c);
-			PROPERTY(m_flLFORate,float32 , 0x20);
-			PROPERTY(m_flPhase,float32 , 0x24);
-			PROPERTY(m_nLFOShape,soundsystem_lowlevel::VMixLFOShape_t , 0x28);
+			PROPERTY(m_flEnvelopeAmount,float32, 0x0);
+			PROPERTY(m_flAttackTimeMS,float32, 0x4);
+			PROPERTY(m_flReleaseTimeMS,float32, 0x8);
+			NESTED_PROPERTY(m_filter,soundsystem_lowlevel::VMixFilterDesc_t, 0xc);
+			PROPERTY(m_flLFOAmount,float32, 0x1c);
+			PROPERTY(m_flLFORate,float32, 0x20);
+			PROPERTY(m_flPhase,float32, 0x24);
+			PROPERTY(m_nLFOShape,soundsystem_lowlevel::VMixLFOShape_t, 0x28);
 			S2_PAD(0x2C);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixAutoFilterDesc_t) == 0x2C, "VMixAutoFilterDesc_t size should be 0x2C");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace resourcefile {
 		class CExampleSchemaVData_PolymorphicDerivedA : public CS2::resourcefile::CExampleSchemaVData_PolymorphicBase {
 		public:
-			PROPERTY(m_nDerivedA,int32_t , 0x10);
+			PROPERTY(m_nDerivedA,int32_t, 0x10);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::resourcefile::CExampleSchemaVData_PolymorphicDerivedA) == 0x18, "CExampleSchemaVData_PolymorphicDerivedA size should be 0x18");

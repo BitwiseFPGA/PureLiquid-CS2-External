@@ -11,6 +11,7 @@
 
 
 #include <SDK/smartprops/CSmartPropElement.hpp>
+#include <SDK/resourcesystem/InfoForResourceTypeCSmartProp.hpp>
 
 
 
@@ -22,7 +23,7 @@ namespace CS2 {
 		class CSmartPropElement_SmartProp : public CS2::smartprops::CSmartPropElement {
 		public:
 			PROPERTY(m_sSmartProp,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCSmartProp>>, 0x88);
-			PROPERTY(m_bLocalEvaluationState,bool , 0x168);
+			PROPERTY(m_bLocalEvaluationState,bool, 0x168);
 			S2_PAD(0xE8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropElement_SmartProp) == 0x170, "CSmartPropElement_SmartProp size should be 0x170");

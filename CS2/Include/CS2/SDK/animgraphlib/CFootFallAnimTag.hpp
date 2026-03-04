@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CFootFallAnimTag : public CS2::animgraphlib::CAnimTagBase {
 		public:
-			PROPERTY(m_foot,animgraphlib::FootFallTagFoot_t , 0x58);
+			PROPERTY(m_foot,animgraphlib::FootFallTagFoot_t, 0x58);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CFootFallAnimTag) == 0x60, "CFootFallAnimTag size should be 0x60");

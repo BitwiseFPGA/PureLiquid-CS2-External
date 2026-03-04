@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace animlib {
 		class Event_t  {
 		public:
-			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol , 0x0);
-			PROPERTY(m_startTime,animlib::NmPercent_t , 0x8);
-			PROPERTY(m_duration,animlib::NmPercent_t , 0xc);
+			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol, 0x0);
+			NESTED_PROPERTY(m_startTime,animlib::NmPercent_t, 0x8);
+			NESTED_PROPERTY(m_duration,animlib::NmPercent_t, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animlib::Event_t) == 0x10, "CNmSyncTrack::Event_t size should be 0x10");

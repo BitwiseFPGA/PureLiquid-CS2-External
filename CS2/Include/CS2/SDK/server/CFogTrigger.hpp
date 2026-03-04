@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace server {
 		class CFogTrigger : public CS2::server::CBaseTrigger {
 		public:
-			PROPERTY(m_fog,server::fogparams_t , 0x890);
+			NESTED_PROPERTY(m_fog,server::fogparams_t, 0x890);
 			S2_PAD(0x68);
 		};
 		//static_assert(sizeof(CS2::server::CFogTrigger) == 0x8F8, "CFogTrigger size should be 0x8F8");

@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class PulseRuntimeOutputIndex_t  {
 		public:
-			PROPERTY(m_Value,int32_t , 0x0);
+			PROPERTY(m_Value,int32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::PulseRuntimeOutputIndex_t) == 0x4, "PulseRuntimeOutputIndex_t size should be 0x4");

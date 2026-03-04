@@ -10,16 +10,12 @@
 #endif
 
 
+#include <SDK/pulse_runtime_lib/PGDInstruction_t.hpp>
+#include <SDK/pulse_runtime_lib/CPulse_RegisterInfo.hpp>
+#include <SDK/pulse_runtime_lib/CPulse_InstructionDebug.hpp>
 
 
 
-namespace CS2 {
-	namespace pulse_runtime_lib {
-		class PGDInstruction_t;
-		class CPulse_RegisterInfo;
-		class CPulse_InstructionDebug;
-	}
-}
 
 
 using namespace GlobalTypes;

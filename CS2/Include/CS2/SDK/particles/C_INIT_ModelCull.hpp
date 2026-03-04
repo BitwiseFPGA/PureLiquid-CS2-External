@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_ModelCull : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nControlPointNumber,int32_t , 0x1d8);
-			PROPERTY(m_bBoundBox,bool , 0x1dc);
-			PROPERTY(m_bCullOutside,bool , 0x1dd);
-			PROPERTY(m_bUseBones,bool , 0x1de);
-			PROPERTY_ARRAY(m_HitboxSetName,char , 128 , 0x1df);
+			PROPERTY(m_nControlPointNumber,int32_t, 0x1d8);
+			PROPERTY(m_bBoundBox,bool, 0x1dc);
+			PROPERTY(m_bCullOutside,bool, 0x1dd);
+			PROPERTY(m_bUseBones,bool, 0x1de);
+			PROPERTY_ARRAY(m_HitboxSetName,char, 128 , 0x1df);
 			S2_PAD(0x88);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_ModelCull) == 0x260, "C_INIT_ModelCull size should be 0x260");

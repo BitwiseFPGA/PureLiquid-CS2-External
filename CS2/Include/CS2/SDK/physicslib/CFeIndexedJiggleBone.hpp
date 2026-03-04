@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace physicslib {
 		class CFeIndexedJiggleBone  {
 		public:
-			PROPERTY(m_nNode,uint32_t , 0x0);
-			PROPERTY(m_nJiggleParent,uint32_t , 0x4);
-			PROPERTY(m_jiggleBone,physicslib::CFeJiggleBone , 0x8);
+			PROPERTY(m_nNode,uint32_t, 0x0);
+			PROPERTY(m_nJiggleParent,uint32_t, 0x4);
+			NESTED_PROPERTY(m_jiggleBone,physicslib::CFeJiggleBone, 0x8);
 			S2_PAD(0xA4);
 		};
 		//static_assert(sizeof(CS2::physicslib::CFeIndexedJiggleBone) == 0xA4, "CFeIndexedJiggleBone size should be 0xA4");

@@ -22,8 +22,8 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Inflow_ObservableVariableListener : public CS2::pulse_runtime_lib::CPulseCell_Inflow_BaseEntrypoint {
 		public:
-			PROPERTY(m_nBlackboardReference,pulse_runtime_lib::PulseRuntimeBlackboardReferenceIndex_t , 0x80);
-			PROPERTY(m_bSelfReference,bool , 0x82);
+			NESTED_PROPERTY(m_nBlackboardReference,pulse_runtime_lib::PulseRuntimeBlackboardReferenceIndex_t, 0x80);
+			PROPERTY(m_bSelfReference,bool, 0x82);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Inflow_ObservableVariableListener) == 0x88, "CPulseCell_Inflow_ObservableVariableListener size should be 0x88");

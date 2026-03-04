@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace server {
 		class CRuleEntity : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_iszMaster,GlobalTypes::CUtlSymbolLarge* , 0x730);
+			PROPERTY(m_iszMaster,GlobalTypes::CUtlSymbolLarge*, 0x730);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::server::CRuleEntity) == 0x738, "CRuleEntity size should be 0x738");

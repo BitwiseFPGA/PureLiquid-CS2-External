@@ -22,9 +22,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CVectorAnimParameter : public CS2::animgraphlib::CConcreteAnimParameter {
 		public:
-			PROPERTY(m_defaultValue,GlobalTypes::Vector , 0x80);
-			PROPERTY(m_bInterpolate,bool , 0x8c);
-			PROPERTY(m_vectorType,animgraphlib::AnimParamVectorType_t , 0x90);
+			PROPERTY(m_defaultValue,GlobalTypes::Vector, 0x80);
+			PROPERTY(m_bInterpolate,bool, 0x8c);
+			PROPERTY(m_vectorType,animgraphlib::AnimParamVectorType_t, 0x90);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CVectorAnimParameter) == 0x98, "CVectorAnimParameter size should be 0x98");

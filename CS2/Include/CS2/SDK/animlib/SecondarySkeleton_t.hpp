@@ -25,7 +25,7 @@ namespace CS2 {
 	namespace animlib {
 		class SecondarySkeleton_t  {
 		public:
-			PROPERTY(m_attachToBoneID,GlobalTypes::CGlobalSymbol , 0x0);
+			PROPERTY(m_attachToBoneID,GlobalTypes::CGlobalSymbol, 0x0);
 			PROPERTY(m_skeleton,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCNmSkeleton>, 0x8);
 			S2_PAD(0x10);
 		};

@@ -20,13 +20,13 @@ namespace CS2 {
 	namespace client {
 		class inv_image_camera_t  {
 		public:
-			PROPERTY(angle,GlobalTypes::QAngle , 0x0);
-			PROPERTY(fov,float32 , 0xc);
-			PROPERTY(znear,float32 , 0x10);
-			PROPERTY(zfar,float32 , 0x14);
-			PROPERTY(target,GlobalTypes::Vector , 0x18);
-			PROPERTY(target_nudge,GlobalTypes::Vector , 0x24);
-			PROPERTY(orbit_distance,float32 , 0x30);
+			PROPERTY(angle,GlobalTypes::QAngle, 0x0);
+			PROPERTY(fov,float32, 0xc);
+			PROPERTY(znear,float32, 0x10);
+			PROPERTY(zfar,float32, 0x14);
+			PROPERTY(target,GlobalTypes::Vector, 0x18);
+			PROPERTY(target_nudge,GlobalTypes::Vector, 0x24);
+			PROPERTY(orbit_distance,float32, 0x30);
 			S2_PAD(0x34);
 		};
 		//static_assert(sizeof(CS2::client::inv_image_camera_t) == 0x34, "inv_image_camera_t size should be 0x34");

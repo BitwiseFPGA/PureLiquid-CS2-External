@@ -21,16 +21,16 @@ namespace CS2 {
 	namespace soundsystem {
 		class CSosGroupActionSoundeventMinMaxValuesSchema : public CS2::soundsystem::CSosGroupActionSchema {
 		public:
-			PROPERTY(m_strQueryPublicFieldName,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_strDelayPublicFieldName,GlobalTypes::CUtlString* , 0x10);
-			PROPERTY(m_bExcludeStoppedSounds,bool , 0x18);
-			PROPERTY(m_bExcludeDelayedSounds,bool , 0x19);
-			PROPERTY(m_bExcludeSoundsBelowThreshold,bool , 0x1a);
-			PROPERTY(m_flExcludeSoundsMinThresholdValue,float32 , 0x1c);
-			PROPERTY(m_bExcludSoundsAboveThreshold,bool , 0x20);
-			PROPERTY(m_flExcludeSoundsMaxThresholdValue,float32 , 0x24);
-			PROPERTY(m_strMinValueName,GlobalTypes::CUtlString* , 0x28);
-			PROPERTY(m_strMaxValueName,GlobalTypes::CUtlString* , 0x30);
+			PROPERTY(m_strQueryPublicFieldName,GlobalTypes::CUtlString*, 0x8);
+			PROPERTY(m_strDelayPublicFieldName,GlobalTypes::CUtlString*, 0x10);
+			PROPERTY(m_bExcludeStoppedSounds,bool, 0x18);
+			PROPERTY(m_bExcludeDelayedSounds,bool, 0x19);
+			PROPERTY(m_bExcludeSoundsBelowThreshold,bool, 0x1a);
+			PROPERTY(m_flExcludeSoundsMinThresholdValue,float32, 0x1c);
+			PROPERTY(m_bExcludSoundsAboveThreshold,bool, 0x20);
+			PROPERTY(m_flExcludeSoundsMaxThresholdValue,float32, 0x24);
+			PROPERTY(m_strMinValueName,GlobalTypes::CUtlString*, 0x28);
+			PROPERTY(m_strMaxValueName,GlobalTypes::CUtlString*, 0x30);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::soundsystem::CSosGroupActionSoundeventMinMaxValuesSchema) == 0x40, "CSosGroupActionSoundeventMinMaxValuesSchema size should be 0x40");

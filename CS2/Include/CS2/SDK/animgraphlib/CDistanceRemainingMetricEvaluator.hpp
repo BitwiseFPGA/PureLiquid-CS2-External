@@ -21,13 +21,13 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CDistanceRemainingMetricEvaluator : public CS2::animgraphlib::CMotionMetricEvaluator {
 		public:
-			PROPERTY(m_flMaxDistance,float32 , 0x50);
-			PROPERTY(m_flMinDistance,float32 , 0x54);
-			PROPERTY(m_flStartGoalFilterDistance,float32 , 0x58);
-			PROPERTY(m_flMaxGoalOvershootScale,float32 , 0x5c);
-			PROPERTY(m_bFilterFixedMinDistance,bool , 0x60);
-			PROPERTY(m_bFilterGoalDistance,bool , 0x61);
-			PROPERTY(m_bFilterGoalOvershoot,bool , 0x62);
+			PROPERTY(m_flMaxDistance,float32, 0x50);
+			PROPERTY(m_flMinDistance,float32, 0x54);
+			PROPERTY(m_flStartGoalFilterDistance,float32, 0x58);
+			PROPERTY(m_flMaxGoalOvershootScale,float32, 0x5c);
+			PROPERTY(m_bFilterFixedMinDistance,bool, 0x60);
+			PROPERTY(m_bFilterGoalDistance,bool, 0x61);
+			PROPERTY(m_bFilterGoalOvershoot,bool, 0x62);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CDistanceRemainingMetricEvaluator) == 0x68, "CDistanceRemainingMetricEvaluator size should be 0x68");

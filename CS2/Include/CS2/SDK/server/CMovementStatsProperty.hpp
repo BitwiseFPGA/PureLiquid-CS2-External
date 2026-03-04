@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace server {
 		class CMovementStatsProperty  {
 		public:
-			PROPERTY(m_nUseCounter,int32_t , 0x10);
-			PROPERTY(m_emaMovementDirection,client::CVectorExponentialMovingAverage , 0x14);
+			PROPERTY(m_nUseCounter,int32_t, 0x10);
+			NESTED_PROPERTY(m_emaMovementDirection,client::CVectorExponentialMovingAverage, 0x14);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::server::CMovementStatsProperty) == 0x40, "CMovementStatsProperty size should be 0x40");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace client {
 		class CPlayerControllerComponent  {
 		public:
-			PROPERTY(__m_pChainEntity,entity2::CNetworkVarChainer , 0x8);
+			NESTED_PROPERTY(__m_pChainEntity,entity2::CNetworkVarChainer, 0x8);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::client::CPlayerControllerComponent) == 0x40, "CPlayerControllerComponent size should be 0x40");

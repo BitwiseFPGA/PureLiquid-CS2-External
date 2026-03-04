@@ -10,14 +10,10 @@
 #endif
 
 
+#include <SDK/modellib/RenderInputLayoutField_t.hpp>
 
 
 
-namespace CS2 {
-	namespace modellib {
-		class RenderInputLayoutField_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -25,18 +21,18 @@ namespace CS2 {
 	namespace modellib {
 		class ModelMeshBufferData_t  {
 		public:
-			PROPERTY(m_nBlockIndex,int32_t , 0x0);
-			PROPERTY(m_nElementCount,uint32_t , 0x4);
-			PROPERTY(m_nElementSizeInBytes,uint32_t , 0x8);
-			PROPERTY(m_bMeshoptCompressed,bool , 0xc);
-			PROPERTY(m_bMeshoptIndexSequence,bool , 0xd);
-			PROPERTY(m_bCompressedZSTD,bool , 0xe);
-			PROPERTY(m_bCreateBufferSRV,bool , 0xf);
-			PROPERTY(m_bCreateBufferUAV,bool , 0x10);
-			PROPERTY(m_bCreateRawBuffer,bool , 0x11);
-			PROPERTY(m_bCreatePooledBuffer,bool , 0x12);
-			PROPERTY(m_nBufferUsage,uint8_t , 0x13);
-			PROPERTY(m_inputLayoutFields,GlobalTypes::CUtlVector<modellib::RenderInputLayoutField_t>, 0x18);
+			PROPERTY(m_nBlockIndex,int32_t, 0x0);
+			PROPERTY(m_nElementCount,uint32_t, 0x4);
+			PROPERTY(m_nElementSizeInBytes,uint32_t, 0x8);
+			PROPERTY(m_bMeshoptCompressed,bool, 0xc);
+			PROPERTY(m_bMeshoptIndexSequence,bool, 0xd);
+			PROPERTY(m_bCompressedZSTD,bool, 0xe);
+			PROPERTY(m_bCreateBufferSRV,bool, 0xf);
+			PROPERTY(m_bCreateBufferUAV,bool, 0x10);
+			PROPERTY(m_bCreateRawBuffer,bool, 0x11);
+			PROPERTY(m_bCreatePooledBuffer,bool, 0x12);
+			PROPERTY(m_nBufferUsage,uint8_t, 0x13);
+			NESTED_PROPERTY(m_inputLayoutFields,GlobalTypes::CUtlVector<modellib::RenderInputLayoutField_t>, 0x18);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::modellib::ModelMeshBufferData_t) == 0x30, "ModelMeshBufferData_t size should be 0x30");

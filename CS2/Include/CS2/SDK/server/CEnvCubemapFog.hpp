@@ -27,24 +27,24 @@ namespace CS2 {
 	namespace server {
 		class CEnvCubemapFog : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_flEndDistance,float32 , 0x4a8);
-			PROPERTY(m_flStartDistance,float32 , 0x4ac);
-			PROPERTY(m_flFogFalloffExponent,float32 , 0x4b0);
-			PROPERTY(m_bHeightFogEnabled,bool , 0x4b4);
-			PROPERTY(m_flFogHeightWidth,float32 , 0x4b8);
-			PROPERTY(m_flFogHeightEnd,float32 , 0x4bc);
-			PROPERTY(m_flFogHeightStart,float32 , 0x4c0);
-			PROPERTY(m_flFogHeightExponent,float32 , 0x4c4);
-			PROPERTY(m_flLODBias,float32 , 0x4c8);
-			PROPERTY(m_bActive,bool , 0x4cc);
-			PROPERTY(m_bStartDisabled,bool , 0x4cd);
-			PROPERTY(m_flFogMaxOpacity,float32 , 0x4d0);
-			PROPERTY(m_nCubemapSourceType,int32_t , 0x4d4);
+			PROPERTY(m_flEndDistance,float32, 0x4a8);
+			PROPERTY(m_flStartDistance,float32, 0x4ac);
+			PROPERTY(m_flFogFalloffExponent,float32, 0x4b0);
+			PROPERTY(m_bHeightFogEnabled,bool, 0x4b4);
+			PROPERTY(m_flFogHeightWidth,float32, 0x4b8);
+			PROPERTY(m_flFogHeightEnd,float32, 0x4bc);
+			PROPERTY(m_flFogHeightStart,float32, 0x4c0);
+			PROPERTY(m_flFogHeightExponent,float32, 0x4c4);
+			PROPERTY(m_flLODBias,float32, 0x4c8);
+			PROPERTY(m_bActive,bool, 0x4cc);
+			PROPERTY(m_bStartDisabled,bool, 0x4cd);
+			PROPERTY(m_flFogMaxOpacity,float32, 0x4d0);
+			PROPERTY(m_nCubemapSourceType,int32_t, 0x4d4);
 			PROPERTY(m_hSkyMaterial,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>, 0x4d8);
-			PROPERTY(m_iszSkyEntity,GlobalTypes::CUtlSymbolLarge* , 0x4e0);
+			PROPERTY(m_iszSkyEntity,GlobalTypes::CUtlSymbolLarge*, 0x4e0);
 			PROPERTY(m_hFogCubemapTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x4e8);
-			PROPERTY(m_bHasHeightFogEnd,bool , 0x4f0);
-			PROPERTY(m_bFirstTime,bool , 0x4f1);
+			PROPERTY(m_bHasHeightFogEnd,bool, 0x4f0);
+			PROPERTY(m_bFirstTime,bool, 0x4f1);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::server::CEnvCubemapFog) == 0x4F8, "CEnvCubemapFog size should be 0x4F8");

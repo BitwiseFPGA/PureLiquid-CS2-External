@@ -11,14 +11,10 @@
 
 
 #include <SDK/particles/CParticleFunctionInitializer.hpp>
+#include <SDK/particles/SequenceWeightedList_t.hpp>
 
 
 
-namespace CS2 {
-	namespace particles {
-		class SequenceWeightedList_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,11 +22,11 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_RandomSequence : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nSequenceMin,int32_t , 0x1d8);
-			PROPERTY(m_nSequenceMax,int32_t , 0x1dc);
-			PROPERTY(m_bShuffle,bool , 0x1e0);
-			PROPERTY(m_bLinear,bool , 0x1e1);
-			PROPERTY(m_WeightedList,GlobalTypes::CUtlVector<particles::SequenceWeightedList_t>, 0x1e8);
+			PROPERTY(m_nSequenceMin,int32_t, 0x1d8);
+			PROPERTY(m_nSequenceMax,int32_t, 0x1dc);
+			PROPERTY(m_bShuffle,bool, 0x1e0);
+			PROPERTY(m_bLinear,bool, 0x1e1);
+			NESTED_PROPERTY(m_WeightedList,GlobalTypes::CUtlVector<particles::SequenceWeightedList_t>, 0x1e8);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_RandomSequence) == 0x208, "C_INIT_RandomSequence size should be 0x208");

@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace animgraphlib {
 		class MotionDBIndex  {
 		public:
-			PROPERTY(m_nIndex,uint32_t , 0x0);
+			PROPERTY(m_nIndex,uint32_t, 0x0);
 			S2_PAD(0x4);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::MotionDBIndex) == 0x4, "MotionDBIndex size should be 0x4");

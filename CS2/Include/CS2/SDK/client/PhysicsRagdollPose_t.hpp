@@ -27,7 +27,7 @@ namespace CS2 {
 		public:
 			PROPERTY(m_Transforms,GlobalTypes::C_NetworkUtlVectorBase<GlobalTypes::CTransform>, 0x8);
 			PROPERTY(m_hOwner,GlobalTypes::CHandle<client::C_BaseEntity>, 0x20);
-			PROPERTY(m_bSetFromDebugHistory,bool , 0x24);
+			PROPERTY(m_bSetFromDebugHistory,bool, 0x24);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::client::PhysicsRagdollPose_t) == 0x48, "PhysicsRagdollPose_t size should be 0x48");

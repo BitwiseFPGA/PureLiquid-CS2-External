@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animationsystem {
 		class AnimationSnapshot_t : public CS2::animationsystem::AnimationSnapshotBase_t {
 		public:
-			PROPERTY(m_nEntIndex,int32_t , 0x110);
-			PROPERTY(m_modelName,GlobalTypes::CUtlString* , 0x118);
+			PROPERTY(m_nEntIndex,int32_t, 0x110);
+			PROPERTY(m_modelName,GlobalTypes::CUtlString*, 0x118);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animationsystem::AnimationSnapshot_t) == 0x120, "AnimationSnapshot_t size should be 0x120");

@@ -10,15 +10,12 @@
 #endif
 
 
+#include <SDK/resourcesystem/InfoForResourceTypeCModel.hpp>
+#include <SDK/compositematerialslib/CompositeMaterialAssemblyProcedure_t.hpp>
+#include <SDK/compositematerialslib/CompositeMaterial_t.hpp>
 
 
 
-namespace CS2 {
-	namespace compositematerialslib {
-		class CompositeMaterialAssemblyProcedure_t;
-		class CompositeMaterial_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -27,13 +24,13 @@ namespace CS2 {
 		class CompositeMaterialEditorPoint_t  {
 		public:
 			PROPERTY(m_ModelName,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCModel>>, 0x0);
-			PROPERTY(m_nSequenceIndex,int32_t , 0xe0);
-			PROPERTY(m_flCycle,float32 , 0xe4);
-			PROPERTY(m_KVModelStateChoices,GlobalTypes::KeyValues3 , 0xe8);
-			PROPERTY(m_bEnableChildModel,bool , 0xf8);
+			PROPERTY(m_nSequenceIndex,int32_t, 0xe0);
+			PROPERTY(m_flCycle,float32, 0xe4);
+			PROPERTY(m_KVModelStateChoices,GlobalTypes::KeyValues3, 0xe8);
+			PROPERTY(m_bEnableChildModel,bool, 0xf8);
 			PROPERTY(m_ChildModelName,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCModel>>, 0x100);
-			PROPERTY(m_vecCompositeMaterialAssemblyProcedures,GlobalTypes::CUtlVector<compositematerialslib::CompositeMaterialAssemblyProcedure_t>, 0x1e0);
-			PROPERTY(m_vecCompositeMaterials,GlobalTypes::CUtlVector<compositematerialslib::CompositeMaterial_t>, 0x1f8);
+			NESTED_PROPERTY(m_vecCompositeMaterialAssemblyProcedures,GlobalTypes::CUtlVector<compositematerialslib::CompositeMaterialAssemblyProcedure_t>, 0x1e0);
+			NESTED_PROPERTY(m_vecCompositeMaterials,GlobalTypes::CUtlVector<compositematerialslib::CompositeMaterial_t>, 0x1f8);
 			S2_PAD(0x218);
 		};
 		//static_assert(sizeof(CS2::compositematerialslib::CompositeMaterialEditorPoint_t) == 0x218, "CompositeMaterialEditorPoint_t size should be 0x218");

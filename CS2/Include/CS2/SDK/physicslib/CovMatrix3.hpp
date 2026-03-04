@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace physicslib {
 		class CovMatrix3  {
 		public:
-			PROPERTY(m_vDiag,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_flXY,float32 , 0xc);
-			PROPERTY(m_flXZ,float32 , 0x10);
-			PROPERTY(m_flYZ,float32 , 0x14);
+			PROPERTY(m_vDiag,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_flXY,float32, 0xc);
+			PROPERTY(m_flXZ,float32, 0x10);
+			PROPERTY(m_flYZ,float32, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::physicslib::CovMatrix3) == 0x18, "CovMatrix3 size should be 0x18");

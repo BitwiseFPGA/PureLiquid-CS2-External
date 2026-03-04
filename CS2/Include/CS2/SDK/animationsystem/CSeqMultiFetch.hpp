@@ -21,16 +21,16 @@ namespace CS2 {
 	namespace animationsystem {
 		class CSeqMultiFetch  {
 		public:
-			PROPERTY(m_flags,animationsystem::CSeqMultiFetchFlag , 0x0);
-			PROPERTY(m_localReferenceArray,GlobalTypes::CUtlVector< int16 >, 0x8);
-			PROPERTY_ARRAY(m_nGroupSize,int32_t , 2 , 0x20);
-			PROPERTY_ARRAY(m_nLocalPose,int32_t , 2 , 0x28);
-			PROPERTY(m_poseKeyArray0,GlobalTypes::CUtlVector< float32 >, 0x30);
-			PROPERTY(m_poseKeyArray1,GlobalTypes::CUtlVector< float32 >, 0x48);
-			PROPERTY(m_nLocalCyclePoseParameter,int32_t , 0x60);
-			PROPERTY(m_bCalculatePoseParameters,bool , 0x64);
-			PROPERTY(m_bFixedBlendWeight,bool , 0x65);
-			PROPERTY_ARRAY(m_flFixedBlendWeightVals,float32 , 2 , 0x68);
+			NESTED_PROPERTY(m_flags,animationsystem::CSeqMultiFetchFlag, 0x0);
+			NESTED_PROPERTY(m_localReferenceArray,GlobalTypes::CUtlVector< int16 >, 0x8);
+			PROPERTY_ARRAY(m_nGroupSize,int32_t, 2 , 0x20);
+			PROPERTY_ARRAY(m_nLocalPose,int32_t, 2 , 0x28);
+			NESTED_PROPERTY(m_poseKeyArray0,GlobalTypes::CUtlVector< float32 >, 0x30);
+			NESTED_PROPERTY(m_poseKeyArray1,GlobalTypes::CUtlVector< float32 >, 0x48);
+			PROPERTY(m_nLocalCyclePoseParameter,int32_t, 0x60);
+			PROPERTY(m_bCalculatePoseParameters,bool, 0x64);
+			PROPERTY(m_bFixedBlendWeight,bool, 0x65);
+			PROPERTY_ARRAY(m_flFixedBlendWeightVals,float32, 2 , 0x68);
 			S2_PAD(0x70);
 		};
 		//static_assert(sizeof(CS2::animationsystem::CSeqMultiFetch) == 0x70, "CSeqMultiFetch size should be 0x70");

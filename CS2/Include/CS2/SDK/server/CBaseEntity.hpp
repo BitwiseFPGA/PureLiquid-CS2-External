@@ -12,7 +12,9 @@
 
 #include <SDK/entity2/CEntityInstance.hpp>
 #include <SDK/client/CNetworkTransmitComponent.hpp>
+#include <SDK/client/thinkfunc_t.hpp>
 #include <SDK/entity2/GameTick_t.hpp>
+#include <SDK/server/ResponseContext_t.hpp>
 #include <SDK/client/TakeDamageFlags_t.hpp>
 #include <SDK/client/EntityPlatformTypes_t.hpp>
 #include <SDK/client/MoveCollide_t.hpp>
@@ -27,13 +29,9 @@
 namespace CS2 {
 	namespace server {
 		class CBodyComponent;
-		class ResponseContext_t;
 		class CBaseFilter;
 		class CCollisionProperty;
 		class CPulseGraphInstance_ServerEntity;
-	}
-	namespace client {
-		class thinkfunc_t;
 	}
 }
 
@@ -43,86 +41,86 @@ namespace CS2 {
 	namespace server {
 		class CBaseEntity : public CS2::entity2::CEntityInstance {
 		public:
-			PROPERTY(m_CBodyComponent,server::CBodyComponent* , 0x38);
-			PROPERTY(m_NetworkTransmitComponent,client::CNetworkTransmitComponent , 0x40);
-			PROPERTY(m_aThinkFunctions,GlobalTypes::CUtlVector<client::thinkfunc_t>, 0x250);
-			PROPERTY(m_iCurrentThinkContext,int32_t , 0x268);
-			PROPERTY(m_nLastThinkTick,entity2::GameTick_t , 0x26c);
-			PROPERTY(m_bDisabledContextThinks,bool , 0x270);
+			PROPERTY(m_CBodyComponent,server::CBodyComponent*, 0x38);
+			NESTED_PROPERTY(m_NetworkTransmitComponent,client::CNetworkTransmitComponent, 0x40);
+			NESTED_PROPERTY(m_aThinkFunctions,GlobalTypes::CUtlVector<client::thinkfunc_t>, 0x250);
+			PROPERTY(m_iCurrentThinkContext,int32_t, 0x268);
+			NESTED_PROPERTY(m_nLastThinkTick,entity2::GameTick_t, 0x26c);
+			PROPERTY(m_bDisabledContextThinks,bool, 0x270);
 			PROPERTY(m_isSteadyState,GlobalTypes::CTypedBitVec< 64 >, 0x280);
-			PROPERTY(m_lastNetworkChange,float32 , 0x288);
-			PROPERTY(m_ResponseContexts,GlobalTypes::CUtlVector<server::ResponseContext_t>, 0x298);
-			PROPERTY(m_iszResponseContext,GlobalTypes::CUtlSymbolLarge* , 0x2b0);
-			PROPERTY(m_iHealth,int32_t , 0x2d8);
-			PROPERTY(m_iMaxHealth,int32_t , 0x2dc);
-			PROPERTY(m_lifeState,uint8_t , 0x2e0);
-			PROPERTY(m_flDamageAccumulator,float32 , 0x2e4);
-			PROPERTY(m_bTakesDamage,bool , 0x2e8);
-			PROPERTY(m_nTakeDamageFlags,client::TakeDamageFlags_t , 0x2f0);
-			PROPERTY(m_nPlatformType,client::EntityPlatformTypes_t , 0x2f8);
-			PROPERTY(m_MoveCollide,client::MoveCollide_t , 0x2fa);
-			PROPERTY(m_MoveType,client::MoveType_t , 0x2fb);
-			PROPERTY(m_nActualMoveType,client::MoveType_t , 0x2fc);
-			PROPERTY(m_nWaterTouch,uint8_t , 0x2fd);
-			PROPERTY(m_nSlimeTouch,uint8_t , 0x2fe);
-			PROPERTY(m_bRestoreInHierarchy,bool , 0x2ff);
-			PROPERTY(m_target,GlobalTypes::CUtlSymbolLarge* , 0x300);
+			PROPERTY(m_lastNetworkChange,float32, 0x288);
+			NESTED_PROPERTY(m_ResponseContexts,GlobalTypes::CUtlVector<server::ResponseContext_t>, 0x298);
+			PROPERTY(m_iszResponseContext,GlobalTypes::CUtlSymbolLarge*, 0x2b0);
+			PROPERTY(m_iHealth,int32_t, 0x2d8);
+			PROPERTY(m_iMaxHealth,int32_t, 0x2dc);
+			PROPERTY(m_lifeState,uint8_t, 0x2e0);
+			PROPERTY(m_flDamageAccumulator,float32, 0x2e4);
+			PROPERTY(m_bTakesDamage,bool, 0x2e8);
+			PROPERTY(m_nTakeDamageFlags,client::TakeDamageFlags_t, 0x2f0);
+			PROPERTY(m_nPlatformType,client::EntityPlatformTypes_t, 0x2f8);
+			PROPERTY(m_MoveCollide,client::MoveCollide_t, 0x2fa);
+			PROPERTY(m_MoveType,client::MoveType_t, 0x2fb);
+			PROPERTY(m_nActualMoveType,client::MoveType_t, 0x2fc);
+			PROPERTY(m_nWaterTouch,uint8_t, 0x2fd);
+			PROPERTY(m_nSlimeTouch,uint8_t, 0x2fe);
+			PROPERTY(m_bRestoreInHierarchy,bool, 0x2ff);
+			PROPERTY(m_target,GlobalTypes::CUtlSymbolLarge*, 0x300);
 			PROPERTY(m_hDamageFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x308);
-			PROPERTY(m_iszDamageFilterName,GlobalTypes::CUtlSymbolLarge* , 0x310);
-			PROPERTY(m_flMoveDoneTime,float32 , 0x318);
-			PROPERTY(m_nSubclassID,GlobalTypes::CUtlStringToken* , 0x31c);
-			PROPERTY(m_flAnimTime,float32 , 0x328);
-			PROPERTY(m_flSimulationTime,float32 , 0x32c);
-			PROPERTY(m_flCreateTime,entity2::GameTime_t , 0x330);
-			PROPERTY(m_bClientSideRagdoll,bool , 0x334);
-			PROPERTY(m_ubInterpolationFrame,uint8_t , 0x335);
-			PROPERTY(m_vPrevVPhysicsUpdatePos,GlobalTypes::Vector , 0x338);
-			PROPERTY(m_iTeamNum,uint8_t , 0x344);
-			PROPERTY(m_iGlobalname,GlobalTypes::CUtlSymbolLarge* , 0x348);
-			PROPERTY(m_iSentToClients,int32_t , 0x350);
-			PROPERTY(m_flSpeed,float32 , 0x354);
-			PROPERTY(m_sUniqueHammerID,GlobalTypes::CUtlString* , 0x358);
-			PROPERTY(m_spawnflags,uint32_t , 0x360);
-			PROPERTY(m_nNextThinkTick,entity2::GameTick_t , 0x364);
-			PROPERTY(m_nSimulationTick,int32_t , 0x368);
-			PROPERTY(m_OnKilled,entity2::CEntityIOOutput , 0x370);
-			PROPERTY(m_fFlags,uint32_t , 0x388);
-			PROPERTY(m_vecAbsVelocity,GlobalTypes::Vector , 0x38c);
-			PROPERTY(m_vecVelocity,client::CNetworkVelocityVector , 0x398);
-			PROPERTY(m_vecBaseVelocity,GlobalTypes::Vector , 0x3c8);
-			PROPERTY(m_nPushEnumCount,int32_t , 0x3d4);
-			PROPERTY(m_pCollision,server::CCollisionProperty* , 0x3d8);
+			PROPERTY(m_iszDamageFilterName,GlobalTypes::CUtlSymbolLarge*, 0x310);
+			PROPERTY(m_flMoveDoneTime,float32, 0x318);
+			PROPERTY(m_nSubclassID,GlobalTypes::CUtlStringToken*, 0x31c);
+			PROPERTY(m_flAnimTime,float32, 0x328);
+			PROPERTY(m_flSimulationTime,float32, 0x32c);
+			NESTED_PROPERTY(m_flCreateTime,entity2::GameTime_t, 0x330);
+			PROPERTY(m_bClientSideRagdoll,bool, 0x334);
+			PROPERTY(m_ubInterpolationFrame,uint8_t, 0x335);
+			PROPERTY(m_vPrevVPhysicsUpdatePos,GlobalTypes::Vector, 0x338);
+			PROPERTY(m_iTeamNum,uint8_t, 0x344);
+			PROPERTY(m_iGlobalname,GlobalTypes::CUtlSymbolLarge*, 0x348);
+			PROPERTY(m_iSentToClients,int32_t, 0x350);
+			PROPERTY(m_flSpeed,float32, 0x354);
+			PROPERTY(m_sUniqueHammerID,GlobalTypes::CUtlString*, 0x358);
+			PROPERTY(m_spawnflags,uint32_t, 0x360);
+			NESTED_PROPERTY(m_nNextThinkTick,entity2::GameTick_t, 0x364);
+			PROPERTY(m_nSimulationTick,int32_t, 0x368);
+			NESTED_PROPERTY(m_OnKilled,entity2::CEntityIOOutput, 0x370);
+			PROPERTY(m_fFlags,uint32_t, 0x388);
+			PROPERTY(m_vecAbsVelocity,GlobalTypes::Vector, 0x38c);
+			NESTED_PROPERTY(m_vecVelocity,client::CNetworkVelocityVector, 0x398);
+			PROPERTY(m_vecBaseVelocity,GlobalTypes::Vector, 0x3c8);
+			PROPERTY(m_nPushEnumCount,int32_t, 0x3d4);
+			PROPERTY(m_pCollision,server::CCollisionProperty*, 0x3d8);
 			PROPERTY(m_hEffectEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x3e0);
 			PROPERTY(m_hOwnerEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x3e4);
-			PROPERTY(m_fEffects,uint32_t , 0x3e8);
+			PROPERTY(m_fEffects,uint32_t, 0x3e8);
 			PROPERTY(m_hGroundEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0x3ec);
-			PROPERTY(m_nGroundBodyIndex,int32_t , 0x3f0);
-			PROPERTY(m_flFriction,float32 , 0x3f4);
-			PROPERTY(m_flElasticity,float32 , 0x3f8);
-			PROPERTY(m_flGravityScale,float32 , 0x3fc);
-			PROPERTY(m_flTimeScale,float32 , 0x400);
-			PROPERTY(m_flWaterLevel,float32 , 0x404);
-			PROPERTY(m_bGravityDisabled,bool , 0x408);
-			PROPERTY(m_bAnimatedEveryTick,bool , 0x409);
-			PROPERTY(m_flActualGravityScale,float32 , 0x40c);
-			PROPERTY(m_bGravityActuallyDisabled,bool , 0x410);
-			PROPERTY(m_bDisableLowViolence,bool , 0x411);
-			PROPERTY(m_nWaterType,uint8_t , 0x412);
-			PROPERTY(m_iEFlags,int32_t , 0x414);
-			PROPERTY(m_OnUser1,entity2::CEntityIOOutput , 0x418);
-			PROPERTY(m_OnUser2,entity2::CEntityIOOutput , 0x430);
-			PROPERTY(m_OnUser3,entity2::CEntityIOOutput , 0x448);
-			PROPERTY(m_OnUser4,entity2::CEntityIOOutput , 0x460);
-			PROPERTY(m_iInitialTeamNum,int32_t , 0x478);
-			PROPERTY(m_flNavIgnoreUntilTime,entity2::GameTime_t , 0x47c);
-			PROPERTY(m_vecAngVelocity,GlobalTypes::QAngle , 0x480);
-			PROPERTY(m_bNetworkQuantizeOriginAndAngles,bool , 0x48c);
-			PROPERTY(m_bLagCompensate,bool , 0x48d);
+			PROPERTY(m_nGroundBodyIndex,int32_t, 0x3f0);
+			PROPERTY(m_flFriction,float32, 0x3f4);
+			PROPERTY(m_flElasticity,float32, 0x3f8);
+			PROPERTY(m_flGravityScale,float32, 0x3fc);
+			PROPERTY(m_flTimeScale,float32, 0x400);
+			PROPERTY(m_flWaterLevel,float32, 0x404);
+			PROPERTY(m_bGravityDisabled,bool, 0x408);
+			PROPERTY(m_bAnimatedEveryTick,bool, 0x409);
+			PROPERTY(m_flActualGravityScale,float32, 0x40c);
+			PROPERTY(m_bGravityActuallyDisabled,bool, 0x410);
+			PROPERTY(m_bDisableLowViolence,bool, 0x411);
+			PROPERTY(m_nWaterType,uint8_t, 0x412);
+			PROPERTY(m_iEFlags,int32_t, 0x414);
+			NESTED_PROPERTY(m_OnUser1,entity2::CEntityIOOutput, 0x418);
+			NESTED_PROPERTY(m_OnUser2,entity2::CEntityIOOutput, 0x430);
+			NESTED_PROPERTY(m_OnUser3,entity2::CEntityIOOutput, 0x448);
+			NESTED_PROPERTY(m_OnUser4,entity2::CEntityIOOutput, 0x460);
+			PROPERTY(m_iInitialTeamNum,int32_t, 0x478);
+			NESTED_PROPERTY(m_flNavIgnoreUntilTime,entity2::GameTime_t, 0x47c);
+			PROPERTY(m_vecAngVelocity,GlobalTypes::QAngle, 0x480);
+			PROPERTY(m_bNetworkQuantizeOriginAndAngles,bool, 0x48c);
+			PROPERTY(m_bLagCompensate,bool, 0x48d);
 			PROPERTY(m_pBlocker,GlobalTypes::CHandle<server::CBaseEntity>, 0x490);
-			PROPERTY(m_flLocalTime,float32 , 0x494);
-			PROPERTY(m_flVPhysicsUpdateLocalTime,float32 , 0x498);
-			PROPERTY(m_nBloodType,client::BloodType , 0x49c);
-			PROPERTY(m_pPulseGraphInstance,server::CPulseGraphInstance_ServerEntity* , 0x4a0);
+			PROPERTY(m_flLocalTime,float32, 0x494);
+			PROPERTY(m_flVPhysicsUpdateLocalTime,float32, 0x498);
+			PROPERTY(m_nBloodType,client::BloodType, 0x49c);
+			PROPERTY(m_pPulseGraphInstance,server::CPulseGraphInstance_ServerEntity*, 0x4a0);
 			S2_PAD(0x470);
 		};
 		//static_assert(sizeof(CS2::server::CBaseEntity) == 0x4A8, "CBaseEntity size should be 0x4A8");

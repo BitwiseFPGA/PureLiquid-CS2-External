@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace animlib {
 		class NmFloatCurveCompressionSettings_t  {
 		public:
-			PROPERTY(m_range,animlib::QuantizationRange_t , 0x0);
-			PROPERTY(m_bIsStatic,bool , 0x8);
+			NESTED_PROPERTY(m_range,animlib::QuantizationRange_t, 0x0);
+			PROPERTY(m_bIsStatic,bool, 0x8);
 			S2_PAD(0xC);
 		};
 		//static_assert(sizeof(CS2::animlib::NmFloatCurveCompressionSettings_t) == 0xC, "NmFloatCurveCompressionSettings_t size should be 0xC");

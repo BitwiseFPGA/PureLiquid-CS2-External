@@ -11,6 +11,7 @@
 
 
 #include <SDK/server/CBaseTrigger.hpp>
+#include <SDK/server/CBasePlayerPawn.hpp>
 
 
 
@@ -27,8 +28,8 @@ namespace CS2 {
 		class CTriggerSoundscape : public CS2::server::CBaseTrigger {
 		public:
 			PROPERTY(m_hSoundscape,GlobalTypes::CHandle<server::CEnvSoundscapeTriggerable>, 0x890);
-			PROPERTY(m_SoundscapeName,GlobalTypes::CUtlSymbolLarge* , 0x898);
-			PROPERTY(m_spectators,server::CUtlVector<GlobalTypes::CHandle<server::CBasePlayerPawn>>, 0x8a0);
+			PROPERTY(m_SoundscapeName,GlobalTypes::CUtlSymbolLarge*, 0x898);
+			NESTED_PROPERTY(m_spectators,server::CUtlVector<GlobalTypes::CHandle<server::CBasePlayerPawn>>, 0x8a0);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::server::CTriggerSoundscape) == 0x8B8, "CTriggerSoundscape size should be 0x8B8");

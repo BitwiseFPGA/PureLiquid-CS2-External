@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace animlib {
 		class CNmFootEvent : public CS2::animlib::CNmEvent {
 		public:
-			PROPERTY(m_phase,animlib::NmFootPhase_t , 0x20);
+			PROPERTY(m_phase,animlib::NmFootPhase_t, 0x20);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmFootEvent) == 0x28, "CNmFootEvent size should be 0x28");

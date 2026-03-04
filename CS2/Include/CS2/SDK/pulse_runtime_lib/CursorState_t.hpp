@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CursorState_t  {
 		public:
-			PROPERTY(m_TagName,GlobalTypes::PulseSymbol_t , 0x0);
+			PROPERTY(m_TagName,GlobalTypes::PulseSymbol_t, 0x0);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CursorState_t) == 0x30, "CPulseCell_WaitForCursorsWithTagBase::CursorState_t size should be 0x30");

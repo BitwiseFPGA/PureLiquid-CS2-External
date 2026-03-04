@@ -28,9 +28,9 @@ namespace CS2 {
 		public:
 			PROPERTY(m_hPlayer,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x638);
 			PROPERTY(m_hPingedEntity,GlobalTypes::CHandle<client::C_BaseEntity>, 0x63c);
-			PROPERTY(m_iType,int32_t , 0x640);
-			PROPERTY(m_bUrgent,bool , 0x644);
-			PROPERTY_ARRAY(m_szPlaceName,char , 18 , 0x645);
+			PROPERTY(m_iType,int32_t, 0x640);
+			PROPERTY(m_bUrgent,bool, 0x644);
+			PROPERTY_ARRAY(m_szPlaceName,char, 18 , 0x645);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::client::C_PlayerPing) == 0x658, "C_PlayerPing size should be 0x658");

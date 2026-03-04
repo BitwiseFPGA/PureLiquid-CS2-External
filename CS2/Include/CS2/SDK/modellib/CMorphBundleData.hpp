@@ -20,10 +20,10 @@ namespace CS2 {
 	namespace modellib {
 		class CMorphBundleData  {
 		public:
-			PROPERTY(m_flULeftSrc,float32 , 0x0);
-			PROPERTY(m_flVTopSrc,float32 , 0x4);
-			PROPERTY(m_offsets,GlobalTypes::CUtlVector< float32 >, 0x8);
-			PROPERTY(m_ranges,GlobalTypes::CUtlVector< float32 >, 0x20);
+			PROPERTY(m_flULeftSrc,float32, 0x0);
+			PROPERTY(m_flVTopSrc,float32, 0x4);
+			NESTED_PROPERTY(m_offsets,GlobalTypes::CUtlVector< float32 >, 0x8);
+			NESTED_PROPERTY(m_ranges,GlobalTypes::CUtlVector< float32 >, 0x20);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::modellib::CMorphBundleData) == 0x38, "CMorphBundleData size should be 0x38");

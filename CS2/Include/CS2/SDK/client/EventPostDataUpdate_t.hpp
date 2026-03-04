@@ -20,7 +20,7 @@ namespace CS2 {
 	namespace client {
 		class EventPostDataUpdate_t  {
 		public:
-			PROPERTY(m_nCount,int32_t , 0x0);
+			PROPERTY(m_nCount,int32_t, 0x0);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::EventPostDataUpdate_t) == 0x10, "EventPostDataUpdate_t size should be 0x10");

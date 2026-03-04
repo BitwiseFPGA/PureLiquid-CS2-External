@@ -24,12 +24,12 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CLookAtUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_opFixedSettings,animgraphlib::LookAtOpFixedSettings_t , 0x70);
-			PROPERTY(m_target,animgraphlib::AnimVectorSource , 0x148);
-			PROPERTY(m_paramIndex,animgraphlib::CAnimParamHandle , 0x14c);
-			PROPERTY(m_weightParamIndex,animgraphlib::CAnimParamHandle , 0x14e);
-			PROPERTY(m_bResetChild,bool , 0x150);
-			PROPERTY(m_bLockWhenWaning,bool , 0x151);
+			NESTED_PROPERTY(m_opFixedSettings,animgraphlib::LookAtOpFixedSettings_t, 0x70);
+			PROPERTY(m_target,animgraphlib::AnimVectorSource, 0x148);
+			NESTED_PROPERTY(m_paramIndex,animgraphlib::CAnimParamHandle, 0x14c);
+			NESTED_PROPERTY(m_weightParamIndex,animgraphlib::CAnimParamHandle, 0x14e);
+			PROPERTY(m_bResetChild,bool, 0x150);
+			PROPERTY(m_bLockWhenWaning,bool, 0x151);
 			S2_PAD(0xF0);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CLookAtUpdateNode) == 0x160, "CLookAtUpdateNode size should be 0x160");

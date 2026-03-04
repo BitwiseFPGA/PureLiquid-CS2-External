@@ -23,19 +23,19 @@ namespace CS2 {
 	namespace animlib {
 		class CNmChainSolverTask : public CS2::animlib::CNmPoseTask {
 		public:
-			PROPERTY(m_nEffectorBoneIdx,int32_t , 0x58);
-			PROPERTY(m_nEffectorTargetBoneIdx,int32_t , 0x5c);
-			PROPERTY(m_targetTransform,GlobalTypes::CTransform , 0x60);
-			PROPERTY(m_nNumBonesInChain,int32_t , 0x80);
-			PROPERTY(m_effectorTarget,animlib::CNmTarget , 0x90);
-			PROPERTY(m_blendMode,animlib::NmIKBlendMode_t , 0xc0);
-			PROPERTY(m_flBlendWeight,float32 , 0xc4);
-			PROPERTY(m_bIsTargetInWorldSpace,bool , 0xc8);
-			PROPERTY(m_bIsRunningFromDeserializedData,bool , 0xc9);
-			PROPERTY(m_debugEffectorBoneID,GlobalTypes::CGlobalSymbol , 0xd0);
-			PROPERTY(m_chainStartTransformMS,GlobalTypes::CTransform , 0xe0);
-			PROPERTY(m_debugRequestedTargetTransformMS,GlobalTypes::CTransform , 0x100);
-			PROPERTY(m_debugTotalChainLength,float32 , 0x120);
+			PROPERTY(m_nEffectorBoneIdx,int32_t, 0x58);
+			PROPERTY(m_nEffectorTargetBoneIdx,int32_t, 0x5c);
+			PROPERTY(m_targetTransform,GlobalTypes::CTransform, 0x60);
+			PROPERTY(m_nNumBonesInChain,int32_t, 0x80);
+			NESTED_PROPERTY(m_effectorTarget,animlib::CNmTarget, 0x90);
+			PROPERTY(m_blendMode,animlib::NmIKBlendMode_t, 0xc0);
+			PROPERTY(m_flBlendWeight,float32, 0xc4);
+			PROPERTY(m_bIsTargetInWorldSpace,bool, 0xc8);
+			PROPERTY(m_bIsRunningFromDeserializedData,bool, 0xc9);
+			PROPERTY(m_debugEffectorBoneID,GlobalTypes::CGlobalSymbol, 0xd0);
+			PROPERTY(m_chainStartTransformMS,GlobalTypes::CTransform, 0xe0);
+			PROPERTY(m_debugRequestedTargetTransformMS,GlobalTypes::CTransform, 0x100);
+			PROPERTY(m_debugTotalChainLength,float32, 0x120);
 			S2_PAD(0xD8);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmChainSolverTask) == 0x130, "CNmChainSolverTask size should be 0x130");

@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace animlib {
 		class CNmEntityAttributeFloatEvent : public CS2::animlib::CNmEntityAttributeEventBase {
 		public:
-			PROPERTY(m_FloatValue,GlobalTypes::CPiecewiseCurve , 0x38);
+			PROPERTY(m_FloatValue,GlobalTypes::CPiecewiseCurve, 0x38);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::animlib::CNmEntityAttributeFloatEvent) == 0x78, "CNmEntityAttributeFloatEvent size should be 0x78");

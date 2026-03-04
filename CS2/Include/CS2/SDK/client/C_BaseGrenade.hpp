@@ -27,17 +27,17 @@ namespace CS2 {
 	namespace client {
 		class C_BaseGrenade : public CS2::client::C_BaseFlex {
 		public:
-			PROPERTY(m_bHasWarnedAI,bool , 0x1350);
-			PROPERTY(m_bIsSmokeGrenade,bool , 0x1351);
-			PROPERTY(m_bIsLive,bool , 0x1352);
-			PROPERTY(m_DmgRadius,float32 , 0x1354);
-			PROPERTY(m_flDetonateTime,entity2::GameTime_t , 0x1358);
-			PROPERTY(m_flWarnAITime,float32 , 0x135c);
-			PROPERTY(m_flDamage,float32 , 0x1360);
-			PROPERTY(m_iszBounceSound,GlobalTypes::CUtlSymbolLarge* , 0x1368);
-			PROPERTY(m_ExplosionSound,GlobalTypes::CUtlString* , 0x1370);
+			PROPERTY(m_bHasWarnedAI,bool, 0x1350);
+			PROPERTY(m_bIsSmokeGrenade,bool, 0x1351);
+			PROPERTY(m_bIsLive,bool, 0x1352);
+			PROPERTY(m_DmgRadius,float32, 0x1354);
+			NESTED_PROPERTY(m_flDetonateTime,entity2::GameTime_t, 0x1358);
+			PROPERTY(m_flWarnAITime,float32, 0x135c);
+			PROPERTY(m_flDamage,float32, 0x1360);
+			PROPERTY(m_iszBounceSound,GlobalTypes::CUtlSymbolLarge*, 0x1368);
+			PROPERTY(m_ExplosionSound,GlobalTypes::CUtlString*, 0x1370);
 			PROPERTY(m_hThrower,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x137c);
-			PROPERTY(m_flNextAttack,entity2::GameTime_t , 0x1394);
+			NESTED_PROPERTY(m_flNextAttack,entity2::GameTime_t, 0x1394);
 			PROPERTY(m_hOriginalThrower,GlobalTypes::CHandle<client::C_CSPlayerPawn>, 0x1398);
 			S2_PAD(0x50);
 		};

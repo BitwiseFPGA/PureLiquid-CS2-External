@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropElement_PropPhysics : public CS2::smartprops::CSmartPropElement_ModelEntity {
 		public:
-			PROPERTY(m_bStartAsleep,GlobalTypes::CSmartPropAttributeBool , 0x190);
+			PROPERTY(m_bStartAsleep,GlobalTypes::CSmartPropAttributeBool, 0x190);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropElement_PropPhysics) == 0x1D0, "CSmartPropElement_PropPhysics size should be 0x1D0");

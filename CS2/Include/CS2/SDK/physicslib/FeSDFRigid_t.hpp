@@ -20,17 +20,17 @@ namespace CS2 {
 	namespace physicslib {
 		class FeSDFRigid_t  {
 		public:
-			PROPERTY(vLocalMin,GlobalTypes::Vector , 0x0);
-			PROPERTY(vLocalMax,GlobalTypes::Vector , 0xc);
-			PROPERTY(flBounciness,float32 , 0x18);
-			PROPERTY(nNode,uint16_t , 0x1c);
-			PROPERTY(nCollisionMask,uint16_t , 0x1e);
-			PROPERTY(nVertexMapIndex,uint16_t , 0x20);
-			PROPERTY(nFlags,uint16_t , 0x22);
-			PROPERTY(m_Distances,GlobalTypes::CUtlVector< float32 >, 0x28);
-			PROPERTY(m_nWidth,int32_t , 0x40);
-			PROPERTY(m_nHeight,int32_t , 0x44);
-			PROPERTY(m_nDepth,int32_t , 0x48);
+			PROPERTY(vLocalMin,GlobalTypes::Vector, 0x0);
+			PROPERTY(vLocalMax,GlobalTypes::Vector, 0xc);
+			PROPERTY(flBounciness,float32, 0x18);
+			PROPERTY(nNode,uint16_t, 0x1c);
+			PROPERTY(nCollisionMask,uint16_t, 0x1e);
+			PROPERTY(nVertexMapIndex,uint16_t, 0x20);
+			PROPERTY(nFlags,uint16_t, 0x22);
+			NESTED_PROPERTY(m_Distances,GlobalTypes::CUtlVector< float32 >, 0x28);
+			PROPERTY(m_nWidth,int32_t, 0x40);
+			PROPERTY(m_nHeight,int32_t, 0x44);
+			PROPERTY(m_nDepth,int32_t, 0x48);
 			S2_PAD(0x50);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeSDFRigid_t) == 0x50, "FeSDFRigid_t size should be 0x50");

@@ -12,6 +12,7 @@
 
 #include <SDK/server/CBaseModelEntity.hpp>
 #include <SDK/entity2/GameTick_t.hpp>
+#include <SDK/server/CBaseEntity.hpp>
 
 
 
@@ -22,14 +23,14 @@ namespace CS2 {
 	namespace server {
 		class CFuncConveyor : public CS2::server::CBaseModelEntity {
 		public:
-			PROPERTY(m_szConveyorModels,GlobalTypes::CUtlSymbolLarge* , 0x730);
-			PROPERTY(m_flTransitionDurationSeconds,float32 , 0x738);
-			PROPERTY(m_angMoveEntitySpace,GlobalTypes::QAngle , 0x73c);
-			PROPERTY(m_vecMoveDirEntitySpace,GlobalTypes::Vector , 0x748);
-			PROPERTY(m_flTargetSpeed,float32 , 0x754);
-			PROPERTY(m_nTransitionStartTick,entity2::GameTick_t , 0x758);
-			PROPERTY(m_nTransitionDurationTicks,int32_t , 0x75c);
-			PROPERTY(m_flTransitionStartSpeed,float32 , 0x760);
+			PROPERTY(m_szConveyorModels,GlobalTypes::CUtlSymbolLarge*, 0x730);
+			PROPERTY(m_flTransitionDurationSeconds,float32, 0x738);
+			PROPERTY(m_angMoveEntitySpace,GlobalTypes::QAngle, 0x73c);
+			PROPERTY(m_vecMoveDirEntitySpace,GlobalTypes::Vector, 0x748);
+			PROPERTY(m_flTargetSpeed,float32, 0x754);
+			NESTED_PROPERTY(m_nTransitionStartTick,entity2::GameTick_t, 0x758);
+			PROPERTY(m_nTransitionDurationTicks,int32_t, 0x75c);
+			PROPERTY(m_flTransitionStartSpeed,float32, 0x760);
 			PROPERTY(m_hConveyorModels,server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CBaseEntity>>, 0x768);
 			S2_PAD(0x50);
 		};

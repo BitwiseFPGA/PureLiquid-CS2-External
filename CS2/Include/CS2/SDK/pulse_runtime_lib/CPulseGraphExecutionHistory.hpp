@@ -26,9 +26,9 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseGraphExecutionHistory  {
 		public:
-			PROPERTY(m_nInstanceID,pulse_runtime_lib::PulseGraphInstanceID_t , 0x0);
-			PROPERTY(m_strFileName,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_vecHistory,GlobalTypes::CUtlVector<pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t*>, 0x10);
+			NESTED_PROPERTY(m_nInstanceID,pulse_runtime_lib::PulseGraphInstanceID_t, 0x0);
+			PROPERTY(m_strFileName,GlobalTypes::CUtlString*, 0x8);
+			NESTED_PROPERTY(m_vecHistory,GlobalTypes::CUtlVector<pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t*>, 0x10);
 			PROPERTY(m_mapCellDesc,GlobalTypes::CUtlOrderedMap< PulseDocNodeID_t, PulseGraphExecutionHistoryNodeDesc_t >, 0x28);
 			PROPERTY(m_mapCursorDesc,GlobalTypes::CUtlOrderedMap< PulseCursorID_t, PulseGraphExecutionHistoryCursorDesc_t >, 0x50);
 			S2_PAD(0x78);

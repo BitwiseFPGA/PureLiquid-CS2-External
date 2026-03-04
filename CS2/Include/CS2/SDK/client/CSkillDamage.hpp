@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace client {
 		class CSkillDamage  {
 		public:
-			PROPERTY(m_flDamage,client::CSkillFloat , 0x0);
-			PROPERTY(m_flNPCDamageScalarVsNPC,float32 , 0x10);
-			PROPERTY(m_flPhysicsForceDamage,float32 , 0x14);
+			NESTED_PROPERTY(m_flDamage,client::CSkillFloat, 0x0);
+			PROPERTY(m_flNPCDamageScalarVsNPC,float32, 0x10);
+			PROPERTY(m_flPhysicsForceDamage,float32, 0x14);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::CSkillDamage) == 0x18, "CSkillDamage size should be 0x18");

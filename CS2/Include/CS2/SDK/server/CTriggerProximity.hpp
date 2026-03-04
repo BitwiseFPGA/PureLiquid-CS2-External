@@ -27,9 +27,9 @@ namespace CS2 {
 		class CTriggerProximity : public CS2::server::CBaseTrigger {
 		public:
 			PROPERTY(m_hMeasureTarget,GlobalTypes::CHandle<server::CBaseEntity>, 0x890);
-			PROPERTY(m_iszMeasureTarget,GlobalTypes::CUtlSymbolLarge* , 0x898);
-			PROPERTY(m_fRadius,float32 , 0x8a0);
-			PROPERTY(m_nTouchers,int32_t , 0x8a4);
+			PROPERTY(m_iszMeasureTarget,GlobalTypes::CUtlSymbolLarge*, 0x898);
+			PROPERTY(m_fRadius,float32, 0x8a0);
+			PROPERTY(m_nTouchers,int32_t, 0x8a4);
 			PROPERTY(m_NearestEntityDistance,GlobalTypes::CEntityOutputTemplate< float32, float32 >, 0x8a8);
 			S2_PAD(0x38);
 		};

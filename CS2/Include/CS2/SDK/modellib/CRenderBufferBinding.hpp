@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace modellib {
 		class CRenderBufferBinding  {
 		public:
-			PROPERTY(m_hBuffer,uint64_t , 0x0);
-			PROPERTY(m_nBindOffsetBytes,uint32_t , 0x10);
+			PROPERTY(m_hBuffer,uint64_t, 0x0);
+			PROPERTY(m_nBindOffsetBytes,uint32_t, 0x10);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::modellib::CRenderBufferBinding) == 0x20, "CRenderBufferBinding size should be 0x20");

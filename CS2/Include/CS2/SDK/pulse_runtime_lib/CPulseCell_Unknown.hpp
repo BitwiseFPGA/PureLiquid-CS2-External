@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Unknown : public CS2::pulse_runtime_lib::CPulseCell_Base {
 		public:
-			PROPERTY(m_UnknownKeys,GlobalTypes::KeyValues3 , 0x48);
+			PROPERTY(m_UnknownKeys,GlobalTypes::KeyValues3, 0x48);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Unknown) == 0x58, "CPulseCell_Unknown size should be 0x58");

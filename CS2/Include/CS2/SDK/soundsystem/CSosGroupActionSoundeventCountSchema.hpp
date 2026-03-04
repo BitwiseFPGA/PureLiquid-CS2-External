@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace soundsystem {
 		class CSosGroupActionSoundeventCountSchema : public CS2::soundsystem::CSosGroupActionSchema {
 		public:
-			PROPERTY(m_bExcludeStoppedSounds,bool , 0x8);
-			PROPERTY(m_strCountKeyName,GlobalTypes::CUtlString* , 0x10);
+			PROPERTY(m_bExcludeStoppedSounds,bool, 0x8);
+			PROPERTY(m_strCountKeyName,GlobalTypes::CUtlString*, 0x10);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::soundsystem::CSosGroupActionSoundeventCountSchema) == 0x18, "CSosGroupActionSoundeventCountSchema size should be 0x18");

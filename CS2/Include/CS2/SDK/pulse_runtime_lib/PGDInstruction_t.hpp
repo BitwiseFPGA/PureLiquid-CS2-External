@@ -29,18 +29,18 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class PGDInstruction_t  {
 		public:
-			PROPERTY(m_nCode,pulse_runtime_lib::PulseInstructionCode_t , 0x0);
-			PROPERTY(m_nVar,pulse_runtime_lib::PulseRuntimeVarIndex_t , 0x4);
-			PROPERTY(m_nReg0,pulse_runtime_lib::PulseRuntimeRegisterIndex_t , 0x8);
-			PROPERTY(m_nReg1,pulse_runtime_lib::PulseRuntimeRegisterIndex_t , 0xa);
-			PROPERTY(m_nReg2,pulse_runtime_lib::PulseRuntimeRegisterIndex_t , 0xc);
-			PROPERTY(m_nInvokeBindingIndex,pulse_runtime_lib::PulseRuntimeInvokeIndex_t , 0x10);
-			PROPERTY(m_nChunk,pulse_runtime_lib::PulseRuntimeChunkIndex_t , 0x14);
-			PROPERTY(m_nDestInstruction,int32_t , 0x18);
-			PROPERTY(m_nCallInfoIndex,pulse_runtime_lib::PulseRuntimeCallInfoIndex_t , 0x1c);
-			PROPERTY(m_nConstIdx,pulse_runtime_lib::PulseRuntimeConstantIndex_t , 0x20);
-			PROPERTY(m_nDomainValueIdx,pulse_runtime_lib::PulseRuntimeDomainValueIndex_t , 0x22);
-			PROPERTY(m_nBlackboardReferenceIdx,pulse_runtime_lib::PulseRuntimeBlackboardReferenceIndex_t , 0x24);
+			PROPERTY(m_nCode,pulse_runtime_lib::PulseInstructionCode_t, 0x0);
+			NESTED_PROPERTY(m_nVar,pulse_runtime_lib::PulseRuntimeVarIndex_t, 0x4);
+			NESTED_PROPERTY(m_nReg0,pulse_runtime_lib::PulseRuntimeRegisterIndex_t, 0x8);
+			NESTED_PROPERTY(m_nReg1,pulse_runtime_lib::PulseRuntimeRegisterIndex_t, 0xa);
+			NESTED_PROPERTY(m_nReg2,pulse_runtime_lib::PulseRuntimeRegisterIndex_t, 0xc);
+			NESTED_PROPERTY(m_nInvokeBindingIndex,pulse_runtime_lib::PulseRuntimeInvokeIndex_t, 0x10);
+			NESTED_PROPERTY(m_nChunk,pulse_runtime_lib::PulseRuntimeChunkIndex_t, 0x14);
+			PROPERTY(m_nDestInstruction,int32_t, 0x18);
+			NESTED_PROPERTY(m_nCallInfoIndex,pulse_runtime_lib::PulseRuntimeCallInfoIndex_t, 0x1c);
+			NESTED_PROPERTY(m_nConstIdx,pulse_runtime_lib::PulseRuntimeConstantIndex_t, 0x20);
+			NESTED_PROPERTY(m_nDomainValueIdx,pulse_runtime_lib::PulseRuntimeDomainValueIndex_t, 0x22);
+			NESTED_PROPERTY(m_nBlackboardReferenceIdx,pulse_runtime_lib::PulseRuntimeBlackboardReferenceIndex_t, 0x24);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::PGDInstruction_t) == 0x38, "PGDInstruction_t size should be 0x38");

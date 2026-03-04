@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropVariable_ChoiceSelectionMode : public CS2::smartprops::CSmartPropVariable {
 		public:
-			PROPERTY(m_DefaultValue,smartprops::SmartPropChoiceSelectionMode_t , 0x38);
+			PROPERTY(m_DefaultValue,smartprops::SmartPropChoiceSelectionMode_t, 0x38);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable_ChoiceSelectionMode) == 0x40, "CSmartPropVariable_ChoiceSelectionMode size should be 0x40");

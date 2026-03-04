@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace client {
 		class DestructibleHitGroupToDestroy_t  {
 		public:
-			PROPERTY(m_nHitGroup,client::HitGroup_t , 0x0);
-			PROPERTY(m_nMaxDamageLevel,int32_t , 0x4);
+			PROPERTY(m_nHitGroup,client::HitGroup_t, 0x0);
+			PROPERTY(m_nMaxDamageLevel,int32_t, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::DestructibleHitGroupToDestroy_t) == 0x8, "DestructibleHitGroupToDestroy_t size should be 0x8");

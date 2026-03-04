@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace client {
 		class EntitySpottedState_t  {
 		public:
-			PROPERTY(m_bSpotted,bool , 0x8);
-			PROPERTY_ARRAY(m_bSpottedByMask,uint32_t , 2 , 0xc);
+			PROPERTY(m_bSpotted,bool, 0x8);
+			PROPERTY_ARRAY(m_bSpottedByMask,uint32_t, 2 , 0xc);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::client::EntitySpottedState_t) == 0x18, "EntitySpottedState_t size should be 0x18");

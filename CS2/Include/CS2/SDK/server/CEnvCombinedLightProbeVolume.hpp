@@ -26,10 +26,10 @@ namespace CS2 {
 	namespace server {
 		class CEnvCombinedLightProbeVolume : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_Entity_Color,GlobalTypes::Color , 0x1520);
-			PROPERTY(m_Entity_flBrightness,float32 , 0x1524);
+			PROPERTY(m_Entity_Color,GlobalTypes::Color, 0x1520);
+			PROPERTY(m_Entity_flBrightness,float32, 0x1524);
 			PROPERTY(m_Entity_hCubemapTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x1528);
-			PROPERTY(m_Entity_bCustomCubemapTexture,bool , 0x1530);
+			PROPERTY(m_Entity_bCustomCubemapTexture,bool, 0x1530);
 			PROPERTY(m_Entity_hLightProbeTexture_AmbientCube,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x1538);
 			PROPERTY(m_Entity_hLightProbeTexture_SDF,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x1540);
 			PROPERTY(m_Entity_hLightProbeTexture_SH2_DC,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x1548);
@@ -39,22 +39,22 @@ namespace CS2 {
 			PROPERTY(m_Entity_hLightProbeDirectLightIndicesTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x1568);
 			PROPERTY(m_Entity_hLightProbeDirectLightScalarsTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x1570);
 			PROPERTY(m_Entity_hLightProbeDirectLightShadowsTexture,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x1578);
-			PROPERTY(m_Entity_vBoxMins,GlobalTypes::Vector , 0x1580);
-			PROPERTY(m_Entity_vBoxMaxs,GlobalTypes::Vector , 0x158c);
-			PROPERTY(m_Entity_bMoveable,bool , 0x1598);
-			PROPERTY(m_Entity_nHandshake,int32_t , 0x159c);
-			PROPERTY(m_Entity_nEnvCubeMapArrayIndex,int32_t , 0x15a0);
-			PROPERTY(m_Entity_nPriority,int32_t , 0x15a4);
-			PROPERTY(m_Entity_bStartDisabled,bool , 0x15a8);
-			PROPERTY(m_Entity_flEdgeFadeDist,float32 , 0x15ac);
-			PROPERTY(m_Entity_vEdgeFadeDists,GlobalTypes::Vector , 0x15b0);
-			PROPERTY(m_Entity_nLightProbeSizeX,int32_t , 0x15bc);
-			PROPERTY(m_Entity_nLightProbeSizeY,int32_t , 0x15c0);
-			PROPERTY(m_Entity_nLightProbeSizeZ,int32_t , 0x15c4);
-			PROPERTY(m_Entity_nLightProbeAtlasX,int32_t , 0x15c8);
-			PROPERTY(m_Entity_nLightProbeAtlasY,int32_t , 0x15cc);
-			PROPERTY(m_Entity_nLightProbeAtlasZ,int32_t , 0x15d0);
-			PROPERTY(m_Entity_bEnabled,bool , 0x15e9);
+			PROPERTY(m_Entity_vBoxMins,GlobalTypes::Vector, 0x1580);
+			PROPERTY(m_Entity_vBoxMaxs,GlobalTypes::Vector, 0x158c);
+			PROPERTY(m_Entity_bMoveable,bool, 0x1598);
+			PROPERTY(m_Entity_nHandshake,int32_t, 0x159c);
+			PROPERTY(m_Entity_nEnvCubeMapArrayIndex,int32_t, 0x15a0);
+			PROPERTY(m_Entity_nPriority,int32_t, 0x15a4);
+			PROPERTY(m_Entity_bStartDisabled,bool, 0x15a8);
+			PROPERTY(m_Entity_flEdgeFadeDist,float32, 0x15ac);
+			PROPERTY(m_Entity_vEdgeFadeDists,GlobalTypes::Vector, 0x15b0);
+			PROPERTY(m_Entity_nLightProbeSizeX,int32_t, 0x15bc);
+			PROPERTY(m_Entity_nLightProbeSizeY,int32_t, 0x15c0);
+			PROPERTY(m_Entity_nLightProbeSizeZ,int32_t, 0x15c4);
+			PROPERTY(m_Entity_nLightProbeAtlasX,int32_t, 0x15c8);
+			PROPERTY(m_Entity_nLightProbeAtlasY,int32_t, 0x15cc);
+			PROPERTY(m_Entity_nLightProbeAtlasZ,int32_t, 0x15d0);
+			PROPERTY(m_Entity_bEnabled,bool, 0x15e9);
 			S2_PAD(0x1148);
 		};
 		//static_assert(sizeof(CS2::server::CEnvCombinedLightProbeVolume) == 0x15F0, "CEnvCombinedLightProbeVolume size should be 0x15F0");

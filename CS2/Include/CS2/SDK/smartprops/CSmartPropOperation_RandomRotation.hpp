@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_RandomRotation : public CS2::smartprops::CSmartPropTransformOperation {
 		public:
-			PROPERTY(m_vRandomRotationMin,GlobalTypes::CSmartPropAttributeAngles , 0x50);
-			PROPERTY(m_vRandomRotationMax,GlobalTypes::CSmartPropAttributeAngles , 0x90);
-			PROPERTY(m_vSnapIncrement,GlobalTypes::CSmartPropAttributeAngles , 0xd0);
+			PROPERTY(m_vRandomRotationMin,GlobalTypes::CSmartPropAttributeAngles, 0x50);
+			PROPERTY(m_vRandomRotationMax,GlobalTypes::CSmartPropAttributeAngles, 0x90);
+			PROPERTY(m_vSnapIncrement,GlobalTypes::CSmartPropAttributeAngles, 0xd0);
 			S2_PAD(0xC0);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_RandomRotation) == 0x110, "CSmartPropOperation_RandomRotation size should be 0x110");

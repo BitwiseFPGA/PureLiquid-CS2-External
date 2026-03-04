@@ -11,14 +11,10 @@
 
 
 #include <SDK/resourcesystem/InfoForResourceTypeCTextureBase.hpp>
+#include <SDK/worldrenderer/BakedShadowAssignment_t.hpp>
 
 
 
-namespace CS2 {
-	namespace worldrenderer {
-		class BakedShadowAssignment_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,17 +22,17 @@ namespace CS2 {
 	namespace worldrenderer {
 		class BakedLightingInfo_t  {
 		public:
-			PROPERTY(m_nLightmapVersionNumber,uint32_t , 0x0);
-			PROPERTY(m_nLightmapGameVersionNumber,uint32_t , 0x4);
-			PROPERTY(m_vLightmapUvScale,GlobalTypes::Vector2D , 0x8);
-			PROPERTY(m_bHasLightmaps,bool , 0x10);
-			PROPERTY(m_bBakedShadowsGamma20,bool , 0x11);
-			PROPERTY(m_bCompressionEnabled,bool , 0x12);
-			PROPERTY(m_bSHLightmaps,bool , 0x13);
-			PROPERTY(m_nChartPackIterations,uint8_t , 0x14);
-			PROPERTY(m_nVradQuality,uint8_t , 0x15);
-			PROPERTY(m_lightMaps,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>>, 0x18);
-			PROPERTY(m_bakedShadows,GlobalTypes::CUtlVector<worldrenderer::BakedLightingInfo_t::BakedShadowAssignment_t>, 0x30);
+			PROPERTY(m_nLightmapVersionNumber,uint32_t, 0x0);
+			PROPERTY(m_nLightmapGameVersionNumber,uint32_t, 0x4);
+			PROPERTY(m_vLightmapUvScale,GlobalTypes::Vector2D, 0x8);
+			PROPERTY(m_bHasLightmaps,bool, 0x10);
+			PROPERTY(m_bBakedShadowsGamma20,bool, 0x11);
+			PROPERTY(m_bCompressionEnabled,bool, 0x12);
+			PROPERTY(m_bSHLightmaps,bool, 0x13);
+			PROPERTY(m_nChartPackIterations,uint8_t, 0x14);
+			PROPERTY(m_nVradQuality,uint8_t, 0x15);
+			NESTED_PROPERTY(m_lightMaps,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>>, 0x18);
+			NESTED_PROPERTY(m_bakedShadows,GlobalTypes::CUtlVector<worldrenderer::BakedShadowAssignment_t>, 0x30);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::BakedLightingInfo_t) == 0x48, "BakedLightingInfo_t size should be 0x48");

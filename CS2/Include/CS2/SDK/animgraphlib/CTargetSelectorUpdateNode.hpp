@@ -12,15 +12,11 @@
 
 #include <SDK/animgraphlib/CAnimUpdateNodeBase.hpp>
 #include <SDK/animgraphlib/TargetSelectorAngleMode_t.hpp>
+#include <SDK/animgraphlib/CAnimUpdateNodeRef.hpp>
 #include <SDK/animgraphlib/CAnimParamHandle.hpp>
 
 
 
-namespace CS2 {
-	namespace animgraphlib {
-		class CAnimUpdateNodeRef;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -28,16 +24,16 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CTargetSelectorUpdateNode : public CS2::animgraphlib::CAnimUpdateNodeBase {
 		public:
-			PROPERTY(m_eAngleMode,animgraphlib::TargetSelectorAngleMode_t , 0x60);
-			PROPERTY(m_children,GlobalTypes::CUtlVector<animgraphlib::CAnimUpdateNodeRef>, 0x68);
-			PROPERTY(m_hTargetPosition,animgraphlib::CAnimParamHandle , 0x84);
-			PROPERTY(m_hTargetFacePositionParameter,animgraphlib::CAnimParamHandle , 0x86);
-			PROPERTY(m_hMoveHeadingParameter,animgraphlib::CAnimParamHandle , 0x88);
-			PROPERTY(m_hDesiredMoveHeadingParameter,animgraphlib::CAnimParamHandle , 0x8a);
-			PROPERTY(m_bTargetPositionIsWorldSpace,bool , 0x8c);
-			PROPERTY(m_bTargetFacePositionIsWorldSpace,bool , 0x8d);
-			PROPERTY(m_bEnablePhaseMatching,bool , 0x8e);
-			PROPERTY(m_flPhaseMatchingMaxRootMotionSkip,float32 , 0x90);
+			PROPERTY(m_eAngleMode,animgraphlib::TargetSelectorAngleMode_t, 0x60);
+			NESTED_PROPERTY(m_children,GlobalTypes::CUtlVector<animgraphlib::CAnimUpdateNodeRef>, 0x68);
+			NESTED_PROPERTY(m_hTargetPosition,animgraphlib::CAnimParamHandle, 0x84);
+			NESTED_PROPERTY(m_hTargetFacePositionParameter,animgraphlib::CAnimParamHandle, 0x86);
+			NESTED_PROPERTY(m_hMoveHeadingParameter,animgraphlib::CAnimParamHandle, 0x88);
+			NESTED_PROPERTY(m_hDesiredMoveHeadingParameter,animgraphlib::CAnimParamHandle, 0x8a);
+			PROPERTY(m_bTargetPositionIsWorldSpace,bool, 0x8c);
+			PROPERTY(m_bTargetFacePositionIsWorldSpace,bool, 0x8d);
+			PROPERTY(m_bEnablePhaseMatching,bool, 0x8e);
+			PROPERTY(m_flPhaseMatchingMaxRootMotionSkip,float32, 0x90);
 			S2_PAD(0x48);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CTargetSelectorUpdateNode) == 0xA0, "CTargetSelectorUpdateNode size should be 0xA0");

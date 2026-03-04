@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace modellib {
 		class SkeletonBoneBounds_t  {
 		public:
-			PROPERTY(m_vecCenter,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_vecSize,GlobalTypes::Vector , 0xc);
+			PROPERTY(m_vecCenter,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_vecSize,GlobalTypes::Vector, 0xc);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::modellib::SkeletonBoneBounds_t) == 0x18, "SkeletonBoneBounds_t size should be 0x18");

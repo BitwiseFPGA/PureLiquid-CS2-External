@@ -11,16 +11,12 @@
 
 
 #include <SDK/client/CPlayerControllerComponent.hpp>
+#include <SDK/client/NetworkedLoadoutSlot_t.hpp>
 #include <SDK/client/MedalRank_t.hpp>
+#include <SDK/client/ServerAuthoritativeWeaponSlot_t.hpp>
 
 
 
-namespace CS2 {
-	namespace client {
-		class NetworkedLoadoutSlot_t;
-		class ServerAuthoritativeWeaponSlot_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -28,14 +24,14 @@ namespace CS2 {
 	namespace client {
 		class CCSPlayerController_InventoryServices : public CS2::client::CPlayerControllerComponent {
 		public:
-			PROPERTY(m_vecNetworkableLoadout,GlobalTypes::CUtlVector<client::CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t>, 0x40);
-			PROPERTY(m_unMusicID,uint16_t , 0x58);
-			PROPERTY_ARRAY(m_rank,client::MedalRank_t , 6 , 0x5c);
-			PROPERTY(m_nPersonaDataPublicLevel,int32_t , 0x74);
-			PROPERTY(m_nPersonaDataPublicCommendsLeader,int32_t , 0x78);
-			PROPERTY(m_nPersonaDataPublicCommendsTeacher,int32_t , 0x7c);
-			PROPERTY(m_nPersonaDataPublicCommendsFriendly,int32_t , 0x80);
-			PROPERTY(m_nPersonaDataXpTrailLevel,int32_t , 0x84);
+			NESTED_PROPERTY(m_vecNetworkableLoadout,GlobalTypes::CUtlVector<client::NetworkedLoadoutSlot_t>, 0x40);
+			PROPERTY(m_unMusicID,uint16_t, 0x58);
+			PROPERTY_ARRAY(m_rank,client::MedalRank_t, 6 , 0x5c);
+			PROPERTY(m_nPersonaDataPublicLevel,int32_t, 0x74);
+			PROPERTY(m_nPersonaDataPublicCommendsLeader,int32_t, 0x78);
+			PROPERTY(m_nPersonaDataPublicCommendsTeacher,int32_t, 0x7c);
+			PROPERTY(m_nPersonaDataPublicCommendsFriendly,int32_t, 0x80);
+			PROPERTY(m_nPersonaDataXpTrailLevel,int32_t, 0x84);
 			PROPERTY(m_vecServerAuthoritativeWeaponSlots,GlobalTypes::C_UtlVectorEmbeddedNetworkVar<client::ServerAuthoritativeWeaponSlot_t>, 0x88);
 			S2_PAD(0xB0);
 		};

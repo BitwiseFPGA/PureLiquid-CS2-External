@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace client {
 		class WaterWheelFrictionScale_t  {
 		public:
-			PROPERTY(m_flFractionOfWheelSubmerged,float32 , 0x0);
-			PROPERTY(m_flFrictionScale,float32 , 0x4);
+			PROPERTY(m_flFractionOfWheelSubmerged,float32, 0x0);
+			PROPERTY(m_flFrictionScale,float32, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::client::WaterWheelFrictionScale_t) == 0x8, "WaterWheelFrictionScale_t size should be 0x8");

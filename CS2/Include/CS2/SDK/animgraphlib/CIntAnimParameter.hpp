@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CIntAnimParameter : public CS2::animgraphlib::CConcreteAnimParameter {
 		public:
-			PROPERTY(m_defaultValue,int32_t , 0x80);
-			PROPERTY(m_minValue,int32_t , 0x84);
-			PROPERTY(m_maxValue,int32_t , 0x88);
+			PROPERTY(m_defaultValue,int32_t, 0x80);
+			PROPERTY(m_minValue,int32_t, 0x84);
+			PROPERTY(m_maxValue,int32_t, 0x88);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CIntAnimParameter) == 0x90, "CIntAnimParameter size should be 0x90");

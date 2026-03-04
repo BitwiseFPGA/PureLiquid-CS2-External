@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace server {
 		class CInfoVisibilityBox : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_nMode,int32_t , 0x4ac);
-			PROPERTY(m_vBoxSize,GlobalTypes::Vector , 0x4b0);
-			PROPERTY(m_bEnabled,bool , 0x4bc);
+			PROPERTY(m_nMode,int32_t, 0x4ac);
+			PROPERTY(m_vBoxSize,GlobalTypes::Vector, 0x4b0);
+			PROPERTY(m_bEnabled,bool, 0x4bc);
 			S2_PAD(0x18);
 		};
 		//static_assert(sizeof(CS2::server::CInfoVisibilityBox) == 0x4C0, "CInfoVisibilityBox size should be 0x4C0");

@@ -21,11 +21,11 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CWayPointHelperUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			PROPERTY(m_flStartCycle,float32 , 0x74);
-			PROPERTY(m_flEndCycle,float32 , 0x78);
-			PROPERTY(m_bOnlyGoals,bool , 0x7c);
-			PROPERTY(m_bPreventOvershoot,bool , 0x7d);
-			PROPERTY(m_bPreventUndershoot,bool , 0x7e);
+			PROPERTY(m_flStartCycle,float32, 0x74);
+			PROPERTY(m_flEndCycle,float32, 0x78);
+			PROPERTY(m_bOnlyGoals,bool, 0x7c);
+			PROPERTY(m_bPreventOvershoot,bool, 0x7d);
+			PROPERTY(m_bPreventUndershoot,bool, 0x7e);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::CWayPointHelperUpdateNode) == 0x80, "CWayPointHelperUpdateNode size should be 0x80");

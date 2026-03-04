@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace worldrenderer {
 		class VoxelVisBlockOffset_t  {
 		public:
-			PROPERTY(m_nOffset,uint32_t , 0x0);
-			PROPERTY(m_nElementCount,uint32_t , 0x4);
+			PROPERTY(m_nOffset,uint32_t, 0x0);
+			PROPERTY(m_nElementCount,uint32_t, 0x4);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::worldrenderer::VoxelVisBlockOffset_t) == 0x8, "VoxelVisBlockOffset_t size should be 0x8");

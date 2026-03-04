@@ -21,20 +21,20 @@ namespace CS2 {
 	namespace client {
 		class C_CSGO_MapPreviewCameraPath : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_flZFar,float32 , 0x608);
-			PROPERTY(m_flZNear,float32 , 0x60c);
-			PROPERTY(m_bLoop,bool , 0x610);
-			PROPERTY(m_bVerticalFOV,bool , 0x611);
-			PROPERTY(m_bConstantSpeed,bool , 0x612);
-			PROPERTY(m_flDuration,float32 , 0x614);
-			PROPERTY(m_flPathLength,float32 , 0x658);
-			PROPERTY(m_flPathDuration,float32 , 0x65c);
-			PROPERTY(m_bDofEnabled,bool , 0x674);
-			PROPERTY(m_flDofNearBlurry,float32 , 0x678);
-			PROPERTY(m_flDofNearCrisp,float32 , 0x67c);
-			PROPERTY(m_flDofFarCrisp,float32 , 0x680);
-			PROPERTY(m_flDofFarBlurry,float32 , 0x684);
-			PROPERTY(m_flDofTiltToGround,float32 , 0x688);
+			PROPERTY(m_flZFar,float32, 0x608);
+			PROPERTY(m_flZNear,float32, 0x60c);
+			PROPERTY(m_bLoop,bool, 0x610);
+			PROPERTY(m_bVerticalFOV,bool, 0x611);
+			PROPERTY(m_bConstantSpeed,bool, 0x612);
+			PROPERTY(m_flDuration,float32, 0x614);
+			PROPERTY(m_flPathLength,float32, 0x658);
+			PROPERTY(m_flPathDuration,float32, 0x65c);
+			PROPERTY(m_bDofEnabled,bool, 0x674);
+			PROPERTY(m_flDofNearBlurry,float32, 0x678);
+			PROPERTY(m_flDofNearCrisp,float32, 0x67c);
+			PROPERTY(m_flDofFarCrisp,float32, 0x680);
+			PROPERTY(m_flDofFarBlurry,float32, 0x684);
+			PROPERTY(m_flDofTiltToGround,float32, 0x688);
 			S2_PAD(0x88);
 		};
 		//static_assert(sizeof(CS2::client::C_CSGO_MapPreviewCameraPath) == 0x690, "C_CSGO_MapPreviewCameraPath size should be 0x690");

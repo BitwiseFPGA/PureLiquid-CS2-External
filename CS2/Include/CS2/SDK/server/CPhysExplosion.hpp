@@ -22,16 +22,16 @@ namespace CS2 {
 	namespace server {
 		class CPhysExplosion : public CS2::server::CPointEntity {
 		public:
-			PROPERTY(m_bExplodeOnSpawn,bool , 0x4a8);
-			PROPERTY(m_flMagnitude,float32 , 0x4ac);
-			PROPERTY(m_flDamage,float32 , 0x4b0);
-			PROPERTY(m_radius,float32 , 0x4b4);
-			PROPERTY(m_targetEntityName,GlobalTypes::CUtlSymbolLarge* , 0x4b8);
-			PROPERTY(m_flInnerRadius,float32 , 0x4c0);
-			PROPERTY(m_flPushScale,float32 , 0x4c4);
-			PROPERTY(m_bConvertToDebrisWhenPossible,bool , 0x4c8);
-			PROPERTY(m_bAffectInvulnerableEnts,bool , 0x4c9);
-			PROPERTY(m_OnPushedPlayer,entity2::CEntityIOOutput , 0x4d0);
+			PROPERTY(m_bExplodeOnSpawn,bool, 0x4a8);
+			PROPERTY(m_flMagnitude,float32, 0x4ac);
+			PROPERTY(m_flDamage,float32, 0x4b0);
+			PROPERTY(m_radius,float32, 0x4b4);
+			PROPERTY(m_targetEntityName,GlobalTypes::CUtlSymbolLarge*, 0x4b8);
+			PROPERTY(m_flInnerRadius,float32, 0x4c0);
+			PROPERTY(m_flPushScale,float32, 0x4c4);
+			PROPERTY(m_bConvertToDebrisWhenPossible,bool, 0x4c8);
+			PROPERTY(m_bAffectInvulnerableEnts,bool, 0x4c9);
+			NESTED_PROPERTY(m_OnPushedPlayer,entity2::CEntityIOOutput, 0x4d0);
 			S2_PAD(0x40);
 		};
 		//static_assert(sizeof(CS2::server::CPhysExplosion) == 0x4E8, "CPhysExplosion size should be 0x4E8");

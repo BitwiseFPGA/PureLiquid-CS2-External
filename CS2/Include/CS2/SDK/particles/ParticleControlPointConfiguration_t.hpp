@@ -10,15 +10,11 @@
 #endif
 
 
+#include <SDK/particles/ParticleControlPointDriver_t.hpp>
 #include <SDK/particles/ParticlePreviewState_t.hpp>
 
 
 
-namespace CS2 {
-	namespace particles {
-		class ParticleControlPointDriver_t;
-	}
-}
 
 
 using namespace GlobalTypes;
@@ -26,9 +22,9 @@ namespace CS2 {
 	namespace particles {
 		class ParticleControlPointConfiguration_t  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_drivers,GlobalTypes::CUtlVector<particles::ParticleControlPointDriver_t>, 0x8);
-			PROPERTY(m_previewState,particles::ParticlePreviewState_t , 0x20);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
+			NESTED_PROPERTY(m_drivers,GlobalTypes::CUtlVector<particles::ParticleControlPointDriver_t>, 0x8);
+			NESTED_PROPERTY(m_previewState,particles::ParticlePreviewState_t, 0x20);
 			S2_PAD(0x88);
 		};
 		//static_assert(sizeof(CS2::particles::ParticleControlPointConfiguration_t) == 0x88, "ParticleControlPointConfiguration_t size should be 0x88");

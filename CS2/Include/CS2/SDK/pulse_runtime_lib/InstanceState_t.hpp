@@ -21,7 +21,7 @@ namespace CS2 {
 		class InstanceState_t  {
 		public:
 			PROPERTY(m_Shuffle,GlobalTypes::CUtlVectorFixedGrowable< uint8, 8 >, 0x0);
-			PROPERTY(m_nNextShuffle,int32_t , 0x20);
+			PROPERTY(m_nNextShuffle,int32_t, 0x20);
 			S2_PAD(0x28);
 		};
 		//static_assert(sizeof(CS2::pulse_runtime_lib::InstanceState_t) == 0x28, "CPulseCell_Outflow_CycleShuffled::InstanceState_t size should be 0x28");

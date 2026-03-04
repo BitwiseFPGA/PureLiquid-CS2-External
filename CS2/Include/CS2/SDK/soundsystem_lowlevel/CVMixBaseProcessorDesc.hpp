@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixBaseProcessorDesc  {
 		public:
-			PROPERTY(m_name,GlobalTypes::CUtlString* , 0x8);
-			PROPERTY(m_nChannels,int32_t , 0x14);
-			PROPERTY(m_flxfade,float32 , 0x18);
+			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x8);
+			PROPERTY(m_nChannels,int32_t, 0x14);
+			PROPERTY(m_flxfade,float32, 0x18);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixBaseProcessorDesc) == 0x20, "CVMixBaseProcessorDesc size should be 0x20");

@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace physicslib {
 		class FeProxyVertexMap_t  {
 		public:
-			PROPERTY(m_Name,GlobalTypes::CUtlString* , 0x0);
-			PROPERTY(m_flWeight,float32 , 0x8);
+			PROPERTY(m_Name,GlobalTypes::CUtlString*, 0x0);
+			PROPERTY(m_flWeight,float32, 0x8);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::physicslib::FeProxyVertexMap_t) == 0x10, "FeProxyVertexMap_t size should be 0x10");

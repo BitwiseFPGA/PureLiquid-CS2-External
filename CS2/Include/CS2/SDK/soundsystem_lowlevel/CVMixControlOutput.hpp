@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixControlOutput : public CS2::soundsystem_lowlevel::CVMixInputBase {
 		public:
-			PROPERTY(m_flDefaultValue,float32 , 0x10);
+			PROPERTY(m_flDefaultValue,float32, 0x10);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixControlOutput) == 0x18, "CVMixControlOutput size should be 0x18");

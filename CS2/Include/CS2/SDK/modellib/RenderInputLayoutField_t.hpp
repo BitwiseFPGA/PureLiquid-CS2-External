@@ -21,12 +21,12 @@ namespace CS2 {
 	namespace modellib {
 		class RenderInputLayoutField_t  {
 		public:
-			PROPERTY_ARRAY(m_pSemanticName,char , 32 , 0x0);
-			PROPERTY(m_nSemanticIndex,int8_t , 0x20);
-			PROPERTY(m_nOffset,int16_t , 0x28);
-			PROPERTY(m_nSlot,int8_t , 0x2a);
-			PROPERTY(m_nSlotType,modellib::RenderSlotType_t , 0x2b);
-			PROPERTY_ARRAY(m_szShaderSemantic,char , 32 , 0x2c);
+			PROPERTY_ARRAY(m_pSemanticName,char, 32 , 0x0);
+			PROPERTY(m_nSemanticIndex,int8_t, 0x20);
+			PROPERTY(m_nOffset,int16_t, 0x28);
+			PROPERTY(m_nSlot,int8_t, 0x2a);
+			PROPERTY(m_nSlotType,modellib::RenderSlotType_t, 0x2b);
+			PROPERTY_ARRAY(m_szShaderSemantic,char, 32 , 0x2c);
 			S2_PAD(0x4C);
 		};
 		//static_assert(sizeof(CS2::modellib::RenderInputLayoutField_t) == 0x4C, "RenderInputLayoutField_t size should be 0x4C");

@@ -23,13 +23,13 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapParticleCountOnScalarEndCap : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t , 0x1d0);
-			PROPERTY(m_nInputMin,int32_t , 0x1d4);
-			PROPERTY(m_nInputMax,int32_t , 0x1d8);
-			PROPERTY(m_flOutputMin,float32 , 0x1dc);
-			PROPERTY(m_flOutputMax,float32 , 0x1e0);
-			PROPERTY(m_bBackwards,bool , 0x1e4);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x1e8);
+			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d0);
+			PROPERTY(m_nInputMin,int32_t, 0x1d4);
+			PROPERTY(m_nInputMax,int32_t, 0x1d8);
+			PROPERTY(m_flOutputMin,float32, 0x1dc);
+			PROPERTY(m_flOutputMax,float32, 0x1e0);
+			PROPERTY(m_bBackwards,bool, 0x1e4);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x1e8);
 			S2_PAD(0x20);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_RemapParticleCountOnScalarEndCap) == 0x1F0, "C_OP_RemapParticleCountOnScalarEndCap size should be 0x1F0");

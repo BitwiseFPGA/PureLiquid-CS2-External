@@ -21,8 +21,8 @@ namespace CS2 {
 	namespace modellib {
 		class CTiltTwistConstraint : public CS2::modellib::CBaseConstraint {
 		public:
-			PROPERTY(m_nTargetAxis,int32_t , 0x60);
-			PROPERTY(m_nSlaveAxis,int32_t , 0x64);
+			PROPERTY(m_nTargetAxis,int32_t, 0x60);
+			PROPERTY(m_nSlaveAxis,int32_t, 0x64);
 			S2_PAD(0x30);
 		};
 		//static_assert(sizeof(CS2::modellib::CTiltTwistConstraint) == 0x90, "CTiltTwistConstraint size should be 0x90");

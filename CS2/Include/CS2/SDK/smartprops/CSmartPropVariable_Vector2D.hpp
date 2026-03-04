@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropVariable_Vector2D : public CS2::smartprops::CSmartPropVariable {
 		public:
-			PROPERTY(m_DefaultValue,GlobalTypes::Vector2D , 0x38);
+			PROPERTY(m_DefaultValue,GlobalTypes::Vector2D, 0x38);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable_Vector2D) == 0x40, "CSmartPropVariable_Vector2D size should be 0x40");

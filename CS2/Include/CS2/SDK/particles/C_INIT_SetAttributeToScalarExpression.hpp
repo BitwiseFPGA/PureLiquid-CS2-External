@@ -26,12 +26,12 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_SetAttributeToScalarExpression : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			PROPERTY(m_nExpression,particles::ScalarExpressionType_t , 0x1d8);
-			PROPERTY(m_flInput1,particleslib::CPerParticleFloatInput , 0x1e0);
-			PROPERTY(m_flInput2,particleslib::CPerParticleFloatInput , 0x350);
-			PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput , 0x4c0);
-			PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t , 0x630);
-			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t , 0x634);
+			PROPERTY(m_nExpression,particles::ScalarExpressionType_t, 0x1d8);
+			NESTED_PROPERTY(m_flInput1,particleslib::CPerParticleFloatInput, 0x1e0);
+			NESTED_PROPERTY(m_flInput2,particleslib::CPerParticleFloatInput, 0x350);
+			NESTED_PROPERTY(m_flOutputRemap,particleslib::CParticleRemapFloatInput, 0x4c0);
+			NESTED_PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t, 0x630);
+			PROPERTY(m_nSetMethod,particles::ParticleSetMethod_t, 0x634);
 			S2_PAD(0x488);
 		};
 		//static_assert(sizeof(CS2::particles::C_INIT_SetAttributeToScalarExpression) == 0x660, "C_INIT_SetAttributeToScalarExpression size should be 0x660");

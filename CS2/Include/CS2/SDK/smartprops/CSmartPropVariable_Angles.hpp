@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropVariable_Angles : public CS2::smartprops::CSmartPropVariable {
 		public:
-			PROPERTY(m_DefaultValue,GlobalTypes::QAngle , 0x38);
+			PROPERTY(m_DefaultValue,GlobalTypes::QAngle, 0x38);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable_Angles) == 0x48, "CSmartPropVariable_Angles size should be 0x48");

@@ -25,11 +25,11 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_LerpToInitialPosition : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nControlPointNumber,int32_t , 0x1d0);
-			PROPERTY(m_flInterpolation,particleslib::CPerParticleFloatInput , 0x1d8);
-			PROPERTY(m_nCacheField,particles::ParticleAttributeIndex_t , 0x348);
-			PROPERTY(m_flScale,particleslib::CParticleCollectionFloatInput , 0x350);
-			PROPERTY(m_vecScale,particleslib::CParticleCollectionVecInput , 0x4c0);
+			PROPERTY(m_nControlPointNumber,int32_t, 0x1d0);
+			NESTED_PROPERTY(m_flInterpolation,particleslib::CPerParticleFloatInput, 0x1d8);
+			NESTED_PROPERTY(m_nCacheField,particles::ParticleAttributeIndex_t, 0x348);
+			NESTED_PROPERTY(m_flScale,particleslib::CParticleCollectionFloatInput, 0x350);
+			NESTED_PROPERTY(m_vecScale,particleslib::CParticleCollectionVecInput, 0x4c0);
 			S2_PAD(0x9A8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_LerpToInitialPosition) == 0xB78, "C_OP_LerpToInitialPosition size should be 0xB78");

@@ -11,14 +11,12 @@
 
 
 #include <SDK/client/ExternalAnimGraphHandle_t.hpp>
+#include <SDK/resourcesystem/InfoForResourceTypeCNmGraphDefinition.hpp>
 #include <SDK/client/ExternalAnimGraphInactiveBehavior_t.hpp>
 
 
 
 namespace CS2 {
-	namespace resourcesystem {
-		class InfoForResourceTypeCNmGraphDefinition;
-	}
 	namespace client {
 		class CBaseAnimGraph;
 	}
@@ -30,11 +28,11 @@ namespace CS2 {
 	namespace client {
 		class ExternalAnimGraph_t  {
 		public:
-			PROPERTY(m_hExtGraphHandle,client::ExternalAnimGraphHandle_t , 0x0);
-			PROPERTY(m_sExternalGraphSlotID,GlobalTypes::CGlobalSymbol , 0x8);
+			NESTED_PROPERTY(m_hExtGraphHandle,client::ExternalAnimGraphHandle_t, 0x0);
+			PROPERTY(m_sExternalGraphSlotID,GlobalTypes::CGlobalSymbol, 0x8);
 			PROPERTY(m_hGraphDefinition,GlobalTypes::CStrongHandleCopyable<resourcesystem::InfoForResourceTypeCNmGraphDefinition>, 0x10);
 			PROPERTY(m_hExternalGraphOwner,GlobalTypes::CHandle<client::CBaseAnimGraph>, 0x18);
-			PROPERTY(m_nInactiveBehavior,client::ExternalAnimGraphInactiveBehavior_t , 0x30);
+			PROPERTY(m_nInactiveBehavior,client::ExternalAnimGraphInactiveBehavior_t, 0x30);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::client::ExternalAnimGraph_t) == 0x38, "ExternalAnimGraph_t size should be 0x38");

@@ -14,6 +14,8 @@
 #include <SDK/entity2/GameTick_t.hpp>
 #include <SDK/server/fogplayerparams_t.hpp>
 #include <SDK/server/audioparams_t.hpp>
+#include <SDK/server/CPostProcessingVolume.hpp>
+#include <SDK/server/CEnvSoundscapeTriggerable.hpp>
 
 
 
@@ -31,18 +33,18 @@ namespace CS2 {
 	namespace server {
 		class CPlayer_CameraServices : public CS2::client::CPlayerPawnComponent {
 		public:
-			PROPERTY(m_vecCsViewPunchAngle,GlobalTypes::QAngle , 0x48);
-			PROPERTY(m_nCsViewPunchAngleTick,entity2::GameTick_t , 0x54);
-			PROPERTY(m_flCsViewPunchAngleTickRatio,float32 , 0x58);
-			PROPERTY(m_PlayerFog,server::fogplayerparams_t , 0x60);
+			PROPERTY(m_vecCsViewPunchAngle,GlobalTypes::QAngle, 0x48);
+			NESTED_PROPERTY(m_nCsViewPunchAngleTick,entity2::GameTick_t, 0x54);
+			PROPERTY(m_flCsViewPunchAngleTickRatio,float32, 0x58);
+			NESTED_PROPERTY(m_PlayerFog,server::fogplayerparams_t, 0x60);
 			PROPERTY(m_hColorCorrectionCtrl,GlobalTypes::CHandle<server::CColorCorrection>, 0xa0);
 			PROPERTY(m_hViewEntity,GlobalTypes::CHandle<server::CBaseEntity>, 0xa4);
 			PROPERTY(m_hTonemapController,GlobalTypes::CHandle<server::CTonemapController2>, 0xa8);
-			PROPERTY(m_audio,server::audioparams_t , 0xb0);
+			NESTED_PROPERTY(m_audio,server::audioparams_t, 0xb0);
 			PROPERTY(m_PostProcessingVolumes,server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CPostProcessingVolume>>, 0x128);
-			PROPERTY(m_flOldPlayerZ,float32 , 0x140);
-			PROPERTY(m_flOldPlayerViewOffsetZ,float32 , 0x144);
-			PROPERTY(m_hTriggerSoundscapeList,server::CUtlVector<GlobalTypes::CHandle<server::CEnvSoundscapeTriggerable>>, 0x160);
+			PROPERTY(m_flOldPlayerZ,float32, 0x140);
+			PROPERTY(m_flOldPlayerViewOffsetZ,float32, 0x144);
+			NESTED_PROPERTY(m_hTriggerSoundscapeList,server::CUtlVector<GlobalTypes::CHandle<server::CEnvSoundscapeTriggerable>>, 0x160);
 			S2_PAD(0x130);
 		};
 		//static_assert(sizeof(CS2::server::CPlayer_CameraServices) == 0x178, "CPlayer_CameraServices size should be 0x178");

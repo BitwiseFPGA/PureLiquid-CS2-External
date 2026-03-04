@@ -20,16 +20,16 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class VMixDynamicsBand_t  {
 		public:
-			PROPERTY(m_fldbGainInput,float32 , 0x0);
-			PROPERTY(m_fldbGainOutput,float32 , 0x4);
-			PROPERTY(m_fldbThresholdBelow,float32 , 0x8);
-			PROPERTY(m_fldbThresholdAbove,float32 , 0xc);
-			PROPERTY(m_flRatioBelow,float32 , 0x10);
-			PROPERTY(m_flRatioAbove,float32 , 0x14);
-			PROPERTY(m_flAttackTimeMS,float32 , 0x18);
-			PROPERTY(m_flReleaseTimeMS,float32 , 0x1c);
-			PROPERTY(m_bEnable,bool , 0x20);
-			PROPERTY(m_bSolo,bool , 0x21);
+			PROPERTY(m_fldbGainInput,float32, 0x0);
+			PROPERTY(m_fldbGainOutput,float32, 0x4);
+			PROPERTY(m_fldbThresholdBelow,float32, 0x8);
+			PROPERTY(m_fldbThresholdAbove,float32, 0xc);
+			PROPERTY(m_flRatioBelow,float32, 0x10);
+			PROPERTY(m_flRatioAbove,float32, 0x14);
+			PROPERTY(m_flAttackTimeMS,float32, 0x18);
+			PROPERTY(m_flReleaseTimeMS,float32, 0x1c);
+			PROPERTY(m_bEnable,bool, 0x20);
+			PROPERTY(m_bSolo,bool, 0x21);
 			S2_PAD(0x24);
 		};
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::VMixDynamicsBand_t) == 0x24, "VMixDynamicsBand_t size should be 0x24");

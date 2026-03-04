@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_NormalLock : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nControlPointNumber,int32_t , 0x1d0);
+			PROPERTY(m_nControlPointNumber,int32_t, 0x1d0);
 			S2_PAD(0x8);
 		};
 		//static_assert(sizeof(CS2::particles::C_OP_NormalLock) == 0x1D8, "C_OP_NormalLock size should be 0x1D8");

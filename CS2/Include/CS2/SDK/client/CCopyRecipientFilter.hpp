@@ -20,9 +20,9 @@ namespace CS2 {
 	namespace client {
 		class CCopyRecipientFilter  {
 		public:
-			PROPERTY(m_Flags,int32_t , 0x8);
-			PROPERTY(m_Recipients,GlobalTypes::CUtlVector<GlobalTypes::CPlayerSlot>, 0x10);
-			PROPERTY(m_slotPlayerExcludedDueToPrediction,GlobalTypes::CPlayerSlot , 0x30);
+			PROPERTY(m_Flags,int32_t, 0x8);
+			NESTED_PROPERTY(m_Recipients,GlobalTypes::CUtlVector<GlobalTypes::CPlayerSlot>, 0x10);
+			PROPERTY(m_slotPlayerExcludedDueToPrediction,GlobalTypes::CPlayerSlot, 0x30);
 			S2_PAD(0x38);
 		};
 		//static_assert(sizeof(CS2::client::CCopyRecipientFilter) == 0x38, "CCopyRecipientFilter size should be 0x38");

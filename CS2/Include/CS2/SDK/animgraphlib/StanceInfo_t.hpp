@@ -20,8 +20,8 @@ namespace CS2 {
 	namespace animgraphlib {
 		class StanceInfo_t  {
 		public:
-			PROPERTY(m_vPosition,GlobalTypes::Vector , 0x0);
-			PROPERTY(m_flDirection,float32 , 0xc);
+			PROPERTY(m_vPosition,GlobalTypes::Vector, 0x0);
+			PROPERTY(m_flDirection,float32, 0xc);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::animgraphlib::StanceInfo_t) == 0x10, "StanceInfo_t size should be 0x10");

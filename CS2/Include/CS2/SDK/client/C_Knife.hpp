@@ -21,7 +21,7 @@ namespace CS2 {
 	namespace client {
 		class C_Knife : public CS2::client::C_CSWeaponBase {
 		public:
-			PROPERTY(m_bFirstAttack,bool , 0x1f40);
+			PROPERTY(m_bFirstAttack,bool, 0x1f40);
 			S2_PAD(0x10);
 		};
 		//static_assert(sizeof(CS2::client::C_Knife) == 0x1F50, "C_Knife size should be 0x1F50");

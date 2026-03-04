@@ -21,9 +21,9 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_RandomScale : public CS2::smartprops::CSmartPropTransformOperation {
 		public:
-			PROPERTY(m_flRandomScaleMin,GlobalTypes::CSmartPropAttributeFloat , 0x50);
-			PROPERTY(m_flRandomScaleMax,GlobalTypes::CSmartPropAttributeFloat , 0x90);
-			PROPERTY(m_flSnapIncrement,GlobalTypes::CSmartPropAttributeFloat , 0xd0);
+			PROPERTY(m_flRandomScaleMin,GlobalTypes::CSmartPropAttributeFloat, 0x50);
+			PROPERTY(m_flRandomScaleMax,GlobalTypes::CSmartPropAttributeFloat, 0x90);
+			PROPERTY(m_flSnapIncrement,GlobalTypes::CSmartPropAttributeFloat, 0xd0);
 			S2_PAD(0xC0);
 		};
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_RandomScale) == 0x110, "CSmartPropOperation_RandomScale size should be 0x110");
