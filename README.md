@@ -1,6 +1,7 @@
 # Pure Liquid CS2 [Watch Preview on YouTube](https://www.youtube.com/watch?v=S9A8UnHnU7Y)
 
-## *Advanced External Base For Counter Strike 2 Including TraceShape visibility check, CreateMove Hook for autofire, Silentaim and Chams*  
+## *Advanced External Base For Counter Strike 2 Including TraceShape visibility check, CreateMove Hook for autofire, Silentaim and Chams*
+
 ---
 
 ## Features
@@ -14,12 +15,13 @@
 🎯 **Generated SDK** - Fully generated SDK    
 🎯 **External CSchemaSystem** - Schema Offset manager      
 🎯 **External Aimbot** - with TraceShape Visibility Check     
-🎯 **External Silentaim** - Integrated within the aimbot (currently re-hooking doesnt work properly. so if you restart the base you need to restart CS2 )     
-🎯 **External CreateMove Hook** - for AImbot Autoshoot and in the feature silent aim  
+🎯 **External Silentaim** - Integrated within the aimbot  
+🎯 **External CreateMove Hook** - for Aimbot Autoshoot and silent aim  
 🎯 **External CAnimatableSceneObjectDesc Hook** - for External Chams  
 🎯 **External CUIEngineSource2** - Run script in Context of a panel or just standalone  
 🎯 **External Model Change** - Change models of entities externally  
-🎯 **External Model Manager** - Collects Hitbox and bone data for given CModel_Imp    
+🎯 **External Model Manager** - Collects Hitbox and bone data for given CModel_Imp  
+♻️ **Hook State Persistence** - Hooks survive external process restarts without needing to unhook first
 
 ---
 
@@ -35,7 +37,7 @@
 
 PureLiquid CS2 is a reverse engineering project that implements accurate player visibility detection for Counter-Strike 2 without DLL injection.   
 There is also support for Interfaces, PatternScanning, module cloning and so on  
-The project demonstrates:  
+The project demonstrates:
 
 - **Remote Function Execution** - Execute CS2's internal TraceShape function from an external process
 - **External Process Manipulation** - Comprehensive memory operations without traditional injection techniques
@@ -54,6 +56,63 @@ The system performs visibility checks by:
 5. **Result Retrieval** - Reads trace results to determine if line-of-sight exists
 
 This approach provides the same accuracy as CS2's internal checks while operating entirely externally.
+
+---
+
+## Hook State Persistence
+
+All hooks support **cross-restart restore**. When a hook is installed, its state (remote allocation addresses, call site address, etc.) is saved to `hook_state.json` next to the executable. On the next run, each `Hook()` / `InstallRendererHook()` call first attempts to restore from this file before doing a full re-injection.
+
+This means **you no longer need to unhook before closing the external process** — simply restart it and the hooks will be reattached to the already-running CS2 instance automatically.
+
+### Config file format
+
+```json
+[
+  {
+    "pid": 7240,
+    "hookName": "CreateMoveHook",
+    "dataRemote": "0x17EE7A70000",
+    "shellcodeRemote": "0x17EE7A90000",
+    "targetFunction": "0x7FF6123ABC00"
+  },
+  {
+    "pid": 7240,
+    "hookName": "CMsgQAngleCpyHook",
+    "dataRemote": "0x17EE7B10000",
+    "shellcodeRemote": "0x17EE7B30000",
+    "targetFunction": "0x0",
+    "callSiteAddr": "0x7FF612400A20"
+  },
+  {
+    "pid": 7240,
+    "hookName": "GetInaccuracyHook",
+    "dataRemote": "0x17EE7C50000",
+    "shellcodeRemote": "0x17EE7C70000",
+    "targetFunction": "0x0",
+    "callSiteAddr": "0x7FF612501B44"
+  }
+]
+```
+
+`callSiteAddr` is only present for call-site patched hooks (`CMsgQAngleCpy`, `GetInaccuracy`). Vtable hooks (`CreateMoveHook`, `CAnimatableSceneObjectDescHook`) use `targetFunction` as their liveness anchor instead.
+
+### Restore validation
+
+Before restoring, each hook verifies that the saved state is still live in the target process:
+
+| Hook | Liveness check |
+|---|---|
+| `CreateMoveHook` | VTable entry still points to our shellcode |
+| `CAnimatableSceneObjectDescHook` | VTable entry still points to our shellcode |
+| `CMsgQAngleCpyHook` | `callSiteAddr` bytes are `FF 15` (our `call [rip+offset]` patch) |
+| `GetInaccuracyHook` | `callSiteAddr` bytes are `FF 15` (our `call [rip+offset]` patch) |
+
+If validation fails (e.g. CS2 was restarted and reclaimed the memory), the stale config entry is removed and a full re-injection is performed instead.
+
+### Unhook behaviour
+
+Calling `Unhook()` / `UninstallRendererHook()` restores the original bytes **and** removes the entry from `hook_state.json`, so a subsequent restart will perform a clean re-injection rather than attempting a restore.
 
 ---
 
@@ -162,7 +221,7 @@ int main() {
 
 ---
 
-## External CSchemaSystem Offset Manager Usage:  
+## External CSchemaSystem Offset Manager Usage:
 
 ```c++
 int main() {
@@ -295,9 +354,7 @@ int main() {
 
 ```
 
-## Overlay  
-CURRENTLY LAGGY!! - Can be disabled by undefining "INCLUDE_OVERLAY" in "External/Include.h"!  
-Preview:
+## Overlay
 ![CS2 Overlay Demo](https://raw.githubusercontent.com/xsip/PureLiquid-CS2-External/refs/heads/main/overlay-preview.png)
 
 
@@ -345,4 +402,3 @@ This project is provided for **educational and research purposes only**. Using t
 
 ## Other Projects
 [CS2-External-Chams](https://github.com/xsip/CS2-External-Chams)
-
