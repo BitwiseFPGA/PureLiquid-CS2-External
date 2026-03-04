@@ -9,3 +9,5 @@ Intermediate
 *.mdmp
 *.lib
 pl-config.json
+hooks.json
+remote_threads.json

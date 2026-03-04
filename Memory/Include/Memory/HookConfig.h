@@ -8,7 +8,7 @@
 
 namespace HookConfig {
 
-    constexpr const char* CONFIG_PATH = "pl-config.json";
+    constexpr const char* CONFIG_PATH = "hooks.json";
 
     struct HookEntry {
         uint32_t    pid = 0;
