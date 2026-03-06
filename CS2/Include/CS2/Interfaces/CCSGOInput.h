@@ -199,7 +199,7 @@ namespace CS2 {
 
 	class CCSGOInput {
 	private:
-		inline static LiquidHookEx m_Hook = LiquidHookEx(&Globals::proc, LiquidHookEx::HookType::VTable, "CreateMoveHook");
+		inline static LiquidHookEx m_Hook = LiquidHookEx("CreateMoveHook", &Globals::proc);
 		// CreateMove Hook
 
 		// CreateMove Shellcode

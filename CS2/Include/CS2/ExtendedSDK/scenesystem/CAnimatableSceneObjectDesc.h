@@ -35,7 +35,7 @@ namespace CS2 {
     class CAnimatableSceneObjectDesc
     {
     private:
-        inline static LiquidHookEx m_Hook = LiquidHookEx(&Globals::proc, LiquidHookEx::HookType::VTable, "CAnimatableSceneObjectDescHook");
+        inline static LiquidHookEx m_Hook = LiquidHookEx("CAnimatableSceneObjectDescHook", &Globals::proc);
 
         static void* __fastcall RenderObjects_Hook_Shellcode(
             uint64_t a1, uint64_t a2, CBaseSceneData* a3, int32_t a4,

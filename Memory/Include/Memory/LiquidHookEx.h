@@ -11,10 +11,6 @@ public:
         uint64_t pOriginalFunc;
     };
 
-    enum class HookType {
-        VTable = 0,
-    };
-
     // Must stay in sync with HookConfig::RipSlotTarget
     enum class RipSlotTarget {
         HookData = 0,
@@ -47,7 +43,6 @@ private:
     };
 
     Process* m_pProc;
-    HookType                m_HookType;
     std::string             m_szName;
 
     void* m_pShellcodeRemote{};
@@ -59,9 +54,11 @@ private:
     std::vector<RemoteSlot> m_RemoteSlots{};   // one per unique patched RIP variable
 
 public:
-    LiquidHookEx(Process* proc, HookType type, std::string name)
-        : m_pProc(proc), m_HookType(type), m_szName(std::move(name)) {
+    LiquidHookEx( std::string name, Process* proc = nullptr)
+        : m_pProc(proc),  m_szName(std::move(name)) {
     }
+    
+    void SetProc(Process* p) { m_pProc = p; };
 
     template <typename HOOK_DATA>
         requires std::is_base_of_v<BaseHookData, HOOK_DATA>
@@ -98,15 +95,12 @@ public:
             return false;
         }
 
-        // ── resolve vtable entry ─────────────────────────────────────
-        if (m_HookType == HookType::VTable) {
-            auto vTableInfo = pMod->FindVTableContainingFunction(pFnAddr);
-            if (!vTableInfo.vTableAddr || vTableInfo.index < 0) {
-                printf("[!] %s: vtable lookup failed\n", m_szName.c_str());
-                return false;
-            }
-            m_pTargetFunction = vTableInfo.vTableAddr + (vTableInfo.index * 8);
+        auto vTableInfo = pMod->FindVTableContainingFunction(pFnAddr);
+        if (!vTableInfo.vTableAddr || vTableInfo.index < 0) {
+            printf("[!] %s: vtable lookup failed\n", m_szName.c_str());
+            return false;
         }
+        m_pTargetFunction = vTableInfo.vTableAddr + (vTableInfo.index * 8);
 
         uint64_t originalFunc = m_pProc->ReadDirect<uint64_t>(m_pTargetFunction);
         printf("[+] %s: original fn @ 0x%llX\n", m_szName.c_str(), originalFunc);

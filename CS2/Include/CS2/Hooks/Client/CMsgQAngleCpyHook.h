@@ -23,7 +23,7 @@ namespace CS2 {
 
     class CMsgQAngleCpy {
     private:
-        inline static LiquidCallHookEx m_Hook = LiquidCallHookEx(&Globals::proc, "CMsgQAngleCpyHook");
+        inline static LiquidCallHookEx m_Hook = LiquidCallHookEx("CMsgQAngleCpyHook", &Globals::proc);
 
         static void __fastcall SetAng_Hook_Shellcode(uintptr_t a1, CMsgQAngleTest* a2);
         static void SetAng_Hook_Shellcode_End();

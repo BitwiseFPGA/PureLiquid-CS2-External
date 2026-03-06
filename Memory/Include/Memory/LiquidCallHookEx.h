@@ -118,9 +118,12 @@ private:
     std::vector<RemoteSlot> m_RemoteSlots{};
 
 public:
-    LiquidCallHookEx(Process* proc, std::string name)
+    LiquidCallHookEx(std::string name, Process* proc = nullptr)
         : m_pProc(proc), m_szName(std::move(name)) {
     }
+
+
+    void SetProc(Process* p) { m_pProc = p; };
 
     // ── Hook ────────────────────────────────────────────────────────────────
     //

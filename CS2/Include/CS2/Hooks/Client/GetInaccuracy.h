@@ -15,7 +15,7 @@ namespace CS2 {
 
     class GetInaccuracy {
     private:
-        inline static LiquidCallHookEx m_Hook = LiquidCallHookEx(&Globals::proc, "GetInaccuracyHook");
+        inline static LiquidCallHookEx m_Hook = LiquidCallHookEx("GetInaccuracyHook", &Globals::proc);
 
         static float __fastcall GetInaccuracy_Hook_Shellcode(
             client::C_CSWeaponBaseGun* pWeapon, void* unknown, void* unknown2);
