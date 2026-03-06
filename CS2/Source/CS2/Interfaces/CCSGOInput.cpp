@@ -88,41 +88,6 @@ namespace CS2 {
 #pragma optimize("", on)
 #pragma code_seg()
 
-    uintptr_t CCSGOInput::FindCreateMove()
-    {
-        auto client = proc.GetRemoteModule("client.dll");
-        if (!client || !client->IsValid()) {
-            printf("[!] Failed to get client.dll\n");
-            return 0;
-        }
-
-        // Pattern for CreateMove function
-        const char* pattern = "48 8B C4 4C 89 40 ?? 48 89 48 ?? 55 53 41 54";
-
-        uint8_t* addr = client->ScanMemory(pattern);
-        if (!addr) {
-            printf("[!] Failed to find CreateMove pattern\n");
-            return 0;
-        }
-
-        uintptr_t createMoveAddr = reinterpret_cast<uintptr_t>(addr);
-        printf("[+] Found CreateMove at: client.dll + 0x%llX\n",
-            createMoveAddr - client->GetAddr());
-
-        return createMoveAddr;
-    }
-
-
-
-    // -----------------------------------------------------------------------
-    // TryRestore – reload hook state saved by a previous process instance.
-    // Returns true if the state was valid and all members were restored,
-    // so that HookCreateMove() can skip re-injecting shellcode.
-    // -----------------------------------------------------------------------
-    bool CCSGOInput::TryRestore()
-    {
-        return true;
-    }
 
     bool CCSGOInput::HookCreateMove()
     {

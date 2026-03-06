@@ -54,7 +54,7 @@ namespace CS2 {
 
             bool isVisible = false;
 
-
+            /*
             uint32_t handleValue = *reinterpret_cast<uint32_t*>(&a3->sceneObject->m_hOwner);
             if (handleValue) {
                 uint32_t entityIndex = handleValue & 0x7FFF;
@@ -66,15 +66,15 @@ namespace CS2 {
                         break;
                     }
                 }
-            }
+            }*/
             for (int i = 0; i < a4; ++i)
             {
                 auto scene = &a3[i];
                 if (scene) {
-                    scene->r = isVisible ? data->r_visible : data->r;
-                    scene->g = isVisible ? data->g_visible : data->g;
-                    scene->b = isVisible ? data->b_visible : data->b;
-                    scene->a = isVisible ? data->a_visible : data->a;
+                    scene->r =  data->r;
+                    scene->g =  data->g;
+                    scene->b = data->b;
+                    scene->a = data->a;
                     if (data->hMaterialToUse) {
                         scene->material = data->hMaterialToUse->pData;
                         scene->material2 = data->hMaterialToUse->pData;
@@ -91,93 +91,6 @@ namespace CS2 {
 #pragma optimize("", on)
 #pragma code_seg()
 
-    uintptr_t CAnimatableSceneObjectDesc::FindRendererFn()
-    {
-        auto sceneSystemDll = proc.GetRemoteModule("scenesystem.dll");
-        if (!sceneSystemDll || !sceneSystemDll->IsValid()) {
-            printf("[!] Failed to get scenesystem.dll\n");
-            return 0;
-        }
-
-
-        uint8_t* addr = sceneSystemDll->ScanMemory(CANIMATABLE_SCENE_OBJECT_DESC_RENDER_FN_PATTERN);
-        if (!addr) {
-            printf("Failed to find CAnimatableSceneObjectDesc::Render pattern\n");
-            return 0;
-        }
-
-        uintptr_t renderObjectsAddr = reinterpret_cast<uintptr_t>(addr);
-        return renderObjectsAddr;
-    }
-
-    VTableFunctionInfo CAnimatableSceneObjectDesc::FindVTableDataForRendererFunction()
-    {
-
-        uintptr_t renderObjectsPtr = FindRendererFn();
-        if (!renderObjectsPtr) {
-            return { -1, 0 };
-        }
-
-        return proc.FindVTableContainingFunction(renderObjectsPtr, "scenesystem.dll");
-
-    }
-
-    // -----------------------------------------------------------------------
-    // TryRestore – reload hook state saved by a previous process instance.
-    // hMaterialToUse is passed through so callers don't need a separate
-    // SetChamsMaterial() call after restore.
-    // -----------------------------------------------------------------------
-    bool CAnimatableSceneObjectDesc::TryRestore(::Source2::CStrongHandle<CMaterial2>* hMaterialToUse)
-    {
-        /*uint32_t currentPid = proc.GetProcId();
-        auto entry = HookConfig::Find("CAnimatableSceneObjectDescHook", currentPid);
-        if (!entry) {
-            printf("[HookConfig] No saved CAnimatableSceneObjectDescHook state for pid %u\n", currentPid);
-            return false;
-        }
-
-        if (!entry->dataRemote || !entry->shellcodeRemote || !entry->targetFunction) {
-            printf("[HookConfig] Saved CAnimatableSceneObjectDescHook state is incomplete – ignoring\n");
-            HookConfig::Remove("CAnimatableSceneObjectDescHook");
-            return false;
-        }
-
-        // Verify vtable entry still points to our shellcode.
-        uint64_t currentVtableEntry = proc.ReadDirect<uint64_t>(entry->targetFunction);
-        if (currentVtableEntry != entry->shellcodeRemote) {
-            printf("[HookConfig] VTable entry no longer points to our shellcode – hook was removed\n");
-            HookConfig::Remove("CAnimatableSceneObjectDescHook");
-            return false;
-        }
-
-        // Probe the remote data struct.
-        CAnimatableSceneObjectDescRenderHookData probe{};
-        if (!proc.Read(entry->dataRemote, &probe, sizeof(probe)) || !probe.originalFunc) {
-            printf("[HookConfig] Remote hook data at 0x%llX is invalid\n", (uint64_t)entry->dataRemote);
-            HookConfig::Remove("CAnimatableSceneObjectDescHook");
-            return false;
-        }
-
-        m_pDataRemote = reinterpret_cast<void*>(entry->dataRemote);
-        m_pShellcodeRemote = reinterpret_cast<void*>(entry->shellcodeRemote);
-        m_pTargetFunction = entry->targetFunction;
-
-        g_pOriginalRenderObjects = reinterpret_cast<void*>(probe.originalFunc);
-        g_pHookData = reinterpret_cast<CAnimatableSceneObjectDescRenderHookData*>(entry->dataRemote);
-
-        // Re-apply the material pointer (it lives in our address space, so it changes each run).
-        if (hMaterialToUse) {
-            proc.Write<::Source2::CStrongHandle<CMaterial2>*>(
-                entry->dataRemote + offsetof(CAnimatableSceneObjectDescRenderHookData, hMaterialToUse),
-                hMaterialToUse);
-        }
-
-        m_bIsHooked = true;
-        printf("[HookConfig] CAnimatableSceneObjectDescHook state restored from config (pid %u)\n", currentPid);
-        */
-        return true;
-    }
-
     bool CAnimatableSceneObjectDesc::InstallRendererHook(::Source2::CStrongHandle<CMaterial2>* hMaterialToUse)
     {
 
@@ -189,11 +102,6 @@ namespace CS2 {
         data.g = 255;
         data.b = 255;
         data.a = 25;
-
-        data.r_visible = 0;
-        data.g_visible = 255;
-        data.b_visible = 0;
-        data.a_visible = 255;
 
         data.pStrstr = reinterpret_cast<uintptr_t>(GetProcAddress(GetModuleHandleA("ucrtbase.dll"), "strstr"));
 
@@ -210,239 +118,17 @@ namespace CS2 {
                 LiquidHookEx::RipSlot::Orig(&g_pOriginalRenderObjects),
             }
             );
-        /*
-        if (m_bIsHooked) {
-            printf("CAnimatableSceneObjectDesc::Render Hook already installed\n");
-            return false;
-        }
-
-        // Attempt to reuse allocations from a previous run before doing a full hook.
-        if (TryRestore(hMaterialToUse)) {
-            printf("[+] CAnimatableSceneObjectDesc hook restored from saved state – skipping re-injection\n");
-            return true;
-        }
-
-        printf("[+] Trying to hook CAnimatableSceneObjectDesc::Render\n");
-
-        VTableFunctionInfo vtableInfo = FindVTableDataForRendererFunction();
-        if (vtableInfo.vTableAddr == 0 || vtableInfo.index < 0) {
-            printf("Couldn't find render function VTable Pointer!");
-            return false;
-        }
-
-        m_pTargetFunction = vtableInfo.vTableAddr + (vtableInfo.index * 8);
-
-        uint64_t originalFunc = proc.ReadDirect<uint64_t>(m_pTargetFunction);
-        g_pOriginalRenderObjects = reinterpret_cast<void*>(originalFunc);
-        printf("OriginalFunc: 0x%p\n", originalFunc);
-
-        m_pDataRemote = proc.Alloc(sizeof(CAnimatableSceneObjectDescRenderHookData));
-        if (!m_pDataRemote) {
-            printf("Failed to allocate CAnimatableSceneObjectDescRenderHookData\n");
-            return false;
-        }
-
-        CAnimatableSceneObjectDescRenderHookData data{};
-        data.originalFunc = originalFunc;
-
-        data.hMaterialToUse = hMaterialToUse;
-        data.bChamsEnabled = false;
-
-        data.r = 255;
-        data.g = 255;
-        data.b = 255;
-        data.a = 25;
-
-        data.r_visible = 0;
-        data.g_visible = 255;
-        data.b_visible = 0;
-        data.a_visible = 255;
-
-        memset(data.mVisiblePawnIndexes, 0, sizeof(data.mVisiblePawnIndexes));
-
-        data.pStrstr = reinterpret_cast<uintptr_t>(GetProcAddress(GetModuleHandleA("ucrtbase.dll"), "strstr"));
-
-        strcpy_s(data.weaponStr, sizeof(data.weaponStr), "weapon");
-
-
-        if (!proc.Write<CAnimatableSceneObjectDescRenderHookData>(reinterpret_cast<uintptr_t>(m_pDataRemote), data)) {
-            printf("Failed to write CAnimatableSceneObjectDescRenderHookData\n");
-            return false;
-        }
-
-        m_pShellcodeRemote = proc.AllocAndWriteShellcode(
-            RenderObjects_Hook_Shellcode,
-            RenderObjects_Hook_Shellcode_End
-        );
-        if (!m_pShellcodeRemote) {
-            printf("Failed to write hook shellcode\n");
-            return false;
-        }
-
-        uintptr_t localShellcodeStart = reinterpret_cast<uintptr_t>(RenderObjects_Hook_Shellcode);
-        uintptr_t localShellcodeEnd = reinterpret_cast<uintptr_t>(RenderObjects_Hook_Shellcode_End);
-        size_t shellcodeSize = localShellcodeEnd - localShellcodeStart;
-        uint8_t* localCode = reinterpret_cast<uint8_t*>(localShellcodeStart);
-        uintptr_t localDataPtr = reinterpret_cast<uintptr_t>(&g_pHookData);
-
-        bool foundDataPtr = false;
-
-        void* pDataPtrStorage = proc.Alloc(8);
-        if (!pDataPtrStorage) {
-            printf("Failed to allocate data pointer storage\n");
-            return false;
-        }
-
-        if (!proc.Write<uint64_t>(reinterpret_cast<uintptr_t>(pDataPtrStorage),
-            reinterpret_cast<uint64_t>(m_pDataRemote))) {
-            printf("Failed to write data pointer\n");
-            return false;
-        }
-
-        for (size_t i = 0; i < shellcodeSize - 7; i++) {
-            if (localCode[i] == 0x48 && localCode[i + 1] == 0x8B && localCode[i + 2] == 0x05) {
-                uintptr_t instructionAddr = reinterpret_cast<uintptr_t>(m_pShellcodeRemote) + i;
-                uintptr_t targetAddr = reinterpret_cast<uintptr_t>(pDataPtrStorage);
-                int32_t newOffset = static_cast<int32_t>(targetAddr - (instructionAddr + 7));
-
-                if (!proc.Write<int32_t>(instructionAddr + 3, newOffset)) {
-                    printf("Failed to patch RIP offset for m_pDataRemote\n");
-                    return false;
-                }
-
-                foundDataPtr = true;
-                break;
-            }
-        }
-
-
-        uintptr_t localOrigPtr = reinterpret_cast<uintptr_t>(&g_pOriginalRenderObjects);
-        bool foundOrigPtr = false;
-
-
-        void* pOrigPtrStorage = proc.Alloc(8);
-        if (!pOrigPtrStorage) {
-            printf("Failed to allocate orig pointer storage\n");
-            return false;
-        }
-
-        if (!proc.Write<uint64_t>(reinterpret_cast<uintptr_t>(pOrigPtrStorage), originalFunc)) {
-            printf("Failed to write original pointer\n");
-            return false;
-        }
-
-        int ripLoadCount = 0;
-        int patchedOrigCount = 0;
-
-        for (size_t i = 0; i < shellcodeSize - 7; i++) {
-            if (localCode[i] == 0x48 && localCode[i + 1] == 0x8B && localCode[i + 2] == 0x05) {
-                ripLoadCount++;
-
-                if (ripLoadCount == 1) continue;
-
-                uintptr_t instructionAddr = reinterpret_cast<uintptr_t>(m_pShellcodeRemote) + i;
-                uintptr_t targetAddr = reinterpret_cast<uintptr_t>(pOrigPtrStorage);
-                int32_t newOffset = static_cast<int32_t>(targetAddr - (instructionAddr + 7));
-
-                if (!proc.Write<int32_t>(instructionAddr + 3, newOffset)) {
-                    printf("Failed to patch RIP offset for g_pOriginalRenderObjects at 0x%zX\n", i);
-                    return false;
-                }
-
-                patchedOrigCount++;
-                foundOrigPtr = true;
-            }
-        }
-
-        if (patchedOrigCount == 0) {
-            printf("Could not find any g_pOriginalRenderObjects references!\n");
-            return false;
-        }
-
-        DWORD oldProtect;
-        if (!VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(m_pTargetFunction),
-            8, PAGE_READWRITE, &oldProtect)) {
-            printf("VirtualProtectEx failed: %d\n", GetLastError());
-            return false;
-        }
-
-        if (!proc.Write<uint64_t>(m_pTargetFunction, reinterpret_cast<uint64_t>(m_pShellcodeRemote))) {
-            printf("Failed to write hook to VTable\n");
-            VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(m_pTargetFunction),
-                8, oldProtect, &oldProtect);
-            return false;
-        }
-
-        VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(m_pTargetFunction),
-            8, oldProtect, &oldProtect);
-
-        m_bIsHooked = true;
-        printf("[+] CAnimatableSceneObjectDesc::Render Hooked\n");
-
-        // Persist state for cross-restart restore.
-        HookConfig::HookEntry cfgEntry;
-        cfgEntry.pid = proc.GetProcId();
-        cfgEntry.hookName = "CAnimatableSceneObjectDescHook";
-        cfgEntry.dataRemote = reinterpret_cast<uintptr_t>(m_pDataRemote);
-        cfgEntry.shellcodeRemote = reinterpret_cast<uintptr_t>(m_pShellcodeRemote);
-        cfgEntry.targetFunction = m_pTargetFunction;
-        HookConfig::Upsert(cfgEntry);
-        printf("[HookConfig] CAnimatableSceneObjectDescHook state saved to config\n");
-
-        return true;*/
+  
     }
 
     bool CAnimatableSceneObjectDesc::UninstallRendererHook()
     {
-
         return m_Hook.Unhook();
-        /*
-        if (!m_bIsHooked) {
-            printf("Hook not installed\n");
-            return false;
-        }
-
-        printf("[+] Trying to unhook CAnimatableSceneObjectDesc::Render\n");
-
-        uint64_t originalFunc = reinterpret_cast<uint64_t>(g_pOriginalRenderObjects);
-
-        DWORD oldProtect;
-        if (!VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(m_pTargetFunction),
-            8, PAGE_READWRITE, &oldProtect)) {
-            printf("VirtualProtectEx failed: %d\n", GetLastError());
-            return false;
-        }
-
-        if (!proc.Write<uint64_t>(m_pTargetFunction, originalFunc)) {
-            printf("Failed to restore VTable entry\n");
-            VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(m_pTargetFunction),
-                8, oldProtect, &oldProtect);
-            return false;
-        }
-
-        VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(m_pTargetFunction),
-            8, oldProtect, &oldProtect);
-
-        printf("[+] CAnimatableSceneObjectDesc::Render hook uninstalled\n");
-
-        m_bIsHooked = false;
-
-        // Remove persisted state so a future restart won't try to restore a dead hook.
-        HookConfig::Remove("CAnimatableSceneObjectDescHook");
-        printf("[HookConfig] CAnimatableSceneObjectDescHook entry removed from config\n");
-
-        return true;*/
     }
 
     CAnimatableSceneObjectDescRenderHookData CAnimatableSceneObjectDesc::GetExecutionData()
     {
         return m_Hook.ReadData<CAnimatableSceneObjectDescRenderHookData>();
-        /*
-        CAnimatableSceneObjectDescRenderHookData data{};
-        if (m_pDataRemote) {
-            proc.Read(reinterpret_cast<uintptr_t>(m_pDataRemote), &data, sizeof(CAnimatableSceneObjectDescRenderHookData));
-        }
-        return data;*/
     }
 
     void CAnimatableSceneObjectDesc::SetChamsEnabled(bool bActive) {
@@ -451,16 +137,6 @@ namespace CS2 {
             return;
 
         m_Hook.WriteField<bool>(offsetof(CAnimatableSceneObjectDescRenderHookData, bChamsEnabled), bActive);
-        /*
-        if (!m_pDataRemote) return;
-
-        proc.Write<bool>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) + offsetof(CAnimatableSceneObjectDescRenderHookData, bChamsEnabled),
-            bActive
-        );
-
-        printf("[+] Chams %s\n", bActive ? "enabled" : "disabled");
-        */
     }
 
     void CAnimatableSceneObjectDesc::SetChamsColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a, bool bLog) {
@@ -472,100 +148,12 @@ namespace CS2 {
         m_Hook.WriteField<uint8_t>(offsetof(CAnimatableSceneObjectDescRenderHookData, g), g);
         m_Hook.WriteField<uint8_t>(offsetof(CAnimatableSceneObjectDescRenderHookData, b), b);
         m_Hook.WriteField<uint8_t>(offsetof(CAnimatableSceneObjectDescRenderHookData, a), a);
-
-
-        /*if (!m_pDataRemote) return;
-
-        proc.Write<uint8_t>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) + offsetof(CAnimatableSceneObjectDescRenderHookData, r),
-            r
-        );
-
-        proc.Write<uint8_t>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) + offsetof(CAnimatableSceneObjectDescRenderHookData, g),
-            g
-        );
-
-        proc.Write<uint8_t>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) + offsetof(CAnimatableSceneObjectDescRenderHookData, b),
-            b
-        );
-
-        proc.Write<uint8_t>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) + offsetof(CAnimatableSceneObjectDescRenderHookData, a),
-            a
-        );
-        if (bLog)
-            printf("[+] Chams Color override: %i %i %i %i\n", r, g, b, a);
-            */
-
     }
 
     void CAnimatableSceneObjectDesc::SetChamsMaterial(::Source2::CStrongHandle<CMaterial2>* mat) {
-
-
         if (!m_Hook.IsHooked())
             return;
 
         m_Hook.WriteField<::Source2::CStrongHandle<CMaterial2>*>(offsetof(CAnimatableSceneObjectDescRenderHookData, hMaterialToUse), mat);
-        /*
-
-        if (!m_pDataRemote) return;
-
-        proc.Write<::Source2::CStrongHandle<CMaterial2>*>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) + offsetof(CAnimatableSceneObjectDescRenderHookData, hMaterialToUse),
-            mat
-        );
-
-        printf("[+] Setting Chams Material: 0x%p\n", mat);
-        */
     }
-
-    void CAnimatableSceneObjectDesc::SetVisibleChamsColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a, bool bLog)
-    {
-        if (!m_pDataRemote) return;
-
-        proc.Write<uint8_t>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) +
-            offsetof(CAnimatableSceneObjectDescRenderHookData, r_visible),
-            r
-        );
-
-        proc.Write<uint8_t>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) +
-            offsetof(CAnimatableSceneObjectDescRenderHookData, g_visible),
-            g
-        );
-
-        proc.Write<uint8_t>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) +
-            offsetof(CAnimatableSceneObjectDescRenderHookData, b_visible),
-            b
-        );
-
-        proc.Write<uint8_t>(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) +
-            offsetof(CAnimatableSceneObjectDescRenderHookData, a_visible),
-            a
-        );
-
-        if (bLog)
-            printf("[+] Visible Chams Color: %i %i %i %i\n", r, g, b, a);
-    }
-
-    void CAnimatableSceneObjectDesc::UpdateVisiblePawnIndexes(const uint32_t* indexes, size_t count)
-    {
-        if (!m_pDataRemote) return;
-
-        std::vector<uint32_t> indexVec(indexes, indexes + count);
-
-        proc.WriteArray(
-            reinterpret_cast<uintptr_t>(m_pDataRemote) +
-            offsetof(CAnimatableSceneObjectDescRenderHookData, mVisiblePawnIndexes),
-            indexVec
-        );
-
-        // printf("[+] Updated %zu visible pawn indexes\n", count);
-    }
-
 }

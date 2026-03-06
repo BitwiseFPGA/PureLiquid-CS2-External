@@ -39,6 +39,9 @@
     <ClInclude Include="Include\Memory\LiquidHookEx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Memory\LiquidMidHookEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Memory\Process.cpp">

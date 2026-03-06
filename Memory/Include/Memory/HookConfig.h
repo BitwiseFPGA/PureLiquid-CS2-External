@@ -32,6 +32,10 @@ namespace HookConfig {
         uintptr_t                 callSiteAddr = 0;
         uintptr_t                 origStorage = 0;
         std::vector<RipSlotEntry> ripSlots;
+
+        // LiquidMidHookEx: original instruction bytes saved for exact restore.
+        // Empty for LiquidHookEx (vtable) hooks.
+        std::vector<uint8_t>      origBytes;
     };
 
     // -----------------------------------------------------------------------
@@ -48,6 +52,31 @@ namespace HookConfig {
         inline uintptr_t hexToUint(const std::string& s) {
             if (s.empty()) return 0;
             return (uintptr_t)strtoull(s.c_str(), nullptr, 16);
+        }
+
+        inline std::string bytesToHex(const std::vector<uint8_t>& bytes) {
+            std::string s;
+            s.reserve(bytes.size() * 2);
+            static const char* hex = "0123456789ABCDEF";
+            for (uint8_t b : bytes) {
+                s += hex[b >> 4];
+                s += hex[b & 0xF];
+            }
+            return s;
+        }
+
+        inline std::vector<uint8_t> hexToBytes(const std::string& s) {
+            std::vector<uint8_t> result;
+            for (size_t i = 0; i + 1 < s.size(); i += 2) {
+                auto nibble = [](char c) -> uint8_t {
+                    if (c >= '0' && c <= '9') return c - '0';
+                    if (c >= 'A' && c <= 'F') return c - 'A' + 10;
+                    if (c >= 'a' && c <= 'f') return c - 'a' + 10;
+                    return 0;
+                    };
+                result.push_back((nibble(s[i]) << 4) | nibble(s[i + 1]));
+            }
+            return result;
         }
 
         inline size_t findValueStart(const std::string& json, const std::string& key) {
@@ -137,6 +166,9 @@ namespace HookConfig {
             e.callSiteAddr = hexToUint(extractString(block, "callSiteAddr"));
             e.origStorage = hexToUint(extractString(block, "origStorage"));
             e.ripSlots = extractRipSlots(block);
+            std::string origBytesHex = extractString(block, "origBytes");
+            if (!origBytesHex.empty())
+                e.origBytes = hexToBytes(origBytesHex);
             return e;
         }
 
@@ -153,6 +185,9 @@ namespace HookConfig {
 
             if (e.origStorage)
                 s += ",\n    \"origStorage\": \"" + uintToHex(e.origStorage) + "\"";
+
+            if (!e.origBytes.empty())
+                s += ",\n    \"origBytes\": \"" + bytesToHex(e.origBytes) + "\"";
 
             if (!e.ripSlots.empty()) {
                 s += ",\n    \"ripSlots\": [\n";
