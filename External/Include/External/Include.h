@@ -4,14 +4,14 @@
 
 #define USE_CREATE_MOVE
 #define USE_SILENT_AIM
-#define USE_CHAMS
+// #define USE_CHAMS
 // #define DEMO_MODE
-// #define USE_GET_INACCURACY
+#define USE_GET_INACCURACY
 // #define USE_CREATE_MOVE
 #ifdef DEMO_MODE
 #define USE_CHAMS
 #define USE_CREATE_MOVE
-#define USE_SILENT_AIM
+// #define USE_SILENT_AIM
 #define USE_POPUP_MSGS
 #endif
 

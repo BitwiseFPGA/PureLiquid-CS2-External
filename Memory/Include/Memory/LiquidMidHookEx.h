@@ -123,6 +123,14 @@ public:
     }
 
     // ── Hook ────────────────────────────────────────────────────────────────
+    //
+    // overwriteSize: total bytes to snapshot and restore on Unhook().
+    //   0  = auto-detect from the call instruction (default, works for most cases).
+    //   >0 = caller-specified override. Use this when the original call site is
+    //        followed by instruction(s) that must also be NOP'd out — i.e. when
+    //        the region to atomically replace is wider than just the call itself.
+    //        Must be >= 6 (the size of FF 15). Any bytes beyond 6 become NOPs.
+    //
     template <typename HOOK_DATA>
         requires std::is_base_of_v<BaseHookData, HOOK_DATA>
     bool Hook(
@@ -131,7 +139,8 @@ public:
         HOOK_DATA            initData,
         void* fnStart,
         void* fnEnd,
-        std::vector<RipSlot> ripSlots)
+        std::vector<RipSlot> ripSlots,
+        uint8_t              overwriteSize = 0)
     {
         if (m_bIsHooked) {
             printf("[!] %s: already hooked\n", m_szName.c_str());
@@ -162,7 +171,7 @@ public:
             m_szName.c_str(), m_callSiteAddr - pMod->GetAddr());
 
         // ── resolve original call target & snapshot original bytes ───────
-        if (!SnapshotAndResolveCallSite(pMod)) {
+        if (!SnapshotAndResolveCallSite(pMod, overwriteSize)) {
             printf("[!] %s: failed to resolve call site\n", m_szName.c_str());
             return false;
         }
@@ -320,11 +329,17 @@ private:
 
     // ── Read the original call bytes and resolve the callee address ──────────
     //
-    // Reads up to 9 bytes at m_callSiteAddr and detects the instruction form.
-    // m_originalByteCount is set to the exact instruction length.
-    // m_originalFuncAddr  is set to the resolved callee (0 if unknown).
+    // Detects the instruction form and resolves the callee where possible.
     //
-    bool SnapshotAndResolveCallSite(auto* pMod)
+    // IMPORTANT: FF 15 is always 6 bytes. If the original instruction is shorter
+    // (e.g. E8 = 5 bytes) we must snapshot max(instrLen, 6) bytes so that
+    // Unhook() restores every byte we touched, including the one byte of the
+    // following instruction that we clobber.
+    //
+    // m_originalByteCount = max(instrLen, 6)
+    // m_originalFuncAddr  = resolved callee address (0 if unknown)
+    //
+    bool SnapshotAndResolveCallSite(auto* pMod, uint8_t overwriteSize)
     {
         uint8_t buf[16]{};
         if (!m_pProc->Read(m_callSiteAddr, buf, sizeof(buf))) {
@@ -333,37 +348,33 @@ private:
         }
 
         m_originalFuncAddr = 0;
-        m_originalByteCount = 0;
+        uint8_t instrLen = 0;
 
         // E8 xx xx xx xx  –  direct near call  (5 bytes)
         if (buf[0] == 0xE8) {
             int32_t rel32 = *reinterpret_cast<int32_t*>(&buf[1]);
             m_originalFuncAddr = static_cast<uint64_t>(
                 static_cast<int64_t>(m_callSiteAddr) + 5 + rel32);
-            m_originalByteCount = 5;
+            instrLen = 5;
         }
         // FF 15 xx xx xx xx  –  call qword ptr [rip+offset]  (6 bytes)
         else if (buf[0] == 0xFF && buf[1] == 0x15) {
             int32_t rel32 = *reinterpret_cast<int32_t*>(&buf[2]);
             uintptr_t ptrAddr = m_callSiteAddr + 6 + rel32;
             m_originalFuncAddr = m_pProc->ReadDirect<uint64_t>(ptrAddr);
-            m_originalByteCount = 6;
+            instrLen = 6;
         }
-        // FF Dx  –  call [reg+disp32]  (6 bytes: FF /2 ModRM disp32)
-        // e.g. FF 93 D0 0C 00 00  =  call [rbx+0CD0h]
-        // ModRM byte: mod=10(disp32), reg=2(call), rm varies
+        // FF /2 mod=10b  –  call [reg+disp32]  e.g. FF 93 D0 0C 00 00  (6 bytes)
         else if (buf[0] == 0xFF && (buf[1] & 0x38) == 0x10 && (buf[1] & 0xC0) == 0x80) {
-            // mod=10b, /2 – 6-byte form (no SIB, disp32)
-            // Can't resolve the target without register context — leave as 0
-            m_originalByteCount = 6;
+            instrLen = 6;
         }
-        // FF D0..D7  –  call rax/rcx/rdx/rbx/rsp/rbp/rsi/rdi  (2 bytes)
+        // FF D0..D7  –  call reg  (2 bytes)
         else if (buf[0] == 0xFF && (buf[1] & 0xF8) == 0xD0) {
-            m_originalByteCount = 2;
+            instrLen = 2;
         }
-        // FF 10..17  –  call qword ptr [reg]  (2 bytes)
+        // FF 10..17  –  call [reg]  (2 bytes)
         else if (buf[0] == 0xFF && (buf[1] & 0xF8) == 0x10) {
-            m_originalByteCount = 2;
+            instrLen = 2;
         }
         else {
             printf("[!] %s: unrecognized call form at call site: %02X %02X ...\n",
@@ -371,6 +382,24 @@ private:
             return false;
         }
 
+        // Determine how many bytes to snapshot and restore:
+        //   - overwriteSize > 0: caller explicitly says how wide the region is
+        //   - otherwise: at least as wide as the instruction, but never less than
+        //     6 (the size of FF 15 which we always write)
+        uint8_t minBytes = (instrLen < 6) ? 6 : instrLen;
+        if (overwriteSize > 0) {
+            if (overwriteSize < 6) {
+                printf("[!] %s: overwriteSize %u is less than 6 (FF 15 size) – ignoring\n",
+                    m_szName.c_str(), overwriteSize);
+                m_originalByteCount = minBytes;
+            }
+            else {
+                m_originalByteCount = overwriteSize;
+            }
+        }
+        else {
+            m_originalByteCount = minBytes;
+        }
         memcpy(m_originalBytes, buf, m_originalByteCount);
         return true;
     }
