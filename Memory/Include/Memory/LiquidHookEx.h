@@ -195,7 +195,28 @@ public:
             reinterpret_cast<void*>(m_pTargetFunction),
             8, oldProtect, &oldProtect);
 
+        // Free remote slot allocations
+        for (const auto& rs : m_RemoteSlots) {
+            if (rs.remoteAddr)
+                VirtualFreeEx(m_pProc->m_hProc, rs.remoteAddr, 0, MEM_RELEASE);
+        }
+        m_RemoteSlots.clear();
+
+        if (m_pShellcodeRemote) {
+            VirtualFreeEx(m_pProc->m_hProc, m_pShellcodeRemote, 0, MEM_RELEASE);
+            m_pShellcodeRemote = nullptr;
+        }
+        if (m_pDataRemote) {
+            VirtualFreeEx(m_pProc->m_hProc, m_pDataRemote, 0, MEM_RELEASE);
+            m_pDataRemote = nullptr;
+        }
+        if (m_pOrigStorage) {
+            VirtualFreeEx(m_pProc->m_hProc, m_pOrigStorage, 0, MEM_RELEASE);
+            m_pOrigStorage = nullptr;
+        }
+
         m_bIsHooked = false;
+        m_pTargetFunction = 0;
         HookConfig::Remove(m_szName);
         printf("[+] %s: unhooked\n", m_szName.c_str());
         return true;
@@ -244,11 +265,17 @@ private:
             return false;
         }
 
-        if (!m_pProc->ReadDirect<uint64_t>(entry->dataRemote)) {
-            printf("[HookConfig] %s: dataRemote 0x%llX no longer valid\n",
-                m_szName.c_str(), (uint64_t)entry->dataRemote);
-            HookConfig::Remove(m_szName);
-            return false;
+        {
+            MEMORY_BASIC_INFORMATION mbi{};
+            if (VirtualQueryEx(m_pProc->m_hProc,
+                reinterpret_cast<void*>(entry->dataRemote), &mbi, sizeof(mbi)) == 0 ||
+                mbi.State != MEM_COMMIT)
+            {
+                printf("[HookConfig] %s: dataRemote 0x%llX no longer committed\n",
+                    m_szName.c_str(), (uint64_t)entry->dataRemote);
+                HookConfig::Remove(m_szName);
+                return false;
+            }
         }
 
         uint64_t currentVtableEntry =

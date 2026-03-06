@@ -8,7 +8,7 @@
 // ============================================================================
 //  LiquidCallHookEx
 //
-//  External mid-function hook: replaces a call site instruction with an
+//  External call-site hook: replaces a call site instruction with an
 //  FF 15 (call qword ptr [rip+offset]) that dispatches into remote shellcode.
 //
 //  Usage is intentionally parallel to LiquidHookEx:
@@ -633,12 +633,17 @@ private:
             return false;
         }
 
-        // Probe data allocation
-        if (!m_pProc->ReadDirect<uint64_t>(entry->dataRemote)) {
-            printf("[HookConfig] %s: dataRemote 0x%llX no longer valid\n",
-                m_szName.c_str(), entry->dataRemote);
-            HookConfig::Remove(m_szName);
-            return false;
+        {
+            MEMORY_BASIC_INFORMATION mbi{};
+            if (VirtualQueryEx(m_pProc->m_hProc,
+                reinterpret_cast<void*>(entry->dataRemote), &mbi, sizeof(mbi)) == 0 ||
+                mbi.State != MEM_COMMIT)
+            {
+                printf("[HookConfig] %s: dataRemote 0x%llX no longer committed\n",
+                    m_szName.c_str(), entry->dataRemote);
+                HookConfig::Remove(m_szName);
+                return false;
+            }
         }
 
         // Verify call site still carries FF 15
