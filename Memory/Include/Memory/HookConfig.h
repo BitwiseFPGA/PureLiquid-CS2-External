@@ -33,7 +33,7 @@ namespace HookConfig {
         uintptr_t                 origStorage = 0;
         std::vector<RipSlotEntry> ripSlots;
 
-        // LiquidMidHookEx: original instruction bytes saved for exact restore.
+        // LiquidCallHookEx: original instruction bytes saved for exact restore.
         // Empty for LiquidHookEx (vtable) hooks.
         std::vector<uint8_t>      origBytes;
     };

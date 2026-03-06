@@ -6,7 +6,7 @@
 #include <Memory/HookConfig.h>
 
 // ============================================================================
-//  LiquidMidHookEx
+//  LiquidCallHookEx
 //
 //  External mid-function hook: replaces a call site instruction with an
 //  FF 15 (call qword ptr [rip+offset]) that dispatches into remote shellcode.
@@ -43,8 +43,8 @@
 //        (void*)Hook_Shellcode,
 //        (void*)Hook_Shellcode_End,
 //        {
-//            LiquidMidHookEx::RipSlot::Data(&g_pHookData),
-//            LiquidMidHookEx::RipSlot::Orig(&g_pOriginalFn),
+//            LiquidCallHookEx::RipSlot::Data(&g_pHookData),
+//            LiquidCallHookEx::RipSlot::Orig(&g_pOriginalFn),
 //        });
 //
 //  Supported original call instruction forms (auto-detected):
@@ -60,7 +60,7 @@
 //  RipSlot::Orig will hold 0 — the shellcode must handle that case.
 // ============================================================================
 
-class LiquidMidHookEx {
+class LiquidCallHookEx {
 public:
     // ── RipSlot types (mirrors LiquidHookEx) ────────────────────────────────
     struct BaseHookData {
@@ -118,7 +118,7 @@ private:
     std::vector<RemoteSlot> m_RemoteSlots{};
 
 public:
-    LiquidMidHookEx(Process* proc, std::string name)
+    LiquidCallHookEx(Process* proc, std::string name)
         : m_pProc(proc), m_szName(std::move(name)) {
     }
 

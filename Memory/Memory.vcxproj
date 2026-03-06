@@ -150,7 +150,7 @@
     <ClInclude Include="Include\Memory\HookConfig.h" />
     <ClInclude Include="Include\Memory\Include.h" />
     <ClInclude Include="Include\Memory\LiquidHookEx.h" />
-    <ClInclude Include="Include\Memory\LiquidMidHookEx.h" />
+    <ClInclude Include="Include\Memory\LiquidCallHookEx.h" />
     <ClInclude Include="Include\Memory\PointerCheck.h" />
     <ClInclude Include="Include\Memory\Process.h" />
     <ClInclude Include="Include\Memory\SysCall\SyscallManager.h" />

@@ -1,13 +1,13 @@
 #pragma once
 #include <GlobalData/Include.h>
-#include <Memory/LiquidMidHookEx.h>
+#include <Memory/LiquidCallHookEx.h>
 
 namespace CS2 {
     namespace client {
         class C_CSWeaponBaseGun;
     }
 
-    struct GetInaccuracyFnHookData : public LiquidMidHookEx::BaseHookData
+    struct GetInaccuracyFnHookData : public LiquidCallHookEx::BaseHookData
     {
         client::C_CSWeaponBaseGun* weapon;
         float flInaccuracy;
@@ -15,7 +15,7 @@ namespace CS2 {
 
     class GetInaccuracy {
     private:
-        inline static LiquidMidHookEx m_Hook = LiquidMidHookEx(&Globals::proc, "GetInaccuracyHook");
+        inline static LiquidCallHookEx m_Hook = LiquidCallHookEx(&Globals::proc, "GetInaccuracyHook");
 
         static float __fastcall GetInaccuracy_Hook_Shellcode(
             client::C_CSWeaponBaseGun* pWeapon, void* unknown, void* unknown2);

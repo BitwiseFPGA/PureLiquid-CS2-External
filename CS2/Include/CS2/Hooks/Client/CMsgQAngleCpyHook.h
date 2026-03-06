@@ -1,7 +1,7 @@
 #pragma once
 #include <Math/QAngle.h>
 #include <Math/Vector.h>
-#include <Memory/LiquidMidHookEx.h>
+#include <Memory/LiquidCallHookEx.h>
 #include <GlobalData/Include.h>
 
 namespace CS2 {
@@ -15,7 +15,7 @@ namespace CS2 {
         char pad_0024[92]; //0x24
     }; //Size: 0x0080
 
-    struct CMsgQAngleCpyHookData : public LiquidMidHookEx::BaseHookData
+    struct CMsgQAngleCpyHookData : public LiquidCallHookEx::BaseHookData
     {
         Vector qAngleToSet;
         bool   bForceQAngle;
@@ -23,7 +23,7 @@ namespace CS2 {
 
     class CMsgQAngleCpy {
     private:
-        inline static LiquidMidHookEx m_Hook = LiquidMidHookEx(&Globals::proc, "CMsgQAngleCpyHook");
+        inline static LiquidCallHookEx m_Hook = LiquidCallHookEx(&Globals::proc, "CMsgQAngleCpyHook");
 
         static void __fastcall SetAng_Hook_Shellcode(uintptr_t a1, CMsgQAngleTest* a2);
         static void SetAng_Hook_Shellcode_End();
