@@ -24,6 +24,8 @@
 ♻️ **Hook State Persistence** - Hooks survive external process restarts without needing to unhook first
 
 ---
+## Currently re-working using external hook system  [xsip/LiquidHookEx](https://github.com/xsip/LiquidHookEx)
+---
 
 ---
 ![CS2 Chams Demo](https://raw.githubusercontent.com/xsip/PureLiquid-CS2-External/refs/heads/main/loaded-msg.png)
@@ -401,4 +403,5 @@ This project is provided for **educational and research purposes only**. Using t
 ---
 
 ## Other Projects
+
 [CS2-External-Chams](https://github.com/xsip/CS2-External-Chams)
