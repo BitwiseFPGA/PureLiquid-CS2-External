@@ -16,7 +16,6 @@
 #include <SDK/client/ItemFlagTypes_t.hpp>
 #include <SDK/client/AmmoIndex_t.hpp>
 #include <SDK/client/RumbleEffect_t.hpp>
-#include <SDK/client/WeaponSound_t.hpp>
 
 
 
