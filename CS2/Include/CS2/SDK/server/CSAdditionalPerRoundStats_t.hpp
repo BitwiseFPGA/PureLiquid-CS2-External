@@ -31,8 +31,9 @@ namespace CS2 {
 			PROPERTY(m_nDefuseStarts,int32_t, 0x1c);
 			PROPERTY(m_nHostagePickUps,int32_t, 0x20);
 			PROPERTY(m_numTeammatesFlashed,int32_t, 0x24);
-			S2_PAD(0xF0);
+			PROPERTY(m_strAnnotationsWorkshopId,GlobalTypes::CUtlString*, 0x28);
+			S2_PAD(0xF8);
 		};
-		//static_assert(sizeof(CS2::server::CSAdditionalPerRoundStats_t) == 0xF0, "CSAdditionalPerRoundStats_t size should be 0xF0");
+		//static_assert(sizeof(CS2::server::CSAdditionalPerRoundStats_t) == 0xF8, "CSAdditionalPerRoundStats_t size should be 0xF8");
 	}
 }

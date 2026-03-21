@@ -3,9 +3,7 @@
 #include <CS2/Offsets/client/CCSWeaponBaseVData.hpp>
 #include <CS2/Offsets/client/C_BaseEntity.hpp>
 #include <GlobalData/Include.h>
-
 using namespace Globals;
-#include <Windows.h>
 
 namespace CS2 {
 
@@ -34,375 +32,39 @@ namespace CS2 {
 
     void GetInaccuracy::GetInaccuracy_Hook_Shellcode_End() {}
 
-#pragma check_stack()  
-#pragma runtime_checks("", restore) 
+#pragma check_stack()
+#pragma runtime_checks("", restore)
 #pragma optimize("", on)
 #pragma code_seg()
 
-    GetInaccuracyFnHookData GetInaccuracy::GetData() {
-        if (!m_bIsHooked)
-            return { 0x0,-1.0f };
-
-        return proc.ReadDirect<GetInaccuracyFnHookData>(reinterpret_cast<uintptr_t>(m_pDataRemote));
-    }
-    // -----------------------------------------------------------------------
-    // TryRestore – reload hook state saved by a previous process instance.
-    // -----------------------------------------------------------------------
-    bool GetInaccuracy::TryRestore()
-    {
-        uint32_t currentPid = proc.GetProcId();
-        auto entry = HookConfig::Find("GetInaccuracyHook", currentPid);
-        if (!entry) {
-            printf("[HookConfig] No saved GetInaccuracyHook state for pid %u\n", currentPid);
-            return false;
-        }
-
-        if (!entry->dataRemote || !entry->shellcodeRemote) {
-            printf("[HookConfig] Saved GetInaccuracyHook state is incomplete – ignoring\n");
-            HookConfig::Remove("GetInaccuracyHook");
-            return false;
-        }
-
-        if (!entry->callSiteAddr) {
-            printf("[HookConfig] Saved GetInaccuracyHook state has no callSiteAddr – ignoring\n");
-            HookConfig::Remove("GetInaccuracyHook");
-            return false;
-        }
-
-        // Probe the remote data allocation.
-        GetInaccuracyFnHookData probe{};
-        if (!proc.Read(entry->dataRemote, &probe, sizeof(probe))) {
-            printf("[HookConfig] Remote GetInaccuracyFnHookData at 0x%llX is invalid\n", (uint64_t)entry->dataRemote);
-            HookConfig::Remove("GetInaccuracyHook");
-            return false;
-        }
-
-        // Verify the call site still carries our FF 15 patch using the saved address directly.
-        uint8_t opcode[2] = {};
-        proc.Read(entry->callSiteAddr, opcode, 2);
-        if (opcode[0] != 0xFF || opcode[1] != 0x15) {
-            printf("[HookConfig] GetInaccuracy call site at 0x%llX no longer has FF 15 – hook was removed\n",
-                (uint64_t)entry->callSiteAddr);
-            HookConfig::Remove("GetInaccuracyHook");
-            return false;
-        }
-
-        m_pDataRemote = reinterpret_cast<void*>(entry->dataRemote);
-        m_pShellcodeRemote = reinterpret_cast<void*>(entry->shellcodeRemote);
-        m_pTargetFunction = 0; // call-site hook, no vtable entry
-
-        g_pGetSpreadHookData = reinterpret_cast<GetInaccuracyFnHookData*>(entry->dataRemote);
-        m_pPatchedMostCommonCallAddr = reinterpret_cast<uint8_t*>(entry->callSiteAddr);
-
-        m_bIsHooked = true;
-        printf("[HookConfig] GetInaccuracyHook state restored from config (pid %u)\n", currentPid);
-        return true;
-    }
-
     bool GetInaccuracy::Hook()
     {
-        auto client = proc.GetRemoteModule("client.dll");
-        if (!client || !client->IsValid()) {
-            printf("[!] Failed to get client.dll\n");
-            return false;
-        }
+        GetInaccuracyFnHookData initData{};
+        initData.weapon = nullptr;
+        initData.flInaccuracy = 0.0f;
 
-        // Attempt to reuse allocations from a previous run before doing a full hook.
-        if (TryRestore()) {
-            printf("[+] GetInaccuracy hook restored from saved state – skipping re-injection\n");
-            return true;
-        }
-
-        m_pDataRemote = proc.Alloc(sizeof(GetInaccuracyFnHookData));
-        if (!m_pDataRemote) {
-            printf("[!] Failed to allocate GetInaccuracyFnHookData\n");
-            return false;
-        }
-        printf("[+] Remote GetInaccuracyFnHookData: 0x%p\n", m_pDataRemote);
-
-        GetInaccuracyFnHookData data{};
-        data.weapon = nullptr;
-        data.flInaccuracy = 0.0f;
-
-        proc.Write<GetInaccuracyFnHookData>(reinterpret_cast<uintptr_t>(m_pDataRemote), data);
-
-        size_t shellcodeSize = reinterpret_cast<uintptr_t>(GetInaccuracy_Hook_Shellcode_End) -
-            reinterpret_cast<uintptr_t>(GetInaccuracy_Hook_Shellcode);
-
-        m_pShellcodeRemote = proc.Alloc(shellcodeSize, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
-        if (!m_pShellcodeRemote) {
-            printf("[!] Failed to allocate shellcode memory\n");
-            return false;
-        }
-
-        std::vector<uint8_t> localCode(shellcodeSize);
-        memcpy(localCode.data(), GetInaccuracy_Hook_Shellcode, shellcodeSize);
-
-        if (!proc.WriteArray(reinterpret_cast<uintptr_t>(m_pShellcodeRemote), localCode)) {
-            printf("[!] Failed to write shellcode\n");
-            return false;
-        }
-
-        printf("[+] Remote shellcode: 0x%p (size: %zu bytes)\n", m_pShellcodeRemote, shellcodeSize);
-
-        // Allocate storage for g_pGetSpreadHookData pointer
-        void* pHookDataStorage = proc.Alloc(8);
-        if (!pHookDataStorage) {
-            printf("[!] Failed to allocate hook data storage\n");
-            return false;
-        }
-
-        if (!proc.Write<uint64_t>(reinterpret_cast<uintptr_t>(pHookDataStorage),
-            reinterpret_cast<uint64_t>(m_pDataRemote))) {
-            printf("[!] Failed to write hook data pointer\n");
-            return false;
-        }
-
-        printf("[+] g_pGetSpreadHookData storage: 0x%p -> 0x%p\n", pHookDataStorage, m_pDataRemote);
-
-        // ================================================================
-        // Patch RIP-relative instructions
-        // ================================================================
-        printf("[*] Patching RIP-relative instructions...\n");
-
-        int ripLoadCount = 0;
-        int patchedCount = 0;
-
-        for (size_t i = 0; i < shellcodeSize - 7; i++) {
-            if (localCode[i] == 0x48 && localCode[i + 1] == 0x8B && localCode[i + 2] == 0x05) {
-                ripLoadCount++;
-
-                uintptr_t instructionAddr = reinterpret_cast<uintptr_t>(m_pShellcodeRemote) + i;
-                uintptr_t targetAddr;
-                const char* varName = "Unset";
-
-                if (ripLoadCount == 1) {
-                    targetAddr = reinterpret_cast<uintptr_t>(pHookDataStorage);
-                    varName = "g_pGetSpreadHookData";
-                }
-
-                int32_t newOffset = static_cast<int32_t>(targetAddr - (instructionAddr + 7));
-
-                if (!proc.Write<int32_t>(instructionAddr + 3, newOffset)) {
-                    printf("[!] Failed to patch RIP offset at 0x%zX\n", i);
-                    return false;
-                }
-
-                printf("[+] Patched RIP-relative %s at offset 0x%zX (target: 0x%p, offset: 0x%X)\n",
-                    varName, i, (void*)targetAddr, newOffset);
-                patchedCount++;
-            }
-        }
-
-        if (patchedCount == 0) {
-            printf("[!] WARNING: No RIP-relative instructions found! Shellcode may not work.\n");
-        }
-        else {
-            printf("[+] Successfully patched %d RIP-relative instruction(s)\n", patchedCount);
-        }
-
-        if (!FlushInstructionCache(proc.m_hProc, m_pShellcodeRemote, shellcodeSize)) {
-            printf("[!] Warning: FlushInstructionCache failed: %d\n", GetLastError());
-        }
-
-        // ================================================================
-        // Find callsite: FF 93 D0 0C 00 00 = call qword ptr [rbx+0CD0h]
-        // ================================================================
-        auto pCallSite = client->ScanMemory(GET_SPREAD_CALLSITE_PATTERN);
-        if (!pCallSite) {
-            printf("[!] Couldn't find GetInaccuracy call site!\n");
-            return false;
-        }
-
-        printf("[+] Found call site at: client.dll + 0x%llX\n", pCallSite - client->GetAddr());
-
-        uintptr_t callSiteAddr = reinterpret_cast<uintptr_t>(pCallSite);
-
-        // ================================================================
-        // Allocate function pointer storage within �2GB of callsite
-        // for FF 15 (call qword ptr [rip+offset])
-        // ================================================================
-        SYSTEM_INFO si;
-        GetSystemInfo(&si);
-
-        uintptr_t searchStart = (callSiteAddr > 0x7FFFFFFF) ?
-            ((callSiteAddr - 0x7FFFFFFF) & ~(static_cast<uintptr_t>(si.dwAllocationGranularity) - 1)) : 0;
-        uintptr_t searchEnd = callSiteAddr + 0x7FFFFFFF;
-
-        void* pFuncPtrStorage = nullptr;
-
-        for (uintptr_t addr = searchStart; addr < searchEnd && addr >= searchStart;
-            addr += si.dwAllocationGranularity) {
-            pFuncPtrStorage = VirtualAllocEx(proc.m_hProc, reinterpret_cast<void*>(addr),
-                8, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
-            if (pFuncPtrStorage) {
-                // FF 15 instruction is 6 bytes, RIP points to next instruction = callSiteAddr + 6
-                int64_t distance = reinterpret_cast<uintptr_t>(pFuncPtrStorage) - (callSiteAddr + 6);
-                if (distance >= INT32_MIN && distance <= INT32_MAX) {
-                    printf("[+] Allocated function pointer storage at: 0x%p (distance: 0x%llX)\n",
-                        pFuncPtrStorage, distance);
-                    break;
-                }
-                VirtualFreeEx(proc.m_hProc, pFuncPtrStorage, 0, MEM_RELEASE);
-                pFuncPtrStorage = nullptr;
-            }
-        }
-
-        if (!pFuncPtrStorage) {
-            printf("[!] Failed to allocate function pointer storage within �2GB of call site\n");
-            return false;
-        }
-
-        // Write m_pShellcodeRemote address into the storage
-        if (!proc.Write<uint64_t>(reinterpret_cast<uintptr_t>(pFuncPtrStorage),
-            reinterpret_cast<uint64_t>(m_pShellcodeRemote))) {
-            printf("[!] Failed to write function pointer\n");
-            return false;
-        }
-
-        int64_t distance = reinterpret_cast<uintptr_t>(pFuncPtrStorage) - (callSiteAddr + 6);
-        int32_t ripOffset = static_cast<int32_t>(distance);
-
-        if (distance != ripOffset) {
-            printf("[!] ERROR: RIP offset overflow! Distance: 0x%llX\n", distance);
-            return false;
-        }
-
-        // FF 15 xx xx xx xx = call qword ptr [rip+offset] (6 bytes, same as original FF 93 D0 0C 00 00)
-        std::vector<uint8_t> newInstruction = {
-            0xFF, 0x15,
-            static_cast<uint8_t>(ripOffset & 0xFF),
-            static_cast<uint8_t>((ripOffset >> 8) & 0xFF),
-            static_cast<uint8_t>((ripOffset >> 16) & 0xFF),
-            static_cast<uint8_t>((ripOffset >> 24) & 0xFF)
-        };
-
-        DWORD oldProtect;
-        if (!VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(callSiteAddr),
-            6, PAGE_EXECUTE_READWRITE, &oldProtect)) {
-            printf("[!] VirtualProtectEx failed: %d\n", GetLastError());
-            return false;
-        }
-
-        if (!proc.WriteArray(callSiteAddr, newInstruction)) {
-            printf("[!] Failed to patch call instruction\n");
-            VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(callSiteAddr),
-                6, oldProtect, &oldProtect);
-            return false;
-        }
-
-        VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(callSiteAddr),
-            6, oldProtect, &oldProtect);
-
-        if (!FlushInstructionCache(proc.m_hProc, reinterpret_cast<void*>(callSiteAddr), 6)) {
-            printf("[!] Warning: FlushInstructionCache failed: %d\n", GetLastError());
-        }
-
-        m_pPatchedMostCommonCallAddr = pCallSite;
-        printf("[+] Successfully patched call site!\n\n");
-
-        m_bIsHooked = true;
-
-        // Persist state for cross-restart restore.
-        HookConfig::HookEntry cfgEntry;
-        cfgEntry.pid = proc.GetProcId();
-        cfgEntry.hookName = "GetInaccuracyHook";
-        cfgEntry.dataRemote = reinterpret_cast<uintptr_t>(m_pDataRemote);
-        cfgEntry.shellcodeRemote = reinterpret_cast<uintptr_t>(m_pShellcodeRemote);
-        cfgEntry.targetFunction = 0; // call-site hook, no vtable entry
-        cfgEntry.callSiteAddr = callSiteAddr;
-        HookConfig::Upsert(cfgEntry);
-        printf("[HookConfig] GetInaccuracyHook state saved to config\n");
-
-        return true;
+        return m_Hook.Hook<GetInaccuracyFnHookData>(
+            GET_SPREAD_CALLSITE_PATTERN,
+            "client.dll",
+            initData,
+            reinterpret_cast<void*>(GetInaccuracy_Hook_Shellcode),
+            reinterpret_cast<void*>(GetInaccuracy_Hook_Shellcode_End),
+            {
+                LiquidCallHookEx::RipSlot::Data(&g_pGetSpreadHookData),
+            });
     }
+
     bool GetInaccuracy::Unhook()
     {
-        if (!m_bIsHooked) {
-            printf("[!] GetInaccuracy is not hooked\n");
-            return false;
-        }
-
-        auto client = proc.GetRemoteModule("client.dll");
-        if (!client || !client->IsValid()) {
-            printf("[!] Failed to get client.dll for unhooking\n");
-            return false;
-        }
-
-        bool success = true;
-
-        if (m_pPatchedMostCommonCallAddr) {
-            printf("[*] Restoring patched call site...\n");
-
-            uintptr_t callSiteAddr = reinterpret_cast<uintptr_t>(m_pPatchedMostCommonCallAddr);
-
-            // Restore original 6 bytes: FF 93 D0 0C 00 00 = call qword ptr [rbx+0CD0h]
-            std::vector<uint8_t> originalInstruction = {
-                0xFF, 0x93, 0xD0, 0x0C, 0x00, 0x00
-            };
-
-            DWORD oldProtect;
-            if (!VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(callSiteAddr),
-                6, PAGE_EXECUTE_READWRITE, &oldProtect)) {
-                printf("[!] VirtualProtectEx failed during unhook: %d\n", GetLastError());
-                success = false;
-            }
-            else {
-                if (!proc.WriteArray(callSiteAddr, originalInstruction)) {
-                    printf("[!] Failed to restore original call instruction\n");
-                    success = false;
-                }
-                else {
-                    printf("[+] Restored original call site\n");
-                }
-
-                VirtualProtectEx(proc.m_hProc, reinterpret_cast<void*>(callSiteAddr),
-                    6, oldProtect, &oldProtect);
-            }
-
-            if (!FlushInstructionCache(proc.m_hProc, reinterpret_cast<void*>(callSiteAddr), 6)) {
-                printf("[!] Warning: FlushInstructionCache failed: %d\n", GetLastError());
-            }
-        }
-
-        if (m_pShellcodeRemote) {
-            if (VirtualFreeEx(proc.m_hProc, m_pShellcodeRemote, 0, MEM_RELEASE)) {
-                printf("[+] Freed shellcode memory\n");
-            }
-            else {
-                printf("[!] Failed to free shellcode memory: %d\n", GetLastError());
-                success = false;
-            }
-            m_pShellcodeRemote = nullptr;
-        }
-
-        if (m_pDataRemote) {
-            if (VirtualFreeEx(proc.m_hProc, m_pDataRemote, 0, MEM_RELEASE)) {
-                printf("[+] Freed hook data memory\n");
-            }
-            else {
-                printf("[!] Failed to free hook data memory: %d\n", GetLastError());
-                success = false;
-            }
-            m_pDataRemote = nullptr;
-        }
-
-        m_bIsHooked = false;
-        m_pTargetFunction = 0;
-        m_pPatchedMostCommonCallAddr = nullptr;
-        g_pGetSpreadHookData = nullptr;
-
-        // Remove persisted state so a future restart won't try to restore a dead hook.
-        HookConfig::Remove("GetInaccuracyHook");
-        printf("[HookConfig] GetInaccuracyHook entry removed from config\n");
-
-        if (success) {
-            printf("[+] GetInaccuracy unhook completed successfully!\n\n");
-        }
-        else {
-            printf("[!] GetInaccuracy unhook completed with errors\n\n");
-        }
-
-        return success;
+        return m_Hook.Unhook();
     }
-}
+
+    GetInaccuracyFnHookData GetInaccuracy::GetData()
+    {
+        if (!m_Hook.IsHooked())
+            return {};
+
+        return m_Hook.ReadData<GetInaccuracyFnHookData>();
+    }
+
+} // namespace CS2

@@ -22,7 +22,7 @@ namespace CS2 {
 	namespace client {
 		class C_BasePlayerWeapon : public CS2::client::C_EconEntity {
 		public:
-			PROPERTY(m_nNextPrimaryAttackTick,uint32_t, 0x18c0);
+			PROPERTY(m_nNextPrimaryAttackTick,uint32, 0x18c0);
 			PROPERTY(m_flNextPrimaryAttackTickRatio,float32, 0x18c4);
 			NESTED_PROPERTY(m_nNextSecondaryAttackTick,entity2::GameTick_t, 0x18c8);
 			PROPERTY(m_flNextSecondaryAttackTickRatio,float32, 0x18cc);

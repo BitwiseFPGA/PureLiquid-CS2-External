@@ -2,6 +2,7 @@
 #include <GlobalData/Include.h>
 #include <Math/QAngle.h>
 #include <Memory/HookConfig.h>
+#include <Memory/LiquidHookEx.h>
 namespace CS2 {
 
 	enum ECommandButtons : uint64_t {
@@ -184,9 +185,8 @@ namespace CS2 {
 
 
 
-	struct CreateMoveHookData
+	struct CreateMoveHookData: public LiquidHookEx::BaseHookData
 	{
-		uint64_t originalFunc;
 		uint64_t cmd;
 		uint64_t btnToForce;
 		int m_nRandomSeed;
@@ -199,22 +199,14 @@ namespace CS2 {
 
 	class CCSGOInput {
 	private:
+		inline static LiquidHookEx m_Hook = LiquidHookEx("CreateMoveHook", &Globals::proc);
 		// CreateMove Hook
-		inline static bool m_bIsHooked = false;
-		inline static void* m_pDataRemote = nullptr;
-		inline static void* m_pShellcodeRemote = nullptr;
-		inline static uintptr_t m_pTargetFunction = 0;
-
-
-		// Persist / restore hook state across process restarts
-		static bool TryRestore();
 
 		// CreateMove Shellcode
 		static double __fastcall CreateMove_Hook_Shellcode(
 			int64_t a1, unsigned int a2, CUserCmd* cmd);
 		static void CreateMove_Hook_Shellcode_End();
 
-		static uintptr_t FindCreateMove();
 		// ViewAngles Disp Resolver
 		inline static uint32_t pViewAnglesOffset = 0x0;
 		static uintptr_t ResolveViewAnglesOffset();
@@ -222,7 +214,7 @@ namespace CS2 {
 	public:
 		RUNTIME_OFFSET_PROPERTY(vViewAngles, QAngle_t, ResolveViewAnglesOffset)
 
-			bool HookCreateMove();
+		bool HookCreateMove();
 		bool UnhookCreateMove();
 
 		CreateMoveHookData GetExecutionData();
@@ -230,6 +222,6 @@ namespace CS2 {
 		void Attack();
 		int GetRandomSeed();
 		void SetSubTickAngle(Vector vAngle);
-		bool IsHooked() { return m_bIsHooked; }
+		bool IsHooked() { return m_Hook.IsHooked(); }
 	};
 }
