@@ -68,14 +68,14 @@ namespace CS2 {
 
 	::Source2::CStrongHandle<CMaterial2>* CMaterialSystem2::CreateMaterial(std::string materialKv3Str, std::string szMatName) {
 		printf("[+] Trying to create material \"%s\"\n", szMatName.c_str());
-		auto pTier0 = proc.GetRemoteModule("tier0.dll");
+		auto pTier0 = pProc->GetRemoteModule("tier0.dll");
 		if (!pTier0) {
 			printf("Error Finding tier0.dll!!\n");
 			return nullptr;
 		}
 
 
-		auto pMaterialSystem2 = proc.GetRemoteModule("materialsystem2.dll");
+		auto pMaterialSystem2 = pProc->GetRemoteModule("materialsystem2.dll");
 		if (!pMaterialSystem2) {
 			printf("Error Finding materialsystem2.dll!!\n");
 			return nullptr;
@@ -93,25 +93,25 @@ namespace CS2 {
 			return nullptr;
 		}
 
-		auto pRemoteMaterialKv3Str = proc.AllocateAndWriteString(materialKv3Str);
+		auto pRemoteMaterialKv3Str = pProc->AllocateAndWriteString(materialKv3Str);
 		if (!pRemoteMaterialKv3Str) {
 			printf("Failed to write remote string for Material Creation!\n");
 			return nullptr;
 		}
 
-		void* pRemoteKvIdName = proc.AllocateAndWriteString("generic");
+		void* pRemoteKvIdName = pProc->AllocateAndWriteString("generic");
 		if (!pRemoteKvIdName) {
 			printf("Failed to write remote string for KV3 ID name!\n");
 			return nullptr;
 		}
 
-		void* pRemoteMatName = proc.AllocateAndWriteString(szMatName);
+		void* pRemoteMatName = pProc->AllocateAndWriteString(szMatName);
 		if (!pRemoteMatName) {
 			printf("Failed to write remote string for Material name!\n");
 			return nullptr;
 		}
 
-		auto pKv3Remote = proc.Alloc(0x100 + sizeof(::Source2::CKeyValues3));
+		auto pKv3Remote = pProc->Alloc(0x100 + sizeof(::Source2::CKeyValues3));
 		if (!pKv3Remote) {
 			printf("Error Creating kv3 buffer!\n");
 			return nullptr;
@@ -137,33 +137,33 @@ namespace CS2 {
 		ctx.szMatName = reinterpret_cast<const char*>(pRemoteMatName);
 
 
-		void* pRemoteCtx = proc.Alloc(sizeof(CreateMaterialCtx));
+		void* pRemoteCtx = pProc->Alloc(sizeof(CreateMaterialCtx));
 		if (!pRemoteCtx) {
 			printf("Failed to allocate remote context!\n");
 			return nullptr;
 		}
 
-		if (!proc.Write<CreateMaterialCtx>(reinterpret_cast<uintptr_t>(pRemoteCtx), ctx)) {
+		if (!pProc->Write<CreateMaterialCtx>(reinterpret_cast<uintptr_t>(pRemoteCtx), ctx)) {
 			printf("Failed to write remote context!\n");
 			return nullptr;
 		}
 
-		void* shellcode = proc.AllocAndWriteShellcode(CreateMaterialThread, CreateMaterialThreadEnd);
+		void* shellcode = pProc->AllocAndWriteShellcode(CreateMaterialThread, CreateMaterialThreadEnd);
 		if (!shellcode) {
 			printf("Failed to allocate shellcode!\n");
-			proc.FreeRemote(pRemoteCtx);
+			pProc->FreeRemote(pRemoteCtx);
 			return nullptr;
 		}
 
-		HANDLE hThread = proc.CreateRemoteThreadEx(
+		HANDLE hThread = pProc->CreateRemoteThreadEx(
 			reinterpret_cast<LPTHREAD_START_ROUTINE>(shellcode),
 			pRemoteCtx
 		);
 
 		if (!hThread) {
 			printf("Failed to create remote thread!\n");
-			proc.FreeRemote(shellcode);
-			proc.FreeRemote(pRemoteCtx);
+			pProc->FreeRemote(shellcode);
+			pProc->FreeRemote(pRemoteCtx);
 			return nullptr;
 		}
 
@@ -172,8 +172,8 @@ namespace CS2 {
 		if (waitResult != WAIT_OBJECT_0) {
 			printf("Thread wait failed or timed out! Result: %d\n", waitResult);
 			CloseHandle(hThread);
-			proc.FreeRemote(shellcode);
-			proc.FreeRemote(pRemoteCtx);
+			pProc->FreeRemote(shellcode);
+			pProc->FreeRemote(pRemoteCtx);
 			return nullptr;
 		}
 
@@ -182,15 +182,15 @@ namespace CS2 {
 		CloseHandle(hThread);
 
 		CreateMaterialCtx resultCtx;
-		if (!proc.Read(reinterpret_cast<uintptr_t>(pRemoteCtx), &resultCtx, sizeof(CreateMaterialCtx))) {
+		if (!pProc->Read(reinterpret_cast<uintptr_t>(pRemoteCtx), &resultCtx, sizeof(CreateMaterialCtx))) {
 			printf("Failed to read result context!\n");
-			proc.FreeRemote(shellcode);
-			proc.FreeRemote(pRemoteCtx);
+			pProc->FreeRemote(shellcode);
+			pProc->FreeRemote(pRemoteCtx);
 			return nullptr;
 		}
 
-		proc.FreeRemote(shellcode);
-		proc.FreeRemote(pRemoteCtx);
+		pProc->FreeRemote(shellcode);
+		pProc->FreeRemote(pRemoteCtx);
 
 		if (resultCtx.bHadErrors) {
 			printf("[!] Material creation encountered errors!\n");

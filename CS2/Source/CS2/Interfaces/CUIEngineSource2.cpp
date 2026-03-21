@@ -33,7 +33,7 @@ namespace CS2 {
 		if (!pRunScriptFn) {
 
 
-			auto pPanorama = proc.GetRemoteModule("panorama.dll");
+			auto pPanorama = pProc->GetRemoteModule("panorama.dll");
 			if (!pPanorama) {
 				printf("ERROR: Failed to get panorama.dll\n");
 				return;
@@ -47,7 +47,7 @@ namespace CS2 {
 		}
 
 		if (!pRunScriptCtx) {
-			pRunScriptCtx = reinterpret_cast<RunScriptContext*>(proc.Alloc(sizeof(RunScriptContext)));
+			pRunScriptCtx = reinterpret_cast<RunScriptContext*>(pProc->Alloc(sizeof(RunScriptContext)));
 			if (!pRunScriptCtx) {
 				printf("Error Allocating RunScriptCtx!!\n");
 				return;
@@ -60,20 +60,20 @@ namespace CS2 {
 		ctx.pFn = pRunScriptFn;
 		ctx.panel = panel ? reinterpret_cast<void*>(panel) : 0x0;
 		ctx.pUiEngineSource2 = this;
-		auto remoteScriptBuffer = proc.AllocateAndWriteString(szScript);
+		auto remoteScriptBuffer = pProc->AllocateAndWriteString(szScript);
 		ctx.szScript = reinterpret_cast<char*>(remoteScriptBuffer);
 		// strcpy_s(ctx.szScript, sizeof(ctx.szScript), szScript);
 		
-		if (!proc.Write<RunScriptContext>(reinterpret_cast<uintptr_t>(pRunScriptCtx), ctx)) {
+		if (!pProc->Write<RunScriptContext>(reinterpret_cast<uintptr_t>(pRunScriptCtx), ctx)) {
 			printf("Failed to write Run Script context!\n");
 			return;
 		}
 		if (!pRunScriptShellCodeRemote) {
-			pRunScriptShellCodeRemote = proc.AllocAndWriteShellcode(RunScriptThread, RunScriptThreadEnd);
+			pRunScriptShellCodeRemote = pProc->AllocAndWriteShellcode(RunScriptThread, RunScriptThreadEnd);
 			if (!pRunScriptShellCodeRemote) {
 				printf("Failed to allocate RunScript shellcode!\n");
-				proc.FreeRemote(pRunScriptCtx);
-				proc.FreeRemote(remoteScriptBuffer);
+				pProc->FreeRemote(pRunScriptCtx);
+				pProc->FreeRemote(remoteScriptBuffer);
 
 				pRunScriptCtx = nullptr;
 				return;
@@ -81,16 +81,16 @@ namespace CS2 {
 
 			printf("[+] RunScript shellcode: 0x%p\n", pRunScriptShellCodeRemote);
 		}
-		HANDLE hThread = proc.CreateRemoteThreadEx(
+		HANDLE hThread = pProc->CreateRemoteThreadEx(
 			reinterpret_cast<LPTHREAD_START_ROUTINE>(pRunScriptShellCodeRemote),
 			pRunScriptCtx
 		);
 
 		if (!hThread) {
 			printf("Failed to create RunScript thread!\n");
-			proc.FreeRemote(pRunScriptShellCodeRemote);
-			proc.FreeRemote(pRunScriptCtx);
-			proc.FreeRemote(remoteScriptBuffer);
+			pProc->FreeRemote(pRunScriptShellCodeRemote);
+			pProc->FreeRemote(pRunScriptCtx);
+			pProc->FreeRemote(remoteScriptBuffer);
 
 			pRunScriptCtx = nullptr;
 			pRunScriptShellCodeRemote = nullptr;
@@ -102,9 +102,9 @@ namespace CS2 {
 		if (waitResult != WAIT_OBJECT_0) {
 			printf("RunScript Thread wait failed or timed out! Result: %d\n", waitResult);
 			CloseHandle(hThread);
-			proc.FreeRemote(pRunScriptShellCodeRemote);
-			proc.FreeRemote(pRunScriptCtx);
-			proc.FreeRemote(remoteScriptBuffer);
+			pProc->FreeRemote(pRunScriptShellCodeRemote);
+			pProc->FreeRemote(pRunScriptCtx);
+			pProc->FreeRemote(remoteScriptBuffer);
 
 			pRunScriptCtx = nullptr;
 			pRunScriptShellCodeRemote = nullptr;
@@ -114,9 +114,9 @@ namespace CS2 {
 		DWORD exitCode = 0;
 		GetExitCodeThread(hThread, &exitCode);
 		CloseHandle(hThread);
-		proc.FreeRemote(remoteScriptBuffer);
+		pProc->FreeRemote(remoteScriptBuffer);
 		/* Simple Fire and cleanup execution. - the previous logic is just for re - using the same RemoteCtx& Shellcode!!
-		DWORD result = proc.ExecuteRemoteWrapper(
+		DWORD result = pProc->ExecuteRemoteWrapper(
 			RunScriptThread,
 			RunScriptThreadEnd,
 			ctx

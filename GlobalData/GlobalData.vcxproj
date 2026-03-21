@@ -73,12 +73,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(ProjectDir)Include;$(SolutionDir)Memory\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Include;$(SolutionDir)LiquidHookEx\LiquidHookEx\Include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(ProjectDir)Include;$(SolutionDir)Memory\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Include;$(SolutionDir)LiquidHookEx\LiquidHookEx\Include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -156,8 +156,8 @@
     <ClInclude Include="Include\GlobalData\xorstr.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Memory\Memory.vcxproj">
-      <Project>{a211709a-5578-4c34-9d70-69516f31770f}</Project>
+    <ProjectReference Include="..\..\CS2-SkinChanger-Ex\LiquidHookEx\LiquidHookEx\LiquidHookEx.vcxproj">
+      <Project>{00b59da1-017f-445c-ac10-87928d2e1d87}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

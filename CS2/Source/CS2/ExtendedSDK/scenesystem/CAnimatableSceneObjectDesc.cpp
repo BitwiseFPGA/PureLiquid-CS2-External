@@ -114,8 +114,8 @@ namespace CS2 {
             reinterpret_cast<void*>(RenderObjects_Hook_Shellcode),
             reinterpret_cast<void*>(RenderObjects_Hook_Shellcode_End),
             {
-                LiquidHookEx::RipSlot::Data(&g_pHookData),
-                LiquidHookEx::RipSlot::Orig(&g_pOriginalRenderObjects),
+                LiquidHookEx::VTable::RipSlot::Data(&g_pHookData),
+                LiquidHookEx::VTable::RipSlot::Orig(&g_pOriginalRenderObjects),
             }
             );
   

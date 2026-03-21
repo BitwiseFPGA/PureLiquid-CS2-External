@@ -1,8 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <array>
-#include <Memory/HookConfig.h>
-#include <Memory/LiquidHookEx.h>
+#include <LiquidHookEx/Include.h>
 #include <GlobalData/Include.h>
 
 namespace Source2 {
@@ -18,7 +17,7 @@ namespace CS2 {
     using CMaterial2 = void;
     class CBaseSceneData;
 
-    struct CAnimatableSceneObjectDescRenderHookData : public LiquidHookEx::BaseHookData
+    struct CAnimatableSceneObjectDescRenderHookData : public LiquidHookEx::VTable::BaseHookData
     {
         ::Source2::CStrongHandle<CMaterial2>* hMaterialToUse;
         bool bChamsEnabled;
@@ -35,7 +34,7 @@ namespace CS2 {
     class CAnimatableSceneObjectDesc
     {
     private:
-        inline static LiquidHookEx m_Hook = LiquidHookEx("CAnimatableSceneObjectDescHook", &Globals::proc);
+        inline static LiquidHookEx::VTable m_Hook = LiquidHookEx::VTable("CAnimatableSceneObjectDescHook");
 
         static void* __fastcall RenderObjects_Hook_Shellcode(
             uint64_t a1, uint64_t a2, CBaseSceneData* a3, int32_t a4,

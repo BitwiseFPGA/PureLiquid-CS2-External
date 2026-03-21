@@ -1,14 +1,14 @@
 #pragma once
 #pragma once 
 #include <Windows.h>
-#include <Memory/Process.h>
+#include <LiquidHookEx/Process.h>
 #include <GlobalData/xorstr.h>
 #include <optional>
 #include <vector>
 #include <mutex>
-
+using namespace LiquidHookEx;
 namespace Globals {
-    extern Process proc;
+    extern Process* pProc;
 }
 
 #define thisptr (reinterpret_cast<uintptr_t>(this))
@@ -17,21 +17,21 @@ namespace Globals {
 #define PROPERTY(NAME, TYPE, OFFSET) \
 public: \
     __forceinline TYPE _internal_Get##NAME() { \
-        return ::Globals::proc.ReadDirect<TYPE>(thisptr + OFFSET); \
+        return ::Globals::pProc->ReadDirect<TYPE>(thisptr + OFFSET); \
     } \
     __forceinline void _internal_Set##NAME(TYPE val) { \
-        ::Globals::proc.Write<TYPE>(thisptr + OFFSET, val); \
+        ::Globals::pProc->Write<TYPE>(thisptr + OFFSET, val); \
     } \
     __declspec(property(get = _internal_Get##NAME, put = _internal_Set##NAME)) TYPE NAME;
 
 #define PROPERTY_ARRAY(NAME, TYPE, COUNT, OFFSET) \
 public: \
     __forceinline std::vector<TYPE> _internal_Get##NAME() { \
-        return ::Globals::proc.ReadArray<TYPE>(thisptr + OFFSET, COUNT); \
+        return ::Globals::pProc->ReadArray<TYPE>(thisptr + OFFSET, COUNT); \
     } \
     __forceinline void _internal_Set##NAME(const std::vector<TYPE>& val) { \
         if (val.size() >= COUNT) \
-            ::Globals::proc.WriteArray<TYPE>(thisptr + OFFSET, val); \
+            ::Globals::pProc->WriteArray<TYPE>(thisptr + OFFSET, val); \
     } \
     __declspec(property(get = _internal_Get##NAME, put = _internal_Set##NAME)) std::vector<TYPE> NAME;
 
@@ -39,12 +39,12 @@ public: \
 public: \
     TYPE _internal_Get##NAME() const { \
         uintptr_t offset = OFFSET_FUNC(); \
-        return Globals::proc.ReadDirect<TYPE>( \
+        return Globals::pProc->ReadDirect<TYPE>( \
             reinterpret_cast<uintptr_t>(this) + offset); \
     } \
     void _internal_Set##NAME(TYPE val) { \
         uintptr_t offset = OFFSET_FUNC(); \
-        Globals::proc.Write<TYPE>( \
+        Globals::pProc->Write<TYPE>( \
             reinterpret_cast<uintptr_t>(this) + offset, val); \
     } \
     __declspec(property(get = _internal_Get##NAME, put = _internal_Set##NAME)) TYPE NAME;
@@ -62,14 +62,14 @@ public: \
     __forceinline TYPE _internal_Get##NAME() { \
         auto it = _cache_##NAME.find(thisptr); \
         if (it == _cache_##NAME.end()) { \
-            TYPE value = ::Globals::proc.ReadDirect<TYPE>(thisptr + OFFSET); \
+            TYPE value = ::Globals::pProc->ReadDirect<TYPE>(thisptr + OFFSET); \
             _cache_##NAME[thisptr] = value; \
             return value; \
         } \
         return it->second; \
     } \
     __forceinline void _internal_Set##NAME(TYPE val) { \
-        ::Globals::proc.Write<TYPE>(thisptr + OFFSET, val); \
+        ::Globals::pProc->Write<TYPE>(thisptr + OFFSET, val); \
         _cache_##NAME[thisptr] = val; \
     } \
     __forceinline void _internal_Invalidate##NAME() { \
@@ -84,14 +84,14 @@ public: \
     __forceinline std::string _internal_Get##NAME() { \
         auto it = _cache_##NAME.find(thisptr); \
         if (it == _cache_##NAME.end()) { \
-            std::string value = ::Globals::proc.ReadString(thisptr + OFFSET, MAX_LENGTH); \
+            std::string value = ::Globals::pProc->ReadString(thisptr + OFFSET, MAX_LENGTH); \
             _cache_##NAME[thisptr] = value; \
             return value; \
         } \
         return it->second; \
     } \
     __forceinline void _internal_Set##NAME(const std::string& val) { \
-        ::Globals::proc.WriteString(thisptr + OFFSET, val, MAX_LENGTH); \
+        ::Globals::pProc->WriteString(thisptr + OFFSET, val, MAX_LENGTH); \
         _cache_##NAME[thisptr] = val; \
     } \
     __forceinline void _internal_Invalidate##NAME() { \
@@ -107,14 +107,14 @@ public: \
     __forceinline std::string _internal_Get##NAME() { \
         auto it = _cache_##NAME.find(thisptr); \
         if (it == _cache_##NAME.end()) { \
-            std::string value = ::Globals::proc.ReadString(proc.ReadDirect<uintptr_t>(thisptr + OFFSET), MAX_LENGTH); \
+            std::string value = ::Globals::pProc->ReadString(pProc->ReadDirect<uintptr_t>(thisptr + OFFSET), MAX_LENGTH); \
             _cache_##NAME[thisptr] = value; \
             return value; \
         } \
         return it->second; \
     } \
     __forceinline void _internal_Set##NAME(const std::string& val) { \
-        ::Globals::proc.WriteString(proc.ReadDirect<uintptr_t>(thisptr + OFFSET), val, MAX_LENGTH); \
+        ::Globals::pProc->WriteString(pProc->ReadDirect<uintptr_t>(thisptr + OFFSET), val, MAX_LENGTH); \
         _cache_##NAME[thisptr] = val; \
     } \
     __forceinline void _internal_Invalidate##NAME() { \
@@ -129,7 +129,7 @@ public: \
     __forceinline std::vector<TYPE> _internal_Get##NAME() { \
         auto it = _cache_##NAME.find(thisptr); \
         if (it == _cache_##NAME.end()) { \
-            std::vector<TYPE> value = ::Globals::proc.ReadArray<TYPE>(thisptr + OFFSET, COUNT); \
+            std::vector<TYPE> value = ::Globals::pProc->ReadArray<TYPE>(thisptr + OFFSET, COUNT); \
             _cache_##NAME[thisptr] = value; \
             return value; \
         } \
@@ -137,7 +137,7 @@ public: \
     } \
     __forceinline void _internal_Set##NAME(const std::vector<TYPE>& val) { \
         if (val.size() >= COUNT) { \
-            ::Globals::proc.WriteArray<TYPE>(thisptr + OFFSET, val); \
+            ::Globals::pProc->WriteArray<TYPE>(thisptr + OFFSET, val); \
             _cache_##NAME[thisptr] = val; \
         } \
     } \
@@ -157,10 +157,10 @@ public: \
             uint64_t count = this->SIZE_PROPERTY; \
             uintptr_t arrayAddress = thisptr + OFFSET; \
             if constexpr (bReadPointerFirst) { \
-                arrayAddress = ::Globals::proc.ReadDirect<uintptr_t>(arrayAddress); \
+                arrayAddress = ::Globals::pProc->ReadDirect<uintptr_t>(arrayAddress); \
                 if (arrayAddress == 0) return {}; \
             } \
-            auto rawPointers = ::Globals::proc.ReadArray<uintptr_t>(arrayAddress, count); \
+            auto rawPointers = ::Globals::pProc->ReadArray<uintptr_t>(arrayAddress, count); \
             std::vector<TYPE> result; \
             result.reserve(rawPointers.size()); \
             for (auto ptr : rawPointers) { \
@@ -184,7 +184,7 @@ public: \
         auto it = _cache_##NAME.find(reinterpret_cast<uintptr_t>(this)); \
         if (it == _cache_##NAME.end()) { \
             uintptr_t offset = OFFSET_FUNC(); \
-            TYPE value = Globals::proc.ReadDirect<TYPE>( \
+            TYPE value = Globals::pProc->ReadDirect<TYPE>( \
                 reinterpret_cast<uintptr_t>(this) + offset); \
             _cache_##NAME[reinterpret_cast<uintptr_t>(this)] = value; \
             return value; \
@@ -193,7 +193,7 @@ public: \
     } \
     void _internal_Set##NAME(TYPE val) { \
         uintptr_t offset = OFFSET_FUNC(); \
-        Globals::proc.Write<TYPE>( \
+        Globals::pProc->Write<TYPE>( \
             reinterpret_cast<uintptr_t>(this) + offset, val); \
         _cache_##NAME[reinterpret_cast<uintptr_t>(this)] = val; \
     } \

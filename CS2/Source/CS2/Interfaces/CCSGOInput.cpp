@@ -2,7 +2,7 @@
 #include <CS2/Patterns.h>
 #include <Math/Vector.h>
 #include <GlobalData/Include.h>
-#include <Memory/LiquidHookEx.h>
+#include <LiquidHookEx/Include.h>
 using namespace Globals;
 
 namespace CS2 {
@@ -107,8 +107,8 @@ namespace CS2 {
             reinterpret_cast<void*>(CreateMove_Hook_Shellcode),
             reinterpret_cast<void*>(CreateMove_Hook_Shellcode_End),
             {
-                LiquidHookEx::RipSlot::Data(&g_pHookData),
-                LiquidHookEx::RipSlot::Orig(&g_pOriginalCreateMove),
+                LiquidHookEx::VTable::RipSlot::Data(&g_pHookData),
+                LiquidHookEx::VTable::RipSlot::Orig(&g_pOriginalCreateMove),
             }
             );
     }
@@ -159,7 +159,7 @@ namespace CS2 {
 
     uintptr_t CCSGOInput::ResolveViewAnglesOffset() {
         if (!pViewAnglesOffset) {
-            auto hClient = ::Globals::proc.GetRemoteModule("client.dll");
+            auto hClient = ::Globals::pProc->GetRemoteModule("client.dll");
             if (!hClient || hClient && !hClient->GetAddr()) {
                 return NULL;
             }

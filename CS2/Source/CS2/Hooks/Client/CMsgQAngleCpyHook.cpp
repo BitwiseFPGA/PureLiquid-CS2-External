@@ -59,8 +59,8 @@ namespace CS2 {
             reinterpret_cast<void*>(SetAng_Hook_Shellcode),
             reinterpret_cast<void*>(SetAng_Hook_Shellcode_End),
             {
-                LiquidCallHookEx::RipSlot::Data(&g_pSetAngHookData),
-                LiquidCallHookEx::RipSlot::Orig(&g_pOriginalSetAng),
+                LiquidHookEx::CallSite::RipSlot::Data(&g_pSetAngHookData),
+                LiquidHookEx::CallSite::RipSlot::Orig(&g_pOriginalSetAng),
             },
             9);
     }

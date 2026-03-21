@@ -14,15 +14,15 @@ namespace CS2 {
 			if (!pGameSceneNodePtr)
 				return {};
 			auto pAddr = pGameSceneNodePtr + SchemaOffsets::client::CSkeletonInstance::m_modelState + 0x80;
-			return proc.ReadArray< Matrix2x4_t>(proc.ReadDirect<uintptr_t>(pAddr), boneCount);
+			return pProc->ReadArray< Matrix2x4_t>(pProc->ReadDirect<uintptr_t>(pAddr), boneCount);
 		}
 		::CS2::resourcesystem::CModel_Imp* C_CSPlayerPawnExtended::GetCModel_Imp()
 		{
 			auto pGameSceneNodePtr = reinterpret_cast<uintptr_t>(m_pGameSceneNode);
 			if (!pGameSceneNodePtr)
 				return nullptr;
-			auto ptr = proc.ReadDirect<uintptr_t>(pGameSceneNodePtr + SchemaOffsets::client::CSkeletonInstance::m_modelState + SchemaOffsets::client::CModelState::m_hModel);
-			return proc.ReadDirect<resourcesystem::CModel_Imp*>(ptr);
+			auto ptr = pProc->ReadDirect<uintptr_t>(pGameSceneNodePtr + SchemaOffsets::client::CSkeletonInstance::m_modelState + SchemaOffsets::client::CModelState::m_hModel);
+			return pProc->ReadDirect<resourcesystem::CModel_Imp*>(ptr);
 		}
 		client::CGameSceneNodeExtended* C_CSPlayerPawnExtended::GetGameSceneNodeExtended()
 		{

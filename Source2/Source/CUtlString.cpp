@@ -4,5 +4,5 @@
 #include <string>
 
 std::string Source2::CUtlString::Get() const {
-	return ::Globals::proc.ReadString(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlString, _str));
+	return ::Globals::pProc->ReadString(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlString, _str));
 }

@@ -21,6 +21,7 @@
 #endif
 
 #include <GlobalData/Include.h>
+#include <LiquidHookEx/Include.h>
 
 
 #ifdef INCLUDE_OVERLAY

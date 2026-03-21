@@ -50,7 +50,7 @@ namespace CS2 {
             if (bucketIndex > 0x3F)
                 return nullptr;
 
-            uintptr_t bucketPtr = ::Globals::proc.ReadDirect<uintptr_t>(bucketsBase + sizeof(uintptr_t) * bucketIndex);
+            uintptr_t bucketPtr = ::Globals::pProc->ReadDirect<uintptr_t>(bucketsBase + sizeof(uintptr_t) * bucketIndex);
             if (!bucketPtr)
                 return nullptr;
 
@@ -59,11 +59,11 @@ namespace CS2 {
             if (!entry)
                 return nullptr;
 
-            int storedIndex = ::Globals::proc.ReadDirect<int>(entry + 16);
+            int storedIndex = ::Globals::pProc->ReadDirect<int>(entry + 16);
             if ((storedIndex & 0x7FFF) != entityIdx)
                 return nullptr;
 
-            uintptr_t entityPtr = bRead ? ::Globals::proc.ReadDirect<uintptr_t>(entry) : entry;
+            uintptr_t entityPtr = bRead ? ::Globals::pProc->ReadDirect<uintptr_t>(entry) : entry;
             return reinterpret_cast<T*>(entityPtr);
         }
 

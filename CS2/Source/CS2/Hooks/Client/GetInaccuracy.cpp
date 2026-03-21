@@ -50,7 +50,7 @@ namespace CS2 {
             reinterpret_cast<void*>(GetInaccuracy_Hook_Shellcode),
             reinterpret_cast<void*>(GetInaccuracy_Hook_Shellcode_End),
             {
-                LiquidCallHookEx::RipSlot::Data(&g_pGetSpreadHookData),
+                LiquidHookEx::CallSite::RipSlot::Data(&g_pGetSpreadHookData),
             });
     }
 

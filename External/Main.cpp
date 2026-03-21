@@ -30,7 +30,7 @@ Renderer renderer{ {} };
 
 // #define USE_CHAMS_VISIBILITY_BASED
 namespace Globals {
-	Process proc{ "cs2.exe" };
+	LiquidHookEx::Process* pProc = nullptr;
 }
 // cpy QMsgAngle fn => client @ E8 ?? ?? ?? ?? 40 F6 C5 ?? 74 ?? 8B 46 ?? 89 47 ?? 09 2B
 using namespace Globals;
@@ -127,13 +127,16 @@ float RandomFloat(float a, float b) {
 int main() {
 	
 	SetConsoleTitle("PureLiquid CS2 External");
+
+	LiquidHookEx::INIT("cs2.exe");
+	pProc = LiquidHookEx::proc;
 	
 	I::Initialize();
 
 
 #ifdef INCLUDE_OVERLAY
 	OverlayAPI::InitImGuiContext();
-	Overlay::Show(proc.GetHwnd(), &renderer);
+	Overlay::Show(pProc->GetHwnd(), &renderer);
 	renderer.AddRenderObject(new RenderObjects::Esp());
 #endif
 
@@ -195,8 +198,8 @@ int main() {
 		auto res = CS2::GetInaccuracy::GetData();
 		printf("Weapon: 0x%p\n", res.weapon);
 		printf("Inaccuracy: %.5f\n", res.flInaccuracy);
-		auto weaponVData = proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(res.weapon) + CS2::SchemaOffsets::client::C_BaseEntity::m_nSubclassID + 0x8);
-		auto flSpread = proc.ReadDirect<float>(weaponVData + CS2::SchemaOffsets::client::CCSWeaponBaseVData::m_flSpread);
+		auto weaponVData = pProc->ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(res.weapon) + CS2::SchemaOffsets::client::C_BaseEntity::m_nSubclassID + 0x8);
+		auto flSpread = pProc->ReadDirect<float>(weaponVData + CS2::SchemaOffsets::client::CCSWeaponBaseVData::m_flSpread);
 		printf("Spread: %.5f\n", flSpread);
 #endif
 

@@ -1,8 +1,8 @@
 ﻿#pragma once
 #include <GlobalData/Include.h>
 #include <Math/QAngle.h>
-#include <Memory/HookConfig.h>
-#include <Memory/LiquidHookEx.h>
+#include <LiquidHookEx/Include.h>
+
 namespace CS2 {
 
 	enum ECommandButtons : uint64_t {
@@ -185,7 +185,7 @@ namespace CS2 {
 
 
 
-	struct CreateMoveHookData: public LiquidHookEx::BaseHookData
+	struct CreateMoveHookData: public LiquidHookEx::VTable::BaseHookData
 	{
 		uint64_t cmd;
 		uint64_t btnToForce;
@@ -199,7 +199,7 @@ namespace CS2 {
 
 	class CCSGOInput {
 	private:
-		inline static LiquidHookEx m_Hook = LiquidHookEx("CreateMoveHook", &Globals::proc);
+		inline static LiquidHookEx::VTable m_Hook = LiquidHookEx::VTable("CreateMoveHook");
 		// CreateMove Hook
 
 		// CreateMove Shellcode

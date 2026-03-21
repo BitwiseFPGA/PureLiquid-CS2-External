@@ -184,7 +184,7 @@ namespace CS2 {
 			if (m_pScopeArrayCached.empty()) {
 				auto pScopes = m_pScopeArray;
 				m_pScopeArrayCached = pScopes->MapPtrEntries<CSchemaSystemTypeScope*>([](uintptr_t addr) -> CSchemaSystemTypeScope* {
-					return reinterpret_cast<CSchemaSystemTypeScope*>(proc.ReadDirect<uintptr_t>(addr));
+					return reinterpret_cast<CSchemaSystemTypeScope*>(pProc->ReadDirect<uintptr_t>(addr));
 					});
 			}
 			return m_pScopeArrayCached;

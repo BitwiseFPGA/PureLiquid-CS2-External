@@ -29,7 +29,7 @@ namespace CS2 {
 		if (!pChangeModelFn) {
 
 
-			auto pPanorama = proc.GetRemoteModule("client.dll");
+			auto pPanorama = pProc->GetRemoteModule("client.dll");
 			if (!pPanorama) {
 				printf("ERROR: Failed to get client.dll\n");
 				return;
@@ -43,7 +43,7 @@ namespace CS2 {
 		}
 
 		if (!changeModelRemoteCtx) {
-			changeModelRemoteCtx = reinterpret_cast<ChangeModelContext*>(proc.Alloc(sizeof(ChangeModelContext)));
+			changeModelRemoteCtx = reinterpret_cast<ChangeModelContext*>(pProc->Alloc(sizeof(ChangeModelContext)));
 			if (!changeModelRemoteCtx) {
 				printf("Error Allocating ChangeModelCtx!!\n");
 				return;
@@ -58,30 +58,30 @@ namespace CS2 {
 
 		strcpy_s(ctx.szModelName, sizeof(ctx.szModelName), szModelName);
 
-		if (!proc.Write<ChangeModelContext>(reinterpret_cast<uintptr_t>(changeModelRemoteCtx), ctx)) {
+		if (!pProc->Write<ChangeModelContext>(reinterpret_cast<uintptr_t>(changeModelRemoteCtx), ctx)) {
 			printf("Failed to write Run Script context!\n");
 			return;
 		}
 		if (!pChangeModelRemoteShellcode) {
-			pChangeModelRemoteShellcode = proc.AllocAndWriteShellcode(ChangeModelThread, ChangeModelThreadEnd);
+			pChangeModelRemoteShellcode = pProc->AllocAndWriteShellcode(ChangeModelThread, ChangeModelThreadEnd);
 			if (!pChangeModelRemoteShellcode) {
 				printf("Failed to allocate ChangeModel shellcode!\n");
-				proc.FreeRemote(changeModelRemoteCtx);
+				pProc->FreeRemote(changeModelRemoteCtx);
 				changeModelRemoteCtx = nullptr;
 				return;
 			}
 
 			printf("[+] ChangeModel shellcode: 0x%p\n", pChangeModelRemoteShellcode);
 		}
-		HANDLE hThread = proc.CreateRemoteThreadEx(
+		HANDLE hThread = pProc->CreateRemoteThreadEx(
 			reinterpret_cast<LPTHREAD_START_ROUTINE>(pChangeModelRemoteShellcode),
 			changeModelRemoteCtx
 		);
 
 		if (!hThread) {
 			printf("Failed to create ChangeModel thread!\n");
-			proc.FreeRemote(pChangeModelRemoteShellcode);
-			proc.FreeRemote(changeModelRemoteCtx);
+			pProc->FreeRemote(pChangeModelRemoteShellcode);
+			pProc->FreeRemote(changeModelRemoteCtx);
 			changeModelRemoteCtx = nullptr;
 			pChangeModelRemoteShellcode = nullptr;
 			return;
@@ -92,8 +92,8 @@ namespace CS2 {
 		if (waitResult != WAIT_OBJECT_0) {
 			printf("ChangeModel Thread wait failed or timed out! Result: %d\n", waitResult);
 			CloseHandle(hThread);
-			proc.FreeRemote(pChangeModelRemoteShellcode);
-			proc.FreeRemote(changeModelRemoteCtx);
+			pProc->FreeRemote(pChangeModelRemoteShellcode);
+			pProc->FreeRemote(changeModelRemoteCtx);
 			changeModelRemoteCtx = nullptr;
 			pChangeModelRemoteShellcode = nullptr;
 			return;

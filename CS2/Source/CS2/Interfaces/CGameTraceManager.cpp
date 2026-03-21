@@ -38,7 +38,7 @@ namespace CS2 {
 			return {};
 
 		if (!TraceShapeFn) {
-			auto pClient = proc.GetRemoteModule("client.dll");
+			auto pClient = pProc->GetRemoteModule("client.dll");
 			if (!pClient) {
 				printf("Error Finding client.dll!!\n");
 				return {};
@@ -55,7 +55,7 @@ namespace CS2 {
 
 
 
-		pLastUsedTrace = reinterpret_cast<trace_t*>(proc.Alloc(sizeof(trace_t)));
+		pLastUsedTrace = reinterpret_cast<trace_t*>(pProc->Alloc(sizeof(trace_t)));
 		if (!pLastUsedTrace) {
 			printf("Error allocating trace!!\n");
 			return {};
@@ -63,7 +63,7 @@ namespace CS2 {
 
 		if (!pLastUsedRay) {
 
-			pLastUsedRay = reinterpret_cast<Ray_t*>(proc.Alloc(sizeof(Ray_t)));
+			pLastUsedRay = reinterpret_cast<Ray_t*>(pProc->Alloc(sizeof(Ray_t)));
 
 			if (!pLastUsedRay) {
 				printf("Error allocating ray!!\n");
@@ -71,7 +71,7 @@ namespace CS2 {
 			}
 
 			Ray_t ray{};
-			if (!proc.Write<Ray_t>(reinterpret_cast<uintptr_t>(pLastUsedRay), ray)) {
+			if (!pProc->Write<Ray_t>(reinterpret_cast<uintptr_t>(pLastUsedRay), ray)) {
 				printf("Failed to write remote Ray_t!\n");
 				return {};
 			}
@@ -91,7 +91,7 @@ namespace CS2 {
 		ctx.vStartPos = (pLocal->m_vOldOrigin + pLocal->m_vecViewOffset);
 
 		if (!pTraceShapeRemoteCtx) {
-			pTraceShapeRemoteCtx = reinterpret_cast<TraceShapeCtx*>(proc.Alloc(sizeof(TraceShapeCtx)));
+			pTraceShapeRemoteCtx = reinterpret_cast<TraceShapeCtx*>(pProc->Alloc(sizeof(TraceShapeCtx)));
 			if (!pTraceShapeRemoteCtx) {
 				printf("Error Allocating TraceShapeRemoteCtx!!\n");
 				return {};
@@ -100,15 +100,15 @@ namespace CS2 {
 
 		}
 
-		if (!proc.Write<TraceShapeCtx>(reinterpret_cast<uintptr_t>(pTraceShapeRemoteCtx), ctx)) {
+		if (!pProc->Write<TraceShapeCtx>(reinterpret_cast<uintptr_t>(pTraceShapeRemoteCtx), ctx)) {
 			printf("Failed to write update context!\n");
 			return {};
 		}
 		if (!pTraceShapeShellcodeRemote) {
-			pTraceShapeShellcodeRemote = proc.AllocAndWriteShellcode(TraceShapeThread, TraceShapeThreadEnd);
+			pTraceShapeShellcodeRemote = pProc->AllocAndWriteShellcode(TraceShapeThread, TraceShapeThreadEnd);
 			if (!pTraceShapeShellcodeRemote) {
 				printf("Failed to allocate TraceShape shellcode!\n");
-				proc.FreeRemote(pTraceShapeRemoteCtx);
+				pProc->FreeRemote(pTraceShapeRemoteCtx);
 				return {};
 			}
 
@@ -118,16 +118,16 @@ namespace CS2 {
 		// printf("[+] Executing TraceShape thread...\n");
 
 		// Execute using ExecuteAndCleanup
-		HANDLE hThread = proc.CreateRemoteThreadEx(
+		HANDLE hThread = pProc->CreateRemoteThreadEx(
 			reinterpret_cast<LPTHREAD_START_ROUTINE>(pTraceShapeShellcodeRemote),
 			pTraceShapeRemoteCtx
 		);
 
 		if (!hThread) {
 			printf("Failed to create TraceShape thread!\n");
-			proc.FreeRemote(pTraceShapeShellcodeRemote);
-			proc.FreeRemote(pTraceShapeRemoteCtx);
-			proc.FreeRemote(pLastUsedTrace);
+			pProc->FreeRemote(pTraceShapeShellcodeRemote);
+			pProc->FreeRemote(pTraceShapeRemoteCtx);
+			pProc->FreeRemote(pLastUsedTrace);
 			return {};
 		}
 
@@ -137,8 +137,8 @@ namespace CS2 {
 			printf("TraceShape Thread wait failed or timed out! Result: %d\n", waitResult);
 			CloseHandle(hThread);
 			if (!bDebug) {
-				proc.FreeRemote(pTraceShapeRemoteCtx);
-				proc.FreeRemote(pTraceShapeShellcodeRemote);
+				pProc->FreeRemote(pTraceShapeRemoteCtx);
+				pProc->FreeRemote(pTraceShapeShellcodeRemote);
 			}
 			return {};
 		}
@@ -148,10 +148,10 @@ namespace CS2 {
 		CloseHandle(hThread);
 
 		trace_t resultTrace;
-		if (!proc.Read(reinterpret_cast<uintptr_t>(pLastUsedTrace), &resultTrace, sizeof(trace_t))) {
+		if (!pProc->Read(reinterpret_cast<uintptr_t>(pLastUsedTrace), &resultTrace, sizeof(trace_t))) {
 			printf("Failed to read result trace_t!\n");
-			proc.FreeRemote(pTraceShapeRemoteCtx);
-			proc.FreeRemote(pTraceShapeShellcodeRemote);
+			pProc->FreeRemote(pTraceShapeRemoteCtx);
+			pProc->FreeRemote(pTraceShapeShellcodeRemote);
 			return {};
 		}
 
@@ -185,7 +185,7 @@ namespace CS2 {
 
 	TraceFilter_t* TraceFilter_t::InitEntitiesOnly(client::C_CSPlayerPawn* skip, uint32_t mask, int layer, bool bDebug)
 	{
-		auto pClient = proc.GetRemoteModule("client.dll");
+		auto pClient = pProc->GetRemoteModule("client.dll");
 		if (!pClient) {
 			printf("Error Finding client.dll!!\n");
 			return nullptr;
@@ -199,7 +199,7 @@ namespace CS2 {
 		}
 
 		
-		auto pFilter = proc.Alloc(sizeof(TraceFilter_t));
+		auto pFilter = pProc->Alloc(sizeof(TraceFilter_t));
 
 		if (!pFilter) {
 			printf("Error Allocating tracefilter!!\n");
@@ -213,9 +213,9 @@ namespace CS2 {
 		ctx.layer = layer;
 		ctx.mask = mask;
 		ctx.pSkipPawn = skip;
-		void* pRemoteCtx = proc.Alloc(sizeof(InitEntityTraceFilterCtx));
+		void* pRemoteCtx = pProc->Alloc(sizeof(InitEntityTraceFilterCtx));
 
-		if (!proc.Write<InitEntityTraceFilterCtx>(reinterpret_cast<uintptr_t>(pRemoteCtx), ctx)) {
+		if (!pProc->Write<InitEntityTraceFilterCtx>(reinterpret_cast<uintptr_t>(pRemoteCtx), ctx)) {
 			printf("Failed to write remote context for entity only tracefilter!!\n");
 			return {};
 		}
@@ -223,10 +223,10 @@ namespace CS2 {
 
 		printf("[+] Remote context: 0x%p\n", pRemoteCtx);
 
-		void* shellcode = proc.AllocAndWriteShellcode(InitEntitiesOnlyThread, InitEntitiesOnlyThreadEnd);
+		void* shellcode = pProc->AllocAndWriteShellcode(InitEntitiesOnlyThread, InitEntitiesOnlyThreadEnd);
 		if (!shellcode) {
 			printf("Failed to allocate InitEntitiesOnlyThread shellcode!\n");
-			proc.FreeRemote(pRemoteCtx);
+			pProc->FreeRemote(pRemoteCtx);
 			return nullptr;
 		}
 
@@ -234,15 +234,15 @@ namespace CS2 {
 		printf("[+] Executing InitEntitiesOnlyThread thread...\n");
 
 		// Execute using ExecuteAndCleanup
-		HANDLE hThread = proc.CreateRemoteThreadEx(
+		HANDLE hThread = pProc->CreateRemoteThreadEx(
 			reinterpret_cast<LPTHREAD_START_ROUTINE>(shellcode),
 			pRemoteCtx
 		);
 
 		if (!hThread) {
 			printf("Failed to create remote thread!\n");
-			proc.FreeRemote(shellcode);
-			proc.FreeRemote(pRemoteCtx);
+			pProc->FreeRemote(shellcode);
+			pProc->FreeRemote(pRemoteCtx);
 			return nullptr;
 		}
 
@@ -253,8 +253,8 @@ namespace CS2 {
 			printf("Thread wait failed or timed out! Result: %d\n", waitResult);
 			CloseHandle(hThread);
 			if (!bDebug) {
-				proc.FreeRemote(shellcode);
-				proc.FreeRemote(pRemoteCtx);
+				pProc->FreeRemote(shellcode);
+				pProc->FreeRemote(pRemoteCtx);
 			}
 			return nullptr;
 		}

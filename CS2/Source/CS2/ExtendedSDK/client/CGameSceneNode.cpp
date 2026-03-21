@@ -9,7 +9,7 @@ namespace CS2 {
 		uint32_t client::CGameSceneNodeExtended::GetBonesOffset()
 		{
 			if (!dwBonesOffset) {
-				auto hClient = proc.GetRemoteModule("client.dll");
+				auto hClient = pProc->GetRemoteModule("client.dll");
 				if (!hClient || hClient && !hClient->GetAddr()) {
 					return NULL;
 				}

@@ -15,22 +15,22 @@ namespace Source2 {
 		void* pad;
 	public:
 		static CUtlVector<T>* FromAddr(uintptr_t pAddr, bool bRead = false) {
-			return reinterpret_cast<CUtlVector<T>*>(bRead ? ::proc.ReadDirect<uintptr_t>(pAddr) : pAddr);
+			return reinterpret_cast<CUtlVector<T>*>(bRead ? ::pProc->ReadDirect<uintptr_t>(pAddr) : pAddr);
 		}
 
 		std::uint32_t GetSize() {
 			printf("Getting Size From : 0x%p\n", (uintptr_t)(this));
-			return ::Globals::proc.ReadDirect<std::uint32_t>(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_iSize));
+			return ::Globals::pProc->ReadDirect<std::uint32_t>(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_iSize));
 		}
 
 		std::vector<T> GetData() {
 			auto size = GetSize();
-			return ::Globals::proc.ReadArray<T>(::Globals::proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData)), size);
+			return ::Globals::pProc->ReadArray<T>(::Globals::pProc->ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData)), size);
 		}
 
 
 		T* GetEntryAtIndex(int idx) {
-			return ::Globals::proc.ReadDirect<T*>(::Globals::proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData)) + (sizeof(T) * idx));
+			return ::Globals::pProc->ReadDirect<T*>(::Globals::pProc->ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData)) + (sizeof(T) * idx));
 		}
 
 		std::vector<uintptr_t> GetPtrList() {
@@ -38,7 +38,7 @@ namespace Source2 {
 			if (size <= 0 || size >= 1000)
 				return {};
 			printf("CUtlVector<%s>->Size: %i\n", typeid(T).name(), size);
-			auto pAddr = ::Globals::proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData));
+			auto pAddr = ::Globals::pProc->ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData));
 			std::vector<uintptr_t> vecPtrList{};
 			for (int i = 0; i < size; i++) {
 				vecPtrList.push_back(pAddr + (sizeof(T) * i));
@@ -49,7 +49,7 @@ namespace Source2 {
 		template <typename T2 = T, typename Func>
 		std::vector<T2> MapPtrEntries(Func&& mappingFn) {
 			auto size = GetSize();
-			auto pAddr = ::Globals::proc.ReadDirect<uintptr_t>(
+			auto pAddr = ::Globals::pProc->ReadDirect<uintptr_t>(
 				reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData));
 
 			std::vector<T2> vecPtrList;
@@ -64,7 +64,7 @@ namespace Source2 {
 		template <typename T2 = T>
 		std::vector<T2> ReinterpretPtrEntries() {
 			auto size = GetSize();
-			auto pAddr = ::Globals::proc.ReadDirect<uintptr_t>(
+			auto pAddr = ::Globals::pProc->ReadDirect<uintptr_t>(
 				reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData));
 
 			std::vector<T2> vecPtrList;
@@ -78,7 +78,7 @@ namespace Source2 {
 
 		template <typename T2 = T>
 		T2 ReinterpretPtrEntry(int idx) {
-			return reinterpret_cast<T2>(::Globals::proc.ReadDirect<uintptr_t>(
+			return reinterpret_cast<T2>(::Globals::pProc->ReadDirect<uintptr_t>(
 				reinterpret_cast<uintptr_t>(this) + offsetof(CUtlVector, m_pData)) + (sizeof(T) * idx));
 			
 		}

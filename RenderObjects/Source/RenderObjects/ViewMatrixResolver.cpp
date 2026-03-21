@@ -6,7 +6,7 @@ namespace CS2 {
 
 	uintptr_t ViewMatrixResolver::ResolveViewMatrixAddr() {
 		if (!pViewMatrixAddr) {
-			auto hClient = ::Globals::proc.GetRemoteModule("client.dll");
+			auto hClient = ::Globals::pProc->GetRemoteModule("client.dll");
 			if (!hClient || hClient && !hClient->GetAddr()) {
 				return NULL;
 			}
@@ -20,6 +20,6 @@ namespace CS2 {
 		ResolveViewMatrixAddr();
 		if (!pViewMatrixAddr)
 			return ViewMatrix_t();
-		return ::Globals::proc.ReadDirect<ViewMatrix_t>(pViewMatrixAddr);
+		return ::Globals::pProc->ReadDirect<ViewMatrix_t>(pViewMatrixAddr);
 	}
 }

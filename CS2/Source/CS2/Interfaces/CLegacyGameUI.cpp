@@ -24,7 +24,7 @@ namespace CS2 {
 	void CLegacyGameUI::ShowPopup(const char* szTitle, const char* szMessage) {
 
 		if (!pCreatePopupFn) {
-			pCreatePopupFn = reinterpret_cast<CreatePopUpFn>(proc.GetVTableFunction<28>(reinterpret_cast<uintptr_t>(this)));
+			pCreatePopupFn = reinterpret_cast<CreatePopUpFn>(pProc->GetVTableFunction<28>(reinterpret_cast<uintptr_t>(this)));
 			if (!pCreatePopupFn) {
 				printf("Error Finding CreatePopup Function!!\n");
 				return;
@@ -32,7 +32,7 @@ namespace CS2 {
 		}
 
 		if (!pCreatePopupRemoteCtx) {
-			pCreatePopupRemoteCtx = reinterpret_cast<CreatePopupCtx*>(proc.Alloc(sizeof(CreatePopupCtx)));
+			pCreatePopupRemoteCtx = reinterpret_cast<CreatePopupCtx*>(pProc->Alloc(sizeof(CreatePopupCtx)));
 			if (!pCreatePopupRemoteCtx) {
 				printf("Error Allocating CreatePopupCtx!!\n");
 				return;
@@ -49,30 +49,30 @@ namespace CS2 {
 		strcpy_s(ctx.szTitle, sizeof(ctx.szTitle), szTitle);
 		strcpy_s(ctx.szMsg, sizeof(ctx.szMsg), szMessage);
 
-		if (!proc.Write<CreatePopupCtx>(reinterpret_cast<uintptr_t>(pCreatePopupRemoteCtx), ctx)) {
+		if (!pProc->Write<CreatePopupCtx>(reinterpret_cast<uintptr_t>(pCreatePopupRemoteCtx), ctx)) {
 			printf("Failed to write Run Script context!\n");
 			return;
 		}
 		if (!pCreatePopupRemoteShellcode) {
-			pCreatePopupRemoteShellcode = proc.AllocAndWriteShellcode(CreatePopupThread, CreatePopupThreadEnd);
+			pCreatePopupRemoteShellcode = pProc->AllocAndWriteShellcode(CreatePopupThread, CreatePopupThreadEnd);
 			if (!pCreatePopupRemoteShellcode) {
 				printf("Failed to allocate CreatePopup shellcode!\n");
-				proc.FreeRemote(pCreatePopupRemoteCtx);
+				pProc->FreeRemote(pCreatePopupRemoteCtx);
 				pCreatePopupRemoteCtx = nullptr;
 				return;
 			}
 
 			printf("[+] CreatePopup shellcode: 0x%p\n", pCreatePopupRemoteShellcode);
 		}
-		HANDLE hThread = proc.CreateRemoteThreadEx(
+		HANDLE hThread = pProc->CreateRemoteThreadEx(
 			reinterpret_cast<LPTHREAD_START_ROUTINE>(pCreatePopupRemoteShellcode),
 			pCreatePopupRemoteCtx
 		);
 
 		if (!hThread) {
 			printf("Failed to create CreatePopup thread!\n");
-			proc.FreeRemote(pCreatePopupRemoteShellcode);
-			proc.FreeRemote(pCreatePopupRemoteCtx);
+			pProc->FreeRemote(pCreatePopupRemoteShellcode);
+			pProc->FreeRemote(pCreatePopupRemoteCtx);
 			pCreatePopupRemoteCtx = nullptr;
 			pCreatePopupRemoteShellcode = nullptr;
 			return;
@@ -83,8 +83,8 @@ namespace CS2 {
 		if (waitResult != WAIT_OBJECT_0) {
 			printf("CreatePopup Thread wait failed or timed out! Result: %d\n", waitResult);
 			CloseHandle(hThread);
-			proc.FreeRemote(pCreatePopupRemoteShellcode);
-			proc.FreeRemote(pCreatePopupRemoteCtx);
+			pProc->FreeRemote(pCreatePopupRemoteShellcode);
+			pProc->FreeRemote(pCreatePopupRemoteCtx);
 			pCreatePopupRemoteCtx = nullptr;
 			pCreatePopupRemoteShellcode = nullptr;
 			return;

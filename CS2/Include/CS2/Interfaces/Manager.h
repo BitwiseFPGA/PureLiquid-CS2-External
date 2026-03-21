@@ -36,28 +36,28 @@ namespace CS2 {
 
 		template <typename T>
 		inline static T* CreateInterface(std::string module, std::string interfaceName) {
-			auto m = ::Globals::proc.GetRemoteModule(module);
+			auto m = ::Globals::pProc->GetRemoteModule(module);
 			auto fn = (CInterfaceManager::CreateInterfaceFn<T>)m->GetProcAddress("CreateInterface");
 			return (T*)fn(interfaceName.c_str(), NULL);
 		}
 
 		inline static void Initialize() {
-			auto pClient = ::Globals::proc.GetRemoteModule("client.dll");
+			auto pClient = ::Globals::pProc->GetRemoteModule("client.dll");
 
-			pGameTraceManager = ::Globals::proc.ReadDirect<CGameTraceManager*>(
+			pGameTraceManager = ::Globals::pProc->ReadDirect<CGameTraceManager*>(
 				pClient->ResolveRIP(
 					pClient->ScanMemory(C_GAME_TRACE_MANAGER_PATTERN)
 					, 0x3, 0x7)
 			);
 
 			pCsGoInput = reinterpret_cast<CCSGOInput*>(
-				::Globals::proc.ReadDirect<uintptr_t>(
+				::Globals::pProc->ReadDirect<uintptr_t>(
 					pClient->ResolveRIP(
 						pClient->ScanMemory(C_CSGO_INPUT_PATTERN), 0x3, 0x7)
 				)
 				);
 
-			pCsGoHud = ::Globals::proc.ReadDirect<CCSGO_Hud*>(
+			pCsGoHud = ::Globals::pProc->ReadDirect<CCSGO_Hud*>(
 				pClient->ResolveRIP(
 					pClient->ScanMemory(CCSGO_HUD_PATTERN)
 					, 3, 7)

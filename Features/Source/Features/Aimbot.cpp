@@ -43,7 +43,7 @@ Aimbot::FOVResult Aimbot::GetTargetFOVAndDistance(
 
 void Aimbot::ShootIfPossible(CS2::client::C_CSPlayerPawnExtended* pLocalPawn, CS2::client::CCSPlayerController* pLocalController) {
     auto pLocalWeapon = CS2::I::pGameResourceService->GetGameEntitySystem()->GetEntityByIndex<CS2::client::C_BasePlayerWeapon>(pLocalPawn->m_pWeaponServices->m_hActiveWeapon.GetEntryIndex());
-    auto pWeaponVData = proc.ReadDirect<CS2::client::CCSWeaponBaseVData*>(reinterpret_cast<uintptr_t>(pLocalWeapon) + CS2::SchemaOffsets::client::C_BaseEntity::m_nSubclassID + 0x8);
+    auto pWeaponVData = pProc->ReadDirect<CS2::client::CCSWeaponBaseVData*>(reinterpret_cast<uintptr_t>(pLocalWeapon) + CS2::SchemaOffsets::client::C_BaseEntity::m_nSubclassID + 0x8);
     auto weaponType = pWeaponVData->m_WeaponType;
     if (weaponType == CS2::client::WEAPONTYPE_PISTOL) {
         if (pLocalWeapon->m_nNextPrimaryAttackTick <= pLocalController->m_nTickBase) {

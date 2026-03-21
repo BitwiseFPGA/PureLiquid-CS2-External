@@ -8,21 +8,21 @@ namespace CS2 {
 
 		::CS2::modellib::CRenderMeshExtended* CModel_Imp::GetRenderMesh(int idx)
 		{
-			uintptr_t pRenderMeshBase = proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + SchemaOffsets::modellib::PermModelData_t::m_refMeshes);
+			uintptr_t pRenderMeshBase = pProc->ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + SchemaOffsets::modellib::PermModelData_t::m_refMeshes);
 			if (!pRenderMeshBase)
 				return nullptr;
 
-			return proc.ReadDirect<uintptr_t, ::CS2::modellib::CRenderMeshExtended*>(pRenderMeshBase + (0x8 * idx));
+			return pProc->ReadDirect<uintptr_t, ::CS2::modellib::CRenderMeshExtended*>(pRenderMeshBase + (0x8 * idx));
 		}
 		::CS2::modellib::PermModelInfo_t* CModel_Imp::GetPermModelInfo()
 		{
-			uintptr_t pBase = proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + SchemaOffsets::modellib::PermModelData_t::m_modelInfo);
+			uintptr_t pBase = pProc->ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + SchemaOffsets::modellib::PermModelData_t::m_modelInfo);
 
-			return  proc.ReadDirect<uintptr_t, ::CS2::modellib::PermModelInfo_t*>(pBase);
+			return  pProc->ReadDirect<uintptr_t, ::CS2::modellib::PermModelInfo_t*>(pBase);
 		}
 		std::string CModel_Imp::GetModelName()
 		{
-			auto pBase = proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + 0x8);
+			auto pBase = pProc->ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + 0x8);
 			return reinterpret_cast<CUtlSymbolLarge*>(pBase)->Get();
 		}
 		std::string CModel_Imp::GetBoneName(int boneIdx)
@@ -31,10 +31,10 @@ namespace CS2 {
 			if (boneIdx < 0 || boneIdx >= boneCount)
 				return "root";
 
-			auto names = proc.ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + 0x168);
+			auto names = pProc->ReadDirect<uintptr_t>(reinterpret_cast<uintptr_t>(this) + 0x168);
 
-			const uint64_t bone_name_address = proc.ReadDirect<uint64_t>((uint64_t)names + boneIdx * 8);
-			return proc.ReadString(bone_name_address);
+			const uint64_t bone_name_address = pProc->ReadDirect<uint64_t>((uint64_t)names + boneIdx * 8);
+			return pProc->ReadString(bone_name_address);
 		}
 
 	}

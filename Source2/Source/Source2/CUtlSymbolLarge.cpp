@@ -3,5 +3,5 @@
 #include <vector>
 
 std::string Source2::CUtlSymbolLarge::Get() const {
-	return ::Globals::proc.ReadString(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlSymbolLarge, _str));
+	return ::Globals::pProc->ReadString(reinterpret_cast<uintptr_t>(this) + offsetof(CUtlSymbolLarge, _str));
 }
