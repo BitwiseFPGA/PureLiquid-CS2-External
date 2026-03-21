@@ -156,7 +156,7 @@
     <ClInclude Include="Include\GlobalData\xorstr.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CS2-SkinChanger-Ex\LiquidHookEx\LiquidHookEx\LiquidHookEx.vcxproj">
+    <ProjectReference Include="..\LiquidHookEx\LiquidHookEx\LiquidHookEx.vcxproj">
       <Project>{00b59da1-017f-445c-ac10-87928d2e1d87}</Project>
     </ProjectReference>
   </ItemGroup>
