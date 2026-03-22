@@ -508,3 +508,172 @@ text:0000000000BF1DB7 48 8D 15 FA 4E EE 00                    lea     rdx, aSfui
 
 */
 #define COMPUTE_RANDOM_SEED_PATTERN "48 89 5C 24 08 57 48 81 EC F0"
+
+
+
+
+// @ client -> xref "progress_this_match"
+/*
+
+.text:0000000000FAE2F4 E8 A7 8A 93 FF                          call    GetControllerByIdx_sub_8E6DA0
+.text:0000000000FAE2F9 48 8B D8                                mov     rbx, rax
+.text:0000000000FAE2FC 48 85 C0                                test    rax, rax
+.text:0000000000FAE2FF 0F 84 CF 01 00 00                       jz      loc_FAE4D4
+.text:0000000000FAE305 48 8B C8                                mov     rcx, rax
+.text:0000000000FAE308
+.text:0000000000FAE308                         loc_FAE308:                             ; DATA XREF: .rdata:0000000001EC31EC↓o
+.text:0000000000FAE308                                                                 ; .rdata:0000000001EC3208↓o ...
+.text:0000000000FAE308 4C 89 7C 24 70                          mov     [rsp+98h+var_28], r15
+.text:0000000000FAE30D E8 AE 8B 85 FF                          call    sub_806EC0
+.text:0000000000FAE312 48 83 7D 28 00                          cmp     qword ptr [rbp+28h], 0
+.text:0000000000FAE317 44 8B F8                                mov     r15d, eax
+.text:0000000000FAE31A 0F 84 AF 01 00 00                       jz      loc_FAE4CF
+.text:0000000000FAE320 85 C0                                   test    eax, eax
+.text:0000000000FAE322 0F 84 A7 01 00 00                       jz      loc_FAE4CF
+.text:0000000000FAE328 48 8B CB                                mov     rcx, rbx
+.text:0000000000FAE32B E8 A0 8B 85 FF                          call    sub_806ED0
+.text:0000000000FAE330 85 C0                                   test    eax, eax
+.text:0000000000FAE332 0F 84 97 01 00 00                       jz      loc_FAE4CF
+.text:0000000000FAE338
+.text:0000000000FAE338                         loc_FAE338:                             ; DATA XREF: .rdata:0000000001EC3208↓o
+.text:0000000000FAE338                                                                 ; .rdata:0000000001EC3218↓o ...
+.text:0000000000FAE338 48 89 B4 24 A0 00 00 00                 mov     [rsp+98h+arg_0], rsi
+.text:0000000000FAE340 33 F6                                   xor     esi, esi
+.text:0000000000FAE342 48 89 BC 24 A8 00 00 00                 mov     [rsp+98h+arg_8], rdi
+.text:0000000000FAE34A 8B FE                                   mov     edi, esi
+.text:0000000000FAE34C 4C 89 6C 24 78                          mov     [rsp+98h+var_20], r13
+.text:0000000000FAE351 E8 4A 1C 81 FF                          call    sub_7BFFA0
+.text:0000000000FAE356 48 8B 88 40 F5 03 00                    mov     rcx, [rax+3F540h]
+.text:0000000000FAE35D 48 85 C9                                test    rcx, rcx
+.text:0000000000FAE360 74 29                                   jz      short loc_FAE38B
+.text:0000000000FAE362 BA 10 00 00 00                          mov     edx, 10h
+.text:0000000000FAE367 E8 E4 3C 81 FF                          call    sub_7C2050
+.text:0000000000FAE36C 48 85 C0                                test    rax, rax
+.text:0000000000FAE36F 74 1A                                   jz      short loc_FAE38B
+.text:0000000000FAE371 39 70 08                                cmp     [rax+8], esi
+.text:0000000000FAE374 76 15                                   jbe     short loc_FAE38B
+.text:0000000000FAE376 48 8B 40 10                             mov     rax, [rax+10h]
+.text:0000000000FAE37A 48 8B 08                                mov     rcx, [rax]
+.text:0000000000FAE37D 48 85 C9                                test    rcx, rcx
+.text:0000000000FAE380 74 09                                   jz      short loc_FAE38B
+.text:0000000000FAE382 44 39 79 28                             cmp     [rcx+28h], r15d
+.text:0000000000FAE386 75 03                                   jnz     short loc_FAE38B
+.text:0000000000FAE388 8B 79 2C                                mov     edi, [rcx+2Ch]
+.text:0000000000FAE38B
+.text:0000000000FAE38B                         loc_FAE38B:                             ; CODE XREF: sub_FAE2E0+80↑j
+.text:0000000000FAE38B                                                                 ; sub_FAE2E0+8F↑j ...
+.text:0000000000FAE38B 48 63 8D 90 00 00 00                    movsxd  rcx, dword ptr [rbp+90h]
+.text:0000000000FAE392 48 8B 85 98 00 00 00                    mov     rax, [rbp+98h]
+.text:0000000000FAE399 3B 7C 88 FC                             cmp     edi, [rax+rcx*4-4]
+.text:0000000000FAE39D 0F 83 17 01 00 00                       jnb     loc_FAE4BA
+.text:0000000000FAE3A3 48 8B 4D 28                             mov     rcx, [rbp+28h]
+.text:0000000000FAE3A7 FF 15 53 63 95 00                       call    cs:?GetName@KeyValues@@QEBAPEBDXZ ; KeyValues::GetName(void)
+.text:0000000000FAE3AD 48 8B C8                                mov     rcx, rax
+.text:0000000000FAE3B0 FF 15 6A 64 95 00                       call    cs:V_atoi
+.text:0000000000FAE3B6 48 8D 0D D3 A8 0C 01                    lea     rcx, unk_2078C90
+.text:0000000000FAE3BD 89 84 24 B0 00 00 00                    mov     [rsp+98h+arg_10], eax
+.text:0000000000FAE3C4 48 89 4C 24 40                          mov     [rsp+98h+var_58], rcx
+.text:0000000000FAE3C9 48 8D 84 24 B0 00 00 00                 lea     rax, [rsp+98h+arg_10]
+.text:0000000000FAE3D1 48 89 4C 24 50                          mov     [rsp+98h+var_48], rcx
+.text:0000000000FAE3D6 4C 8D 44 24 40                          lea     r8, [rsp+98h+var_58]
+.text:0000000000FAE3DB 48 8D 0D B6 A8 0C 01                    lea     rcx, dword_2078C98
+.text:0000000000FAE3E2 48 89 44 24 48                          mov     [rsp+98h+var_50], rax
+.text:0000000000FAE3E7 48 8D 54 24 30                          lea     rdx, [rsp+98h+var_68]
+.text:0000000000FAE3EC E8 2F B1 C9 FF                          call    sub_C49520
+.text:0000000000FAE3F1 8B 48 04                                mov     ecx, [rax+4]
+.text:0000000000FAE3F4 83 F9 FF                                cmp     ecx, 0FFFFFFFFh
+.text:0000000000FAE3F7 74 33                                   jz      short loc_FAE42C
+.text:0000000000FAE3F9 F7 05 99 A8 0C 01 FF FF                 test    dword ptr cs:qword_2078C9C, 7FFFFFFFh
+.text:0000000000FAE3F9 FF 7F
+.text:0000000000FAE403 48 8B 15 96 A8 0C 01                    mov     rdx, cs:qword_2078C9C+4
+.text:0000000000FAE40A 48 0F 44 D6                             cmovz   rdx, rsi
+.text:0000000000FAE40E 48 6B C9 38                             imul    rcx, 38h ; '8'
+.text:0000000000FAE412 48 8D 04 11                             lea     rax, [rcx+rdx]
+.text:0000000000FAE416 40 38 74 11 2D                          cmp     [rcx+rdx+2Dh], sil
+.text:0000000000FAE41B 75 08                                   jnz     short loc_FAE425
+.text:0000000000FAE41D 89 78 30                                mov     [rax+30h], edi
+.text:0000000000FAE420 C6 44 11 2D 01                          mov     byte ptr [rcx+rdx+2Dh], 1
+.text:0000000000FAE425
+.text:0000000000FAE425                         loc_FAE425:                             ; CODE XREF: sub_FAE2E0+13B↑j
+.text:0000000000FAE425 8B 78 30                                mov     edi, [rax+30h]
+.text:0000000000FAE428 8B 74 11 18                             mov     esi, [rcx+rdx+18h]
+.text:0000000000FAE42C
+.text:0000000000FAE42C                         loc_FAE42C:                             ; CODE XREF: sub_FAE2E0+117↑j
+.text:0000000000FAE42C 49 8B 1E                                mov     rbx, [r14]
+.text:0000000000FAE42F 48 8B 5B 08                             mov     rbx, [rbx+8]
+.text:0000000000FAE433 48 8B CB                                mov     rcx, rbx        ; this
+.text:0000000000FAE436 E8 30 D2 88 00                          call    ?Enter@Isolate@v8@@QEAAXXZ ; v8::Isolate::Enter(void)
+.text:0000000000FAE43B 49 8B 16                                mov     rdx, [r14]
+.text:0000000000FAE43E 48 8D 4C 24 58                          lea     rcx, [rsp+98h+var_40] ; this
+.text:0000000000FAE443 48 8B 52 08                             mov     rdx, [rdx+8]    ; struct v8::Isolate *
+.text:0000000000FAE447 E8 AD D1 88 00                          call    ??0HandleScope@v8@@QEAA@PEAVIsolate@1@@Z ; v8::HandleScope::HandleScope(v8::Isolate *)
+.text:0000000000FAE44C 49 8B 16                                mov     rdx, [r14]
+.text:0000000000FAE44F 4C 8D 45 30                             lea     r8, [rbp+30h]
+.text:0000000000FAE453 45 8B CF                                mov     r9d, r15d
+.text:0000000000FAE456 89 7C 24 20                             mov     [rsp+98h+var_78], edi
+.text:0000000000FAE45A 48 8D 8C 24 B8 00 00 00                 lea     rcx, [rsp+98h+arg_18]
+.text:0000000000FAE462 48 8B 52 08                             mov     rdx, [rdx+8]
+.text:0000000000FAE466 E8 95 4D 78 FF                          call    sub_733200
+.text:0000000000FAE46B 44 8B C6                                mov     r8d, esi
+.text:0000000000FAE46E 48 8D 15 03 B5 B9 00                    lea     rdx, aProgressThisMa ; "progress_this_match"
+
+
+ControllerByIdx_sub_8E6DA0 = GetControllerByIdx_sub_8E6DA0(0);
+  v5 = ControllerByIdx_sub_8E6DA0;
+  if ( ControllerByIdx_sub_8E6DA0 )
+  {
+    v6 = sub_806EC0(ControllerByIdx_sub_8E6DA0);
+    v7 = v6;
+    if ( *(_QWORD *)(a1 + 40) )
+    {
+      if ( v6 && (unsigned int)sub_806ED0(v5) )
+      {
+        v8 = 0;
+        v9 = 0;
+        v10 = *(_QWORD *)(sub_7BFFA0() + 259392);
+        if ( v10 )
+        {
+          v11 = sub_7C2050(v10, 16);
+          if ( v11 )
+          {
+            if ( *(_DWORD *)(v11 + 8) )
+            {
+              v12 = **(_QWORD **)(v11 + 16);
+              if ( v12 )
+              {
+                if ( *(_DWORD *)(v12 + 40) == v7 )
+                  v9 = *(_DWORD *)(v12 + 44);
+              }
+            }
+          }
+        }
+        if ( v9 < *(_DWORD *)(*(_QWORD *)(a1 + 152) + 4LL * *(int *)(a1 + 144) - 4) )
+        {
+          Name = KeyValues::GetName(*(KeyValues **)(a1 + 40));
+          v24 = V_atoi(Name);
+          v22[0] = &unk_2078C90;
+          v22[2] = &unk_2078C90;
+          v22[1] = &v24;
+          v14 = *(unsigned int *)(sub_C49520(&dword_2078C98, v21, v22) + 4);
+          if ( (_DWORD)v14 != -1 )
+          {
+            v15 = *(__int64 *)((char *)&qword_2078C9C + 4);
+            if ( (qword_2078C9C & 0x7FFFFFFF) == 0 )
+              v15 = 0;
+            v16 = 56 * v14;
+            v17 = v16 + v15;
+            if ( !*(_BYTE *)(v16 + v15 + 45) )
+            {
+              *(_DWORD *)(v17 + 48) = v9;
+              *(_BYTE *)(v16 + v15 + 45) = 1;
+            }
+            v9 = *(_DWORD *)(v17 + 48);
+            v8 = *(_DWORD *)(v16 + v15 + 24);
+          }
+          v18 = *(v8::Isolate **)(*a2 + 8);
+          v8::Isolate::Enter(v18);
+          v8::HandleScope::HandleScope((v8::HandleScope *)v23, *(struct v8::Isolate **)(*a2 + 8));
+          sub_733200((unsigned int)&v25, *(_QWORD *)(*a2 + 8), a1 + 48, v7, v9);
+          sub_731FD0(&v25, "progress_this_match", v8);
+*/
+#define GET_CONTROLLER_BY_INDEX "E8 ?? ?? ?? ?? 48 3B D8 75 2B"
