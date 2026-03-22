@@ -23,6 +23,9 @@
 #include <CS2/Panorama/CUI.h>
 #include <CS2/Hooks/Client/GetInaccuracy.h>
 
+#ifdef USE_RANDOM_SEED
+#include <CS2/Hooks/Client/ComputeRandomSeed.h>
+#endif
 
 #ifdef INCLUDE_OVERLAY
 Renderer renderer{ {} };
@@ -132,7 +135,9 @@ int main() {
 	pProc = LiquidHookEx::proc;
 	
 	I::Initialize();
-
+#ifdef USE_RANDOM_SEED
+	CS2::ComputeRandomSeed::Hook();
+#endif
 
 #ifdef INCLUDE_OVERLAY
 	OverlayAPI::InitImGuiContext();
@@ -190,7 +195,10 @@ int main() {
 			
 		}
 
-
+#ifdef USE_RANDOM_SEED 
+		auto randomSeed = CS2::ComputeRandomSeed::GetRandomSeed();
+		printf("RandomSeed: %i\n", randomSeed);
+#endif
 
 
 
@@ -218,6 +226,11 @@ int main() {
 		// printf("CMD: 0x%p\n", I::pCsGoInput->GetExecutionData().cmd);
 
 	}
+
+#ifdef USE_RANDOM_SEED 
+	CS2::ComputeRandomSeed::Unhook();
+#endif
+
 
 #ifdef USE_GET_INACCURACY
 	CS2::GetInaccuracy::Unhook();

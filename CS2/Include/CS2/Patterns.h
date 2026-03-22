@@ -365,3 +365,146 @@ text:0000000000BF1DB7 48 8D 15 FA 4E EE 00                    lea     rdx, aSfui
 
 */
 #define GET_SPREAD_CALLSITE_PATTERN "FF 93 ?? ?? ?? ?? BA 01 00 00 00 48 8B CF 0F 28 F0"
+
+
+
+// @ client.dll xref "ang %.4f %.4f %.4f, pos %.4f %.4f %.4f\n"
+/*
+.text:0000000000794469 4C 8D 05 78 7A 2A 01                    lea     r8, aAng4f4f4fPos4f ; "ang %.4f %.4f %.4f, pos %.4f %.4f %.4f"...
+.text:0000000000794470 F3 0F 10 4D A8                          movss   xmm1, [rbp+0E0h+var_138]
+.text:0000000000794475 41 8B D7                                mov     edx, r15d
+.text:0000000000794478 F3 0F 10 55 A4                          movss   xmm2, [rbp+0E0h+var_13C]
+.text:000000000079447D F3 0F 10 65 B8                          movss   xmm4, dword ptr [rbp+0E0h+var_130+8]
+.text:0000000000794482 F3 0F 10 5D B0                          movss   xmm3, dword ptr [rbp+0E0h+var_130]
+.text:0000000000794487 F3 0F 10 6D B4                          movss   xmm5, dword ptr [rbp+0E0h+var_130+4]
+.text:000000000079448C 8B 0D 42 4F B0 01                       mov     ecx, cs:dword_22993D4
+.text:0000000000794492 0F 5A C0                                cvtps2pd xmm0, xmm0
+.text:0000000000794495 0F 5A C9                                cvtps2pd xmm1, xmm1
+.text:0000000000794498 F2 0F 11 44 24 40                       movsd   [rsp+200h+var_1C0], xmm0
+.text:000000000079449E F2 0F 11 4C 24 38                       movsd   [rsp+200h+var_1C8], xmm1
+.text:00000000007944A4 0F 5A D2                                cvtps2pd xmm2, xmm2
+.text:00000000007944A7 0F 5A E4                                cvtps2pd xmm4, xmm4
+.text:00000000007944AA F2 0F 11 54 24 30                       movsd   [rsp+200h+var_1D0], xmm2
+.text:00000000007944B0 0F 5A DB                                cvtps2pd xmm3, xmm3
+.text:00000000007944B3 0F 5A ED                                cvtps2pd xmm5, xmm5
+.text:00000000007944B6 F2 0F 11 64 24 28                       movsd   [rsp+200h+var_1D8], xmm4
+.text:00000000007944BC 66 49 0F 7E D9                          movq    r9, xmm3
+.text:00000000007944C1 F2 0F 11 6C 24 20                       movsd   [rsp+200h+var_1E0], xmm5
+.text:00000000007944C7 FF 15 EB 02 17 01                       call    cs:LoggingSystem_Log
+.text:00000000007944CD
+.text:00000000007944CD                         loc_7944CD:                             ; CODE XREF: sub_7940F0+372↑j
+.text:00000000007944CD 83 FB FF                                cmp     ebx, 0FFFFFFFFh
+.text:00000000007944D0 74 0E                                   jz      short loc_7944E0
+.text:00000000007944D2 85 FF                                   test    edi, edi
+.text:00000000007944D4 78 0A                                   js      short loc_7944E0
+.text:00000000007944D6 8B D7                                   mov     edx, edi
+.text:00000000007944D8 8B CB                                   mov     ecx, ebx
+.text:00000000007944DA FF 15 28 F5 16 01                       call    cs:LoggingSystem_SetChannelIndent
+.text:00000000007944E0
+.text:00000000007944E0                         loc_7944E0:                             ; CODE XREF: sub_7940F0+229↑j
+.text:00000000007944E0                                                                 ; sub_7940F0+23B↑j ...
+.text:00000000007944E0 80 7D C8 00                             cmp     [rbp+0E0h+var_118], 0
+.text:00000000007944E4 75 10                                   jnz     short loc_7944F6
+.text:00000000007944E6 48 8B 06                                mov     rax, [rsi]
+.text:00000000007944E9 48 8B CE                                mov     rcx, rsi
+.text:00000000007944EC FF 90 08 0B 00 00                       call    qword ptr [rax+0B08h]
+.text:00000000007944F2 84 C0                                   test    al, al
+.text:00000000007944F4 75 12                                   jnz     short loc_794508
+.text:00000000007944F6
+.text:00000000007944F6                         loc_7944F6:                             ; CODE XREF: sub_7940F0+3F4↑j
+.text:00000000007944F6 48 8B 0D 8B 93 D8 01                    mov     rcx, cs:qword_251D888
+.text:00000000007944FD 33 D2                                   xor     edx, edx
+.text:00000000007944FF 48 8B 01                                mov     rax, [rcx]
+.text:0000000000794502 FF 90 E0 00 00 00                       call    qword ptr [rax+0E0h]
+.text:0000000000794508
+.text:0000000000794508                         loc_794508:                             ; CODE XREF: sub_7940F0+404↑j
+.text:0000000000794508 48 8D 4D E0                             lea     rcx, [rbp+0E0h+var_108+8]
+.text:000000000079450C E8 8F 72 9C FF                          call    unknown_libname_3 ; Microsoft VisualC v7/14 64bit runtime
+.text:0000000000794511 0F 28 45 90                             movaps  xmm0, [rbp+0E0h+var_150]
+.text:0000000000794515 4C 8D 45 24                             lea     r8, [rbp+0E0h+var_C8+0Ch]
+.text:0000000000794519 0F 28 4D A0                             movaps  xmm1, xmmword ptr [rbp-60h]
+.text:000000000079451D 48 8D 55 20                             lea     rdx, [rbp+0E0h+var_C8+8]
+.text:0000000000794521 48 8B 06                                mov     rax, [rsi]
+.text:0000000000794524 48 8B CE                                mov     rcx, rsi
+.text:0000000000794527 0F 11 45 D8                             movups  xmmword ptr [rbp-28h], xmm0
+.text:000000000079452B C6 45 2C 01                             mov     byte ptr [rbp+0E0h+var_B4], 1
+.text:000000000079452F 0F 28 45 B0                             movaps  xmm0, [rbp+0E0h+var_130]
+.text:0000000000794533 0F 11 4D E8                             movups  [rbp+0E0h+var_F8], xmm1
+.text:0000000000794537 0F 28 4D C0                             movaps  xmm1, xmmword ptr [rbp-40h]
+.text:000000000079453B 0F 11 45 F8                             movups  [rbp+0E0h+var_E8], xmm0
+.text:000000000079453F 0F 11 4D 08                             movups  [rbp+0E0h+var_D8], xmm1
+.text:0000000000794543 FF 90 E8 0C 00 00                       call    qword ptr [rax+0CE8h]
+.text:0000000000794549 48 8B 56 10                             mov     rdx, [rsi+10h]
+.text:000000000079454D 8B 4D D8                                mov     ecx, dword ptr [rbp+0E0h+var_108]
+.text:0000000000794550 F3 0F 11 45 1C                          movss   dword ptr [rbp+0E0h+var_C8+4], xmm0
+.text:0000000000794555 8B 52 38                                mov     edx, [rdx+38h]
+.text:0000000000794558 E8 23 DC F6 FF                          call    sub_702180
+.text:000000000079455D 0F 10 45 D8                             movups  xmm0, [rbp+0E0h+var_108]
+.text:0000000000794561 89 45 18                                mov     dword ptr [rbp+0E0h+var_C8], eax
+.text:0000000000794564 45 8B CD                                mov     r9d, r13d
+.text:0000000000794567 0F 10 4D E8                             movups  xmm1, [rbp+0E0h+var_F8]
+.text:000000000079456B 48 8D 55 90                             lea     rdx, [rbp+0E0h+var_150]
+.text:000000000079456F 48 8B 06                                mov     rax, [rsi]
+.text:0000000000794572 F3 0F 10 96 D0 19 00 00                 movss   xmm2, dword ptr [rsi+19D0h]
+.text:000000000079457A 45 8B C4                                mov     r8d, r12d
+.text:000000000079457D 0F 29 4D 40                             movaps  [rbp+0E0h+var_A0], xmm1
+.text:0000000000794581 48 8B CE                                mov     rcx, rsi
+.text:0000000000794584 0F 10 4D 08                             movups  xmm1, [rbp+0E0h+var_D8]
+.text:0000000000794588 0F 29 45 30                             movaps  [rbp+0E0h+var_B0], xmm0
+.text:000000000079458C 0F 10 45 F8                             movups  xmm0, [rbp+0E0h+var_E8]
+.text:0000000000794590 0F 29 4D 60                             movaps  [rbp+0E0h+var_80], xmm1
+.text:0000000000794594 F2 0F 10 4D 28                          movsd   xmm1, qword ptr [rbp+28h]
+.text:0000000000794599 0F 29 45 50                             movaps  [rbp+0E0h+var_90], xmm0
+.text:000000000079459D F3 0F 10 CA                             movss   xmm1, xmm2
+.text:00000000007945A1 0F 10 45 18                             movups  xmm0, [rbp+0E0h+var_C8]
+.text:00000000007945A5 F2 0F 11 8D 80 00 00 00                 movsd   [rbp+0E0h+var_60], xmm1
+.text:00000000007945AD 0F 29 45 70                             movaps  [rbp+0E0h+var_70], xmm0
+.text:00000000007945B1 FF 90 28 0D 00 00                       call    qword ptr [rax+0D28h]
+.text:00000000007945B7 85 C0                                   test    eax, eax
+.text:00000000007945B9 0F 85 3F 01 00 00                       jnz     loc_7946FE
+.text:00000000007945BF 48 8B 06                                mov     rax, [rsi]
+.text:00000000007945C2 33 D2                                   xor     edx, edx
+.text:00000000007945C4 48 8B CE                                mov     rcx, rsi
+.text:00000000007945C7
+.text:00000000007945C7                         loc_7945C7:                             ; DATA XREF: .rdata:0000000001E1D3D8↓o
+.text:00000000007945C7                                                                 ; .rdata:0000000001E1D3E8↓o ...
+.text:00000000007945C7 44 0F 29 84 24 B0 01 00                 movaps  [rsp+200h+var_50], xmm8
+.text:00000000007945C7 00
+.text:00000000007945D0 FF 90 48 0A 00 00                       call    qword ptr [rax+0A48h]
+.text:00000000007945D6 49 8B CE                                mov     rcx, r14
+.text:00000000007945D9 44 8B E8                                mov     r13d, eax
+.text:00000000007945DC E8 4F 4E A6 FF                          call    sub_1F9430
+.text:00000000007945E1 48 8B 8E 90 03 00 00                    mov     rcx, [rsi+390h]
+.text:00000000007945E8 F3 44 0F 10 86 D0 19 00                 movss   xmm8, dword ptr [rsi+19D0h]
+.text:00000000007945E8 00
+.text:00000000007945F1 48 89 45 D0                             mov     [rbp+0E0h+var_110], rax
+.text:00000000007945F5 83 B9 48 06 00 00 01                    cmp     dword ptr [rcx+648h], 1
+.text:00000000007945FC 75 16                                   jnz     short loc_794614
+.text:00000000007945FE 48 8B 16                                mov     rdx, [rsi]
+.text:0000000000794601 48 8B CE                                mov     rcx, rsi
+.text:0000000000794604 FF 92 10 0D 00 00                       call    qword ptr [rdx+0D10h]
+.text:000000000079460A 84 C0                                   test    al, al
+.text:000000000079460C 74 06                                   jz      short loc_794614
+.text:000000000079460E 41 BF 09 00 00 00                       mov     r15d, 9
+.text:0000000000794614
+.text:0000000000794614                         loc_794614:                             ; CODE XREF: sub_7940F0+50C↑j
+.text:0000000000794614                                                                 ; sub_7940F0+51C↑j
+.text:0000000000794614 48 8B 06                                mov     rax, [rsi]
+.text:0000000000794617 48 8B CE                                mov     rcx, rsi
+.text:000000000079461A FF 90 C0 0B 00 00                       call    qword ptr [rax+0BC0h]
+.text:0000000000794620 48 8B 06                                mov     rax, [rsi]
+.text:0000000000794623 45 33 C0                                xor     r8d, r8d
+.text:0000000000794626 33 D2                                   xor     edx, edx
+.text:0000000000794628 48 8B CE                                mov     rcx, rsi
+.text:000000000079462B 0F 28 F8                                movaps  xmm7, xmm0
+.text:000000000079462E FF 90 E8 0C 00 00                       call    qword ptr [rax+0CE8h]
+.text:0000000000794634 44 8B 45 90                             mov     r8d, dword ptr [rbp+0E0h+var_150]
+.text:0000000000794638 48 8D 55 B0                             lea     rdx, [rbp+0E0h+var_130]
+.text:000000000079463C 49 8B CE                                mov     rcx, r14
+.text:000000000079463F 0F 28 F0                                movaps  xmm6, xmm0
+.text:0000000000794642 E8 D9 F0 4F 00                          call    ComputeRandomSeed_sub_C93720 ; We need this function
+.text:0000000000794647 48 8B CE                                mov     rcx, rsi
+.text:000000000079464A 8B D8                                   mov     ebx, eax
+
+*/
+#define COMPUTE_RANDOM_SEED_PATTERN "48 89 5C 24 08 57 48 81 EC F0"
