@@ -677,3 +677,23 @@ ControllerByIdx_sub_8E6DA0 = GetControllerByIdx_sub_8E6DA0(0);
           sub_731FD0(&v25, "progress_this_match", v8);
 */
 #define GET_CONTROLLER_BY_INDEX "E8 ?? ?? ?? ?? 48 3B D8 75 2B"
+
+
+
+
+// @ client -> xref "CPointClientUIDialog::OnDialogActivatorChanged"
+
+/*
+
+00000000018ED12 44 0F B6 C0                             movzx   r8d, al
+.text:000000000018ED16 48 8D 15 6B 01 79 01                    lea     rdx, aCpointclientui_3 ; "CPointClientUIDialog::OnDialogActivator"...
+.text:000000000018ED1D 48 8D 4C 24 20                          lea     rcx, [rsp+48h+var_28]
+.text:000000000018ED22 E8 79 62 94 00                          call    sub_AD4FA0
+.text:000000000018ED27 33 C9                                   xor     ecx, ecx        ; a1
+.text:000000000018ED29 E8 B2 80 75 00                          call    GetPawnByIdx_sub_8E6DE0
+.text:000000000018ED2E 4C 8B 1D AB F1 17 02                    mov     r11, cs:qword_230DEE0
+.text:000000000018ED35 48 8B D8                                mov     rbx, rax
+.text:000000000018ED38 44 8B 87 B8 0E 00 00                    m
+
+*/
+#define GET_PAWN_BY_INDEX "48 83 EC 28 83 F9 FF 75 17 48 8B 0D ?? ?? ?? ?? 48 8D 54 24 30 48 8B 01 FF 90 ?? ?? ?? ?? 8B 08 48 63 C1 4C"
