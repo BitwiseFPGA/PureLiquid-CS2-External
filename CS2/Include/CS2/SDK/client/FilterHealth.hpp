@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/CBaseFilter.hpp>
+#include "CBaseFilter.hpp"
 
 
 
@@ -26,6 +26,9 @@ namespace CS2 {
 			PROPERTY(m_iHealthMax,int32_t, 0x648);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::FilterHealth) == 0x650, "FilterHealth size should be 0x650");
+
+#endif
 	}
 }

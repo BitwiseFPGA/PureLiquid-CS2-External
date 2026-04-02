@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionInitializer.hpp>
-#include <SDK/particles/ParticleAttributeIndex_t.hpp>
+#include "CParticleFunctionInitializer.hpp"
+#include "ParticleAttributeIndex_t.hpp"
 
 
 
@@ -22,13 +22,16 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_RemapInitialVisibilityScalar : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1dc);
+			NESTED_PROPERTY(m_nFieldOutput,IDENTITY(particles::ParticleAttributeIndex_t), 0x1dc);
 			PROPERTY(m_flInputMin,float32, 0x1e0);
 			PROPERTY(m_flInputMax,float32, 0x1e4);
 			PROPERTY(m_flOutputMin,float32, 0x1e8);
 			PROPERTY(m_flOutputMax,float32, 0x1ec);
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_INIT_RemapInitialVisibilityScalar) == 0x1F0, "C_INIT_RemapInitialVisibilityScalar size should be 0x1F0");
+
+#endif
 	}
 }

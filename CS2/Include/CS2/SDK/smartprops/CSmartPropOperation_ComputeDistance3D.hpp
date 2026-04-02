@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/smartprops/CSmartPropOperation.hpp>
-#include <SDK/smartprops/CSmartPropAttributeCoordinateSpace.hpp>
+#include "CSmartPropOperation.hpp"
+#include "CSmartPropAttributeCoordinateSpace.hpp"
 
 
 
@@ -23,13 +23,16 @@ namespace CS2 {
 		class CSmartPropOperation_ComputeDistance3D : public CS2::smartprops::CSmartPropOperation {
 		public:
 			PROPERTY(m_OutputVariableName,GlobalTypes::CUtlString*, 0x50);
-			NESTED_PROPERTY(m_OutputCoordinateSpace,smartprops::CSmartPropAttributeCoordinateSpace, 0x58);
+			NESTED_PROPERTY(m_OutputCoordinateSpace,IDENTITY(smartprops::CSmartPropAttributeCoordinateSpace), 0x58);
 			PROPERTY(m_InputPositionA,GlobalTypes::CSmartPropAttributeVector, 0x98);
-			NESTED_PROPERTY(m_CoordinateSpaceA,smartprops::CSmartPropAttributeCoordinateSpace, 0xd8);
+			NESTED_PROPERTY(m_CoordinateSpaceA,IDENTITY(smartprops::CSmartPropAttributeCoordinateSpace), 0xd8);
 			PROPERTY(m_InputPositionB,GlobalTypes::CSmartPropAttributeVector, 0x118);
-			NESTED_PROPERTY(m_CoordinateSpaceB,smartprops::CSmartPropAttributeCoordinateSpace, 0x158);
+			NESTED_PROPERTY(m_CoordinateSpaceB,IDENTITY(smartprops::CSmartPropAttributeCoordinateSpace), 0x158);
 			S2_PAD(0x148);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_ComputeDistance3D) == 0x198, "CSmartPropOperation_ComputeDistance3D size should be 0x198");
+
+#endif
 	}
 }

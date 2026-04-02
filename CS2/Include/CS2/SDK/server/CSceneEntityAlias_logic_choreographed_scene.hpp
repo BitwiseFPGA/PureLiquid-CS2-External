@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CSceneEntity.hpp>
+#include "CSceneEntity.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CSceneEntityAlias_logic_choreographed_scene : public CS2::server::CSceneEntity {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CSceneEntityAlias_logic_choreographed_scene) == 0x730, "CSceneEntityAlias_logic_choreographed_scene size should be 0x730");
+
+#endif
 	}
 }

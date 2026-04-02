@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CBaseModelEntity.hpp>
+#include "CBaseModelEntity.hpp"
 
 
 
@@ -28,14 +28,17 @@ namespace CS2 {
 		public:
 			PROPERTY(m_bLoop,bool, 0x730);
 			PROPERTY(m_flFPS,float32, 0x734);
-			PROPERTY(m_hPositionKeys,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x738);
-			PROPERTY(m_hRotationKeys,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>, 0x740);
+			PROPERTY(m_hPositionKeys,IDENTITY(GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>), 0x738);
+			PROPERTY(m_hRotationKeys,IDENTITY(GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>), 0x740);
 			PROPERTY(m_vAnimationBoundsMin,GlobalTypes::Vector, 0x748);
 			PROPERTY(m_vAnimationBoundsMax,GlobalTypes::Vector, 0x754);
 			PROPERTY(m_flStartTime,float32, 0x760);
 			PROPERTY(m_flStartFrame,float32, 0x764);
 			S2_PAD(0x38);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CTextureBasedAnimatable) == 0x768, "CTextureBasedAnimatable size should be 0x768");
+
+#endif
 	}
 }

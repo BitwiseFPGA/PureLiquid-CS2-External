@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionRenderer.hpp>
+#include "CParticleFunctionRenderer.hpp"
 
 
 
@@ -25,6 +25,9 @@ namespace CS2 {
 			PROPERTY(m_flForwardDegrees,float32, 0x224);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_RenderScreenVelocityRotate) == 0x228, "C_OP_RenderScreenVelocityRotate size should be 0x228");
+
+#endif
 	}
 }

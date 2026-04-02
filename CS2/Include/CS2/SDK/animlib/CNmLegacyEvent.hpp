@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animlib/CNmEvent.hpp>
+#include "CNmEvent.hpp"
 
 
 
@@ -25,6 +25,9 @@ namespace CS2 {
 			PROPERTY(m_KV,GlobalTypes::KeyValues3, 0x28);
 			S2_PAD(0x38);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animlib::CNmLegacyEvent) == 0x58, "CNmLegacyEvent size should be 0x58");
+
+#endif
 	}
 }

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/EventSimulate_t.hpp>
+#include "EventSimulate_t.hpp"
 
 
 
@@ -27,6 +27,9 @@ namespace CS2 {
 			PROPERTY(m_nTotalTicks,int32_t, 0x3c);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::EventPostAdvanceTick_t) == 0x40, "EventPostAdvanceTick_t size should be 0x40");
+
+#endif
 	}
 }

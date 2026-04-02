@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionPreEmission.hpp>
+#include "CParticleFunctionPreEmission.hpp"
 
 
 
@@ -25,6 +25,9 @@ namespace CS2 {
 			PROPERTY(m_nCPOutput,int32_t, 0x1dc);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_SetControlPointFromObjectScale) == 0x1E0, "C_OP_SetControlPointFromObjectScale size should be 0x1E0");
+
+#endif
 	}
 }

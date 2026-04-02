@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BaseEntity.hpp>
+#include "C_BaseEntity.hpp"
 
 
 
@@ -23,6 +23,9 @@ namespace CS2 {
 		public:
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_TintController) == 0x620, "C_TintController size should be 0x620");
+
+#endif
 	}
 }

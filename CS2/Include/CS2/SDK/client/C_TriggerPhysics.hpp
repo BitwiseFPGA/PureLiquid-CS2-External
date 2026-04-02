@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BaseTrigger.hpp>
+#include "C_BaseTrigger.hpp"
 
 
 
@@ -36,6 +36,9 @@ namespace CS2 {
 			PROPERTY(m_bConvertToDebrisWhenPossible,bool, 0xfa0);
 			S2_PAD(0x50);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_TriggerPhysics) == 0xFA8, "C_TriggerPhysics size should be 0xFA8");
+
+#endif
 	}
 }

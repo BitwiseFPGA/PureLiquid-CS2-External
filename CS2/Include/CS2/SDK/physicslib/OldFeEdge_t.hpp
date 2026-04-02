@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -34,6 +34,9 @@ namespace CS2 {
 			PROPERTY_ARRAY(m_nNode,uint16_t, 4 , 0x40);
 			S2_PAD(0x48);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::physicslib::OldFeEdge_t) == 0x48, "OldFeEdge_t size should be 0x48");
+
+#endif
 	}
 }

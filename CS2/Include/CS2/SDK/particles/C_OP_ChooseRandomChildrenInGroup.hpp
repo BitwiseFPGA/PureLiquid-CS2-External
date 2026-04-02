@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionPreEmission.hpp>
-#include <SDK/particleslib/CParticleCollectionFloatInput.hpp>
+#include "CParticleFunctionPreEmission.hpp"
+#include "../particleslib/CParticleCollectionFloatInput.hpp"
 
 
 
@@ -23,9 +23,12 @@ namespace CS2 {
 		class C_OP_ChooseRandomChildrenInGroup : public CS2::particles::CParticleFunctionPreEmission {
 		public:
 			PROPERTY(m_nChildGroupID,int32_t, 0x1d8);
-			NESTED_PROPERTY(m_flNumberOfChildren,particleslib::CParticleCollectionFloatInput, 0x1e0);
+			NESTED_PROPERTY(m_flNumberOfChildren,IDENTITY(particleslib::CParticleCollectionFloatInput), 0x1e0);
 			S2_PAD(0x178);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_ChooseRandomChildrenInGroup) == 0x350, "C_OP_ChooseRandomChildrenInGroup size should be 0x350");
+
+#endif
 	}
 }

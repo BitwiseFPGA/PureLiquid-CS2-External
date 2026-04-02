@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -25,6 +25,9 @@ namespace CS2 {
 			PROPERTY(m_vecZ,GlobalTypes::CNetworkedQuantizedFloat, 0x20);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::CNetworkOriginQuantizedVector) == 0x28, "CNetworkOriginQuantizedVector size should be 0x28");
+
+#endif
 	}
 }

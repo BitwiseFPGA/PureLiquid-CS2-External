@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BarnLight.hpp>
+#include "C_BarnLight.hpp"
 
 
 
@@ -26,6 +26,9 @@ namespace CS2 {
 			PROPERTY(m_bShowLight,bool, 0x11a0);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_OmniLight) == 0x11A8, "C_OmniLight size should be 0x11A8");
+
+#endif
 	}
 }

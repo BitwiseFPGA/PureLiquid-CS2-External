@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/CUnaryUpdateNode.hpp>
-#include <SDK/animgraphlib/TwoBoneIKSettings_t.hpp>
+#include "CUnaryUpdateNode.hpp"
+#include "TwoBoneIKSettings_t.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CTwoBoneIKUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			NESTED_PROPERTY(m_opFixedData,animgraphlib::TwoBoneIKSettings_t, 0x70);
+			NESTED_PROPERTY(m_opFixedData,IDENTITY(animgraphlib::TwoBoneIKSettings_t), 0x70);
 			S2_PAD(0x170);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CTwoBoneIKUpdateNode) == 0x1E0, "CTwoBoneIKUpdateNode size should be 0x1E0");
+
+#endif
 	}
 }

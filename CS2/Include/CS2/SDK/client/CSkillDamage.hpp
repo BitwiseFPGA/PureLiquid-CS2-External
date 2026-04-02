@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/CSkillFloat.hpp>
+#include "CSkillFloat.hpp"
 
 
 
@@ -21,11 +21,14 @@ namespace CS2 {
 	namespace client {
 		class CSkillDamage  {
 		public:
-			NESTED_PROPERTY(m_flDamage,client::CSkillFloat, 0x0);
+			NESTED_PROPERTY(m_flDamage,IDENTITY(client::CSkillFloat), 0x0);
 			PROPERTY(m_flNPCDamageScalarVsNPC,float32, 0x10);
 			PROPERTY(m_flPhysicsForceDamage,float32, 0x14);
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::CSkillDamage) == 0x18, "CSkillDamage size should be 0x18");
+
+#endif
 	}
 }

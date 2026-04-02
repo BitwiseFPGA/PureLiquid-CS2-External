@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CBeam.hpp>
+#include "CBeam.hpp"
 
 
 
@@ -27,12 +27,15 @@ namespace CS2 {
 		class CEnvLaser : public CS2::server::CBeam {
 		public:
 			PROPERTY(m_iszLaserTarget,GlobalTypes::CUtlSymbolLarge*, 0x7d0);
-			PROPERTY(m_pSprite,server::CSprite*, 0x7d8);
+			PROPERTY(m_pSprite,IDENTITY(server::CSprite*), 0x7d8);
 			PROPERTY(m_iszSpriteName,GlobalTypes::CUtlSymbolLarge*, 0x7e0);
 			PROPERTY(m_firePosition,GlobalTypes::Vector, 0x7e8);
 			PROPERTY(m_flStartFrame,float32, 0x7f4);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CEnvLaser) == 0x7F8, "CEnvLaser size should be 0x7F8");
+
+#endif
 	}
 }

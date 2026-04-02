@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/C_OP_RemapNamedModelElementEndCap.hpp>
+#include "C_OP_RemapNamedModelElementEndCap.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_RemapNamedModelSequenceEndCap : public CS2::particles::C_OP_RemapNamedModelElementEndCap {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_RemapNamedModelSequenceEndCap) == 0x230, "C_OP_RemapNamedModelSequenceEndCap size should be 0x230");
+
+#endif
 	}
 }

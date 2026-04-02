@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CSoundOpvarSetPointEntity.hpp>
+#include "CSoundOpvarSetPointEntity.hpp"
 
 
 
@@ -32,6 +32,9 @@ namespace CS2 {
 			PROPERTY(m_vOuterMaxs,GlobalTypes::Vector, 0x698);
 			S2_PAD(0x68);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CSoundOpvarSetAABBEntity) == 0x6A8, "CSoundOpvarSetAABBEntity size should be 0x6A8");
+
+#endif
 	}
 }

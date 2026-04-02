@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -30,6 +30,9 @@ namespace CS2 {
 			PROPERTY(m_paramMap,GlobalTypes::KeyValues3, 0x30);
 			S2_PAD(0x40);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::worldrenderer::EntityIOConnectionData_t) == 0x40, "EntityIOConnectionData_t size should be 0x40");
+
+#endif
 	}
 }

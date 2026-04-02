@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CDynamicProp.hpp>
+#include "CDynamicProp.hpp"
 
 
 
@@ -24,6 +24,9 @@ namespace CS2 {
 			PROPERTY(m_initialOwner,GlobalTypes::CUtlSymbolLarge*, 0xc50);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::COrnamentProp) == 0xC60, "COrnamentProp size should be 0xC60");
+
+#endif
 	}
 }

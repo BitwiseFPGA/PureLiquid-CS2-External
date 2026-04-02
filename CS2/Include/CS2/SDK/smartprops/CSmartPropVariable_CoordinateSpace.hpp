@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/smartprops/CSmartPropVariable.hpp>
-#include <SDK/smartprops/SmartPropSpace_t.hpp>
+#include "CSmartPropVariable.hpp"
+#include "SmartPropSpace_t.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropVariable_CoordinateSpace : public CS2::smartprops::CSmartPropVariable {
 		public:
-			PROPERTY(m_DefaultValue,smartprops::SmartPropSpace_t, 0x38);
+			PROPERTY(m_DefaultValue,IDENTITY(smartprops::SmartPropSpace_t), 0x38);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable_CoordinateSpace) == 0x40, "CSmartPropVariable_CoordinateSpace size should be 0x40");
+
+#endif
 	}
 }

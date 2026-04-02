@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CPhysConstraint.hpp>
+#include "CPhysConstraint.hpp"
 
 
 
@@ -32,6 +32,9 @@ namespace CS2 {
 			PROPERTY(m_zfriction,float32, 0x528);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CRagdollConstraint) == 0x530, "CRagdollConstraint size should be 0x530");
+
+#endif
 	}
 }

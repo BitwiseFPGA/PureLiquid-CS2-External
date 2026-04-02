@@ -4,16 +4,16 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionRenderer.hpp>
-#include <SDK/particles/EventTypeSelection_t.hpp>
-#include <SDK/particles/CPAssignment_t.hpp>
-#include <SDK/particleslib/CPerParticleVecInput.hpp>
+#include "CParticleFunctionRenderer.hpp"
+#include "EventTypeSelection_t.hpp"
+#include "CPAssignment_t.hpp"
+#include "../particleslib/CPerParticleVecInput.hpp"
 
 
 
@@ -29,13 +29,16 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_CreateParticleSystemRenderer : public CS2::particles::CParticleFunctionRenderer {
 		public:
-			PROPERTY(m_hEffect,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>, 0x220);
-			PROPERTY(m_nEventType,particles::EventTypeSelection_t, 0x228);
-			PROPERTY(m_vecCPs,GlobalTypes::CUtlLeanVector<particles::CPAssignment_t>, 0x230);
+			PROPERTY(m_hEffect,IDENTITY(GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>), 0x220);
+			PROPERTY(m_nEventType,IDENTITY(particles::EventTypeSelection_t), 0x228);
+			// PROPERTY(m_vecCPs,IDENTITY(GlobalTypes::CUtlLeanVector<particles::CPAssignment_t>), 0x230);
 			PROPERTY(m_szParticleConfig,GlobalTypes::CUtlString*, 0x240);
-			NESTED_PROPERTY(m_AggregationPos,particleslib::CPerParticleVecInput, 0x248);
+			NESTED_PROPERTY(m_AggregationPos,IDENTITY(particleslib::CPerParticleVecInput), 0x248);
 			S2_PAD(0x6E0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_CreateParticleSystemRenderer) == 0x900, "C_OP_CreateParticleSystemRenderer size should be 0x900");
+
+#endif
 	}
 }

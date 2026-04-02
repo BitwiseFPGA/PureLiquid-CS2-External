@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_RagdollProp.hpp>
+#include "C_RagdollProp.hpp"
 
 
 
@@ -30,6 +30,9 @@ namespace CS2 {
 			PROPERTY(m_bHasParent,bool, 0x1228);
 			S2_PAD(0x38);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_RagdollPropAttached) == 0x1230, "C_RagdollPropAttached size should be 0x1230");
+
+#endif
 	}
 }

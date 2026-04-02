@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionOperator.hpp>
+#include "CParticleFunctionOperator.hpp"
 
 
 
@@ -25,6 +25,9 @@ namespace CS2 {
 			PROPERTY(m_bForcePreserveParticleOrder,bool, 0x1d1);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_Decay) == 0x1D8, "C_OP_Decay size should be 0x1D8");
+
+#endif
 	}
 }

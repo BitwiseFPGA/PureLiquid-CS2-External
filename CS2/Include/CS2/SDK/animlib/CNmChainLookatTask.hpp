@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animlib/CNmPoseTask.hpp>
+#include "CNmPoseTask.hpp"
 
 
 
@@ -34,6 +34,9 @@ namespace CS2 {
 			PROPERTY(m_flVerticalAngleDegrees,float32, 0x8c);
 			S2_PAD(0x38);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animlib::CNmChainLookatTask) == 0x90, "CNmChainLookatTask size should be 0x90");
+
+#endif
 	}
 }

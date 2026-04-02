@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/CUnaryUpdateNode.hpp>
-#include <SDK/animgraphlib/CAnimParamHandle.hpp>
+#include "CUnaryUpdateNode.hpp"
+#include "CAnimParamHandle.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CSpeedScaleUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			NESTED_PROPERTY(m_paramIndex,animgraphlib::CAnimParamHandle, 0x70);
+			NESTED_PROPERTY(m_paramIndex,IDENTITY(animgraphlib::CAnimParamHandle), 0x70);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CSpeedScaleUpdateNode) == 0x78, "CSpeedScaleUpdateNode size should be 0x78");
+
+#endif
 	}
 }

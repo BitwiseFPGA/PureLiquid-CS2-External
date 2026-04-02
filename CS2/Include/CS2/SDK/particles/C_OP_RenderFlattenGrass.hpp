@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionRenderer.hpp>
-#include <SDK/particles/ParticleAttributeIndex_t.hpp>
+#include "CParticleFunctionRenderer.hpp"
+#include "ParticleAttributeIndex_t.hpp"
 
 
 
@@ -23,10 +23,13 @@ namespace CS2 {
 		class C_OP_RenderFlattenGrass : public CS2::particles::CParticleFunctionRenderer {
 		public:
 			PROPERTY(m_flFlattenStrength,float32, 0x220);
-			NESTED_PROPERTY(m_nStrengthFieldOverride,particles::ParticleAttributeIndex_t, 0x224);
+			NESTED_PROPERTY(m_nStrengthFieldOverride,IDENTITY(particles::ParticleAttributeIndex_t), 0x224);
 			PROPERTY(m_flRadiusScale,float32, 0x228);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_RenderFlattenGrass) == 0x230, "C_OP_RenderFlattenGrass size should be 0x230");
+
+#endif
 	}
 }

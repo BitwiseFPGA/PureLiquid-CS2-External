@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BaseModelEntity.hpp>
-#include <SDK/client/CBuoyancyHelper.hpp>
+#include "C_BaseModelEntity.hpp"
+#include "CBuoyancyHelper.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace client {
 		class CFuncWater : public CS2::client::C_BaseModelEntity {
 		public:
-			NESTED_PROPERTY(m_BuoyancyHelper,client::CBuoyancyHelper, 0xe88);
+			NESTED_PROPERTY(m_BuoyancyHelper,IDENTITY(client::CBuoyancyHelper), 0xe88);
 			S2_PAD(0x118);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::CFuncWater) == 0xFA0, "CFuncWater size should be 0xFA0");
+
+#endif
 	}
 }

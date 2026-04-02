@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -26,8 +26,8 @@ namespace CS2 {
 	namespace server {
 		class CBot  {
 		public:
-			PROPERTY(m_pController,server::CCSPlayerController*, 0x10);
-			PROPERTY(m_pPlayer,server::CCSPlayerPawn*, 0x18);
+			PROPERTY(m_pController,IDENTITY(server::CCSPlayerController*), 0x10);
+			PROPERTY(m_pPlayer,IDENTITY(server::CCSPlayerPawn*), 0x18);
 			PROPERTY(m_bHasSpawned,bool, 0x20);
 			PROPERTY(m_id,uint32_t, 0x24);
 			PROPERTY(m_isRunning,bool, 0xc0);
@@ -41,6 +41,9 @@ namespace CS2 {
 			PROPERTY(m_postureStackIndex,int32_t, 0xf8);
 			S2_PAD(0x100);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CBot) == 0x100, "CBot size should be 0x100");
+
+#endif
 	}
 }

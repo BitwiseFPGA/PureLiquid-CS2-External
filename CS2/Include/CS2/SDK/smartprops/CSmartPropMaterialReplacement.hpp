@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -24,6 +24,9 @@ namespace CS2 {
 			PROPERTY(m_ReplacementMaterial,GlobalTypes::CSmartPropAttributeMaterialName, 0x40);
 			S2_PAD(0x80);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropMaterialReplacement) == 0x80, "CSmartPropMaterialReplacement size should be 0x80");
+
+#endif
 	}
 }

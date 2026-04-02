@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/CAnimTagBase.hpp>
+#include "CAnimTagBase.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CWarpSectionAnimTagBase : public CS2::animgraphlib::CAnimTagBase {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CWarpSectionAnimTagBase) == 0x50, "CWarpSectionAnimTagBase size should be 0x50");
+
+#endif
 	}
 }

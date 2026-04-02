@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/CUnaryUpdateNode.hpp>
-#include <SDK/animgraphlib/RagdollPoseControl.hpp>
+#include "CUnaryUpdateNode.hpp"
+#include "RagdollPoseControl.hpp"
 
 
 
@@ -23,9 +23,12 @@ namespace CS2 {
 		class CRagdollUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
 			PROPERTY(m_nWeightListIndex,int32_t, 0x70);
-			PROPERTY(m_poseControlMethod,animgraphlib::RagdollPoseControl, 0x74);
+			PROPERTY(m_poseControlMethod,IDENTITY(animgraphlib::RagdollPoseControl), 0x74);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CRagdollUpdateNode) == 0x78, "CRagdollUpdateNode size should be 0x78");
+
+#endif
 	}
 }

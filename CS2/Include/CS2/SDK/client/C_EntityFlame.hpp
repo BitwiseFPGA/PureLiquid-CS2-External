@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BaseEntity.hpp>
+#include "C_BaseEntity.hpp"
 
 
 
@@ -21,11 +21,14 @@ namespace CS2 {
 	namespace client {
 		class C_EntityFlame : public CS2::client::C_BaseEntity {
 		public:
-			PROPERTY(m_hEntAttached,GlobalTypes::CHandle<client::C_BaseEntity>, 0x608);
-			PROPERTY(m_hOldAttached,GlobalTypes::CHandle<client::C_BaseEntity>, 0x630);
+			PROPERTY(m_hEntAttached,IDENTITY(GlobalTypes::CHandle<client::C_BaseEntity>), 0x608);
+			PROPERTY(m_hOldAttached,IDENTITY(GlobalTypes::CHandle<client::C_BaseEntity>), 0x630);
 			PROPERTY(m_bCheapEffect,bool, 0x634);
 			S2_PAD(0x48);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_EntityFlame) == 0x650, "C_EntityFlame size should be 0x650");
+
+#endif
 	}
 }

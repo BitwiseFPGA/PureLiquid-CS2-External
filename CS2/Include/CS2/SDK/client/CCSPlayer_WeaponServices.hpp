@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/CPlayer_WeaponServices.hpp>
-#include <SDK/entity2/GameTime_t.hpp>
+#include "CPlayer_WeaponServices.hpp"
+#include "../entity2/GameTime_t.hpp"
 
 
 
@@ -22,15 +22,18 @@ namespace CS2 {
 	namespace client {
 		class CCSPlayer_WeaponServices : public CS2::client::CPlayer_WeaponServices {
 		public:
-			NESTED_PROPERTY(m_flNextAttack,entity2::GameTime_t, 0xd0);
+			NESTED_PROPERTY(m_flNextAttack,IDENTITY(entity2::GameTime_t), 0xd0);
 			PROPERTY(m_bIsLookingAtWeapon,bool, 0xd4);
 			PROPERTY(m_bIsHoldingLookAtWeapon,bool, 0xd5);
 			PROPERTY(m_nOldTotalShootPositionHistoryCount,uint32_t, 0xd8);
 			PROPERTY(m_nOldTotalInputHistoryCount,uint32_t, 0x370);
-			PROPERTY(m_networkAnimTiming,GlobalTypes::C_NetworkUtlVectorBase< uint8 >, 0x1588);
+			// PROPERTY(m_networkAnimTiming,IDENTITY(GlobalTypes::C_NetworkUtlVectorBase< uint8 >), 0x1588);
 			PROPERTY(m_bBlockInspectUntilNextGraphUpdate,bool, 0x15a0);
 			S2_PAD(0x1528);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::CCSPlayer_WeaponServices) == 0x15D0, "CCSPlayer_WeaponServices size should be 0x15D0");
+
+#endif
 	}
 }

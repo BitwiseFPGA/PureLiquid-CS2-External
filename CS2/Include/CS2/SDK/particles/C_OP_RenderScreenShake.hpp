@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionRenderer.hpp>
-#include <SDK/particles/ParticleAttributeIndex_t.hpp>
+#include "CParticleFunctionRenderer.hpp"
+#include "ParticleAttributeIndex_t.hpp"
 
 
 
@@ -26,13 +26,16 @@ namespace CS2 {
 			PROPERTY(m_flRadiusScale,float32, 0x224);
 			PROPERTY(m_flFrequencyScale,float32, 0x228);
 			PROPERTY(m_flAmplitudeScale,float32, 0x22c);
-			NESTED_PROPERTY(m_nRadiusField,particles::ParticleAttributeIndex_t, 0x230);
-			NESTED_PROPERTY(m_nDurationField,particles::ParticleAttributeIndex_t, 0x234);
-			NESTED_PROPERTY(m_nFrequencyField,particles::ParticleAttributeIndex_t, 0x238);
-			NESTED_PROPERTY(m_nAmplitudeField,particles::ParticleAttributeIndex_t, 0x23c);
+			NESTED_PROPERTY(m_nRadiusField,IDENTITY(particles::ParticleAttributeIndex_t), 0x230);
+			NESTED_PROPERTY(m_nDurationField,IDENTITY(particles::ParticleAttributeIndex_t), 0x234);
+			NESTED_PROPERTY(m_nFrequencyField,IDENTITY(particles::ParticleAttributeIndex_t), 0x238);
+			NESTED_PROPERTY(m_nAmplitudeField,IDENTITY(particles::ParticleAttributeIndex_t), 0x23c);
 			PROPERTY(m_nFilterCP,int32_t, 0x240);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_RenderScreenShake) == 0x248, "C_OP_RenderScreenShake size should be 0x248");
+
+#endif
 	}
 }

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/soundsystem_voicecontainers/CVoiceContainerGenerator.hpp>
+#include "CVoiceContainerGenerator.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerNull : public CS2::soundsystem_voicecontainers::CVoiceContainerGenerator {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerNull) == 0xA8, "CVoiceContainerNull size should be 0xA8");
+
+#endif
 	}
 }

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionForce.hpp>
+#include "CParticleFunctionForce.hpp"
 
 
 
@@ -30,6 +30,9 @@ namespace CS2 {
 			PROPERTY(m_flExponent,float32, 0x210);
 			S2_PAD(0x38);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_ForceBasedOnDistanceToPlane) == 0x218, "C_OP_ForceBasedOnDistanceToPlane size should be 0x218");
+
+#endif
 	}
 }

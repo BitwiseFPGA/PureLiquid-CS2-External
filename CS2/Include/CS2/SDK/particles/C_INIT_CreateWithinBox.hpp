@@ -4,15 +4,15 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionInitializer.hpp>
-#include <SDK/particleslib/CPerParticleVecInput.hpp>
-#include <SDK/particles/CRandomNumberGeneratorParameters.hpp>
+#include "CParticleFunctionInitializer.hpp"
+#include "../particleslib/CPerParticleVecInput.hpp"
+#include "CRandomNumberGeneratorParameters.hpp"
 
 
 
@@ -23,14 +23,17 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_CreateWithinBox : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			NESTED_PROPERTY(m_vecMin,particleslib::CPerParticleVecInput, 0x1d8);
-			NESTED_PROPERTY(m_vecMax,particleslib::CPerParticleVecInput, 0x890);
+			NESTED_PROPERTY(m_vecMin,IDENTITY(particleslib::CPerParticleVecInput), 0x1d8);
+			NESTED_PROPERTY(m_vecMax,IDENTITY(particleslib::CPerParticleVecInput), 0x890);
 			PROPERTY(m_nControlPointNumber,int32_t, 0xf48);
 			PROPERTY(m_bLocalSpace,bool, 0xf4c);
-			NESTED_PROPERTY(m_randomnessParameters,particles::CRandomNumberGeneratorParameters, 0xf50);
+			NESTED_PROPERTY(m_randomnessParameters,IDENTITY(particles::CRandomNumberGeneratorParameters), 0xf50);
 			PROPERTY(m_bUseNewCode,bool, 0xf58);
 			S2_PAD(0xD88);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_INIT_CreateWithinBox) == 0xF60, "C_INIT_CreateWithinBox size should be 0xF60");
+
+#endif
 	}
 }

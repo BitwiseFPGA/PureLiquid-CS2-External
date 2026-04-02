@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/smartprops/CSmartPropVariable.hpp>
-#include <SDK/resourcesystem/InfoForResourceTypeCModel.hpp>
+#include "CSmartPropVariable.hpp"
+#include "../resourcesystem/InfoForResourceTypeCModel.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropVariable_Model : public CS2::smartprops::CSmartPropVariable {
 		public:
-			PROPERTY(m_DefaultValue,GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCModel>>, 0x38);
+			PROPERTY(m_DefaultValue,IDENTITY(GlobalTypes::CResourceNameTyped<GlobalTypes::CWeakHandle<resourcesystem::InfoForResourceTypeCModel>>), 0x38);
 			S2_PAD(0xE0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropVariable_Model) == 0x118, "CSmartPropVariable_Model size should be 0x118");
+
+#endif
 	}
 }

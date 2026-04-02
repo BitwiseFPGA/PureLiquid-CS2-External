@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CBaseEntity.hpp>
+#include "CBaseEntity.hpp"
 
 
 
@@ -33,6 +33,9 @@ namespace CS2 {
 			PROPERTY(m_foundGoalPositions,bool, 0x539);
 			S2_PAD(0x98);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CCSPlayerResource) == 0x540, "CCSPlayerResource size should be 0x540");
+
+#endif
 	}
 }

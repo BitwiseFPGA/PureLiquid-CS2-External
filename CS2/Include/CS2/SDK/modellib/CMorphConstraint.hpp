@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/modellib/CBaseConstraint.hpp>
+#include "CBaseConstraint.hpp"
 
 
 
@@ -27,6 +27,9 @@ namespace CS2 {
 			PROPERTY(m_flMax,float32, 0x70);
 			S2_PAD(0x20);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::modellib::CMorphConstraint) == 0x80, "CMorphConstraint size should be 0x80");
+
+#endif
 	}
 }

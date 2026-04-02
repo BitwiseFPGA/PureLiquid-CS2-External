@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/pulse_runtime_lib/CPulse_ResumePoint.hpp>
+#include "CPulse_ResumePoint.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class SignatureOutflow_Resume : public CS2::pulse_runtime_lib::CPulse_ResumePoint {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::pulse_runtime_lib::SignatureOutflow_Resume) == 0x48, "SignatureOutflow_Resume size should be 0x48");
+
+#endif
 	}
 }

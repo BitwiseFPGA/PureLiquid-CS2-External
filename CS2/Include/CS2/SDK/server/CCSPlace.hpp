@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CServerOnlyModelEntity.hpp>
+#include "CServerOnlyModelEntity.hpp"
 
 
 
@@ -24,6 +24,9 @@ namespace CS2 {
 			PROPERTY(m_name,GlobalTypes::CUtlSymbolLarge*, 0x748);
 			S2_PAD(0x20);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CCSPlace) == 0x750, "CCSPlace size should be 0x750");
+
+#endif
 	}
 }

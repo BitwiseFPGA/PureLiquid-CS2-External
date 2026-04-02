@@ -4,15 +4,15 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionInitializer.hpp>
-#include <SDK/particleslib/CParticleCollectionVecInput.hpp>
-#include <SDK/particles/ParticleAttributeIndex_t.hpp>
+#include "CParticleFunctionInitializer.hpp"
+#include "../particleslib/CParticleCollectionVecInput.hpp"
+#include "ParticleAttributeIndex_t.hpp"
 
 
 
@@ -23,10 +23,13 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_InitVecCollection : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			NESTED_PROPERTY(m_InputValue,particleslib::CParticleCollectionVecInput, 0x1d8);
-			NESTED_PROPERTY(m_nOutputField,particles::ParticleAttributeIndex_t, 0x890);
+			NESTED_PROPERTY(m_InputValue,IDENTITY(particleslib::CParticleCollectionVecInput), 0x1d8);
+			NESTED_PROPERTY(m_nOutputField,IDENTITY(particles::ParticleAttributeIndex_t), 0x890);
 			S2_PAD(0x6C0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_INIT_InitVecCollection) == 0x898, "C_INIT_InitVecCollection size should be 0x898");
+
+#endif
 	}
 }

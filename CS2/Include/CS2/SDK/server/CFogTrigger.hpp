@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CBaseTrigger.hpp>
-#include <SDK/server/fogparams_t.hpp>
+#include "CBaseTrigger.hpp"
+#include "fogparams_t.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace server {
 		class CFogTrigger : public CS2::server::CBaseTrigger {
 		public:
-			NESTED_PROPERTY(m_fog,server::fogparams_t, 0x890);
+			NESTED_PROPERTY(m_fog,IDENTITY(server::fogparams_t), 0x890);
 			S2_PAD(0x68);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CFogTrigger) == 0x8F8, "CFogTrigger size should be 0x8F8");
+
+#endif
 	}
 }

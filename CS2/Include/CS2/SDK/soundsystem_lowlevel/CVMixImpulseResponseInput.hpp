@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/soundsystem_lowlevel/CVMixInputBase.hpp>
+#include "CVMixInputBase.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixImpulseResponseInput : public CS2::soundsystem_lowlevel::CVMixInputBase {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixImpulseResponseInput) == 0x10, "CVMixImpulseResponseInput size should be 0x10");
+
+#endif
 	}
 }

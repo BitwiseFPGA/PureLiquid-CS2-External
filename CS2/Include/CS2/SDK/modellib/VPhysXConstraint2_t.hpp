@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/modellib/VPhysXConstraintParams_t.hpp>
+#include "VPhysXConstraintParams_t.hpp"
 
 
 
@@ -24,9 +24,12 @@ namespace CS2 {
 			PROPERTY(m_nFlags,uint32_t, 0x0);
 			PROPERTY(m_nParent,uint16_t, 0x4);
 			PROPERTY(m_nChild,uint16_t, 0x6);
-			NESTED_PROPERTY(m_params,modellib::VPhysXConstraintParams_t, 0x8);
+			NESTED_PROPERTY(m_params,IDENTITY(modellib::VPhysXConstraintParams_t), 0x8);
 			S2_PAD(0x100);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::modellib::VPhysXConstraint2_t) == 0x100, "VPhysXConstraint2_t size should be 0x100");
+
+#endif
 	}
 }

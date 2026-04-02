@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionInitializer.hpp>
-#include <SDK/particleslib/CParticleTransformInput.hpp>
+#include "CParticleFunctionInitializer.hpp"
+#include "../particleslib/CParticleTransformInput.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_RemapQAnglesToRotation : public CS2::particles::CParticleFunctionInitializer {
 		public:
-			NESTED_PROPERTY(m_TransformInput,particleslib::CParticleTransformInput, 0x1d8);
+			NESTED_PROPERTY(m_TransformInput,IDENTITY(particleslib::CParticleTransformInput), 0x1d8);
 			S2_PAD(0x68);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_INIT_RemapQAnglesToRotation) == 0x240, "C_INIT_RemapQAnglesToRotation size should be 0x240");
+
+#endif
 	}
 }

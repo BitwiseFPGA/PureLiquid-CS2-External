@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/physicslib/FeSDFRigid_t.hpp>
+#include "FeSDFRigid_t.hpp"
 
 
 
@@ -26,6 +26,9 @@ namespace CS2 {
 			PROPERTY(m_nAntitunnelGroupBits,uint32_t, 0x58);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::physicslib::FeBuildSDFRigid_t) == 0x60, "FeBuildSDFRigid_t size should be 0x60");
+
+#endif
 	}
 }

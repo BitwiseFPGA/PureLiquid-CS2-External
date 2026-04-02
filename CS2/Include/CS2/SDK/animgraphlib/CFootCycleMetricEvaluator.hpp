@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/CMotionMetricEvaluator.hpp>
+#include "CMotionMetricEvaluator.hpp"
 
 
 
@@ -21,9 +21,12 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CFootCycleMetricEvaluator : public CS2::animgraphlib::CMotionMetricEvaluator {
 		public:
-			NESTED_PROPERTY(m_footIndices,GlobalTypes::CUtlVector< int32 >, 0x50);
+			NESTED_PROPERTY(m_footIndices,IDENTITY(GlobalTypes::CUtlVector< int32 >), 0x50);
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CFootCycleMetricEvaluator) == 0x68, "CFootCycleMetricEvaluator size should be 0x68");
+
+#endif
 	}
 }

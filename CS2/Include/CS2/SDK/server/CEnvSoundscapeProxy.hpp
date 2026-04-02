@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CEnvSoundscape.hpp>
+#include "CEnvSoundscape.hpp"
 
 
 
@@ -24,6 +24,9 @@ namespace CS2 {
 			PROPERTY(m_MainSoundscapeName,GlobalTypes::CUtlSymbolLarge*, 0x538);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CEnvSoundscapeProxy) == 0x540, "CEnvSoundscapeProxy size should be 0x540");
+
+#endif
 	}
 }

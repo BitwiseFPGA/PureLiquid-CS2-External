@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -24,6 +24,9 @@ namespace CS2 {
 			PROPERTY(m_nInitialSeed,int32_t, 0x9c);
 			S2_PAD(0xA0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::CScriptUniformRandomStream) == 0xA0, "CScriptUniformRandomStream size should be 0xA0");
+
+#endif
 	}
 }

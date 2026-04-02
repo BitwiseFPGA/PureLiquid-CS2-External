@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/modellib/CBaseConstraint.hpp>
-#include <SDK/modellib/Input_t.hpp>
+#include "CBaseConstraint.hpp"
+#include "CBoneConstraintPoseSpaceBone_Input_t.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace modellib {
 		class CBoneConstraintPoseSpaceBone : public CS2::modellib::CBaseConstraint {
 		public:
-			NESTED_PROPERTY(m_inputList,GlobalTypes::CUtlVector<modellib::Input_t>, 0x60);
+			NESTED_PROPERTY(m_inputList,IDENTITY(GlobalTypes::CUtlVector<modellib::CBoneConstraintPoseSpaceBone_Input_t>), 0x60);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::modellib::CBoneConstraintPoseSpaceBone) == 0x88, "CBoneConstraintPoseSpaceBone size should be 0x88");
+
+#endif
 	}
 }

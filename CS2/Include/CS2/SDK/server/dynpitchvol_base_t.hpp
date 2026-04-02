@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -47,6 +47,9 @@ namespace CS2 {
 			PROPERTY(lfomult,int32_t, 0x60);
 			S2_PAD(0x64);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::dynpitchvol_base_t) == 0x64, "dynpitchvol_base_t size should be 0x64");
+
+#endif
 	}
 }

@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionInitializer.hpp>
-#include <SDK/particles/CPathParameters.hpp>
+#include "CParticleFunctionInitializer.hpp"
+#include "CPathParameters.hpp"
 
 
 
@@ -23,12 +23,15 @@ namespace CS2 {
 		class C_INIT_CreateAlongPath : public CS2::particles::CParticleFunctionInitializer {
 		public:
 			PROPERTY(m_fMaxDistance,float32, 0x1d8);
-			NESTED_PROPERTY(m_PathParams,particles::CPathParameters, 0x1e0);
+			NESTED_PROPERTY(m_PathParams,IDENTITY(particles::CPathParameters), 0x1e0);
 			PROPERTY(m_bUseRandomCPs,bool, 0x220);
 			PROPERTY(m_vEndOffset,GlobalTypes::Vector, 0x224);
 			PROPERTY(m_bSaveOffset,bool, 0x230);
 			S2_PAD(0x68);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_INIT_CreateAlongPath) == 0x240, "C_INIT_CreateAlongPath size should be 0x240");
+
+#endif
 	}
 }

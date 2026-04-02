@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/soundsystem/CSosGroupActionSchema.hpp>
+#include "CSosGroupActionSchema.hpp"
 
 
 
@@ -31,6 +31,9 @@ namespace CS2 {
 			PROPERTY(m_bSaveToGroup,bool, 0x28);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::soundsystem::CSosGroupActionMemberCountEnvelopeSchema) == 0x30, "CSosGroupActionMemberCountEnvelopeSchema size should be 0x30");
+
+#endif
 	}
 }

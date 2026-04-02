@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BaseEntity.hpp>
-#include <SDK/client/fogparams_t.hpp>
+#include "C_BaseEntity.hpp"
+#include "fogparams_t.hpp"
 
 
 
@@ -22,11 +22,14 @@ namespace CS2 {
 	namespace client {
 		class C_FogController : public CS2::client::C_BaseEntity {
 		public:
-			NESTED_PROPERTY(m_fog,client::fogparams_t, 0x608);
+			NESTED_PROPERTY(m_fog,IDENTITY(client::fogparams_t), 0x608);
 			PROPERTY(m_bUseAngles,bool, 0x670);
 			PROPERTY(m_iChangedVariables,int32_t, 0x674);
 			S2_PAD(0x70);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_FogController) == 0x678, "C_FogController size should be 0x678");
+
+#endif
 	}
 }

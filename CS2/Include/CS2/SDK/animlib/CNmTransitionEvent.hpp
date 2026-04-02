@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animlib/CNmEvent.hpp>
-#include <SDK/animlib/NmTransitionRule_t.hpp>
+#include "CNmEvent.hpp"
+#include "NmTransitionRule_t.hpp"
 
 
 
@@ -22,10 +22,13 @@ namespace CS2 {
 	namespace animlib {
 		class CNmTransitionEvent : public CS2::animlib::CNmEvent {
 		public:
-			PROPERTY(m_rule,animlib::NmTransitionRule_t, 0x20);
+			PROPERTY(m_rule,IDENTITY(animlib::NmTransitionRule_t), 0x20);
 			PROPERTY(m_ID,GlobalTypes::CGlobalSymbol, 0x28);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animlib::CNmTransitionEvent) == 0x30, "CNmTransitionEvent size should be 0x30");
+
+#endif
 	}
 }

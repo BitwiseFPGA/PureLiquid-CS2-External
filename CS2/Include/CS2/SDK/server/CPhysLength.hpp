@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CPhysConstraint.hpp>
+#include "CPhysConstraint.hpp"
 
 
 
@@ -28,6 +28,9 @@ namespace CS2 {
 			PROPERTY(m_totalLength,float32, 0x534);
 			S2_PAD(0x30);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CPhysLength) == 0x538, "CPhysLength size should be 0x538");
+
+#endif
 	}
 }

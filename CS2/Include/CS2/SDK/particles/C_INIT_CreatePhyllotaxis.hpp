@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionInitializer.hpp>
+#include "CParticleFunctionInitializer.hpp"
 
 
 
@@ -37,6 +37,9 @@ namespace CS2 {
 			PROPERTY(m_bUseOrigRadius,bool, 0x206);
 			S2_PAD(0x30);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_INIT_CreatePhyllotaxis) == 0x208, "C_INIT_CreatePhyllotaxis size should be 0x208");
+
+#endif
 	}
 }

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/modellib/CFootStride.hpp>
+#include "CFootStride.hpp"
 
 
 
@@ -21,11 +21,14 @@ namespace CS2 {
 	namespace modellib {
 		class CFootMotion  {
 		public:
-			NESTED_PROPERTY(m_strides,GlobalTypes::CUtlVector<modellib::CFootStride>, 0x0);
+			NESTED_PROPERTY(m_strides,IDENTITY(GlobalTypes::CUtlVector<modellib::CFootStride>), 0x0);
 			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x18);
 			PROPERTY(m_bAdditive,bool, 0x20);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::modellib::CFootMotion) == 0x28, "CFootMotion size should be 0x28");
+
+#endif
 	}
 }

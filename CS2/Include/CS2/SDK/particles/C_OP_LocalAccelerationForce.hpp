@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionForce.hpp>
-#include <SDK/particleslib/CParticleCollectionVecInput.hpp>
+#include "CParticleFunctionForce.hpp"
+#include "../particleslib/CParticleCollectionVecInput.hpp"
 
 
 
@@ -24,9 +24,12 @@ namespace CS2 {
 		public:
 			PROPERTY(m_nCP,int32_t, 0x1e0);
 			PROPERTY(m_nScaleCP,int32_t, 0x1e4);
-			NESTED_PROPERTY(m_vecAccel,particleslib::CParticleCollectionVecInput, 0x1e8);
+			NESTED_PROPERTY(m_vecAccel,IDENTITY(particleslib::CParticleCollectionVecInput), 0x1e8);
 			S2_PAD(0x6C0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_LocalAccelerationForce) == 0x8A0, "C_OP_LocalAccelerationForce size should be 0x8A0");
+
+#endif
 	}
 }

@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/CBaseAnimGraph.hpp>
-#include <SDK/client/CountdownTimer.hpp>
+#include "CBaseAnimGraph.hpp"
+#include "CountdownTimer.hpp"
 
 
 
@@ -29,7 +29,7 @@ namespace CS2 {
 			PROPERTY(m_deathDepth,float32, 0x1190);
 			PROPERTY(m_deathAngle,float32, 0x1194);
 			PROPERTY(m_buoyancy,float32, 0x1198);
-			NESTED_PROPERTY(m_wiggleTimer,client::CountdownTimer, 0x11a0);
+			NESTED_PROPERTY(m_wiggleTimer,IDENTITY(client::CountdownTimer), 0x11a0);
 			PROPERTY(m_wigglePhase,float32, 0x11b8);
 			PROPERTY(m_wiggleRate,float32, 0x11bc);
 			PROPERTY(m_actualPos,GlobalTypes::Vector, 0x11c0);
@@ -47,6 +47,9 @@ namespace CS2 {
 			PROPERTY(m_averageError,float32, 0x1254);
 			S2_PAD(0xF0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_Fish) == 0x1258, "C_Fish size should be 0x1258");
+
+#endif
 	}
 }

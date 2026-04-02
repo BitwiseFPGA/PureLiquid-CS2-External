@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/smartprops/CSmartPropTransformOperation.hpp>
+#include "CSmartPropTransformOperation.hpp"
 
 
 
@@ -27,6 +27,9 @@ namespace CS2 {
 			PROPERTY(m_bResetRoll,GlobalTypes::CSmartPropAttributeBool, 0x110);
 			S2_PAD(0x100);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_ResetRotation) == 0x150, "CSmartPropOperation_ResetRotation size should be 0x150");
+
+#endif
 	}
 }

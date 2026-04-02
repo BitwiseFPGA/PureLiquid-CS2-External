@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/soundsystem_lowlevel/CVMixBaseProcessorDesc.hpp>
-#include <SDK/soundsystem_lowlevel/VMixDynamics3BandDesc_t.hpp>
+#include "CVMixBaseProcessorDesc.hpp"
+#include "VMixDynamics3BandDesc_t.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace soundsystem_lowlevel {
 		class CVMixDynamics3BandProcessorDesc : public CS2::soundsystem_lowlevel::CVMixBaseProcessorDesc {
 		public:
-			NESTED_PROPERTY(m_desc,soundsystem_lowlevel::VMixDynamics3BandDesc_t, 0x20);
+			NESTED_PROPERTY(m_desc,IDENTITY(soundsystem_lowlevel::VMixDynamics3BandDesc_t), 0x20);
 			S2_PAD(0x90);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::soundsystem_lowlevel::CVMixDynamics3BandProcessorDesc) == 0xB0, "CVMixDynamics3BandProcessorDesc size should be 0xB0");
+
+#endif
 	}
 }

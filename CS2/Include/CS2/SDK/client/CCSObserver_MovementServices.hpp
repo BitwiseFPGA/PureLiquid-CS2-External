@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/CPlayer_MovementServices.hpp>
+#include "CPlayer_MovementServices.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace client {
 		class CCSObserver_MovementServices : public CS2::client::CPlayer_MovementServices {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::CCSObserver_MovementServices) == 0x240, "CCSObserver_MovementServices size should be 0x240");
+
+#endif
 	}
 }

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionOperator.hpp>
+#include "CParticleFunctionOperator.hpp"
 
 
 
@@ -56,6 +56,9 @@ namespace CS2 {
 			PROPERTY(m_bClampUpperRange,bool, 0x6df);
 			S2_PAD(0x510);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_ControlpointLight) == 0x6E0, "C_OP_ControlpointLight size should be 0x6E0");
+
+#endif
 	}
 }

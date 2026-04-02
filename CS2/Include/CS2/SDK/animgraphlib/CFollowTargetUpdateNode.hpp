@@ -4,15 +4,15 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/CUnaryUpdateNode.hpp>
-#include <SDK/animgraphlib/FollowTargetOpFixedSettings_t.hpp>
-#include <SDK/animgraphlib/CAnimParamHandle.hpp>
+#include "CUnaryUpdateNode.hpp"
+#include "FollowTargetOpFixedSettings_t.hpp"
+#include "CAnimParamHandle.hpp"
 
 
 
@@ -23,11 +23,14 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CFollowTargetUpdateNode : public CS2::animgraphlib::CUnaryUpdateNode {
 		public:
-			NESTED_PROPERTY(m_opFixedData,animgraphlib::FollowTargetOpFixedSettings_t, 0x70);
-			NESTED_PROPERTY(m_hParameterPosition,animgraphlib::CAnimParamHandle, 0x88);
-			NESTED_PROPERTY(m_hParameterOrientation,animgraphlib::CAnimParamHandle, 0x8a);
+			NESTED_PROPERTY(m_opFixedData,IDENTITY(animgraphlib::FollowTargetOpFixedSettings_t), 0x70);
+			NESTED_PROPERTY(m_hParameterPosition,IDENTITY(animgraphlib::CAnimParamHandle), 0x88);
+			NESTED_PROPERTY(m_hParameterOrientation,IDENTITY(animgraphlib::CAnimParamHandle), 0x8a);
 			S2_PAD(0x20);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CFollowTargetUpdateNode) == 0x90, "CFollowTargetUpdateNode size should be 0x90");
+
+#endif
 	}
 }

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particleslib/ParticleNamedValueConfiguration_t.hpp>
+#include "ParticleNamedValueConfiguration_t.hpp"
 
 
 
@@ -24,9 +24,12 @@ namespace CS2 {
 			PROPERTY(m_Name,GlobalTypes::CUtlString*, 0x0);
 			PROPERTY(m_IsPublic,bool, 0x8);
 			PROPERTY(m_ValueType,GlobalTypes::CPulseValueFullType, 0x10);
-			NESTED_PROPERTY(m_DefaultConfig,particleslib::ParticleNamedValueConfiguration_t, 0x28);
+			NESTED_PROPERTY(m_DefaultConfig,IDENTITY(particleslib::ParticleNamedValueConfiguration_t), 0x28);
 			S2_PAD(0x60);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particleslib::ParticleNamedValueSource_t) == 0x60, "ParticleNamedValueSource_t size should be 0x60");
+
+#endif
 	}
 }

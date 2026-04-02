@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animlib/CNmEvent.hpp>
-#include <SDK/animlib/NmFootPhase_t.hpp>
+#include "CNmEvent.hpp"
+#include "NmFootPhase_t.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace animlib {
 		class CNmFootEvent : public CS2::animlib::CNmEvent {
 		public:
-			PROPERTY(m_phase,animlib::NmFootPhase_t, 0x20);
+			PROPERTY(m_phase,IDENTITY(animlib::NmFootPhase_t), 0x20);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animlib::CNmFootEvent) == 0x28, "CNmFootEvent size should be 0x28");
+
+#endif
 	}
 }

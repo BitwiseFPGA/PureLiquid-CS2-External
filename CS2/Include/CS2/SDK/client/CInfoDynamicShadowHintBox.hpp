@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/CInfoDynamicShadowHint.hpp>
+#include "CInfoDynamicShadowHint.hpp"
 
 
 
@@ -25,6 +25,9 @@ namespace CS2 {
 			PROPERTY(m_vBoxMaxs,GlobalTypes::Vector, 0x62c);
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::CInfoDynamicShadowHintBox) == 0x638, "CInfoDynamicShadowHintBox size should be 0x638");
+
+#endif
 	}
 }

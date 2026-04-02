@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CHostage.hpp>
+#include "CHostage.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CHostageAlias_info_hostage_spawn : public CS2::server::CHostage {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CHostageAlias_info_hostage_spawn) == 0x2E00, "CHostageAlias_info_hostage_spawn size should be 0x2E00");
+
+#endif
 	}
 }

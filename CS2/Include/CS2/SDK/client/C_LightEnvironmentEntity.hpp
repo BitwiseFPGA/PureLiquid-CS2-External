@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_LightDirectionalEntity.hpp>
+#include "C_LightDirectionalEntity.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace client {
 		class C_LightEnvironmentEntity : public CS2::client::C_LightDirectionalEntity {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_LightEnvironmentEntity) == 0xE90, "C_LightEnvironmentEntity size should be 0xE90");
+
+#endif
 	}
 }

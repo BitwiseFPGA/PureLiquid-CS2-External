@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animationsystem/AnimationProcessingType_t.hpp>
-#include <SDK/animationsystem/AnimationDecodeDebugDumpElement_t.hpp>
+#include "AnimationProcessingType_t.hpp"
+#include "AnimationDecodeDebugDumpElement_t.hpp"
 
 
 
@@ -22,10 +22,13 @@ namespace CS2 {
 	namespace animationsystem {
 		class AnimationDecodeDebugDump_t  {
 		public:
-			PROPERTY(m_processingType,animationsystem::AnimationProcessingType_t, 0x0);
-			NESTED_PROPERTY(m_elems,GlobalTypes::CUtlVector<animationsystem::AnimationDecodeDebugDumpElement_t>, 0x8);
+			PROPERTY(m_processingType,IDENTITY(animationsystem::AnimationProcessingType_t), 0x0);
+			NESTED_PROPERTY(m_elems,IDENTITY(GlobalTypes::CUtlVector<animationsystem::AnimationDecodeDebugDumpElement_t>), 0x8);
 			S2_PAD(0x20);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animationsystem::AnimationDecodeDebugDump_t) == 0x20, "AnimationDecodeDebugDump_t size should be 0x20");
+
+#endif
 	}
 }

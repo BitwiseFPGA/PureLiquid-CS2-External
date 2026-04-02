@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/PoseType_t.hpp>
+#include "PoseType_t.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 		class CPoseHandle  {
 		public:
 			PROPERTY(m_nIndex,uint16_t, 0x0);
-			PROPERTY(m_eType,animgraphlib::PoseType_t, 0x2);
+			PROPERTY(m_eType,IDENTITY(animgraphlib::PoseType_t), 0x2);
 			S2_PAD(0x4);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CPoseHandle) == 0x4, "CPoseHandle size should be 0x4");
+
+#endif
 	}
 }

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/SpawnPoint.hpp>
+#include "SpawnPoint.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CInfoDeathmatchSpawn : public CS2::server::SpawnPoint {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CInfoDeathmatchSpawn) == 0x4B8, "CInfoDeathmatchSpawn size should be 0x4B8");
+
+#endif
 	}
 }

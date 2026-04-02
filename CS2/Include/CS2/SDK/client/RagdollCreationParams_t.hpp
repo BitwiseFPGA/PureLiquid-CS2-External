@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -27,6 +27,9 @@ namespace CS2 {
 			PROPERTY(m_nHealthToGrant,int32_t, 0x14);
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::RagdollCreationParams_t) == 0x18, "RagdollCreationParams_t size should be 0x18");
+
+#endif
 	}
 }

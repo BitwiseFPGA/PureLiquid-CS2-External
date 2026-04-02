@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/networksystem/ChangeAccessorFieldPathIndex_t.hpp>
+#include "../networksystem/ChangeAccessorFieldPathIndex_t.hpp"
 
 
 
@@ -21,9 +21,12 @@ namespace CS2 {
 	namespace entity2 {
 		class CNetworkVarChainer  {
 		public:
-			NESTED_PROPERTY(m_PathIndex,networksystem::ChangeAccessorFieldPathIndex_t, 0x20);
+			NESTED_PROPERTY(m_PathIndex,IDENTITY(networksystem::ChangeAccessorFieldPathIndex_t), 0x20);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::entity2::CNetworkVarChainer) == 0x28, "CNetworkVarChainer size should be 0x28");
+
+#endif
 	}
 }

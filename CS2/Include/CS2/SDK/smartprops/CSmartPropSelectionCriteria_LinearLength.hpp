@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/smartprops/CSmartPropSelectionCriteria.hpp>
+#include "CSmartPropSelectionCriteria.hpp"
 
 
 
@@ -27,6 +27,9 @@ namespace CS2 {
 			PROPERTY(m_flMaxLength,GlobalTypes::CSmartPropAttributeFloat, 0x108);
 			S2_PAD(0x100);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropSelectionCriteria_LinearLength) == 0x148, "CSmartPropSelectionCriteria_LinearLength size should be 0x148");
+
+#endif
 	}
 }

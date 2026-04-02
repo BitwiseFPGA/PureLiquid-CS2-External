@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionInitializer.hpp>
+#include "CParticleFunctionInitializer.hpp"
 
 
 
@@ -28,9 +28,12 @@ namespace CS2 {
 		public:
 			PROPERTY_ARRAY(m_ActivityName,char, 256 , 0x1d8);
 			PROPERTY_ARRAY(m_SequenceName,char, 256 , 0x2d8);
-			PROPERTY(m_hModel,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>, 0x3d8);
+			PROPERTY(m_hModel,IDENTITY(GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeCModel>), 0x3d8);
 			S2_PAD(0x208);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_INIT_RandomModelSequence) == 0x3E0, "C_INIT_RandomModelSequence size should be 0x3E0");
+
+#endif
 	}
 }

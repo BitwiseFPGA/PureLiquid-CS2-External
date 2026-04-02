@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/smartprops/CSmartPropTransformOperation.hpp>
+#include "CSmartPropTransformOperation.hpp"
 
 
 
@@ -26,6 +26,9 @@ namespace CS2 {
 			PROPERTY(m_flSnapIncrement,GlobalTypes::CSmartPropAttributeFloat, 0xd0);
 			S2_PAD(0xC0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_RandomScale) == 0x110, "CSmartPropOperation_RandomScale size should be 0x110");
+
+#endif
 	}
 }

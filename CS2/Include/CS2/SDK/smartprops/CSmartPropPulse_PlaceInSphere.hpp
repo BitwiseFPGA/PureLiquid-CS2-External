@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/pulse_runtime_lib/CPulseCell_BaseFlow.hpp>
-#include <SDK/pulse_runtime_lib/CPulse_OutflowConnection.hpp>
+#include "../pulse_runtime_lib/CPulseCell_BaseFlow.hpp"
+#include "../pulse_runtime_lib/CPulse_OutflowConnection.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropPulse_PlaceInSphere : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			NESTED_PROPERTY(m_Place,pulse_runtime_lib::CPulse_OutflowConnection, 0x48);
+			NESTED_PROPERTY(m_Place,IDENTITY(pulse_runtime_lib::CPulse_OutflowConnection), 0x48);
 			S2_PAD(0x48);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropPulse_PlaceInSphere) == 0x90, "CSmartPropPulse_PlaceInSphere size should be 0x90");
+
+#endif
 	}
 }

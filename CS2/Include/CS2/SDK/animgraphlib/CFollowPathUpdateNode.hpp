@@ -4,16 +4,16 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/CUnaryUpdateNode.hpp>
-#include <SDK/animgraphlib/CAnimInputDamping.hpp>
-#include <SDK/animgraphlib/AnimValueSource.hpp>
-#include <SDK/animgraphlib/CAnimParamHandle.hpp>
+#include "CUnaryUpdateNode.hpp"
+#include "CAnimInputDamping.hpp"
+#include "AnimValueSource.hpp"
+#include "CAnimParamHandle.hpp"
 
 
 
@@ -32,13 +32,16 @@ namespace CS2 {
 			PROPERTY(m_flMinAngle,float32, 0x80);
 			PROPERTY(m_flMaxAngle,float32, 0x84);
 			PROPERTY(m_flSpeedScaleBlending,float32, 0x88);
-			NESTED_PROPERTY(m_turnDamping,animgraphlib::CAnimInputDamping, 0x90);
-			PROPERTY(m_facingTarget,animgraphlib::AnimValueSource, 0xa8);
-			NESTED_PROPERTY(m_hParam,animgraphlib::CAnimParamHandle, 0xac);
+			NESTED_PROPERTY(m_turnDamping,IDENTITY(animgraphlib::CAnimInputDamping), 0x90);
+			PROPERTY(m_facingTarget,IDENTITY(animgraphlib::AnimValueSource), 0xa8);
+			NESTED_PROPERTY(m_hParam,IDENTITY(animgraphlib::CAnimParamHandle), 0xac);
 			PROPERTY(m_flTurnToFaceOffset,float32, 0xb0);
 			PROPERTY(m_bTurnToFace,bool, 0xb4);
 			S2_PAD(0x48);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CFollowPathUpdateNode) == 0xB8, "CFollowPathUpdateNode size should be 0xB8");
+
+#endif
 	}
 }

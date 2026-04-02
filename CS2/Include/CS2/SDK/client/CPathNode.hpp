@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_PointEntity.hpp>
+#include "C_PointEntity.hpp"
 
 
 
@@ -31,9 +31,12 @@ namespace CS2 {
 			PROPERTY(m_strParentPathUniqueID,GlobalTypes::CUtlString*, 0x620);
 			PROPERTY(m_strPathNodeParameter,GlobalTypes::CUtlString*, 0x628);
 			PROPERTY(m_xWSPrevParent,GlobalTypes::CTransform, 0x630);
-			PROPERTY(m_hPath,GlobalTypes::CHandle<client::CPathWithDynamicNodes>, 0x650);
+			PROPERTY(m_hPath,IDENTITY(GlobalTypes::CHandle<client::CPathWithDynamicNodes>), 0x650);
 			S2_PAD(0x58);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::CPathNode) == 0x660, "CPathNode size should be 0x660");
+
+#endif
 	}
 }

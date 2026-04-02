@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CGeneralRandomRotation.hpp>
+#include "CGeneralRandomRotation.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace particles {
 		class C_INIT_RandomRotationSpeed : public CS2::particles::CGeneralRandomRotation {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_INIT_RandomRotationSpeed) == 0x1F8, "C_INIT_RandomRotationSpeed size should be 0x1F8");
+
+#endif
 	}
 }

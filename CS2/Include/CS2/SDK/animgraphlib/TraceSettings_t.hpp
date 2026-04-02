@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -24,6 +24,9 @@ namespace CS2 {
 			PROPERTY(m_flTraceRadius,float32, 0x4);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::TraceSettings_t) == 0x8, "TraceSettings_t size should be 0x8");
+
+#endif
 	}
 }

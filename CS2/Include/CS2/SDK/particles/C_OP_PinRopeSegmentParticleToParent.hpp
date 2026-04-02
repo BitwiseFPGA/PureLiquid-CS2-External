@@ -4,16 +4,16 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionOperator.hpp>
-#include <SDK/particles/ParticleSelection_t.hpp>
-#include <SDK/particleslib/CParticleCollectionFloatInput.hpp>
-#include <SDK/particleslib/CPerParticleFloatInput.hpp>
+#include "CParticleFunctionOperator.hpp"
+#include "ParticleSelection_t.hpp"
+#include "../particleslib/CParticleCollectionFloatInput.hpp"
+#include "../particleslib/CPerParticleFloatInput.hpp"
 
 
 
@@ -24,11 +24,14 @@ namespace CS2 {
 	namespace particles {
 		class C_OP_PinRopeSegmentParticleToParent : public CS2::particles::CParticleFunctionOperator {
 		public:
-			PROPERTY(m_nParticleSelection,particles::ParticleSelection_t, 0x1d0);
-			NESTED_PROPERTY(m_nParticleNumber,particleslib::CParticleCollectionFloatInput, 0x1d8);
-			NESTED_PROPERTY(m_flInterpolation,particleslib::CPerParticleFloatInput, 0x348);
+			PROPERTY(m_nParticleSelection,IDENTITY(particles::ParticleSelection_t), 0x1d0);
+			NESTED_PROPERTY(m_nParticleNumber,IDENTITY(particleslib::CParticleCollectionFloatInput), 0x1d8);
+			NESTED_PROPERTY(m_flInterpolation,IDENTITY(particleslib::CPerParticleFloatInput), 0x348);
 			S2_PAD(0x2E8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_PinRopeSegmentParticleToParent) == 0x4B8, "C_OP_PinRopeSegmentParticleToParent size should be 0x4B8");
+
+#endif
 	}
 }

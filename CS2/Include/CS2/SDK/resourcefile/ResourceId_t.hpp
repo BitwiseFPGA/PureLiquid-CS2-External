@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -23,6 +23,9 @@ namespace CS2 {
 			PROPERTY(m_Value,uint64_t, 0x0);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::resourcefile::ResourceId_t) == 0x8, "ResourceId_t size should be 0x8");
+
+#endif
 	}
 }

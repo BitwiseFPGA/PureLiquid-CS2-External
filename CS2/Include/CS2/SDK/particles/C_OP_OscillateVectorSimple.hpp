@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionOperator.hpp>
-#include <SDK/particles/ParticleAttributeIndex_t.hpp>
+#include "CParticleFunctionOperator.hpp"
+#include "ParticleAttributeIndex_t.hpp"
 
 
 
@@ -24,12 +24,15 @@ namespace CS2 {
 		public:
 			PROPERTY(m_Rate,GlobalTypes::Vector, 0x1d0);
 			PROPERTY(m_Frequency,GlobalTypes::Vector, 0x1dc);
-			NESTED_PROPERTY(m_nField,particles::ParticleAttributeIndex_t, 0x1e8);
+			NESTED_PROPERTY(m_nField,IDENTITY(particles::ParticleAttributeIndex_t), 0x1e8);
 			PROPERTY(m_flOscMult,float32, 0x1ec);
 			PROPERTY(m_flOscAdd,float32, 0x1f0);
 			PROPERTY(m_bOffset,bool, 0x1f4);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_OscillateVectorSimple) == 0x1F8, "C_OP_OscillateVectorSimple size should be 0x1F8");
+
+#endif
 	}
 }

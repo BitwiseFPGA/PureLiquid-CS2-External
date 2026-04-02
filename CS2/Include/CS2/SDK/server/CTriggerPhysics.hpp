@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CBaseTrigger.hpp>
+#include "CBaseTrigger.hpp"
 
 
 
@@ -36,6 +36,9 @@ namespace CS2 {
 			PROPERTY(m_bConvertToDebrisWhenPossible,bool, 0x8e8);
 			S2_PAD(0x60);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CTriggerPhysics) == 0x8F0, "CTriggerPhysics size should be 0x8F0");
+
+#endif
 	}
 }

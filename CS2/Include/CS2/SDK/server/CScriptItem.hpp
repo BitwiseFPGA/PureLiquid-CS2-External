@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CItem.hpp>
-#include <SDK/client/MoveType_t.hpp>
+#include "CItem.hpp"
+#include "../client/MoveType_t.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace server {
 		class CScriptItem : public CS2::server::CItem {
 		public:
-			PROPERTY(m_MoveTypeOverride,client::MoveType_t, 0xac0);
+			PROPERTY(m_MoveTypeOverride,IDENTITY(client::MoveType_t), 0xac0);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CScriptItem) == 0xAD0, "CScriptItem size should be 0xAD0");
+
+#endif
 	}
 }

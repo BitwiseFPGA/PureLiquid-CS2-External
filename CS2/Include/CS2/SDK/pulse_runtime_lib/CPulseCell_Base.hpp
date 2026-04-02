@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/pulse_runtime_lib/PulseDocNodeID_t.hpp>
+#include "PulseDocNodeID_t.hpp"
 
 
 
@@ -21,9 +21,12 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Base  {
 		public:
-			NESTED_PROPERTY(m_nEditorNodeID,pulse_runtime_lib::PulseDocNodeID_t, 0x8);
+			NESTED_PROPERTY(m_nEditorNodeID,IDENTITY(pulse_runtime_lib::PulseDocNodeID_t), 0x8);
 			S2_PAD(0x48);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Base) == 0x48, "CPulseCell_Base size should be 0x48");
+
+#endif
 	}
 }

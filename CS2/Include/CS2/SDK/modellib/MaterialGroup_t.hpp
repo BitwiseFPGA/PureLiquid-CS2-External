@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/resourcesystem/InfoForResourceTypeIMaterial2.hpp>
+#include "../resourcesystem/InfoForResourceTypeIMaterial2.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 		class MaterialGroup_t  {
 		public:
 			PROPERTY(m_name,GlobalTypes::CUtlString*, 0x0);
-			NESTED_PROPERTY(m_materials,GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>>, 0x8);
+			NESTED_PROPERTY(m_materials,IDENTITY(GlobalTypes::CUtlVector<GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2>>), 0x8);
 			S2_PAD(0x20);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::modellib::MaterialGroup_t) == 0x20, "MaterialGroup_t size should be 0x20");
+
+#endif
 	}
 }

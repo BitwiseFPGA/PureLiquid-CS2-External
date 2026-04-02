@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/CAnimComponentUpdater.hpp>
-#include <SDK/animgraphlib/CDampedValueUpdateItem.hpp>
+#include "CAnimComponentUpdater.hpp"
+#include "CDampedValueUpdateItem.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace animgraphlib {
 		class CDampedValueComponentUpdater : public CS2::animgraphlib::CAnimComponentUpdater {
 		public:
-			NESTED_PROPERTY(m_items,GlobalTypes::CUtlVector<animgraphlib::CDampedValueUpdateItem>, 0x30);
+			NESTED_PROPERTY(m_items,IDENTITY(GlobalTypes::CUtlVector<animgraphlib::CDampedValueUpdateItem>), 0x30);
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CDampedValueComponentUpdater) == 0x48, "CDampedValueComponentUpdater size should be 0x48");
+
+#endif
 	}
 }

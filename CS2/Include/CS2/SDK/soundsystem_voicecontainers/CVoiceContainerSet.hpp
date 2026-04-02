@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/soundsystem_voicecontainers/CVoiceContainerBase.hpp>
-#include <SDK/soundsystem_voicecontainers/CVoiceContainerSetElement.hpp>
+#include "CVoiceContainerBase.hpp"
+#include "CVoiceContainerSetElement.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace soundsystem_voicecontainers {
 		class CVoiceContainerSet : public CS2::soundsystem_voicecontainers::CVoiceContainerBase {
 		public:
-			NESTED_PROPERTY(m_soundsToPlay,GlobalTypes::CUtlVector<soundsystem_voicecontainers::CVoiceContainerSetElement>, 0xa8);
+			NESTED_PROPERTY(m_soundsToPlay,IDENTITY(GlobalTypes::CUtlVector<soundsystem_voicecontainers::CVoiceContainerSetElement>), 0xa8);
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::soundsystem_voicecontainers::CVoiceContainerSet) == 0xC0, "CVoiceContainerSet size should be 0xC0");
+
+#endif
 	}
 }

@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BaseModelEntity.hpp>
-#include <SDK/client/GrenadeType_t.hpp>
+#include "C_BaseModelEntity.hpp"
+#include "GrenadeType_t.hpp"
 
 
 
@@ -23,9 +23,12 @@ namespace CS2 {
 		class CGrenadeTracer : public CS2::client::C_BaseModelEntity {
 		public:
 			PROPERTY(m_flTracerDuration,float32, 0xea0);
-			PROPERTY(m_nType,client::GrenadeType_t, 0xea4);
+			PROPERTY(m_nType,IDENTITY(client::GrenadeType_t), 0xea4);
 			S2_PAD(0x498);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::CGrenadeTracer) == 0x1320, "CGrenadeTracer size should be 0x1320");
+
+#endif
 	}
 }

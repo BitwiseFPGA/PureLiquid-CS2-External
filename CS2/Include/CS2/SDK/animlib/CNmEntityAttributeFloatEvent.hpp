@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animlib/CNmEntityAttributeEventBase.hpp>
+#include "CNmEntityAttributeEventBase.hpp"
 
 
 
@@ -24,6 +24,9 @@ namespace CS2 {
 			PROPERTY(m_FloatValue,GlobalTypes::CPiecewiseCurve, 0x38);
 			S2_PAD(0x40);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animlib::CNmEntityAttributeFloatEvent) == 0x78, "CNmEntityAttributeFloatEvent size should be 0x78");
+
+#endif
 	}
 }

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/smartprops/CSmartPropElement_ModelEntity.hpp>
+#include "CSmartPropElement_ModelEntity.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropElement_PropDynamic : public CS2::smartprops::CSmartPropElement_ModelEntity {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropElement_PropDynamic) == 0x190, "CSmartPropElement_PropDynamic size should be 0x190");
+
+#endif
 	}
 }

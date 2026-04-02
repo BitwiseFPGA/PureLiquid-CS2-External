@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CCSWeaponBaseGun.hpp>
-#include <SDK/entity2/GameTime_t.hpp>
+#include "CCSWeaponBaseGun.hpp"
+#include "../entity2/GameTime_t.hpp"
 
 
 
@@ -22,10 +22,13 @@ namespace CS2 {
 	namespace server {
 		class CWeaponTaser : public CS2::server::CCSWeaponBaseGun {
 		public:
-			NESTED_PROPERTY(m_fFireTime,entity2::GameTime_t, 0x1150);
+			NESTED_PROPERTY(m_fFireTime,IDENTITY(entity2::GameTime_t), 0x1150);
 			PROPERTY(m_nLastAttackTick,int32_t, 0x1154);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CWeaponTaser) == 0x1160, "CWeaponTaser size should be 0x1160");
+
+#endif
 	}
 }

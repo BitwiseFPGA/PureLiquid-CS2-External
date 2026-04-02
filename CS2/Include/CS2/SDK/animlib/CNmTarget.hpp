@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -28,6 +28,9 @@ namespace CS2 {
 			PROPERTY(m_bIsSet,bool, 0x2b);
 			S2_PAD(0x30);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animlib::CNmTarget) == 0x30, "CNmTarget size should be 0x30");
+
+#endif
 	}
 }

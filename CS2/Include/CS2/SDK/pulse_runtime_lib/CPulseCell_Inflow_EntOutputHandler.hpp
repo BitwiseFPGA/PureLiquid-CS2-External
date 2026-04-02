@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/pulse_runtime_lib/CPulseCell_Inflow_BaseEntrypoint.hpp>
+#include "CPulseCell_Inflow_BaseEntrypoint.hpp"
 
 
 
@@ -26,6 +26,9 @@ namespace CS2 {
 			PROPERTY(m_ExpectedParamType,GlobalTypes::CPulseValueFullType, 0xa0);
 			S2_PAD(0x38);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Inflow_EntOutputHandler) == 0xB8, "CPulseCell_Inflow_EntOutputHandler size should be 0xB8");
+
+#endif
 	}
 }

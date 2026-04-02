@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/animgraphlib/CAnimationGraphVisualizerPrimitiveBase.hpp>
+#include "CAnimationGraphVisualizerPrimitiveBase.hpp"
 
 
 
@@ -25,6 +25,9 @@ namespace CS2 {
 			PROPERTY(m_flAxisSize,float32, 0x60);
 			S2_PAD(0x30);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::CAnimationGraphVisualizerAxis) == 0x70, "CAnimationGraphVisualizerAxis size should be 0x70");
+
+#endif
 	}
 }

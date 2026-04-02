@@ -4,16 +4,16 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/smartprops/CSmartPropOperation.hpp>
-#include <SDK/smartprops/CSmartPropAttributeChoiceSelectionMode.hpp>
-#include <SDK/smartprops/CSmartPropAttributeApplyColorMode.hpp>
-#include <SDK/smartprops/ColorChoice_t.hpp>
+#include "CSmartPropOperation.hpp"
+#include "CSmartPropAttributeChoiceSelectionMode.hpp"
+#include "CSmartPropAttributeApplyColorMode.hpp"
+#include "ColorChoice_t.hpp"
 
 
 
@@ -24,12 +24,15 @@ namespace CS2 {
 	namespace smartprops {
 		class CSmartPropOperation_SetTintColor : public CS2::smartprops::CSmartPropOperation {
 		public:
-			NESTED_PROPERTY(m_SelectionMode,smartprops::CSmartPropAttributeChoiceSelectionMode, 0x50);
+			NESTED_PROPERTY(m_SelectionMode,IDENTITY(smartprops::CSmartPropAttributeChoiceSelectionMode), 0x50);
 			PROPERTY(m_ColorSelection,GlobalTypes::CSmartPropAttributeInt, 0x90);
-			NESTED_PROPERTY(m_Mode,smartprops::CSmartPropAttributeApplyColorMode, 0xd0);
-			NESTED_PROPERTY(m_ColorChoices,GlobalTypes::CUtlVector<smartprops::ColorChoice_t>, 0x110);
+			NESTED_PROPERTY(m_Mode,IDENTITY(smartprops::CSmartPropAttributeApplyColorMode), 0xd0);
+			NESTED_PROPERTY(m_ColorChoices,IDENTITY(GlobalTypes::CUtlVector<smartprops::ColorChoice_t>), 0x110);
 			S2_PAD(0xD8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::smartprops::CSmartPropOperation_SetTintColor) == 0x128, "CSmartPropOperation_SetTintColor size should be 0x128");
+
+#endif
 	}
 }

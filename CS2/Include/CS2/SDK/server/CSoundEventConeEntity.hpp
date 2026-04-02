@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CSoundEventEntity.hpp>
+#include "CSoundEventEntity.hpp"
 
 
 
@@ -28,6 +28,9 @@ namespace CS2 {
 			PROPERTY(m_iszParameterName,GlobalTypes::CUtlSymbolLarge*, 0x568);
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CSoundEventConeEntity) == 0x570, "CSoundEventConeEntity size should be 0x570");
+
+#endif
 	}
 }

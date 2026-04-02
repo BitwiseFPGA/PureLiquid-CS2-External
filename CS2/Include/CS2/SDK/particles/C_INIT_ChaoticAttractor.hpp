@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionInitializer.hpp>
+#include "CParticleFunctionInitializer.hpp"
 
 
 
@@ -32,6 +32,9 @@ namespace CS2 {
 			PROPERTY(m_bUniformSpeed,bool, 0x1f8);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_INIT_ChaoticAttractor) == 0x200, "C_INIT_ChaoticAttractor size should be 0x200");
+
+#endif
 	}
 }

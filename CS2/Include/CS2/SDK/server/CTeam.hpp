@@ -4,15 +4,15 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CBaseEntity.hpp>
-#include <SDK/server/CBasePlayerController.hpp>
-#include <SDK/server/CBasePlayerPawn.hpp>
+#include "CBaseEntity.hpp"
+#include "CBasePlayerController.hpp"
+#include "CBasePlayerPawn.hpp"
 
 
 
@@ -23,12 +23,15 @@ namespace CS2 {
 	namespace server {
 		class CTeam : public CS2::server::CBaseEntity {
 		public:
-			PROPERTY(m_aPlayerControllers,server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CBasePlayerController>>, 0x4a8);
-			PROPERTY(m_aPlayers,server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CBasePlayerPawn>>, 0x4c0);
+			// PROPERTY(m_aPlayerControllers,IDENTITY(server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CBasePlayerController>>), 0x4a8);
+			// PROPERTY(m_aPlayers,IDENTITY(server::CNetworkUtlVectorBase<GlobalTypes::CHandle<server::CBasePlayerPawn>>), 0x4c0);
 			PROPERTY(m_iScore,int32_t, 0x4d8);
 			PROPERTY_ARRAY(m_szTeamname,char, 129 , 0x4dc);
 			S2_PAD(0xB8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CTeam) == 0x560, "CTeam size should be 0x560");
+
+#endif
 	}
 }

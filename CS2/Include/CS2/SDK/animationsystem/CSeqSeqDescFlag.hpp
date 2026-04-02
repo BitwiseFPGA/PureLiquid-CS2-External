@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -33,6 +33,9 @@ namespace CS2 {
 			PROPERTY(m_bModelDoc,bool, 0xa);
 			S2_PAD(0xB);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animationsystem::CSeqSeqDescFlag) == 0xB, "CSeqSeqDescFlag size should be 0xB");
+
+#endif
 	}
 }

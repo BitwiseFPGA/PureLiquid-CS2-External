@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/pulse_runtime_lib/CPulseCell_BaseFlow.hpp>
-#include <SDK/pulse_runtime_lib/CPulse_OutflowConnection.hpp>
+#include "CPulseCell_BaseFlow.hpp"
+#include "CPulse_OutflowConnection.hpp"
 
 
 
@@ -22,9 +22,12 @@ namespace CS2 {
 	namespace pulse_runtime_lib {
 		class CPulseCell_Outflow_CycleRandom : public CS2::pulse_runtime_lib::CPulseCell_BaseFlow {
 		public:
-			NESTED_PROPERTY(m_Outputs,server::CUtlVector<pulse_runtime_lib::CPulse_OutflowConnection>, 0x48);
+			NESTED_PROPERTY(m_Outputs,IDENTITY(GlobalTypes::CUtlVector<pulse_runtime_lib::CPulse_OutflowConnection>), 0x48);
 			S2_PAD(0x18);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::pulse_runtime_lib::CPulseCell_Outflow_CycleRandom) == 0x60, "CPulseCell_Outflow_CycleRandom size should be 0x60");
+
+#endif
 	}
 }

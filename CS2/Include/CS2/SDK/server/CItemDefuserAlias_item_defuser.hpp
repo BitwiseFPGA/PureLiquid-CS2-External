@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CItemDefuser.hpp>
+#include "CItemDefuser.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CItemDefuserAlias_item_defuser : public CS2::server::CItemDefuser {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CItemDefuserAlias_item_defuser) == 0xAE0, "CItemDefuserAlias_item_defuser size should be 0xAE0");
+
+#endif
 	}
 }

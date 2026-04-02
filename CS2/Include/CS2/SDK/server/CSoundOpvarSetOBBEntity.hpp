@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CSoundOpvarSetAABBEntity.hpp>
+#include "CSoundOpvarSetAABBEntity.hpp"
 
 
 
@@ -21,8 +21,10 @@ namespace CS2 {
 	namespace server {
 		class CSoundOpvarSetOBBEntity : public CS2::server::CSoundOpvarSetAABBEntity {
 		public:
-			S2_PAD(0x0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CSoundOpvarSetOBBEntity) == 0x6A8, "CSoundOpvarSetOBBEntity size should be 0x6A8");
+
+#endif
 	}
 }

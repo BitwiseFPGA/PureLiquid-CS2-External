@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BaseFlex.hpp>
-#include <SDK/client/AnimLoopMode_t.hpp>
+#include "C_BaseFlex.hpp"
+#include "AnimLoopMode_t.hpp"
 
 
 
@@ -23,11 +23,14 @@ namespace CS2 {
 		class C_CSGO_PreviewModel : public CS2::client::C_BaseFlex {
 		public:
 			PROPERTY(m_defaultAnim,GlobalTypes::CUtlString*, 0x1350);
-			PROPERTY(m_nDefaultAnimLoopMode,client::AnimLoopMode_t, 0x1358);
+			PROPERTY(m_nDefaultAnimLoopMode,IDENTITY(client::AnimLoopMode_t), 0x1358);
 			PROPERTY(m_flInitialModelScale,float32, 0x135c);
 			PROPERTY(m_sInitialWeaponState,GlobalTypes::CUtlString*, 0x1360);
 			S2_PAD(0x510);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_CSGO_PreviewModel) == 0x1860, "C_CSGO_PreviewModel size should be 0x1860");
+
+#endif
 	}
 }

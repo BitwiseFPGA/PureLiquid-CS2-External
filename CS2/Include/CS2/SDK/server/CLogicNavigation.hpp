@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CLogicalEntity.hpp>
-#include <SDK/server/navproperties_t.hpp>
+#include "CLogicalEntity.hpp"
+#include "navproperties_t.hpp"
 
 
 
@@ -23,9 +23,12 @@ namespace CS2 {
 		class CLogicNavigation : public CS2::server::CLogicalEntity {
 		public:
 			PROPERTY(m_isOn,bool, 0x4b0);
-			PROPERTY(m_navProperty,server::navproperties_t, 0x4b4);
+			PROPERTY(m_navProperty,IDENTITY(server::navproperties_t), 0x4b4);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CLogicNavigation) == 0x4B8, "CLogicNavigation size should be 0x4B8");
+
+#endif
 	}
 }

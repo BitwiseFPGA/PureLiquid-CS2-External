@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CBaseCSGrenadeProjectile.hpp>
-#include <SDK/entity2/GameTime_t.hpp>
+#include "CBaseCSGrenadeProjectile.hpp"
+#include "../entity2/GameTime_t.hpp"
 
 
 
@@ -24,10 +24,13 @@ namespace CS2 {
 		public:
 			PROPERTY(m_nDecoyShotTick,int32_t, 0xbc8);
 			PROPERTY(m_shotsRemaining,int32_t, 0xbcc);
-			NESTED_PROPERTY(m_fExpireTime,entity2::GameTime_t, 0xbd0);
+			NESTED_PROPERTY(m_fExpireTime,IDENTITY(entity2::GameTime_t), 0xbd0);
 			PROPERTY(m_decoyWeaponDefIndex,uint16_t, 0xbe0);
 			S2_PAD(0x40);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CDecoyProjectile) == 0xBF0, "CDecoyProjectile size should be 0xBF0");
+
+#endif
 	}
 }

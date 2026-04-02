@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/particles/CParticleFunctionOperator.hpp>
-#include <SDK/particles/ParticleAttributeIndex_t.hpp>
+#include "CParticleFunctionOperator.hpp"
+#include "ParticleAttributeIndex_t.hpp"
 
 
 
@@ -23,9 +23,12 @@ namespace CS2 {
 		class C_OP_SetCPtoVector : public CS2::particles::CParticleFunctionOperator {
 		public:
 			PROPERTY(m_nCPInput,int32_t, 0x1d0);
-			NESTED_PROPERTY(m_nFieldOutput,particles::ParticleAttributeIndex_t, 0x1d4);
+			NESTED_PROPERTY(m_nFieldOutput,IDENTITY(particles::ParticleAttributeIndex_t), 0x1d4);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::particles::C_OP_SetCPtoVector) == 0x1D8, "C_OP_SetCPtoVector size should be 0x1D8");
+
+#endif
 	}
 }

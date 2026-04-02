@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BaseTrigger.hpp>
-#include <SDK/client/CBuoyancyHelper.hpp>
+#include "C_BaseTrigger.hpp"
+#include "CBuoyancyHelper.hpp"
 
 
 
@@ -22,10 +22,13 @@ namespace CS2 {
 	namespace client {
 		class C_TriggerBuoyancy : public CS2::client::C_BaseTrigger {
 		public:
-			NESTED_PROPERTY(m_BuoyancyHelper,client::CBuoyancyHelper, 0xf58);
+			NESTED_PROPERTY(m_BuoyancyHelper,IDENTITY(client::CBuoyancyHelper), 0xf58);
 			PROPERTY(m_flFluidDensity,float32, 0x1070);
 			S2_PAD(0x120);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_TriggerBuoyancy) == 0x1078, "C_TriggerBuoyancy size should be 0x1078");
+
+#endif
 	}
 }

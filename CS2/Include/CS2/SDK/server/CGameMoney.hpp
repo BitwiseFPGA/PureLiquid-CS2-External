@@ -4,14 +4,14 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CRulePointEntity.hpp>
-#include <SDK/entity2/CEntityIOOutput.hpp>
+#include "CRulePointEntity.hpp"
+#include "../entity2/CEntityIOOutput.hpp"
 
 
 
@@ -22,12 +22,15 @@ namespace CS2 {
 	namespace server {
 		class CGameMoney : public CS2::server::CRulePointEntity {
 		public:
-			NESTED_PROPERTY(m_OnMoneySpent,entity2::CEntityIOOutput, 0x740);
-			NESTED_PROPERTY(m_OnMoneySpentFail,entity2::CEntityIOOutput, 0x758);
+			NESTED_PROPERTY(m_OnMoneySpent,IDENTITY(entity2::CEntityIOOutput), 0x740);
+			NESTED_PROPERTY(m_OnMoneySpentFail,IDENTITY(entity2::CEntityIOOutput), 0x758);
 			PROPERTY(m_nMoney,int32_t, 0x770);
 			PROPERTY(m_strAwardText,GlobalTypes::CUtlString*, 0x778);
 			S2_PAD(0x40);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CGameMoney) == 0x780, "CGameMoney size should be 0x780");
+
+#endif
 	}
 }

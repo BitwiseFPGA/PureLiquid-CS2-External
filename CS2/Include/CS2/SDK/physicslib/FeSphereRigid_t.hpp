@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -27,6 +27,9 @@ namespace CS2 {
 			PROPERTY(nFlags,uint16_t, 0x16);
 			S2_PAD(0x20);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::physicslib::FeSphereRigid_t) == 0x20, "FeSphereRigid_t size should be 0x20");
+
+#endif
 	}
 }

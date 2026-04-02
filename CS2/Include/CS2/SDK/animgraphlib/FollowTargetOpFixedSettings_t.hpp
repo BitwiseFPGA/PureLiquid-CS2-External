@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -27,6 +27,9 @@ namespace CS2 {
 			PROPERTY(m_bMatchTargetOrientation,bool, 0xd);
 			S2_PAD(0x10);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::animgraphlib::FollowTargetOpFixedSettings_t) == 0x10, "FollowTargetOpFixedSettings_t size should be 0x10");
+
+#endif
 	}
 }

@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
@@ -25,6 +25,9 @@ namespace CS2 {
 			PROPERTY_ARRAY(vShape,GlobalTypes::Vector4D, 4 , 0xc);
 			S2_PAD(0x4C);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::physicslib::FeQuad_t) == 0x4C, "FeQuad_t size should be 0x4C");
+
+#endif
 	}
 }

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/pulse_runtime_lib/CBasePulseGraphInstance.hpp>
+#include "../pulse_runtime_lib/CBasePulseGraphInstance.hpp"
 
 
 
@@ -26,7 +26,7 @@ namespace CS2 {
 	namespace server {
 		class CPulseGraphInstance_ServerEntity : public CS2::pulse_runtime_lib::CBasePulseGraphInstance {
 		public:
-			PROPERTY(m_hOwner,GlobalTypes::CHandle<server::CBaseEntity>, 0x190);
+			PROPERTY(m_hOwner,IDENTITY(GlobalTypes::CHandle<server::CBaseEntity>), 0x190);
 			PROPERTY(m_bActivated,bool, 0x194);
 			PROPERTY(m_sNameFixupStaticPrefix,GlobalTypes::CUtlSymbolLarge*, 0x198);
 			PROPERTY(m_sNameFixupParent,GlobalTypes::CUtlSymbolLarge*, 0x1a0);
@@ -34,6 +34,9 @@ namespace CS2 {
 			PROPERTY(m_sProceduralWorldNameForRelays,GlobalTypes::CUtlSymbolLarge*, 0x1b0);
 			S2_PAD(0xA0);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CPulseGraphInstance_ServerEntity) == 0x1B8, "CPulseGraphInstance_ServerEntity size should be 0x1B8");
+
+#endif
 	}
 }

@@ -10,6 +10,7 @@ using namespace LiquidHookEx;
 namespace Globals {
     extern Process* pProc;
 }
+#define IDENTITY(...) __VA_ARGS__
 
 #define thisptr (reinterpret_cast<uintptr_t>(this))
 

@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/client/C_BaseEntity.hpp>
+#include "C_BaseEntity.hpp"
 
 
 
@@ -41,6 +41,9 @@ namespace CS2 {
 			PROPERTY(m_bOverrideNoiseStrength,bool, 0x64f);
 			S2_PAD(0x48);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::client::C_EnvVolumetricFogVolume) == 0x650, "C_EnvVolumetricFogVolume size should be 0x650");
+
+#endif
 	}
 }

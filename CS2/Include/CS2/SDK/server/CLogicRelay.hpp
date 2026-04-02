@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CLogicalEntity.hpp>
+#include "CLogicalEntity.hpp"
 
 
 
@@ -28,6 +28,9 @@ namespace CS2 {
 			PROPERTY(m_bPassthoughCaller,bool, 0x4ac);
 			S2_PAD(0x8);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CLogicRelay) == 0x4B0, "CLogicRelay size should be 0x4B0");
+
+#endif
 	}
 }

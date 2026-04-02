@@ -4,13 +4,13 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CPointEntity.hpp>
+#include "CPointEntity.hpp"
 
 
 
@@ -32,9 +32,12 @@ namespace CS2 {
 			PROPERTY(m_flInnerRadius,float32, 0x4b4);
 			PROPERTY(m_flConeOfInfluence,float32, 0x4b8);
 			PROPERTY(m_iszFilterName,GlobalTypes::CUtlSymbolLarge*, 0x4c0);
-			PROPERTY(m_hFilter,GlobalTypes::CHandle<server::CBaseFilter>, 0x4c8);
+			PROPERTY(m_hFilter,IDENTITY(GlobalTypes::CHandle<server::CBaseFilter>), 0x4c8);
 			S2_PAD(0x28);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CPointPush) == 0x4D0, "CPointPush size should be 0x4D0");
+
+#endif
 	}
 }

@@ -4,14 +4,15 @@
 #pragma once
 
 #ifndef CUSTOM_GLOBAL_TYPES
-	#include <SDK/GlobalTypes.hpp>
+	#include "../GlobalTypes.hpp"
 #else
 	#include <Custom/GlobalTypes.hpp>
 #endif
 
 
-#include <SDK/server/CBaseModelEntity.hpp>
-#include <SDK/entity2/GameTime_t.hpp>
+#include "CBaseModelEntity.hpp"
+#include "../entity2/GameTime_t.hpp"
+#include "CHandle< CBaseEntity >.hpp"
 
 
 
@@ -33,12 +34,12 @@ namespace CS2 {
 			PROPERTY(m_flFreezeTransitionDuration,float32, 0x934);
 			PROPERTY(m_nStopType,int32_t, 0x938);
 			PROPERTY(m_bAnimateDuringGameplayPause,bool, 0x93c);
-			PROPERTY(m_iEffectIndex,GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>, 0x940);
-			NESTED_PROPERTY(m_flStartTime,entity2::GameTime_t, 0x948);
+			PROPERTY(m_iEffectIndex,IDENTITY(GlobalTypes::CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>), 0x940);
+			NESTED_PROPERTY(m_flStartTime,IDENTITY(entity2::GameTime_t), 0x948);
 			PROPERTY(m_flPreSimTime,float32, 0x94c);
 			PROPERTY_ARRAY(m_vServerControlPoints,GlobalTypes::Vector, 4 , 0x950);
 			PROPERTY_ARRAY(m_iServerControlPointAssignments,uint8_t, 4 , 0x980);
-			PROPERTY_ARRAY(m_hControlPointEnts,server::CHandle< CBaseEntity >, 64 , 0x984);
+			// PROPERTY_ARRAY(m_hControlPointEnts,IDENTITY(GlobalTypes::CHandle< CBaseEntity >[64]), 64 , 0x984);
 			PROPERTY(m_bNoSave,bool, 0xa84);
 			PROPERTY(m_bNoFreeze,bool, 0xa85);
 			PROPERTY(m_bNoRamp,bool, 0xa86);
@@ -51,6 +52,9 @@ namespace CS2 {
 			PROPERTY(m_clrTint,GlobalTypes::Color, 0xca4);
 			S2_PAD(0x578);
 		};
+#ifdef USE_STATIC_ASSERTS
 		//static_assert(sizeof(CS2::server::CParticleSystem) == 0xCA8, "CParticleSystem size should be 0xCA8");
+
+#endif
 	}
 }
